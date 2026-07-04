@@ -7,6 +7,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import BuildStamp from "./BuildStamp";
+import VocabToggle from "./VocabToggle";
 
 // Nav links pulled into a shared array so the desktop nav and the mobile
 // drawer (added 2026-07-03, was previously "hidden md:flex" with zero
@@ -56,6 +57,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <VocabToggle className="hidden sm:flex" />
           <BuildStamp />
           {loading ? (
             <div className="h-10 w-28 bg-white/5 animate-pulse rounded-lg border border-white/5"></div>
@@ -108,6 +110,7 @@ export default function SiteHeader() {
             </div>
 
             <nav className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
+              <VocabToggle />
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}

@@ -147,8 +147,8 @@ export default function CourseDashboardPage() {
                         onClick={toggleMode}
                         className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors text-[10px] font-black uppercase tracking-widest text-neutral-400"
                       >
-                        {mode === "racefiends" ? (
-                          <><Shield size={14} className="text-[#ff6b00]" /> RaceFiends</>
+                        {mode === "tactical" ? (
+                          <><Shield size={14} className="text-[#ff6b00]" /> Tactical</>
                         ) : (
                           <><BookOpen size={14} className="text-[#00f0ff]" /> Standard</>
                         )}

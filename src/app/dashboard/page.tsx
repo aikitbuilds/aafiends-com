@@ -107,8 +107,8 @@ export default function DashboardPage() {
               className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-[#0a0a0a] hover:bg-neutral-900 transition-colors text-[10px] font-black uppercase tracking-widest text-neutral-400"
               title="Toggle Vocabulary Mode"
             >
-              {mode === "racefiends" ? (
-                <><Shield size={14} className="text-red-400" /> RaceFiends</>
+              {mode === "tactical" ? (
+                <><Shield size={14} className="text-red-400" /> Tactical</>
               ) : (
                 <><BookOpen size={14} className="text-[#10b981]" /> Standard</>
               )}
