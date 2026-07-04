@@ -10,6 +10,7 @@ import {
 import JourneyTab from "@/components/JourneyTab";
 import TelemetryLog from "@/components/TelemetryLog";
 import LedgerTab from "@/components/LedgerTab";
+import BiometricsTab from "@/components/BiometricsTab";
 import BuildStamp from "@/components/BuildStamp";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -17,13 +18,14 @@ import { db } from "@/lib/firebase";
 import { doc, updateDoc, increment } from "firebase/firestore";
 import { computeVanguardProfile, MASCOT_INFO, type VanguardProfileResult, type Mascot } from "@/lib/vanguardProfile";
 
-type TabId = "overview" | "engine" | "mirror" | "network";
+type TabId = "overview" | "engine" | "mirror" | "network" | "data";
 
 const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: "overview", label: "Overview", icon: LayoutGrid },
   { id: "engine", label: "Engine", icon: Mic },
   { id: "mirror", label: "Mirror", icon: Brain },
   { id: "network", label: "Network", icon: Users },
+  { id: "data", label: "Data", icon: Activity },
 ];
 
 const TAB_STYLES: Record<TabId, { active: string; iconWrap: string; text: string }> = {
@@ -31,6 +33,7 @@ const TAB_STYLES: Record<TabId, { active: string; iconWrap: string; text: string
   engine: { active: "border-red-500 text-red-400 bg-red-500/5", iconWrap: "bg-red-500/10 text-red-400", text: "text-red-400" },
   mirror: { active: "border-blue-500 text-blue-400 bg-blue-500/5", iconWrap: "bg-blue-500/10 text-blue-400", text: "text-blue-400" },
   network: { active: "border-purple-500 text-purple-400 bg-purple-500/5", iconWrap: "bg-purple-500/10 text-purple-400", text: "text-purple-400" },
+  data: { active: "border-cyan-500 text-cyan-400 bg-cyan-500/5", iconWrap: "bg-cyan-500/10 text-cyan-400", text: "text-cyan-400" },
 };
 
 export default function DashboardPage() {
@@ -303,6 +306,18 @@ export default function DashboardPage() {
                 <div className="bg-[#050505] rounded-2xl overflow-hidden border border-white/10">
                   <JourneyTab daysSober={daysSober} />
                 </div>
+              </PillarPanel>
+            )}
+
+            {activeTab === "data" && (
+              <PillarPanel
+                icon={Activity}
+                name="Data"
+                subtitle="Biometric Telemetry"
+                description="Your body's data, visualized — Data Over Denial."
+                accent={TAB_STYLES.data}
+              >
+                <BiometricsTab />
               </PillarPanel>
             )}
           </motion.div>
