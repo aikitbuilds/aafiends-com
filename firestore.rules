@@ -22,5 +22,38 @@ service cloud.firestore {
       allow read: if request.auth != null && request.auth.uid == resource.data.uid;
       allow create: if request.auth != null && request.auth.uid == request.resource.data.uid;
     }
+
+    // 4. Community Stories
+    //    - Public can read ONLY stories that have been approved.
+    //    - Anyone can submit a story, but it must be created as pending
+    //      (approved == false) with a sane name + a paragraphs list. It stays
+    //      invisible to the public read rule above until an admin flips
+    //      `approved` to true via the Admin SDK (which bypasses these rules).
+    //    - Clients can never update or delete; moderation is server-side only.
+    match /stories/{storyId} {
+      allow read: if resource.data.approved == true;
+      allow create: if request.resource.data.approved == false
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 60
+                    && request.resource.data.paragraphs is list;
+      allow update, delete: if false;
+    }
+
+    // 5. Daily Telemetry (public /data dashboard demo inputs)
+    //    The /data page writes anonymous daily inputs here. Create-only, with
+    //    strict field + type validation so the collection can't be abused as
+    //    arbitrary storage. Never readable, updatable, or deletable from the
+    //    client (any aggregation is done server-side via the Admin SDK).
+    match /telemetry/{docId} {
+      allow read, update, delete: if false;
+      allow create: if request.resource.data.keys().hasOnly(['sleep', 'hydration', 'movement', 'timestamp'])
+                    && request.resource.data.sleep is number
+                    && request.resource.data.sleep >= 0
+                    && request.resource.data.sleep <= 24
+                    && request.resource.data.hydration is bool
+                    && request.resource.data.movement is string
+                    && request.resource.data.movement.size() <= 40;
+    }
   }
 }

@@ -64,6 +64,13 @@ export async function transcribeAudio(base64Audio: string, mimeType: string): Pr
 }
 
 export async function generateMirrorInsight(input: string): Promise<MirrorResponse> {
+  // Fail fast with an actionable message if the key is missing. Anything the
+  // Gemini API rejects otherwise surfaces to the user as an opaque 500, so we
+  // categorize the common failures below instead.
+  if (!apiKey) {
+    throw new Error("Mirror Engine is not configured: GEMINI_API_KEY is missing.");
+  }
+
   const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash",
     systemInstruction: MIRROR_SYSTEM_PROMPT,
@@ -73,8 +80,21 @@ export async function generateMirrorInsight(input: string): Promise<MirrorRespon
     },
   });
 
-  const result = await model.generateContent([input]);
-  const responseText = result.response.text();
+  let responseText: string;
+  try {
+    const result = await model.generateContent([input]);
+    responseText = result.response.text();
+  } catch (error: any) {
+    const msg = String(error?.message || error);
+    console.error("Gemini generateContent failed:", msg);
+    if (/API[_ ]?key|invalid|unauthenticated|permission|\b401\b|\b403\b/i.test(msg)) {
+      throw new Error("Mirror Engine rejected the API key. Verify GEMINI_API_KEY is a valid Google AI Studio key (starts with 'AIza').");
+    }
+    if (/quota|rate|\b429\b|resource.?exhausted/i.test(msg)) {
+      throw new Error("Mirror Engine hit a rate/quota limit. Try again in a moment.");
+    }
+    throw new Error("Mirror Engine could not reach Gemini. Try again in a moment.");
+  }
 
   try {
     return JSON.parse(responseText) as MirrorResponse;

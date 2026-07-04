@@ -125,10 +125,10 @@ const SCALE_COLORS = [
 // Literal per-item accent colors for "Today's Actions" - was flat red for
 // every row regardless of which action it was.
 const ACTION_COLORS = [
-  { text: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/40", check: "bg-blue-500" },
-  { text: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/40", check: "bg-violet-500" },
-  { text: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/40", check: "bg-emerald-500" },
-  { text: "text-teal-400", bg: "bg-teal-500/10", border: "border-teal-500/40", check: "bg-teal-500" },
+  { text: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500", check: "bg-blue-500", glow: "shadow-[0_0_18px_rgba(59,130,246,0.4)]" },
+  { text: "text-violet-400", bg: "bg-violet-500/20", border: "border-violet-500", check: "bg-violet-500", glow: "shadow-[0_0_18px_rgba(139,92,246,0.4)]" },
+  { text: "text-emerald-400", bg: "bg-emerald-500/20", border: "border-emerald-500", check: "bg-emerald-500", glow: "shadow-[0_0_18px_rgba(16,185,129,0.4)]" },
+  { text: "text-teal-400", bg: "bg-teal-500/20", border: "border-teal-500", check: "bg-teal-500", glow: "shadow-[0_0_18px_rgba(20,184,166,0.4)]" },
 ];
 
 // Rotation for "What Helped Today" chips - was flat red for every chip.
@@ -550,7 +550,7 @@ export default function TelemetryLog() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.3)] disabled:opacity-50"
+            className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] disabled:opacity-50"
           >
             {submitting ? "Getting Your Reflection..." : "Submit Check-In"} <ChevronRight size={16} />
           </button>
@@ -631,7 +631,7 @@ export default function TelemetryLog() {
               type="button"
               onClick={submitVoiceCheckIn}
               disabled={submitting || !transcript.trim()}
-              className="w-full py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.3)] disabled:opacity-50"
+              className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] disabled:opacity-50"
             >
               {submitting ? "Getting Your Reflection..." : "Submit Check-In"} <ChevronRight size={16} />
             </button>
@@ -688,7 +688,7 @@ function ToggleField({ label, checked, onClick, color }: {
   label: string;
   checked: boolean;
   onClick: () => void;
-  color: { text: string; bg: string; border: string; check: string };
+  color: { text: string; bg: string; border: string; check: string; glow: string };
 }) {
   return (
     <button
@@ -696,7 +696,7 @@ function ToggleField({ label, checked, onClick, color }: {
       onClick={onClick}
       className={`flex items-center justify-between p-4 rounded-xl border transition-all duration-300 text-left ${
         checked
-          ? `${color.bg} ${color.border} shadow-[0_0_15px_rgba(255,255,255,0.05)]`
+          ? `${color.bg} ${color.border} ${color.glow}`
           : "bg-neutral-900/50 border-white/5 hover:border-white/10 hover:bg-neutral-800"
       }`}
     >

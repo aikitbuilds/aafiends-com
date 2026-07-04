@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { db } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { 
   Activity, 
   ShieldAlert, 
@@ -46,9 +48,19 @@ export default function DataPage() {
   const [movement, setMovement] = useState<string>("Walk");
   const [statusLogged, setStatusLogged] = useState<boolean>(false);
 
-  const handleLogTelemetry = () => {
-    setStatusLogged(true);
-    setTimeout(() => setStatusLogged(false), 3000); // Reset after 3s
+  const handleLogTelemetry = async () => {
+    try {
+      await addDoc(collection(db, "telemetry"), {
+        sleep,
+        hydration,
+        movement,
+        timestamp: serverTimestamp(),
+      });
+      setStatusLogged(true);
+      setTimeout(() => setStatusLogged(false), 3000); // Reset after 3s
+    } catch (error) {
+      console.error("Error logging telemetry:", error);
+    }
   };
 
   const fadeIn = {
@@ -183,9 +195,16 @@ export default function DataPage() {
                   Garmin Biometric Sync
                 </h2>
                 <p className="text-neutral-400 font-mono text-xs tracking-widest uppercase mt-1">
-                  Real Hardware Telemetry Analysis
+                  Sample Telemetry &mdash; Illustrative Figures
                 </p>
               </div>
+            </div>
+
+            <div className="mb-8 flex items-start gap-2 text-xs text-amber-400/80 bg-amber-500/5 border border-amber-500/20 rounded-xl px-4 py-3">
+              <AlertTriangle size={14} className="shrink-0 mt-0.5" />
+              <span className="leading-relaxed">
+                The figures below are <strong>sample values shown for illustration</strong>. Live Garmin data appears here once your device is connected &mdash; nothing on this panel is a real-time reading yet.
+              </span>
             </div>
 
             <div className="flex flex-col gap-8">
@@ -197,7 +216,7 @@ export default function DataPage() {
                      <span className="text-emerald-500 font-bold uppercase text-xs tracking-widest flex items-center gap-2">
                        <Activity size={14} /> Source: Garmin Connect
                      </span>
-                     <span className="text-neutral-500 text-xs font-mono">Sync: OK</span>
+                     <span className="text-neutral-500 text-xs font-mono">Screenshot</span>
                    </div>
                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/3] bg-black">
                      <img src="/garmin1.jpg" alt="Garmin Connect Dashboard" className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
@@ -209,7 +228,7 @@ export default function DataPage() {
                      <span className="text-blue-500 font-bold uppercase text-xs tracking-widest flex items-center gap-2">
                        <Moon size={14} /> Source: Garmin Sleep
                      </span>
-                     <span className="text-neutral-500 text-xs font-mono">Sync: OK</span>
+                     <span className="text-neutral-500 text-xs font-mono">Screenshot</span>
                    </div>
                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/3] bg-black">
                      <img src="/garminsleep.webp" alt="Garmin Sleep Data" className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
@@ -227,7 +246,7 @@ export default function DataPage() {
                       <Moon size={20} />
                       <span className="font-bold uppercase text-sm tracking-wider">Sleep</span>
                     </div>
-                    <span className="text-xs font-mono text-neutral-500">Last Night</span>
+                    <span className="text-xs font-mono text-neutral-500">Last Night &middot; Sample</span>
                   </div>
                   <div className="flex items-end gap-2 mb-2">
                     <span className="text-4xl font-black text-white">7h 12m</span>
@@ -248,7 +267,7 @@ export default function DataPage() {
                       <HeartPulse size={20} />
                       <span className="font-bold uppercase text-sm tracking-wider">Resting HR</span>
                     </div>
-                    <span className="text-xs font-mono text-neutral-500">7-Day Avg</span>
+                    <span className="text-xs font-mono text-neutral-500">7-Day Avg &middot; Sample</span>
                   </div>
                   <div className="flex items-end gap-2 mb-2">
                     <span className="text-4xl font-black text-white">58</span>
@@ -271,7 +290,7 @@ export default function DataPage() {
                       <BrainCircuit size={20} />
                       <span className="font-bold uppercase text-sm tracking-wider">Stress</span>
                     </div>
-                    <span className="text-xs font-mono text-neutral-500">Current</span>
+                    <span className="text-xs font-mono text-neutral-500">Current &middot; Sample</span>
                   </div>
                   <div className="flex items-end gap-2 mb-2">
                     <span className="text-4xl font-black text-emerald-500">22</span>
@@ -398,8 +417,8 @@ export default function DataPage() {
                     <p className="text-neutral-500 text-xs font-mono">7-Day Biometric Trending (Sleep, HR, Stress)</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-3xl font-black text-emerald-500">Sync Active</span>
-                    <p className="text-emerald-500/70 text-xs font-mono uppercase tracking-widest">Connected</p>
+                    <span className="text-3xl font-black text-emerald-500">Sample Data</span>
+                    <p className="text-emerald-500/70 text-xs font-mono uppercase tracking-widest">Illustrative</p>
                   </div>
                 </div>
 
