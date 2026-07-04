@@ -30,6 +30,13 @@
 
 export type PillarAccent = "engine" | "mirror" | "network" | "cross";
 
+export const PILLAR_STYLES: Record<PillarAccent, { label: string; text: string; bg: string; border: string; dot: string; glow: string }> = {
+  engine: { label: "Engine", text: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", dot: "bg-red-500", glow: "rgba(239,68,68,0.35)" },
+  mirror: { label: "Mirror", text: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", dot: "bg-blue-500", glow: "rgba(59,130,246,0.35)" },
+  network: { label: "Network", text: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/20", dot: "bg-purple-500", glow: "rgba(168,85,247,0.35)" },
+  cross: { label: "Ecosystem", text: "text-[#10b981]", bg: "bg-[#10b981]/10", border: "border-[#10b981]/20", dot: "bg-[#10b981]", glow: "rgba(16,185,129,0.35)" },
+};
+
 export type BlogSection =
   | { type: "markdown"; content: string }
   | { type: "pullquote"; text: string; author?: string }

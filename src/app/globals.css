@@ -49,4 +49,12 @@ body {
   100% { transform: scale(1.05) translate(0px, 0px); }
 }
 
-.animate-slow-pan
+.animate-slow-pan {
+  animation: slow-pan 20s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    @apply border-white/10 outline-red-500/50;
+  }
+}

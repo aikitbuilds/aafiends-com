@@ -1,10 +1,10 @@
-import { blogPosts, getPostBySlug } from "@/lib/blogData";
+import { blogPosts, getPostBySlug, PILLAR_STYLES } from "@/lib/blogData";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import PostVisual, { PILLAR_STYLES } from "@/components/PostVisual";
+import PostVisual from "@/components/PostVisual";
 import BlogContent from "@/components/BlogContent";
 
 export function generateStaticParams() {

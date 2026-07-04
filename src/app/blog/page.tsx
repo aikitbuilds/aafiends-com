@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import PostVisual, { PILLAR_STYLES } from "@/components/PostVisual";
-import { blogPosts } from "@/lib/blogData";
+import PostVisual from "@/components/PostVisual";
+import { blogPosts, PILLAR_STYLES } from "@/lib/blogData";
 
 /**
  * AAFiends science blog index — added 2026-07-04 (Michael: "create 5-8
