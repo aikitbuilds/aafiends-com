@@ -1,65 +1,340 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import DashboardPreview from "@/components/DashboardPreview";
+import EcosystemFooter from "@/components/EcosystemFooter";
+import {
+  Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network
+} from "lucide-react";
+
+export default function LandingPage() {
+  const { user, loading, login } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && user) {
+      router.push("/dashboard");
+    }
+  }, [user, loading, router]);
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
+      
+      <SiteHeader />
+
+      {/* SECTION 1: HERO */}
+      <motion.section 
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="relative w-full min-h-[90vh] flex items-center justify-center px-6 md:px-12 py-24 z-20 overflow-hidden"
+      >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center gap-16 mt-10">
+          
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <motion.div variants={fadeIn} className="flex items-center gap-2 border border-[#10b981]/30 bg-[#10b981]/10 text-[#10b981] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-8 backdrop-blur-md">
+              <Lock size={14} /> Exclusive Beta &middot; Limited Spots
+            </motion.div>
+
+            <motion.h1 variants={fadeIn} className="text-5xl sm:text-6xl lg:text-[6rem] font-black tracking-tight text-white leading-[1.05] mb-6 drop-shadow-lg uppercase">
+              Data Over <br className="hidden lg:block" />
+              <span className="text-[#10b981]">Denial.</span>
+            </motion.h1>
+
+            <motion.p variants={fadeIn} className="text-lg sm:text-xl text-neutral-300 max-w-2xl leading-relaxed mb-6 font-medium">
+              AAfiends is a recovery dashboard and AI coach built by AA members — track sleep, meetings, and cravings to prove your baseline is healing.
+            </motion.p>
+
+            <motion.div variants={fadeIn} className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
+              <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 text-xs sm:text-sm font-bold text-neutral-300">
+                <LineChart size={14} className="text-[#10b981]" /> Daily Telemetry
+              </span>
+              <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 text-xs sm:text-sm font-bold text-neutral-300">
+                <Sparkles size={14} className="text-[#10b981]" /> AI Mirror
+              </span>
+              <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 text-xs sm:text-sm font-bold text-neutral-300">
+                <Network size={14} className="text-[#10b981]" /> Community Grid
+              </span>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
+              <button
+                onClick={login}
+                className="py-4 px-8 rounded-full bg-[#10b981] hover:bg-[#059669] text-black text-base font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105 flex items-center justify-center gap-2"
+              >
+                [ Start Your Rebuild ] <ArrowRight size={18} />
+              </button>
+              <a
+                href="#dashboard-preview"
+                className="py-4 px-8 rounded-full border border-white/15 text-white text-base font-bold uppercase tracking-widest transition-all duration-300 hover:border-[#10b981]/50 hover:text-[#10b981] flex items-center justify-center gap-2"
+              >
+                See How It Works
+              </a>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="w-full max-w-2xl bg-[#0a1a14] border border-[#10b981]/20 rounded-2xl p-6 shadow-lg italic text-neutral-200 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.04)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+              <p className="mb-4 relative z-10">"I used to think my willpower was all I'd ever need,<br/>
+              A stubborn kind of ego that I always tried to feed.<br/>
+              I'd swear to everyone I loved, 'I'm only having one!'<br/>
+              Then wake up in a panic 'fore the rising of the sun.</p>
+
+              <p className="mb-4 relative z-10">So we're dumping the excuses, we are looking at what's real,<br/>
+              We are tracking daily habits, not just hiding how we feel.<br/>
+              It's Data Over Denial—shining light into the dark,<br/>
+              To heal the broken body and restore the inner spark.</p>
+
+              <p className="relative z-10">We plug into the meetings like a charger to a phone,<br/>
+              Because nobody in the trenches ever makes it out alone.<br/>
+              The Twelve Steps are the manual to clear away the pride,<br/>
+              To sweep the old resentments and the heavy guilt aside."</p>
+            </motion.div>
+          </div>
+
+          <div className="flex-1 relative flex justify-center lg:justify-end items-center w-full max-w-lg lg:max-w-none mt-10 lg:mt-0">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full max-w-[500px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-[#10b981]/30 shadow-[0_20px_50px_rgba(16,185,129,0.2)] z-10 group bg-neutral-900"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <img src="/main_hero_gauntlet.png" alt="Data Over Denial" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-white font-black text-2xl uppercase tracking-widest">Baseline Calibrated</h3>
+                <div className="flex items-center gap-2 mt-2 text-sm font-bold text-[#10b981]">
+                  <Activity size={16} /> System Active
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
+      </motion.section>
+
+      {/* NEW SECTION 3: THE THREAT (INTRODUCING THE AIV) */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        id="threat" className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-10 relative z-20 border-t border-white/5"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          <motion.div variants={fadeIn} className="relative rounded-[2rem] overflow-hidden border border-red-500/50 shadow-[0_0_50px_rgba(220,38,38,0.3)] bg-[#09090b] aspect-square lg:aspect-auto lg:h-[600px] group">
+            <img src="/aiv_image1.png" alt="The AIV Symbiote" className="w-full h-full object-cover grayscale-[20%] sepia-[10%] hue-rotate-[-30deg] transform group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-red-900/20 mix-blend-multiply pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none"></div>
+            
+            <div className="absolute top-6 left-6 flex items-center gap-2 bg-red-600/90 backdrop-blur-sm px-4 py-2 rounded-full border border-red-400/30 shadow-[0_0_20px_rgba(220,38,38,0.5)] z-20">
+              <Biohazard size={16} className="text-white" />
+              <span className="text-xs font-black text-white uppercase tracking-widest">Active Threat</span>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeIn} className="flex flex-col gap-8">
+            <div>
+              <span className="text-sm font-mono font-bold tracking-widest text-red-500 bg-red-500/10 px-4 py-1.5 rounded-full uppercase border border-red-500/30 shadow-[0_0_15px_rgba(220,38,38,0.2)] flex items-center gap-2 w-fit mb-6">
+                <Biohazard size={16} /> (Alcohol/Addiction Intelligence Virus)
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none mb-2">
+                THE SYMBIOTE <br/><span className="text-red-500">ON MY SHOULDER</span>
+              </h2>
+            </div>
+
+            <div className="w-full bg-neutral-900/40 border border-white/10 p-6 md:p-8 rounded-2xl font-mono text-sm sm:text-base text-neutral-300 leading-relaxed shadow-inner">
+              <p className="mb-4">"I thought I was the boss of me, the captain of the ship,<br/>
+              Who only needed one quick drink to let the tension slip.<br/>
+              But there's a heavy, dark companion riding on my back,<br/>
+              A sneaky, slimy symbiote preparing to attack.</p>
+
+              <p className="mb-4">It whispers, 'Hey, we've had a day... you've worked so hard, my guy!'<br/>
+              But it's just the A.I.V. again, constructing a new lie.<br/>
+              I hand the Admin Password to the monster in my head,<br/>
+              And wake up fully clothed with half a pizza in my bed.</p>
+
+              <p className="mb-4">What does this little gremlin eat to keep its battery charged?<br/>
+              It feasts upon my ego when it's getting too enlarged.<br/>
+              It gobbles up resentments, every grudge I won't let go,<br/>
+              And thrives on isolation when I'm hiding, sad and low.</p>
+
+              <p>So how do I defeat a bug that uses my own voice?<br/>
+              I plug into the Fellowship and make a better choice.<br/>
+              I hand the master keyboard to the Grand Architect Divine,<br/>
+              And track my daily habits just to hold the baseline fine."</p>
+            </div>
+            
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* SECTION 3.5: DASHBOARD PREVIEW */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        id="dashboard-preview" className="w-full max-w-7xl mx-auto px-6 py-24 relative z-20 border-t border-white/5"
+      >
+        <div className="text-center mb-10">
+          <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-4 py-1.5 rounded-full uppercase border border-[#10b981]/30 inline-block mb-4">
+            How It Works
+          </span>
+          <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
+            Three Steps. Every Day.
+          </h2>
+        </div>
+
+        {/* 3-STEP EXPLAINER (P1-3 fix) */}
+        <motion.div variants={fadeIn} className="max-w-4xl mx-auto mb-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4">
+            <span className="w-8 h-8 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black flex items-center justify-center shrink-0">1</span>
+            <p className="text-sm text-neutral-300"><span className="text-white font-bold">Log your telemetry.</span> 10 seconds, sliders and taps.</p>
+          </div>
+          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4">
+            <span className="w-8 h-8 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black flex items-center justify-center shrink-0">2</span>
+            <p className="text-sm text-neutral-300"><span className="text-white font-bold">The Mirror reflects it back.</span> AI reads what changed.</p>
+          </div>
+          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4">
+            <span className="w-8 h-8 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black flex items-center justify-center shrink-0">3</span>
+            <p className="text-sm text-neutral-300"><span className="text-white font-bold">The Ledger proves the streak.</span> The pattern, over time.</p>
+          </div>
+        </motion.div>
+
+        <motion.div variants={fadeIn}>
+          <DashboardPreview />
+        </motion.div>
+      </motion.section>
+
+      {/* SECTION 4: THE THREE FOUNDATIONS */}
+      <motion.section
+        id="foundations"
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-16 relative z-20 border-t border-white/5"
+      >
+        <div className="text-center mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none mb-4">
+            Alcohol Intelligence Virus Defenses
+          </h2>
+          <p className="text-neutral-400 text-lg md:text-xl max-w-3xl mx-auto font-mono">
+            Protocols established to maintain baseline and quarantine threats.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Pillar 1 */}
+          <motion.div variants={fadeIn}>
+            <Link href="/data" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-[#10b981]/50 transition-all shadow-xl group h-full cursor-pointer block">
+              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
+                <div className="w-12 h-12 rounded-xl bg-[#10b981]/10 flex items-center justify-center border border-[#10b981]/30 text-[#10b981]">
+                  <Activity size={24} />
+                </div>
+                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-none">
+                  The Data <br/><span className="text-[#10b981] text-base font-mono mt-1 block">(The Dashboard)</span>
+                </h3>
+              </div>
+              <p className="text-neutral-400 text-base leading-relaxed">
+                Track physical telemetry—sleep, hydration, and triggers. Prove to yourself the engine is healing.
+              </p>
+            </Link>
+          </motion.div>
+
+          {/* Pillar 2 */}
+          <motion.div variants={fadeIn}>
+            <Link href="/gad" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-all shadow-xl group h-full cursor-pointer block">
+              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400">
+                  <Shield size={24} />
+                </div>
+                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-none">
+                  G.A.D. <br/><span className="text-blue-400 text-base font-mono mt-1 block">(Grand Architect Divine)</span>
+                </h3>
+              </div>
+              <p className="text-neutral-400 text-base leading-relaxed">
+                Hand over the admin password. Use the 12 Steps to clear resentments and restore spiritual sanity.
+              </p>
+            </Link>
+          </motion.div>
+
+          {/* Pillar 3 */}
+          <motion.div variants={fadeIn}>
+            <Link href="/12-and-12" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-purple-500/50 transition-all shadow-xl group h-full cursor-pointer block">
+              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/30 text-purple-400">
+                  <Users size={24} />
+                </div>
+                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-none">
+                  The Community <br/><span className="text-purple-400 text-base font-mono mt-1 block">(The Grid)</span>
+                </h3>
+              </div>
+              <p className="text-neutral-400 text-base leading-relaxed">
+                You can't out-think a virus alone. Hit meetings, call your sponsor, and stay connected.
+              </p>
+            </Link>
+          </motion.div>
         </div>
-      </main>
+      </motion.section>
+
+      {/* AI4AA FEATURED COURSE (Updated) */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
+      >
+        <div className="w-full bg-[#051024] border border-blue-500/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(59,130,246,0.15)] group relative">
+          
+          <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+            <img src="/hopeful_hero_2.png" alt="AI4AA Course" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#051024] hidden md:block"></div>
+          </div>
+
+          <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center relative z-10">
+            <div className="flex items-center gap-3 justify-start mb-4">
+              <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/30">Training Module</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
+              ai4aa Foundation Course: <br className="hidden md:block mt-2" /><span className="text-blue-400">Data Over Denial</span>
+            </h2>
+            <p className="text-neutral-300 text-base leading-relaxed mb-8">
+              A 6-week tech crash course exclusively for the recovery community. Zero technical background required.
+            </p>
+            <Link href="/ai4aa" className="w-fit">
+              <button className="py-3 px-6 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-blue-500 hover:text-white">
+                <BrainCircuit size={18} />
+                Access Course
+              </button>
+            </Link>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ECOSYSTEM CROSS-LINKS */}
+      <div className="w-full max-w-7xl mx-auto px-6 relative z-20">
+        <EcosystemFooter />
+      </div>
+
+      {/* FOOTER */}
+      <SiteFooter />
+
     </div>
   );
 }
