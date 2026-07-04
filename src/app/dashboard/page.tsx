@@ -419,8 +419,9 @@ function VanguardCard({ vanguard }: { vanguard: VanguardProfileResult }) {
             </h3>
           </div>
         </div>
+        {/* TODO: show real computed share (~{info.estimatedShare}% was an illustrative placeholder) once 50+ real users exist */}
         <span className={`shrink-0 inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full border ${style.chip}`}>
-          ~{info.estimatedShare}% of people share this profile
+          Early beta — your data shapes this archetype
         </span>
       </div>
 
