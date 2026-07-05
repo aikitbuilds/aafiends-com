@@ -43,8 +43,12 @@ export async function POST(request: NextRequest) {
     let decodedToken;
     try {
       decodedToken = await adminAuth.verifyIdToken(idToken);
-    } catch (authError) {
-      console.error("Token verification failed:", authError);
+    } catch (authError: any) {
+      console.error("Token verification failed details:", {
+        message: authError?.message,
+        code: authError?.code,
+        error: authError
+      });
       return NextResponse.json({ error: "Invalid or expired authentication token" }, { status: 401 });
     }
 

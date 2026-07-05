@@ -14,30 +14,32 @@ export { admin };
 if (!admin.apps.length) {
   try {
     const serviceAccountStr = process.env.ADMIN_SERVICE_ACCOUNT_KEY;
+    console.log("Firebase admin init: ADMIN_SERVICE_ACCOUNT_KEY present?", !!serviceAccountStr);
     if (serviceAccountStr) {
+      console.log("Firebase admin init: Attempting to parse service account...");
       const serviceAccount = JSON.parse(serviceAccountStr);
+      console.log("Firebase admin init: Successfully parsed service account for project:", serviceAccount.project_id);
       if (serviceAccount.private_key) {
         serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
       }
       admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
       });
+      console.log("Firebase admin init: App initialized with cert");
     } else {
-      // Fallback for local dev if ADC is available, or just throw
+      console.log("Firebase admin init: Falling back to credential-less initializeApp()");
       admin.initializeApp();
+      console.log("Firebase admin init: App initialized with ADC fallback");
     }
   } catch (error) {
     console.error("Firebase admin: primary initialization failed", error);
-    // Last-resort fallback so a bad/missing ADMIN_SERVICE_ACCOUNT_KEY doesn't
-    // leave zero apps registered. If this also fails, admin.apps.length
-    // stays 0 and the proxies below will throw when actually used - but
-    // only inside a request handler's own try/catch (see comment below),
-    // never at import time.
     if (!admin.apps.length) {
       try {
+        console.log("Firebase admin init: Attempting last-resort fallback initializeApp()...");
         admin.initializeApp();
+        console.log("Firebase admin init: Last-resort fallback succeeded.");
       } catch (fallbackError) {
-        console.error("Firebase admin: fallback initialization also failed - all auth/db calls will fail until env vars are fixed", fallbackError);
+        console.error("Firebase admin: fallback initialization also failed", fallbackError);
       }
     }
   }

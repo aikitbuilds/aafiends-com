@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import DashboardPreview from "@/components/DashboardPreview";
-import EcosystemFooter from "@/components/EcosystemFooter";
+import FeaturedGrid from "@/components/FeaturedGrid";
 import {
   Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network
 } from "lucide-react";
@@ -354,10 +354,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ECOSYSTEM CROSS-LINKS */}
-      <div className="w-full max-w-7xl mx-auto px-6 relative z-20">
-        <EcosystemFooter />
-      </div>
+      {/* ECOSYSTEM — featured showcase of all three sites */}
+      <FeaturedGrid />
 
       {/* FOOTER */}
       <SiteFooter />

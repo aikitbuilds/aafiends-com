@@ -115,20 +115,20 @@ function blobToBase64(blob: Blob): Promise<string> {
 // meaning instead of a bare number). Kept as a literal array (not
 // template-built) so Tailwind's static scanner picks up every class.
 const SCALE_COLORS = [
-  { text: "text-emerald-400", bg: "bg-emerald-500/15", border: "border-emerald-500/50", glow: "shadow-[0_0_15px_rgba(16,185,129,0.35)]" },
-  { text: "text-teal-400", bg: "bg-teal-500/15", border: "border-teal-500/50", glow: "shadow-[0_0_15px_rgba(20,184,166,0.35)]" },
-  { text: "text-amber-400", bg: "bg-amber-500/15", border: "border-amber-500/50", glow: "shadow-[0_0_15px_rgba(245,158,11,0.35)]" },
-  { text: "text-orange-400", bg: "bg-orange-500/15", border: "border-orange-500/50", glow: "shadow-[0_0_15px_rgba(249,115,22,0.35)]" },
-  { text: "text-red-400", bg: "bg-red-500/15", border: "border-red-500/50", glow: "shadow-[0_0_15px_rgba(239,68,68,0.35)]" },
+  { text: "text-emerald-400", bg: "bg-emerald-500/25", border: "border-emerald-400", glow: "shadow-[0_0_16px_rgba(16,185,129,0.5)]", faintBg: "bg-emerald-500/10", faintBorder: "border-emerald-500/40" },
+  { text: "text-teal-400", bg: "bg-teal-500/25", border: "border-teal-400", glow: "shadow-[0_0_16px_rgba(20,184,166,0.5)]", faintBg: "bg-teal-500/10", faintBorder: "border-teal-500/40" },
+  { text: "text-amber-400", bg: "bg-amber-500/25", border: "border-amber-400", glow: "shadow-[0_0_16px_rgba(245,158,11,0.5)]", faintBg: "bg-amber-500/10", faintBorder: "border-amber-500/40" },
+  { text: "text-orange-400", bg: "bg-orange-500/25", border: "border-orange-400", glow: "shadow-[0_0_16px_rgba(249,115,22,0.5)]", faintBg: "bg-orange-500/10", faintBorder: "border-orange-500/40" },
+  { text: "text-red-400", bg: "bg-red-500/25", border: "border-red-400", glow: "shadow-[0_0_16px_rgba(239,68,68,0.5)]", faintBg: "bg-red-500/10", faintBorder: "border-red-500/40" },
 ];
 
 // Literal per-item accent colors for "Today's Actions" - was flat red for
 // every row regardless of which action it was.
 const ACTION_COLORS = [
-  { text: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500", check: "bg-blue-500", glow: "shadow-[0_0_18px_rgba(59,130,246,0.4)]" },
-  { text: "text-violet-400", bg: "bg-violet-500/20", border: "border-violet-500", check: "bg-violet-500", glow: "shadow-[0_0_18px_rgba(139,92,246,0.4)]" },
-  { text: "text-emerald-400", bg: "bg-emerald-500/20", border: "border-emerald-500", check: "bg-emerald-500", glow: "shadow-[0_0_18px_rgba(16,185,129,0.4)]" },
-  { text: "text-teal-400", bg: "bg-teal-500/20", border: "border-teal-500", check: "bg-teal-500", glow: "shadow-[0_0_18px_rgba(20,184,166,0.4)]" },
+  { text: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500", check: "bg-blue-500", glow: "shadow-[0_0_18px_rgba(59,130,246,0.4)]", faintBg: "bg-blue-500/5", faintBorder: "border-blue-500/40" },
+  { text: "text-violet-400", bg: "bg-violet-500/20", border: "border-violet-500", check: "bg-violet-500", glow: "shadow-[0_0_18px_rgba(139,92,246,0.4)]", faintBg: "bg-violet-500/5", faintBorder: "border-violet-500/40" },
+  { text: "text-emerald-400", bg: "bg-emerald-500/20", border: "border-emerald-500", check: "bg-emerald-500", glow: "shadow-[0_0_18px_rgba(16,185,129,0.4)]", faintBg: "bg-emerald-500/5", faintBorder: "border-emerald-500/40" },
+  { text: "text-teal-400", bg: "bg-teal-500/20", border: "border-teal-500", check: "bg-teal-500", glow: "shadow-[0_0_18px_rgba(20,184,166,0.4)]", faintBg: "bg-teal-500/5", faintBorder: "border-teal-500/40" },
 ];
 
 // Rotation for "What Helped Today" chips - was flat red for every chip.
@@ -252,7 +252,7 @@ export default function TelemetryLog() {
       const blob = new Blob(audioChunksRef.current, { type: mimeType });
       const base64Audio = await blobToBase64(blob);
       if (!user) throw new Error("You're signed out - refresh and sign back in.");
-      const idToken = await user.getIdToken();
+      const idToken = await user.getIdToken(true); // force-refresh so we never send a stale/expired token
 
       const response = await fetch("/api/transcribe", {
         method: "POST",
@@ -290,7 +290,7 @@ export default function TelemetryLog() {
     setSubmitting(true);
     setError(null);
     try {
-      const idToken = await user.getIdToken();
+      const idToken = await user.getIdToken(true); // force-refresh so we never send a stale/expired token
       const data = await postToMirror(idToken, transcript);
       setMirrorResult(data.data as MirrorResult);
       setSubmitted(true);
@@ -312,7 +312,7 @@ export default function TelemetryLog() {
     setError(null);
 
     try {
-      const idToken = await user.getIdToken();
+      const idToken = await user.getIdToken(true); // force-refresh so we never send a stale/expired token
       const narrative = composeNarrative(sliders, anchors, override);
       const data = await postToMirror(idToken, narrative, { sliders, anchors, override });
       setMirrorResult(data.data as MirrorResult);
@@ -510,7 +510,7 @@ export default function TelemetryLog() {
           {/* Section 3: What Helped Today - each chip now cycles through a
               color rotation (was flat red for every chip) */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-black text-neutral-500 uppercase tracking-widest">What Helped Today</h4>
+            <h4 className="text-sm font-black text-neutral-400 uppercase tracking-widest">What Helped Today</h4>
 
             <div className="flex flex-wrap gap-2 mb-1">
               {["Called a Fellow", "Prayed / Meditated", "Hit a Meeting", "Read Literature", "Physical Exercise"].map((opt, idx) => {
@@ -521,10 +521,10 @@ export default function TelemetryLog() {
                     key={opt}
                     type="button"
                     onClick={() => setOverride(opt)}
-                    className={`px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-colors border ${
+                    className={`px-3.5 py-2 rounded-lg text-[11px] font-black uppercase tracking-widest transition-all border ${c.text} ${
                       selected
-                        ? `${c.bg} ${c.border} ${c.text}`
-                        : "bg-neutral-900 border-white/5 text-neutral-500 hover:text-white hover:bg-neutral-800"
+                        ? `${c.bg} ${c.border} scale-105`
+                        : `${c.bg} border-transparent opacity-80 hover:opacity-100`
                     }`}
                   >
                     {opt}
@@ -658,7 +658,7 @@ function ScaleField({ label, name, value, onChange, icon, levels }: {
 }) {
   return (
     <div className="flex flex-col gap-3 bg-neutral-900/40 p-4 rounded-2xl border border-white/5">
-      <span className="text-xs font-bold text-white flex items-center gap-1.5">{icon} {label}</span>
+      <span className="text-sm font-bold text-white flex items-center gap-2">{icon} {label}</span>
       <div className="grid grid-cols-5 gap-1.5">
         {levels.map((level, idx) => {
           const c = SCALE_COLORS[idx] || SCALE_COLORS[SCALE_COLORS.length - 1];
@@ -669,11 +669,11 @@ function ScaleField({ label, name, value, onChange, icon, levels }: {
               type="button"
               onClick={() => onChange(name, level.value)}
               className={`flex flex-col items-center gap-1 py-2.5 px-1 rounded-xl border transition-all ${
-                selected ? `${c.bg} ${c.border} ${c.glow}` : "bg-neutral-950/50 border-white/5 hover:border-white/15"
+                selected ? `${c.bg} ${c.border} ${c.glow} scale-[1.04]` : `${c.faintBg} ${c.faintBorder}`
               }`}
             >
-              <span className={`text-base font-black ${selected ? c.text : "text-neutral-500"}`}>{level.value}</span>
-              <span className={`text-[8px] font-bold uppercase leading-tight text-center ${selected ? c.text : "text-neutral-600"}`}>
+              <span className={`text-xl font-black ${c.text}`}>{level.value}</span>
+              <span className={`text-[10px] font-bold uppercase leading-tight text-center ${c.text} ${selected ? "" : "opacity-70"}`}>
                 {level.label}
               </span>
             </button>
@@ -688,7 +688,7 @@ function ToggleField({ label, checked, onClick, color }: {
   label: string;
   checked: boolean;
   onClick: () => void;
-  color: { text: string; bg: string; border: string; check: string; glow: string };
+  color: { text: string; bg: string; border: string; check: string; glow: string; faintBg: string; faintBorder: string };
 }) {
   return (
     <button
@@ -697,14 +697,14 @@ function ToggleField({ label, checked, onClick, color }: {
       className={`flex items-center justify-between p-4 rounded-xl border transition-all duration-300 text-left ${
         checked
           ? `${color.bg} ${color.border} ${color.glow}`
-          : "bg-neutral-900/50 border-white/5 hover:border-white/10 hover:bg-neutral-800"
+          : `${color.faintBg} ${color.faintBorder}`
       }`}
     >
-      <span className={`text-xs font-bold transition-colors ${checked ? "text-white" : "text-neutral-400"}`}>
+      <span className={`text-sm font-bold transition-colors ${checked ? "text-white" : color.text}`}>
         {label}
       </span>
       <div className={`w-5 h-5 rounded flex items-center justify-center transition-colors ${
-        checked ? `${color.check} text-white` : "bg-neutral-800 border border-white/10"
+        checked ? `${color.check} text-white` : `border ${color.border}`
       }`}>
         {checked && <Check size={12} strokeWidth={4} />}
       </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function SiteFooter() {
   return (
     <footer className="w-full bg-[#020202] border-t border-white/10 pt-20 pb-8 px-6 text-neutral-400 relative z-20 mt-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-4">
@@ -31,7 +31,24 @@ export default function SiteFooter() {
           </nav>
         </div>
 
-        {/* Column 3: Legal/Disclaimer */}
+        {/* Column 3: The Fiends Grid (ecosystem cross-links) */}
+        <div className="flex flex-col gap-4">
+          <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">The Fiends Grid</h4>
+          <nav className="flex flex-col gap-3">
+            <a href="https://racefiends.com" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> RaceFiends.com
+            </a>
+            <a href="https://aivirus.org" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> AIVirus.org
+            </a>
+            <a href="https://aivirus.org/bio12" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0"></span> BIO 12 Protocol
+            </a>
+          </nav>
+          <p className="text-[10px] text-neutral-600 leading-relaxed mt-1">One recovery ecosystem — the pavement and the diagnosis.</p>
+        </div>
+
+        {/* Column 4: Legal/Disclaimer */}
         <div className="flex flex-col gap-4">
             <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Disclaimer</h4>
             <p className="text-xs leading-relaxed opacity-70">
