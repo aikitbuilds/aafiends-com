@@ -15,6 +15,7 @@ import { Moon, HeartPulse, BrainCircuit, Watch, ArrowUpRight, AlertTriangle } fr
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
+import FitUpload from "@/components/FitUpload";
 
 const sampleGarminData = [
   { day: "Day -6", sleep: 5.2, hr: 62, stress: 45 },
@@ -33,10 +34,13 @@ export default function BiometricsTab() {
       <div className="flex items-start gap-2 text-xs text-amber-400/80 bg-amber-500/5 border border-amber-500/20 rounded-xl px-4 py-3">
         <AlertTriangle size={14} className="shrink-0 mt-0.5" />
         <span className="leading-relaxed">
-          These are <strong>sample figures</strong> so you can see the layout populated. Your live Garmin / wearable
-          data will appear here once a device is connected — nothing below is a real-time reading yet.
+          The cards below are <strong>sample figures</strong> so you can see the layout populated. Upload your real
+          Garmin <code className="text-amber-300">.fit</code> data below and it replaces the samples on your chart.
         </span>
       </div>
+
+      {/* Real Garmin upload (free — no Terra/API) */}
+      <FitUpload />
 
       {/* Stat cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

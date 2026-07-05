@@ -13,6 +13,7 @@ import JourneyTab from "@/components/JourneyTab";
 import TelemetryLog from "@/components/TelemetryLog";
 import LedgerTab from "@/components/LedgerTab";
 import BiometricsTab from "@/components/BiometricsTab";
+import Bio12Tab from "@/components/Bio12Tab";
 import BuildStamp from "@/components/BuildStamp";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -20,13 +21,14 @@ import { db } from "@/lib/firebase";
 import { doc, updateDoc, increment } from "firebase/firestore";
 import { computeVanguardProfile, MASCOT_INFO, type VanguardProfileResult, type Mascot } from "@/lib/vanguardProfile";
 
-type TabId = "overview" | "engine" | "mirror" | "network" | "data";
+type TabId = "overview" | "engine" | "mirror" | "network" | "data" | "bio12";
 
 const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: "overview", label: "Overview", icon: LayoutGrid },
   { id: "engine", label: "Engine", icon: Mic },
   { id: "mirror", label: "Mirror", icon: Brain },
   { id: "network", label: "Network", icon: Users },
+  { id: "bio12", label: "BIO 12", icon: Shield },
   { id: "data", label: "Data", icon: Activity },
 ];
 
@@ -36,6 +38,7 @@ const TAB_STYLES: Record<TabId, { active: string; iconWrap: string; text: string
   mirror: { active: "border-blue-500 text-blue-400 bg-blue-500/5", iconWrap: "bg-blue-500/10 text-blue-400", text: "text-blue-400" },
   network: { active: "border-purple-500 text-purple-400 bg-purple-500/5", iconWrap: "bg-purple-500/10 text-purple-400", text: "text-purple-400" },
   data: { active: "border-cyan-500 text-cyan-400 bg-cyan-500/5", iconWrap: "bg-cyan-500/10 text-cyan-400", text: "text-cyan-400" },
+  bio12: { active: "border-orange-500 text-orange-400 bg-orange-500/5", iconWrap: "bg-orange-500/10 text-orange-400", text: "text-orange-400" },
 };
 
 export default function DashboardPage() {
@@ -339,6 +342,18 @@ export default function DashboardPage() {
                 <div className="bg-[#050505] rounded-2xl overflow-hidden border border-white/10">
                   <JourneyTab daysSober={daysSober} />
                 </div>
+              </PillarPanel>
+            )}
+
+            {activeTab === "bio12" && (
+              <PillarPanel
+                icon={Shield}
+                name="BIO 12"
+                subtitle="The Four-Pillar Daily Protocol"
+                description="Movement · Sleep · Nutrition · Breath — 12 checks that keep your firewall up."
+                accent={TAB_STYLES.bio12}
+              >
+                <Bio12Tab />
               </PillarPanel>
             )}
 

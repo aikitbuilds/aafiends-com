@@ -327,6 +327,33 @@ export default function LandingPage() {
         </div>
       </motion.section>
 
+      {/* BEYOND ALCOHOL — multi-addiction tie-in (Phase 3.4) */}
+      <section className="w-full max-w-7xl mx-auto px-6 py-12 relative z-20 border-t border-white/5">
+        <div className="w-full bg-[#0a0a0a] border border-red-500/20 rounded-[2rem] p-8 md:p-12 flex flex-col gap-6 shadow-xl">
+          <div className="flex items-center gap-3">
+            <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-red-400 uppercase tracking-widest bg-red-500/10 px-3 py-1 rounded-full border border-red-500/30">
+              <Biohazard size={14} /> Beyond Alcohol
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
+            One virus. <span className="text-red-500">Many faces.</span>
+          </h2>
+          <p className="text-neutral-300 text-base md:text-lg leading-relaxed max-w-3xl">
+            AAfiends started in the rooms of AA — but the same Addiction Intelligence Virus runs on more than alcohol:
+            opioids, nicotine, cannabis, gambling, and more. The defense is the same for all of them: daily data, the
+            BIO 12 protocol, and the fellowship. Learn how the virus works, then starve it.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+              See the 10 vectors <ArrowRight size={16} />
+            </a>
+            <a href="https://aivirus.org/bio12" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#10b981]/10 hover:bg-[#10b981]/20 text-[#10b981] border border-[#10b981]/40 font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+              <Shield size={16} /> The BIO 12 firewall
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ECOSYSTEM CROSS-LINKS */}
       <div className="w-full max-w-7xl mx-auto px-6 relative z-20">
         <EcosystemFooter />
