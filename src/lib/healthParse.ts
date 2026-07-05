@@ -118,6 +118,7 @@ export function parseGoogleFit(csv: string): HealthParseResult {
   if (lines.length < 2) return { days: [], source: "google_fit", warnings: ["That CSV looks empty."] };
 
   const header = splitCsvLine(lines[0]).map((h) => h.toLowerCase());
+  console.log("Google Fit CSV header:", header);
   const findCol = (pred: (h: string) => boolean) => header.findIndex(pred);
 
   const dateCol = findCol((h) => h === "date" || h.includes("date"));

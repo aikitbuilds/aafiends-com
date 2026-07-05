@@ -59,7 +59,10 @@ export async function parseFitFile(buffer: ArrayBuffer): Promise<FitParseResult>
   const messageCounts: Record<string, number> = {};
   for (const key of Object.keys(messages)) {
     const arr = (messages as any)[key];
-    if (Array.isArray(arr) && arr.length) messageCounts[key] = arr.length;
+    if (Array.isArray(arr) && arr.length) {
+      messageCounts[key] = arr.length;
+      console.log(`FIT message '${key}' available fields:`, Object.keys(arr[0]));
+    }
   }
 
   const byDate = new Map<string, FitDay>();
