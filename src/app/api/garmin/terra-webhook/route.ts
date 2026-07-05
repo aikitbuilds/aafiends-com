@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { adminDb } from "@/lib/firebaseAdmin";
-import { FieldValue } from "firebase-admin/firestore";
+import { adminDb, admin } from "@/lib/firebaseAdmin";
+const { FieldValue } = admin.firestore;
 
 /**
  * POST /api/garmin/terra-webhook

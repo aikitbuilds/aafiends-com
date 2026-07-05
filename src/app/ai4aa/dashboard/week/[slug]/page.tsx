@@ -11,7 +11,8 @@ import {
 import { useAuth } from "@/contexts/AuthContext";
 import { getWeek, WEEKS } from "@/data/ai4aaCourse";
 import { useCourseProgress, weekHomeworkDone } from "@/lib/useCourseProgress";
-import { AI4AA_ACCENT, AIStackDiagram, ToolComparisonCards, CameraMilestones } from "@/components/ai4aa/Infographics";
+import { AI4AA_ACCENT, AIStackDiagram, ToolComparisonCards, CameraMilestones, PromptAnatomy, BeforeAfterBars } from "@/components/ai4aa/Infographics";
+import { CASE_METRICS } from "@/data/ai4aaVisuals";
 
 export default function WeekPage() {
   const { user, loading } = useAuth();
@@ -147,6 +148,7 @@ export default function WeekPage() {
 
           {/* Contextual infographic */}
           {week.num === 1 && <div className="mt-6"><ToolComparisonCards /></div>}
+          {week.num === 2 && <div className="mt-6"><PromptAnatomy /></div>}
           {week.num === 5 && <div className="mt-6"><AIStackDiagram /></div>}
         </Section>
 
@@ -171,6 +173,9 @@ export default function WeekPage() {
             ))}
           </ul>
           <p className={`text-sm font-bold ${c.text} leading-relaxed mb-4`}>{week.caseStudy.result}</p>
+          {CASE_METRICS[week.slug] && (
+            <div className="mb-4"><BeforeAfterBars metric={CASE_METRICS[week.slug]} /></div>
+          )}
           <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-4">
             <div className="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2">Discuss / reflect</div>
             <ul className="flex flex-col gap-2">

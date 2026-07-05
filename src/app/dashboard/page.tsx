@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   LogOut, Activity, Shield, BookOpen, Plus, Target, Zap, Mic, Brain, Users,
   UserCircle2, LayoutGrid, ChevronRight, ChevronDown, Sparkles, AlertTriangle, Radar,
+  GraduationCap, CheckCircle2,
 } from "lucide-react";
+import Link from "next/link";
 import JourneyTab from "@/components/JourneyTab";
 import TelemetryLog from "@/components/TelemetryLog";
 import LedgerTab from "@/components/LedgerTab";
@@ -40,6 +42,7 @@ export default function DashboardPage() {
   const { user, profile, loading, logout, refreshProfile } = useAuth();
   const { mode, toggleMode } = useVocab();
   const [checkingIn, setCheckingIn] = useState(false);
+  const [justLogged, setJustLogged] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>("overview");
   const router = useRouter();
 
@@ -58,6 +61,8 @@ export default function DashboardPage() {
         meetingsCount: increment(1)
       });
       await refreshProfile();
+      setJustLogged(true);
+      setTimeout(() => setJustLogged(false), 2500);
     } catch (error) {
       console.error("Failed to check in", error);
     } finally {
@@ -139,12 +144,23 @@ export default function DashboardPage() {
             >
               <LogOut size={16} />
             </button>
+            <Link
+              href="/ai4aa/dashboard"
+              className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#00f0ff]/40 bg-[#00f0ff]/10 hover:bg-[#00f0ff]/20 text-[#00f0ff] text-xs font-black tracking-widest uppercase transition-colors"
+              title="Open the AI4AA course"
+            >
+              <GraduationCap size={14} /> AI4AA Course
+            </Link>
             <button
               onClick={handleMeetingCheckIn}
               disabled={checkingIn}
-              className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#10b981]/50 bg-[#10b981]/10 hover:bg-[#10b981]/20 text-[#10b981] text-xs font-black tracking-widest uppercase transition-colors disabled:opacity-50"
+              className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full border text-xs font-black tracking-widest uppercase transition-colors disabled:opacity-50 ${
+                justLogged
+                  ? "border-[#10b981] bg-[#10b981] text-black"
+                  : "border-[#10b981]/50 bg-[#10b981]/10 hover:bg-[#10b981]/20 text-[#10b981]"
+              }`}
             >
-              <Plus size={14} /> {checkingIn ? "LOGGING..." : "LOG FELLOWSHIP"}
+              {justLogged ? <><CheckCircle2 size={14} /> LOGGED +1</> : <><Plus size={14} /> {checkingIn ? "LOGGING..." : "LOG FELLOWSHIP"}</>}
             </button>
           </div>
         </div>
@@ -216,6 +232,23 @@ export default function DashboardPage() {
                   </div>
                   <ChevronRight className="text-red-400 shrink-0" size={18} />
                 </button>
+
+                {/* AI4AA course access — switch over to the course materials */}
+                <Link
+                  href="/ai4aa/dashboard"
+                  className="w-full flex items-center justify-between gap-4 bg-gradient-to-r from-[#00f0ff]/10 to-[#3b82f6]/5 border border-[#00f0ff]/30 rounded-2xl p-5 hover:from-[#00f0ff]/15 transition-colors text-left group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center shrink-0">
+                      <GraduationCap className="text-[#00f0ff]" size={18} />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black text-white uppercase tracking-widest">AI4AA Course</h4>
+                      <p className="text-xs text-neutral-400">Your 6-week AI crash course — lessons, homework, and prep. Switch over anytime.</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="text-[#00f0ff] shrink-0 group-hover:translate-x-0.5 transition-transform" size={18} />
+                </Link>
 
                 {/* Vanguard vulnerability profile */}
                 {vanguard && <VanguardCard vanguard={vanguard} />}

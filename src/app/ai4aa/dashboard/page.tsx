@@ -148,20 +148,34 @@ export default function CourseDashboardPage() {
               const complete = isWeekComplete(progress, w.slug);
               const hwDone = weekHomeworkDone(progress, w.slug);
               return (
-                <Link key={w.slug} href={`/ai4aa/dashboard/week/${w.slug}`} className="group bg-[#0a0a0a] border border-white/10 rounded-2xl p-5 flex flex-col gap-3 hover:border-white/25 hover:-translate-y-0.5 transition-all">
-                  <div className="flex items-center justify-between">
-                    <div className={`w-10 h-10 rounded-xl ${c.bg} border ${c.border} ${c.text} flex items-center justify-center font-black`}>{w.num}</div>
-                    {complete ? <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-widest text-emerald-400"><CheckCircle2 size={13} /> Done</span>
-                      : <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-600">~{w.estMinutes}m</span>}
+                <Link key={w.slug} href={`/ai4aa/dashboard/week/${w.slug}`} className="group bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/25 hover:-translate-y-1 transition-all shadow-lg">
+                  {/* Banner */}
+                  <div className="relative h-32 w-full overflow-hidden">
+                    {w.image ? (
+                      <img src={w.image} alt={w.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    ) : (
+                      <div className={`w-full h-full bg-gradient-to-br ${c.grad} opacity-30`} />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${c.grad}`} />
+                    <div className={`absolute top-3 left-3 w-9 h-9 rounded-xl bg-gradient-to-br ${c.grad} text-white flex items-center justify-center font-black shadow-lg`}>{w.num}</div>
+                    {complete && <span className="absolute top-3 right-3 inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-widest text-black bg-emerald-500 rounded-full px-2 py-1"><CheckCircle2 size={12} /> Done</span>}
                   </div>
-                  <div>
-                    <div className={`text-[10px] font-black uppercase tracking-widest ${c.text} mb-1`}>{w.theme}</div>
+                  {/* Body */}
+                  <div className="p-5 flex flex-col gap-2 flex-1">
+                    <div className={`text-[10px] font-black uppercase tracking-widest ${c.text}`}>{w.theme}</div>
                     <h4 className="text-white font-black leading-tight">{w.title}</h4>
-                  </div>
-                  <p className="text-xs text-neutral-500 leading-relaxed flex-1">{w.tools}</p>
-                  <div className="flex items-center justify-between pt-2 border-t border-white/5">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-600">HW {hwDone}/{w.homework.length}</span>
-                    <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${c.text} group-hover:gap-2 transition-all`}>Open <ChevronRight size={12} /></span>
+                    <p className="text-xs text-neutral-500 leading-relaxed flex-1">{w.tools}</p>
+                    <div className="flex items-center gap-2 pt-1">
+                      <div className="flex-1 h-1.5 rounded-full bg-neutral-900 overflow-hidden">
+                        <div className={`h-full rounded-full bg-gradient-to-r ${c.grad} transition-all`} style={{ width: `${(hwDone / w.homework.length) * 100}%` }} />
+                      </div>
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">{hwDone}/{w.homework.length}</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-600">~{w.estMinutes}m</span>
+                      <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${c.text} group-hover:gap-2 transition-all`}>Open <ChevronRight size={12} /></span>
+                    </div>
                   </div>
                 </Link>
               );

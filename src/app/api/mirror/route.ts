@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateMirrorInsight, MirrorResponse } from "../../../lib/gemini";
-import { adminDb, adminAuth } from "../../../lib/firebaseAdmin";
-import { FieldValue } from "firebase-admin/firestore";
+import { adminDb, adminAuth, admin } from "../../../lib/firebaseAdmin";
+const { FieldValue } = admin.firestore;
 
 /**
  * POST /api/mirror

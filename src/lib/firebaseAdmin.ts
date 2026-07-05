@@ -1,4 +1,15 @@
-import * as admin from "firebase-admin";
+import type * as adminTypes from "firebase-admin";
+
+let admin: typeof adminTypes;
+try {
+  // Use eval to hide the require from Turbopack so it doesn't try to bundle it or mangle the name
+  admin = eval("require('firebase-admin')");
+} catch (e) {
+  console.error("Failed to dynamically require firebase-admin", e);
+  throw e;
+}
+
+export { admin };
 
 if (!admin.apps.length) {
   try {
@@ -43,7 +54,7 @@ if (!admin.apps.length) {
 // admin.firestore() call to first actual use, so any failure surfaces
 // inside the route handler's own try/catch and comes back as a normal JSON
 // error response instead.
-export const adminAuth = new Proxy({} as admin.auth.Auth, {
+export const adminAuth = new Proxy({} as adminTypes.auth.Auth, {
   get(_target, prop) {
     const auth = admin.auth();
     const value = (auth as any)[prop];
@@ -51,7 +62,7 @@ export const adminAuth = new Proxy({} as admin.auth.Auth, {
   },
 });
 
-export const adminDb = new Proxy({} as admin.firestore.Firestore, {
+export const adminDb = new Proxy({} as adminTypes.firestore.Firestore, {
   get(_target, prop) {
     const db = admin.firestore();
     const value = (db as any)[prop];
