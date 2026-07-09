@@ -9,7 +9,7 @@ endobj
 <<
 /Type /Pages
 /Count 14
-/Kids [ 4 0 R 13 0 R 18 0 R 23 0 R 28 0 R 34 0 R 39 0 R 44 0 R 49 0 R 54 0 R 59 0 R 64 0 R 69 0 R 74 0 R ]
+/Kids [ 4 0 R 14 0 R 19 0 R 24 0 R 29 0 R 35 0 R 40 0 R 45 0 R 50 0 R 55 0 R 60 0 R 65 0 R 70 0 R 75 0 R ]
 >>
 endobj
 3 0 obj
@@ -31,12 +31,14 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 10 0 R
+/Contents 11 0 R
 >>
 endobj
 5 0 obj
@@ -76,6 +78,15 @@ endobj
 >>
 endobj
 9 0 obj
+<<
+/BaseFont /Times-Roman
+/Encoding /WinAnsiEncoding
+/Name /F5
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+10 0 obj
 <<
 /Length 8228
 >>
@@ -1015,10 +1026,10 @@ Q
 
 endstream
 endobj
-10 0 obj
-[ 11 0 R 12 0 R ]
-endobj
 11 0 obj
+[ 12 0 R 13 0 R ]
+endobj
+12 0 obj
 <<
 /Length 8233
 >>
@@ -1961,9 +1972,9 @@ Q
 
 endstream
 endobj
-12 0 obj
+13 0 obj
 <<
-/Length 12167
+/Length 12159
 >>
 stream
 q
@@ -2008,42 +2019,42 @@ n
 82 667 l
 S
 BT
-/F2-0 11 Tf
-13.2 TL
+/F2-0 10 Tf
+12 TL
 ET
 0.054902 0.478431 0.329412 rg
 BT
-1 0 0 1 116 684 Tm
+1 0 0 1 116 694 Tm
 (9) Tj
 T*
 ET
 BT
-1 0 0 1 125.616 684 Tm
+1 0 0 1 125.06 694 Tm
 (0) Tj
 T*
 ET
 BT
-1 0 0 1 135.232 684 Tm
+1 0 0 1 134.12 694 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 141.79 684 Tm
+1 0 0 1 140.4 694 Tm
 (D) Tj
 T*
 ET
 BT
-1 0 0 1 153.232 684 Tm
+1 0 0 1 151.12 694 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 164.674 684 Tm
+1 0 0 1 161.84 694 Tm
 (Y) Tj
 T*
 ET
 BT
-1 0 0 1 175.511 684 Tm
+1 0 0 1 172.01 694 Tm
 (S) Tj
 T*
 ET
@@ -2053,7 +2064,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 114 658 Tm
+1 0 0 1 114 654 Tm
 (R\046R) Tj
 T*
 ET
@@ -3370,7 +3381,7 @@ Q
 
 endstream
 endobj
-13 0 obj
+14 0 obj
 <<
 /Type /Page
 /Resources <<
@@ -3383,15 +3394,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 15 0 R
+/Contents 16 0 R
 >>
 endobj
-14 0 obj
+15 0 obj
 <<
 /Length 5912
 >>
@@ -3864,10 +3877,10 @@ Q
 
 endstream
 endobj
-15 0 obj
-[ 16 0 R 17 0 R ]
-endobj
 16 0 obj
+[ 17 0 R 18 0 R ]
+endobj
+17 0 obj
 <<
 /Length 5917
 >>
@@ -4343,7 +4356,7 @@ Q
 
 endstream
 endobj
-17 0 obj
+18 0 obj
 <<
 /Length 4058
 >>
@@ -4816,7 +4829,7 @@ Q
 
 endstream
 endobj
-18 0 obj
+19 0 obj
 <<
 /Type /Page
 /Resources <<
@@ -4829,15 +4842,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 20 0 R
+/Contents 21 0 R
 >>
 endobj
-19 0 obj
+20 0 obj
 <<
 /Length 4042
 >>
@@ -5310,10 +5325,10 @@ Q
 
 endstream
 endobj
-20 0 obj
-[ 21 0 R 22 0 R ]
-endobj
 21 0 obj
+[ 22 0 R 23 0 R ]
+endobj
+22 0 obj
 <<
 /Length 4047
 >>
@@ -5789,9 +5804,9 @@ Q
 
 endstream
 endobj
-22 0 obj
+23 0 obj
 <<
-/Length 7139
+/Length 25894
 >>
 stream
 q
@@ -6041,334 +6056,2534 @@ BT
 (The A\056I\056V\056 \227 One Virus\054 Many Faces) Tj
 T*
 ET
-0.905882 0.717647 0.698039 RG
-1 w
-0.988235 0.929412 0.92549 rg
+0.886275 0.72549 0.67451 RG
+0.066667 0.066667 0.066667 rg
 n
-52 586 m
-560 586 l
-565.528 586 570 590.472 570 596 c
-570 672 l
-570 677.528 565.528 682 560 682 c
-52 682 l
-46.472 682 42 677.528 42 672 c
-42 596 l
-42 590.472 46.472 586 52 586 c
+368 560 m
+562 560 l
+566.4224 560 570 563.5776 570 568 c
+570 670 l
+570 674.4224 566.4224 678 562 678 c
+368 678 l
+363.5776 678 360 674.4224 360 670 c
+360 568 l
+360 563.5776 363.5776 560 368 560 c
 h
 B*
 BT
-/F2-0 7 Tf
-8.4 TL
+/F2-0 16 Tf
+19.2 TL
+ET
+1 1 1 rg
+BT
+1 0 0 1 437.492 617 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 452.044 617 Tm
+(\056) Tj
+T*
+ET
+BT
+1 0 0 1 459.492 617 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 466.94 617 Tm
+(\056) Tj
+T*
+ET
+BT
+1 0 0 1 474.388 617 Tm
+(V) Tj
+T*
+ET
+BT
+1 0 0 1 488.06 617 Tm
+(\056) Tj
+T*
+ET
+BT
+/F1-0 6.5 Tf
+7.8 TL
+ET
+0.533333 0.533333 0.533333 rg
+BT
+1 0 0 1 431.3073 603 Tm
+(the host \053 the symbiote) Tj
+T*
+ET
+BT
+/F1-0 8.6 Tf
+10.32 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 42 672 Tm
+(We do not treat addiction as a moral failing\056 It behaves like a virus \227 the) Tj
+T*
+ET
+BT
+/F1-0 8.6 Tf
+10.32 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 42 660.6 Tm
+(Addiction Intelligence Virus \227 an adaptive infection of the brain\047s reward) Tj
+T*
+ET
+BT
+/F1-0 8.6 Tf
+10.32 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 42 649.2 Tm
+(system\056 Alcohol\054 opioids\054 nicotine\054 gambling\054 porn\054 sugar\054 endless scrolling\072 the) Tj
+T*
+ET
+BT
+/F1-0 8.6 Tf
+10.32 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 42 637.8 Tm
+(surface differs\054 the mechanism is identical\056 It floods dopamine\054 forces the brain) Tj
+T*
+ET
+BT
+/F1-0 8.6 Tf
+10.32 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 42 626.4 Tm
+(to down\055regulate its own receptors\054 and soon you need it just to feel normal\056) Tj
+T*
+ET
+BT
+/F2-0 9.5 Tf
+11.4 TL
 ET
 0.752941 0.223529 0.168627 rg
 BT
-1 0 0 1 56 666 Tm
-(K) Tj
-T*
-ET
-BT
-1 0 0 1 62.454 666 Tm
-(N) Tj
-T*
-ET
-BT
-1 0 0 1 68.908 666 Tm
-(O) Tj
-T*
-ET
-BT
-1 0 0 1 75.754 666 Tm
+1 0 0 1 42 546 Tm
 (W) Tj
 T*
 ET
 BT
-1 0 0 1 83.762 666 Tm
-( ) Tj
-T*
-ET
-BT
-1 0 0 1 87.108 666 Tm
-(T) Tj
-T*
-ET
-BT
-1 0 0 1 92.785 666 Tm
+1 0 0 1 52.568 546 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 99.239 666 Tm
-(E) Tj
+1 0 0 1 61.027 546 Tm
+(A) Tj
 T*
 ET
 BT
-1 0 0 1 105.308 666 Tm
+1 0 0 1 69.486 546 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 76.8905 546 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 108.654 666 Tm
+1 0 0 1 81.1315 546 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 85.3725 546 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 92.777 546 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 97.018 546 Tm
+(F) Tj
+T*
+ET
+BT
+1 0 0 1 104.4225 546 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 114.723 666 Tm
+1 0 0 1 112.359 546 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 120.2955 546 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 128.7545 546 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 136.691 546 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 140.932 546 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 149.923 546 Tm
 (N) Tj
 T*
 ET
+0.905882 0.717647 0.698039 RG
+1 w
+0.988235 0.929412 0.92549 rg
+n
+49 490 m
+204.3333 490 l
+208.2029 490 211.3333 493.1304 211.3333 497 c
+211.3333 523 l
+211.3333 526.8696 208.2029 530 204.3333 530 c
+49 530 l
+45.1304 530 42 526.8696 42 523 c
+42 497 l
+42 493.1304 45.1304 490 49 490 c
+h
+B*
+0.752941 0.223529 0.168627 rg
+n
+58 515 m
+58 516.6569 56.65685 518 55 518 c
+53.34315 518 52 516.6569 52 515 c
+52 513.3431 53.34315 512 55 512 c
+56.65685 512 58 513.3431 58 515 c
+f*
 BT
-1 0 0 1 121.177 666 Tm
+/F2-0 8.4 Tf
+10.08 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 64 513 Tm
+(Stress \057 cortisol) Tj
+T*
+ET
+BT
+/F1-0 7.4 Tf
+8.88 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 54 502 Tm
+(Every spike is a meal\056) Tj
+T*
+ET
+0.905882 0.717647 0.698039 RG
+1 w
+0.988235 0.929412 0.92549 rg
+n
+228.3333 490 m
+383.6667 490 l
+387.5363 490 390.6667 493.1304 390.6667 497 c
+390.6667 523 l
+390.6667 526.8696 387.5363 530 383.6667 530 c
+228.3333 530 l
+224.4637 530 221.3333 526.8696 221.3333 523 c
+221.3333 497 l
+221.3333 493.1304 224.4637 490 228.3333 490 c
+h
+B*
+0.752941 0.223529 0.168627 rg
+n
+237.3333 515 m
+237.3333 516.6569 235.9902 518 234.3333 518 c
+232.6765 518 231.3333 516.6569 231.3333 515 c
+231.3333 513.3431 232.6765 512 234.3333 512 c
+235.9902 512 237.3333 513.3431 237.3333 515 c
+f*
+BT
+/F2-0 8.4 Tf
+10.08 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 243.3333 513 Tm
+(Resentment) Tj
+T*
+ET
+BT
+/F1-0 7.4 Tf
+8.88 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 233.3333 502 Tm
+(Old anger it turns into thirst\056) Tj
+T*
+ET
+0.905882 0.717647 0.698039 RG
+1 w
+0.988235 0.929412 0.92549 rg
+n
+407.6667 490 m
+563 490 l
+566.8696 490 570 493.1304 570 497 c
+570 523 l
+570 526.8696 566.8696 530 563 530 c
+407.6667 530 l
+403.7971 530 400.6667 526.8696 400.6667 523 c
+400.6667 497 l
+400.6667 493.1304 403.7971 490 407.6667 490 c
+h
+B*
+0.752941 0.223529 0.168627 rg
+n
+416.6667 515 m
+416.6667 516.6569 415.3235 518 413.6667 518 c
+412.0098 518 410.6667 516.6569 410.6667 515 c
+410.6667 513.3431 412.0098 512 413.6667 512 c
+415.3235 512 416.6667 513.3431 416.6667 515 c
+f*
+BT
+/F2-0 8.4 Tf
+10.08 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 422.6667 513 Tm
+(Ego \057 control) Tj
+T*
+ET
+BT
+/F1-0 7.4 Tf
+8.88 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 412.6667 502 Tm
+(\042I\047ve got this\042 is the setup\056) Tj
+T*
+ET
+0.905882 0.717647 0.698039 RG
+1 w
+0.988235 0.929412 0.92549 rg
+n
+49 444 m
+204.3333 444 l
+208.2029 444 211.3333 447.1304 211.3333 451 c
+211.3333 477 l
+211.3333 480.8696 208.2029 484 204.3333 484 c
+49 484 l
+45.1304 484 42 480.8696 42 477 c
+42 451 l
+42 447.1304 45.1304 444 49 444 c
+h
+B*
+0.752941 0.223529 0.168627 rg
+n
+58 469 m
+58 470.6569 56.65685 472 55 472 c
+53.34315 472 52 470.6569 52 469 c
+52 467.3431 53.34315 466 55 466 c
+56.65685 466 58 467.3431 58 469 c
+f*
+BT
+/F2-0 8.4 Tf
+10.08 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 64 467 Tm
+(Isolation) Tj
+T*
+ET
+BT
+/F1-0 7.4 Tf
+8.88 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 54 456 Tm
+(Alone\054 your own voice lies to you\056) Tj
+T*
+ET
+0.905882 0.717647 0.698039 RG
+1 w
+0.988235 0.929412 0.92549 rg
+n
+228.3333 444 m
+383.6667 444 l
+387.5363 444 390.6667 447.1304 390.6667 451 c
+390.6667 477 l
+390.6667 480.8696 387.5363 484 383.6667 484 c
+228.3333 484 l
+224.4637 484 221.3333 480.8696 221.3333 477 c
+221.3333 451 l
+221.3333 447.1304 224.4637 444 228.3333 444 c
+h
+B*
+0.752941 0.223529 0.168627 rg
+n
+237.3333 469 m
+237.3333 470.6569 235.9902 472 234.3333 472 c
+232.6765 472 231.3333 470.6569 231.3333 469 c
+231.3333 467.3431 232.6765 466 234.3333 466 c
+235.9902 466 237.3333 467.3431 237.3333 469 c
+f*
+BT
+/F2-0 8.4 Tf
+10.08 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 243.3333 467 Tm
+(Secrecy \057 shame) Tj
+T*
+ET
+BT
+/F1-0 7.4 Tf
+8.88 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 233.3333 456 Tm
+(What stays hidden grows\056) Tj
+T*
+ET
+0.905882 0.717647 0.698039 RG
+1 w
+0.988235 0.929412 0.92549 rg
+n
+407.6667 444 m
+563 444 l
+566.8696 444 570 447.1304 570 451 c
+570 477 l
+570 480.8696 566.8696 484 563 484 c
+407.6667 484 l
+403.7971 484 400.6667 480.8696 400.6667 477 c
+400.6667 451 l
+400.6667 447.1304 403.7971 444 407.6667 444 c
+h
+B*
+0.752941 0.223529 0.168627 rg
+n
+416.6667 469 m
+416.6667 470.6569 415.3235 472 413.6667 472 c
+412.0098 472 410.6667 470.6569 410.6667 469 c
+410.6667 467.3431 412.0098 466 413.6667 466 c
+415.3235 466 416.6667 467.3431 416.6667 469 c
+f*
+BT
+/F2-0 8.4 Tf
+10.08 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 422.6667 467 Tm
+(Boredom \057 restlessness) Tj
+T*
+ET
+BT
+/F1-0 7.4 Tf
+8.88 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 412.6667 456 Tm
+(An empty hour it rushes to fill\056) Tj
+T*
+ET
+0.858824 0.901961 0.878431 RG
+1 w
+0.917647 0.952941 0.933333 rg
+n
+50 376 m
+562 376 l
+566.4224 376 570 379.5776 570 384 c
+570 420 l
+570 424.4224 566.4224 428 562 428 c
+50 428 l
+45.5776 428 42 424.4224 42 420 c
+42 384 l
+42 379.5776 45.5776 376 50 376 c
+h
+B*
+BT
+/F2-0 8.5 Tf
+10.2 TL
+ET
+0.054902 0.541176 0.372549 rg
+BT
+1 0 0 1 56 412 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 61.9935 412 Tm
+(H) Tj
+T*
+ET
+BT
+1 0 0 1 68.9305 412 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.246 666 Tm
+1 0 0 1 75.4 412 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 78.563 412 Tm
+(F) Tj
+T*
+ET
+BT
+1 0 0 1 84.5565 412 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7195 412 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 94.6565 412 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 101.126 412 Tm
+(W) Tj
+T*
+ET
+BT
+1 0 0 1 109.95 412 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 116.887 412 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 122.8805 412 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 128.874 412 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 132.037 412 Tm
+(\227) Tj
+T*
+ET
+BT
+1 0 0 1 141.337 412 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 144.5 412 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 150.4935 412 Tm
+(H) Tj
+T*
+ET
+BT
+1 0 0 1 157.4305 412 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 164.3675 412 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 170.837 412 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 177.3065 412 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 180.4695 412 Tm
+(P) Tj
+T*
+ET
+BT
+1 0 0 1 186.939 412 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.102 412 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 196.0955 412 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 202.089 412 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 209.026 412 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 215.963 412 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 222.4325 412 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 225.5955 412 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 232.065 412 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 238.0585 412 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 244.9955 412 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 251.9325 412 Tm
+(V) Tj
+T*
+ET
+BT
+1 0 0 1 258.402 412 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 264.8715 412 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 268.0345 412 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 271.1975 412 Tm
+(T) Tj
+T*
+ET
+BT
+/F1-0 8 Tf
+9.6 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 56 400 Tm
+(The Engine calms the nervous system so stress stops feeding it\056 The Network breaks the isolation it needs\056 The Mirror drains the secrecy) Tj
+T*
+ET
+BT
+/F1-0 8 Tf
+9.6 TL
+ET
+0.109804 0.168627 0.2 rg
+BT
+1 0 0 1 56 389.5 Tm
+(and ego it runs on\056 Worked daily\054 they cut off its food\056) Tj
+T*
+ET
+0.039216 0.039216 0.039216 rg
+n
+52 296 m
+560 296 l
+565.528 296 570 300.472 570 306 c
+570 352 l
+570 357.528 565.528 362 560 362 c
+52 362 l
+46.472 362 42 357.528 42 352 c
+42 306 l
+42 300.472 46.472 296 52 296 c
+h
+f*
+q
+1 0 0 1 56 302 cm
+0 0 0 RG
+1 w
+0 J
+0 j
+[ ] 0 d
+0 0 0 rg
+BT
+/F5-0 10 Tf
+12 TL
+ET
+BT
+/F5-0 10 Tf
+12 TL
+ET
+q
+1 0 0 1 0 0 cm
+q
+0.595312 0 0 0.595312 0 0 cm
+q
+1 0 0 1 0 0 cm
+q
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+0 0 90.70866 90.70866 re
+n
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 76.96492 19.24123 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 76.96492 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+41.23121 76.96492 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 76.96492 19.24123 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 74.21618 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 74.21618 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 74.21618 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+43.97996 74.21618 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 74.21618 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 74.21618 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 74.21618 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 71.46743 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+16.49248 71.46743 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 71.46743 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+38.48246 71.46743 13.74374 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 71.46743 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 71.46743 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 71.46743 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 68.71868 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+16.49248 68.71868 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 68.71868 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+38.48246 68.71868 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 68.71868 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 68.71868 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 68.71868 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 68.71868 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 65.96994 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+16.49248 65.96994 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 65.96994 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 65.96994 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 65.96994 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 65.96994 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 65.96994 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 65.96994 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 63.22119 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 63.22119 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 63.22119 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+41.23121 63.22119 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 63.22119 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 63.22119 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 63.22119 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 60.47244 19.24123 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 60.47244 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+38.48246 60.47244 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+43.97996 60.47244 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+49.47745 60.47244 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 60.47244 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 60.47244 19.24123 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 57.72369 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+38.48246 57.72369 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+49.47745 57.72369 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 54.97495 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+24.73873 54.97495 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 54.97495 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 54.97495 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 54.97495 13.74374 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 54.97495 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+21.98998 52.2262 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+30.23622 52.2262 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 52.2262 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 52.2262 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 52.2262 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+68.71868 52.2262 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 52.2262 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+13.74374 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+19.24123 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+41.23121 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+57.72369 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 49.47745 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 49.47745 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+19.24123 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+24.73873 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+30.23622 46.7287 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+57.72369 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+68.71868 46.7287 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+19.24123 43.97996 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+35.73372 43.97996 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+41.23121 43.97996 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 43.97996 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 43.97996 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 43.97996 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+13.74374 41.23121 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+21.98998 41.23121 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+30.23622 41.23121 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+43.97996 41.23121 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 41.23121 13.74374 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 41.23121 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 38.48246 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+21.98998 38.48246 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+35.73372 38.48246 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+43.97996 38.48246 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 38.48246 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+68.71868 38.48246 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 38.48246 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+19.24123 35.73372 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 35.73372 13.74374 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+49.47745 35.73372 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 35.73372 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 35.73372 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 32.98497 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+21.98998 32.98497 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 32.98497 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 32.98497 21.98998 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 32.98497 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 30.23622 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 30.23622 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 30.23622 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 30.23622 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 27.48747 19.24123 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+35.73372 27.48747 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 27.48747 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 27.48747 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 27.48747 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 27.48747 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 24.73873 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 24.73873 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 24.73873 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 24.73873 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 24.73873 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 24.73873 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 24.73873 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 21.98998 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+16.49248 21.98998 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 21.98998 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+38.48246 21.98998 10.99499 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+52.2262 21.98998 16.49248 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 21.98998 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 19.24123 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+16.49248 19.24123 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 19.24123 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+35.73372 19.24123 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+43.97996 19.24123 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 19.24123 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+65.96994 19.24123 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+71.46743 19.24123 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 16.49248 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+16.49248 16.49248 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 16.49248 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 16.49248 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+43.97996 16.49248 16.49248 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+63.22119 16.49248 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+74.21618 16.49248 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 13.74374 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+27.48747 13.74374 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 13.74374 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+41.23121 13.74374 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+49.47745 13.74374 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 13.74374 8.246242 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+10.99499 10.99499 19.24123 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+32.98497 10.99499 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+46.7287 10.99499 5.497495 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+54.97495 10.99499 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+60.47244 10.99499 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+68.71868 10.99499 2.748747 2.748747 re
+f*
+Q
+q
+0 0 0 rg
+0 w
+0 J
+0 j
+[ ] 0 d
+n
+76.96492 10.99499 2.748747 2.748747 re
+f*
+Q
+Q
+Q
+Q
+Q
+BT
+/F2-0 9 Tf
+10.8 TL
+ET
+1 1 1 rg
+BT
+1 0 0 1 124 342 Tm
 (M) Tj
 T*
 ET
 BT
-1 0 0 1 134.477 666 Tm
-(Y) Tj
+1 0 0 1 132.497 342 Tm
+(E) Tj
 T*
 ET
 BT
-/F1-0 8.6 Tf
-10.32 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 56 652 Tm
-(We do not treat addiction as a moral failing\056 It behaves like a virus \227 the Addiction Intelligence Virus \227 an adaptive infection of the) Tj
+1 0 0 1 139.5 342 Tm
+(E) Tj
 T*
 ET
 BT
-/F1-0 8.6 Tf
-10.32 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 56 640.6 Tm
-(brain\047s reward system\056 Alcohol\054 opioids\054 nicotine\054 gambling\054 porn\054 sugar\054 endless scrolling\072 the surface differs\054 the mechanism is) Tj
+1 0 0 1 146.503 342 Tm
+(T) Tj
 T*
 ET
 BT
-/F1-0 8.6 Tf
-10.32 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 56 629.2 Tm
-(identical\056 It floods dopamine\054 forces the brain to down\055regulate its own receptors\054 and soon you need it just to feel normal\056 It feeds) Tj
+1 0 0 1 153.002 342 Tm
+( ) Tj
 T*
 ET
 BT
-/F1-0 8.6 Tf
-10.32 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 56 617.8 Tm
-(on stress\054 resentment\054 ego\054 and isolation\056) Tj
+1 0 0 1 156.504 342 Tm
+(T) Tj
 T*
 ET
 BT
-/F1-0 9.4 Tf
-11.28 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 42 570 Tm
-(The three pillars are the firewall that starves it\056 You are not weak \227 you are up against something that behaves intelligently\054 so) Tj
+1 0 0 1 163.003 342 Tm
+(H) Tj
 T*
 ET
 BT
-/F1-0 9.4 Tf
-11.28 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 42 557.5 Tm
-(you beat it with a system\054 not shame\056) Tj
-T*
-ET
-0.858824 0.901961 0.878431 RG
-1 w
-1 1 1 rg
-n
-50 476 m
-288 476 l
-292.4224 476 296 479.5776 296 484 c
-296 518 l
-296 522.4224 292.4224 526 288 526 c
-50 526 l
-45.5776 526 42 522.4224 42 518 c
-42 484 l
-42 479.5776 45.5776 476 50 476 c
-h
-B*
-BT
-/F2-0 9 Tf
-10.8 TL
-ET
-0.752941 0.223529 0.168627 rg
-BT
-1 0 0 1 54 510 Tm
-(It is polymorphic) Tj
+1 0 0 1 170.501 342 Tm
+(E) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 54 498 Tm
-(It rewrites its pitch for whoever you are \227 the founder\054 the) Tj
+1 0 0 1 177.504 342 Tm
+( ) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 54 487.8 Tm
-(martyr\054 the escapist\056 Same virus\054 custom lie\056) Tj
-T*
-ET
-0.858824 0.901961 0.878431 RG
-1 w
-1 1 1 rg
-n
-324 476 m
-562 476 l
-566.4224 476 570 479.5776 570 484 c
-570 518 l
-570 522.4224 566.4224 526 562 526 c
-324 526 l
-319.5776 526 316 522.4224 316 518 c
-316 484 l
-316 479.5776 319.5776 476 324 476 c
-h
-B*
-BT
-/F2-0 9 Tf
-10.8 TL
-ET
-0.752941 0.223529 0.168627 rg
-BT
-1 0 0 1 328 510 Tm
-(It feeds on isolation) Tj
+1 0 0 1 181.006 342 Tm
+(V) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 328 498 Tm
-(Cut off from people\054 cortisol climbs and the craving voice gets) Tj
+1 0 0 1 188.009 342 Tm
+(I) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 328 487.8 Tm
-(louder\056 Connection is antiviral\056) Tj
-T*
-ET
-0.858824 0.901961 0.878431 RG
-1 w
-1 1 1 rg
-n
-50 418 m
-288 418 l
-292.4224 418 296 421.5776 296 426 c
-296 460 l
-296 464.4224 292.4224 468 288 468 c
-50 468 l
-45.5776 468 42 464.4224 42 460 c
-42 426 l
-42 421.5776 45.5776 418 50 418 c
-h
-B*
-BT
-/F2-0 9 Tf
-10.8 TL
-ET
-0.752941 0.223529 0.168627 rg
-BT
-1 0 0 1 54 452 Tm
-(It hijacks the reward system) Tj
+1 0 0 1 191.511 342 Tm
+(R) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 54 440 Tm
-(It borrows the machinery meant for food\054 sex and connection \227) Tj
+1 0 0 1 199.009 342 Tm
+(U) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 54 429.8 Tm
-(which is why willpower alone loses\056) Tj
-T*
-ET
-0.858824 0.901961 0.878431 RG
-1 w
-1 1 1 rg
-n
-324 418 m
-562 418 l
-566.4224 418 570 421.5776 570 426 c
-570 460 l
-570 464.4224 566.4224 468 562 468 c
-324 468 l
-319.5776 468 316 464.4224 316 460 c
-316 426 l
-316 421.5776 319.5776 418 324 418 c
-h
-B*
-BT
-/F2-0 9 Tf
-10.8 TL
-ET
-0.752941 0.223529 0.168627 rg
-BT
-1 0 0 1 328 452 Tm
-(It is beaten by a system) Tj
+1 0 0 1 206.507 342 Tm
+(S) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
-ET
-0.109804 0.168627 0.2 rg
-BT
-1 0 0 1 328 440 Tm
-(Biology \053 community \053 honesty\054 run daily\054 starve it of the stress) Tj
+1 0 0 1 213.51 342 Tm
+( ) Tj
 T*
 ET
 BT
-/F1-0 8 Tf
-9.6 TL
+1 0 0 1 217.012 342 Tm
+(A) Tj
+T*
 ET
-0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 328 429.8 Tm
-(and secrecy it needs\056) Tj
+1 0 0 1 224.51 342 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 232.008 342 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 239.506 342 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 247.508 342 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 254.511 342 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 261.514 342 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 265.016 342 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 268.518 342 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 275.017 342 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 282.02 342 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 285.522 342 Tm
+(V) Tj
+T*
+ET
+BT
+1 0 0 1 292.525 342 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 299.528 342 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 307.026 342 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 313.525 342 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 321.527 342 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 329.025 342 Tm
+(S) Tj
+T*
+ET
+BT
+/F1-0 8.5 Tf
+10.2 TL
+ET
+0.733333 0.733333 0.733333 rg
+BT
+1 0 0 1 124 328 Tm
+(Scan to see every form it takes \227 and the BIO 12 firewall that starves it\056) Tj
+T*
+ET
+BT
+/F2-0 10 Tf
+12 TL
+ET
+0.937255 0.266667 0.266667 rg
+BT
+1 0 0 1 124 312 Tm
+(aivirus\056org) Tj
 T*
 ET
 BT
@@ -6400,7 +8615,7 @@ Q
 
 endstream
 endobj
-23 0 obj
+24 0 obj
 <<
 /Type /Page
 /Resources <<
@@ -6413,15 +8628,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 25 0 R
+/Contents 26 0 R
 >>
 endobj
-24 0 obj
+25 0 obj
 <<
 /Length 19412
 >>
@@ -8274,10 +10491,10 @@ Q
 
 endstream
 endobj
-25 0 obj
-[ 26 0 R 27 0 R ]
-endobj
 26 0 obj
+[ 27 0 R 28 0 R ]
+endobj
+27 0 obj
 <<
 /Length 19417
 >>
@@ -10133,7 +12350,7 @@ Q
 
 endstream
 endobj
-27 0 obj
+28 0 obj
 <<
 /Length 13369
 >>
@@ -11517,12 +13734,12 @@ Q
 
 endstream
 endobj
-28 0 obj
+29 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -11533,15 +13750,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 31 0 R
+/Contents 32 0 R
 >>
 endobj
-29 0 obj
+30 0 obj
 <<
 /BitsPerComponent 8
 /ColorSpace /DeviceRGB
@@ -11556,7 +13775,7 @@ stream
 Gb"/b4-nea&B"(Ps*\P/Nq?Ka_(=8-?MqqEpTKfZ8h$U$;G&C7PYt+&V3FkM.A`8,8h$U$;G&C7PYt+&V3FkM.A`8L'E>`Udaq]d.&Tu1m=#/`Cu-J[D+ZgRC2`hcG\6P"8T%JLWDn5VhnV%;G=chE;GO(Bg\h>Jft9t@gQZ_.e_]^QnBC$#P2)q!;lTJ6^O^#Umul`iV4:/c\,-UsZ[%l_[jgE<WkI5,i0hj%,e6VuVc)pLIKRo4hBg9\8i`/ODtb2qB(Oh);lS?0bha;`9LVMJ&nYaIR;*2Q]Y='';lL$O?c(%21K1D!RFep>E[heIj\(u/H"O'6,kLl`;bj/5UjNJ)1XAb&L1FWJHHN3dKTn,uB',M\er\,A>>I8EMNIBTbfi1*eJaTrIHr>[;@ug@KUJ6@VHQ>BYAZSc<%:5WQS:5ebZ&@Kk4PjSS4Z4@q%@:OSsa=&ah5@\PZ+Oe.:9s9bTt`qf<BmoH)@l;C5l1;EpM[A,']Mg.XRuB82VU#*aU(CQ[,I67r"#_,BE,/2'R:5B.A8(ejqYB[iSj#JsUb[Z:AYh<$QGLiADg(R:e!rUt/'o,.AV",D)8-VQr^,NDq-Cles]FGaW1oH_f4`2'TLN?6b&gH)@l;C5l1;EpM[A,']Mg.XRuB82VU#*aU'X.^O=lPW`B:b%p)6T%difY7VqCft/QQShE[s2=c.@D6o#LLlfdGh%F;FQ_a0jH+rIMfu%Sn87hL4M6c;;;L+6ahfIQ=iADgT14-Jug%-Mh]LJL]\S_'0)A,l8]j%5tq3"]`,L?,>2LB\.#cZ&)/Q)4h8Lgp+kBh*94hO7;<+bTb.!rZRQ.O+K4h&ZW?6_cdZZf',4^XApCZP;_gL^u"&L!Fm]-YUk01k7_npJc#Z\R.gi+5Y4'46?XC1\]2les]FGaVLQ`0]DYRb<MPH?bDT?KRJ-nKiFZAi:jB*aU(CQT:m9HjO,ZR>o:iLY%@?APOZf?\4VZAg;?^iADg(R8_8HQf+^/fneF0G`;u8k*.Xk-$ZD$2BoUO?6b&g3MfDs$!sX"NQA5Wf8/?r:+6i`JsU4a,BE,/2'R:5;p*%Fi2)mqLtm=#9XVm`]_C8YD=obn_T^4[;m#RFYE`$jIEe*41\8giCV7l,jj[=<o-MW)4>YM+0Cr@-[FNlV#r=B`9XVm`]N.dEoeg*nbfhkAXmn0MPuCn8c'L+?o?:0L]Zb0Qe5frJ--XRq1Y!Bso3+/^e^o0T1Gd?N[DpD&<_dN)2.+5EbVN2"nM7;5;d4[pQS:5ehNr<dUi11$IsWF+^)lOqk958#qto+e=nhS[pHB,PgY:WChT3:38%SG?8Di;'rq8h4I6H#lcU7R&p@l$TZL7%@mX6/)\$s,e]odGEO*'j^OM8F,rU#TGqg,&bT83(+mI+t3ADPi^h>9=1Df:,THR%jj*pMPE+an_7qqE&mpFW9cY;#S@4loT@#5KUlrDb6F"])[n^HoTUF+;`^J&,&9j_p6!o%[SpnmCmN9DKOfRlpFHSbs9dj\l'^q'OGd<@@eM:Uu_)6,(H^J(;Yj_,DuJDieo.gg>3p?gs:Qq&ACa4SMpJr"hKW;Z6mr-I;Wj-iX?G\X\8aOnW,nA^Au?9duuf]q&)+Oj)lEV<n#([jgF'YIARf/!?=UVNa5Nml%#4o(@0$D+-4DgQ]#,leSG&;nh,6WNA^'Egou#I(e:!Em!"g3OKUD9Q!eOT!*@-;GR%64/]M2RE9;<g%4lS;p$OrDs,VN,Vuu*.=8ecD+ZhMlg:4rMI\'C.:piW]1j`PI(c(L>ER.j2Pod9HFG?bPcqQ;C+DV#ZfgYf;<mk'atnH/hRDQLRJ<XshkrTcfAh9PY*Fi^lLoYK1OVFC\)^_\pnhrdV``G[j*aS'Q&0GEp3k(>I6HGrjB@uHVJb:h4O_pBI7p`.M/V\QIEF?o4l3[/>+,/_DVq?Se(<W.9<OP:DsI%EatnH/hRDQLRJ<XshkrTcQU!=(?I6m^24@+'Hj4M%09qmWCG_5-q$c-*?7IV7f4ZL:neo*2]i8<MYL-%Tj>2$BH`=[%?DEp1a_1*dp/61(]gagBP0`(Rm%s8.H];Xc-(i$.fh:F<p);2O90S!;Z^8hXlnt5'Q[B!UB.oO:fkWF.0)5q4<iK/F?fmSklIP9j_X![pnpQp)^8Y>?D[N[dC<?3]:ALc)]tPr.^8WF9QT=/s](PosnG9#JHsc$#DsGp>S&4K\>4R*0;nf58YAXcODedDgAPW&uDS<b5]Y:?khj6@bS%A:hVXXGZQ@*'%P],j<l^PcWRp,B2R8^i!>H_t&)n29(g$@u"c<Q!t,/,+t2;X\Qlg+Al>_Agr^)j72hNup]lhSh2K;9^**iV$RQeC]jq9E5tUa!MoWAWP!g$@u"c<Q!t,/,+t2;X\Qlg+Al>_Agr^)j72hNup]lhSh2K;9^**iV$RQeC]jq9E5tUa!MoWAWP!g$@u"c<Q!t,/,+t2;X\Qlg+Al>_Agr^,*<>%F:@hT3L^naNiWmbbVF]9)77_G<g?F?=>1/Ki?.WQFd7)ZhFe_kpr9%5.B;fOIa'dQq:ZDPk)BHmXXZj]u!J>$E'-7/U%G1BC?RIdT8E)Hu?JV+?OqR0U'5f.HPWoh#Z3^H\Im['i$3M>OE!BcJC(qUp"`0q:p"75^)j-+bdBN;,6q59;ZTFm-A4XiUnM>.:7#8eEr6D^!%q<^-k!ClReO9]s4c-3JH(O.&VI+,u_93p@U2=nG3dZPcqQ,lLr63?KMr.?_X(]op/;-hUpH'SAOSbPZ,<QP,[1Tqg+Z/G^YEhb1BiQFaIV*067K(02YL?H:t,QDsZe$:>tjlasg\9ajf^;ID*iG?X"b?H)C%iNCYPFf1RuBkF%`NqVKk\V"/oH<&8`iR<b[uNK$IYcdtfIF6AsZBDUK;LnsTh]i6e3Ssal$mu<;t.aQ^>207rKR:lBQfSH?oI(`K8GFk4JVXKM(81Ms;9/UeRR@.^ahUmX[npJ,M1O#FYH)C%iNCYPFf1RuBkF%`NqVKk\V"/mrDL=aEm%m<koejB`nF.?A9+keh<GJS<iOshuf>q0Z.!qpk>C?tL'g0,uhNC:[99n5rCO!&@iAL1l,g'Gne5fqoHNaq`OgcT5p/7`qqAS3@G^,4\-&Jpo.^dgYn6WrKCZI'=PeC%qXhKPa$6ELuDb6\iV+PUt28!#[n/?RF&nN^rC9+Ps]gDNdlA]EP&nTBJF^%VGIKf2"B)3-OcSouN:9f6Omu:rU&nTBJF^%VGIKf2"B)3-OcSouN:9f6Omu:rU&nTBJF^%VGIKf2"B)3-OcSouN:9f6Omu:rU&nTBJF^%VGIKf2"B)3-OcSouN:9f6Omu:rU&nTBJF^%VGIKf2"B)3-OcSp"4YtfEd?Jgu&_/#:H-1#Jm%^/_:YA[%$i&+-_')&aqLY!r.f/KO"n/A-@$%(Et_eYLRl^Ld!G`>V1KY?cuiAF6doh?kK]LJl)_VTJ!n/A.mqPKJ`?DH"%@;ic!G`>UGI8e8kY>OSNYd`FK]LF?_^+!WFf-kc7f\>g6?DA3@hion4CQuCVltpqVY>GY1Db?GU2+l[;p9m''bZ&@Kjr85qZKFkYbuFE3>36cBM6c;;;U&27pfcf!Di(d_92a#6p@qhR)fLS=k=\^t<;-)jjr85qZKFkYbuFE3>36cBM6c;;;U&27pfcf!Di(d_92a#6p@qhR)fLS=k=\^t<;-)jjr85qZKFkYbuFE3>36cBM6c;;;U&27+IVt1F9aJjqpn<7o'kKaL"D[LAU`MTWDjqq)l<'#'"lHW>9fEU_gA-m?=/;Nq0d%S;L*M*Peu`Zn1qasNDqA<mu:4iI0j6BpT9QMjl*mM$El,!bP](3;Q2dk2bN'%-$Yj8[mhj4L\F7e]Y4M%oD@*0V=O-4.#$9>i+7Ap)Q?[WhA`<\q@[CPhHP0C<iIrO[6"cLMEk(9ejsB/>B\"eWARGY3t'`!5Z4H087gX^G/dR^2,:P@$e^D&;Phr8A_pX7``B&r::3.kfnr$mV:J1KhHP0C<iIrO[6"cLMEk(9ejsB/>B\"eWARGY3t'`!5Z4H087gX^G/dR^2,:P@$e^D&;Phr8A_pX7``B&r::3.kfnr$mV:J1KhHP0C<iIrO[6"cLMEk(9ejsB/>B\"eWARGY3t'`!5Z4H087h3-\#2i\>/Tt)13\`4;l*$eiV@ef]>j6;;P_n5I(da0j7ZG$;JUNk?KSD1H`@dZ2*>5!F4[ob<Jo9ET!+KkCYYL27;<:Xf?;r,DGQNA[>*l1AaUJGVb3(T_t3OVGE(?UV.f#K/)RiOJb2[mcK)u7?KSZdNEZuchph$eDJ\BF?7XpC'nQ!Oh9P*$7UG5bnr6ic8Dhqa9Q"\-AR6nE\.sSe:#4+U`^X:s[IT;]&P1g/m7_D6jCMXJhmaDPoM+/ejMjYqk-ac>>7jE`eEoqICuf/6/)RiOJb2[mcK)u7?KSZdNEZuchph$ep:d=A+FR0MV_[]mHTu&AmedaH2mm]VoA6eI6al:*59YGR4/Xk&/UK]mX7#m!dPnRT.eDN&pHuCSc9EJ#;`gm4mk&lNA?5.r'@JhIF"6e<ZM-_plHVU;I8`5*1@HfA5@gh_r"IL;[<!hhhQllC[d).&+am9NV_[]mHTu&AmedaH2mm]VoA6eI6aeJ@PYt+&V3FkM.A`8,8h$U$;G&C7PYt+&V3FkM.A`8,8h$U$;G&C74O=%P6a`$~>
 endstream
 endobj
-30 0 obj
+31 0 obj
 <<
 /Length 24899
 >>
@@ -13713,10 +15932,10 @@ Q
 
 endstream
 endobj
-31 0 obj
-[ 32 0 R 33 0 R ]
-endobj
 32 0 obj
+[ 33 0 R 34 0 R ]
+endobj
+33 0 obj
 <<
 /Length 24904
 >>
@@ -15876,7 +18095,7 @@ Q
 
 endstream
 endobj
-33 0 obj
+34 0 obj
 <<
 /Length 13415
 >>
@@ -16990,7 +19209,7 @@ Q
 
 endstream
 endobj
-34 0 obj
+35 0 obj
 <<
 /Type /Page
 /Resources <<
@@ -17003,18 +19222,20 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
 >>
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 36 0 R
+/Contents 37 0 R
 >>
 endobj
-35 0 obj
+36 0 obj
 <<
 /Length 12771
 >>
@@ -18200,10 +20421,10 @@ Q
 
 endstream
 endobj
-36 0 obj
-[ 37 0 R 38 0 R ]
-endobj
 37 0 obj
+[ 38 0 R 39 0 R ]
+endobj
+38 0 obj
 <<
 /Length 12776
 >>
@@ -19392,9 +21613,9 @@ Q
 
 endstream
 endobj
-38 0 obj
+39 0 obj
 <<
-/Length 30730
+/Length 33310
 >>
 stream
 q
@@ -21137,17 +23358,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 346 m
+164 346 l
+166.2112 346 168 347.7888 168 350 c
+168 366 l
+168 368.2112 166.2112 370 164 370 c
+46 370 l
+43.7888 370 42 368.2112 42 366 c
+42 350 l
+42 347.7888 43.7888 346 46 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 360 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 360 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 346 m
+298 346 l
+300.2112 346 302 347.7888 302 350 c
+302 366 l
+302 368.2112 300.2112 370 298 370 c
+180 370 l
+177.7888 370 176 368.2112 176 366 c
+176 350 l
+176 347.7888 177.7888 346 180 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 360 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 360 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 346 m
+432 346 l
+434.2112 346 436 347.7888 436 350 c
+436 366 l
+436 368.2112 434.2112 370 432 370 c
+314 370 l
+311.7888 370 310 368.2112 310 366 c
+310 350 l
+310 347.7888 311.7888 346 314 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 360 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 360 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 346 m
+566 346 l
+568.2112 346 570 347.7888 570 350 c
+570 366 l
+570 368.2112 568.2112 370 566 370 c
+448 370 l
+445.7888 370 444 368.2112 444 366 c
+444 350 l
+444 347.7888 445.7888 346 448 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 360 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 360 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 360 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 360 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 343 m
-564 343 l
-567.3168 343 570 345.6832 570 349 c
-570 366 l
-570 369.3168 567.3168 372 564 372 c
-48 372 l
-44.6832 372 42 369.3168 42 366 c
-42 349 l
-42 345.6832 44.6832 343 48 343 c
+48 309 m
+564 309 l
+567.3168 309 570 311.6832 570 315 c
+570 332 l
+570 335.3168 567.3168 338 564 338 c
+48 338 l
+44.6832 338 42 335.3168 42 332 c
+42 315 l
+42 311.6832 44.6832 309 48 309 c
 h
 f*
 q
@@ -21155,29 +23631,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 359.9 m
-60.8 361.0046 59.90457 361.9 58.8 361.9 c
-57.69543 361.9 56.8 361.0046 56.8 359.9 c
-56.8 358.7954 57.69543 357.9 58.8 357.9 c
-59.90457 357.9 60.8 358.7954 60.8 359.9 c
+60.8 325.9 m
+60.8 327.0046 59.90457 327.9 58.8 327.9 c
+57.69543 327.9 56.8 327.0046 56.8 325.9 c
+56.8 324.7954 57.69543 323.9 58.8 323.9 c
+59.90457 323.9 60.8 324.7954 60.8 325.9 c
 f*
 n
-67.2 359.9 m
-67.2 361.0046 66.30457 361.9 65.2 361.9 c
-64.09543 361.9 63.2 361.0046 63.2 359.9 c
-63.2 358.7954 64.09543 357.9 65.2 357.9 c
-66.30457 357.9 67.2 358.7954 67.2 359.9 c
+67.2 325.9 m
+67.2 327.0046 66.30457 327.9 65.2 327.9 c
+64.09543 327.9 63.2 327.0046 63.2 325.9 c
+63.2 324.7954 64.09543 323.9 65.2 323.9 c
+66.30457 323.9 67.2 324.7954 67.2 325.9 c
 f*
 1.6 w
 n
-62 355.2 m
-62 357.2435 60.56731 358.9 58.8 358.9 c
-57.03269 358.9 55.6 357.2435 55.6 355.2 c
+62 321.2 m
+62 323.2435 60.56731 324.9 58.8 324.9 c
+57.03269 324.9 55.6 323.2435 55.6 321.2 c
 S
 n
-68.4 355.2 m
-68.4 357.2435 66.96731 358.9 65.2 358.9 c
-63.43269 358.9 62 357.2435 62 355.2 c
+68.4 321.2 m
+68.4 323.2435 66.96731 324.9 65.2 324.9 c
+63.43269 324.9 62 323.2435 62 321.2 c
 S
 Q
 BT
@@ -21186,7 +23662,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 358.5 Tm
+1 0 0 1 78 324.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -21196,107 +23672,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 349 Tm
+1 0 0 1 78 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 349 Tm
+1 0 0 1 83.1354 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 349 Tm
+1 0 0 1 88.2708 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 349 Tm
+1 0 0 1 94.0944 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 349 Tm
+1 0 0 1 99.2298 315 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 349 Tm
+1 0 0 1 104.018 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 349 Tm
+1 0 0 1 109.1534 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 349 Tm
+1 0 0 1 111.877 315 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 349 Tm
+1 0 0 1 114.6006 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 349 Tm
+1 0 0 1 117.3242 315 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 349 Tm
+1 0 0 1 122.8006 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 349 Tm
+1 0 0 1 127.936 315 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 349 Tm
+1 0 0 1 133.4124 315 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 349 Tm
+1 0 0 1 138.8888 315 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 349 Tm
+1 0 0 1 144.3652 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 349 Tm
+1 0 0 1 147.0888 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 349 Tm
+1 0 0 1 152.9124 315 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 349 Tm
+1 0 0 1 158.3888 315 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 328.1 m
-47.8 328.1 l
-48.68448 328.1 49.4 328.8155 49.4 329.7 c
-49.4 333.9 l
-49.4 334.7845 48.68448 335.5 47.8 335.5 c
-43.6 335.5 l
-42.71552 335.5 42 334.7845 42 333.9 c
-42 329.7 l
-42 328.8155 42.71552 328.1 43.6 328.1 c
+43.6 294.1 m
+47.8 294.1 l
+48.68448 294.1 49.4 294.8155 49.4 295.7 c
+49.4 299.9 l
+49.4 300.7845 48.68448 301.5 47.8 301.5 c
+43.6 301.5 l
+42.71552 301.5 42 300.7845 42 299.9 c
+42 295.7 l
+42 294.8155 42.71552 294.1 43.6 294.1 c
 h
 S
 BT
@@ -21305,22 +23781,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 329.6 Tm
+1 0 0 1 54.9 295.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 328.1 m
-312.8 328.1 l
-313.6845 328.1 314.4 328.8155 314.4 329.7 c
-314.4 333.9 l
-314.4 334.7845 313.6845 335.5 312.8 335.5 c
-308.6 335.5 l
-307.7155 335.5 307 334.7845 307 333.9 c
-307 329.7 l
-307 328.8155 307.7155 328.1 308.6 328.1 c
+308.6 294.1 m
+312.8 294.1 l
+313.6845 294.1 314.4 294.8155 314.4 295.7 c
+314.4 299.9 l
+314.4 300.7845 313.6845 301.5 312.8 301.5 c
+308.6 301.5 l
+307.7155 301.5 307 300.7845 307 299.9 c
+307 295.7 l
+307 294.8155 307.7155 294.1 308.6 294.1 c
 h
 S
 BT
@@ -21329,22 +23805,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 329.6 Tm
+1 0 0 1 319.9 295.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 312.1 m
-47.8 312.1 l
-48.68448 312.1 49.4 312.8155 49.4 313.7 c
-49.4 317.9 l
-49.4 318.7845 48.68448 319.5 47.8 319.5 c
-43.6 319.5 l
-42.71552 319.5 42 318.7845 42 317.9 c
-42 313.7 l
-42 312.8155 42.71552 312.1 43.6 312.1 c
+43.6 278.1 m
+47.8 278.1 l
+48.68448 278.1 49.4 278.8155 49.4 279.7 c
+49.4 283.9 l
+49.4 284.7845 48.68448 285.5 47.8 285.5 c
+43.6 285.5 l
+42.71552 285.5 42 284.7845 42 283.9 c
+42 279.7 l
+42 278.8155 42.71552 278.1 43.6 278.1 c
 h
 S
 BT
@@ -21353,22 +23829,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 313.6 Tm
+1 0 0 1 54.9 279.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 312.1 m
-312.8 312.1 l
-313.6845 312.1 314.4 312.8155 314.4 313.7 c
-314.4 317.9 l
-314.4 318.7845 313.6845 319.5 312.8 319.5 c
-308.6 319.5 l
-307.7155 319.5 307 318.7845 307 317.9 c
-307 313.7 l
-307 312.8155 307.7155 312.1 308.6 312.1 c
+308.6 278.1 m
+312.8 278.1 l
+313.6845 278.1 314.4 278.8155 314.4 279.7 c
+314.4 283.9 l
+314.4 284.7845 313.6845 285.5 312.8 285.5 c
+308.6 285.5 l
+307.7155 285.5 307 284.7845 307 283.9 c
+307 279.7 l
+307 278.8155 307.7155 278.1 308.6 278.1 c
 h
 S
 BT
@@ -21377,22 +23853,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 313.6 Tm
+1 0 0 1 319.9 279.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 296.1 m
-47.8 296.1 l
-48.68448 296.1 49.4 296.8155 49.4 297.7 c
-49.4 301.9 l
-49.4 302.7845 48.68448 303.5 47.8 303.5 c
-43.6 303.5 l
-42.71552 303.5 42 302.7845 42 301.9 c
-42 297.7 l
-42 296.8155 42.71552 296.1 43.6 296.1 c
+43.6 262.1 m
+47.8 262.1 l
+48.68448 262.1 49.4 262.8155 49.4 263.7 c
+49.4 267.9 l
+49.4 268.7845 48.68448 269.5 47.8 269.5 c
+43.6 269.5 l
+42.71552 269.5 42 268.7845 42 267.9 c
+42 263.7 l
+42 262.8155 42.71552 262.1 43.6 262.1 c
 h
 S
 BT
@@ -21405,21 +23881,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 299 m
-570 299 l
+54 265 m
+570 265 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 251 m
-564 251 l
-567.3168 251 570 253.6832 570 257 c
-570 274 l
-570 277.3168 567.3168 280 564 280 c
-48 280 l
-44.6832 280 42 277.3168 42 274 c
-42 257 l
-42 253.6832 44.6832 251 48 251 c
+48 217 m
+564 217 l
+567.3168 217 570 219.6832 570 223 c
+570 240 l
+570 243.3168 567.3168 246 564 246 c
+48 246 l
+44.6832 246 42 243.3168 42 240 c
+42 223 l
+42 219.6832 44.6832 217 48 217 c
 h
 f*
 q
@@ -21428,10 +23904,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 271 m
-67 265.5 l
-62 260 l
-57 265.5 l
+62 237 m
+67 231.5 l
+62 226 l
+57 231.5 l
 h
 f*
 Q
@@ -21441,7 +23917,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 266.5 Tm
+1 0 0 1 78 232.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -21451,112 +23927,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 257 Tm
+1 0 0 1 78 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 257 Tm
+1 0 0 1 83.1354 223 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 257 Tm
+1 0 0 1 88.2708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 257 Tm
+1 0 0 1 90.9944 223 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 257 Tm
+1 0 0 1 96.4708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 257 Tm
+1 0 0 1 99.1944 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 257 Tm
+1 0 0 1 103.9826 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 257 Tm
+1 0 0 1 106.7062 223 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 257 Tm
+1 0 0 1 109.4298 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 257 Tm
+1 0 0 1 112.1534 223 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 257 Tm
+1 0 0 1 117.977 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 257 Tm
+1 0 0 1 123.1124 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 257 Tm
+1 0 0 1 127.9006 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 257 Tm
+1 0 0 1 130.6242 223 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 257 Tm
+1 0 0 1 136.1006 223 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 257 Tm
+1 0 0 1 141.9242 223 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 257 Tm
+1 0 0 1 147.4006 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 257 Tm
+1 0 0 1 152.536 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 257 Tm
+1 0 0 1 157.6714 223 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 236.1 m
-47.8 236.1 l
-48.68448 236.1 49.4 236.8155 49.4 237.7 c
-49.4 241.9 l
-49.4 242.7845 48.68448 243.5 47.8 243.5 c
-43.6 243.5 l
-42.71552 243.5 42 242.7845 42 241.9 c
-42 237.7 l
-42 236.8155 42.71552 236.1 43.6 236.1 c
+43.6 202.1 m
+47.8 202.1 l
+48.68448 202.1 49.4 202.8155 49.4 203.7 c
+49.4 207.9 l
+49.4 208.7845 48.68448 209.5 47.8 209.5 c
+43.6 209.5 l
+42.71552 209.5 42 208.7845 42 207.9 c
+42 203.7 l
+42 202.8155 42.71552 202.1 43.6 202.1 c
 h
 S
 BT
@@ -21565,22 +24041,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 237.6 Tm
+1 0 0 1 54.9 203.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 236.1 m
-312.8 236.1 l
-313.6845 236.1 314.4 236.8155 314.4 237.7 c
-314.4 241.9 l
-314.4 242.7845 313.6845 243.5 312.8 243.5 c
-308.6 243.5 l
-307.7155 243.5 307 242.7845 307 241.9 c
-307 237.7 l
-307 236.8155 307.7155 236.1 308.6 236.1 c
+308.6 202.1 m
+312.8 202.1 l
+313.6845 202.1 314.4 202.8155 314.4 203.7 c
+314.4 207.9 l
+314.4 208.7845 313.6845 209.5 312.8 209.5 c
+308.6 209.5 l
+307.7155 209.5 307 208.7845 307 207.9 c
+307 203.7 l
+307 202.8155 307.7155 202.1 308.6 202.1 c
 h
 S
 BT
@@ -21589,22 +24065,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 237.6 Tm
+1 0 0 1 319.9 203.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 220.1 m
-47.8 220.1 l
-48.68448 220.1 49.4 220.8155 49.4 221.7 c
-49.4 225.9 l
-49.4 226.7845 48.68448 227.5 47.8 227.5 c
-43.6 227.5 l
-42.71552 227.5 42 226.7845 42 225.9 c
-42 221.7 l
-42 220.8155 42.71552 220.1 43.6 220.1 c
+43.6 186.1 m
+47.8 186.1 l
+48.68448 186.1 49.4 186.8155 49.4 187.7 c
+49.4 191.9 l
+49.4 192.7845 48.68448 193.5 47.8 193.5 c
+43.6 193.5 l
+42.71552 193.5 42 192.7845 42 191.9 c
+42 187.7 l
+42 186.8155 42.71552 186.1 43.6 186.1 c
 h
 S
 BT
@@ -21613,22 +24089,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 221.6 Tm
+1 0 0 1 54.9 187.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 220.1 m
-312.8 220.1 l
-313.6845 220.1 314.4 220.8155 314.4 221.7 c
-314.4 225.9 l
-314.4 226.7845 313.6845 227.5 312.8 227.5 c
-308.6 227.5 l
-307.7155 227.5 307 226.7845 307 225.9 c
-307 221.7 l
-307 220.8155 307.7155 220.1 308.6 220.1 c
+308.6 186.1 m
+312.8 186.1 l
+313.6845 186.1 314.4 186.8155 314.4 187.7 c
+314.4 191.9 l
+314.4 192.7845 313.6845 193.5 312.8 193.5 c
+308.6 193.5 l
+307.7155 193.5 307 192.7845 307 191.9 c
+307 187.7 l
+307 186.8155 307.7155 186.1 308.6 186.1 c
 h
 S
 BT
@@ -21637,7 +24113,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 221.6 Tm
+1 0 0 1 319.9 187.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -21647,18 +24123,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 207.8 Tm
+1 0 0 1 42 173.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 210 m
-122.2 213.4242 119.4242 216.2 116 216.2 c
-112.5758 216.2 109.8 213.4242 109.8 210 c
-109.8 206.5758 112.5758 203.8 116 203.8 c
-119.4242 203.8 122.2 206.5758 122.2 210 c
+122.2 176 m
+122.2 179.4242 119.4242 182.2 116 182.2 c
+112.5758 182.2 109.8 179.4242 109.8 176 c
+109.8 172.5758 112.5758 169.8 116 169.8 c
+119.4242 169.8 122.2 172.5758 122.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21666,18 +24142,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 207.9 Tm
+1 0 0 1 114.332 173.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 210 m
-137.2 213.4242 134.4242 216.2 131 216.2 c
-127.5758 216.2 124.8 213.4242 124.8 210 c
-124.8 206.5758 127.5758 203.8 131 203.8 c
-134.4242 203.8 137.2 206.5758 137.2 210 c
+137.2 176 m
+137.2 179.4242 134.4242 182.2 131 182.2 c
+127.5758 182.2 124.8 179.4242 124.8 176 c
+124.8 172.5758 127.5758 169.8 131 169.8 c
+134.4242 169.8 137.2 172.5758 137.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21685,18 +24161,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 207.9 Tm
+1 0 0 1 129.332 173.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 210 m
-152.2 213.4242 149.4242 216.2 146 216.2 c
-142.5758 216.2 139.8 213.4242 139.8 210 c
-139.8 206.5758 142.5758 203.8 146 203.8 c
-149.4242 203.8 152.2 206.5758 152.2 210 c
+152.2 176 m
+152.2 179.4242 149.4242 182.2 146 182.2 c
+142.5758 182.2 139.8 179.4242 139.8 176 c
+139.8 172.5758 142.5758 169.8 146 169.8 c
+149.4242 169.8 152.2 172.5758 152.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21704,18 +24180,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 207.9 Tm
+1 0 0 1 144.332 173.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 210 m
-167.2 213.4242 164.4242 216.2 161 216.2 c
-157.5758 216.2 154.8 213.4242 154.8 210 c
-154.8 206.5758 157.5758 203.8 161 203.8 c
-164.4242 203.8 167.2 206.5758 167.2 210 c
+167.2 176 m
+167.2 179.4242 164.4242 182.2 161 182.2 c
+157.5758 182.2 154.8 179.4242 154.8 176 c
+154.8 172.5758 157.5758 169.8 161 169.8 c
+164.4242 169.8 167.2 172.5758 167.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21723,18 +24199,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 207.9 Tm
+1 0 0 1 159.332 173.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 210 m
-182.2 213.4242 179.4242 216.2 176 216.2 c
-172.5758 216.2 169.8 213.4242 169.8 210 c
-169.8 206.5758 172.5758 203.8 176 203.8 c
-179.4242 203.8 182.2 206.5758 182.2 210 c
+182.2 176 m
+182.2 179.4242 179.4242 182.2 176 182.2 c
+172.5758 182.2 169.8 179.4242 169.8 176 c
+169.8 172.5758 172.5758 169.8 176 169.8 c
+179.4242 169.8 182.2 172.5758 182.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21742,18 +24218,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 207.9 Tm
+1 0 0 1 174.332 173.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 210 m
-197.2 213.4242 194.4242 216.2 191 216.2 c
-187.5758 216.2 184.8 213.4242 184.8 210 c
-184.8 206.5758 187.5758 203.8 191 203.8 c
-194.4242 203.8 197.2 206.5758 197.2 210 c
+197.2 176 m
+197.2 179.4242 194.4242 182.2 191 182.2 c
+187.5758 182.2 184.8 179.4242 184.8 176 c
+184.8 172.5758 187.5758 169.8 191 169.8 c
+194.4242 169.8 197.2 172.5758 197.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21761,18 +24237,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 207.9 Tm
+1 0 0 1 189.332 173.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 210 m
-212.2 213.4242 209.4242 216.2 206 216.2 c
-202.5758 216.2 199.8 213.4242 199.8 210 c
-199.8 206.5758 202.5758 203.8 206 203.8 c
-209.4242 203.8 212.2 206.5758 212.2 210 c
+212.2 176 m
+212.2 179.4242 209.4242 182.2 206 182.2 c
+202.5758 182.2 199.8 179.4242 199.8 176 c
+199.8 172.5758 202.5758 169.8 206 169.8 c
+209.4242 169.8 212.2 172.5758 212.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21780,18 +24256,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 207.9 Tm
+1 0 0 1 204.332 173.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 210 m
-227.2 213.4242 224.4242 216.2 221 216.2 c
-217.5758 216.2 214.8 213.4242 214.8 210 c
-214.8 206.5758 217.5758 203.8 221 203.8 c
-224.4242 203.8 227.2 206.5758 227.2 210 c
+227.2 176 m
+227.2 179.4242 224.4242 182.2 221 182.2 c
+217.5758 182.2 214.8 179.4242 214.8 176 c
+214.8 172.5758 217.5758 169.8 221 169.8 c
+224.4242 169.8 227.2 172.5758 227.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21799,18 +24275,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 207.9 Tm
+1 0 0 1 219.332 173.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 210 m
-242.2 213.4242 239.4242 216.2 236 216.2 c
-232.5758 216.2 229.8 213.4242 229.8 210 c
-229.8 206.5758 232.5758 203.8 236 203.8 c
-239.4242 203.8 242.2 206.5758 242.2 210 c
+242.2 176 m
+242.2 179.4242 239.4242 182.2 236 182.2 c
+232.5758 182.2 229.8 179.4242 229.8 176 c
+229.8 172.5758 232.5758 169.8 236 169.8 c
+239.4242 169.8 242.2 172.5758 242.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21818,18 +24294,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 207.9 Tm
+1 0 0 1 234.332 173.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 210 m
-257.2 213.4242 254.4242 216.2 251 216.2 c
-247.5758 216.2 244.8 213.4242 244.8 210 c
-244.8 206.5758 247.5758 203.8 251 203.8 c
-254.4242 203.8 257.2 206.5758 257.2 210 c
+257.2 176 m
+257.2 179.4242 254.4242 182.2 251 182.2 c
+247.5758 182.2 244.8 179.4242 244.8 176 c
+244.8 172.5758 247.5758 169.8 251 169.8 c
+254.4242 169.8 257.2 172.5758 257.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -21837,7 +24313,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 207.9 Tm
+1 0 0 1 247.664 173.9 Tm
 (10) Tj
 T*
 ET
@@ -21870,12 +24346,12 @@ Q
 
 endstream
 endobj
-39 0 obj
+40 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -21886,15 +24362,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 41 0 R
+/Contents 42 0 R
 >>
 endobj
-40 0 obj
+41 0 obj
 <<
 /Length 24899
 >>
@@ -24051,10 +26529,10 @@ Q
 
 endstream
 endobj
-41 0 obj
-[ 42 0 R 43 0 R ]
-endobj
 42 0 obj
+[ 43 0 R 44 0 R ]
+endobj
+43 0 obj
 <<
 /Length 24904
 >>
@@ -26214,7 +28692,7 @@ Q
 
 endstream
 endobj
-43 0 obj
+44 0 obj
 <<
 /Length 10009
 >>
@@ -27268,7 +29746,7 @@ Q
 
 endstream
 endobj
-44 0 obj
+45 0 obj
 <<
 /Type /Page
 /Resources <<
@@ -27281,18 +29759,20 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
 >>
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 46 0 R
+/Contents 47 0 R
 >>
 endobj
-45 0 obj
+46 0 obj
 <<
 /Length 10119
 >>
@@ -28300,10 +30780,10 @@ Q
 
 endstream
 endobj
-46 0 obj
-[ 47 0 R 48 0 R ]
-endobj
 47 0 obj
+[ 48 0 R 49 0 R ]
+endobj
+48 0 obj
 <<
 /Length 10124
 >>
@@ -29314,9 +31794,9 @@ Q
 
 endstream
 endobj
-48 0 obj
+49 0 obj
 <<
-/Length 30202
+/Length 32782
 >>
 stream
 q
@@ -31024,17 +33504,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 368 m
+164 368 l
+166.2112 368 168 369.7888 168 372 c
+168 388 l
+168 390.2112 166.2112 392 164 392 c
+46 392 l
+43.7888 392 42 390.2112 42 388 c
+42 372 l
+42 369.7888 43.7888 368 46 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 382 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 382 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 382 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 382 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 382 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 382 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 382 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 368 m
+298 368 l
+300.2112 368 302 369.7888 302 372 c
+302 388 l
+302 390.2112 300.2112 392 298 392 c
+180 392 l
+177.7888 392 176 390.2112 176 388 c
+176 372 l
+176 369.7888 177.7888 368 180 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 382 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 382 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 382 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 368 m
+432 368 l
+434.2112 368 436 369.7888 436 372 c
+436 388 l
+436 390.2112 434.2112 392 432 392 c
+314 392 l
+311.7888 392 310 390.2112 310 388 c
+310 372 l
+310 369.7888 311.7888 368 314 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 382 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 382 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 382 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 382 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 382 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 382 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 368 m
+566 368 l
+568.2112 368 570 369.7888 570 372 c
+570 388 l
+570 390.2112 568.2112 392 566 392 c
+448 392 l
+445.7888 392 444 390.2112 444 388 c
+444 372 l
+444 369.7888 445.7888 368 448 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 382 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 382 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 382 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 382 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 382 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 382 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 365 m
-564 365 l
-567.3168 365 570 367.6832 570 371 c
-570 388 l
-570 391.3168 567.3168 394 564 394 c
-48 394 l
-44.6832 394 42 391.3168 42 388 c
-42 371 l
-42 367.6832 44.6832 365 48 365 c
+48 331 m
+564 331 l
+567.3168 331 570 333.6832 570 337 c
+570 354 l
+570 357.3168 567.3168 360 564 360 c
+48 360 l
+44.6832 360 42 357.3168 42 354 c
+42 337 l
+42 333.6832 44.6832 331 48 331 c
 h
 f*
 q
@@ -31042,29 +33777,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 381.9 m
-60.8 383.0046 59.90457 383.9 58.8 383.9 c
-57.69543 383.9 56.8 383.0046 56.8 381.9 c
-56.8 380.7954 57.69543 379.9 58.8 379.9 c
-59.90457 379.9 60.8 380.7954 60.8 381.9 c
+60.8 347.9 m
+60.8 349.0046 59.90457 349.9 58.8 349.9 c
+57.69543 349.9 56.8 349.0046 56.8 347.9 c
+56.8 346.7954 57.69543 345.9 58.8 345.9 c
+59.90457 345.9 60.8 346.7954 60.8 347.9 c
 f*
 n
-67.2 381.9 m
-67.2 383.0046 66.30457 383.9 65.2 383.9 c
-64.09543 383.9 63.2 383.0046 63.2 381.9 c
-63.2 380.7954 64.09543 379.9 65.2 379.9 c
-66.30457 379.9 67.2 380.7954 67.2 381.9 c
+67.2 347.9 m
+67.2 349.0046 66.30457 349.9 65.2 349.9 c
+64.09543 349.9 63.2 349.0046 63.2 347.9 c
+63.2 346.7954 64.09543 345.9 65.2 345.9 c
+66.30457 345.9 67.2 346.7954 67.2 347.9 c
 f*
 1.6 w
 n
-62 377.2 m
-62 379.2435 60.56731 380.9 58.8 380.9 c
-57.03269 380.9 55.6 379.2435 55.6 377.2 c
+62 343.2 m
+62 345.2435 60.56731 346.9 58.8 346.9 c
+57.03269 346.9 55.6 345.2435 55.6 343.2 c
 S
 n
-68.4 377.2 m
-68.4 379.2435 66.96731 380.9 65.2 380.9 c
-63.43269 380.9 62 379.2435 62 377.2 c
+68.4 343.2 m
+68.4 345.2435 66.96731 346.9 65.2 346.9 c
+63.43269 346.9 62 345.2435 62 343.2 c
 S
 Q
 BT
@@ -31073,7 +33808,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 380.5 Tm
+1 0 0 1 78 346.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -31083,107 +33818,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 371 Tm
+1 0 0 1 78 337 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 371 Tm
+1 0 0 1 83.1354 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 371 Tm
+1 0 0 1 88.2708 337 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 371 Tm
+1 0 0 1 94.0944 337 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 371 Tm
+1 0 0 1 99.2298 337 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 371 Tm
+1 0 0 1 104.018 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 371 Tm
+1 0 0 1 109.1534 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 371 Tm
+1 0 0 1 111.877 337 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 371 Tm
+1 0 0 1 114.6006 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 371 Tm
+1 0 0 1 117.3242 337 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 371 Tm
+1 0 0 1 122.8006 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 371 Tm
+1 0 0 1 127.936 337 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 371 Tm
+1 0 0 1 133.4124 337 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 371 Tm
+1 0 0 1 138.8888 337 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 371 Tm
+1 0 0 1 144.3652 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 371 Tm
+1 0 0 1 147.0888 337 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 371 Tm
+1 0 0 1 152.9124 337 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 371 Tm
+1 0 0 1 158.3888 337 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 350.1 m
-47.8 350.1 l
-48.68448 350.1 49.4 350.8155 49.4 351.7 c
-49.4 355.9 l
-49.4 356.7845 48.68448 357.5 47.8 357.5 c
-43.6 357.5 l
-42.71552 357.5 42 356.7845 42 355.9 c
-42 351.7 l
-42 350.8155 42.71552 350.1 43.6 350.1 c
+43.6 316.1 m
+47.8 316.1 l
+48.68448 316.1 49.4 316.8155 49.4 317.7 c
+49.4 321.9 l
+49.4 322.7845 48.68448 323.5 47.8 323.5 c
+43.6 323.5 l
+42.71552 323.5 42 322.7845 42 321.9 c
+42 317.7 l
+42 316.8155 42.71552 316.1 43.6 316.1 c
 h
 S
 BT
@@ -31192,22 +33927,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 351.6 Tm
+1 0 0 1 54.9 317.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 350.1 m
-312.8 350.1 l
-313.6845 350.1 314.4 350.8155 314.4 351.7 c
-314.4 355.9 l
-314.4 356.7845 313.6845 357.5 312.8 357.5 c
-308.6 357.5 l
-307.7155 357.5 307 356.7845 307 355.9 c
-307 351.7 l
-307 350.8155 307.7155 350.1 308.6 350.1 c
+308.6 316.1 m
+312.8 316.1 l
+313.6845 316.1 314.4 316.8155 314.4 317.7 c
+314.4 321.9 l
+314.4 322.7845 313.6845 323.5 312.8 323.5 c
+308.6 323.5 l
+307.7155 323.5 307 322.7845 307 321.9 c
+307 317.7 l
+307 316.8155 307.7155 316.1 308.6 316.1 c
 h
 S
 BT
@@ -31216,22 +33951,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 351.6 Tm
+1 0 0 1 319.9 317.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 334.1 m
-47.8 334.1 l
-48.68448 334.1 49.4 334.8155 49.4 335.7 c
-49.4 339.9 l
-49.4 340.7845 48.68448 341.5 47.8 341.5 c
-43.6 341.5 l
-42.71552 341.5 42 340.7845 42 339.9 c
-42 335.7 l
-42 334.8155 42.71552 334.1 43.6 334.1 c
+43.6 300.1 m
+47.8 300.1 l
+48.68448 300.1 49.4 300.8155 49.4 301.7 c
+49.4 305.9 l
+49.4 306.7845 48.68448 307.5 47.8 307.5 c
+43.6 307.5 l
+42.71552 307.5 42 306.7845 42 305.9 c
+42 301.7 l
+42 300.8155 42.71552 300.1 43.6 300.1 c
 h
 S
 BT
@@ -31240,22 +33975,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 335.6 Tm
+1 0 0 1 54.9 301.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 334.1 m
-312.8 334.1 l
-313.6845 334.1 314.4 334.8155 314.4 335.7 c
-314.4 339.9 l
-314.4 340.7845 313.6845 341.5 312.8 341.5 c
-308.6 341.5 l
-307.7155 341.5 307 340.7845 307 339.9 c
-307 335.7 l
-307 334.8155 307.7155 334.1 308.6 334.1 c
+308.6 300.1 m
+312.8 300.1 l
+313.6845 300.1 314.4 300.8155 314.4 301.7 c
+314.4 305.9 l
+314.4 306.7845 313.6845 307.5 312.8 307.5 c
+308.6 307.5 l
+307.7155 307.5 307 306.7845 307 305.9 c
+307 301.7 l
+307 300.8155 307.7155 300.1 308.6 300.1 c
 h
 S
 BT
@@ -31264,22 +33999,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 335.6 Tm
+1 0 0 1 319.9 301.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 318.1 m
-47.8 318.1 l
-48.68448 318.1 49.4 318.8155 49.4 319.7 c
-49.4 323.9 l
-49.4 324.7845 48.68448 325.5 47.8 325.5 c
-43.6 325.5 l
-42.71552 325.5 42 324.7845 42 323.9 c
-42 319.7 l
-42 318.8155 42.71552 318.1 43.6 318.1 c
+43.6 284.1 m
+47.8 284.1 l
+48.68448 284.1 49.4 284.8155 49.4 285.7 c
+49.4 289.9 l
+49.4 290.7845 48.68448 291.5 47.8 291.5 c
+43.6 291.5 l
+42.71552 291.5 42 290.7845 42 289.9 c
+42 285.7 l
+42 284.8155 42.71552 284.1 43.6 284.1 c
 h
 S
 BT
@@ -31292,21 +34027,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 321 m
-570 321 l
+54 287 m
+570 287 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 273 m
-564 273 l
-567.3168 273 570 275.6832 570 279 c
-570 296 l
-570 299.3168 567.3168 302 564 302 c
-48 302 l
-44.6832 302 42 299.3168 42 296 c
-42 279 l
-42 275.6832 44.6832 273 48 273 c
+48 239 m
+564 239 l
+567.3168 239 570 241.6832 570 245 c
+570 262 l
+570 265.3168 567.3168 268 564 268 c
+48 268 l
+44.6832 268 42 265.3168 42 262 c
+42 245 l
+42 241.6832 44.6832 239 48 239 c
 h
 f*
 q
@@ -31315,10 +34050,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 293 m
-67 287.5 l
-62 282 l
-57 287.5 l
+62 259 m
+67 253.5 l
+62 248 l
+57 253.5 l
 h
 f*
 Q
@@ -31328,7 +34063,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 288.5 Tm
+1 0 0 1 78 254.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -31338,112 +34073,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 279 Tm
+1 0 0 1 78 245 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 279 Tm
+1 0 0 1 83.1354 245 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 279 Tm
+1 0 0 1 88.2708 245 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 279 Tm
+1 0 0 1 90.9944 245 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 279 Tm
+1 0 0 1 96.4708 245 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 279 Tm
+1 0 0 1 99.1944 245 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 279 Tm
+1 0 0 1 103.9826 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 279 Tm
+1 0 0 1 106.7062 245 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 279 Tm
+1 0 0 1 109.4298 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 279 Tm
+1 0 0 1 112.1534 245 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 279 Tm
+1 0 0 1 117.977 245 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 279 Tm
+1 0 0 1 123.1124 245 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 279 Tm
+1 0 0 1 127.9006 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 279 Tm
+1 0 0 1 130.6242 245 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 279 Tm
+1 0 0 1 136.1006 245 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 279 Tm
+1 0 0 1 141.9242 245 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 279 Tm
+1 0 0 1 147.4006 245 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 279 Tm
+1 0 0 1 152.536 245 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 279 Tm
+1 0 0 1 157.6714 245 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 258.1 m
-47.8 258.1 l
-48.68448 258.1 49.4 258.8155 49.4 259.7 c
-49.4 263.9 l
-49.4 264.7845 48.68448 265.5 47.8 265.5 c
-43.6 265.5 l
-42.71552 265.5 42 264.7845 42 263.9 c
-42 259.7 l
-42 258.8155 42.71552 258.1 43.6 258.1 c
+43.6 224.1 m
+47.8 224.1 l
+48.68448 224.1 49.4 224.8155 49.4 225.7 c
+49.4 229.9 l
+49.4 230.7845 48.68448 231.5 47.8 231.5 c
+43.6 231.5 l
+42.71552 231.5 42 230.7845 42 229.9 c
+42 225.7 l
+42 224.8155 42.71552 224.1 43.6 224.1 c
 h
 S
 BT
@@ -31452,22 +34187,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 259.6 Tm
+1 0 0 1 54.9 225.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 258.1 m
-312.8 258.1 l
-313.6845 258.1 314.4 258.8155 314.4 259.7 c
-314.4 263.9 l
-314.4 264.7845 313.6845 265.5 312.8 265.5 c
-308.6 265.5 l
-307.7155 265.5 307 264.7845 307 263.9 c
-307 259.7 l
-307 258.8155 307.7155 258.1 308.6 258.1 c
+308.6 224.1 m
+312.8 224.1 l
+313.6845 224.1 314.4 224.8155 314.4 225.7 c
+314.4 229.9 l
+314.4 230.7845 313.6845 231.5 312.8 231.5 c
+308.6 231.5 l
+307.7155 231.5 307 230.7845 307 229.9 c
+307 225.7 l
+307 224.8155 307.7155 224.1 308.6 224.1 c
 h
 S
 BT
@@ -31476,22 +34211,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 259.6 Tm
+1 0 0 1 319.9 225.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 242.1 m
-47.8 242.1 l
-48.68448 242.1 49.4 242.8155 49.4 243.7 c
-49.4 247.9 l
-49.4 248.7845 48.68448 249.5 47.8 249.5 c
-43.6 249.5 l
-42.71552 249.5 42 248.7845 42 247.9 c
-42 243.7 l
-42 242.8155 42.71552 242.1 43.6 242.1 c
+43.6 208.1 m
+47.8 208.1 l
+48.68448 208.1 49.4 208.8155 49.4 209.7 c
+49.4 213.9 l
+49.4 214.7845 48.68448 215.5 47.8 215.5 c
+43.6 215.5 l
+42.71552 215.5 42 214.7845 42 213.9 c
+42 209.7 l
+42 208.8155 42.71552 208.1 43.6 208.1 c
 h
 S
 BT
@@ -31500,22 +34235,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 243.6 Tm
+1 0 0 1 54.9 209.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 242.1 m
-312.8 242.1 l
-313.6845 242.1 314.4 242.8155 314.4 243.7 c
-314.4 247.9 l
-314.4 248.7845 313.6845 249.5 312.8 249.5 c
-308.6 249.5 l
-307.7155 249.5 307 248.7845 307 247.9 c
-307 243.7 l
-307 242.8155 307.7155 242.1 308.6 242.1 c
+308.6 208.1 m
+312.8 208.1 l
+313.6845 208.1 314.4 208.8155 314.4 209.7 c
+314.4 213.9 l
+314.4 214.7845 313.6845 215.5 312.8 215.5 c
+308.6 215.5 l
+307.7155 215.5 307 214.7845 307 213.9 c
+307 209.7 l
+307 208.8155 307.7155 208.1 308.6 208.1 c
 h
 S
 BT
@@ -31524,7 +34259,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 243.6 Tm
+1 0 0 1 319.9 209.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -31534,18 +34269,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 229.8 Tm
+1 0 0 1 42 195.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 232 m
-122.2 235.4242 119.4242 238.2 116 238.2 c
-112.5758 238.2 109.8 235.4242 109.8 232 c
-109.8 228.5758 112.5758 225.8 116 225.8 c
-119.4242 225.8 122.2 228.5758 122.2 232 c
+122.2 198 m
+122.2 201.4242 119.4242 204.2 116 204.2 c
+112.5758 204.2 109.8 201.4242 109.8 198 c
+109.8 194.5758 112.5758 191.8 116 191.8 c
+119.4242 191.8 122.2 194.5758 122.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31553,18 +34288,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 229.9 Tm
+1 0 0 1 114.332 195.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 232 m
-137.2 235.4242 134.4242 238.2 131 238.2 c
-127.5758 238.2 124.8 235.4242 124.8 232 c
-124.8 228.5758 127.5758 225.8 131 225.8 c
-134.4242 225.8 137.2 228.5758 137.2 232 c
+137.2 198 m
+137.2 201.4242 134.4242 204.2 131 204.2 c
+127.5758 204.2 124.8 201.4242 124.8 198 c
+124.8 194.5758 127.5758 191.8 131 191.8 c
+134.4242 191.8 137.2 194.5758 137.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31572,18 +34307,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 229.9 Tm
+1 0 0 1 129.332 195.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 232 m
-152.2 235.4242 149.4242 238.2 146 238.2 c
-142.5758 238.2 139.8 235.4242 139.8 232 c
-139.8 228.5758 142.5758 225.8 146 225.8 c
-149.4242 225.8 152.2 228.5758 152.2 232 c
+152.2 198 m
+152.2 201.4242 149.4242 204.2 146 204.2 c
+142.5758 204.2 139.8 201.4242 139.8 198 c
+139.8 194.5758 142.5758 191.8 146 191.8 c
+149.4242 191.8 152.2 194.5758 152.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31591,18 +34326,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 229.9 Tm
+1 0 0 1 144.332 195.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 232 m
-167.2 235.4242 164.4242 238.2 161 238.2 c
-157.5758 238.2 154.8 235.4242 154.8 232 c
-154.8 228.5758 157.5758 225.8 161 225.8 c
-164.4242 225.8 167.2 228.5758 167.2 232 c
+167.2 198 m
+167.2 201.4242 164.4242 204.2 161 204.2 c
+157.5758 204.2 154.8 201.4242 154.8 198 c
+154.8 194.5758 157.5758 191.8 161 191.8 c
+164.4242 191.8 167.2 194.5758 167.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31610,18 +34345,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 229.9 Tm
+1 0 0 1 159.332 195.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 232 m
-182.2 235.4242 179.4242 238.2 176 238.2 c
-172.5758 238.2 169.8 235.4242 169.8 232 c
-169.8 228.5758 172.5758 225.8 176 225.8 c
-179.4242 225.8 182.2 228.5758 182.2 232 c
+182.2 198 m
+182.2 201.4242 179.4242 204.2 176 204.2 c
+172.5758 204.2 169.8 201.4242 169.8 198 c
+169.8 194.5758 172.5758 191.8 176 191.8 c
+179.4242 191.8 182.2 194.5758 182.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31629,18 +34364,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 229.9 Tm
+1 0 0 1 174.332 195.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 232 m
-197.2 235.4242 194.4242 238.2 191 238.2 c
-187.5758 238.2 184.8 235.4242 184.8 232 c
-184.8 228.5758 187.5758 225.8 191 225.8 c
-194.4242 225.8 197.2 228.5758 197.2 232 c
+197.2 198 m
+197.2 201.4242 194.4242 204.2 191 204.2 c
+187.5758 204.2 184.8 201.4242 184.8 198 c
+184.8 194.5758 187.5758 191.8 191 191.8 c
+194.4242 191.8 197.2 194.5758 197.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31648,18 +34383,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 229.9 Tm
+1 0 0 1 189.332 195.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 232 m
-212.2 235.4242 209.4242 238.2 206 238.2 c
-202.5758 238.2 199.8 235.4242 199.8 232 c
-199.8 228.5758 202.5758 225.8 206 225.8 c
-209.4242 225.8 212.2 228.5758 212.2 232 c
+212.2 198 m
+212.2 201.4242 209.4242 204.2 206 204.2 c
+202.5758 204.2 199.8 201.4242 199.8 198 c
+199.8 194.5758 202.5758 191.8 206 191.8 c
+209.4242 191.8 212.2 194.5758 212.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31667,18 +34402,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 229.9 Tm
+1 0 0 1 204.332 195.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 232 m
-227.2 235.4242 224.4242 238.2 221 238.2 c
-217.5758 238.2 214.8 235.4242 214.8 232 c
-214.8 228.5758 217.5758 225.8 221 225.8 c
-224.4242 225.8 227.2 228.5758 227.2 232 c
+227.2 198 m
+227.2 201.4242 224.4242 204.2 221 204.2 c
+217.5758 204.2 214.8 201.4242 214.8 198 c
+214.8 194.5758 217.5758 191.8 221 191.8 c
+224.4242 191.8 227.2 194.5758 227.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31686,18 +34421,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 229.9 Tm
+1 0 0 1 219.332 195.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 232 m
-242.2 235.4242 239.4242 238.2 236 238.2 c
-232.5758 238.2 229.8 235.4242 229.8 232 c
-229.8 228.5758 232.5758 225.8 236 225.8 c
-239.4242 225.8 242.2 228.5758 242.2 232 c
+242.2 198 m
+242.2 201.4242 239.4242 204.2 236 204.2 c
+232.5758 204.2 229.8 201.4242 229.8 198 c
+229.8 194.5758 232.5758 191.8 236 191.8 c
+239.4242 191.8 242.2 194.5758 242.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31705,18 +34440,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 229.9 Tm
+1 0 0 1 234.332 195.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 232 m
-257.2 235.4242 254.4242 238.2 251 238.2 c
-247.5758 238.2 244.8 235.4242 244.8 232 c
-244.8 228.5758 247.5758 225.8 251 225.8 c
-254.4242 225.8 257.2 228.5758 257.2 232 c
+257.2 198 m
+257.2 201.4242 254.4242 204.2 251 204.2 c
+247.5758 204.2 244.8 201.4242 244.8 198 c
+244.8 194.5758 247.5758 191.8 251 191.8 c
+254.4242 191.8 257.2 194.5758 257.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -31724,7 +34459,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 229.9 Tm
+1 0 0 1 247.664 195.9 Tm
 (10) Tj
 T*
 ET
@@ -31757,12 +34492,12 @@ Q
 
 endstream
 endobj
-49 0 obj
+50 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -31773,15 +34508,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 51 0 R
+/Contents 52 0 R
 >>
 endobj
-50 0 obj
+51 0 obj
 <<
 /Length 24899
 >>
@@ -33938,10 +36675,10 @@ Q
 
 endstream
 endobj
-51 0 obj
-[ 52 0 R 53 0 R ]
-endobj
 52 0 obj
+[ 53 0 R 54 0 R ]
+endobj
+53 0 obj
 <<
 /Length 24904
 >>
@@ -36101,7 +38838,7 @@ Q
 
 endstream
 endobj
-53 0 obj
+54 0 obj
 <<
 /Length 8169
 >>
@@ -36778,7 +39515,7 @@ Q
 
 endstream
 endobj
-54 0 obj
+55 0 obj
 <<
 /Type /Page
 /Resources <<
@@ -36791,18 +39528,20 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
 >>
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 56 0 R
+/Contents 57 0 R
 >>
 endobj
-55 0 obj
+56 0 obj
 <<
 /Length 15730
 >>
@@ -38395,10 +41134,10 @@ Q
 
 endstream
 endobj
-56 0 obj
-[ 57 0 R 58 0 R ]
-endobj
 57 0 obj
+[ 58 0 R 59 0 R ]
+endobj
+58 0 obj
 <<
 /Length 15735
 >>
@@ -39994,9 +42733,9 @@ Q
 
 endstream
 endobj
-58 0 obj
+59 0 obj
 <<
-/Length 30202
+/Length 32782
 >>
 stream
 q
@@ -41704,17 +44443,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 368 m
+164 368 l
+166.2112 368 168 369.7888 168 372 c
+168 388 l
+168 390.2112 166.2112 392 164 392 c
+46 392 l
+43.7888 392 42 390.2112 42 388 c
+42 372 l
+42 369.7888 43.7888 368 46 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 382 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 382 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 382 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 382 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 382 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 382 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 382 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 368 m
+298 368 l
+300.2112 368 302 369.7888 302 372 c
+302 388 l
+302 390.2112 300.2112 392 298 392 c
+180 392 l
+177.7888 392 176 390.2112 176 388 c
+176 372 l
+176 369.7888 177.7888 368 180 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 382 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 382 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 382 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 368 m
+432 368 l
+434.2112 368 436 369.7888 436 372 c
+436 388 l
+436 390.2112 434.2112 392 432 392 c
+314 392 l
+311.7888 392 310 390.2112 310 388 c
+310 372 l
+310 369.7888 311.7888 368 314 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 382 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 382 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 382 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 382 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 382 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 382 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 368 m
+566 368 l
+568.2112 368 570 369.7888 570 372 c
+570 388 l
+570 390.2112 568.2112 392 566 392 c
+448 392 l
+445.7888 392 444 390.2112 444 388 c
+444 372 l
+444 369.7888 445.7888 368 448 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 382 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 382 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 382 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 382 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 382 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 382 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 365 m
-564 365 l
-567.3168 365 570 367.6832 570 371 c
-570 388 l
-570 391.3168 567.3168 394 564 394 c
-48 394 l
-44.6832 394 42 391.3168 42 388 c
-42 371 l
-42 367.6832 44.6832 365 48 365 c
+48 331 m
+564 331 l
+567.3168 331 570 333.6832 570 337 c
+570 354 l
+570 357.3168 567.3168 360 564 360 c
+48 360 l
+44.6832 360 42 357.3168 42 354 c
+42 337 l
+42 333.6832 44.6832 331 48 331 c
 h
 f*
 q
@@ -41722,29 +44716,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 381.9 m
-60.8 383.0046 59.90457 383.9 58.8 383.9 c
-57.69543 383.9 56.8 383.0046 56.8 381.9 c
-56.8 380.7954 57.69543 379.9 58.8 379.9 c
-59.90457 379.9 60.8 380.7954 60.8 381.9 c
+60.8 347.9 m
+60.8 349.0046 59.90457 349.9 58.8 349.9 c
+57.69543 349.9 56.8 349.0046 56.8 347.9 c
+56.8 346.7954 57.69543 345.9 58.8 345.9 c
+59.90457 345.9 60.8 346.7954 60.8 347.9 c
 f*
 n
-67.2 381.9 m
-67.2 383.0046 66.30457 383.9 65.2 383.9 c
-64.09543 383.9 63.2 383.0046 63.2 381.9 c
-63.2 380.7954 64.09543 379.9 65.2 379.9 c
-66.30457 379.9 67.2 380.7954 67.2 381.9 c
+67.2 347.9 m
+67.2 349.0046 66.30457 349.9 65.2 349.9 c
+64.09543 349.9 63.2 349.0046 63.2 347.9 c
+63.2 346.7954 64.09543 345.9 65.2 345.9 c
+66.30457 345.9 67.2 346.7954 67.2 347.9 c
 f*
 1.6 w
 n
-62 377.2 m
-62 379.2435 60.56731 380.9 58.8 380.9 c
-57.03269 380.9 55.6 379.2435 55.6 377.2 c
+62 343.2 m
+62 345.2435 60.56731 346.9 58.8 346.9 c
+57.03269 346.9 55.6 345.2435 55.6 343.2 c
 S
 n
-68.4 377.2 m
-68.4 379.2435 66.96731 380.9 65.2 380.9 c
-63.43269 380.9 62 379.2435 62 377.2 c
+68.4 343.2 m
+68.4 345.2435 66.96731 346.9 65.2 346.9 c
+63.43269 346.9 62 345.2435 62 343.2 c
 S
 Q
 BT
@@ -41753,7 +44747,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 380.5 Tm
+1 0 0 1 78 346.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -41763,107 +44757,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 371 Tm
+1 0 0 1 78 337 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 371 Tm
+1 0 0 1 83.1354 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 371 Tm
+1 0 0 1 88.2708 337 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 371 Tm
+1 0 0 1 94.0944 337 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 371 Tm
+1 0 0 1 99.2298 337 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 371 Tm
+1 0 0 1 104.018 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 371 Tm
+1 0 0 1 109.1534 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 371 Tm
+1 0 0 1 111.877 337 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 371 Tm
+1 0 0 1 114.6006 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 371 Tm
+1 0 0 1 117.3242 337 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 371 Tm
+1 0 0 1 122.8006 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 371 Tm
+1 0 0 1 127.936 337 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 371 Tm
+1 0 0 1 133.4124 337 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 371 Tm
+1 0 0 1 138.8888 337 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 371 Tm
+1 0 0 1 144.3652 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 371 Tm
+1 0 0 1 147.0888 337 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 371 Tm
+1 0 0 1 152.9124 337 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 371 Tm
+1 0 0 1 158.3888 337 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 350.1 m
-47.8 350.1 l
-48.68448 350.1 49.4 350.8155 49.4 351.7 c
-49.4 355.9 l
-49.4 356.7845 48.68448 357.5 47.8 357.5 c
-43.6 357.5 l
-42.71552 357.5 42 356.7845 42 355.9 c
-42 351.7 l
-42 350.8155 42.71552 350.1 43.6 350.1 c
+43.6 316.1 m
+47.8 316.1 l
+48.68448 316.1 49.4 316.8155 49.4 317.7 c
+49.4 321.9 l
+49.4 322.7845 48.68448 323.5 47.8 323.5 c
+43.6 323.5 l
+42.71552 323.5 42 322.7845 42 321.9 c
+42 317.7 l
+42 316.8155 42.71552 316.1 43.6 316.1 c
 h
 S
 BT
@@ -41872,22 +44866,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 351.6 Tm
+1 0 0 1 54.9 317.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 350.1 m
-312.8 350.1 l
-313.6845 350.1 314.4 350.8155 314.4 351.7 c
-314.4 355.9 l
-314.4 356.7845 313.6845 357.5 312.8 357.5 c
-308.6 357.5 l
-307.7155 357.5 307 356.7845 307 355.9 c
-307 351.7 l
-307 350.8155 307.7155 350.1 308.6 350.1 c
+308.6 316.1 m
+312.8 316.1 l
+313.6845 316.1 314.4 316.8155 314.4 317.7 c
+314.4 321.9 l
+314.4 322.7845 313.6845 323.5 312.8 323.5 c
+308.6 323.5 l
+307.7155 323.5 307 322.7845 307 321.9 c
+307 317.7 l
+307 316.8155 307.7155 316.1 308.6 316.1 c
 h
 S
 BT
@@ -41896,22 +44890,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 351.6 Tm
+1 0 0 1 319.9 317.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 334.1 m
-47.8 334.1 l
-48.68448 334.1 49.4 334.8155 49.4 335.7 c
-49.4 339.9 l
-49.4 340.7845 48.68448 341.5 47.8 341.5 c
-43.6 341.5 l
-42.71552 341.5 42 340.7845 42 339.9 c
-42 335.7 l
-42 334.8155 42.71552 334.1 43.6 334.1 c
+43.6 300.1 m
+47.8 300.1 l
+48.68448 300.1 49.4 300.8155 49.4 301.7 c
+49.4 305.9 l
+49.4 306.7845 48.68448 307.5 47.8 307.5 c
+43.6 307.5 l
+42.71552 307.5 42 306.7845 42 305.9 c
+42 301.7 l
+42 300.8155 42.71552 300.1 43.6 300.1 c
 h
 S
 BT
@@ -41920,22 +44914,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 335.6 Tm
+1 0 0 1 54.9 301.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 334.1 m
-312.8 334.1 l
-313.6845 334.1 314.4 334.8155 314.4 335.7 c
-314.4 339.9 l
-314.4 340.7845 313.6845 341.5 312.8 341.5 c
-308.6 341.5 l
-307.7155 341.5 307 340.7845 307 339.9 c
-307 335.7 l
-307 334.8155 307.7155 334.1 308.6 334.1 c
+308.6 300.1 m
+312.8 300.1 l
+313.6845 300.1 314.4 300.8155 314.4 301.7 c
+314.4 305.9 l
+314.4 306.7845 313.6845 307.5 312.8 307.5 c
+308.6 307.5 l
+307.7155 307.5 307 306.7845 307 305.9 c
+307 301.7 l
+307 300.8155 307.7155 300.1 308.6 300.1 c
 h
 S
 BT
@@ -41944,22 +44938,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 335.6 Tm
+1 0 0 1 319.9 301.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 318.1 m
-47.8 318.1 l
-48.68448 318.1 49.4 318.8155 49.4 319.7 c
-49.4 323.9 l
-49.4 324.7845 48.68448 325.5 47.8 325.5 c
-43.6 325.5 l
-42.71552 325.5 42 324.7845 42 323.9 c
-42 319.7 l
-42 318.8155 42.71552 318.1 43.6 318.1 c
+43.6 284.1 m
+47.8 284.1 l
+48.68448 284.1 49.4 284.8155 49.4 285.7 c
+49.4 289.9 l
+49.4 290.7845 48.68448 291.5 47.8 291.5 c
+43.6 291.5 l
+42.71552 291.5 42 290.7845 42 289.9 c
+42 285.7 l
+42 284.8155 42.71552 284.1 43.6 284.1 c
 h
 S
 BT
@@ -41972,21 +44966,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 321 m
-570 321 l
+54 287 m
+570 287 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 273 m
-564 273 l
-567.3168 273 570 275.6832 570 279 c
-570 296 l
-570 299.3168 567.3168 302 564 302 c
-48 302 l
-44.6832 302 42 299.3168 42 296 c
-42 279 l
-42 275.6832 44.6832 273 48 273 c
+48 239 m
+564 239 l
+567.3168 239 570 241.6832 570 245 c
+570 262 l
+570 265.3168 567.3168 268 564 268 c
+48 268 l
+44.6832 268 42 265.3168 42 262 c
+42 245 l
+42 241.6832 44.6832 239 48 239 c
 h
 f*
 q
@@ -41995,10 +44989,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 293 m
-67 287.5 l
-62 282 l
-57 287.5 l
+62 259 m
+67 253.5 l
+62 248 l
+57 253.5 l
 h
 f*
 Q
@@ -42008,7 +45002,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 288.5 Tm
+1 0 0 1 78 254.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -42018,112 +45012,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 279 Tm
+1 0 0 1 78 245 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 279 Tm
+1 0 0 1 83.1354 245 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 279 Tm
+1 0 0 1 88.2708 245 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 279 Tm
+1 0 0 1 90.9944 245 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 279 Tm
+1 0 0 1 96.4708 245 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 279 Tm
+1 0 0 1 99.1944 245 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 279 Tm
+1 0 0 1 103.9826 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 279 Tm
+1 0 0 1 106.7062 245 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 279 Tm
+1 0 0 1 109.4298 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 279 Tm
+1 0 0 1 112.1534 245 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 279 Tm
+1 0 0 1 117.977 245 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 279 Tm
+1 0 0 1 123.1124 245 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 279 Tm
+1 0 0 1 127.9006 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 279 Tm
+1 0 0 1 130.6242 245 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 279 Tm
+1 0 0 1 136.1006 245 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 279 Tm
+1 0 0 1 141.9242 245 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 279 Tm
+1 0 0 1 147.4006 245 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 279 Tm
+1 0 0 1 152.536 245 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 279 Tm
+1 0 0 1 157.6714 245 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 258.1 m
-47.8 258.1 l
-48.68448 258.1 49.4 258.8155 49.4 259.7 c
-49.4 263.9 l
-49.4 264.7845 48.68448 265.5 47.8 265.5 c
-43.6 265.5 l
-42.71552 265.5 42 264.7845 42 263.9 c
-42 259.7 l
-42 258.8155 42.71552 258.1 43.6 258.1 c
+43.6 224.1 m
+47.8 224.1 l
+48.68448 224.1 49.4 224.8155 49.4 225.7 c
+49.4 229.9 l
+49.4 230.7845 48.68448 231.5 47.8 231.5 c
+43.6 231.5 l
+42.71552 231.5 42 230.7845 42 229.9 c
+42 225.7 l
+42 224.8155 42.71552 224.1 43.6 224.1 c
 h
 S
 BT
@@ -42132,22 +45126,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 259.6 Tm
+1 0 0 1 54.9 225.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 258.1 m
-312.8 258.1 l
-313.6845 258.1 314.4 258.8155 314.4 259.7 c
-314.4 263.9 l
-314.4 264.7845 313.6845 265.5 312.8 265.5 c
-308.6 265.5 l
-307.7155 265.5 307 264.7845 307 263.9 c
-307 259.7 l
-307 258.8155 307.7155 258.1 308.6 258.1 c
+308.6 224.1 m
+312.8 224.1 l
+313.6845 224.1 314.4 224.8155 314.4 225.7 c
+314.4 229.9 l
+314.4 230.7845 313.6845 231.5 312.8 231.5 c
+308.6 231.5 l
+307.7155 231.5 307 230.7845 307 229.9 c
+307 225.7 l
+307 224.8155 307.7155 224.1 308.6 224.1 c
 h
 S
 BT
@@ -42156,22 +45150,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 259.6 Tm
+1 0 0 1 319.9 225.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 242.1 m
-47.8 242.1 l
-48.68448 242.1 49.4 242.8155 49.4 243.7 c
-49.4 247.9 l
-49.4 248.7845 48.68448 249.5 47.8 249.5 c
-43.6 249.5 l
-42.71552 249.5 42 248.7845 42 247.9 c
-42 243.7 l
-42 242.8155 42.71552 242.1 43.6 242.1 c
+43.6 208.1 m
+47.8 208.1 l
+48.68448 208.1 49.4 208.8155 49.4 209.7 c
+49.4 213.9 l
+49.4 214.7845 48.68448 215.5 47.8 215.5 c
+43.6 215.5 l
+42.71552 215.5 42 214.7845 42 213.9 c
+42 209.7 l
+42 208.8155 42.71552 208.1 43.6 208.1 c
 h
 S
 BT
@@ -42180,22 +45174,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 243.6 Tm
+1 0 0 1 54.9 209.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 242.1 m
-312.8 242.1 l
-313.6845 242.1 314.4 242.8155 314.4 243.7 c
-314.4 247.9 l
-314.4 248.7845 313.6845 249.5 312.8 249.5 c
-308.6 249.5 l
-307.7155 249.5 307 248.7845 307 247.9 c
-307 243.7 l
-307 242.8155 307.7155 242.1 308.6 242.1 c
+308.6 208.1 m
+312.8 208.1 l
+313.6845 208.1 314.4 208.8155 314.4 209.7 c
+314.4 213.9 l
+314.4 214.7845 313.6845 215.5 312.8 215.5 c
+308.6 215.5 l
+307.7155 215.5 307 214.7845 307 213.9 c
+307 209.7 l
+307 208.8155 307.7155 208.1 308.6 208.1 c
 h
 S
 BT
@@ -42204,7 +45198,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 243.6 Tm
+1 0 0 1 319.9 209.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -42214,18 +45208,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 229.8 Tm
+1 0 0 1 42 195.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 232 m
-122.2 235.4242 119.4242 238.2 116 238.2 c
-112.5758 238.2 109.8 235.4242 109.8 232 c
-109.8 228.5758 112.5758 225.8 116 225.8 c
-119.4242 225.8 122.2 228.5758 122.2 232 c
+122.2 198 m
+122.2 201.4242 119.4242 204.2 116 204.2 c
+112.5758 204.2 109.8 201.4242 109.8 198 c
+109.8 194.5758 112.5758 191.8 116 191.8 c
+119.4242 191.8 122.2 194.5758 122.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42233,18 +45227,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 229.9 Tm
+1 0 0 1 114.332 195.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 232 m
-137.2 235.4242 134.4242 238.2 131 238.2 c
-127.5758 238.2 124.8 235.4242 124.8 232 c
-124.8 228.5758 127.5758 225.8 131 225.8 c
-134.4242 225.8 137.2 228.5758 137.2 232 c
+137.2 198 m
+137.2 201.4242 134.4242 204.2 131 204.2 c
+127.5758 204.2 124.8 201.4242 124.8 198 c
+124.8 194.5758 127.5758 191.8 131 191.8 c
+134.4242 191.8 137.2 194.5758 137.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42252,18 +45246,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 229.9 Tm
+1 0 0 1 129.332 195.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 232 m
-152.2 235.4242 149.4242 238.2 146 238.2 c
-142.5758 238.2 139.8 235.4242 139.8 232 c
-139.8 228.5758 142.5758 225.8 146 225.8 c
-149.4242 225.8 152.2 228.5758 152.2 232 c
+152.2 198 m
+152.2 201.4242 149.4242 204.2 146 204.2 c
+142.5758 204.2 139.8 201.4242 139.8 198 c
+139.8 194.5758 142.5758 191.8 146 191.8 c
+149.4242 191.8 152.2 194.5758 152.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42271,18 +45265,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 229.9 Tm
+1 0 0 1 144.332 195.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 232 m
-167.2 235.4242 164.4242 238.2 161 238.2 c
-157.5758 238.2 154.8 235.4242 154.8 232 c
-154.8 228.5758 157.5758 225.8 161 225.8 c
-164.4242 225.8 167.2 228.5758 167.2 232 c
+167.2 198 m
+167.2 201.4242 164.4242 204.2 161 204.2 c
+157.5758 204.2 154.8 201.4242 154.8 198 c
+154.8 194.5758 157.5758 191.8 161 191.8 c
+164.4242 191.8 167.2 194.5758 167.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42290,18 +45284,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 229.9 Tm
+1 0 0 1 159.332 195.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 232 m
-182.2 235.4242 179.4242 238.2 176 238.2 c
-172.5758 238.2 169.8 235.4242 169.8 232 c
-169.8 228.5758 172.5758 225.8 176 225.8 c
-179.4242 225.8 182.2 228.5758 182.2 232 c
+182.2 198 m
+182.2 201.4242 179.4242 204.2 176 204.2 c
+172.5758 204.2 169.8 201.4242 169.8 198 c
+169.8 194.5758 172.5758 191.8 176 191.8 c
+179.4242 191.8 182.2 194.5758 182.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42309,18 +45303,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 229.9 Tm
+1 0 0 1 174.332 195.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 232 m
-197.2 235.4242 194.4242 238.2 191 238.2 c
-187.5758 238.2 184.8 235.4242 184.8 232 c
-184.8 228.5758 187.5758 225.8 191 225.8 c
-194.4242 225.8 197.2 228.5758 197.2 232 c
+197.2 198 m
+197.2 201.4242 194.4242 204.2 191 204.2 c
+187.5758 204.2 184.8 201.4242 184.8 198 c
+184.8 194.5758 187.5758 191.8 191 191.8 c
+194.4242 191.8 197.2 194.5758 197.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42328,18 +45322,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 229.9 Tm
+1 0 0 1 189.332 195.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 232 m
-212.2 235.4242 209.4242 238.2 206 238.2 c
-202.5758 238.2 199.8 235.4242 199.8 232 c
-199.8 228.5758 202.5758 225.8 206 225.8 c
-209.4242 225.8 212.2 228.5758 212.2 232 c
+212.2 198 m
+212.2 201.4242 209.4242 204.2 206 204.2 c
+202.5758 204.2 199.8 201.4242 199.8 198 c
+199.8 194.5758 202.5758 191.8 206 191.8 c
+209.4242 191.8 212.2 194.5758 212.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42347,18 +45341,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 229.9 Tm
+1 0 0 1 204.332 195.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 232 m
-227.2 235.4242 224.4242 238.2 221 238.2 c
-217.5758 238.2 214.8 235.4242 214.8 232 c
-214.8 228.5758 217.5758 225.8 221 225.8 c
-224.4242 225.8 227.2 228.5758 227.2 232 c
+227.2 198 m
+227.2 201.4242 224.4242 204.2 221 204.2 c
+217.5758 204.2 214.8 201.4242 214.8 198 c
+214.8 194.5758 217.5758 191.8 221 191.8 c
+224.4242 191.8 227.2 194.5758 227.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42366,18 +45360,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 229.9 Tm
+1 0 0 1 219.332 195.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 232 m
-242.2 235.4242 239.4242 238.2 236 238.2 c
-232.5758 238.2 229.8 235.4242 229.8 232 c
-229.8 228.5758 232.5758 225.8 236 225.8 c
-239.4242 225.8 242.2 228.5758 242.2 232 c
+242.2 198 m
+242.2 201.4242 239.4242 204.2 236 204.2 c
+232.5758 204.2 229.8 201.4242 229.8 198 c
+229.8 194.5758 232.5758 191.8 236 191.8 c
+239.4242 191.8 242.2 194.5758 242.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42385,18 +45379,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 229.9 Tm
+1 0 0 1 234.332 195.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 232 m
-257.2 235.4242 254.4242 238.2 251 238.2 c
-247.5758 238.2 244.8 235.4242 244.8 232 c
-244.8 228.5758 247.5758 225.8 251 225.8 c
-254.4242 225.8 257.2 228.5758 257.2 232 c
+257.2 198 m
+257.2 201.4242 254.4242 204.2 251 204.2 c
+247.5758 204.2 244.8 201.4242 244.8 198 c
+244.8 194.5758 247.5758 191.8 251 191.8 c
+254.4242 191.8 257.2 194.5758 257.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -42404,7 +45398,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 229.9 Tm
+1 0 0 1 247.664 195.9 Tm
 (10) Tj
 T*
 ET
@@ -42437,13 +45431,13 @@ Q
 
 endstream
 endobj
-59 0 obj
+60 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
-/FormXob.6571a3fe66c75fac4983f572be9234e8-0 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8-0 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -42454,15 +45448,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 61 0 R
+/Contents 62 0 R
 >>
 endobj
-60 0 obj
+61 0 obj
 <<
 /Length 24899
 >>
@@ -44619,10 +47615,10 @@ Q
 
 endstream
 endobj
-61 0 obj
-[ 62 0 R 63 0 R ]
-endobj
 62 0 obj
+[ 63 0 R 64 0 R ]
+endobj
+63 0 obj
 <<
 /Length 24904
 >>
@@ -46782,9 +49778,9 @@ Q
 
 endstream
 endobj
-63 0 obj
+64 0 obj
 <<
-/Length 30743
+/Length 33323
 >>
 stream
 q
@@ -48527,17 +51523,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 346 m
+164 346 l
+166.2112 346 168 347.7888 168 350 c
+168 366 l
+168 368.2112 166.2112 370 164 370 c
+46 370 l
+43.7888 370 42 368.2112 42 366 c
+42 350 l
+42 347.7888 43.7888 346 46 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 360 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 360 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 346 m
+298 346 l
+300.2112 346 302 347.7888 302 350 c
+302 366 l
+302 368.2112 300.2112 370 298 370 c
+180 370 l
+177.7888 370 176 368.2112 176 366 c
+176 350 l
+176 347.7888 177.7888 346 180 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 360 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 360 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 346 m
+432 346 l
+434.2112 346 436 347.7888 436 350 c
+436 366 l
+436 368.2112 434.2112 370 432 370 c
+314 370 l
+311.7888 370 310 368.2112 310 366 c
+310 350 l
+310 347.7888 311.7888 346 314 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 360 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 360 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 346 m
+566 346 l
+568.2112 346 570 347.7888 570 350 c
+570 366 l
+570 368.2112 568.2112 370 566 370 c
+448 370 l
+445.7888 370 444 368.2112 444 366 c
+444 350 l
+444 347.7888 445.7888 346 448 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 360 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 360 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 360 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 360 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 343 m
-564 343 l
-567.3168 343 570 345.6832 570 349 c
-570 366 l
-570 369.3168 567.3168 372 564 372 c
-48 372 l
-44.6832 372 42 369.3168 42 366 c
-42 349 l
-42 345.6832 44.6832 343 48 343 c
+48 309 m
+564 309 l
+567.3168 309 570 311.6832 570 315 c
+570 332 l
+570 335.3168 567.3168 338 564 338 c
+48 338 l
+44.6832 338 42 335.3168 42 332 c
+42 315 l
+42 311.6832 44.6832 309 48 309 c
 h
 f*
 q
@@ -48545,29 +51796,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 359.9 m
-60.8 361.0046 59.90457 361.9 58.8 361.9 c
-57.69543 361.9 56.8 361.0046 56.8 359.9 c
-56.8 358.7954 57.69543 357.9 58.8 357.9 c
-59.90457 357.9 60.8 358.7954 60.8 359.9 c
+60.8 325.9 m
+60.8 327.0046 59.90457 327.9 58.8 327.9 c
+57.69543 327.9 56.8 327.0046 56.8 325.9 c
+56.8 324.7954 57.69543 323.9 58.8 323.9 c
+59.90457 323.9 60.8 324.7954 60.8 325.9 c
 f*
 n
-67.2 359.9 m
-67.2 361.0046 66.30457 361.9 65.2 361.9 c
-64.09543 361.9 63.2 361.0046 63.2 359.9 c
-63.2 358.7954 64.09543 357.9 65.2 357.9 c
-66.30457 357.9 67.2 358.7954 67.2 359.9 c
+67.2 325.9 m
+67.2 327.0046 66.30457 327.9 65.2 327.9 c
+64.09543 327.9 63.2 327.0046 63.2 325.9 c
+63.2 324.7954 64.09543 323.9 65.2 323.9 c
+66.30457 323.9 67.2 324.7954 67.2 325.9 c
 f*
 1.6 w
 n
-62 355.2 m
-62 357.2435 60.56731 358.9 58.8 358.9 c
-57.03269 358.9 55.6 357.2435 55.6 355.2 c
+62 321.2 m
+62 323.2435 60.56731 324.9 58.8 324.9 c
+57.03269 324.9 55.6 323.2435 55.6 321.2 c
 S
 n
-68.4 355.2 m
-68.4 357.2435 66.96731 358.9 65.2 358.9 c
-63.43269 358.9 62 357.2435 62 355.2 c
+68.4 321.2 m
+68.4 323.2435 66.96731 324.9 65.2 324.9 c
+63.43269 324.9 62 323.2435 62 321.2 c
 S
 Q
 BT
@@ -48576,7 +51827,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 358.5 Tm
+1 0 0 1 78 324.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -48586,107 +51837,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 349 Tm
+1 0 0 1 78 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 349 Tm
+1 0 0 1 83.1354 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 349 Tm
+1 0 0 1 88.2708 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 349 Tm
+1 0 0 1 94.0944 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 349 Tm
+1 0 0 1 99.2298 315 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 349 Tm
+1 0 0 1 104.018 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 349 Tm
+1 0 0 1 109.1534 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 349 Tm
+1 0 0 1 111.877 315 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 349 Tm
+1 0 0 1 114.6006 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 349 Tm
+1 0 0 1 117.3242 315 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 349 Tm
+1 0 0 1 122.8006 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 349 Tm
+1 0 0 1 127.936 315 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 349 Tm
+1 0 0 1 133.4124 315 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 349 Tm
+1 0 0 1 138.8888 315 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 349 Tm
+1 0 0 1 144.3652 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 349 Tm
+1 0 0 1 147.0888 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 349 Tm
+1 0 0 1 152.9124 315 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 349 Tm
+1 0 0 1 158.3888 315 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 328.1 m
-47.8 328.1 l
-48.68448 328.1 49.4 328.8155 49.4 329.7 c
-49.4 333.9 l
-49.4 334.7845 48.68448 335.5 47.8 335.5 c
-43.6 335.5 l
-42.71552 335.5 42 334.7845 42 333.9 c
-42 329.7 l
-42 328.8155 42.71552 328.1 43.6 328.1 c
+43.6 294.1 m
+47.8 294.1 l
+48.68448 294.1 49.4 294.8155 49.4 295.7 c
+49.4 299.9 l
+49.4 300.7845 48.68448 301.5 47.8 301.5 c
+43.6 301.5 l
+42.71552 301.5 42 300.7845 42 299.9 c
+42 295.7 l
+42 294.8155 42.71552 294.1 43.6 294.1 c
 h
 S
 BT
@@ -48695,22 +51946,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 329.6 Tm
+1 0 0 1 54.9 295.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 328.1 m
-312.8 328.1 l
-313.6845 328.1 314.4 328.8155 314.4 329.7 c
-314.4 333.9 l
-314.4 334.7845 313.6845 335.5 312.8 335.5 c
-308.6 335.5 l
-307.7155 335.5 307 334.7845 307 333.9 c
-307 329.7 l
-307 328.8155 307.7155 328.1 308.6 328.1 c
+308.6 294.1 m
+312.8 294.1 l
+313.6845 294.1 314.4 294.8155 314.4 295.7 c
+314.4 299.9 l
+314.4 300.7845 313.6845 301.5 312.8 301.5 c
+308.6 301.5 l
+307.7155 301.5 307 300.7845 307 299.9 c
+307 295.7 l
+307 294.8155 307.7155 294.1 308.6 294.1 c
 h
 S
 BT
@@ -48719,22 +51970,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 329.6 Tm
+1 0 0 1 319.9 295.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 312.1 m
-47.8 312.1 l
-48.68448 312.1 49.4 312.8155 49.4 313.7 c
-49.4 317.9 l
-49.4 318.7845 48.68448 319.5 47.8 319.5 c
-43.6 319.5 l
-42.71552 319.5 42 318.7845 42 317.9 c
-42 313.7 l
-42 312.8155 42.71552 312.1 43.6 312.1 c
+43.6 278.1 m
+47.8 278.1 l
+48.68448 278.1 49.4 278.8155 49.4 279.7 c
+49.4 283.9 l
+49.4 284.7845 48.68448 285.5 47.8 285.5 c
+43.6 285.5 l
+42.71552 285.5 42 284.7845 42 283.9 c
+42 279.7 l
+42 278.8155 42.71552 278.1 43.6 278.1 c
 h
 S
 BT
@@ -48743,22 +51994,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 313.6 Tm
+1 0 0 1 54.9 279.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 312.1 m
-312.8 312.1 l
-313.6845 312.1 314.4 312.8155 314.4 313.7 c
-314.4 317.9 l
-314.4 318.7845 313.6845 319.5 312.8 319.5 c
-308.6 319.5 l
-307.7155 319.5 307 318.7845 307 317.9 c
-307 313.7 l
-307 312.8155 307.7155 312.1 308.6 312.1 c
+308.6 278.1 m
+312.8 278.1 l
+313.6845 278.1 314.4 278.8155 314.4 279.7 c
+314.4 283.9 l
+314.4 284.7845 313.6845 285.5 312.8 285.5 c
+308.6 285.5 l
+307.7155 285.5 307 284.7845 307 283.9 c
+307 279.7 l
+307 278.8155 307.7155 278.1 308.6 278.1 c
 h
 S
 BT
@@ -48767,22 +52018,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 313.6 Tm
+1 0 0 1 319.9 279.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 296.1 m
-47.8 296.1 l
-48.68448 296.1 49.4 296.8155 49.4 297.7 c
-49.4 301.9 l
-49.4 302.7845 48.68448 303.5 47.8 303.5 c
-43.6 303.5 l
-42.71552 303.5 42 302.7845 42 301.9 c
-42 297.7 l
-42 296.8155 42.71552 296.1 43.6 296.1 c
+43.6 262.1 m
+47.8 262.1 l
+48.68448 262.1 49.4 262.8155 49.4 263.7 c
+49.4 267.9 l
+49.4 268.7845 48.68448 269.5 47.8 269.5 c
+43.6 269.5 l
+42.71552 269.5 42 268.7845 42 267.9 c
+42 263.7 l
+42 262.8155 42.71552 262.1 43.6 262.1 c
 h
 S
 BT
@@ -48795,21 +52046,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 299 m
-570 299 l
+54 265 m
+570 265 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 251 m
-564 251 l
-567.3168 251 570 253.6832 570 257 c
-570 274 l
-570 277.3168 567.3168 280 564 280 c
-48 280 l
-44.6832 280 42 277.3168 42 274 c
-42 257 l
-42 253.6832 44.6832 251 48 251 c
+48 217 m
+564 217 l
+567.3168 217 570 219.6832 570 223 c
+570 240 l
+570 243.3168 567.3168 246 564 246 c
+48 246 l
+44.6832 246 42 243.3168 42 240 c
+42 223 l
+42 219.6832 44.6832 217 48 217 c
 h
 f*
 q
@@ -48818,10 +52069,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 271 m
-67 265.5 l
-62 260 l
-57 265.5 l
+62 237 m
+67 231.5 l
+62 226 l
+57 231.5 l
 h
 f*
 Q
@@ -48831,7 +52082,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 266.5 Tm
+1 0 0 1 78 232.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -48841,112 +52092,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 257 Tm
+1 0 0 1 78 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 257 Tm
+1 0 0 1 83.1354 223 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 257 Tm
+1 0 0 1 88.2708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 257 Tm
+1 0 0 1 90.9944 223 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 257 Tm
+1 0 0 1 96.4708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 257 Tm
+1 0 0 1 99.1944 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 257 Tm
+1 0 0 1 103.9826 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 257 Tm
+1 0 0 1 106.7062 223 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 257 Tm
+1 0 0 1 109.4298 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 257 Tm
+1 0 0 1 112.1534 223 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 257 Tm
+1 0 0 1 117.977 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 257 Tm
+1 0 0 1 123.1124 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 257 Tm
+1 0 0 1 127.9006 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 257 Tm
+1 0 0 1 130.6242 223 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 257 Tm
+1 0 0 1 136.1006 223 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 257 Tm
+1 0 0 1 141.9242 223 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 257 Tm
+1 0 0 1 147.4006 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 257 Tm
+1 0 0 1 152.536 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 257 Tm
+1 0 0 1 157.6714 223 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 236.1 m
-47.8 236.1 l
-48.68448 236.1 49.4 236.8155 49.4 237.7 c
-49.4 241.9 l
-49.4 242.7845 48.68448 243.5 47.8 243.5 c
-43.6 243.5 l
-42.71552 243.5 42 242.7845 42 241.9 c
-42 237.7 l
-42 236.8155 42.71552 236.1 43.6 236.1 c
+43.6 202.1 m
+47.8 202.1 l
+48.68448 202.1 49.4 202.8155 49.4 203.7 c
+49.4 207.9 l
+49.4 208.7845 48.68448 209.5 47.8 209.5 c
+43.6 209.5 l
+42.71552 209.5 42 208.7845 42 207.9 c
+42 203.7 l
+42 202.8155 42.71552 202.1 43.6 202.1 c
 h
 S
 BT
@@ -48955,22 +52206,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 237.6 Tm
+1 0 0 1 54.9 203.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 236.1 m
-312.8 236.1 l
-313.6845 236.1 314.4 236.8155 314.4 237.7 c
-314.4 241.9 l
-314.4 242.7845 313.6845 243.5 312.8 243.5 c
-308.6 243.5 l
-307.7155 243.5 307 242.7845 307 241.9 c
-307 237.7 l
-307 236.8155 307.7155 236.1 308.6 236.1 c
+308.6 202.1 m
+312.8 202.1 l
+313.6845 202.1 314.4 202.8155 314.4 203.7 c
+314.4 207.9 l
+314.4 208.7845 313.6845 209.5 312.8 209.5 c
+308.6 209.5 l
+307.7155 209.5 307 208.7845 307 207.9 c
+307 203.7 l
+307 202.8155 307.7155 202.1 308.6 202.1 c
 h
 S
 BT
@@ -48979,22 +52230,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 237.6 Tm
+1 0 0 1 319.9 203.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 220.1 m
-47.8 220.1 l
-48.68448 220.1 49.4 220.8155 49.4 221.7 c
-49.4 225.9 l
-49.4 226.7845 48.68448 227.5 47.8 227.5 c
-43.6 227.5 l
-42.71552 227.5 42 226.7845 42 225.9 c
-42 221.7 l
-42 220.8155 42.71552 220.1 43.6 220.1 c
+43.6 186.1 m
+47.8 186.1 l
+48.68448 186.1 49.4 186.8155 49.4 187.7 c
+49.4 191.9 l
+49.4 192.7845 48.68448 193.5 47.8 193.5 c
+43.6 193.5 l
+42.71552 193.5 42 192.7845 42 191.9 c
+42 187.7 l
+42 186.8155 42.71552 186.1 43.6 186.1 c
 h
 S
 BT
@@ -49003,22 +52254,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 221.6 Tm
+1 0 0 1 54.9 187.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 220.1 m
-312.8 220.1 l
-313.6845 220.1 314.4 220.8155 314.4 221.7 c
-314.4 225.9 l
-314.4 226.7845 313.6845 227.5 312.8 227.5 c
-308.6 227.5 l
-307.7155 227.5 307 226.7845 307 225.9 c
-307 221.7 l
-307 220.8155 307.7155 220.1 308.6 220.1 c
+308.6 186.1 m
+312.8 186.1 l
+313.6845 186.1 314.4 186.8155 314.4 187.7 c
+314.4 191.9 l
+314.4 192.7845 313.6845 193.5 312.8 193.5 c
+308.6 193.5 l
+307.7155 193.5 307 192.7845 307 191.9 c
+307 187.7 l
+307 186.8155 307.7155 186.1 308.6 186.1 c
 h
 S
 BT
@@ -49027,7 +52278,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 221.6 Tm
+1 0 0 1 319.9 187.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -49037,18 +52288,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 207.8 Tm
+1 0 0 1 42 173.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 210 m
-122.2 213.4242 119.4242 216.2 116 216.2 c
-112.5758 216.2 109.8 213.4242 109.8 210 c
-109.8 206.5758 112.5758 203.8 116 203.8 c
-119.4242 203.8 122.2 206.5758 122.2 210 c
+122.2 176 m
+122.2 179.4242 119.4242 182.2 116 182.2 c
+112.5758 182.2 109.8 179.4242 109.8 176 c
+109.8 172.5758 112.5758 169.8 116 169.8 c
+119.4242 169.8 122.2 172.5758 122.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49056,18 +52307,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 207.9 Tm
+1 0 0 1 114.332 173.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 210 m
-137.2 213.4242 134.4242 216.2 131 216.2 c
-127.5758 216.2 124.8 213.4242 124.8 210 c
-124.8 206.5758 127.5758 203.8 131 203.8 c
-134.4242 203.8 137.2 206.5758 137.2 210 c
+137.2 176 m
+137.2 179.4242 134.4242 182.2 131 182.2 c
+127.5758 182.2 124.8 179.4242 124.8 176 c
+124.8 172.5758 127.5758 169.8 131 169.8 c
+134.4242 169.8 137.2 172.5758 137.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49075,18 +52326,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 207.9 Tm
+1 0 0 1 129.332 173.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 210 m
-152.2 213.4242 149.4242 216.2 146 216.2 c
-142.5758 216.2 139.8 213.4242 139.8 210 c
-139.8 206.5758 142.5758 203.8 146 203.8 c
-149.4242 203.8 152.2 206.5758 152.2 210 c
+152.2 176 m
+152.2 179.4242 149.4242 182.2 146 182.2 c
+142.5758 182.2 139.8 179.4242 139.8 176 c
+139.8 172.5758 142.5758 169.8 146 169.8 c
+149.4242 169.8 152.2 172.5758 152.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49094,18 +52345,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 207.9 Tm
+1 0 0 1 144.332 173.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 210 m
-167.2 213.4242 164.4242 216.2 161 216.2 c
-157.5758 216.2 154.8 213.4242 154.8 210 c
-154.8 206.5758 157.5758 203.8 161 203.8 c
-164.4242 203.8 167.2 206.5758 167.2 210 c
+167.2 176 m
+167.2 179.4242 164.4242 182.2 161 182.2 c
+157.5758 182.2 154.8 179.4242 154.8 176 c
+154.8 172.5758 157.5758 169.8 161 169.8 c
+164.4242 169.8 167.2 172.5758 167.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49113,18 +52364,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 207.9 Tm
+1 0 0 1 159.332 173.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 210 m
-182.2 213.4242 179.4242 216.2 176 216.2 c
-172.5758 216.2 169.8 213.4242 169.8 210 c
-169.8 206.5758 172.5758 203.8 176 203.8 c
-179.4242 203.8 182.2 206.5758 182.2 210 c
+182.2 176 m
+182.2 179.4242 179.4242 182.2 176 182.2 c
+172.5758 182.2 169.8 179.4242 169.8 176 c
+169.8 172.5758 172.5758 169.8 176 169.8 c
+179.4242 169.8 182.2 172.5758 182.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49132,18 +52383,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 207.9 Tm
+1 0 0 1 174.332 173.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 210 m
-197.2 213.4242 194.4242 216.2 191 216.2 c
-187.5758 216.2 184.8 213.4242 184.8 210 c
-184.8 206.5758 187.5758 203.8 191 203.8 c
-194.4242 203.8 197.2 206.5758 197.2 210 c
+197.2 176 m
+197.2 179.4242 194.4242 182.2 191 182.2 c
+187.5758 182.2 184.8 179.4242 184.8 176 c
+184.8 172.5758 187.5758 169.8 191 169.8 c
+194.4242 169.8 197.2 172.5758 197.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49151,18 +52402,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 207.9 Tm
+1 0 0 1 189.332 173.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 210 m
-212.2 213.4242 209.4242 216.2 206 216.2 c
-202.5758 216.2 199.8 213.4242 199.8 210 c
-199.8 206.5758 202.5758 203.8 206 203.8 c
-209.4242 203.8 212.2 206.5758 212.2 210 c
+212.2 176 m
+212.2 179.4242 209.4242 182.2 206 182.2 c
+202.5758 182.2 199.8 179.4242 199.8 176 c
+199.8 172.5758 202.5758 169.8 206 169.8 c
+209.4242 169.8 212.2 172.5758 212.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49170,18 +52421,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 207.9 Tm
+1 0 0 1 204.332 173.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 210 m
-227.2 213.4242 224.4242 216.2 221 216.2 c
-217.5758 216.2 214.8 213.4242 214.8 210 c
-214.8 206.5758 217.5758 203.8 221 203.8 c
-224.4242 203.8 227.2 206.5758 227.2 210 c
+227.2 176 m
+227.2 179.4242 224.4242 182.2 221 182.2 c
+217.5758 182.2 214.8 179.4242 214.8 176 c
+214.8 172.5758 217.5758 169.8 221 169.8 c
+224.4242 169.8 227.2 172.5758 227.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49189,18 +52440,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 207.9 Tm
+1 0 0 1 219.332 173.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 210 m
-242.2 213.4242 239.4242 216.2 236 216.2 c
-232.5758 216.2 229.8 213.4242 229.8 210 c
-229.8 206.5758 232.5758 203.8 236 203.8 c
-239.4242 203.8 242.2 206.5758 242.2 210 c
+242.2 176 m
+242.2 179.4242 239.4242 182.2 236 182.2 c
+232.5758 182.2 229.8 179.4242 229.8 176 c
+229.8 172.5758 232.5758 169.8 236 169.8 c
+239.4242 169.8 242.2 172.5758 242.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49208,18 +52459,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 207.9 Tm
+1 0 0 1 234.332 173.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 210 m
-257.2 213.4242 254.4242 216.2 251 216.2 c
-247.5758 216.2 244.8 213.4242 244.8 210 c
-244.8 206.5758 247.5758 203.8 251 203.8 c
-254.4242 203.8 257.2 206.5758 257.2 210 c
+257.2 176 m
+257.2 179.4242 254.4242 182.2 251 182.2 c
+247.5758 182.2 244.8 179.4242 244.8 176 c
+244.8 172.5758 247.5758 169.8 251 169.8 c
+254.4242 169.8 257.2 172.5758 257.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -49227,7 +52478,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 207.9 Tm
+1 0 0 1 247.664 173.9 Tm
 (10) Tj
 T*
 ET
@@ -49260,13 +52511,13 @@ Q
 
 endstream
 endobj
-64 0 obj
+65 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
-/FormXob.6571a3fe66c75fac4983f572be9234e8-0 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8-0 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -49277,15 +52528,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 66 0 R
+/Contents 67 0 R
 >>
 endobj
-65 0 obj
+66 0 obj
 <<
 /Length 24899
 >>
@@ -51442,10 +54695,10 @@ Q
 
 endstream
 endobj
-66 0 obj
-[ 67 0 R 68 0 R ]
-endobj
 67 0 obj
+[ 68 0 R 69 0 R ]
+endobj
+68 0 obj
 <<
 /Length 24904
 >>
@@ -53605,9 +56858,9 @@ Q
 
 endstream
 endobj
-68 0 obj
+69 0 obj
 <<
-/Length 30729
+/Length 33309
 >>
 stream
 q
@@ -55350,17 +58603,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 346 m
+164 346 l
+166.2112 346 168 347.7888 168 350 c
+168 366 l
+168 368.2112 166.2112 370 164 370 c
+46 370 l
+43.7888 370 42 368.2112 42 366 c
+42 350 l
+42 347.7888 43.7888 346 46 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 360 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 360 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 346 m
+298 346 l
+300.2112 346 302 347.7888 302 350 c
+302 366 l
+302 368.2112 300.2112 370 298 370 c
+180 370 l
+177.7888 370 176 368.2112 176 366 c
+176 350 l
+176 347.7888 177.7888 346 180 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 360 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 360 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 346 m
+432 346 l
+434.2112 346 436 347.7888 436 350 c
+436 366 l
+436 368.2112 434.2112 370 432 370 c
+314 370 l
+311.7888 370 310 368.2112 310 366 c
+310 350 l
+310 347.7888 311.7888 346 314 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 360 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 360 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 346 m
+566 346 l
+568.2112 346 570 347.7888 570 350 c
+570 366 l
+570 368.2112 568.2112 370 566 370 c
+448 370 l
+445.7888 370 444 368.2112 444 366 c
+444 350 l
+444 347.7888 445.7888 346 448 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 360 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 360 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 360 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 360 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 343 m
-564 343 l
-567.3168 343 570 345.6832 570 349 c
-570 366 l
-570 369.3168 567.3168 372 564 372 c
-48 372 l
-44.6832 372 42 369.3168 42 366 c
-42 349 l
-42 345.6832 44.6832 343 48 343 c
+48 309 m
+564 309 l
+567.3168 309 570 311.6832 570 315 c
+570 332 l
+570 335.3168 567.3168 338 564 338 c
+48 338 l
+44.6832 338 42 335.3168 42 332 c
+42 315 l
+42 311.6832 44.6832 309 48 309 c
 h
 f*
 q
@@ -55368,29 +58876,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 359.9 m
-60.8 361.0046 59.90457 361.9 58.8 361.9 c
-57.69543 361.9 56.8 361.0046 56.8 359.9 c
-56.8 358.7954 57.69543 357.9 58.8 357.9 c
-59.90457 357.9 60.8 358.7954 60.8 359.9 c
+60.8 325.9 m
+60.8 327.0046 59.90457 327.9 58.8 327.9 c
+57.69543 327.9 56.8 327.0046 56.8 325.9 c
+56.8 324.7954 57.69543 323.9 58.8 323.9 c
+59.90457 323.9 60.8 324.7954 60.8 325.9 c
 f*
 n
-67.2 359.9 m
-67.2 361.0046 66.30457 361.9 65.2 361.9 c
-64.09543 361.9 63.2 361.0046 63.2 359.9 c
-63.2 358.7954 64.09543 357.9 65.2 357.9 c
-66.30457 357.9 67.2 358.7954 67.2 359.9 c
+67.2 325.9 m
+67.2 327.0046 66.30457 327.9 65.2 327.9 c
+64.09543 327.9 63.2 327.0046 63.2 325.9 c
+63.2 324.7954 64.09543 323.9 65.2 323.9 c
+66.30457 323.9 67.2 324.7954 67.2 325.9 c
 f*
 1.6 w
 n
-62 355.2 m
-62 357.2435 60.56731 358.9 58.8 358.9 c
-57.03269 358.9 55.6 357.2435 55.6 355.2 c
+62 321.2 m
+62 323.2435 60.56731 324.9 58.8 324.9 c
+57.03269 324.9 55.6 323.2435 55.6 321.2 c
 S
 n
-68.4 355.2 m
-68.4 357.2435 66.96731 358.9 65.2 358.9 c
-63.43269 358.9 62 357.2435 62 355.2 c
+68.4 321.2 m
+68.4 323.2435 66.96731 324.9 65.2 324.9 c
+63.43269 324.9 62 323.2435 62 321.2 c
 S
 Q
 BT
@@ -55399,7 +58907,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 358.5 Tm
+1 0 0 1 78 324.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -55409,107 +58917,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 349 Tm
+1 0 0 1 78 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 349 Tm
+1 0 0 1 83.1354 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 349 Tm
+1 0 0 1 88.2708 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 349 Tm
+1 0 0 1 94.0944 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 349 Tm
+1 0 0 1 99.2298 315 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 349 Tm
+1 0 0 1 104.018 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 349 Tm
+1 0 0 1 109.1534 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 349 Tm
+1 0 0 1 111.877 315 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 349 Tm
+1 0 0 1 114.6006 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 349 Tm
+1 0 0 1 117.3242 315 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 349 Tm
+1 0 0 1 122.8006 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 349 Tm
+1 0 0 1 127.936 315 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 349 Tm
+1 0 0 1 133.4124 315 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 349 Tm
+1 0 0 1 138.8888 315 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 349 Tm
+1 0 0 1 144.3652 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 349 Tm
+1 0 0 1 147.0888 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 349 Tm
+1 0 0 1 152.9124 315 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 349 Tm
+1 0 0 1 158.3888 315 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 328.1 m
-47.8 328.1 l
-48.68448 328.1 49.4 328.8155 49.4 329.7 c
-49.4 333.9 l
-49.4 334.7845 48.68448 335.5 47.8 335.5 c
-43.6 335.5 l
-42.71552 335.5 42 334.7845 42 333.9 c
-42 329.7 l
-42 328.8155 42.71552 328.1 43.6 328.1 c
+43.6 294.1 m
+47.8 294.1 l
+48.68448 294.1 49.4 294.8155 49.4 295.7 c
+49.4 299.9 l
+49.4 300.7845 48.68448 301.5 47.8 301.5 c
+43.6 301.5 l
+42.71552 301.5 42 300.7845 42 299.9 c
+42 295.7 l
+42 294.8155 42.71552 294.1 43.6 294.1 c
 h
 S
 BT
@@ -55518,22 +59026,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 329.6 Tm
+1 0 0 1 54.9 295.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 328.1 m
-312.8 328.1 l
-313.6845 328.1 314.4 328.8155 314.4 329.7 c
-314.4 333.9 l
-314.4 334.7845 313.6845 335.5 312.8 335.5 c
-308.6 335.5 l
-307.7155 335.5 307 334.7845 307 333.9 c
-307 329.7 l
-307 328.8155 307.7155 328.1 308.6 328.1 c
+308.6 294.1 m
+312.8 294.1 l
+313.6845 294.1 314.4 294.8155 314.4 295.7 c
+314.4 299.9 l
+314.4 300.7845 313.6845 301.5 312.8 301.5 c
+308.6 301.5 l
+307.7155 301.5 307 300.7845 307 299.9 c
+307 295.7 l
+307 294.8155 307.7155 294.1 308.6 294.1 c
 h
 S
 BT
@@ -55542,22 +59050,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 329.6 Tm
+1 0 0 1 319.9 295.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 312.1 m
-47.8 312.1 l
-48.68448 312.1 49.4 312.8155 49.4 313.7 c
-49.4 317.9 l
-49.4 318.7845 48.68448 319.5 47.8 319.5 c
-43.6 319.5 l
-42.71552 319.5 42 318.7845 42 317.9 c
-42 313.7 l
-42 312.8155 42.71552 312.1 43.6 312.1 c
+43.6 278.1 m
+47.8 278.1 l
+48.68448 278.1 49.4 278.8155 49.4 279.7 c
+49.4 283.9 l
+49.4 284.7845 48.68448 285.5 47.8 285.5 c
+43.6 285.5 l
+42.71552 285.5 42 284.7845 42 283.9 c
+42 279.7 l
+42 278.8155 42.71552 278.1 43.6 278.1 c
 h
 S
 BT
@@ -55566,22 +59074,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 313.6 Tm
+1 0 0 1 54.9 279.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 312.1 m
-312.8 312.1 l
-313.6845 312.1 314.4 312.8155 314.4 313.7 c
-314.4 317.9 l
-314.4 318.7845 313.6845 319.5 312.8 319.5 c
-308.6 319.5 l
-307.7155 319.5 307 318.7845 307 317.9 c
-307 313.7 l
-307 312.8155 307.7155 312.1 308.6 312.1 c
+308.6 278.1 m
+312.8 278.1 l
+313.6845 278.1 314.4 278.8155 314.4 279.7 c
+314.4 283.9 l
+314.4 284.7845 313.6845 285.5 312.8 285.5 c
+308.6 285.5 l
+307.7155 285.5 307 284.7845 307 283.9 c
+307 279.7 l
+307 278.8155 307.7155 278.1 308.6 278.1 c
 h
 S
 BT
@@ -55590,22 +59098,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 313.6 Tm
+1 0 0 1 319.9 279.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 296.1 m
-47.8 296.1 l
-48.68448 296.1 49.4 296.8155 49.4 297.7 c
-49.4 301.9 l
-49.4 302.7845 48.68448 303.5 47.8 303.5 c
-43.6 303.5 l
-42.71552 303.5 42 302.7845 42 301.9 c
-42 297.7 l
-42 296.8155 42.71552 296.1 43.6 296.1 c
+43.6 262.1 m
+47.8 262.1 l
+48.68448 262.1 49.4 262.8155 49.4 263.7 c
+49.4 267.9 l
+49.4 268.7845 48.68448 269.5 47.8 269.5 c
+43.6 269.5 l
+42.71552 269.5 42 268.7845 42 267.9 c
+42 263.7 l
+42 262.8155 42.71552 262.1 43.6 262.1 c
 h
 S
 BT
@@ -55618,21 +59126,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 299 m
-570 299 l
+54 265 m
+570 265 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 251 m
-564 251 l
-567.3168 251 570 253.6832 570 257 c
-570 274 l
-570 277.3168 567.3168 280 564 280 c
-48 280 l
-44.6832 280 42 277.3168 42 274 c
-42 257 l
-42 253.6832 44.6832 251 48 251 c
+48 217 m
+564 217 l
+567.3168 217 570 219.6832 570 223 c
+570 240 l
+570 243.3168 567.3168 246 564 246 c
+48 246 l
+44.6832 246 42 243.3168 42 240 c
+42 223 l
+42 219.6832 44.6832 217 48 217 c
 h
 f*
 q
@@ -55641,10 +59149,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 271 m
-67 265.5 l
-62 260 l
-57 265.5 l
+62 237 m
+67 231.5 l
+62 226 l
+57 231.5 l
 h
 f*
 Q
@@ -55654,7 +59162,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 266.5 Tm
+1 0 0 1 78 232.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -55664,112 +59172,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 257 Tm
+1 0 0 1 78 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 257 Tm
+1 0 0 1 83.1354 223 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 257 Tm
+1 0 0 1 88.2708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 257 Tm
+1 0 0 1 90.9944 223 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 257 Tm
+1 0 0 1 96.4708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 257 Tm
+1 0 0 1 99.1944 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 257 Tm
+1 0 0 1 103.9826 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 257 Tm
+1 0 0 1 106.7062 223 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 257 Tm
+1 0 0 1 109.4298 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 257 Tm
+1 0 0 1 112.1534 223 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 257 Tm
+1 0 0 1 117.977 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 257 Tm
+1 0 0 1 123.1124 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 257 Tm
+1 0 0 1 127.9006 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 257 Tm
+1 0 0 1 130.6242 223 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 257 Tm
+1 0 0 1 136.1006 223 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 257 Tm
+1 0 0 1 141.9242 223 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 257 Tm
+1 0 0 1 147.4006 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 257 Tm
+1 0 0 1 152.536 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 257 Tm
+1 0 0 1 157.6714 223 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 236.1 m
-47.8 236.1 l
-48.68448 236.1 49.4 236.8155 49.4 237.7 c
-49.4 241.9 l
-49.4 242.7845 48.68448 243.5 47.8 243.5 c
-43.6 243.5 l
-42.71552 243.5 42 242.7845 42 241.9 c
-42 237.7 l
-42 236.8155 42.71552 236.1 43.6 236.1 c
+43.6 202.1 m
+47.8 202.1 l
+48.68448 202.1 49.4 202.8155 49.4 203.7 c
+49.4 207.9 l
+49.4 208.7845 48.68448 209.5 47.8 209.5 c
+43.6 209.5 l
+42.71552 209.5 42 208.7845 42 207.9 c
+42 203.7 l
+42 202.8155 42.71552 202.1 43.6 202.1 c
 h
 S
 BT
@@ -55778,22 +59286,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 237.6 Tm
+1 0 0 1 54.9 203.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 236.1 m
-312.8 236.1 l
-313.6845 236.1 314.4 236.8155 314.4 237.7 c
-314.4 241.9 l
-314.4 242.7845 313.6845 243.5 312.8 243.5 c
-308.6 243.5 l
-307.7155 243.5 307 242.7845 307 241.9 c
-307 237.7 l
-307 236.8155 307.7155 236.1 308.6 236.1 c
+308.6 202.1 m
+312.8 202.1 l
+313.6845 202.1 314.4 202.8155 314.4 203.7 c
+314.4 207.9 l
+314.4 208.7845 313.6845 209.5 312.8 209.5 c
+308.6 209.5 l
+307.7155 209.5 307 208.7845 307 207.9 c
+307 203.7 l
+307 202.8155 307.7155 202.1 308.6 202.1 c
 h
 S
 BT
@@ -55802,22 +59310,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 237.6 Tm
+1 0 0 1 319.9 203.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 220.1 m
-47.8 220.1 l
-48.68448 220.1 49.4 220.8155 49.4 221.7 c
-49.4 225.9 l
-49.4 226.7845 48.68448 227.5 47.8 227.5 c
-43.6 227.5 l
-42.71552 227.5 42 226.7845 42 225.9 c
-42 221.7 l
-42 220.8155 42.71552 220.1 43.6 220.1 c
+43.6 186.1 m
+47.8 186.1 l
+48.68448 186.1 49.4 186.8155 49.4 187.7 c
+49.4 191.9 l
+49.4 192.7845 48.68448 193.5 47.8 193.5 c
+43.6 193.5 l
+42.71552 193.5 42 192.7845 42 191.9 c
+42 187.7 l
+42 186.8155 42.71552 186.1 43.6 186.1 c
 h
 S
 BT
@@ -55826,22 +59334,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 221.6 Tm
+1 0 0 1 54.9 187.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 220.1 m
-312.8 220.1 l
-313.6845 220.1 314.4 220.8155 314.4 221.7 c
-314.4 225.9 l
-314.4 226.7845 313.6845 227.5 312.8 227.5 c
-308.6 227.5 l
-307.7155 227.5 307 226.7845 307 225.9 c
-307 221.7 l
-307 220.8155 307.7155 220.1 308.6 220.1 c
+308.6 186.1 m
+312.8 186.1 l
+313.6845 186.1 314.4 186.8155 314.4 187.7 c
+314.4 191.9 l
+314.4 192.7845 313.6845 193.5 312.8 193.5 c
+308.6 193.5 l
+307.7155 193.5 307 192.7845 307 191.9 c
+307 187.7 l
+307 186.8155 307.7155 186.1 308.6 186.1 c
 h
 S
 BT
@@ -55850,7 +59358,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 221.6 Tm
+1 0 0 1 319.9 187.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -55860,18 +59368,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 207.8 Tm
+1 0 0 1 42 173.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 210 m
-122.2 213.4242 119.4242 216.2 116 216.2 c
-112.5758 216.2 109.8 213.4242 109.8 210 c
-109.8 206.5758 112.5758 203.8 116 203.8 c
-119.4242 203.8 122.2 206.5758 122.2 210 c
+122.2 176 m
+122.2 179.4242 119.4242 182.2 116 182.2 c
+112.5758 182.2 109.8 179.4242 109.8 176 c
+109.8 172.5758 112.5758 169.8 116 169.8 c
+119.4242 169.8 122.2 172.5758 122.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55879,18 +59387,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 207.9 Tm
+1 0 0 1 114.332 173.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 210 m
-137.2 213.4242 134.4242 216.2 131 216.2 c
-127.5758 216.2 124.8 213.4242 124.8 210 c
-124.8 206.5758 127.5758 203.8 131 203.8 c
-134.4242 203.8 137.2 206.5758 137.2 210 c
+137.2 176 m
+137.2 179.4242 134.4242 182.2 131 182.2 c
+127.5758 182.2 124.8 179.4242 124.8 176 c
+124.8 172.5758 127.5758 169.8 131 169.8 c
+134.4242 169.8 137.2 172.5758 137.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55898,18 +59406,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 207.9 Tm
+1 0 0 1 129.332 173.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 210 m
-152.2 213.4242 149.4242 216.2 146 216.2 c
-142.5758 216.2 139.8 213.4242 139.8 210 c
-139.8 206.5758 142.5758 203.8 146 203.8 c
-149.4242 203.8 152.2 206.5758 152.2 210 c
+152.2 176 m
+152.2 179.4242 149.4242 182.2 146 182.2 c
+142.5758 182.2 139.8 179.4242 139.8 176 c
+139.8 172.5758 142.5758 169.8 146 169.8 c
+149.4242 169.8 152.2 172.5758 152.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55917,18 +59425,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 207.9 Tm
+1 0 0 1 144.332 173.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 210 m
-167.2 213.4242 164.4242 216.2 161 216.2 c
-157.5758 216.2 154.8 213.4242 154.8 210 c
-154.8 206.5758 157.5758 203.8 161 203.8 c
-164.4242 203.8 167.2 206.5758 167.2 210 c
+167.2 176 m
+167.2 179.4242 164.4242 182.2 161 182.2 c
+157.5758 182.2 154.8 179.4242 154.8 176 c
+154.8 172.5758 157.5758 169.8 161 169.8 c
+164.4242 169.8 167.2 172.5758 167.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55936,18 +59444,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 207.9 Tm
+1 0 0 1 159.332 173.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 210 m
-182.2 213.4242 179.4242 216.2 176 216.2 c
-172.5758 216.2 169.8 213.4242 169.8 210 c
-169.8 206.5758 172.5758 203.8 176 203.8 c
-179.4242 203.8 182.2 206.5758 182.2 210 c
+182.2 176 m
+182.2 179.4242 179.4242 182.2 176 182.2 c
+172.5758 182.2 169.8 179.4242 169.8 176 c
+169.8 172.5758 172.5758 169.8 176 169.8 c
+179.4242 169.8 182.2 172.5758 182.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55955,18 +59463,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 207.9 Tm
+1 0 0 1 174.332 173.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 210 m
-197.2 213.4242 194.4242 216.2 191 216.2 c
-187.5758 216.2 184.8 213.4242 184.8 210 c
-184.8 206.5758 187.5758 203.8 191 203.8 c
-194.4242 203.8 197.2 206.5758 197.2 210 c
+197.2 176 m
+197.2 179.4242 194.4242 182.2 191 182.2 c
+187.5758 182.2 184.8 179.4242 184.8 176 c
+184.8 172.5758 187.5758 169.8 191 169.8 c
+194.4242 169.8 197.2 172.5758 197.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55974,18 +59482,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 207.9 Tm
+1 0 0 1 189.332 173.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 210 m
-212.2 213.4242 209.4242 216.2 206 216.2 c
-202.5758 216.2 199.8 213.4242 199.8 210 c
-199.8 206.5758 202.5758 203.8 206 203.8 c
-209.4242 203.8 212.2 206.5758 212.2 210 c
+212.2 176 m
+212.2 179.4242 209.4242 182.2 206 182.2 c
+202.5758 182.2 199.8 179.4242 199.8 176 c
+199.8 172.5758 202.5758 169.8 206 169.8 c
+209.4242 169.8 212.2 172.5758 212.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -55993,18 +59501,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 207.9 Tm
+1 0 0 1 204.332 173.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 210 m
-227.2 213.4242 224.4242 216.2 221 216.2 c
-217.5758 216.2 214.8 213.4242 214.8 210 c
-214.8 206.5758 217.5758 203.8 221 203.8 c
-224.4242 203.8 227.2 206.5758 227.2 210 c
+227.2 176 m
+227.2 179.4242 224.4242 182.2 221 182.2 c
+217.5758 182.2 214.8 179.4242 214.8 176 c
+214.8 172.5758 217.5758 169.8 221 169.8 c
+224.4242 169.8 227.2 172.5758 227.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -56012,18 +59520,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 207.9 Tm
+1 0 0 1 219.332 173.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 210 m
-242.2 213.4242 239.4242 216.2 236 216.2 c
-232.5758 216.2 229.8 213.4242 229.8 210 c
-229.8 206.5758 232.5758 203.8 236 203.8 c
-239.4242 203.8 242.2 206.5758 242.2 210 c
+242.2 176 m
+242.2 179.4242 239.4242 182.2 236 182.2 c
+232.5758 182.2 229.8 179.4242 229.8 176 c
+229.8 172.5758 232.5758 169.8 236 169.8 c
+239.4242 169.8 242.2 172.5758 242.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -56031,18 +59539,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 207.9 Tm
+1 0 0 1 234.332 173.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 210 m
-257.2 213.4242 254.4242 216.2 251 216.2 c
-247.5758 216.2 244.8 213.4242 244.8 210 c
-244.8 206.5758 247.5758 203.8 251 203.8 c
-254.4242 203.8 257.2 206.5758 257.2 210 c
+257.2 176 m
+257.2 179.4242 254.4242 182.2 251 182.2 c
+247.5758 182.2 244.8 179.4242 244.8 176 c
+244.8 172.5758 247.5758 169.8 251 169.8 c
+254.4242 169.8 257.2 172.5758 257.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -56050,7 +59558,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 207.9 Tm
+1 0 0 1 247.664 173.9 Tm
 (10) Tj
 T*
 ET
@@ -56083,13 +59591,13 @@ Q
 
 endstream
 endobj
-69 0 obj
+70 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
-/FormXob.6571a3fe66c75fac4983f572be9234e8-0 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8-0 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -56100,15 +59608,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 71 0 R
+/Contents 72 0 R
 >>
 endobj
-70 0 obj
+71 0 obj
 <<
 /Length 24899
 >>
@@ -58265,10 +61775,10 @@ Q
 
 endstream
 endobj
-71 0 obj
-[ 72 0 R 73 0 R ]
-endobj
 72 0 obj
+[ 73 0 R 74 0 R ]
+endobj
+73 0 obj
 <<
 /Length 24904
 >>
@@ -60428,9 +63938,9 @@ Q
 
 endstream
 endobj
-73 0 obj
+74 0 obj
 <<
-/Length 30204
+/Length 32784
 >>
 stream
 q
@@ -62138,17 +65648,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 368 m
+164 368 l
+166.2112 368 168 369.7888 168 372 c
+168 388 l
+168 390.2112 166.2112 392 164 392 c
+46 392 l
+43.7888 392 42 390.2112 42 388 c
+42 372 l
+42 369.7888 43.7888 368 46 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 382 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 382 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 382 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 382 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 382 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 382 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 382 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 368 m
+298 368 l
+300.2112 368 302 369.7888 302 372 c
+302 388 l
+302 390.2112 300.2112 392 298 392 c
+180 392 l
+177.7888 392 176 390.2112 176 388 c
+176 372 l
+176 369.7888 177.7888 368 180 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 382 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 382 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 382 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 368 m
+432 368 l
+434.2112 368 436 369.7888 436 372 c
+436 388 l
+436 390.2112 434.2112 392 432 392 c
+314 392 l
+311.7888 392 310 390.2112 310 388 c
+310 372 l
+310 369.7888 311.7888 368 314 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 382 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 382 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 382 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 382 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 382 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 382 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 382 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 382 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 368 m
+566 368 l
+568.2112 368 570 369.7888 570 372 c
+570 388 l
+570 390.2112 568.2112 392 566 392 c
+448 392 l
+445.7888 392 444 390.2112 444 388 c
+444 372 l
+444 369.7888 445.7888 368 448 368 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 382 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 382 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 382 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 382 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 382 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 382 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 382 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 382 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 365 m
-564 365 l
-567.3168 365 570 367.6832 570 371 c
-570 388 l
-570 391.3168 567.3168 394 564 394 c
-48 394 l
-44.6832 394 42 391.3168 42 388 c
-42 371 l
-42 367.6832 44.6832 365 48 365 c
+48 331 m
+564 331 l
+567.3168 331 570 333.6832 570 337 c
+570 354 l
+570 357.3168 567.3168 360 564 360 c
+48 360 l
+44.6832 360 42 357.3168 42 354 c
+42 337 l
+42 333.6832 44.6832 331 48 331 c
 h
 f*
 q
@@ -62156,29 +65921,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 381.9 m
-60.8 383.0046 59.90457 383.9 58.8 383.9 c
-57.69543 383.9 56.8 383.0046 56.8 381.9 c
-56.8 380.7954 57.69543 379.9 58.8 379.9 c
-59.90457 379.9 60.8 380.7954 60.8 381.9 c
+60.8 347.9 m
+60.8 349.0046 59.90457 349.9 58.8 349.9 c
+57.69543 349.9 56.8 349.0046 56.8 347.9 c
+56.8 346.7954 57.69543 345.9 58.8 345.9 c
+59.90457 345.9 60.8 346.7954 60.8 347.9 c
 f*
 n
-67.2 381.9 m
-67.2 383.0046 66.30457 383.9 65.2 383.9 c
-64.09543 383.9 63.2 383.0046 63.2 381.9 c
-63.2 380.7954 64.09543 379.9 65.2 379.9 c
-66.30457 379.9 67.2 380.7954 67.2 381.9 c
+67.2 347.9 m
+67.2 349.0046 66.30457 349.9 65.2 349.9 c
+64.09543 349.9 63.2 349.0046 63.2 347.9 c
+63.2 346.7954 64.09543 345.9 65.2 345.9 c
+66.30457 345.9 67.2 346.7954 67.2 347.9 c
 f*
 1.6 w
 n
-62 377.2 m
-62 379.2435 60.56731 380.9 58.8 380.9 c
-57.03269 380.9 55.6 379.2435 55.6 377.2 c
+62 343.2 m
+62 345.2435 60.56731 346.9 58.8 346.9 c
+57.03269 346.9 55.6 345.2435 55.6 343.2 c
 S
 n
-68.4 377.2 m
-68.4 379.2435 66.96731 380.9 65.2 380.9 c
-63.43269 380.9 62 379.2435 62 377.2 c
+68.4 343.2 m
+68.4 345.2435 66.96731 346.9 65.2 346.9 c
+63.43269 346.9 62 345.2435 62 343.2 c
 S
 Q
 BT
@@ -62187,7 +65952,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 380.5 Tm
+1 0 0 1 78 346.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -62197,107 +65962,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 371 Tm
+1 0 0 1 78 337 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 371 Tm
+1 0 0 1 83.1354 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 371 Tm
+1 0 0 1 88.2708 337 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 371 Tm
+1 0 0 1 94.0944 337 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 371 Tm
+1 0 0 1 99.2298 337 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 371 Tm
+1 0 0 1 104.018 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 371 Tm
+1 0 0 1 109.1534 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 371 Tm
+1 0 0 1 111.877 337 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 371 Tm
+1 0 0 1 114.6006 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 371 Tm
+1 0 0 1 117.3242 337 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 371 Tm
+1 0 0 1 122.8006 337 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 371 Tm
+1 0 0 1 127.936 337 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 371 Tm
+1 0 0 1 133.4124 337 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 371 Tm
+1 0 0 1 138.8888 337 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 371 Tm
+1 0 0 1 144.3652 337 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 371 Tm
+1 0 0 1 147.0888 337 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 371 Tm
+1 0 0 1 152.9124 337 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 371 Tm
+1 0 0 1 158.3888 337 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 350.1 m
-47.8 350.1 l
-48.68448 350.1 49.4 350.8155 49.4 351.7 c
-49.4 355.9 l
-49.4 356.7845 48.68448 357.5 47.8 357.5 c
-43.6 357.5 l
-42.71552 357.5 42 356.7845 42 355.9 c
-42 351.7 l
-42 350.8155 42.71552 350.1 43.6 350.1 c
+43.6 316.1 m
+47.8 316.1 l
+48.68448 316.1 49.4 316.8155 49.4 317.7 c
+49.4 321.9 l
+49.4 322.7845 48.68448 323.5 47.8 323.5 c
+43.6 323.5 l
+42.71552 323.5 42 322.7845 42 321.9 c
+42 317.7 l
+42 316.8155 42.71552 316.1 43.6 316.1 c
 h
 S
 BT
@@ -62306,22 +66071,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 351.6 Tm
+1 0 0 1 54.9 317.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 350.1 m
-312.8 350.1 l
-313.6845 350.1 314.4 350.8155 314.4 351.7 c
-314.4 355.9 l
-314.4 356.7845 313.6845 357.5 312.8 357.5 c
-308.6 357.5 l
-307.7155 357.5 307 356.7845 307 355.9 c
-307 351.7 l
-307 350.8155 307.7155 350.1 308.6 350.1 c
+308.6 316.1 m
+312.8 316.1 l
+313.6845 316.1 314.4 316.8155 314.4 317.7 c
+314.4 321.9 l
+314.4 322.7845 313.6845 323.5 312.8 323.5 c
+308.6 323.5 l
+307.7155 323.5 307 322.7845 307 321.9 c
+307 317.7 l
+307 316.8155 307.7155 316.1 308.6 316.1 c
 h
 S
 BT
@@ -62330,22 +66095,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 351.6 Tm
+1 0 0 1 319.9 317.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 334.1 m
-47.8 334.1 l
-48.68448 334.1 49.4 334.8155 49.4 335.7 c
-49.4 339.9 l
-49.4 340.7845 48.68448 341.5 47.8 341.5 c
-43.6 341.5 l
-42.71552 341.5 42 340.7845 42 339.9 c
-42 335.7 l
-42 334.8155 42.71552 334.1 43.6 334.1 c
+43.6 300.1 m
+47.8 300.1 l
+48.68448 300.1 49.4 300.8155 49.4 301.7 c
+49.4 305.9 l
+49.4 306.7845 48.68448 307.5 47.8 307.5 c
+43.6 307.5 l
+42.71552 307.5 42 306.7845 42 305.9 c
+42 301.7 l
+42 300.8155 42.71552 300.1 43.6 300.1 c
 h
 S
 BT
@@ -62354,22 +66119,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 335.6 Tm
+1 0 0 1 54.9 301.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 334.1 m
-312.8 334.1 l
-313.6845 334.1 314.4 334.8155 314.4 335.7 c
-314.4 339.9 l
-314.4 340.7845 313.6845 341.5 312.8 341.5 c
-308.6 341.5 l
-307.7155 341.5 307 340.7845 307 339.9 c
-307 335.7 l
-307 334.8155 307.7155 334.1 308.6 334.1 c
+308.6 300.1 m
+312.8 300.1 l
+313.6845 300.1 314.4 300.8155 314.4 301.7 c
+314.4 305.9 l
+314.4 306.7845 313.6845 307.5 312.8 307.5 c
+308.6 307.5 l
+307.7155 307.5 307 306.7845 307 305.9 c
+307 301.7 l
+307 300.8155 307.7155 300.1 308.6 300.1 c
 h
 S
 BT
@@ -62378,22 +66143,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 335.6 Tm
+1 0 0 1 319.9 301.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 318.1 m
-47.8 318.1 l
-48.68448 318.1 49.4 318.8155 49.4 319.7 c
-49.4 323.9 l
-49.4 324.7845 48.68448 325.5 47.8 325.5 c
-43.6 325.5 l
-42.71552 325.5 42 324.7845 42 323.9 c
-42 319.7 l
-42 318.8155 42.71552 318.1 43.6 318.1 c
+43.6 284.1 m
+47.8 284.1 l
+48.68448 284.1 49.4 284.8155 49.4 285.7 c
+49.4 289.9 l
+49.4 290.7845 48.68448 291.5 47.8 291.5 c
+43.6 291.5 l
+42.71552 291.5 42 290.7845 42 289.9 c
+42 285.7 l
+42 284.8155 42.71552 284.1 43.6 284.1 c
 h
 S
 BT
@@ -62406,21 +66171,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 321 m
-570 321 l
+54 287 m
+570 287 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 273 m
-564 273 l
-567.3168 273 570 275.6832 570 279 c
-570 296 l
-570 299.3168 567.3168 302 564 302 c
-48 302 l
-44.6832 302 42 299.3168 42 296 c
-42 279 l
-42 275.6832 44.6832 273 48 273 c
+48 239 m
+564 239 l
+567.3168 239 570 241.6832 570 245 c
+570 262 l
+570 265.3168 567.3168 268 564 268 c
+48 268 l
+44.6832 268 42 265.3168 42 262 c
+42 245 l
+42 241.6832 44.6832 239 48 239 c
 h
 f*
 q
@@ -62429,10 +66194,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 293 m
-67 287.5 l
-62 282 l
-57 287.5 l
+62 259 m
+67 253.5 l
+62 248 l
+57 253.5 l
 h
 f*
 Q
@@ -62442,7 +66207,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 288.5 Tm
+1 0 0 1 78 254.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -62452,112 +66217,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 279 Tm
+1 0 0 1 78 245 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 279 Tm
+1 0 0 1 83.1354 245 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 279 Tm
+1 0 0 1 88.2708 245 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 279 Tm
+1 0 0 1 90.9944 245 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 279 Tm
+1 0 0 1 96.4708 245 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 279 Tm
+1 0 0 1 99.1944 245 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 279 Tm
+1 0 0 1 103.9826 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 279 Tm
+1 0 0 1 106.7062 245 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 279 Tm
+1 0 0 1 109.4298 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 279 Tm
+1 0 0 1 112.1534 245 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 279 Tm
+1 0 0 1 117.977 245 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 279 Tm
+1 0 0 1 123.1124 245 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 279 Tm
+1 0 0 1 127.9006 245 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 279 Tm
+1 0 0 1 130.6242 245 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 279 Tm
+1 0 0 1 136.1006 245 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 279 Tm
+1 0 0 1 141.9242 245 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 279 Tm
+1 0 0 1 147.4006 245 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 279 Tm
+1 0 0 1 152.536 245 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 279 Tm
+1 0 0 1 157.6714 245 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 258.1 m
-47.8 258.1 l
-48.68448 258.1 49.4 258.8155 49.4 259.7 c
-49.4 263.9 l
-49.4 264.7845 48.68448 265.5 47.8 265.5 c
-43.6 265.5 l
-42.71552 265.5 42 264.7845 42 263.9 c
-42 259.7 l
-42 258.8155 42.71552 258.1 43.6 258.1 c
+43.6 224.1 m
+47.8 224.1 l
+48.68448 224.1 49.4 224.8155 49.4 225.7 c
+49.4 229.9 l
+49.4 230.7845 48.68448 231.5 47.8 231.5 c
+43.6 231.5 l
+42.71552 231.5 42 230.7845 42 229.9 c
+42 225.7 l
+42 224.8155 42.71552 224.1 43.6 224.1 c
 h
 S
 BT
@@ -62566,22 +66331,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 259.6 Tm
+1 0 0 1 54.9 225.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 258.1 m
-312.8 258.1 l
-313.6845 258.1 314.4 258.8155 314.4 259.7 c
-314.4 263.9 l
-314.4 264.7845 313.6845 265.5 312.8 265.5 c
-308.6 265.5 l
-307.7155 265.5 307 264.7845 307 263.9 c
-307 259.7 l
-307 258.8155 307.7155 258.1 308.6 258.1 c
+308.6 224.1 m
+312.8 224.1 l
+313.6845 224.1 314.4 224.8155 314.4 225.7 c
+314.4 229.9 l
+314.4 230.7845 313.6845 231.5 312.8 231.5 c
+308.6 231.5 l
+307.7155 231.5 307 230.7845 307 229.9 c
+307 225.7 l
+307 224.8155 307.7155 224.1 308.6 224.1 c
 h
 S
 BT
@@ -62590,22 +66355,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 259.6 Tm
+1 0 0 1 319.9 225.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 242.1 m
-47.8 242.1 l
-48.68448 242.1 49.4 242.8155 49.4 243.7 c
-49.4 247.9 l
-49.4 248.7845 48.68448 249.5 47.8 249.5 c
-43.6 249.5 l
-42.71552 249.5 42 248.7845 42 247.9 c
-42 243.7 l
-42 242.8155 42.71552 242.1 43.6 242.1 c
+43.6 208.1 m
+47.8 208.1 l
+48.68448 208.1 49.4 208.8155 49.4 209.7 c
+49.4 213.9 l
+49.4 214.7845 48.68448 215.5 47.8 215.5 c
+43.6 215.5 l
+42.71552 215.5 42 214.7845 42 213.9 c
+42 209.7 l
+42 208.8155 42.71552 208.1 43.6 208.1 c
 h
 S
 BT
@@ -62614,22 +66379,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 243.6 Tm
+1 0 0 1 54.9 209.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 242.1 m
-312.8 242.1 l
-313.6845 242.1 314.4 242.8155 314.4 243.7 c
-314.4 247.9 l
-314.4 248.7845 313.6845 249.5 312.8 249.5 c
-308.6 249.5 l
-307.7155 249.5 307 248.7845 307 247.9 c
-307 243.7 l
-307 242.8155 307.7155 242.1 308.6 242.1 c
+308.6 208.1 m
+312.8 208.1 l
+313.6845 208.1 314.4 208.8155 314.4 209.7 c
+314.4 213.9 l
+314.4 214.7845 313.6845 215.5 312.8 215.5 c
+308.6 215.5 l
+307.7155 215.5 307 214.7845 307 213.9 c
+307 209.7 l
+307 208.8155 307.7155 208.1 308.6 208.1 c
 h
 S
 BT
@@ -62638,7 +66403,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 243.6 Tm
+1 0 0 1 319.9 209.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -62648,18 +66413,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 229.8 Tm
+1 0 0 1 42 195.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 232 m
-122.2 235.4242 119.4242 238.2 116 238.2 c
-112.5758 238.2 109.8 235.4242 109.8 232 c
-109.8 228.5758 112.5758 225.8 116 225.8 c
-119.4242 225.8 122.2 228.5758 122.2 232 c
+122.2 198 m
+122.2 201.4242 119.4242 204.2 116 204.2 c
+112.5758 204.2 109.8 201.4242 109.8 198 c
+109.8 194.5758 112.5758 191.8 116 191.8 c
+119.4242 191.8 122.2 194.5758 122.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62667,18 +66432,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 229.9 Tm
+1 0 0 1 114.332 195.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 232 m
-137.2 235.4242 134.4242 238.2 131 238.2 c
-127.5758 238.2 124.8 235.4242 124.8 232 c
-124.8 228.5758 127.5758 225.8 131 225.8 c
-134.4242 225.8 137.2 228.5758 137.2 232 c
+137.2 198 m
+137.2 201.4242 134.4242 204.2 131 204.2 c
+127.5758 204.2 124.8 201.4242 124.8 198 c
+124.8 194.5758 127.5758 191.8 131 191.8 c
+134.4242 191.8 137.2 194.5758 137.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62686,18 +66451,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 229.9 Tm
+1 0 0 1 129.332 195.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 232 m
-152.2 235.4242 149.4242 238.2 146 238.2 c
-142.5758 238.2 139.8 235.4242 139.8 232 c
-139.8 228.5758 142.5758 225.8 146 225.8 c
-149.4242 225.8 152.2 228.5758 152.2 232 c
+152.2 198 m
+152.2 201.4242 149.4242 204.2 146 204.2 c
+142.5758 204.2 139.8 201.4242 139.8 198 c
+139.8 194.5758 142.5758 191.8 146 191.8 c
+149.4242 191.8 152.2 194.5758 152.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62705,18 +66470,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 229.9 Tm
+1 0 0 1 144.332 195.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 232 m
-167.2 235.4242 164.4242 238.2 161 238.2 c
-157.5758 238.2 154.8 235.4242 154.8 232 c
-154.8 228.5758 157.5758 225.8 161 225.8 c
-164.4242 225.8 167.2 228.5758 167.2 232 c
+167.2 198 m
+167.2 201.4242 164.4242 204.2 161 204.2 c
+157.5758 204.2 154.8 201.4242 154.8 198 c
+154.8 194.5758 157.5758 191.8 161 191.8 c
+164.4242 191.8 167.2 194.5758 167.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62724,18 +66489,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 229.9 Tm
+1 0 0 1 159.332 195.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 232 m
-182.2 235.4242 179.4242 238.2 176 238.2 c
-172.5758 238.2 169.8 235.4242 169.8 232 c
-169.8 228.5758 172.5758 225.8 176 225.8 c
-179.4242 225.8 182.2 228.5758 182.2 232 c
+182.2 198 m
+182.2 201.4242 179.4242 204.2 176 204.2 c
+172.5758 204.2 169.8 201.4242 169.8 198 c
+169.8 194.5758 172.5758 191.8 176 191.8 c
+179.4242 191.8 182.2 194.5758 182.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62743,18 +66508,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 229.9 Tm
+1 0 0 1 174.332 195.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 232 m
-197.2 235.4242 194.4242 238.2 191 238.2 c
-187.5758 238.2 184.8 235.4242 184.8 232 c
-184.8 228.5758 187.5758 225.8 191 225.8 c
-194.4242 225.8 197.2 228.5758 197.2 232 c
+197.2 198 m
+197.2 201.4242 194.4242 204.2 191 204.2 c
+187.5758 204.2 184.8 201.4242 184.8 198 c
+184.8 194.5758 187.5758 191.8 191 191.8 c
+194.4242 191.8 197.2 194.5758 197.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62762,18 +66527,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 229.9 Tm
+1 0 0 1 189.332 195.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 232 m
-212.2 235.4242 209.4242 238.2 206 238.2 c
-202.5758 238.2 199.8 235.4242 199.8 232 c
-199.8 228.5758 202.5758 225.8 206 225.8 c
-209.4242 225.8 212.2 228.5758 212.2 232 c
+212.2 198 m
+212.2 201.4242 209.4242 204.2 206 204.2 c
+202.5758 204.2 199.8 201.4242 199.8 198 c
+199.8 194.5758 202.5758 191.8 206 191.8 c
+209.4242 191.8 212.2 194.5758 212.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62781,18 +66546,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 229.9 Tm
+1 0 0 1 204.332 195.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 232 m
-227.2 235.4242 224.4242 238.2 221 238.2 c
-217.5758 238.2 214.8 235.4242 214.8 232 c
-214.8 228.5758 217.5758 225.8 221 225.8 c
-224.4242 225.8 227.2 228.5758 227.2 232 c
+227.2 198 m
+227.2 201.4242 224.4242 204.2 221 204.2 c
+217.5758 204.2 214.8 201.4242 214.8 198 c
+214.8 194.5758 217.5758 191.8 221 191.8 c
+224.4242 191.8 227.2 194.5758 227.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62800,18 +66565,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 229.9 Tm
+1 0 0 1 219.332 195.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 232 m
-242.2 235.4242 239.4242 238.2 236 238.2 c
-232.5758 238.2 229.8 235.4242 229.8 232 c
-229.8 228.5758 232.5758 225.8 236 225.8 c
-239.4242 225.8 242.2 228.5758 242.2 232 c
+242.2 198 m
+242.2 201.4242 239.4242 204.2 236 204.2 c
+232.5758 204.2 229.8 201.4242 229.8 198 c
+229.8 194.5758 232.5758 191.8 236 191.8 c
+239.4242 191.8 242.2 194.5758 242.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62819,18 +66584,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 229.9 Tm
+1 0 0 1 234.332 195.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 232 m
-257.2 235.4242 254.4242 238.2 251 238.2 c
-247.5758 238.2 244.8 235.4242 244.8 232 c
-244.8 228.5758 247.5758 225.8 251 225.8 c
-254.4242 225.8 257.2 228.5758 257.2 232 c
+257.2 198 m
+257.2 201.4242 254.4242 204.2 251 204.2 c
+247.5758 204.2 244.8 201.4242 244.8 198 c
+244.8 194.5758 247.5758 191.8 251 191.8 c
+254.4242 191.8 257.2 194.5758 257.2 198 c
 S
 BT
 /F1-0 6 Tf
@@ -62838,7 +66603,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 229.9 Tm
+1 0 0 1 247.664 195.9 Tm
 (10) Tj
 T*
 ET
@@ -62871,13 +66636,13 @@ Q
 
 endstream
 endobj
-74 0 obj
+75 0 obj
 <<
 /Type /Page
 /Resources <<
 /XObject <<
-/FormXob.6571a3fe66c75fac4983f572be9234e8 29 0 R
-/FormXob.6571a3fe66c75fac4983f572be9234e8-0 29 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8 30 0 R
+/FormXob.6571a3fe66c75fac4983f572be9234e8-0 30 0 R
 >>
 /Font <<
 /F1 5 0 R
@@ -62888,15 +66653,17 @@ endobj
 /F3-0 7 0 R
 /F4 8 0 R
 /F4-0 8 0 R
+/F5 9 0 R
+/F5-0 9 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /MediaBox [ 0.0 0.0 792 612 ]
 /Parent 2 0 R
-/Contents 76 0 R
+/Contents 77 0 R
 >>
 endobj
-75 0 obj
+76 0 obj
 <<
 /Length 24899
 >>
@@ -65053,10 +68820,10 @@ Q
 
 endstream
 endobj
-76 0 obj
-[ 77 0 R 78 0 R ]
-endobj
 77 0 obj
+[ 78 0 R 79 0 R ]
+endobj
+78 0 obj
 <<
 /Length 24904
 >>
@@ -67216,9 +70983,9 @@ Q
 
 endstream
 endobj
-78 0 obj
+79 0 obj
 <<
-/Length 30741
+/Length 33321
 >>
 stream
 q
@@ -68961,17 +72728,272 @@ BT
 (10) Tj
 T*
 ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+46 346 m
+164 346 l
+166.2112 346 168 347.7888 168 350 c
+168 366 l
+168 368.2112 166.2112 370 164 370 c
+46 370 l
+43.7888 370 42 368.2112 42 366 c
+42 350 l
+42 347.7888 43.7888 346 46 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 49 360 Tm
+(C) Tj
+T*
+ET
+BT
+1 0 0 1 53.7432 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 58.4864 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 63.2296 360 Tm
+(D) Tj
+T*
+ET
+BT
+1 0 0 1 67.9728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 70.2296 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 75.2864 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 77.5432 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 80.108 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 85.4728 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 87.7296 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 92.4728 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+180 346 m
+298 346 l
+300.2112 346 302 347.7888 302 350 c
+302 366 l
+302 368.2112 300.2112 370 298 370 c
+180 370 l
+177.7888 370 176 368.2112 176 366 c
+176 350 l
+176 347.7888 177.7888 346 180 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 183 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 188.3648 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 190.6216 360 Tm
+(L) Tj
+T*
+ET
+BT
+1 0 0 1 194.7432 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 199.1784 360 Tm
+(S) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+314 346 m
+432 346 l
+434.2112 346 436 347.7888 436 350 c
+436 366 l
+436 368.2112 434.2112 370 432 370 c
+314 370 l
+311.7888 370 310 368.2112 310 366 c
+310 350 l
+310 347.7888 311.7888 346 314 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 317 360 Tm
+(Y) Tj
+T*
+ET
+BT
+1 0 0 1 321.4352 360 Tm
+(O) Tj
+T*
+ET
+BT
+1 0 0 1 326.492 360 Tm
+(G) Tj
+T*
+ET
+BT
+1 0 0 1 331.5488 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 336.292 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 338.5488 360 Tm
+(\050) Tj
+T*
+ET
+BT
+1 0 0 1 341.1136 360 Tm
+(M) Tj
+T*
+ET
+BT
+1 0 0 1 346.4784 360 Tm
+(I) Tj
+T*
+ET
+BT
+1 0 0 1 348.7352 360 Tm
+(N) Tj
+T*
+ET
+BT
+1 0 0 1 353.4784 360 Tm
+(\051) Tj
+T*
+ET
+0.827451 0.858824 0.847059 RG
+0.9 w
+1 1 1 rg
+n
+448 346 m
+566 346 l
+568.2112 346 570 347.7888 570 350 c
+570 366 l
+570 368.2112 568.2112 370 566 370 c
+448 370 l
+445.7888 370 444 368.2112 444 366 c
+444 350 l
+444 347.7888 445.7888 346 448 346 c
+h
+B*
+BT
+/F2-0 5.6 Tf
+6.72 TL
+ET
+0.486275 0.541176 0.533333 rg
+BT
+1 0 0 1 451 360 Tm
+(S) Tj
+T*
+ET
+BT
+1 0 0 1 455.4352 360 Tm
+(T) Tj
+T*
+ET
+BT
+1 0 0 1 459.5568 360 Tm
+(R) Tj
+T*
+ET
+BT
+1 0 0 1 464.3 360 Tm
+(E) Tj
+T*
+ET
+BT
+1 0 0 1 468.7352 360 Tm
+(A) Tj
+T*
+ET
+BT
+1 0 0 1 473.4784 360 Tm
+(K) Tj
+T*
+ET
+BT
+1 0 0 1 478.2216 360 Tm
+( ) Tj
+T*
+ET
+BT
+1 0 0 1 480.4784 360 Tm
+(\043) Tj
+T*
+ET
 0.482353 0.266667 0.768627 rg
 n
-48 343 m
-564 343 l
-567.3168 343 570 345.6832 570 349 c
-570 366 l
-570 369.3168 567.3168 372 564 372 c
-48 372 l
-44.6832 372 42 369.3168 42 366 c
-42 349 l
-42 345.6832 44.6832 343 48 343 c
+48 309 m
+564 309 l
+567.3168 309 570 311.6832 570 315 c
+570 332 l
+570 335.3168 567.3168 338 564 338 c
+48 338 l
+44.6832 338 42 335.3168 42 332 c
+42 315 l
+42 311.6832 44.6832 309 48 309 c
 h
 f*
 q
@@ -68979,29 +73001,29 @@ q
 1 1 1 rg
 1.4 w
 n
-60.8 359.9 m
-60.8 361.0046 59.90457 361.9 58.8 361.9 c
-57.69543 361.9 56.8 361.0046 56.8 359.9 c
-56.8 358.7954 57.69543 357.9 58.8 357.9 c
-59.90457 357.9 60.8 358.7954 60.8 359.9 c
+60.8 325.9 m
+60.8 327.0046 59.90457 327.9 58.8 327.9 c
+57.69543 327.9 56.8 327.0046 56.8 325.9 c
+56.8 324.7954 57.69543 323.9 58.8 323.9 c
+59.90457 323.9 60.8 324.7954 60.8 325.9 c
 f*
 n
-67.2 359.9 m
-67.2 361.0046 66.30457 361.9 65.2 361.9 c
-64.09543 361.9 63.2 361.0046 63.2 359.9 c
-63.2 358.7954 64.09543 357.9 65.2 357.9 c
-66.30457 357.9 67.2 358.7954 67.2 359.9 c
+67.2 325.9 m
+67.2 327.0046 66.30457 327.9 65.2 327.9 c
+64.09543 327.9 63.2 327.0046 63.2 325.9 c
+63.2 324.7954 64.09543 323.9 65.2 323.9 c
+66.30457 323.9 67.2 324.7954 67.2 325.9 c
 f*
 1.6 w
 n
-62 355.2 m
-62 357.2435 60.56731 358.9 58.8 358.9 c
-57.03269 358.9 55.6 357.2435 55.6 355.2 c
+62 321.2 m
+62 323.2435 60.56731 324.9 58.8 324.9 c
+57.03269 324.9 55.6 323.2435 55.6 321.2 c
 S
 n
-68.4 355.2 m
-68.4 357.2435 66.96731 358.9 65.2 358.9 c
-63.43269 358.9 62 357.2435 62 355.2 c
+68.4 321.2 m
+68.4 323.2435 66.96731 324.9 65.2 324.9 c
+63.43269 324.9 62 323.2435 62 321.2 c
 S
 Q
 BT
@@ -69010,7 +73032,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 358.5 Tm
+1 0 0 1 78 324.5 Tm
 (THE NETWORK) Tj
 T*
 ET
@@ -69020,107 +73042,107 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 349 Tm
+1 0 0 1 78 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 349 Tm
+1 0 0 1 83.1354 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 349 Tm
+1 0 0 1 88.2708 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 94.0944 349 Tm
+1 0 0 1 94.0944 315 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 99.2298 349 Tm
+1 0 0 1 99.2298 315 Tm
 (L) Tj
 T*
 ET
 BT
-1 0 0 1 104.018 349 Tm
+1 0 0 1 104.018 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 109.1534 349 Tm
+1 0 0 1 109.1534 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 111.877 349 Tm
+1 0 0 1 111.877 315 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 114.6006 349 Tm
+1 0 0 1 114.6006 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 117.3242 349 Tm
+1 0 0 1 117.3242 315 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 122.8006 349 Tm
+1 0 0 1 122.8006 315 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 127.936 349 Tm
+1 0 0 1 127.936 315 Tm
 (A) Tj
 T*
 ET
 BT
-1 0 0 1 133.4124 349 Tm
+1 0 0 1 133.4124 315 Tm
 (C) Tj
 T*
 ET
 BT
-1 0 0 1 138.8888 349 Tm
+1 0 0 1 138.8888 315 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 144.3652 349 Tm
+1 0 0 1 144.3652 315 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 147.0888 349 Tm
+1 0 0 1 147.0888 315 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 152.9124 349 Tm
+1 0 0 1 152.9124 315 Tm
 (U) Tj
 T*
 ET
 BT
-1 0 0 1 158.3888 349 Tm
+1 0 0 1 158.3888 315 Tm
 (T) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 328.1 m
-47.8 328.1 l
-48.68448 328.1 49.4 328.8155 49.4 329.7 c
-49.4 333.9 l
-49.4 334.7845 48.68448 335.5 47.8 335.5 c
-43.6 335.5 l
-42.71552 335.5 42 334.7845 42 333.9 c
-42 329.7 l
-42 328.8155 42.71552 328.1 43.6 328.1 c
+43.6 294.1 m
+47.8 294.1 l
+48.68448 294.1 49.4 294.8155 49.4 295.7 c
+49.4 299.9 l
+49.4 300.7845 48.68448 301.5 47.8 301.5 c
+43.6 301.5 l
+42.71552 301.5 42 300.7845 42 299.9 c
+42 295.7 l
+42 294.8155 42.71552 294.1 43.6 294.1 c
 h
 S
 BT
@@ -69129,22 +73151,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 329.6 Tm
+1 0 0 1 54.9 295.6 Tm
 (Went to a meeting) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 328.1 m
-312.8 328.1 l
-313.6845 328.1 314.4 328.8155 314.4 329.7 c
-314.4 333.9 l
-314.4 334.7845 313.6845 335.5 312.8 335.5 c
-308.6 335.5 l
-307.7155 335.5 307 334.7845 307 333.9 c
-307 329.7 l
-307 328.8155 307.7155 328.1 308.6 328.1 c
+308.6 294.1 m
+312.8 294.1 l
+313.6845 294.1 314.4 294.8155 314.4 295.7 c
+314.4 299.9 l
+314.4 300.7845 313.6845 301.5 312.8 301.5 c
+308.6 301.5 l
+307.7155 301.5 307 300.7845 307 299.9 c
+307 295.7 l
+307 294.8155 307.7155 294.1 308.6 294.1 c
 h
 S
 BT
@@ -69153,22 +73175,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 329.6 Tm
+1 0 0 1 319.9 295.6 Tm
 (Called sponsor \057 peer) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 312.1 m
-47.8 312.1 l
-48.68448 312.1 49.4 312.8155 49.4 313.7 c
-49.4 317.9 l
-49.4 318.7845 48.68448 319.5 47.8 319.5 c
-43.6 319.5 l
-42.71552 319.5 42 318.7845 42 317.9 c
-42 313.7 l
-42 312.8155 42.71552 312.1 43.6 312.1 c
+43.6 278.1 m
+47.8 278.1 l
+48.68448 278.1 49.4 278.8155 49.4 279.7 c
+49.4 283.9 l
+49.4 284.7845 48.68448 285.5 47.8 285.5 c
+43.6 285.5 l
+42.71552 285.5 42 284.7845 42 283.9 c
+42 279.7 l
+42 278.8155 42.71552 278.1 43.6 278.1 c
 h
 S
 BT
@@ -69177,22 +73199,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 313.6 Tm
+1 0 0 1 54.9 279.6 Tm
 (Did a small service) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-308.6 312.1 m
-312.8 312.1 l
-313.6845 312.1 314.4 312.8155 314.4 313.7 c
-314.4 317.9 l
-314.4 318.7845 313.6845 319.5 312.8 319.5 c
-308.6 319.5 l
-307.7155 319.5 307 318.7845 307 317.9 c
-307 313.7 l
-307 312.8155 307.7155 312.1 308.6 312.1 c
+308.6 278.1 m
+312.8 278.1 l
+313.6845 278.1 314.4 278.8155 314.4 279.7 c
+314.4 283.9 l
+314.4 284.7845 313.6845 285.5 312.8 285.5 c
+308.6 285.5 l
+307.7155 285.5 307 284.7845 307 283.9 c
+307 279.7 l
+307 278.8155 307.7155 278.1 308.6 278.1 c
 h
 S
 BT
@@ -69201,22 +73223,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 313.6 Tm
+1 0 0 1 319.9 279.6 Tm
 (Asked for help) Tj
 T*
 ET
 0.482353 0.266667 0.768627 RG
 1 w
 n
-43.6 296.1 m
-47.8 296.1 l
-48.68448 296.1 49.4 296.8155 49.4 297.7 c
-49.4 301.9 l
-49.4 302.7845 48.68448 303.5 47.8 303.5 c
-43.6 303.5 l
-42.71552 303.5 42 302.7845 42 301.9 c
-42 297.7 l
-42 296.8155 42.71552 296.1 43.6 296.1 c
+43.6 262.1 m
+47.8 262.1 l
+48.68448 262.1 49.4 262.8155 49.4 263.7 c
+49.4 267.9 l
+49.4 268.7845 48.68448 269.5 47.8 269.5 c
+43.6 269.5 l
+42.71552 269.5 42 268.7845 42 267.9 c
+42 263.7 l
+42 262.8155 42.71552 262.1 43.6 262.1 c
 h
 S
 BT
@@ -69229,21 +73251,21 @@ q
 0.7 w
 [ 1 2 ] 0 d
 n
-54 299 m
-570 299 l
+54 265 m
+570 265 l
 S
 Q
 0.070588 0.552941 0.65098 rg
 n
-48 251 m
-564 251 l
-567.3168 251 570 253.6832 570 257 c
-570 274 l
-570 277.3168 567.3168 280 564 280 c
-48 280 l
-44.6832 280 42 277.3168 42 274 c
-42 257 l
-42 253.6832 44.6832 251 48 251 c
+48 217 m
+564 217 l
+567.3168 217 570 219.6832 570 223 c
+570 240 l
+570 243.3168 567.3168 246 564 246 c
+48 246 l
+44.6832 246 42 243.3168 42 240 c
+42 223 l
+42 219.6832 44.6832 217 48 217 c
 h
 f*
 q
@@ -69252,10 +73274,10 @@ q
 1.4 w
 1 1 1 rg
 n
-62 271 m
-67 265.5 l
-62 260 l
-57 265.5 l
+62 237 m
+67 231.5 l
+62 226 l
+57 231.5 l
 h
 f*
 Q
@@ -69265,7 +73287,7 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 266.5 Tm
+1 0 0 1 78 232.5 Tm
 (THE MIRROR) Tj
 T*
 ET
@@ -69275,112 +73297,112 @@ BT
 ET
 1 1 1 rg
 BT
-1 0 0 1 78 257 Tm
+1 0 0 1 78 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 83.1354 257 Tm
+1 0 0 1 83.1354 223 Tm
 (P) Tj
 T*
 ET
 BT
-1 0 0 1 88.2708 257 Tm
+1 0 0 1 88.2708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 90.9944 257 Tm
+1 0 0 1 90.9944 223 Tm
 (R) Tj
 T*
 ET
 BT
-1 0 0 1 96.4708 257 Tm
+1 0 0 1 96.4708 223 Tm
 (I) Tj
 T*
 ET
 BT
-1 0 0 1 99.1944 257 Tm
+1 0 0 1 99.1944 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 103.9826 257 Tm
+1 0 0 1 103.9826 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 106.7062 257 Tm
+1 0 0 1 106.7062 223 Tm
 (\267) Tj
 T*
 ET
 BT
-1 0 0 1 109.4298 257 Tm
+1 0 0 1 109.4298 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 112.1534 257 Tm
+1 0 0 1 112.1534 223 Tm
 (G) Tj
 T*
 ET
 BT
-1 0 0 1 117.977 257 Tm
+1 0 0 1 117.977 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 123.1124 257 Tm
+1 0 0 1 123.1124 223 Tm
 (T) Tj
 T*
 ET
 BT
-1 0 0 1 127.9006 257 Tm
+1 0 0 1 127.9006 223 Tm
 ( ) Tj
 T*
 ET
 BT
-1 0 0 1 130.6242 257 Tm
+1 0 0 1 130.6242 223 Tm
 (H) Tj
 T*
 ET
 BT
-1 0 0 1 136.1006 257 Tm
+1 0 0 1 136.1006 223 Tm
 (O) Tj
 T*
 ET
 BT
-1 0 0 1 141.9242 257 Tm
+1 0 0 1 141.9242 223 Tm
 (N) Tj
 T*
 ET
 BT
-1 0 0 1 147.4006 257 Tm
+1 0 0 1 147.4006 223 Tm
 (E) Tj
 T*
 ET
 BT
-1 0 0 1 152.536 257 Tm
+1 0 0 1 152.536 223 Tm
 (S) Tj
 T*
 ET
 BT
-1 0 0 1 157.6714 257 Tm
+1 0 0 1 157.6714 223 Tm
 (T) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 236.1 m
-47.8 236.1 l
-48.68448 236.1 49.4 236.8155 49.4 237.7 c
-49.4 241.9 l
-49.4 242.7845 48.68448 243.5 47.8 243.5 c
-43.6 243.5 l
-42.71552 243.5 42 242.7845 42 241.9 c
-42 237.7 l
-42 236.8155 42.71552 236.1 43.6 236.1 c
+43.6 202.1 m
+47.8 202.1 l
+48.68448 202.1 49.4 202.8155 49.4 203.7 c
+49.4 207.9 l
+49.4 208.7845 48.68448 209.5 47.8 209.5 c
+43.6 209.5 l
+42.71552 209.5 42 208.7845 42 207.9 c
+42 203.7 l
+42 202.8155 42.71552 202.1 43.6 202.1 c
 h
 S
 BT
@@ -69389,22 +73411,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 237.6 Tm
+1 0 0 1 54.9 203.6 Tm
 (Stillness \057 prayer) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 236.1 m
-312.8 236.1 l
-313.6845 236.1 314.4 236.8155 314.4 237.7 c
-314.4 241.9 l
-314.4 242.7845 313.6845 243.5 312.8 243.5 c
-308.6 243.5 l
-307.7155 243.5 307 242.7845 307 241.9 c
-307 237.7 l
-307 236.8155 307.7155 236.1 308.6 236.1 c
+308.6 202.1 m
+312.8 202.1 l
+313.6845 202.1 314.4 202.8155 314.4 203.7 c
+314.4 207.9 l
+314.4 208.7845 313.6845 209.5 312.8 209.5 c
+308.6 209.5 l
+307.7155 209.5 307 208.7845 307 207.9 c
+307 203.7 l
+307 202.8155 307.7155 202.1 308.6 202.1 c
 h
 S
 BT
@@ -69413,22 +73435,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 237.6 Tm
+1 0 0 1 319.9 203.6 Tm
 (Surrendered what I cannot control) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-43.6 220.1 m
-47.8 220.1 l
-48.68448 220.1 49.4 220.8155 49.4 221.7 c
-49.4 225.9 l
-49.4 226.7845 48.68448 227.5 47.8 227.5 c
-43.6 227.5 l
-42.71552 227.5 42 226.7845 42 225.9 c
-42 221.7 l
-42 220.8155 42.71552 220.1 43.6 220.1 c
+43.6 186.1 m
+47.8 186.1 l
+48.68448 186.1 49.4 186.8155 49.4 187.7 c
+49.4 191.9 l
+49.4 192.7845 48.68448 193.5 47.8 193.5 c
+43.6 193.5 l
+42.71552 193.5 42 192.7845 42 191.9 c
+42 187.7 l
+42 186.8155 42.71552 186.1 43.6 186.1 c
 h
 S
 BT
@@ -69437,22 +73459,22 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 54.9 221.6 Tm
+1 0 0 1 54.9 187.6 Tm
 (Ego check \227 did not force it) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 1 w
 n
-308.6 220.1 m
-312.8 220.1 l
-313.6845 220.1 314.4 220.8155 314.4 221.7 c
-314.4 225.9 l
-314.4 226.7845 313.6845 227.5 312.8 227.5 c
-308.6 227.5 l
-307.7155 227.5 307 226.7845 307 225.9 c
-307 221.7 l
-307 220.8155 307.7155 220.1 308.6 220.1 c
+308.6 186.1 m
+312.8 186.1 l
+313.6845 186.1 314.4 186.8155 314.4 187.7 c
+314.4 191.9 l
+314.4 192.7845 313.6845 193.5 312.8 193.5 c
+308.6 193.5 l
+307.7155 193.5 307 192.7845 307 191.9 c
+307 187.7 l
+307 186.8155 307.7155 186.1 308.6 186.1 c
 h
 S
 BT
@@ -69461,7 +73483,7 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 319.9 221.6 Tm
+1 0 0 1 319.9 187.6 Tm
 (Evening tech curfew) Tj
 T*
 ET
@@ -69471,18 +73493,18 @@ BT
 ET
 0.109804 0.168627 0.2 rg
 BT
-1 0 0 1 42 207.8 Tm
+1 0 0 1 42 173.8 Tm
 (Clarity today) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-122.2 210 m
-122.2 213.4242 119.4242 216.2 116 216.2 c
-112.5758 216.2 109.8 213.4242 109.8 210 c
-109.8 206.5758 112.5758 203.8 116 203.8 c
-119.4242 203.8 122.2 206.5758 122.2 210 c
+122.2 176 m
+122.2 179.4242 119.4242 182.2 116 182.2 c
+112.5758 182.2 109.8 179.4242 109.8 176 c
+109.8 172.5758 112.5758 169.8 116 169.8 c
+119.4242 169.8 122.2 172.5758 122.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69490,18 +73512,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 114.332 207.9 Tm
+1 0 0 1 114.332 173.9 Tm
 (1) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-137.2 210 m
-137.2 213.4242 134.4242 216.2 131 216.2 c
-127.5758 216.2 124.8 213.4242 124.8 210 c
-124.8 206.5758 127.5758 203.8 131 203.8 c
-134.4242 203.8 137.2 206.5758 137.2 210 c
+137.2 176 m
+137.2 179.4242 134.4242 182.2 131 182.2 c
+127.5758 182.2 124.8 179.4242 124.8 176 c
+124.8 172.5758 127.5758 169.8 131 169.8 c
+134.4242 169.8 137.2 172.5758 137.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69509,18 +73531,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 129.332 207.9 Tm
+1 0 0 1 129.332 173.9 Tm
 (2) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-152.2 210 m
-152.2 213.4242 149.4242 216.2 146 216.2 c
-142.5758 216.2 139.8 213.4242 139.8 210 c
-139.8 206.5758 142.5758 203.8 146 203.8 c
-149.4242 203.8 152.2 206.5758 152.2 210 c
+152.2 176 m
+152.2 179.4242 149.4242 182.2 146 182.2 c
+142.5758 182.2 139.8 179.4242 139.8 176 c
+139.8 172.5758 142.5758 169.8 146 169.8 c
+149.4242 169.8 152.2 172.5758 152.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69528,18 +73550,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 144.332 207.9 Tm
+1 0 0 1 144.332 173.9 Tm
 (3) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-167.2 210 m
-167.2 213.4242 164.4242 216.2 161 216.2 c
-157.5758 216.2 154.8 213.4242 154.8 210 c
-154.8 206.5758 157.5758 203.8 161 203.8 c
-164.4242 203.8 167.2 206.5758 167.2 210 c
+167.2 176 m
+167.2 179.4242 164.4242 182.2 161 182.2 c
+157.5758 182.2 154.8 179.4242 154.8 176 c
+154.8 172.5758 157.5758 169.8 161 169.8 c
+164.4242 169.8 167.2 172.5758 167.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69547,18 +73569,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 159.332 207.9 Tm
+1 0 0 1 159.332 173.9 Tm
 (4) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-182.2 210 m
-182.2 213.4242 179.4242 216.2 176 216.2 c
-172.5758 216.2 169.8 213.4242 169.8 210 c
-169.8 206.5758 172.5758 203.8 176 203.8 c
-179.4242 203.8 182.2 206.5758 182.2 210 c
+182.2 176 m
+182.2 179.4242 179.4242 182.2 176 182.2 c
+172.5758 182.2 169.8 179.4242 169.8 176 c
+169.8 172.5758 172.5758 169.8 176 169.8 c
+179.4242 169.8 182.2 172.5758 182.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69566,18 +73588,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 174.332 207.9 Tm
+1 0 0 1 174.332 173.9 Tm
 (5) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-197.2 210 m
-197.2 213.4242 194.4242 216.2 191 216.2 c
-187.5758 216.2 184.8 213.4242 184.8 210 c
-184.8 206.5758 187.5758 203.8 191 203.8 c
-194.4242 203.8 197.2 206.5758 197.2 210 c
+197.2 176 m
+197.2 179.4242 194.4242 182.2 191 182.2 c
+187.5758 182.2 184.8 179.4242 184.8 176 c
+184.8 172.5758 187.5758 169.8 191 169.8 c
+194.4242 169.8 197.2 172.5758 197.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69585,18 +73607,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 189.332 207.9 Tm
+1 0 0 1 189.332 173.9 Tm
 (6) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-212.2 210 m
-212.2 213.4242 209.4242 216.2 206 216.2 c
-202.5758 216.2 199.8 213.4242 199.8 210 c
-199.8 206.5758 202.5758 203.8 206 203.8 c
-209.4242 203.8 212.2 206.5758 212.2 210 c
+212.2 176 m
+212.2 179.4242 209.4242 182.2 206 182.2 c
+202.5758 182.2 199.8 179.4242 199.8 176 c
+199.8 172.5758 202.5758 169.8 206 169.8 c
+209.4242 169.8 212.2 172.5758 212.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69604,18 +73626,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 204.332 207.9 Tm
+1 0 0 1 204.332 173.9 Tm
 (7) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-227.2 210 m
-227.2 213.4242 224.4242 216.2 221 216.2 c
-217.5758 216.2 214.8 213.4242 214.8 210 c
-214.8 206.5758 217.5758 203.8 221 203.8 c
-224.4242 203.8 227.2 206.5758 227.2 210 c
+227.2 176 m
+227.2 179.4242 224.4242 182.2 221 182.2 c
+217.5758 182.2 214.8 179.4242 214.8 176 c
+214.8 172.5758 217.5758 169.8 221 169.8 c
+224.4242 169.8 227.2 172.5758 227.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69623,18 +73645,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 219.332 207.9 Tm
+1 0 0 1 219.332 173.9 Tm
 (8) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-242.2 210 m
-242.2 213.4242 239.4242 216.2 236 216.2 c
-232.5758 216.2 229.8 213.4242 229.8 210 c
-229.8 206.5758 232.5758 203.8 236 203.8 c
-239.4242 203.8 242.2 206.5758 242.2 210 c
+242.2 176 m
+242.2 179.4242 239.4242 182.2 236 182.2 c
+232.5758 182.2 229.8 179.4242 229.8 176 c
+229.8 172.5758 232.5758 169.8 236 169.8 c
+239.4242 169.8 242.2 172.5758 242.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69642,18 +73664,18 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 234.332 207.9 Tm
+1 0 0 1 234.332 173.9 Tm
 (9) Tj
 T*
 ET
 0.070588 0.552941 0.65098 RG
 0.9 w
 n
-257.2 210 m
-257.2 213.4242 254.4242 216.2 251 216.2 c
-247.5758 216.2 244.8 213.4242 244.8 210 c
-244.8 206.5758 247.5758 203.8 251 203.8 c
-254.4242 203.8 257.2 206.5758 257.2 210 c
+257.2 176 m
+257.2 179.4242 254.4242 182.2 251 182.2 c
+247.5758 182.2 244.8 179.4242 244.8 176 c
+244.8 172.5758 247.5758 169.8 251 169.8 c
+254.4242 169.8 257.2 172.5758 257.2 176 c
 S
 BT
 /F1-0 6 Tf
@@ -69661,7 +73683,7 @@ BT
 ET
 0.486275 0.541176 0.533333 rg
 BT
-1 0 0 1 247.664 207.9 Tm
+1 0 0 1 247.664 173.9 Tm
 (10) Tj
 T*
 ET
@@ -69695,92 +73717,93 @@ Q
 endstream
 endobj
 xref
-0 79
+0 80
 0000000000 65535 f 
 0000000015 00000 n 
 0000000054 00000 n 
 0000000205 00000 n 
 0000000254 00000 n 
-0000000513 00000 n 
-0000000620 00000 n 
-0000000732 00000 n 
-0000000847 00000 n 
-0000000966 00000 n 
-0000009246 00000 n 
-0000009280 00000 n 
-0000017566 00000 n 
-0000029787 00000 n 
-0000030047 00000 n 
-0000036012 00000 n 
-0000036046 00000 n 
-0000042016 00000 n 
-0000046127 00000 n 
-0000046387 00000 n 
-0000050482 00000 n 
-0000050516 00000 n 
-0000054616 00000 n 
-0000061808 00000 n 
-0000062068 00000 n 
-0000081534 00000 n 
-0000081568 00000 n 
-0000101039 00000 n 
-0000114462 00000 n 
-0000114786 00000 n 
-0000119677 00000 n 
-0000144630 00000 n 
-0000144664 00000 n 
-0000169622 00000 n 
-0000183091 00000 n 
-0000183415 00000 n 
-0000196240 00000 n 
-0000196274 00000 n 
-0000209104 00000 n 
-0000239888 00000 n 
-0000240212 00000 n 
-0000265165 00000 n 
-0000265199 00000 n 
-0000290157 00000 n 
-0000300220 00000 n 
-0000300544 00000 n 
-0000310717 00000 n 
-0000310751 00000 n 
-0000320929 00000 n 
-0000351185 00000 n 
-0000351509 00000 n 
-0000376462 00000 n 
-0000376496 00000 n 
-0000401454 00000 n 
-0000409676 00000 n 
-0000410000 00000 n 
-0000425784 00000 n 
-0000425818 00000 n 
-0000441607 00000 n 
-0000471863 00000 n 
-0000472238 00000 n 
-0000497191 00000 n 
-0000497225 00000 n 
-0000522183 00000 n 
-0000552980 00000 n 
-0000553355 00000 n 
-0000578308 00000 n 
-0000578342 00000 n 
-0000603300 00000 n 
-0000634083 00000 n 
-0000634458 00000 n 
-0000659411 00000 n 
-0000659445 00000 n 
-0000684403 00000 n 
-0000714661 00000 n 
-0000715036 00000 n 
-0000739989 00000 n 
-0000740023 00000 n 
-0000764981 00000 n 
+0000000535 00000 n 
+0000000642 00000 n 
+0000000754 00000 n 
+0000000869 00000 n 
+0000000988 00000 n 
+0000001097 00000 n 
+0000009378 00000 n 
+0000009412 00000 n 
+0000017698 00000 n 
+0000029911 00000 n 
+0000030193 00000 n 
+0000036158 00000 n 
+0000036192 00000 n 
+0000042162 00000 n 
+0000046273 00000 n 
+0000046555 00000 n 
+0000050650 00000 n 
+0000050684 00000 n 
+0000054784 00000 n 
+0000080732 00000 n 
+0000081014 00000 n 
+0000100480 00000 n 
+0000100514 00000 n 
+0000119985 00000 n 
+0000133408 00000 n 
+0000133754 00000 n 
+0000138645 00000 n 
+0000163598 00000 n 
+0000163632 00000 n 
+0000188590 00000 n 
+0000202059 00000 n 
+0000202405 00000 n 
+0000215230 00000 n 
+0000215264 00000 n 
+0000228094 00000 n 
+0000261458 00000 n 
+0000261804 00000 n 
+0000286757 00000 n 
+0000286791 00000 n 
+0000311749 00000 n 
+0000321812 00000 n 
+0000322158 00000 n 
+0000332331 00000 n 
+0000332365 00000 n 
+0000342543 00000 n 
+0000375379 00000 n 
+0000375725 00000 n 
+0000400678 00000 n 
+0000400712 00000 n 
+0000425670 00000 n 
+0000433892 00000 n 
+0000434238 00000 n 
+0000450022 00000 n 
+0000450056 00000 n 
+0000465845 00000 n 
+0000498681 00000 n 
+0000499078 00000 n 
+0000524031 00000 n 
+0000524065 00000 n 
+0000549023 00000 n 
+0000582400 00000 n 
+0000582797 00000 n 
+0000607750 00000 n 
+0000607784 00000 n 
+0000632742 00000 n 
+0000666105 00000 n 
+0000666502 00000 n 
+0000691455 00000 n 
+0000691489 00000 n 
+0000716447 00000 n 
+0000749285 00000 n 
+0000749682 00000 n 
+0000774635 00000 n 
+0000774669 00000 n 
+0000799627 00000 n 
 trailer
 <<
-/Size 79
+/Size 80
 /Root 3 0 R
 /Info 1 0 R
 >>
 startxref
-795776
+833002
 %%EOF
