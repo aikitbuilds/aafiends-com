@@ -16,6 +16,7 @@ import VocabToggle from "./VocabToggle";
 // one-line subtitle on mobile, since "G.A.D." and "Data" are opaque to a
 // newcomer on their own.
 const NAV_LINKS = [
+  { href: "/90-r-and-r", label: "90 R&R", title: "90 Days Recovery & Restructure — the flagship cohort" },
   { href: "/data", label: "Data", title: "Your telemetry dashboard" },
   { href: "/gad", label: "G.A.D.", title: "Grand Architect Divine — the spiritual framing" },
   { href: "/12-and-12", label: "12 & 12", title: "The 12 Steps & 12 Traditions" },

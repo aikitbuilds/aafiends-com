@@ -28,6 +28,8 @@ export default function SiteFooter() {
             <Link href="/stories" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Stories</Link>
             <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Science</Link>
             <Link href="/ai4aa" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">AI4AA Course</Link>
+            <Link href="/90-r-and-r" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">90 Days R&amp;R</Link>
+            <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">90 R&amp;R Journal</Link>
           </nav>
         </div>
 
@@ -48,11 +50,17 @@ export default function SiteFooter() {
           <p className="text-[10px] text-neutral-600 leading-relaxed mt-1">One recovery ecosystem — the pavement and the diagnosis.</p>
         </div>
 
-        {/* Column 4: Legal/Disclaimer */}
+        {/* Column 4: Legal/Disclaimer + Crisis */}
         <div className="flex flex-col gap-4">
-            <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Disclaimer</h4>
+            <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Disclaimer &amp; Support</h4>
             <p className="text-xs leading-relaxed opacity-70">
-              AAFiends is not officially affiliated with Alcoholics Anonymous World Services, Inc.
+              AAFiends is peer support, not medical advice, and is not a substitute for professional treatment.
+              Not affiliated with or endorsed by Alcoholics Anonymous World Services, Inc.
+            </p>
+            <p className="text-xs leading-relaxed text-red-300/90 font-bold">
+              In crisis? Call or text <a href="tel:988" className="underline hover:text-red-200">988</a> ·
+              Text HOME to <a href="sms:741741&body=HOME" className="underline hover:text-red-200">741741</a> ·
+              SAMHSA <a href="tel:18006624357" className="underline hover:text-red-200">1-800-662-4357</a>
             </p>
         </div>
 

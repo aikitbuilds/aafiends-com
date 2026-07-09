@@ -327,6 +327,47 @@ export default function LandingPage() {
         </div>
       </motion.section>
 
+      {/* 90 DAYS R&R FELLOWSHIP — featured program */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
+      >
+        <div className="w-full bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row-reverse items-stretch shadow-[0_0_40px_rgba(16,185,129,0.15)] group relative">
+
+          <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+            <img src="/recovery_hero_vibrant.png" alt="90 Days R&R Fellowship" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-[#0a140f]/30 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0a140f] hidden md:block"></div>
+          </div>
+
+          <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center relative z-10">
+            <div className="flex items-center gap-3 flex-wrap mb-4">
+              <span className="text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest bg-[#10b981]/10 px-3 py-1 rounded-full border border-[#10b981]/30">Flagship Program</span>
+              <span className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest bg-[#f59e0b]/10 px-3 py-1 rounded-full border border-[#f59e0b]/30">12 Seats · Mid-Aug 2026</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
+              90 Days <span className="text-[#10b981]">R&amp;R</span> <br className="hidden md:block" /><span className="text-neutral-400 text-2xl md:text-3xl">Recovery &amp; Restructure</span>
+            </h2>
+            <p className="text-neutral-300 text-base leading-relaxed mb-8">
+              A biology-first cohort for the first, hardest 90 days. Opens with a 1-day intensive bootcamp, then daily telemetry that proves your baseline is healing. Reserve a seat with a $20 deposit — or pay what you can.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/90-r-and-r" className="w-fit">
+                <button className="py-3 px-6 rounded-lg bg-[#10b981] text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-[#059669] shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                  <HeartPulse size={18} />
+                  Explore the Fellowship
+                </button>
+              </Link>
+              <Link href="/90-r-and-r#reserve" className="w-fit">
+                <button className="py-3 px-6 rounded-lg bg-transparent text-[#10b981] border border-[#10b981]/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:bg-[#10b981]/10">
+                  Reserve a Seat <ArrowRight size={16} />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* BEYOND ALCOHOL — multi-addiction tie-in (Phase 3.4) */}
       <section className="w-full max-w-7xl mx-auto px-6 py-12 relative z-20 border-t border-white/5">
         <div className="w-full bg-[#0a0a0a] border border-red-500/20 rounded-[2rem] p-8 md:p-12 flex flex-col gap-6 shadow-xl">

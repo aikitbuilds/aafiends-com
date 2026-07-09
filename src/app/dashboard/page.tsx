@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { db } from "@/lib/firebase";
 import { doc, updateDoc, increment } from "firebase/firestore";
 import { computeVanguardProfile, MASCOT_INFO, type VanguardProfileResult, type Mascot } from "@/lib/vanguardProfile";
+import CrisisSupport from "@/components/CrisisSupport";
 
 type TabId = "overview" | "engine" | "mirror" | "network" | "data" | "bio12";
 
@@ -255,6 +256,9 @@ export default function DashboardPage() {
 
                 {/* Vanguard vulnerability profile */}
                 {vanguard && <VanguardCard vanguard={vanguard} />}
+
+                {/* Crisis resources — always available (safety audit P0) */}
+                <CrisisSupport />
 
                 {/* Pillar cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
