@@ -22,6 +22,8 @@ const NAV_LINKS = [
   { href: "/12-and-12", label: "12 & 12", title: "The 12 Steps & 12 Traditions" },
   { href: "/stories", label: "Stories", title: "Community recovery stories" },
   { href: "/blog", label: "Science", title: "The research behind the app, in plain English" },
+  { href: "/90rr", label: "Journal", title: "Download the free 90 R&R printable journal" },
+  { href: "/contact", label: "Contact", title: "Questions, feedback, or the Fellowship — get in touch" },
 ];
 
 export default function SiteHeader() {

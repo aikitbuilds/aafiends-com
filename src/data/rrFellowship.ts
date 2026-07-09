@@ -19,7 +19,7 @@ export const RESERVATION = {
   suggestedDeposit: 20,
   quickAmounts: [10, 20, 40], // "pay whatever you can" — $20 is the anchor
   venmoHandle: "Cong-Tran-28", // e.g. "aafiends"  →  https://venmo.com/aafiends
-  reserveEmail: "reserve@aafiends.com", // fallback if Venmo not set
+  reserveEmail: "aafiends@gmail.com", // fallback if Venmo not set
   note: "90 R&R Fellowship — seat deposit (pay-what-you-can, Tradition 7)",
 };
 

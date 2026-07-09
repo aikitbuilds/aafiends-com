@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aafiendscom.web.app"),
+  metadataBase: new URL("https://aafiends.com"),
   title: "AAfiends | Recovery Dashboard & AI Coach for Any Addiction",
   description: "AAfiends is a recovery dashboard and AI coach built by people in recovery — for any addiction, not just alcohol. Track sleep, meetings, cravings, and the BIO 12 daily protocol to prove your baseline is healing. Data over denial.",
   keywords: ["AA recovery app", "sobriety tracker", "addiction recovery dashboard", "AI recovery coach", "12 step tracker", "alcoholics anonymous app", "opioid recovery app", "quit nicotine tracker", "gambling addiction recovery", "porn addiction recovery", "recovery habit tracker", "BIO 12 protocol", "addiction intelligence virus"],

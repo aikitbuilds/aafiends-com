@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://aafiendscom.web.app";
+  const base = "https://aafiends.com";
   const now = new Date();
 
   return [
@@ -11,5 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/12-and-12`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/stories`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${base}/ai4aa`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/90-r-and-r`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/90rr`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${base}/protocol`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 }

@@ -30,6 +30,7 @@ export default function SiteFooter() {
             <Link href="/ai4aa" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">AI4AA Course</Link>
             <Link href="/90-r-and-r" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">90 Days R&amp;R</Link>
             <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">90 R&amp;R Journal</Link>
+            <Link href="/contact" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Contact</Link>
           </nav>
         </div>
 
@@ -53,6 +54,7 @@ export default function SiteFooter() {
         {/* Column 4: Legal/Disclaimer + Crisis */}
         <div className="flex flex-col gap-4">
             <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Disclaimer &amp; Support</h4>
+            <p className="text-xs leading-relaxed">Contact: <a href="mailto:aafiends@gmail.com" className="text-[#10b981] hover:underline">aafiends@gmail.com</a></p>
             <p className="text-xs leading-relaxed opacity-70">
               AAFiends is peer support, not medical advice, and is not a substitute for professional treatment.
               Not affiliated with or endorsed by Alcoholics Anonymous World Services, Inc.
