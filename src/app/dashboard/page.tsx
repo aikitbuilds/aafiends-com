@@ -21,11 +21,13 @@ import { db } from "@/lib/firebase";
 import { doc, updateDoc, increment } from "firebase/firestore";
 import { computeVanguardProfile, MASCOT_INFO, type VanguardProfileResult, type Mascot } from "@/lib/vanguardProfile";
 import CrisisSupport from "@/components/CrisisSupport";
+import DailyLedger from "@/components/DailyLedger";
 
-type TabId = "overview" | "engine" | "mirror" | "network" | "data" | "bio12";
+type TabId = "overview" | "ledger" | "engine" | "mirror" | "network" | "data" | "bio12";
 
 const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: "overview", label: "Overview", icon: LayoutGrid },
+  { id: "ledger", label: "Ledger", icon: BookOpen },
   { id: "engine", label: "Engine", icon: Mic },
   { id: "mirror", label: "Mirror", icon: Brain },
   { id: "network", label: "Network", icon: Users },
@@ -35,6 +37,7 @@ const TABS: { id: TabId; label: string; icon: any }[] = [
 
 const TAB_STYLES: Record<TabId, { active: string; iconWrap: string; text: string }> = {
   overview: { active: "border-emerald-500 text-emerald-400 bg-emerald-500/5", iconWrap: "bg-emerald-500/10 text-emerald-400", text: "text-emerald-400" },
+  ledger: { active: "border-emerald-500 text-emerald-400 bg-emerald-500/5", iconWrap: "bg-emerald-500/10 text-emerald-400", text: "text-emerald-400" },
   engine: { active: "border-red-500 text-red-400 bg-red-500/5", iconWrap: "bg-red-500/10 text-red-400", text: "text-red-400" },
   mirror: { active: "border-blue-500 text-blue-400 bg-blue-500/5", iconWrap: "bg-blue-500/10 text-blue-400", text: "text-blue-400" },
   network: { active: "border-purple-500 text-purple-400 bg-purple-500/5", iconWrap: "bg-purple-500/10 text-purple-400", text: "text-purple-400" },
@@ -288,6 +291,18 @@ export default function DashboardPage() {
                   />
                 </div>
               </>
+            )}
+
+            {activeTab === "ledger" && (
+              <PillarPanel
+                icon={BookOpen}
+                name="Daily Ledger"
+                subtitle="Your paper journal, digitized"
+                description="The same Side A / Side B check-in as the printed 90 R&R workbook — it scores your day (VSE) and feeds your trend chart."
+                accent={TAB_STYLES.ledger}
+              >
+                <DailyLedger daysSober={daysSober} />
+              </PillarPanel>
             )}
 
             {activeTab === "engine" && (
