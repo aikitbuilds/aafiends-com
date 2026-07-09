@@ -1,11 +1,10 @@
 "use client";
 
 // 90 R&R seat reservation + intake. Google sign-in → 5 quick icon questions →
-// first name / area → deposit. Answers are saved to the signed-in user's own
-// Firestore doc (users/{uid}.rrReservation), which the existing security rules
-// already allow — so no rules change is needed. Michael can read intakes from
-// the Firebase console (or an Admin export) to see who reserved and where they
-// are in recovery.
+// first name / area → optional deposit. Answers are saved to the signed-in
+// user's own Firestore doc (users/{uid}.rrReservation), which the existing
+// security rules already allow — so no rules change is needed. Joining is never
+// blocked on payment: the deposit is optional and can be paid later.
 
 import { useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -82,14 +81,14 @@ export default function ReserveFlow() {
 
   const [checking, setChecking] = useState(true);
   const [reserved, setReserved] = useState(false);
-  const [step, setStep] = useState(0); // 0..QUESTIONS.length-1 = questions, ===length = details form
+  const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [firstName, setFirstName] = useState("");
   const [area, setArea] = useState("");
   const [amount, setAmount] = useState<number>(RESERVATION.suggestedDeposit);
   const [saving, setSaving] = useState(false);
+  const [noteSaved, setNoteSaved] = useState<string | null>(null);
 
-  // Check if this user already reserved.
   useEffect(() => {
     let active = true;
     (async () => {
@@ -121,6 +120,7 @@ export default function ReserveFlow() {
           email: user.email || "",
           displayName: user.displayName || "",
           depositIntent: amount,
+          depositStatus: "unpaid",
           status: "reserved",
           createdAt: new Date().toISOString(),
         },
@@ -130,6 +130,18 @@ export default function ReserveFlow() {
       console.error("Failed to save reservation", e);
     }
     setSaving(false);
+  };
+
+  const markPayLater = async () => {
+    if (!user) return;
+    setNoteSaved("later");
+    try {
+      await setDoc(doc(db, "users", user.uid), {
+        rrReservation: { depositStatus: "later" },
+      }, { merge: true });
+    } catch (e) {
+      console.error("Failed to save pay-later note", e);
+    }
   };
 
   const SeatDots = () => (
@@ -158,17 +170,15 @@ export default function ReserveFlow() {
     </section>
   );
 
-  // ---- states ----
   if (loading || checking) {
     return <Shell><p className="text-center text-neutral-500 font-mono text-xs uppercase tracking-widest animate-pulse">Loading…</p></Shell>;
   }
 
-  // Signed out → Google sign-in
   if (!user) {
     return (
       <Shell>
         <p className="text-neutral-400 text-sm leading-relaxed max-w-lg mx-auto text-center mb-8">
-          Hold one of the {RESERVATION.seatsTotal} seats. Sign in first so we know who you are — then answer five quick taps and put down a deposit ($20 or pay what you can). Use a pseudonym if you prefer; we honor anonymity.
+          Hold one of the {RESERVATION.seatsTotal} seats. Sign in first so we know who you are — then answer five quick taps to hold your seat. A deposit is <span className="text-white font-bold">optional</span> — pay now, later, or whatever you can. Use a pseudonym if you prefer; we honor anonymity.
         </p>
         <div className="flex justify-center">
           <button onClick={login} className="px-10 py-5 bg-white hover:bg-neutral-200 text-black font-black text-base uppercase tracking-widest rounded-2xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center gap-3">
@@ -180,15 +190,14 @@ export default function ReserveFlow() {
     );
   }
 
-  // Reserved → confirmation + deposit
   if (reserved) {
     return (
       <Shell>
         <div className="flex flex-col items-center text-center gap-5">
           <CheckCircle2 size={64} className="text-[#10b981]" />
-          <h3 className="text-2xl font-black uppercase tracking-tight text-white">You&apos;re on the list.</h3>
+          <h3 className="text-2xl font-black uppercase tracking-tight text-white">You&apos;re in. Seat held.</h3>
           <p className="text-neutral-400 text-sm max-w-md leading-relaxed">
-            Your seat is held and your intake is saved. Lock it in with a deposit — <span className="text-white font-bold">${RESERVATION.suggestedDeposit}</span> suggested, or pay whatever you can. No one is turned away for lack of funds.
+            Your intake is saved and your seat is held — <span className="text-white font-bold">no payment needed to join</span>. A deposit is optional and just helps fund the cohort: <span className="text-white font-bold">${RESERVATION.suggestedDeposit}</span> suggested, or pay whatever you can, whenever you can. No one is turned away for lack of funds.
           </p>
           <div className="flex gap-3 justify-center flex-wrap my-2">
             {RESERVATION.quickAmounts.map((amt) => (
@@ -200,15 +209,21 @@ export default function ReserveFlow() {
           </div>
           <a href={buildDepositUrl(amount)} target="_blank" rel="noopener noreferrer"
             className="px-12 py-5 bg-[#10b981] hover:bg-[#059669] text-black font-black text-lg uppercase tracking-widest rounded-2xl transition-all shadow-[0_0_30px_rgba(16,185,129,0.4)] flex items-center gap-3">
-            <Rocket size={20} /> Deposit ${amount} via Venmo
+            <Rocket size={20} /> Deposit ${amount} via Venmo <span className="text-black/60 font-bold normal-case tracking-normal">(optional)</span>
           </a>
+          {noteSaved === "later" ? (
+            <p className="text-sm text-[#10b981] font-bold">Got it — your seat&apos;s held. You can deposit anytime from this page.</p>
+          ) : (
+            <button onClick={markPayLater} className="text-xs font-mono text-neutral-400 hover:text-white underline underline-offset-4 uppercase tracking-widest">
+              I&apos;ll pay later →
+            </button>
+          )}
           <p className="text-[11px] font-mono text-neutral-500 uppercase tracking-widest">We&apos;ll email your cohort details before the mid-August kickoff.</p>
         </div>
       </Shell>
     );
   }
 
-  // Details form (after 5 questions)
   if (step >= QUESTIONS.length) {
     return (
       <Shell>
@@ -234,7 +249,6 @@ export default function ReserveFlow() {
     );
   }
 
-  // Question wizard
   const q = QUESTIONS[step];
   return (
     <Shell>
