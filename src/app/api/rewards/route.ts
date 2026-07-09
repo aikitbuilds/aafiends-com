@@ -38,6 +38,7 @@ function computeState(profile: any) {
     meetingsCount,
     sponsorActions: rewards.sponsorActions || 0,
     feedbackCount: rewards.feedbackCount || 0,
+    checkinCount: rewards.checkinCount || 0,
   });
   const redeemed = rewards.redeemed || 0;
   const available = Math.max(0, earned - redeemed);
@@ -113,6 +114,10 @@ export async function POST(req: Request) {
         if (rw.lastFeedbackDate === today) return NextResponse.json({ error: "Thanks — today's feedback is already counted." }, { status: 400 });
         await ref.set({ rewards: { feedbackCount: FieldValue.increment(1), lastFeedbackDate: today } }, { merge: true });
         if (body.note) await adminDb.collection("feedback").add({ uid, note: String(body.note).slice(0, 2000), email: profile?.email || "", createdAt: FieldValue.serverTimestamp() });
+      } else if (kind === "checkin") {
+        // fired automatically when a Daily Ledger is saved — silent, once/day
+        if (rw.lastCheckinDate === today) return NextResponse.json({ ok: true, ...state });
+        await ref.set({ rewards: { checkinCount: FieldValue.increment(1), lastCheckinDate: today } }, { merge: true });
       } else {
         return NextResponse.json({ error: "Unknown log kind." }, { status: 400 });
       }

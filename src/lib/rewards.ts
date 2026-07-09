@@ -38,6 +38,7 @@ export const POINTS = {
   perMeeting: 15,       // each logged fellowship meeting
   perSponsorAction: 25, // each logged sponsor / service session (the user chose "points like any action")
   perFeedback: 20,      // submitting feedback / a suggestion
+  perCheckin: 10,       // each daily ledger check-in (once/day)
 };
 
 export type RedeemType = "symbolic" | "real" | "payitforward";
@@ -82,6 +83,7 @@ export interface EarnInputs {
   meetingsCount: number;
   sponsorActions?: number;
   feedbackCount?: number;
+  checkinCount?: number;
 }
 
 /** Total lifetime points earned — computed purely from verified source data. */
@@ -91,7 +93,8 @@ export function earnedPoints(i: EarnInputs): number {
     chipBonus +
     (i.meetingsCount || 0) * POINTS.perMeeting +
     (i.sponsorActions || 0) * POINTS.perSponsorAction +
-    (i.feedbackCount || 0) * POINTS.perFeedback
+    (i.feedbackCount || 0) * POINTS.perFeedback +
+    (i.checkinCount || 0) * POINTS.perCheckin
   );
 }
 

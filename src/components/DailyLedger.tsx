@@ -198,6 +198,11 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
         hardware: { sleepHours: Number(L.hoursSlept) || null },
         software: { cravingIntensity: L.craving || null, sciaticaPainLevel: L.pain || null },
       }, { merge: true });
+      // best-effort: earn an AAF check-in point (server dedupes to once/day)
+      try {
+        const t = await user.getIdToken();
+        fetch("/api/rewards", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${t}` }, body: JSON.stringify({ action: "log", kind: "checkin" }) });
+      } catch { /* rewards are best-effort */ }
       setSavedAt(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
     } catch (e) { console.error("ledger save", e); }
     finally { setSaving(false); }

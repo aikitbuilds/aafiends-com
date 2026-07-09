@@ -349,9 +349,14 @@ export default function LandingPage() {
               90 Days <span className="text-[#10b981]">R&amp;R</span> <br className="hidden md:block" /><span className="text-neutral-400 text-2xl md:text-3xl">Recovery &amp; Restructure</span>
             </h2>
             <p className="text-neutral-300 text-base leading-relaxed mb-8">
-              A biology-first cohort for the first, hardest 90 days. Opens with a 1-day intensive bootcamp, then daily telemetry that proves your baseline is healing. Reserve a seat with a $20 deposit — or pay what you can.
+              A biology-first cohort for the first, hardest 90 days. Opens with a 1-day intensive bootcamp, then daily telemetry that proves your baseline is healing. Reserve a seat with a $20 deposit — or pay what you can. <span className="text-white font-bold">Or download the free printable journal — no signup needed.</span>
             </p>
             <div className="flex flex-wrap gap-3">
+              <Link href="/90rr" className="w-fit">
+                <button className="py-3 px-6 rounded-lg bg-white text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:bg-neutral-200 shadow-[0_0_15px_rgba(255,255,255,0.15)]">
+                  ↓ Free Printable Journal
+                </button>
+              </Link>
               <Link href="/90-r-and-r" className="w-fit">
                 <button className="py-3 px-6 rounded-lg bg-[#10b981] text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-[#059669] shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                   <HeartPulse size={18} />
