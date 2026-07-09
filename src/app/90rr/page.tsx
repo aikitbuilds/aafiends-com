@@ -306,7 +306,10 @@ export default function NinetyRRPage() {
                 Print double-sided (flip on the SHORT edge), fold the whole stack in half, staple twice on the spine. Prints 2-up on letter paper — each finished page is 5.5×8.5&quot;. Printed in light ink to save toner; <strong className="text-neutral-400">32&nbsp;lb white paper recommended</strong> (20&nbsp;lb works too).
               </p>
             </div>
-            <Link href="/90-r-and-r#reserve" className="text-sm font-bold text-[#f59e0b] hover:text-white transition-colors uppercase tracking-widest mt-2">
+            <Link href="/90rr/builder" className="text-sm font-bold text-[#10b981] hover:text-white transition-colors uppercase tracking-widest mt-2">
+              ✎ Build your own custom journal →
+            </Link>
+            <Link href="/90-r-and-r#reserve" className="text-sm font-bold text-[#f59e0b] hover:text-white transition-colors uppercase tracking-widest">
               Reserve a seat in the Fellowship →
             </Link>
           </div>
