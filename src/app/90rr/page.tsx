@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 const VERSION = "Alpha 1";
 const MONTHLY_PDF = "/90rr/90RR-Journal-Month1-Alpha1.pdf";
 const STARTER_PDF = "/90rr/90RR-Starter-7Day-Alpha1.pdf";
+const MONTHLY_BOOKLET = "/90rr/90RR-Journal-Month1-Alpha1-BOOKLET.pdf";
+const STARTER_BOOKLET = "/90rr/90RR-Starter-7Day-Alpha1-BOOKLET.pdf";
 
 // ---- content ----
 const PILLARS = [
@@ -289,6 +291,20 @@ export default function NinetyRRPage() {
               <a href={STARTER_PDF} download className="py-4 px-10 rounded-2xl bg-[#10b981]/10 border border-[#10b981]/40 text-[#10b981] hover:bg-[#10b981]/20 text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
                 ↓ 7-Day Starter
               </a>
+            </div>
+            <div className="w-full pt-5 mt-1 border-t border-white/10 flex flex-col gap-3">
+              <p className="text-xs font-mono uppercase tracking-widest text-[#f59e0b]">Or print a fold-&amp;-staple mini-book · half size (5.5×8.5&quot;)</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href={MONTHLY_BOOKLET} download className="py-3.5 px-8 rounded-2xl border border-[#f59e0b]/40 text-[#f59e0b] hover:bg-[#f59e0b]/10 text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
+                  ↓ Month 1 · Booklet
+                </a>
+                <a href={STARTER_BOOKLET} download className="py-3.5 px-8 rounded-2xl border border-[#f59e0b]/40 text-[#f59e0b] hover:bg-[#f59e0b]/10 text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
+                  ↓ 7-Day · Booklet
+                </a>
+              </div>
+              <p className="text-[11px] text-neutral-500 leading-relaxed font-mono">
+                Print double-sided (flip on the SHORT edge), fold the whole stack in half, staple twice on the spine. Prints 2-up on letter paper — each finished page is 5.5×8.5&quot;.
+              </p>
             </div>
             <Link href="/90-r-and-r#reserve" className="text-sm font-bold text-[#f59e0b] hover:text-white transition-colors uppercase tracking-widest mt-2">
               Reserve a seat in the Fellowship →
