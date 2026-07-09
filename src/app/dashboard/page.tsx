@@ -22,12 +22,14 @@ import { doc, updateDoc, increment } from "firebase/firestore";
 import { computeVanguardProfile, MASCOT_INFO, type VanguardProfileResult, type Mascot } from "@/lib/vanguardProfile";
 import CrisisSupport from "@/components/CrisisSupport";
 import DailyLedger from "@/components/DailyLedger";
+import RewardsTab from "@/components/RewardsTab";
 
-type TabId = "overview" | "ledger" | "engine" | "mirror" | "network" | "data" | "bio12";
+type TabId = "overview" | "ledger" | "rewards" | "engine" | "mirror" | "network" | "data" | "bio12";
 
 const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: "overview", label: "Overview", icon: LayoutGrid },
   { id: "ledger", label: "Ledger", icon: BookOpen },
+  { id: "rewards", label: "Rewards", icon: Sparkles },
   { id: "engine", label: "Engine", icon: Mic },
   { id: "mirror", label: "Mirror", icon: Brain },
   { id: "network", label: "Network", icon: Users },
@@ -38,6 +40,7 @@ const TABS: { id: TabId; label: string; icon: any }[] = [
 const TAB_STYLES: Record<TabId, { active: string; iconWrap: string; text: string }> = {
   overview: { active: "border-emerald-500 text-emerald-400 bg-emerald-500/5", iconWrap: "bg-emerald-500/10 text-emerald-400", text: "text-emerald-400" },
   ledger: { active: "border-emerald-500 text-emerald-400 bg-emerald-500/5", iconWrap: "bg-emerald-500/10 text-emerald-400", text: "text-emerald-400" },
+  rewards: { active: "border-amber-500 text-amber-400 bg-amber-500/5", iconWrap: "bg-amber-500/10 text-amber-400", text: "text-amber-400" },
   engine: { active: "border-red-500 text-red-400 bg-red-500/5", iconWrap: "bg-red-500/10 text-red-400", text: "text-red-400" },
   mirror: { active: "border-blue-500 text-blue-400 bg-blue-500/5", iconWrap: "bg-blue-500/10 text-blue-400", text: "text-blue-400" },
   network: { active: "border-purple-500 text-purple-400 bg-purple-500/5", iconWrap: "bg-purple-500/10 text-purple-400", text: "text-purple-400" },
@@ -302,6 +305,18 @@ export default function DashboardPage() {
                 accent={TAB_STYLES.ledger}
               >
                 <DailyLedger daysSober={daysSober} />
+              </PillarPanel>
+            )}
+
+            {activeTab === "rewards" && (
+              <PillarPanel
+                icon={Sparkles}
+                name="AAF Rewards"
+                subtitle="Chips & points for showing up"
+                description="Earn AAF points and sobriety chips for staying sober, meetings, and service — redeem for unlocks and real-world rewards."
+                accent={TAB_STYLES.rewards}
+              >
+                <RewardsTab />
               </PillarPanel>
             )}
 

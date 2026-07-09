@@ -9,12 +9,24 @@ service cloud.firestore {
 
     // 2. Vanguard Security: Secure the 'users' collection
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-      
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      // Owner may update their own doc, but NOT the server-managed `rewards`
+      // field. AAF points/redemptions are written only by /api/rewards via the
+      // Admin SDK, so a client can't grant itself points.
+      allow update: if request.auth != null && request.auth.uid == userId
+                    && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['rewards']);
+      allow delete: if false;
+
       // Secure the private_vault subcollections
       match /private_vault/{document=**} {
         allow read, write: if request.auth != null && request.auth.uid == userId;
       }
+    }
+
+    // AAF reward redemptions — fulfillment queue, server (Admin SDK) only.
+    match /redemptionRequests/{id} {
+      allow read, write: if false;
     }
 
     // 3. Telemetry Logs Security
