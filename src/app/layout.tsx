@@ -62,6 +62,18 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#050505]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              { "@type": "Organization", name: "AAfiends", url: "https://aafiends.com", email: "aafiends@gmail.com",
+                description: "Recovery dashboard and AI coach for any addiction — built by people in recovery.",
+                sameAs: ["https://racefiends.com", "https://aivirus.org"] },
+              { "@type": "WebSite", name: "AAfiends", url: "https://aafiends.com" },
+            ],
+          }) }}
+        />
         <VocabularyProvider>
           <AuthProvider>
             {children}

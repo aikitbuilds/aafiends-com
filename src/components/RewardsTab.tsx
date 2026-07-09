@@ -18,6 +18,9 @@ export default function RewardsTab() {
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<{ id: string; text: string; ok: boolean } | null>(null);
+  const [logBusy, setLogBusy] = useState<string | null>(null);
+  const [fb, setFb] = useState("");
+  const [showFb, setShowFb] = useState(false);
 
   const call = useCallback(async (payload: object) => {
     if (!user) return null;
@@ -45,6 +48,15 @@ export default function RewardsTab() {
     if (res?.ok) { setS(res.data as State); setMsg({ id: rw.id, text: "Redeemed! We'll take it from here.", ok: true }); }
     else setMsg({ id: rw.id, text: res?.data?.error || "Couldn't redeem.", ok: false });
     setBusy(null);
+  };
+
+  const log = async (kind: "service" | "feedback", note?: string) => {
+    if (logBusy) return;
+    setLogBusy(kind); setMsg(null);
+    const res = await call({ action: "log", kind, note });
+    if (res?.ok) { setS(res.data as State); setMsg({ id: "earn", text: kind === "service" ? "Service logged. +25 pts" : "Thanks for the feedback. +20 pts", ok: true }); if (kind === "feedback") { setFb(""); setShowFb(false); } }
+    else setMsg({ id: "earn", text: res?.data?.error || "Couldn't log that.", ok: false });
+    setLogBusy(null);
   };
 
   if (loading) return <div className="h-56 flex items-center justify-center text-xs font-mono uppercase tracking-widest text-neutral-500 animate-pulse">Loading your rewards…</div>;
@@ -99,10 +111,27 @@ export default function RewardsTab() {
       </div>
 
       {/* earn hint */}
-      <p className="text-xs text-neutral-500 leading-relaxed">
-        Earn AAF points by staying sober (each chip is a bonus), logging meetings and sponsor/service check-ins, and sending
-        feedback. Points are calculated from your real activity — no gaming the system.
-      </p>
+      <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
+        <div className="text-sm font-black uppercase tracking-widest text-white">Earn more today</div>
+        <p className="text-xs text-neutral-500 leading-relaxed">Points come from real activity — sobriety milestones, meetings, service, and feedback. No gaming the system. (Service &amp; feedback count once a day.)</p>
+        <div className="flex flex-wrap gap-2.5">
+          <button onClick={() => log("service")} disabled={logBusy === "service"} className="inline-flex items-center gap-1.5 rounded-lg bg-purple-500/15 border border-purple-500/40 text-purple-300 disabled:opacity-50 text-xs font-black uppercase tracking-wide px-3 py-2 hover:bg-purple-500/25 transition-colors">
+            {logBusy === "service" ? <Loader2 size={13} className="animate-spin" /> : "+25"} Log sponsor / service session
+          </button>
+          <button onClick={() => setShowFb((v) => !v)} className="inline-flex items-center gap-1.5 rounded-lg bg-white/5 border border-white/15 text-neutral-200 text-xs font-black uppercase tracking-wide px-3 py-2 hover:border-emerald-500/40 transition-colors">
+            +20 Send feedback
+          </button>
+        </div>
+        {showFb && (
+          <div className="flex flex-col gap-2">
+            <textarea value={fb} onChange={(e) => setFb(e.target.value)} rows={2} placeholder="An idea, a bug, what's working…" className="bg-[#050505] border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-neutral-600 resize-none focus:outline-none focus:border-emerald-500/40" />
+            <button onClick={() => log("feedback", fb)} disabled={logBusy === "feedback" || fb.trim().length < 2} className="self-start inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 disabled:opacity-50 text-black text-xs font-black uppercase tracking-wide px-4 py-2">
+              {logBusy === "feedback" ? <Loader2 size={13} className="animate-spin" /> : "Send"}
+            </button>
+          </div>
+        )}
+        {msg?.id === "earn" && <p className={`text-xs ${msg.ok ? "text-emerald-400" : "text-red-400"}`}>{msg.text}</p>}
+      </div>
 
       {/* redemption catalog */}
       <div>

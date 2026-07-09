@@ -102,6 +102,24 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true, ...fresh });
     }
 
+    if (body.action === "log") {
+      const kind = body.kind;
+      const today = new Date().toISOString().slice(0, 10);
+      const rw = profile?.rewards || {};
+      if (kind === "service") {
+        if (rw.lastServiceDate === today) return NextResponse.json({ error: "You already logged service today — see you tomorrow." }, { status: 400 });
+        await ref.set({ rewards: { sponsorActions: FieldValue.increment(1), lastServiceDate: today } }, { merge: true });
+      } else if (kind === "feedback") {
+        if (rw.lastFeedbackDate === today) return NextResponse.json({ error: "Thanks — today's feedback is already counted." }, { status: 400 });
+        await ref.set({ rewards: { feedbackCount: FieldValue.increment(1), lastFeedbackDate: today } }, { merge: true });
+        if (body.note) await adminDb.collection("feedback").add({ uid, note: String(body.note).slice(0, 2000), email: profile?.email || "", createdAt: FieldValue.serverTimestamp() });
+      } else {
+        return NextResponse.json({ error: "Unknown log kind." }, { status: 400 });
+      }
+      const after = await ref.get();
+      return NextResponse.json({ ok: true, ...computeState(after.data()) });
+    }
+
     return NextResponse.json({ ok: true, ...state });
   } catch (e) {
     console.error("rewards route error", e);
