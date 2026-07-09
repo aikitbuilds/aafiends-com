@@ -303,7 +303,7 @@ export default function NinetyRRPage() {
                 </a>
               </div>
               <p className="text-[11px] text-neutral-500 leading-relaxed font-mono">
-                Print double-sided (flip on the SHORT edge), fold the whole stack in half, staple twice on the spine. Prints 2-up on letter paper — each finished page is 5.5×8.5&quot;.
+                Print double-sided (flip on the SHORT edge), fold the whole stack in half, staple twice on the spine. Prints 2-up on letter paper — each finished page is 5.5×8.5&quot;. Printed in light ink to save toner; <strong className="text-neutral-400">32&nbsp;lb white paper recommended</strong> (20&nbsp;lb works too).
               </p>
             </div>
             <Link href="/90-r-and-r#reserve" className="text-sm font-bold text-[#f59e0b] hover:text-white transition-colors uppercase tracking-widest mt-2">
