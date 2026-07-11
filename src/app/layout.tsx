@@ -81,7 +81,8 @@ export default function RootLayout({
                 "sameAs": [
                   "https://aivirus.org",
                   "https://aafiends.substack.com",
-                  "https://www.youtube.com/@aafiends"
+                  "https://www.youtube.com/@aafiends",
+                  "https://racefiends.com"
                 ] 
               },
               { "@type": "WebSite", "name": "AA Fiends", "url": "https://aafiends.com" },

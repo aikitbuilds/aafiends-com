@@ -8,7 +8,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import DashboardPreview from "@/components/DashboardPreview";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import SubstackSubscribe from "@/components/SubstackSubscribe";
 import {
@@ -222,9 +221,6 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn}>
-          <DashboardPreview />
-        </motion.div>
       </motion.section>
 
       {/* SECTION 4: THE THREE FOUNDATIONS */}

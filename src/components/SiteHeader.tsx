@@ -2,36 +2,66 @@
 
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import BuildStamp from "./BuildStamp";
-import VocabToggle from "./VocabToggle";
+import { Menu, X, ChevronDown } from "lucide-react";
 
-// Nav links pulled into a shared array so the desktop nav and the mobile
-// drawer (added 2026-07-03, was previously "hidden md:flex" with zero
-// mobile alternative - a real P0 bug, phones had no navigation at all)
-// can't drift out of sync. title= doubles as a tooltip on desktop and a
-// one-line subtitle on mobile, since "G.A.D." and "Data" are opaque to a
-// newcomer on their own.
-const NAV_LINKS = [
-  { href: "/90-r-and-r", label: "90 R&R", title: "90 Days Recovery & Restructure — the flagship cohort" },
-  { href: "/data", label: "Data", title: "Your telemetry dashboard" },
-  { href: "/gad", label: "G.A.D.", title: "Grand Architect Divine — the spiritual framing" },
-  { href: "/12-and-12", label: "12 & 12", title: "The 12 Steps & 12 Traditions" },
-  { href: "/stories", label: "Stories", title: "Community recovery stories" },
-  { href: "/blog", label: "Science", title: "The research behind the app, in plain English" },
-  { href: "/90rr", label: "Journal", title: "Download the free 90 R&R printable journal" },
-  { href: "https://aafiends.substack.com", label: "Newsletter", title: "Biology-first recovery, in your inbox" },
-  { href: "/contact", label: "Contact", title: "Questions, feedback, or the Fellowship — get in touch" },
+// Nav is consolidated into 4 top-level items; everything else lives in a
+// dropdown (desktop) / accordion (mobile) underneath its parent, so the bar
+// stays clean. `children` = a toggle group; a bare `href` = a plain link.
+type NavChild = { href: string; label: string; external?: boolean };
+type NavItem = { label: string; href?: string; children?: NavChild[] };
+
+const NAV: NavItem[] = [
+  {
+    label: "90 R&R",
+    children: [
+      { href: "/90-r-and-r", label: "Program Overview" },
+      { href: "/90rr", label: "Printable Journal" },
+      { href: "/12-and-12", label: "12 & 12" },
+      { href: "/gad", label: "G.A.D." },
+    ],
+  },
+  {
+    label: "The Science",
+    children: [
+      { href: "/blog", label: "Research" },
+      { href: "/data", label: "The Data" },
+    ],
+  },
+  {
+    label: "Follow",
+    children: [
+      { href: "https://aafiends.substack.com", label: "Newsletter", external: true },
+      { href: "https://www.youtube.com/@aafiends", label: "YouTube", external: true },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
 ];
+
+const childClass =
+  "block px-4 py-2.5 text-sm font-bold uppercase tracking-widest text-neutral-300 hover:text-[#10b981] hover:bg-white/5 transition-colors whitespace-nowrap";
+
+function ChildLink({ child, onClick }: { child: NavChild; onClick?: () => void }) {
+  if (child.external) {
+    return (
+      <a href={child.href} target="_blank" rel="noopener noreferrer" className={childClass} onClick={onClick}>
+        {child.label}
+      </a>
+    );
+  }
+  return (
+    <Link href={child.href} className={childClass} onClick={onClick}>
+      {child.label}
+    </Link>
+  );
+}
 
 export default function SiteHeader() {
   const { user, loading, login } = useAuth();
-  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   return (
     <motion.header
@@ -41,42 +71,49 @@ export default function SiteHeader() {
       className="border-b border-white/5 bg-[#051024] shadow-[0_4px_30px_rgba(0,0,0,0.5)] sticky top-0 z-50"
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-          <Image src="/logo.png" alt="AAFiends Logo" width={48} height={48} className="rounded-xl group-hover:scale-105 transition-transform" />
-          <div className="text-2xl font-black tracking-tight text-white flex items-center gap-1.5 uppercase">
-            AA<span className="text-[#10b981]">fiends</span>
+        <Link href="/" className="flex items-center gap-3 group cursor-pointer shrink-0">
+          <Image src="/logo.png" alt="AAfiends Logo" width={48} height={48} className="rounded-xl group-hover:scale-105 transition-transform" />
+          <div className="leading-none">
+            <div className="text-2xl font-black tracking-tight text-white flex items-center gap-1.5 uppercase">
+              AA<span className="text-[#10b981]">fiends</span>
+            </div>
+            <div className="text-[9px] font-bold uppercase tracking-[0.25em] text-neutral-500 mt-1">90 Days R&amp;R</div>
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            link.href.startsWith("http") ? (
-              <a
-                key={link.href}
-                href={link.href}
-                title={link.title}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-bold text-neutral-300 hover:text-[#10b981] transition-colors uppercase tracking-widest"
-              >
-                {link.label}
-              </a>
+        {/* Desktop nav — 4 mains, dropdowns on hover/focus */}
+        <nav className="hidden md:flex items-center gap-10">
+          {NAV.map((item) =>
+            item.children ? (
+              <div key={item.label} className="relative group">
+                <button
+                  className="flex items-center gap-1 text-sm font-bold text-neutral-300 group-hover:text-[#10b981] transition-colors uppercase tracking-widest focus:outline-none"
+                  aria-haspopup="true"
+                >
+                  {item.label}
+                  <ChevronDown size={14} className="mt-0.5 opacity-70 group-hover:rotate-180 transition-transform" />
+                </button>
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-150">
+                  <div className="min-w-[13rem] rounded-xl border border-white/10 bg-[#0a1428] py-2 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+                    {item.children.map((c) => (
+                      <ChildLink key={c.href} child={c} />
+                    ))}
+                  </div>
+                </div>
+              </div>
             ) : (
               <Link
-                key={link.href}
-                href={link.href}
-                title={link.title}
+                key={item.label}
+                href={item.href!}
                 className="text-sm font-bold text-neutral-300 hover:text-[#10b981] transition-colors uppercase tracking-widest"
               >
-                {link.label}
+                {item.label}
               </Link>
             )
-          ))}
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
-          <VocabToggle className="hidden sm:flex" />
-          <BuildStamp />
           {loading ? (
             <div className="h-10 w-28 bg-white/5 animate-pulse rounded-lg border border-white/5"></div>
           ) : user ? (
@@ -93,8 +130,6 @@ export default function SiteHeader() {
             </button>
           )}
 
-          {/* Mobile hamburger — the nav above is hidden md:flex, so this is
-              the only way to reach any nav link on a phone */}
           <button
             onClick={() => setMobileOpen(true)}
             className="flex md:hidden p-2.5 rounded-lg bg-white/5 border border-white/10 text-neutral-300 hover:text-white transition-colors"
@@ -105,7 +140,7 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — accordion groups */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -127,33 +162,44 @@ export default function SiteHeader() {
               </button>
             </div>
 
-            <nav className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
-              <VocabToggle />
-              {NAV_LINKS.map((link) => (
-                link.href.startsWith("http") ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileOpen(false)}
-                    className="flex flex-col items-center gap-1 text-center"
-                  >
-                    <span className="text-2xl font-black text-white uppercase tracking-widest">{link.label}</span>
-                    <span className="text-xs text-neutral-500 font-mono">{link.title}</span>
-                  </a>
+            <nav className="flex-1 overflow-y-auto flex flex-col gap-1 px-6 py-8">
+              {NAV.map((item) =>
+                item.children ? (
+                  <div key={item.label} className="border-b border-white/5">
+                    <button
+                      onClick={() => setOpenGroup(openGroup === item.label ? null : item.label)}
+                      className="w-full flex items-center justify-between py-4 text-xl font-black text-white uppercase tracking-widest"
+                    >
+                      {item.label}
+                      <ChevronDown size={20} className={openGroup === item.label ? "rotate-180 text-[#10b981] transition-transform" : "text-neutral-500 transition-transform"} />
+                    </button>
+                    <AnimatePresence>
+                      {openGroup === item.label && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden flex flex-col"
+                        >
+                          {item.children.map((c) => (
+                            <ChildLink key={c.href} child={c} onClick={() => setMobileOpen(false)} />
+                          ))}
+                          <div className="pb-3" />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ) : (
                   <Link
-                    key={link.href}
-                    href={link.href}
+                    key={item.label}
+                    href={item.href!}
                     onClick={() => setMobileOpen(false)}
-                    className="flex flex-col items-center gap-1 text-center"
+                    className="py-4 border-b border-white/5 text-xl font-black text-white uppercase tracking-widest"
                   >
-                    <span className="text-2xl font-black text-white uppercase tracking-widest">{link.label}</span>
-                    <span className="text-xs text-neutral-500 font-mono">{link.title}</span>
+                    {item.label}
                   </Link>
                 )
-              ))}
+              )}
 
               {!user && (
                 <button
@@ -161,7 +207,7 @@ export default function SiteHeader() {
                     setMobileOpen(false);
                     login();
                   }}
-                  className="mt-6 px-8 py-3 rounded-xl bg-orange-500 text-black text-sm font-black tracking-widest uppercase shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+                  className="mt-8 px-8 py-3 rounded-xl bg-orange-500 text-black text-sm font-black tracking-widest uppercase shadow-[0_0_15px_rgba(249,115,22,0.3)]"
                 >
                   Login
                 </button>

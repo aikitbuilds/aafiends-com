@@ -37,18 +37,20 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* Column 2: Navigation */}
+        {/* Column 2: Navigation — 90 Days R&R is the parent program; the Journal
+            (and 12&12 / G.A.D.) live under it, so there's a single R&R entry. */}
         <div className="flex flex-col gap-4">
-          <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Navigation Directory</h4>
+          <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Explore</h4>
           <nav className="flex flex-col gap-3">
-            <Link href="/data" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Data</Link>
-            <Link href="/gad" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">G.A.D.</Link>
-            <Link href="/12-and-12" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">12 & 12</Link>
-            <Link href="/stories" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Stories</Link>
-            <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Science</Link>
+            <Link href="/90-r-and-r" className="text-sm font-black text-white hover:text-[#10b981] transition-colors uppercase">90 Days R&amp;R</Link>
+            <div className="flex flex-col gap-2.5 pl-4 border-l border-white/10">
+              <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Printable Journal</Link>
+              <Link href="/12-and-12" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">12 &amp; 12</Link>
+              <Link href="/gad" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">G.A.D.</Link>
+            </div>
+            <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Science</Link>
+            <Link href="/data" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Data</Link>
             <Link href="/ai4aa" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">AI4AA Course</Link>
-            <Link href="/90-r-and-r" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">90 Days R&amp;R</Link>
-            <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">90 R&amp;R Journal</Link>
             <Link href="/contact" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Contact</Link>
           </nav>
         </div>
@@ -79,8 +81,8 @@ export default function SiteFooter() {
               Not affiliated with or endorsed by Alcoholics Anonymous World Services, Inc.
             </p>
             <p className="text-xs leading-relaxed text-red-300/90 font-bold">
-              In crisis? Call or text <a href="tel:988" className="underline hover:text-red-200">988</a> ·
-              Text HOME to <a href="sms:741741&body=HOME" className="underline hover:text-red-200">741741</a> ·
+              In crisis? Call or text <a href="tel:988" className="underline hover:text-red-200">988</a> &middot;
+              Text HOME to <a href="sms:741741&body=HOME" className="underline hover:text-red-200">741741</a> &middot;
               SAMHSA <a href="tel:18006624357" className="underline hover:text-red-200">1-800-662-4357</a>
             </p>
         </div>

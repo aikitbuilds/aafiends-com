@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/dashboard", "/profile", "/onboarding"],
     },
-    sitemap: "https://aafiendscom.web.app/sitemap.xml",
+    sitemap: "https://aafiends.com/sitemap.xml",
   };
 }
