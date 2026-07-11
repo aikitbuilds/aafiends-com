@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { href: "/stories", label: "Stories", title: "Community recovery stories" },
   { href: "/blog", label: "Science", title: "The research behind the app, in plain English" },
   { href: "/90rr", label: "Journal", title: "Download the free 90 R&R printable journal" },
+  { href: "https://aafiends.substack.com", label: "Newsletter", title: "Biology-first recovery, in your inbox" },
   { href: "/contact", label: "Contact", title: "Questions, feedback, or the Fellowship — get in touch" },
 ];
 
@@ -48,14 +49,27 @@ export default function SiteHeader() {
 
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              title={link.title}
-              className="text-sm font-bold text-neutral-300 hover:text-[#10b981] transition-colors uppercase tracking-widest"
-            >
-              {link.label}
-            </Link>
+            link.href.startsWith("http") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                title={link.title}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold text-neutral-300 hover:text-[#10b981] transition-colors uppercase tracking-widest"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                title={link.title}
+                className="text-sm font-bold text-neutral-300 hover:text-[#10b981] transition-colors uppercase tracking-widest"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -115,15 +129,29 @@ export default function SiteHeader() {
             <nav className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
               <VocabToggle />
               {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex flex-col items-center gap-1 text-center"
-                >
-                  <span className="text-2xl font-black text-white uppercase tracking-widest">{link.label}</span>
-                  <span className="text-xs text-neutral-500 font-mono">{link.title}</span>
-                </Link>
+                link.href.startsWith("http") ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex flex-col items-center gap-1 text-center"
+                  >
+                    <span className="text-2xl font-black text-white uppercase tracking-widest">{link.label}</span>
+                    <span className="text-xs text-neutral-500 font-mono">{link.title}</span>
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex flex-col items-center gap-1 text-center"
+                  >
+                    <span className="text-2xl font-black text-white uppercase tracking-widest">{link.label}</span>
+                    <span className="text-xs text-neutral-500 font-mono">{link.title}</span>
+                  </Link>
+                )
               ))}
 
               {!user && (

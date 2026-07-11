@@ -1,5 +1,7 @@
 "use client";
 
+import SubstackSubscribe from "./SubstackSubscribe";
+
 // Cross-links to the other live Fiends Grid properties. Added 2026-07-03 so the
 // three sites stop operating as silos. RaceFiends.com and AIVirus.org get the
 // matching version of this component — keep the three in sync if the roster
@@ -64,7 +66,22 @@ export default function EcosystemFooter() {
             )
           )}
         </div>
-        <p className="text-center text-[9px] text-neutral-600 font-mono uppercase tracking-widest mt-6">
+        
+        <div className="mt-8 pt-8 border-t border-white/5">
+          <div className="text-[10px] font-black text-neutral-500 uppercase tracking-widest mb-4 text-center">
+            Subscribe
+          </div>
+          <p className="text-center mb-5 text-xs text-neutral-400">
+            <a href="https://aafiends.substack.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              Biology-first recovery, in your inbox — the AA Fiends Substack
+            </a>
+          </p>
+          <div className="max-w-md mx-auto">
+            <SubstackSubscribe />
+          </div>
+        </div>
+        
+        <p className="text-center text-[9px] text-neutral-600 font-mono uppercase tracking-widest mt-8">
           Built by members, for members. Non-affiliated with AA World Services.
         </p>
       </div>
