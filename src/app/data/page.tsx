@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -79,7 +80,7 @@ export default function DataPage() {
           <section className="relative rounded-[3rem] overflow-hidden border border-white/10 mb-16 shadow-2xl">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-              <img src="/blog_gamification.png" alt="System Gamification" className="w-full h-full object-cover" />
+              <Image src="/blog_gamification.png" alt="System Gamification" width={800} height={600} className="w-full h-full object-cover" />
             </div>
 
             {/* Content Overlay */}
@@ -219,7 +220,7 @@ export default function DataPage() {
                      <span className="text-neutral-500 text-xs font-mono">Screenshot</span>
                    </div>
                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/3] bg-black">
-                     <img src="/garmin1.jpg" alt="Garmin Connect Dashboard" className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
+                     <Image src="/garmin1.jpg" alt="Garmin Connect Dashboard" width={800} height={600} className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
                    </div>
                 </div>
                 
@@ -231,7 +232,7 @@ export default function DataPage() {
                      <span className="text-neutral-500 text-xs font-mono">Screenshot</span>
                    </div>
                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/3] bg-black">
-                     <img src="/garminsleep.webp" alt="Garmin Sleep Data" className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
+                     <Image src="/garminsleep.webp" alt="Garmin Sleep Data" width={800} height={600} className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
                    </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -152,7 +153,7 @@ export default function CourseDashboardPage() {
                   {/* Banner */}
                   <div className="relative h-32 w-full overflow-hidden">
                     {w.image ? (
-                      <img src={w.image} alt={w.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                      <Image src={w.image} alt={w.title} width={800} height={600} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                     ) : (
                       <div className={`w-full h-full bg-gradient-to-br ${c.grad} opacity-30`} />
                     )}

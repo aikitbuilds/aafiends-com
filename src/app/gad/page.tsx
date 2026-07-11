@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { Shield } from "lucide-react";
@@ -42,7 +43,7 @@ export default function GadPage() {
           <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.3 }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
             
             <div className="relative rounded-[2rem] overflow-hidden border border-blue-500/30 shadow-[0_20px_50px_rgba(59,130,246,0.2)] bg-[#09090b] aspect-[4/5] group order-2 lg:order-1">
-              <img src="/grand_architect_divine.png" alt="Grand Architect Divine" className="w-full h-full object-cover opacity-90 transform group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/grand_architect_divine.png" alt="Grand Architect Divine" width={800} height={600} className="w-full h-full object-cover opacity-90 transform group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <h3 className="text-white font-black text-3xl uppercase tracking-widest leading-none">Admin<br/>Override</h3>

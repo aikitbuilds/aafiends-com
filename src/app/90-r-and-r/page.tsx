@@ -35,7 +35,7 @@ export default function RRFellowshipPage() {
       <nav className="border-b border-white/5 bg-[#051024] shadow-[0_4px_30px_rgba(0,0,0,0.5)] sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group cursor-pointer hover:opacity-90 transition-opacity">
-            <img src="/logo.png" alt="AAfiends Logo" className="w-10 h-10 rounded-xl group-hover:scale-105 transition-transform drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
+            <Image src="/logo.png" alt="AAfiends Logo" width={40} height={40} className="w-10 h-10 rounded-xl group-hover:scale-105 transition-transform drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
             <div className="text-2xl font-black tracking-tight text-white flex items-center gap-1.5 uppercase">
               AA<span className="text-[#10b981]">fiends</span> <span className="text-neutral-500 font-mono text-sm ml-2 tracking-widest hidden sm:inline-block">/ 90 R&amp;R</span>
             </div>
@@ -304,7 +304,7 @@ export default function RRFellowshipPage() {
       <footer className="border-t border-white/5 bg-[#051024] py-8 mt-12 relative z-20">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src="/logo.png" alt="AAfiends Logo" className="w-8 h-8 rounded-lg grayscale opacity-70" />
+            <Image src="/logo.png" alt="AAfiends Logo" width={32} height={32} className="w-8 h-8 rounded-lg grayscale opacity-70" />
             <div className="text-sm font-black tracking-tight text-white flex items-center gap-1 uppercase">
               AA<span className="text-[#10b981]">fiends</span> <span className="text-neutral-500 font-mono ml-1">/ 90 R&amp;R</span>
             </div>

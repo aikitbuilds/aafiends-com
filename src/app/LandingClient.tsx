@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuth } from "@/contexts/AuthContext";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Link from "next/link";
@@ -123,7 +124,7 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
               transition={{ duration: 0.8 }}
               className="relative w-full max-w-[500px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-[#10b981]/30 shadow-[0_20px_50px_rgba(16,185,129,0.2)] z-10 group bg-neutral-900"
             >
-              <img src="/main_hero_gauntlet.png" alt="Data Over Denial" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90" />
+              <Image src="/main_hero_gauntlet.png" alt="Data Over Denial" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <h3 className="text-white font-black text-2xl uppercase tracking-widest">Baseline Calibrated</h3>
@@ -145,7 +146,7 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           <motion.div variants={fadeIn} className="relative rounded-[2rem] overflow-hidden border border-red-500/50 shadow-[0_0_50px_rgba(220,38,38,0.3)] bg-[#09090b] aspect-square lg:aspect-auto lg:h-[600px] group">
-            <img src="/aiv_image1.png" alt="The AIV Symbiote" className="w-full h-full object-cover grayscale-[20%] sepia-[10%] hue-rotate-[-30deg] transform group-hover:scale-105 transition-transform duration-700" />
+            <Image src="/aiv_image1.png" alt="The AIV Symbiote" width={800} height={600} className="w-full h-full object-cover grayscale-[20%] sepia-[10%] hue-rotate-[-30deg] transform group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-red-900/20 mix-blend-multiply pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none"></div>
             
@@ -303,7 +304,7 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         <div className="w-full bg-[#051024] border border-blue-500/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(59,130,246,0.15)] group relative">
           
           <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <img src="/hopeful_hero_2.png" alt="AI4AA Course" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <Image src="/hopeful_hero_2.png" alt="AI4AA Course" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#051024] hidden md:block"></div>
           </div>
@@ -336,7 +337,7 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         <div className="w-full bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row-reverse items-stretch shadow-[0_0_40px_rgba(16,185,129,0.15)] group relative">
 
           <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <img src="/recovery_hero_vibrant.png" alt="90 Days R&R Fellowship" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <Image src="/recovery_hero_vibrant.png" alt="90 Days R&R Fellowship" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-[#0a140f]/30 mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0a140f] hidden md:block"></div>
           </div>

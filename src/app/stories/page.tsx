@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
@@ -185,7 +186,7 @@ export default function StoriesPage() {
                     <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
                       <div className="w-12 h-12 rounded-full bg-neutral-800 overflow-hidden border border-white/10 flex-shrink-0 flex items-center justify-center">
                         {story.image ? (
-                          <img src={story.image} alt={story.name} className="w-full h-full object-cover" />
+                          <Image src={story.image} alt={story.name} width={800} height={600} className="w-full h-full object-cover" />
                         ) : (
                           <span className="text-teal-400 font-black text-lg">{story.name.charAt(0).toUpperCase()}</span>
                         )}
@@ -214,7 +215,7 @@ export default function StoriesPage() {
             <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.3 }} className="lg:col-span-5 flex flex-col gap-8">
 
               <div className="relative rounded-[2rem] overflow-hidden border border-teal-500/10 shadow-[0_20px_50px_rgba(20,184,166,0.05)] bg-[#09090b] aspect-[4/3] group">
-                <img src="/michael_story.png" alt="Finding peace at sunrise" className="w-full h-full object-cover opacity-80 transform group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                <Image src="/michael_story.png" alt="Finding peace at sunrise" width={800} height={600} className="w-full h-full object-cover opacity-80 transform group-hover:scale-105 transition-transform duration-1000 ease-out" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent pointer-events-none"></div>
               </div>
 

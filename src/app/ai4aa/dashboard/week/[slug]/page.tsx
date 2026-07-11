@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -76,7 +77,7 @@ export default function WeekPage() {
             </div>
           </div>
           {week.image && (
-            <img src={week.image} alt={week.title} className="w-full rounded-2xl object-cover aspect-video border border-white/10" />
+            <Image src={week.image} alt={week.title} width={800} height={600} className="w-full rounded-2xl object-cover aspect-video border border-white/10" />
           )}
           <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">{week.title}</h1>
 

@@ -16,23 +16,27 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aafiends.com"),
-  title: "AAfiends | Recovery Dashboard & AI Coach for Any Addiction",
-  description: "AAfiends is a recovery dashboard and AI coach built by people in recovery — for any addiction, not just alcohol. Track sleep, meetings, cravings, and the BIO 12 daily protocol to prove your baseline is healing. Data over denial.",
+  title: {
+    template: "%s · AA Fiends",
+    default: "AA Fiends | Recovery Dashboard & AI Coach for Any Addiction",
+  },
+  description: "AA Fiends is a recovery dashboard and AI coach built by people in recovery — for any addiction, not just alcohol. Track sleep, meetings, cravings, and the BIO 12 daily protocol to prove your baseline is healing. Data over denial.",
   keywords: ["AA recovery app", "sobriety tracker", "addiction recovery dashboard", "AI recovery coach", "12 step tracker", "alcoholics anonymous app", "opioid recovery app", "quit nicotine tracker", "gambling addiction recovery", "porn addiction recovery", "recovery habit tracker", "BIO 12 protocol", "addiction intelligence virus"],
   openGraph: {
-    title: "AAfiends | Recovery Dashboard & AI Coach for Sobriety",
+    title: "AA Fiends | Recovery Dashboard & AI Coach for Sobriety",
     description: "Track sleep, meetings, and cravings to prove your baseline is healing. Built by AA members, for AA members.",
-    url: "https://aafiendscom.web.app",
-    siteName: "AAfiends",
-    images: ["/main_hero_gauntlet.png"],
+    url: "https://aafiends.com",
+    siteName: "AA Fiends",
+    images: ["/og-image.png"],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AAfiends | Recovery Dashboard & AI Coach for Sobriety",
+    site: "@aafiends",
+    title: "AA Fiends | Recovery Dashboard & AI Coach for Sobriety",
     description: "Track sleep, meetings, and cravings to prove your baseline is healing.",
-    images: ["/main_hero_gauntlet.png"],
+    images: ["/og-image.png"],
   },
   appleWebApp: {
     capable: true,
@@ -67,10 +71,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
-              { "@type": "Organization", name: "AAfiends", url: "https://aafiends.com", email: "aafiends@gmail.com",
-                description: "Recovery dashboard and AI coach for any addiction — built by people in recovery.",
-                sameAs: ["https://racefiends.com", "https://aivirus.org"] },
-              { "@type": "WebSite", name: "AAfiends", url: "https://aafiends.com" },
+              { 
+                "@type": "Organization", 
+                "name": "AA Fiends", 
+                "url": "https://aafiends.com", 
+                "logo": "https://aafiends.com/logo.png",
+                "email": "aafiends@gmail.com",
+                "description": "Recovery dashboard and AI coach for any addiction — built by people in recovery.",
+                "sameAs": [
+                  "https://aivirus.org",
+                  "https://aafiends.substack.com",
+                  "https://www.youtube.com/@aafiends"
+                ] 
+              },
+              { "@type": "WebSite", "name": "AA Fiends", "url": "https://aafiends.com" },
             ],
           }) }}
         />

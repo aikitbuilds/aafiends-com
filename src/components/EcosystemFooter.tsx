@@ -71,11 +71,16 @@ export default function EcosystemFooter() {
           <div className="text-[10px] font-black text-neutral-500 uppercase tracking-widest mb-4 text-center">
             Subscribe
           </div>
-          <p className="text-center mb-5 text-xs text-neutral-400">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5 text-xs text-neutral-400">
             <a href="https://aafiends.substack.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Biology-first recovery, in your inbox — the AA Fiends Substack
             </a>
-          </p>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <a href="https://www.youtube.com/@aafiends" target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors font-bold text-white">
+              Subscribe on YouTube &rarr;
+            </a>
+          </div>
+          {/* TODO: YouTube "Watch" section — add once videos exist (channel RSS: youtube.com/feeds/videos.xml?channel_id=<ID>) */}
           <div className="max-w-md mx-auto">
             <SubstackSubscribe />
           </div>

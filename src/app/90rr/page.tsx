@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "90 R&R Journal — Detailed Guide (Alpha 1) | AAfiends",
   description:
     "The detailed online companion to the 90 Days R&R (Recovery & Restructure) journal — the three pillars, the 12 Steps, the science, and the ecosystem. Download the latest printable workbook.",
+  alternates: { canonical: "https://aafiends.com/90rr" },
 };
 
 const VERSION = "Alpha 1";
@@ -92,7 +94,7 @@ function QR({ img, label, url }: { img: string; label: string; url: string }) {
       className="inline-flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-3 pr-5 hover:border-[#10b981]/50 transition-colors"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={`/90rr/qr_${img}.png`} alt={`QR to ${label}`} className="w-16 h-16 rounded-lg bg-white p-1" />
+      <Image src={`/90rr/qr_${img}.png`} alt={` width={64} height={64} QR to ${label}`} className="w-16 h-16 rounded-lg bg-white p-1" />
       <div className="flex flex-col">
         <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Scan or tap · learn more</span>
         <span className="text-sm font-bold text-white leading-tight">{label}</span>
@@ -113,7 +115,7 @@ export default function NinetyRRPage() {
       <nav className="border-b border-white/5 bg-[#051024] sticky top-0 z-40">
         <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <img src="/logo.png" alt="AAfiends" className="w-10 h-10 rounded-xl drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
+            <Image src="/logo.png" alt="AAfiends" width={40} height={40} className="w-10 h-10 rounded-xl drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
             <div className="text-2xl font-black tracking-tight text-white uppercase">
               AA<span className="text-[#10b981]">fiends</span>
               <span className="text-neutral-500 font-mono text-sm ml-2 tracking-widest hidden sm:inline">/ 90 R&amp;R</span>
@@ -319,7 +321,7 @@ export default function NinetyRRPage() {
       <footer className="border-t border-white/5 bg-[#051024] py-8 relative z-20">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src="/logo.png" alt="AAfiends" className="w-8 h-8 rounded-lg grayscale opacity-70" />
+            <Image src="/logo.png" alt="AAfiends" width={32} height={32} className="w-8 h-8 rounded-lg grayscale opacity-70" />
             <div className="text-sm font-black tracking-tight text-white uppercase">AA<span className="text-[#10b981]">fiends</span><span className="text-neutral-500 font-mono ml-1">/ 90 R&amp;R</span></div>
           </Link>
           <div className="text-xs font-mono text-neutral-500 uppercase tracking-widest flex items-center gap-5">

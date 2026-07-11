@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import BuildStamp from "./BuildStamp";
@@ -41,7 +42,7 @@ export default function SiteHeader() {
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-          <img src="/logo.png" alt="AAFiends Logo" className="w-12 h-12 rounded-xl group-hover:scale-105 transition-transform" />
+          <Image src="/logo.png" alt="AAFiends Logo" width={48} height={48} className="rounded-xl group-hover:scale-105 transition-transform" />
           <div className="text-2xl font-black tracking-tight text-white flex items-center gap-1.5 uppercase">
             AA<span className="text-[#10b981]">fiends</span>
           </div>

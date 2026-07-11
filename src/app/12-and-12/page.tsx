@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { Users } from "lucide-react";
@@ -60,7 +61,7 @@ export default function TwelveAndTwelvePage() {
             </div>
 
             <div className="relative rounded-[2rem] overflow-hidden border border-purple-500/30 shadow-[0_20px_50px_rgba(168,85,247,0.2)] bg-[#09090b] aspect-[4/5] group">
-              <img src="/aa_fellowship_gad.png" alt="The Network Grid" className="w-full h-full object-cover opacity-90 transform group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/aa_fellowship_gad.png" alt="The Network Grid" width={800} height={600} className="w-full h-full object-cover opacity-90 transform group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <h3 className="text-white font-black text-3xl uppercase tracking-widest leading-none">The<br/>Grid</h3>
