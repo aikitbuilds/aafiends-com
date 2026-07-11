@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import JournalBuilder from "@/components/JournalBuilder";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Build Your Own 90 R&R Journal — Customizable Printable Workbook",
@@ -20,14 +21,7 @@ export const metadata: Metadata = {
 export default function BuilderPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-neutral-100">
-      <div className="no-print border-b border-white/5 bg-[#051024]">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/90rr" className="inline-flex items-center gap-2 text-sm font-bold text-neutral-300 hover:text-white uppercase tracking-widest">
-            <ArrowLeft size={16} /> Back to the journal
-          </Link>
-          <div className="text-sm font-black tracking-tight text-white uppercase">Journal <span className="text-[#10b981]">Builder</span></div>
-        </div>
-      </div>
+      <div className="no-print"><SiteHeader /></div>
       <main className="max-w-6xl mx-auto px-6 py-10 flex flex-col gap-8">
         <header className="no-print flex flex-col gap-3">
           <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#f59e0b]">Make it yours</span>
@@ -39,6 +33,7 @@ export default function BuilderPage() {
         </header>
         <JournalBuilder />
       </main>
+      <div className="no-print"><SiteFooter /></div>
     </div>
   );
 }

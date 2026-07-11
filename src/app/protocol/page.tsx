@@ -1,5 +1,8 @@
 "use client";
 
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+
 import { motion } from "framer-motion";
 import {
   MessageSquareHeart,
@@ -39,6 +42,7 @@ function FlowArrow() {
 export default function SanctuaryProtocolPage() {
   return (
     <div className="min-h-screen bg-stone-900 text-stone-300 font-sans selection:bg-teal-500/30 selection:text-teal-200 pb-24">
+      <SiteHeader />
       
       {/* ─── HEADER ─── */}
       <motion.header
@@ -324,6 +328,7 @@ export default function SanctuaryProtocolPage() {
           </motion.div>
         </motion.section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

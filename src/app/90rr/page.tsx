@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -111,21 +113,7 @@ export default function NinetyRRPage() {
     <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.08),transparent_60%)] pointer-events-none z-0" />
 
-      {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#051024] sticky top-0 z-40">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <Image src="/logo.png" alt="AAfiends" width={40} height={40} className="w-10 h-10 rounded-xl drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
-            <div className="text-2xl font-black tracking-tight text-white uppercase">
-              AA<span className="text-[#10b981]">fiends</span>
-              <span className="text-neutral-500 font-mono text-sm ml-2 tracking-widest hidden sm:inline">/ 90 R&amp;R</span>
-            </div>
-          </Link>
-          <a href={MONTHLY_PDF} download className="px-5 py-2.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-black text-xs font-black tracking-widest uppercase shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-colors">
-            Download Journal
-          </a>
-        </div>
-      </nav>
+      <SiteHeader />
 
       <main className="flex-1 max-w-5xl w-full mx-auto px-6 py-14 md:py-20 flex flex-col gap-24 relative z-20">
         {/* Hero */}
@@ -316,27 +304,31 @@ export default function NinetyRRPage() {
             </Link>
           </div>
         </section>
+              {/* Peek inside — sample pages */}
+        <section className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] uppercase">Peek Inside</span>
+            <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">What a day looks like</h2>
+            <p className="text-sm text-neutral-400 max-w-2xl">Every day is two facing pages: a morning <strong className="text-white">daily tracker</strong> across the three pillars, and an evening <strong className="text-white">reflection &amp; score</strong>. Ten seconds in the morning, two minutes at night.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <figure className="flex flex-col gap-3">
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image src="/90rr/preview-daily.png" alt="Sample daily tracking page from the 90 R&R journal — sleep, morning ignition, fuel, movement, meetings and the three pillars" width={1275} height={1651} className="w-full h-auto" />
+              </div>
+              <figcaption className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">Daily page &middot; track as you go</figcaption>
+            </figure>
+            <figure className="flex flex-col gap-3">
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image src="/90rr/preview-reflection.png" alt="Sample evening reflection page from the 90 R&R journal — meeting, feelings, gratitude and the daily score" width={1275} height={1651} className="w-full h-auto" />
+              </div>
+              <figcaption className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">Reflection page &middot; night check-in</figcaption>
+            </figure>
+          </div>
+        </section>
       </main>
 
-      <footer className="border-t border-white/5 bg-[#051024] py-8 relative z-20">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Image src="/logo.png" alt="AAfiends" width={32} height={32} className="w-8 h-8 rounded-lg grayscale opacity-70" />
-            <div className="text-sm font-black tracking-tight text-white uppercase">AA<span className="text-[#10b981]">fiends</span><span className="text-neutral-500 font-mono ml-1">/ 90 R&amp;R</span></div>
-          </Link>
-          <div className="text-xs font-mono text-neutral-500 uppercase tracking-widest flex items-center gap-5">
-            <span>Version {VERSION}</span>
-            <a href="https://racefiends.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-400">RaceFiends</a>
-            <a href="https://aivirus.org" target="_blank" rel="noopener noreferrer" className="hover:text-red-400">AIVirus</a>
-          </div>
-        </div>
-        <p className="max-w-5xl mx-auto px-6 mt-4 text-[11px] text-red-300/90 font-mono font-bold leading-relaxed text-center md:text-left">
-          In crisis? Call or text <a href="tel:988" className="underline hover:text-red-200">988</a> · Text HOME to <a href="sms:741741&body=HOME" className="underline hover:text-red-200">741741</a> · SAMHSA <a href="tel:18006624357" className="underline hover:text-red-200">1-800-662-4357</a> · Emergency 911. AAfiends is not a crisis service.
-        </p>
-        <p className="max-w-5xl mx-auto px-6 mt-2 text-[10px] text-neutral-600 font-mono leading-relaxed text-center md:text-left">
-          Built by members, for members · Not affiliated with Alcoholics Anonymous World Services, Inc. · Peer support and self-help — not medical advice or treatment.
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

@@ -1,4 +1,6 @@
 "use client";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -45,20 +47,7 @@ export default function AI4AAPage() {
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(0,240,255,0.08),transparent_60%)] pointer-events-none z-0"></div>
 
-      {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#051024] shadow-[0_4px_30px_rgba(0,0,0,0.5)] sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group cursor-pointer hover:opacity-90 transition-opacity">
-            <Image src="/logo.png" alt="AAfiends Logo" width={40} height={40} className="w-10 h-10 rounded-xl group-hover:scale-105 transition-transform drop-shadow-[0_0_15px_rgba(255,107,0,0.5)]" />
-            <div className="text-2xl font-black tracking-tight text-white flex items-center gap-1.5 uppercase">
-              AA<span className="text-[#ff6b00]">fiends</span> <span className="text-neutral-500 font-mono text-sm ml-2 tracking-widest hidden sm:inline-block">/ AI4AA</span>
-            </div>
-          </Link>
-          <Link href="#registration" className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-black tracking-widest uppercase transition-all duration-300 border border-white/5">
-            Enroll Free
-          </Link>
-        </div>
-      </nav>
+      <SiteHeader />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-6 py-16 md:py-24 flex flex-col gap-28 relative z-20">
         {/* Hero */}
@@ -249,22 +238,7 @@ export default function AI4AAPage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 bg-[#051024] py-8 mt-12 relative z-20">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Image src="/logo.png" alt="AAfiends Logo" width={32} height={32} className="w-8 h-8 rounded-lg grayscale opacity-70" />
-            <div className="text-sm font-black tracking-tight text-white flex items-center gap-1 uppercase">
-              AA<span className="text-[#ff6b00]">fiends</span> <span className="text-neutral-500 font-mono ml-1">/ AI4AA</span>
-            </div>
-          </Link>
-          <div className="text-xs font-mono font-medium text-neutral-500 uppercase tracking-widest flex items-center gap-6">
-            <span>&copy; {new Date().getFullYear()} AAfiends</span>
-            <span className="hidden sm:inline">Protocol 1.0</span>
-            <a href="https://ubuild.pro" target="_blank" rel="noopener noreferrer" className="text-[#00f0ff] hover:text-white transition-colors flex items-center gap-1.5">Built by ubuild.pro</a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
