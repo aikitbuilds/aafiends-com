@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, BookOpen, LifeBuoy } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -35,6 +36,12 @@ export default function ContactPage() {
             <a href="mailto:aafiends@gmail.com" className="text-[#10b981] font-bold hover:underline">aafiends@gmail.com</a>.
           </p>
         </section>
+
+        <div className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden border border-white/10">
+          <Image src="/recovery_hero_hope.png" alt="You are not alone \u2014 reach out" fill className="object-cover object-[center_28%]" sizes="(max-width: 768px) 100vw, 1024px" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/10 to-transparent" />
+          <p className="absolute bottom-5 left-6 right-6 text-white font-black uppercase tracking-tight text-xl md:text-2xl drop-shadow">You reached out. That&apos;s the hardest rep.</p>
+        </div>
 
         <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 items-start">
           <ContactForm />

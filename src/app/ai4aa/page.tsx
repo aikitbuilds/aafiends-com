@@ -109,6 +109,10 @@ export default function AI4AAPage() {
             <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The 6-Week Blueprint</h2>
             <p className="text-neutral-400 font-mono uppercase tracking-widest">What you&apos;ll learn, week by week.</p>
           </div>
+          <div className="relative max-w-4xl mx-auto w-full aspect-[16/7] rounded-2xl overflow-hidden border border-[#00f0ff]/20">
+            <Image src="/images/ai4aa/curriculum_app_real.png" alt="The AI4AA curriculum, week by week" fill className="object-cover" sizes="(max-width: 768px) 100vw, 900px" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+          </div>
           <div className="max-w-4xl mx-auto w-full flex flex-col gap-4">
             {blueprint.map((week, index) => (
               <div key={index} className="bg-[#09090b] border border-white/10 rounded-2xl overflow-hidden shadow-lg">

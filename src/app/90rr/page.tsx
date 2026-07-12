@@ -25,6 +25,7 @@ const PILLARS = [
     sub: "Body · Hardware",
     color: "#10b981",
     qr: "engine",
+    img: "/pillar_physical_real.png",
     qrLabel: "The BIO 12 protocol",
     qrUrl: "https://aivirus.org/bio12",
     body:
@@ -37,6 +38,7 @@ const PILLARS = [
     sub: "Community · Social",
     color: "#a855f7",
     qr: "network",
+    img: "/pillar_network_real.png",
     qrLabel: "The 12 & 12",
     qrUrl: "https://aafiends.com/12-and-12",
     body:
@@ -49,6 +51,7 @@ const PILLARS = [
     sub: "Spirit · Mind",
     color: "#00f0ff",
     qr: "mirror",
+    img: "/pillar_mental_real.png",
     qrLabel: "G.A.D. — the spiritual framing",
     qrUrl: "https://aafiends.com/gad",
     body:
@@ -141,6 +144,32 @@ export default function NinetyRRPage() {
           </p>
         </section>
 
+        {/* FEATURED — Build your own journal */}
+        <section className="relative overflow-hidden rounded-3xl border border-[#10b981]/30 bg-gradient-to-br from-[#10b981]/15 via-[#0a1428] to-[#0a0a0a] p-8 md:p-10">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-[#10b981]/10 blur-3xl rounded-full pointer-events-none" />
+          <div className="relative grid md:grid-cols-[1.1fr_1fr] gap-8 items-center">
+            <div className="flex flex-col gap-4">
+              <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full bg-[#10b981] text-black text-xs font-black uppercase tracking-widest">\u2605 Featured</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-tight">Make it yours in 2 minutes</h2>
+              <p className="text-neutral-300 leading-relaxed">
+                No two days in recovery look the same. Keep the check-ins that help, drop the ones that don&apos;t, and add your own.
+                Then print it full-page or as a fold-and-staple mini-book. Free, no sign-up.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Pick your fields", "Full or half-page", "Print or save as PDF", "Free \u00b7 no signup"].map((t) => (
+                  <span key={t} className="text-xs font-medium text-neutral-200 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">{t}</span>
+                ))}
+              </div>
+              <Link href="/90rr/builder" className="mt-2 w-fit py-4 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all">
+                \u270e Open the Journal Builder \u2192
+              </Link>
+            </div>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-white">
+              <Image src="/90rr/preview-daily.png" alt="Customize your own daily page in the journal builder" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 480px" />
+            </div>
+          </div>
+        </section>
+
         {/* How it works */}
         <section className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
@@ -160,6 +189,10 @@ export default function NinetyRRPage() {
         <section className="flex flex-col gap-6">
           {PILLARS.map((p) => (
             <div key={p.name} className="bg-[#09090b] border border-white/10 rounded-3xl p-8 flex flex-col gap-5">
+              <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-white/10">
+                <Image src={p.img} alt={p.name + " \u2014 " + p.sub} fill className="object-cover" sizes="(max-width: 768px) 100vw, 720px" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent" />
+              </div>
               <div className="flex items-center gap-4">
                 <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-black font-black text-lg" style={{ background: p.color }}>{p.n}</div>
                 <div>

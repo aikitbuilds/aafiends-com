@@ -2,6 +2,7 @@
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import Image from "next/image";
 
 import { motion } from "framer-motion";
 import {
@@ -17,7 +18,6 @@ import {
   Play,
   BarChart3,
   Activity,
-  Image as ImageIcon
 } from "lucide-react";
 
 const fadeUp = {
@@ -247,7 +247,7 @@ export default function SanctuaryProtocolPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             <motion.div variants={fadeUp} className="bg-stone-800/60 backdrop-blur-sm rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50 flex flex-col gap-5 hover:border-stone-600/50 transition-colors group">
               <div className="w-full h-40 rounded-2xl bg-stone-700/50 border border-stone-600/30 flex items-center justify-center overflow-hidden relative">
-                <ImageIcon size={32} className="text-stone-500/50" />
+                <Image src="/network_grid.png" alt="The Fellowship \u2014 a room of people who understand" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex items-end p-4">
                   <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/20 backdrop-blur-md">
                     <Users size={16} className="text-blue-400" />
@@ -264,7 +264,7 @@ export default function SanctuaryProtocolPage() {
 
             <motion.div variants={fadeUp} className="bg-stone-800/60 backdrop-blur-sm rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50 flex flex-col gap-5 hover:border-stone-600/50 transition-colors group">
               <div className="w-full h-40 rounded-2xl bg-stone-700/50 border border-stone-600/30 flex items-center justify-center overflow-hidden relative">
-                <ImageIcon size={32} className="text-stone-500/50" />
+                <Image src="/objective_mirror.png" alt="Getting honest with your sponsor" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex items-end p-4">
                   <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/20 backdrop-blur-md">
                     <Phone size={16} className="text-purple-400" />
@@ -281,7 +281,7 @@ export default function SanctuaryProtocolPage() {
 
             <motion.div variants={fadeUp} className="bg-stone-800/60 backdrop-blur-sm rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50 flex flex-col gap-5 hover:border-stone-600/50 transition-colors group">
               <div className="w-full h-40 rounded-2xl bg-stone-700/50 border border-stone-600/30 flex items-center justify-center overflow-hidden relative">
-                <ImageIcon size={32} className="text-stone-500/50" />
+                <Image src="/recovery_hero_hope.png" alt="Rebuilding trust at home" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex items-end p-4">
                   <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/20 backdrop-blur-md">
                     <Home size={16} className="text-emerald-400" />

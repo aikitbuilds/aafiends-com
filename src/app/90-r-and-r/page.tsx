@@ -123,6 +123,10 @@ export default function RRFellowshipPage() {
               <h2 className="text-3xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">{BOOTCAMP.title}</h2>
               <p className="text-neutral-300 text-base md:text-lg leading-relaxed">{BOOTCAMP.intro}</p>
             </div>
+            <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden border border-[#f59e0b]/20">
+              <Image src="/baptism_by_sweat.png" alt="The one-day bootcamp intensive" fill className="object-cover object-[center_35%]" sizes="(max-width: 768px) 100vw, 900px" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1206] via-transparent to-transparent" />
+            </div>
             <div className="grid sm:grid-cols-2 gap-5">
               {BOOTCAMP.agenda.map((a, i) => {
                 const Icon = ICONS[a.icon];
@@ -149,6 +153,10 @@ export default function RRFellowshipPage() {
           <div className="text-center flex flex-col gap-4">
             <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The 90-Day Blueprint</h2>
             <p className="text-neutral-400 font-mono uppercase tracking-widest">Three phases, mapped to your biochemistry.</p>
+          </div>
+          <div className="relative max-w-4xl mx-auto w-full aspect-[16/8] rounded-2xl overflow-hidden border border-white/10">
+            <Image src="/dopamine_receptors_infographic.png" alt="How the brain rebuilds its dopamine receptors over 90 days" fill className="object-cover" sizes="(max-width: 768px) 100vw, 900px" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
           </div>
           <div className="max-w-4xl mx-auto w-full flex flex-col gap-4">
             {PHASES.map((phase, index) => (
@@ -219,6 +227,9 @@ export default function RRFellowshipPage() {
             <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">What You Get · 90 Days</h2>
             <p className="text-neutral-400 font-mono uppercase tracking-widest">The full kit — the day you sit down.</p>
           </div>
+          <div className="relative max-w-3xl mx-auto w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <Image src="/90rr/preview-daily.png" alt="The printable 90 R&R journal page you fill in each day" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 720px" />
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {DELIVERABLES.map((d) => {
               const Icon = ICONS[d.icon];
@@ -265,6 +276,10 @@ export default function RRFellowshipPage() {
           <div className="text-center flex flex-col gap-4">
             <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The Vanguard Safety Promise</h2>
             <p className="text-neutral-400 font-mono uppercase tracking-widest">Recovery first. Always.</p>
+          </div>
+          <div className="relative max-w-4xl mx-auto w-full aspect-[16/7] rounded-2xl overflow-hidden border border-white/10">
+            <Image src="/sponsor_alerts.png" alt="Your sponsor and the Vanguard stay in the loop" fill className="object-cover" sizes="(max-width: 768px) 100vw, 900px" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {SAFETY.map((s) => {
