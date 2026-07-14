@@ -38,7 +38,9 @@ export default function SiteFooter() {
           <a href="https://www.venmo.com/u/aafiends" target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex w-fit items-center gap-2 px-4 py-2 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-black uppercase tracking-widest hover:bg-[#f59e0b]/20 transition-colors">
             ☕ Buy me a coffee
           </a>
-          <p className="text-[10px] font-mono text-neutral-600 leading-relaxed">Keeps the servers on · self-supporting (Tradition 7).</p>
+          <p className="text-[10px] font-mono text-neutral-600 leading-relaxed">
+            Venmo <span className="text-neutral-400">@aafiends</span> · Zelle <a href="mailto:aafiends@gmail.com" className="text-[#f59e0b] hover:underline">aafiends@gmail.com</a> · keeps the servers on (Tradition 7).
+          </p>
         </div>
 
         {/* Column 2: Navigation — 90 Days R&R is the parent program; the Journal

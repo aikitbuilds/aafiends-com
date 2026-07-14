@@ -17,9 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${base}/protocol`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${base}/90RR-Journal-Month1-Alpha1-BOOKLET.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${base}/90-R-and-R_Month-1_Reset_Journal.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${base}/90RR-Starter-7Day-Alpha1-BOOKLET.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${base}/90-R-and-R_7-Day-Starter.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${base}/90rr/90RR-Journal-Month1-Alpha1-BOOKLET-v2.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${base}/90rr/90RR-Journal-Month1-Alpha1-v2.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${base}/90rr/90RR-Starter-7Day-Alpha1-BOOKLET-v2.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${base}/90rr/90RR-Starter-7Day-Alpha1-v2.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
   ];
 }

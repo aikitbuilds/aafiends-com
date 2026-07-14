@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const VERSION = "Alpha 1";
-const MONTHLY_PDF = "/90rr/90rr-month1-reset-journal.pdf?v=2026-07-14";
-const STARTER_PDF = "/90rr/90rr-7day-starter.pdf?v=2026-07-14";
-const MONTHLY_BOOKLET = "/90rr/90rr-month1-reset-journal-booklet.pdf?v=2026-07-14";
-const STARTER_BOOKLET = "/90rr/90rr-7day-starter-booklet.pdf?v=2026-07-14";
+const MONTHLY_PDF = "/90rr/90rr-month1-reset-journal-v2.pdf";
+const STARTER_PDF = "/90rr/90rr-7day-starter-v2.pdf";
+const MONTHLY_BOOKLET = "/90rr/90rr-month1-reset-journal-booklet-v2.pdf";
+const STARTER_BOOKLET = "/90rr/90rr-7day-starter-booklet-v2.pdf";
 
 // ---- content ----
 const PILLARS = [
