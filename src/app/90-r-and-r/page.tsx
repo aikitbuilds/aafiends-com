@@ -10,11 +10,12 @@ import {
   ChevronDown, ShieldCheck, Lock, EyeOff, PhoneCall, ArrowRight, Check,
   Flame, Rocket, RefreshCw, Crosshair, Home, Zap, Users,
   CalendarCheck, Activity, Gauge, BookOpen, Sparkles, UserCheck, Radio, HeartPulse,
+  Clock, MapPin, Trees,
   type LucideIcon,
 } from "lucide-react";
 import {
   RR_META, WHO_ITS_FOR, BOOTCAMP, PHASES, PILLARS, DELIVERABLES, SAFETY,
-  RESERVATION,
+  RESERVATION, SCHEDULE, SCHEDULE_NOTE, VENUE, ALPHA,
 } from "@/data/rrFellowship";
 import ReserveFlow from "@/components/rr/ReserveFlow";
 
@@ -148,6 +149,64 @@ export default function RRFellowshipPage() {
           </div>
         </section>
 
+        {/* Tentative Schedule — the 1-Day */}
+        <section className="flex flex-col gap-10">
+          <div className="text-center flex flex-col gap-4">
+            <span className="inline-flex items-center gap-2 mx-auto w-fit px-4 py-1.5 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-xs text-[#f59e0b] font-mono uppercase tracking-widest font-bold">
+              <Clock size={14} /> Tentative Schedule
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The Day, Hour by Hour</h2>
+            <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed">{SCHEDULE_NOTE}</p>
+          </div>
+          <div className="max-w-3xl mx-auto w-full flex flex-col">
+            {SCHEDULE.map((s, i) => (
+              <div key={s.time} className="flex gap-5 md:gap-6 group">
+                {/* time + rail */}
+                <div className="flex flex-col items-center">
+                  <span className="w-20 md:w-24 text-right pr-1 text-sm md:text-base font-black text-[#f59e0b] font-mono uppercase tracking-tight whitespace-nowrap pt-0.5">{s.time}</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="w-3 h-3 rounded-full bg-[#10b981] shrink-0 mt-1.5 shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
+                  {i < SCHEDULE.length - 1 && <span className="w-px flex-1 bg-white/10" />}
+                </div>
+                <div className={`flex flex-col gap-1 pb-8 ${i === SCHEDULE.length - 1 ? "" : ""}`}>
+                  <h3 className="text-white font-black uppercase tracking-tight text-base md:text-lg leading-tight">{s.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* The Setting — outdoors in a park */}
+        <section className="flex flex-col gap-10">
+          <div className="text-center flex flex-col gap-4">
+            <span className="inline-flex items-center gap-2 mx-auto w-fit px-4 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">
+              <MapPin size={14} /> {VENUE.label}
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">{VENUE.title}</h2>
+            <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed">{VENUE.intro}</p>
+            <div className="flex flex-wrap justify-center gap-2 pt-1">
+              {VENUE.amenities.map((a) => (
+                <span key={a} className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
+                  <Trees size={13} className="text-[#10b981]" /> {a}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {VENUE.images.map((img, i) => (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden rounded-2xl border border-white/10 ${i === 2 ? "row-span-2 aspect-[3/4] col-span-2 md:col-span-1" : "aspect-[4/3]"}`}
+              >
+                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 768px) 50vw, 400px" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent" />
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* The 90-Day Blueprint */}
         <section id="blueprint" className="scroll-mt-24 flex flex-col gap-10">
           <div className="text-center flex flex-col gap-4">
@@ -230,6 +289,19 @@ export default function RRFellowshipPage() {
           <div className="relative max-w-3xl mx-auto w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
             <Image src="/90rr/preview-daily.png" alt="The printable 90 R&R journal page you fill in each day" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 720px" />
           </div>
+
+          {/* Alpha 1 — the journal is the paper beta of this cohort */}
+          <div className="max-w-3xl mx-auto w-full bg-gradient-to-br from-[#09090b] to-[#0a1a12] border border-[#10b981]/30 rounded-[2rem] p-8 md:p-10 flex flex-col gap-5 shadow-[0_0_40px_rgba(16,185,129,0.06)]">
+            <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">
+              <Sparkles size={14} /> {ALPHA.label}
+            </span>
+            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-none">{ALPHA.title}</h3>
+            <p className="text-neutral-300 leading-relaxed">{ALPHA.body}</p>
+            <Link href={ALPHA.href} className="w-fit py-3.5 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(16,185,129,0.35)]">
+              <BookOpen size={18} /> {ALPHA.cta} <ArrowRight size={18} />
+            </Link>
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {DELIVERABLES.map((d) => {
               const Icon = ICONS[d.icon];

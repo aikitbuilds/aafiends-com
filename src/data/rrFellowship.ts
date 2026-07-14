@@ -200,6 +200,47 @@ export const DELIVERABLES = [
   { icon: "Lock", title: "Private Cohort of 12", body: "One small, closed group that starts and finishes together. Anonymity honored (Traditions 11 & 12)." },
 ];
 
+// ---- The 1-Day Bootcamp — tentative schedule -------------------------------
+// A single full-day kickoff, held outdoors in a local park (shade trees,
+// water, and restrooms on site). Times are tentative and shared with the cohort.
+export const SCHEDULE_NOTE =
+  "Tentative running order for the 1-day kickoff. Times may shift on the day — the shape of it won't. Bring a chair or blanket, a refillable water bottle, and layers for the weather.";
+
+export const SCHEDULE = [
+  { time: "9:00 AM", title: "Welcome & Introduction", desc: "Arrive, settle in, and meet the cohort. What the day holds — and why we start together." },
+  { time: "10:00 AM", title: "Deep Dive: The Journal System", desc: "Walk the 90 R&R journal end to end — the three pillars, the daily page, the VSE score — with open Q&A." },
+  { time: "11:00 AM", title: "Walk & Talk", desc: "Get moving on the park trails with healthy snacks. Pillar 1 in practice — connection on the move." },
+  { time: "12:00 PM", title: "Lunch & Sharing", desc: "Break bread together and share where each of us is starting from." },
+  { time: "1:00 PM", title: "AA Meeting Framework", desc: "How the rooms work, and how the 12 Steps map onto the 90 days — the spine of the program." },
+  { time: "2:00 PM", title: "A.I.V. Deep Dive", desc: "Meet the Addiction Intelligence Virus — how it operates, and the firewall that starves it." },
+  { time: "3:00 PM", title: "Personal Sharing Time", desc: "Open, honest space to share what brought you here and what you're carrying in." },
+  { time: "4:00 PM", title: "Wrap-Up & Open Floor", desc: "Close the loop, lock the covenant, and hold space for whatever else comes up." },
+];
+
+// ---- Venue — outdoors, in a local park --------------------------------------
+export const VENUE = {
+  label: "The Setting",
+  title: "One Day, Outdoors, In the Park",
+  intro:
+    "We hold the kickoff outside — in a local park with shade trees, water, and restrooms on site. Fresh air, room to walk, and a calm place to start the work. The exact location is shared with your cohort once your seat is confirmed.",
+  amenities: ["Shade trees", "Water on site", "Restrooms", "Walking trails"],
+  images: [
+    { src: "/park1.jpg", alt: "The park where the 1-day bootcamp is held — open green space and trees" },
+    { src: "/park2.jpg", alt: "Shaded gathering area at the park venue" },
+    { src: "/park3.jpg", alt: "Water and walking trails at the park" },
+  ],
+};
+
+// ---- Alpha 1 — the journal is the paper beta of this cohort ------------------
+export const ALPHA = {
+  label: "Alpha 1 Cohort",
+  title: "You're Looking at the Alpha Class",
+  body:
+    "The 90 R&R journal is already in the wild as Alpha 1 — the paper beta of this cohort. Everything in the printable workbook is what we build live, together, on Day 0. This first class shapes the program: your feedback writes the next version.",
+  cta: "See the Journal",
+  href: "/90rr",
+};
+
 // ---- Safety promise ---------------------------------------------------------
 export const SAFETY = [
   {
