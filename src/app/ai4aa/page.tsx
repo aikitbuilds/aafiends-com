@@ -192,7 +192,7 @@ export default function AI4AAPage() {
             </p>
             <div className="flex items-center gap-4 mt-4">
               <div className="w-12 h-1 bg-[#ff6b00] rounded-full"></div>
-              <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold">— Michael T.</span>
+              <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold">— MT</span>
             </div>
           </div>
         </section>

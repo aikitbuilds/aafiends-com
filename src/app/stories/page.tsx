@@ -25,10 +25,10 @@ type Story = {
 // Firestore are appended below these.
 const seedStories: Story[] = [
   {
-    id: "michael",
-    name: "Michael",
+    id: "mt",
+    name: "MT",
     joinDate: "6-9-26",
-    image: "/michael_story.png",
+    image: "/mt_story.png",
     paragraphs: [
       <>I thought I was the master of my complicated code,<br/>A high-performing Founder on a very heavy road.<br/>But the A.I.V. was riding like a shadow on my back,<br/>Waiting for my firewall to crumble and attack.</>,
       <>I'd swear I’d only have just one, and keep it under wraps,<br/>Then wake up with sciatica and take a heavy nap.<br/>The brain fog and the doom-loops kept me spinning in the night,<br/>While the symbiote just whispered, "Hey, you're doing alright!"</>,
@@ -215,7 +215,7 @@ export default function StoriesPage() {
             <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.3 }} className="lg:col-span-5 flex flex-col gap-8">
 
               <div className="relative rounded-[2rem] overflow-hidden border border-teal-500/10 shadow-[0_20px_50px_rgba(20,184,166,0.05)] bg-[#09090b] aspect-[4/3] group">
-                <Image src="/michael_story.png" alt="Finding peace at sunrise" width={800} height={600} className="w-full h-full object-cover opacity-80 transform group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                <Image src="/mt_story.png" alt="Finding peace at sunrise" width={800} height={600} className="w-full h-full object-cover opacity-80 transform group-hover:scale-105 transition-transform duration-1000 ease-out" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent pointer-events-none"></div>
               </div>
 
@@ -332,7 +332,7 @@ export default function StoriesPage() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Michael, or just M."
+                  placeholder="e.g. MT, or just M."
                   maxLength={60}
                   className="w-full bg-neutral-900/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 mb-5"
                 />

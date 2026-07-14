@@ -7,7 +7,7 @@ import { useAuth } from "@/contexts/AuthContext";
 // for every signed-in user (including beta testers), which is confusing —
 // gated to Michael's own account so beta testers never see a floating
 // "[DEV: INJECT GARMIN]" button on what's supposed to be their real data.
-const DEV_EMAILS = ["michaelcongtran@gmail.com"];
+const DEV_EMAILS = ["aafiends@gmail.com"];
 
 export default function GarminSimulator() {
   const { user } = useAuth();

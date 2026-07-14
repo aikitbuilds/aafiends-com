@@ -6,7 +6,7 @@ import { auth } from "@/lib/firebase";
 
 // Gated to Michael's account only — same reasoning as GarminSimulator.tsx:
 // beta testers shouldn't see a floating "[DEV]" button on their own dashboard.
-const DEV_EMAILS = ["michaelcongtran@gmail.com"];
+const DEV_EMAILS = ["aafiends@gmail.com"];
 
 export default function VanguardTest() {
   const { user } = useAuth();

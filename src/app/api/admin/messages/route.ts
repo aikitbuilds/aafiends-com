@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { adminDb, adminAuth } from "@/lib/firebaseAdmin";
 
 // Who may read the inbox / approve Trench logs. Override via ADMIN_EMAILS env.
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || "aafiends@gmail.com,michaelcongtran@gmail.com")
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || "aafiends@gmail.com")
   .split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
 
 async function adminOf(req: Request): Promise<string | null> {

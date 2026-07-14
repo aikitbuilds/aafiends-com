@@ -35,6 +35,10 @@ export default function SiteFooter() {
               </svg>
             </a>
           </div>
+          <a href="https://www.venmo.com/u/aafiends" target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex w-fit items-center gap-2 px-4 py-2 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] text-xs font-black uppercase tracking-widest hover:bg-[#f59e0b]/20 transition-colors">
+            ☕ Buy me a coffee
+          </a>
+          <p className="text-[10px] font-mono text-neutral-600 leading-relaxed">Keeps the servers on · self-supporting (Tradition 7).</p>
         </div>
 
         {/* Column 2: Navigation — 90 Days R&R is the parent program; the Journal
@@ -45,6 +49,7 @@ export default function SiteFooter() {
             <Link href="/90-r-and-r" className="text-sm font-black text-white hover:text-[#10b981] transition-colors uppercase">90 Days R&amp;R</Link>
             <div className="flex flex-col gap-2.5 pl-4 border-l border-white/10">
               <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Printable Journal</Link>
+              <Link href="/prep90" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Prep Kit</Link>
               <Link href="/12-and-12" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">12 &amp; 12</Link>
               <Link href="/gad" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">G.A.D.</Link>
             </div>

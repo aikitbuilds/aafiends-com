@@ -9,7 +9,7 @@
 // of biology-first recovery telemetry. Max 12 seats. First cohort mid-Aug 2026.
 // ---------------------------------------------------------------------------
 
-// ⚙️ RESERVATION CONFIG — Michael: drop your Venmo handle here to go live.
+// ⚙️ RESERVATION CONFIG — Venmo handle for the seat deposit.
 // The "Reserve My Seat" button opens Venmo prefilled with the chosen amount.
 // If venmoHandle is left blank, the button falls back to a mailto: so it's
 // never a dead link. Deposit is a suggested $20 — pay-what-you-can (Trad. 7).
@@ -18,7 +18,7 @@ export const RESERVATION = {
   seatsClaimed: 0, // bump this as seats fill, or wire to Firestore later
   suggestedDeposit: 20,
   quickAmounts: [10, 20, 40], // "pay whatever you can" — $20 is the anchor
-  venmoHandle: "Cong-Tran-28", // e.g. "aafiends"  →  https://venmo.com/aafiends
+  venmoHandle: "aafiends", // https://www.venmo.com/u/aafiends
   reserveEmail: "aafiends@gmail.com", // fallback if Venmo not set
   note: "90 R&R Fellowship — seat deposit (pay-what-you-can, Tradition 7)",
 };
