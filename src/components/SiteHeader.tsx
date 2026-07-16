@@ -28,6 +28,7 @@ const NAV: NavItem[] = [
     children: [
       { href: "/blog", label: "Research" },
       { href: "/data", label: "The Data" },
+      { href: "/book1", label: "Book One (Beta)" },
     ],
   },
   {

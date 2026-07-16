@@ -11,7 +11,7 @@ import SiteFooter from "@/components/SiteFooter";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import SubstackSubscribe from "@/components/SubstackSubscribe";
 import {
-  Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network
+  Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network, BookOpen
 } from "lucide-react";
 
 export default function LandingClient({ substackLatest }: { substackLatest: React.ReactNode }) {
@@ -364,6 +364,46 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
               <Link href="/90-r-and-r#reserve" className="w-fit">
                 <button className="py-3 px-6 rounded-lg bg-transparent text-[#10b981] border border-[#10b981]/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:bg-[#10b981]/10">
                   Reserve a Seat <ArrowRight size={16} />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* BOOK ONE — coming soon featured card */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
+      >
+        <div className="w-full bg-[#150d0a] border border-[#e8543d]/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(232,84,61,0.15)] group relative">
+
+          <div className="md:w-[38%] relative h-80 md:h-auto overflow-hidden flex items-center justify-center bg-[#0a0a0a] p-6">
+            <Image src="/book1/book1-cover.png" alt="The AIV Recovery Field Manual — Book One: The Engine" width={520} height={780} className="w-full max-w-[280px] h-auto rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.6)] transform group-hover:scale-105 transition-transform duration-700" />
+          </div>
+
+          <div className="md:w-[62%] p-10 md:p-12 flex flex-col justify-center relative z-10">
+            <div className="flex items-center gap-3 flex-wrap mb-4">
+              <span className="text-xs font-mono font-bold text-[#e8543d] uppercase tracking-widest bg-[#e8543d]/10 px-3 py-1 rounded-full border border-[#e8543d]/30">Coming Soon</span>
+              <span className="text-xs font-mono font-bold text-[#e8a33d] uppercase tracking-widest bg-[#e8a33d]/10 px-3 py-1 rounded-full border border-[#e8a33d]/30">Beta Open Now</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
+              The AIV Recovery <span className="text-[#e8543d]">Field Manual</span>
+            </h2>
+            <p className="text-neutral-400 text-sm font-mono uppercase tracking-widest mb-4">Book One: The Engine &middot; 12 Chapters &middot; by MT</p>
+            <p className="text-neutral-300 text-base leading-relaxed mb-8">
+              The book behind AAfiends — MT&apos;s own recovery, written down. Biology first: sleep, movement, nutrition, and breath, before you touch the mind or the meetings. Full beta is free to read right now, HTML or PDF, and every page is looking for your notes before the final edition ships.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/book1" className="w-fit">
+                <button className="py-3 px-6 rounded-lg bg-[#e8a33d] text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-[#d99228] shadow-[0_0_15px_rgba(232,163,61,0.3)]">
+                  <BookOpen size={18} />
+                  Read the Beta
+                </button>
+              </Link>
+              <Link href="/book1" className="w-fit">
+                <button className="py-3 px-6 rounded-lg bg-transparent text-white border border-white/20 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:border-[#e8543d]/60 hover:text-[#e8543d]">
+                  Download the PDF <ArrowRight size={16} />
                 </button>
               </Link>
             </div>

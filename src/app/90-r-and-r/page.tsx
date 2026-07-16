@@ -18,6 +18,7 @@ import {
   RESERVATION, SCHEDULE, SCHEDULE_NOTE, VENUE, ALPHA,
 } from "@/data/rrFellowship";
 import ReserveFlow from "@/components/rr/ReserveFlow";
+import AlphaClassDay from "@/components/rr/AlphaClassDay";
 
 const ICONS: Record<string, LucideIcon> = {
   Flame, Rocket, RefreshCw, Crosshair, Home, Zap, Users, CalendarCheck,
@@ -368,6 +369,9 @@ export default function RRFellowshipPage() {
             })}
           </div>
         </section>
+
+        {/* The Alpha Class day: schedule, park, see-the-journal */}
+        <AlphaClassDay />
 
         {/* Reservation — Google sign-in + quick intake + deposit */}
         <ReserveFlow />

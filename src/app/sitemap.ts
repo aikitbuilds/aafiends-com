@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/prep90`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${base}/protocol`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/book1`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/90rr/90RR-Journal-Month1-Alpha1-BOOKLET-v3.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${base}/90rr/90RR-Journal-Month1-Alpha1-v3.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },

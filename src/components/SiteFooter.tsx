@@ -57,6 +57,7 @@ export default function SiteFooter() {
             </div>
             <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Science</Link>
             <Link href="/data" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Data</Link>
+            <Link href="/book1" className="text-sm font-bold hover:text-[#e8a33d] transition-colors uppercase">Book One (Beta)</Link>
             <Link href="/ai4aa" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">AI4AA Course</Link>
             <Link href="/contact" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Contact</Link>
           </nav>

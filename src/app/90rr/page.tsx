@@ -12,10 +12,12 @@ export const metadata: Metadata = {
 };
 
 const VERSION = "Alpha 1";
-const MONTHLY_PDF = "/90rr/90rr-month1-reset-journal-v3.pdf";
-const STARTER_PDF = "/90rr/90rr-7day-starter-v3.pdf";
-const MONTHLY_BOOKLET = "/90rr/90rr-month1-reset-journal-booklet-v3.pdf";
-const STARTER_BOOKLET = "/90rr/90rr-7day-starter-booklet-v3.pdf";
+const MONTHLY_PDF = "/90rr/90rr-month1-reset-journal-v4.pdf";
+const STARTER_PDF = "/90rr/90rr-7day-starter-v4.pdf";
+const REFILL_PDF = "/90rr/90rr-refill-pages-v4.pdf";
+const MONTHLY_BOOKLET = "/90rr/90rr-month1-reset-journal-booklet-v4.pdf";
+const STARTER_BOOKLET = "/90rr/90rr-7day-starter-booklet-v4.pdf";
+const REFILL_BOOKLET = "/90rr/90rr-refill-pages-booklet-v4.pdf";
 
 // ---- content ----
 const PILLARS = [
@@ -303,30 +305,41 @@ export default function NinetyRRPage() {
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#10b981]" />
           <div className="flex flex-col gap-4 text-center items-center">
             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white">Download the Journal</h2>
-            <p className="text-neutral-400 max-w-xl leading-relaxed">
-              Print it double-sided — Side A is your daily data, Side B is your reflection. Start with the 7-day test print, then run
-              the full month. This is version <span className="text-[#f59e0b] font-bold">{VERSION}</span>; this page always links the latest.
+            <p className="text-neutral-400 max-w-2xl leading-relaxed">
+              One design, any length. Every day is two facing pages — morning (Side A) on the left, evening (Side B) on the right.
+              Grab a ready-made journal, or the refill pages for a 3-ring binder. Version <span className="text-[#f59e0b] font-bold">{VERSION}</span> — this page always links the latest.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <a href={MONTHLY_PDF} download className="py-4 px-10 rounded-2xl bg-white hover:bg-neutral-200 text-black text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
-                ↓ Month 1 · 30 Days
-              </a>
-              <a href={STARTER_PDF} download className="py-4 px-10 rounded-2xl bg-[#10b981]/10 border border-[#10b981]/40 text-[#10b981] hover:bg-[#10b981]/20 text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
-                ↓ 7-Day Starter
-              </a>
+
+            {/* Three options, each full-size + half-size */}
+            <div className="w-full grid md:grid-cols-3 gap-4 pt-2 text-left">
+              {[
+                { title: "7-Day Quick Start", sub: "Print & go · easy to share", desc: "One week to test-drive the system. The one to hand out.", full: STARTER_PDF, half: STARTER_BOOKLET, accent: "#10b981" },
+                { title: "30-Day · Month 1", sub: "The full reset", desc: "A month of daily spreads with a weekly review built in.", full: MONTHLY_PDF, half: MONTHLY_BOOKLET, accent: "#f59e0b" },
+                { title: "Refill Pages", sub: "For a 3-ring binder", desc: "Daily pages + a weekly review, no intro. Hole-punch and reload as many weeks as you want.", full: REFILL_PDF, half: REFILL_BOOKLET, accent: "#00f0ff" },
+              ].map((o) => (
+                <div key={o.title} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
+                  <div>
+                    <h3 className="text-lg font-black text-white uppercase tracking-tight leading-tight">{o.title}</h3>
+                    <p className="text-[11px] font-bold uppercase tracking-widest" style={{ color: o.accent }}>{o.sub}</p>
+                  </div>
+                  <p className="text-sm text-neutral-400 leading-relaxed flex-1">{o.desc}</p>
+                  <a href={o.full} download className="py-3 px-4 rounded-xl text-center text-black text-xs font-black tracking-widest uppercase transition-all hover:opacity-90" style={{ background: o.accent }}>
+                    ↓ Full size · 8.5×11
+                  </a>
+                  <a href={o.half} download className="py-2.5 px-4 rounded-xl border text-center text-xs font-black tracking-widest uppercase transition-all hover:bg-white/5" style={{ borderColor: `${o.accent}66`, color: o.accent }}>
+                    ↓ Half size · booklet
+                  </a>
+                </div>
+              ))}
             </div>
-            <div className="w-full pt-5 mt-1 border-t border-white/10 flex flex-col gap-3">
-              <p className="text-xs font-mono uppercase tracking-widest text-[#f59e0b]">Or print a fold-&amp;-staple mini-book · half size (5.5×8.5&quot;)</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href={MONTHLY_BOOKLET} download className="py-3.5 px-8 rounded-2xl border border-[#f59e0b]/40 text-[#f59e0b] hover:bg-[#f59e0b]/10 text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
-                  ↓ Month 1 · Booklet
-                </a>
-                <a href={STARTER_BOOKLET} download className="py-3.5 px-8 rounded-2xl border border-[#f59e0b]/40 text-[#f59e0b] hover:bg-[#f59e0b]/10 text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3">
-                  ↓ 7-Day · Booklet
-                </a>
-              </div>
-              <p className="text-[11px] text-neutral-500 leading-relaxed font-mono">
-                Print double-sided (flip on the SHORT edge), fold the whole stack in half, staple twice on the spine. Prints 2-up on letter paper — each finished page is 5.5×8.5&quot;. Printed in light ink to save toner; <strong className="text-neutral-400">32&nbsp;lb white paper recommended</strong> (20&nbsp;lb works too).
+
+            <div className="w-full pt-5 mt-1 border-t border-white/10 flex flex-col gap-2 text-left">
+              <p className="text-xs font-mono uppercase tracking-widest text-[#f59e0b]">Two ways to print</p>
+              <p className="text-[12px] text-neutral-400 leading-relaxed">
+                <strong className="text-neutral-200">Full size (8.5×11):</strong> print double-sided, flip on the <strong>long</strong> edge so the morning and evening pages line up. Three-hole-punch and drop into a binder — or bind it however you like.
+              </p>
+              <p className="text-[12px] text-neutral-400 leading-relaxed">
+                <strong className="text-neutral-200">Half size (booklet):</strong> print double-sided, flip on the <strong>short</strong> edge, fold the stack in half and staple twice on the spine — a 5.5×8.5&quot; mini-book. <strong className="text-neutral-300">32&nbsp;lb paper recommended</strong> (20&nbsp;lb works too).
               </p>
             </div>
             <Link href="/90rr/builder" className="text-sm font-bold text-[#10b981] hover:text-white transition-colors uppercase tracking-widest mt-2">
