@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 const VERSION = "Alpha 1";
-const MONTHLY_PDF = "/90rr/90rr-month1-reset-journal-v4.pdf";
-const STARTER_PDF = "/90rr/90rr-7day-starter-v4.pdf";
-const REFILL_PDF = "/90rr/90rr-refill-pages-v4.pdf";
-const MONTHLY_BOOKLET = "/90rr/90rr-month1-reset-journal-booklet-v4.pdf";
-const STARTER_BOOKLET = "/90rr/90rr-7day-starter-booklet-v4.pdf";
-const REFILL_BOOKLET = "/90rr/90rr-refill-pages-booklet-v4.pdf";
+const MONTHLY_PDF = "/90rr/90rr-month1-reset-journal-v5.pdf";
+const STARTER_PDF = "/90rr/90rr-7day-starter-v5.pdf";
+const REFILL_PDF = "/90rr/90rr-refill-pages-v5.pdf";
+const MONTHLY_BOOKLET = "/90rr/90rr-month1-reset-journal-booklet-v5.pdf";
+const STARTER_BOOKLET = "/90rr/90rr-7day-starter-booklet-v5.pdf";
+const REFILL_BOOKLET = "/90rr/90rr-refill-pages-booklet-v5.pdf";
 
 // ---- content ----
 const PILLARS = [
