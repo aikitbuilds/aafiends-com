@@ -10,10 +10,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import JourneyTab from "@/components/JourneyTab";
-import TelemetryLog from "@/components/TelemetryLog";
 import LedgerTab from "@/components/LedgerTab";
 import BiometricsTab from "@/components/BiometricsTab";
-import Bio12Tab from "@/components/Bio12Tab";
 import BuildStamp from "@/components/BuildStamp";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -24,16 +22,14 @@ import CrisisSupport from "@/components/CrisisSupport";
 import DailyLedger from "@/components/DailyLedger";
 import RewardsTab from "@/components/RewardsTab";
 
-type TabId = "overview" | "ledger" | "rewards" | "engine" | "mirror" | "network" | "data" | "bio12";
+type TabId = "overview" | "ledger" | "rewards" | "mirror" | "network" | "data";
 
 const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: "overview", label: "Overview", icon: LayoutGrid },
   { id: "ledger", label: "Ledger", icon: BookOpen },
   { id: "rewards", label: "Rewards", icon: Sparkles },
-  { id: "engine", label: "Engine", icon: Mic },
   { id: "mirror", label: "Mirror", icon: Brain },
   { id: "network", label: "Network", icon: Users },
-  { id: "bio12", label: "BIO 12", icon: Shield },
   { id: "data", label: "Data", icon: Activity },
 ];
 
@@ -41,11 +37,9 @@ const TAB_STYLES: Record<TabId, { active: string; iconWrap: string; text: string
   overview: { active: "border-emerald-500 text-emerald-400 bg-emerald-500/5", iconWrap: "bg-emerald-500/10 text-emerald-400", text: "text-emerald-400" },
   ledger: { active: "border-emerald-500 text-emerald-400 bg-emerald-500/5", iconWrap: "bg-emerald-500/10 text-emerald-400", text: "text-emerald-400" },
   rewards: { active: "border-amber-500 text-amber-400 bg-amber-500/5", iconWrap: "bg-amber-500/10 text-amber-400", text: "text-amber-400" },
-  engine: { active: "border-red-500 text-red-400 bg-red-500/5", iconWrap: "bg-red-500/10 text-red-400", text: "text-red-400" },
   mirror: { active: "border-blue-500 text-blue-400 bg-blue-500/5", iconWrap: "bg-blue-500/10 text-blue-400", text: "text-blue-400" },
   network: { active: "border-purple-500 text-purple-400 bg-purple-500/5", iconWrap: "bg-purple-500/10 text-purple-400", text: "text-purple-400" },
   data: { active: "border-cyan-500 text-cyan-400 bg-cyan-500/5", iconWrap: "bg-cyan-500/10 text-cyan-400", text: "text-cyan-400" },
-  bio12: { active: "border-orange-500 text-orange-400 bg-orange-500/5", iconWrap: "bg-orange-500/10 text-orange-400", text: "text-orange-400" },
 };
 
 export default function DashboardPage() {
@@ -226,21 +220,21 @@ export default function DashboardPage() {
                   <StatChip icon={Target} label="Meetings Logged" value={profile?.meetingsCount || 0} accent="bg-purple-500/10 text-purple-400" />
                 </div>
 
-                {/* Today's check-in CTA */}
+                {/* Today's check-in CTA — opens the Daily Ledger (the single check-in) */}
                 <button
-                  onClick={() => setActiveTab("engine")}
-                  className="w-full flex items-center justify-between gap-4 bg-red-500/10 border border-red-500/30 rounded-2xl p-5 hover:bg-red-500/15 transition-colors text-left"
+                  onClick={() => setActiveTab("ledger")}
+                  className="w-full flex items-center justify-between gap-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-5 hover:bg-emerald-500/15 transition-colors text-left"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
-                      <Mic className="text-red-400" size={18} />
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                      <BookOpen className="text-emerald-400" size={18} />
                     </div>
                     <div>
                       <h4 className="text-sm font-black text-white uppercase tracking-widest">Log Today's Check-In</h4>
-                      <p className="text-xs text-neutral-400">Takes about ten seconds — sliders plus one tap.</p>
+                      <p className="text-xs text-neutral-400">Open your Daily Ledger — Side A / Side B, scored for your trend.</p>
                     </div>
                   </div>
-                  <ChevronRight className="text-red-400 shrink-0" size={18} />
+                  <ChevronRight className="text-emerald-400 shrink-0" size={18} />
                 </button>
 
                 {/* AI4AA course access — switch over to the course materials */}
@@ -273,8 +267,8 @@ export default function DashboardPage() {
                     name="Engine"
                     subtitle="The Biological Vessel"
                     description="Sleep, nutrition, and pain management. You can't hold a steady recovery in a body that isn't being taken care of."
-                    accent={TAB_STYLES.engine}
-                    onClick={() => setActiveTab("engine")}
+                    accent={TAB_STYLES.ledger}
+                    onClick={() => setActiveTab("ledger")}
                   />
                   <PillarCard
                     icon={Brain}
@@ -317,18 +311,6 @@ export default function DashboardPage() {
                 accent={TAB_STYLES.rewards}
               >
                 <RewardsTab />
-              </PillarPanel>
-            )}
-
-            {activeTab === "engine" && (
-              <PillarPanel
-                icon={Mic}
-                name="Engine"
-                subtitle="The Biological Vessel"
-                description="Log how your body and mind feel today."
-                accent={TAB_STYLES.engine}
-              >
-                <TelemetryLog />
               </PillarPanel>
             )}
 
@@ -376,18 +358,6 @@ export default function DashboardPage() {
                 <div className="bg-[#050505] rounded-2xl overflow-hidden border border-white/10">
                   <JourneyTab daysSober={daysSober} />
                 </div>
-              </PillarPanel>
-            )}
-
-            {activeTab === "bio12" && (
-              <PillarPanel
-                icon={Shield}
-                name="BIO 12"
-                subtitle="The Four-Pillar Daily Protocol"
-                description="Movement · Sleep · Nutrition · Breath — 12 checks that keep your firewall up."
-                accent={TAB_STYLES.bio12}
-              >
-                <Bio12Tab />
               </PillarPanel>
             )}
 
