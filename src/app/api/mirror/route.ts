@@ -49,7 +49,13 @@ export async function POST(request: NextRequest) {
         code: authError?.code,
         error: authError
       });
-      return NextResponse.json({ error: "Invalid or expired authentication token" }, { status: 401 });
+      // Surface the underlying Firebase auth code (e.g. auth/argument-error,
+      // auth/id-token-expired) so this failure is diagnosable from the client
+      // instead of being an opaque "invalid token".
+      return NextResponse.json(
+        { error: "Invalid or expired authentication token", code: authError?.code || "auth/unknown" },
+        { status: 401 }
+      );
     }
 
     const uid = decodedToken.uid;
