@@ -305,13 +305,41 @@ export default function NinetyRRPage() {
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#10b981]" />
           <div className="flex flex-col gap-4 text-center items-center">
             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white">Download the Journal</h2>
-            <p className="text-neutral-400 max-w-2xl leading-relaxed">
-              One design, any length. Every day is two facing pages — morning (Side A) on the left, evening (Side B) on the right.
-              Grab a ready-made journal, or the refill pages for a 3-ring binder. Version <span className="text-[#f59e0b] font-bold">{VERSION}</span> — this page always links the latest.
+            <p className="text-neutral-400 max-w-3xl leading-relaxed">
+              Two layouts, any length. <strong>Alpha 1</strong> is the classic two-page day — morning (Side A) left, evening (Side B) right. <strong>Beta 1</strong> is the new one-page day — a single Action Log facing a ruled Notes &amp; Insight page. This page always links the latest of both.
             </p>
 
+            {/* NEW: Beta 1 featured download */}
+            <div className="w-full text-left mt-8 mb-4 border border-[#10b981]/45 rounded-[20px] bg-gradient-to-b from-[#10b981]/10 to-[#10b981]/[0.02] p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center shadow-[0_0_40px_rgba(16,185,129,0.07)]">
+              <div className="flex-1 min-w-[300px] flex flex-col gap-3">
+                <span className="inline-block bg-[#f59e0b]/15 border border-[#f59e0b]/50 text-[#f59e0b] font-black text-[10.5px] tracking-widest rounded-full px-3 py-1.5 uppercase w-fit mb-1">
+                  NEW · BETA 1 LAYOUT
+                </span>
+                <h3 className="text-2xl font-black uppercase tracking-tight text-white">7-Day Starter — Beta 1</h3>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-[#10b981]">
+                  ONE-PAGE ACTION LOG · FACING NOTES &amp; INSIGHT · INK-LIGHT PRINT
+                </p>
+                <p className="text-sm text-neutral-400 leading-relaxed max-w-xl">
+                  The whole day on one page — sleep, movement, meeting, mood and score in a single Action Log, with the facing page left open for what held the line, gratitude, and insight. Ends with a consolidated Week in Review. Redesigned to sip ink on home printers.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <a href="/90rr/90rr-7day-starter-beta1.pdf?v=2026-07-19" download className="inline-block border border-[#10b981]/45 rounded-2xl bg-[#10b981] text-black hover:brightness-110 font-bold text-[13.5px] tracking-widest uppercase py-3 px-5 transition-all">
+                    ↓ FULL SIZE · 8.5×11
+                  </a>
+                  <a href="/90rr/90rr-7day-starter-beta1-booklet.pdf?v=2026-07-19" download className="inline-block border border-[#10b981]/45 rounded-2xl text-white hover:bg-[#10b981]/10 font-bold text-[13.5px] tracking-widest uppercase py-3 px-5 transition-all">
+                    ↓ HALF SIZE · BOOKLET
+                  </a>
+                </div>
+                <p className="text-xs text-neutral-500 mt-2">
+                  Prefer the classic two-page day? Alpha 1 below — both stay available.
+                </p>
+              </div>
+            </div>
+
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-neutral-500 mt-8 mb-2 w-full text-left">ALPHA 1 — THE CLASSIC LAYOUT</h3>
+
             {/* Three options, each full-size + half-size */}
-            <div className="w-full grid md:grid-cols-3 gap-4 pt-2 text-left">
+            <div className="w-full grid md:grid-cols-3 gap-4 text-left">
               {[
                 { title: "7-Day Quick Start", sub: "Print & go · easy to share", desc: "One week to test-drive the system. The one to hand out.", full: STARTER_PDF, half: STARTER_BOOKLET, accent: "#10b981" },
                 { title: "30-Day · Month 1", sub: "The full reset", desc: "A month of daily spreads with a weekly review built in.", full: MONTHLY_PDF, half: MONTHLY_BOOKLET, accent: "#f59e0b" },
