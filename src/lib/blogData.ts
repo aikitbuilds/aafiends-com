@@ -58,6 +58,9 @@ export interface BlogPost {
   sources: string[];
   content: string;
   sections: BlogSection[];
+  category?: string;
+  featured?: boolean;
+  heroImage?: string;
 }
 
 const SUBSTACK_CTA: BlogSection = {
@@ -69,7 +72,7 @@ This is the teaser version. The full breakdown — with the complete citation li
   `,
 };
 
-export const blogPosts: BlogPost[] = [
+const ORIGINAL_POSTS: BlogPost[] = [
   {
     slug: "90-day-brain-reset",
     title: "The 90-Day Reset: What's Actually Happening in Your Brain",
@@ -451,6 +454,10 @@ That's the actual reasoning behind letting you choose talk, type, or write by ha
     ],
   },
 ];
+
+import { dopamineTrapPosts } from "@/lib/dopamineTrapPosts";
+
+export const blogPosts: BlogPost[] = [...ORIGINAL_POSTS, ...dopamineTrapPosts];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);

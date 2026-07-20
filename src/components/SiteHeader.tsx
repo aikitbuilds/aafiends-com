@@ -26,6 +26,7 @@ const NAV: NavItem[] = [
   {
     label: "The Science",
     children: [
+      { href: "/blog#the-dopamine-trap", label: "The Dopamine Trap ★" },
       { href: "/blog", label: "Research" },
       { href: "/data", label: "The Data" },
       { href: "/book1", label: "Book One (Beta)" },

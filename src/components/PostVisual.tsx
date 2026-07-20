@@ -1,6 +1,6 @@
 "use client";
 
-import { Brain, Moon, Sparkles, Snowflake, Activity, Radar, PenTool, type LucideIcon } from "lucide-react";
+import { Brain, Moon, Sparkles, Snowflake, Activity, Radar, PenTool, Wine, Pill, Gamepad2, ShoppingCart, Smartphone, type LucideIcon } from "lucide-react";
 import { PillarAccent, PILLAR_STYLES } from "@/lib/blogData";
 
 /**
@@ -19,6 +19,11 @@ const ICON_MAP: Record<string, LucideIcon> = {
   activity: Activity,
   radar: Radar,
   "pen-tool": PenTool,
+  wine: Wine,
+  pill: Pill,
+  gamepad: Gamepad2,
+  "shopping-cart": ShoppingCart,
+  smartphone: Smartphone,
 };
 
 // `dot` is a separate literal class (not derived from `bg` via string
@@ -31,14 +36,24 @@ export default function PostVisual({
   icon,
   pillar,
   variant = "card",
+  image,
 }: {
   icon: string;
   pillar: PillarAccent;
   variant?: "card" | "hero";
+  image?: string;
 }) {
   const Icon = ICON_MAP[icon] || Sparkles;
   const style = PILLAR_STYLES[pillar];
   const iconSize = variant === "hero" ? 72 : 40;
+
+  if (image) return (
+    <div className="relative w-full h-full overflow-hidden bg-[#050505]">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={image} alt="" className="w-full h-full object-cover" />
+      <div className="absolute inset-0" style={{ boxShadow: `inset 0 0 120px 20px ${style.glow}` }} />
+    </div>
+  );
 
   return (
     <div

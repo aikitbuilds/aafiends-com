@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Hero */}
       <div className="w-full h-[32vh] md:h-[38vh] relative">
-        <PostVisual icon={post.icon} pillar={post.pillar} variant="hero" />
+        <PostVisual icon={post.icon} pillar={post.pillar} variant="hero" image={post.heroImage} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full p-6">
           <div className="max-w-3xl mx-auto">

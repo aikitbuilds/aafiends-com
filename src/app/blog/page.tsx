@@ -48,51 +48,122 @@ export default function BlogIndex() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-        >
-          {[...blogPosts]
-            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-            .map((post) => {
-              const style = PILLAR_STYLES[post.pillar];
-              return (
-                <motion.div
-                  key={post.slug}
-                  variants={fadeIn}
-                  whileHover={{ y: -5 }}
-                  className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-white/20 bg-[#0a0a0a]"
-                >
-                  <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                    <div className="w-full h-40 relative">
-                      <PostVisual icon={post.icon} pillar={post.pillar} variant="card" />
-                    </div>
-                    <div className="p-6 flex flex-col flex-1 gap-3">
-                      <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-widest">
-                        <span className={`${style.text} flex items-center gap-1.5`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`}></span>
-                          {style.label}
-                        </span>
-                        <span className="text-neutral-500">{post.readTime}</span>
+        {/* Featured Series Band */}
+        {blogPosts.some(p => p.featured) && (
+          <div id="the-dopamine-trap" className="flex flex-col gap-6 bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-6 md:p-10 mb-8">
+            <div className="flex flex-col gap-4">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full uppercase self-start">
+                Featured Series
+              </span>
+              
+              <div className="w-full h-32 md:h-48 rounded-2xl overflow-hidden bg-[#050505] border border-white/5 relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/blog/dopamine/series-banner.svg" alt="The Dopamine Trap" className="w-full h-full object-cover" />
+              </div>
+
+              <div className="flex flex-col gap-2 mt-2">
+                <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Dopamine Trap</h2>
+                <p className="text-neutral-400 font-light text-base leading-relaxed">
+                  The science of why you can't stop — and how to. Six parts, one see-saw.
+                </p>
+              </div>
+            </div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4"
+            >
+              {blogPosts
+                .filter((post) => post.featured)
+                .map((post, index) => {
+                  const style = PILLAR_STYLES[post.pillar];
+                  return (
+                    <motion.div
+                      key={post.slug}
+                      variants={fadeIn}
+                      whileHover={{ y: -5 }}
+                      className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-[#10b981]/30 bg-[#050505]"
+                    >
+                      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+                        <div className="w-full h-40 relative">
+                          <PostVisual icon={post.icon} pillar={post.pillar} variant="card" image={post.heroImage} />
+                        </div>
+                        <div className="p-6 flex flex-col flex-1 gap-3">
+                          <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-widest">
+                            <span className="text-[#10b981]">Part 0{index + 1}</span>
+                            <span className="text-neutral-500">{post.readTime}</span>
+                          </div>
+                          <h2 className="text-lg font-black text-white leading-tight group-hover:text-[#10b981] transition-colors">
+                            {post.title}
+                          </h2>
+                          <p className="text-xs text-neutral-400 font-light leading-relaxed flex-1">{post.excerpt}</p>
+                          <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-4">
+                            <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">{post.date}</span>
+                            <span className="text-[#10b981] group-hover:translate-x-1 transition-transform">
+                              <ChevronRight size={16} />
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+            </motion.div>
+          </div>
+        )}
+
+        {/* Rest of the posts */}
+        <div className="flex flex-col gap-6">
+          <h3 className="text-sm font-black uppercase tracking-[0.2em] text-neutral-500 w-full text-left">All Research</h3>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          >
+            {blogPosts
+              .filter((post) => !post.featured)
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((post) => {
+                const style = PILLAR_STYLES[post.pillar];
+                return (
+                  <motion.div
+                    key={post.slug}
+                    variants={fadeIn}
+                    whileHover={{ y: -5 }}
+                    className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-white/20 bg-[#0a0a0a]"
+                  >
+                    <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+                      <div className="w-full h-40 relative">
+                        <PostVisual icon={post.icon} pillar={post.pillar} variant="card" image={post.heroImage} />
                       </div>
-                      <h2 className="text-lg font-black text-white leading-tight group-hover:text-[#10b981] transition-colors">
-                        {post.title}
-                      </h2>
-                      <p className="text-xs text-neutral-400 font-light leading-relaxed flex-1">{post.excerpt}</p>
-                      <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-4">
-                        <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">{post.date}</span>
-                        <span className="text-[#10b981] group-hover:translate-x-1 transition-transform">
-                          <ChevronRight size={16} />
-                        </span>
+                      <div className="p-6 flex flex-col flex-1 gap-3">
+                        <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-widest">
+                          <span className={`${style.text} flex items-center gap-1.5`}>
+                            <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`}></span>
+                            {style.label}
+                          </span>
+                          <span className="text-neutral-500">{post.readTime}</span>
+                        </div>
+                        <h2 className="text-lg font-black text-white leading-tight group-hover:text-[#10b981] transition-colors">
+                          {post.title}
+                        </h2>
+                        <p className="text-xs text-neutral-400 font-light leading-relaxed flex-1">{post.excerpt}</p>
+                        <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-4">
+                          <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">{post.date}</span>
+                          <span className="text-[#10b981] group-hover:translate-x-1 transition-transform">
+                            <ChevronRight size={16} />
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-        </motion.div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+          </motion.div>
+        </div>
 
         <div className="text-center border-t border-white/5 pt-10">
           <p className="text-xs text-neutral-500 font-mono uppercase tracking-widest">
