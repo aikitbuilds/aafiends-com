@@ -1,6 +1,7 @@
 import { blogPosts, getPostBySlug, PILLAR_STYLES } from "@/lib/blogData";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ChevronLeft } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -9,6 +10,28 @@ import BlogContent from "@/components/BlogContent";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `https://aafiends.com/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `https://aafiends.com/blog/${slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,8 +44,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const style = PILLAR_STYLES[post.pillar];
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    author: { "@type": "Organization", name: post.author },
+    publisher: { "@type": "Organization", name: "AA Fiends", url: "https://aafiends.com" },
+    datePublished: post.date,
+    mainEntityOfPage: `https://aafiends.com/blog/${post.slug}`,
+  };
+
   return (
     <div className="min-h-screen bg-[#050505] text-neutral-100 font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <SiteHeader />
 
       {/* Hero */}

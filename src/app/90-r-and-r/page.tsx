@@ -43,7 +43,7 @@ export default function RRFellowshipPage() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-start gap-6 text-left">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold shadow-[0_0_15px_rgba(16,185,129,0.15)]">
               <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-              {RESERVATION.seatsTotal} Seats · {RR_META.startLabel}
+              {RESERVATION.seatsTotal} Seats · {RR_META.startLabel} · ${RESERVATION.suggestedDeposit} deposit or pay-what-you-can
             </span>
             <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
               90 Days to <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#f59e0b]">Rebuild.</span>
@@ -53,6 +53,13 @@ export default function RRFellowshipPage() {
             </p>
             <p className="text-sm md:text-base text-neutral-500 max-w-xl font-mono uppercase tracking-widest">
               {RR_META.tagline} · 12 seats · Starts together, finishes together.
+            </p>
+            <p className="text-sm text-neutral-400 max-w-xl leading-relaxed -mt-2">
+              Not ready for the cohort?{" "}
+              <Link href="/90rr" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4 transition-colors">
+                The printable 90 R&amp;R journal is free
+              </Link>{" "}
+              — same system, self-paced.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <Link href="#reserve">

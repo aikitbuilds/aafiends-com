@@ -144,6 +144,13 @@ export default function NinetyRRPage() {
           <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
             PDF · US Letter · print double-sided · {VERSION} — always the latest version on this page.
           </p>
+          <p className="text-sm text-neutral-400 max-w-2xl leading-relaxed">
+            Want structure and accountability with it?{" "}
+            <Link href="/90-r-and-r" className="text-[#f59e0b] font-bold hover:text-amber-300 underline underline-offset-4 transition-colors">
+              The 12-seat R&amp;R Fellowship cohort
+            </Link>{" "}
+            works this same journal together — starts mid-August.
+          </p>
         </section>
 
         {/* FEATURED — Build your own journal */}

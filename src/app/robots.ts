@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/dashboard", "/profile", "/onboarding"],
+      disallow: ["/dashboard", "/profile", "/onboarding", "/admin"],
     },
     sitemap: "https://aafiends.com/sitemap.xml",
   };

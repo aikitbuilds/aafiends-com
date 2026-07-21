@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Data Dashboard",
-  description: "Your telemetry dashboard. Track sleep, meetings, and cravings.",
+  description: "See how sleep, HRV, and meeting attendance prove your recovery baseline is healing — sync Garmin, Apple Health, or Google Fit data free.",
   alternates: { canonical: "https://aafiends.com/data" }
 };
 

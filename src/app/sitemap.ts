@@ -1,10 +1,19 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blogData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://aafiends.com";
   const now = new Date();
 
+  const postEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   return [
+    ...postEntries,
     { url: `${base}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/data`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/gad`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
