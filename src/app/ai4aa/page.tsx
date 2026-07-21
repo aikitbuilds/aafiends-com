@@ -66,6 +66,12 @@ export default function AI4AAPage() {
             <p className="text-sm md:text-base text-neutral-500 max-w-xl font-mono uppercase tracking-widest">
               Zero technical background required. Every session is a rehearsal for going live.
             </p>
+            <p className="text-sm text-neutral-400 max-w-xl leading-relaxed border-l-2 border-[#10b981]/50 pl-4">
+              <span className="text-[#10b981] font-bold">Why an AI course on a recovery site?</span> Because purpose is
+              relapse protection. Early recovery hands you back hours the addiction used to eat — this course fills
+              them with a skill, a voice, and a reason to get up. It&apos;s vocational training for the rebuild, same
+              as the <Link href="/90rr" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4">journal</Link> is training for the day.
+            </p>
             <div className="pt-4">
               <Link href="#registration">
                 <button className="py-4 px-10 rounded-2xl bg-[#ff6b00] hover:bg-[#e66000] text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:shadow-[0_0_30px_rgba(255,107,0,0.6)]">

@@ -52,8 +52,8 @@ export default function SiteFooter() {
             <div className="flex flex-col gap-2.5 pl-4 border-l border-white/10">
               <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Printable Journal</Link>
               <Link href="/prep90" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Prep Kit</Link>
-              <Link href="/12-and-12" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">12 &amp; 12</Link>
-              <Link href="/gad" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">G.A.D.</Link>
+              <Link href="/protocol" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">BIO 12 Protocol</Link>
+              <Link href="/framework" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Framework</Link>
             </div>
             <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Science</Link>
             <Link href="/data" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Data</Link>
@@ -73,8 +73,8 @@ export default function SiteFooter() {
             <a href="https://aivirus.org" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> AIVirus.org
             </a>
-            <a href="https://aivirus.org/bio12" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0"></span> BIO 12 Protocol
+            <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> The 10 Vectors
             </a>
           </nav>
           <p className="text-[10px] text-neutral-600 leading-relaxed mt-1">One recovery ecosystem — the pavement and the diagnosis.</p>
@@ -83,6 +83,11 @@ export default function SiteFooter() {
         {/* Column 4: Legal/Disclaimer + Crisis */}
         <div className="flex flex-col gap-4">
             <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Disclaimer &amp; Support</h4>
+            <nav className="flex flex-col gap-2.5">
+              <Link href="/faq" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">FAQ</Link>
+              <Link href="/privacy" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Privacy &amp; Your Data</Link>
+              <Link href="/terms" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Terms &amp; Disclaimer</Link>
+            </nav>
             <p className="text-xs leading-relaxed">Contact: <a href="mailto:aafiends@gmail.com" className="text-[#10b981] hover:underline">aafiends@gmail.com</a></p>
             <p className="text-xs leading-relaxed opacity-70">
               AAFiends is peer support, not medical advice, and is not a substitute for professional treatment.

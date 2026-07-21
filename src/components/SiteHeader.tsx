@@ -19,8 +19,8 @@ const NAV: NavItem[] = [
     children: [
       { href: "/90-r-and-r", label: "Program Overview" },
       { href: "/90rr", label: "Printable Journal" },
-      { href: "/12-and-12", label: "12 & 12" },
-      { href: "/gad", label: "G.A.D." },
+      { href: "/protocol", label: "BIO 12 Protocol" },
+      { href: "/framework", label: "The Framework" },
     ],
   },
   {

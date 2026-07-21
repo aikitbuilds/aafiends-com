@@ -42,7 +42,7 @@ const PILLARS = [
     qr: "network",
     img: "/pillar_network_real.png",
     qrLabel: "The 12 & 12",
-    qrUrl: "https://aafiends.com/12-and-12",
+    qrUrl: "https://aafiends.com/framework#traditions",
     body:
       "Addiction is a disease of isolation. Left alone, the mind uses your own voice to talk you back out — and you will believe it. The Network is the antidote and it is biological: sitting in a room, calling a sponsor, and helping another person releases oxytocin, a direct buffer against the next craving. It is also accountability you can feel — someone is expecting you. You cannot lie to a room the way you lie to yourself.",
     tracks: ["Meetings & the rooms", "Sponsor / Vanguard check-ins", "Peer outreach — calling another alcoholic", "Service"],
@@ -55,7 +55,7 @@ const PILLARS = [
     qr: "mirror",
     img: "/pillar_mental_real.png",
     qrLabel: "G.A.D. — the spiritual framing",
-    qrUrl: "https://aafiends.com/gad",
+    qrUrl: "https://aafiends.com/framework#gad",
     body:
       "An honest daily read that strips the ego out of self-evaluation. Self-will — running the show on willpower and ego — is exactly what got us here. The Mirror is where you set that down: a moment of stillness, an honest look at where you tried to force outcomes, gratitude, and a rating of your own clarity. It rests on one idea only: you are not the highest power in your life. What that power is, is entirely up to you.",
     tracks: ["Stillness / prayer / meditation", "Surrendering what you cannot control", "Ego & resentment check", "Gratitude & clarity"],
@@ -221,7 +221,7 @@ export default function NinetyRRPage() {
         </section>
 
         {/* 12 Steps */}
-        <section className="flex flex-col gap-6">
+        <section id="steps" className="flex flex-col gap-6 scroll-mt-28">
           <div className="flex flex-col gap-2">
             <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">The framework</span>
             <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The 12 Steps, In Plain Language</h2>
@@ -245,7 +245,7 @@ export default function NinetyRRPage() {
               </div>
             ))}
           </div>
-          <div className="w-fit"><QR img="steps" label="The 12 Steps & 12 Traditions" url="https://aafiends.com/12-and-12" /></div>
+          <div className="w-fit"><QR img="steps" label="The 12 Steps & 12 Traditions" url="https://aafiends.com/framework" /></div>
           <p className="text-[11px] text-neutral-600 font-mono leading-relaxed">
             The Twelve Steps are adapted from Alcoholics Anonymous. AAfiends is not affiliated with or endorsed by A.A. World Services, Inc.
           </p>

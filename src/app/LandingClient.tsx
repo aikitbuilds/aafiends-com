@@ -82,37 +82,49 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
               </span>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
-              <button
-                onClick={login}
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-4">
+              <Link
+                href="/90rr"
                 className="py-4 px-8 rounded-full bg-[#10b981] hover:bg-[#059669] text-black text-base font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105 flex items-center justify-center gap-2"
               >
-                [ Start Your Rebuild ] <ArrowRight size={18} />
-              </button>
-              <a
-                href="#dashboard-preview"
+                Get the Free 90-Day Journal <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/90-r-and-r"
                 className="py-4 px-8 rounded-full border border-white/15 text-white text-base font-bold uppercase tracking-widest transition-all duration-300 hover:border-[#10b981]/50 hover:text-[#10b981] flex items-center justify-center gap-2"
               >
-                See How It Works
-              </a>
+                Join the August Fellowship
+              </Link>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="w-full max-w-2xl bg-[#0a1a14] border border-[#10b981]/20 rounded-2xl p-6 shadow-lg italic text-neutral-200 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.04)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-              <p className="mb-4 relative z-10">"I used to think my willpower was all I'd ever need,<br/>
-              A stubborn kind of ego that I always tried to feed.<br/>
-              I'd swear to everyone I loved, 'I'm only having one!'<br/>
-              Then wake up in a panic 'fore the rising of the sun.</p>
+            <motion.button
+              variants={fadeIn}
+              onClick={login}
+              className="mb-10 text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-[#10b981] transition-colors"
+            >
+              Already tracking? Sign in →
+            </motion.button>
 
-              <p className="mb-4 relative z-10">So we're dumping the excuses, we are looking at what's real,<br/>
-              We are tracking daily habits, not just hiding how we feel.<br/>
-              It's Data Over Denial—shining light into the dark,<br/>
-              To heal the broken body and restore the inner spark.</p>
-
-              <p className="relative z-10">We plug into the meetings like a charger to a phone,<br/>
-              Because nobody in the trenches ever makes it out alone.<br/>
-              The Twelve Steps are the manual to clear away the pride,<br/>
-              To sweep the old resentments and the heavy guilt aside."</p>
+            {/* One path, four steps — the canonical Start Here strip */}
+            <motion.div variants={fadeIn} className="w-full max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { n: "1", label: "Prep", sub: "Gear up", href: "/prep90" },
+                { n: "2", label: "Journal", sub: "Track 90 days", href: "/90rr" },
+                { n: "3", label: "BIO 12", sub: "Daily firewall", href: "/protocol" },
+                { n: "4", label: "Fellowship", sub: "12-seat cohort", href: "/90-r-and-r" },
+              ].map((s) => (
+                <Link
+                  key={s.n}
+                  href={s.href}
+                  className="flex flex-col gap-1 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 hover:border-[#10b981]/50 transition-colors group"
+                >
+                  <span className="w-7 h-7 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black text-xs flex items-center justify-center mb-1">
+                    {s.n}
+                  </span>
+                  <span className="text-white font-black uppercase tracking-tight text-sm group-hover:text-[#10b981] transition-colors">{s.label}</span>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">{s.sub}</span>
+                </Link>
+              ))}
             </motion.div>
           </div>
 
@@ -258,7 +270,7 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
 
           {/* Pillar 2 */}
           <motion.div variants={fadeIn}>
-            <Link href="/gad" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-all shadow-xl group h-full cursor-pointer block">
+            <Link href="/framework#gad" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-all shadow-xl group h-full cursor-pointer block">
               <div className="flex items-center gap-4 border-b border-white/10 pb-4">
                 <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400">
                   <Shield size={24} />
@@ -275,7 +287,7 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
 
           {/* Pillar 3 */}
           <motion.div variants={fadeIn}>
-            <Link href="/12-and-12" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-purple-500/50 transition-all shadow-xl group h-full cursor-pointer block">
+            <Link href="/framework#traditions" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-purple-500/50 transition-all shadow-xl group h-full cursor-pointer block">
               <div className="flex items-center gap-4 border-b border-white/10 pb-4">
                 <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/30 text-purple-400">
                   <Users size={24} />
@@ -289,39 +301,6 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
               </p>
             </Link>
           </motion.div>
-        </div>
-      </motion.section>
-
-      {/* AI4AA FEATURED COURSE (Updated) */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
-      >
-        <div className="w-full bg-[#051024] border border-blue-500/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(59,130,246,0.15)] group relative">
-          
-          <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <Image src="/hopeful_hero_2.png" alt="AI4AA Course" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#051024] hidden md:block"></div>
-          </div>
-
-          <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center relative z-10">
-            <div className="flex items-center gap-3 justify-start mb-4">
-              <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/30">Training Module</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
-              ai4aa Foundation Course: <br className="hidden md:block mt-2" /><span className="text-blue-400">Data Over Denial</span>
-            </h2>
-            <p className="text-neutral-300 text-base leading-relaxed mb-8">
-              A 6-week tech crash course exclusively for the recovery community. Zero technical background required.
-            </p>
-            <Link href="/ai4aa" className="w-fit">
-              <button className="py-3 px-6 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-blue-500 hover:text-white">
-                <BrainCircuit size={18} />
-                Access Course
-              </button>
-            </Link>
-          </div>
         </div>
       </motion.section>
 
@@ -411,6 +390,41 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         </div>
       </motion.section>
 
+      {/* AI4AA FEATURED COURSE — secondary program (vocational / purpose-building) */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
+      >
+        <div className="w-full bg-[#051024] border border-blue-500/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(59,130,246,0.15)] group relative">
+
+          <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+            <Image src="/hopeful_hero_2.png" alt="AI4AA Course" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#051024] hidden md:block"></div>
+          </div>
+
+          <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center relative z-10">
+            <div className="flex items-center gap-3 justify-start mb-4">
+              <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/30">Community Program</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
+              ai4aa Foundation Course: <br className="hidden md:block mt-2" /><span className="text-blue-400">Purpose Is Relapse Protection</span>
+            </h2>
+            <p className="text-neutral-300 text-base leading-relaxed mb-8">
+              Early recovery hands you back hours the addiction used to eat. This free 6-week AI crash course fills
+              them with a skill, a voice, and a reason to get up — vocational training for the rebuild. Zero technical
+              background required.
+            </p>
+            <Link href="/ai4aa" className="w-fit">
+              <button className="py-3 px-6 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-blue-500 hover:text-white">
+                <BrainCircuit size={18} />
+                Access Course
+              </button>
+            </Link>
+          </div>
+        </div>
+      </motion.section>
+
       {/* BEYOND ALCOHOL — multi-addiction tie-in (Phase 3.4) */}
       <section className="w-full max-w-7xl mx-auto px-6 py-12 relative z-20 border-t border-white/5">
         <div className="w-full bg-[#0a0a0a] border border-red-500/20 rounded-[2rem] p-8 md:p-12 flex flex-col gap-6 shadow-xl">
@@ -428,13 +442,38 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
             BIO 12 protocol, and the fellowship. Learn how the virus works, then starve it.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+            <Link href="/protocol" className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-black font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+              <Shield size={16} /> The BIO 12 firewall
+            </Link>
+            <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-600/10 hover:bg-red-600/20 text-red-400 border border-red-500/40 font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
               See the 10 vectors <ArrowRight size={16} />
             </a>
-            <a href="https://aivirus.org/bio12" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#10b981]/10 hover:bg-[#10b981]/20 text-[#10b981] border border-[#10b981]/40 font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
-              <Shield size={16} /> The BIO 12 firewall
-            </a>
           </div>
+        </div>
+      </section>
+
+      {/* THE ORIGIN VERSE — brand storytelling, below the fold on purpose */}
+      <section className="w-full max-w-4xl mx-auto px-6 py-16 relative z-20 border-t border-white/5">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+          <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Why We Track</h2>
+        </div>
+        <div className="w-full bg-[#0a1a14] border border-[#10b981]/20 rounded-2xl p-6 md:p-8 shadow-lg italic text-neutral-200 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.04)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+          <p className="mb-4 relative z-10">"I used to think my willpower was all I'd ever need,<br/>
+          A stubborn kind of ego that I always tried to feed.<br/>
+          I'd swear to everyone I loved, 'I'm only having one!'<br/>
+          Then wake up in a panic 'fore the rising of the sun.</p>
+
+          <p className="mb-4 relative z-10">So we're dumping the excuses, we are looking at what's real,<br/>
+          We are tracking daily habits, not just hiding how we feel.<br/>
+          It's Data Over Denial—shining light into the dark,<br/>
+          To heal the broken body and restore the inner spark.</p>
+
+          <p className="relative z-10">We plug into the meetings like a charger to a phone,<br/>
+          Because nobody in the trenches ever makes it out alone.<br/>
+          The Twelve Steps are the manual to clear away the pride,<br/>
+          To sweep the old resentments and the heavy guilt aside."</p>
         </div>
       </section>
 

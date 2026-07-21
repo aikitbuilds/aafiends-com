@@ -15,6 +15,28 @@ export const metadata: Metadata = {
   },
 };
 
+const bookJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "The AIV Recovery Field Manual — Book One: The Engine",
+  author: { "@type": "Person", name: "MT" },
+  publisher: { "@type": "Organization", name: "AA Fiends", url: "https://aafiends.com" },
+  url: "https://aafiends.com/book1",
+  image: "https://aafiends.com/book1/book1-cover.png",
+  bookFormat: "https://schema.org/EBook",
+  inLanguage: "en",
+  description:
+    "The biology-first pillar of the AIV Recovery Field Manual — 12 chapters on healing the hardware first: sleep, movement, nutrition, and breath. Free beta.",
+};
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

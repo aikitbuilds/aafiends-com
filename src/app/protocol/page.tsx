@@ -1,333 +1,224 @@
-"use client";
-
+import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import Image from "next/image";
-
-import { motion } from "framer-motion";
 import {
-  MessageSquareHeart,
-  Brain,
-  AlertCircle,
-  HeartHandshake,
-  Users,
-  Phone,
-  Home,
-  ArrowDown,
-  Sparkles,
-  Play,
-  BarChart3,
-  Activity,
+  Footprints, Moon, Apple, Wind, ShieldCheck, ShieldAlert, ArrowRight, Flame,
+  type LucideIcon,
 } from "lucide-react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+// The BIO 12 — the four-pillar daily protocol (Movement / Sleep / Nutrition /
+// Breath), 3 imperatives each = 12 daily "firewall" checks. This public page is
+// the canonical reference; the interactive tracker lives in the member
+// dashboard (Bio12Tab).
+
+type PillarDef = {
+  name: string;
+  sub: string;
+  icon: LucideIcon;
+  color: string;
+  why: string;
+  items: { label: string; note: string }[];
 };
 
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-};
+const PILLARS: PillarDef[] = [
+  {
+    name: "Movement",
+    sub: "Imperatives 1–3",
+    icon: Footprints,
+    color: "#f97316",
+    why: "A clean dopamine and adrenaline lift you earned — teaching the brain to feel good without a substance.",
+    items: [
+      { label: "Get outside / walk (20+ min)", note: "Outdoor light plus movement sets the body clock and gives the brain a clean dopamine bump it didn't have to steal." },
+      { label: "Strength or mobility work", note: "Load the body on purpose. Rebuilding physical capacity is the most concrete daily proof that the engine is healing." },
+      { label: "Cold plunge or contrast shower", note: "A brisk, earned adrenaline spike — voluntary discomfort that resets the stress response instead of feeding it." },
+    ],
+  },
+  {
+    name: "Sleep",
+    sub: "Imperatives 4–6",
+    icon: Moon,
+    color: "#3b82f6",
+    why: "Deep sleep clears metabolic waste and rebuilds GABA — less craving, less anxiety, less fog.",
+    items: [
+      { label: "7+ hours last night", note: "Duration matters. A short night downregulates the same dopamine receptors the addiction did." },
+      { label: "Screen curfew (9 PM)", note: "Blue light and doomscrolling push melatonin back and hand the evening to the AIV's favorite hunting hours." },
+      { label: "Consistent wake time", note: "The regularity matters as much as the total hours — a stable wake time anchors the entire circadian repair job." },
+    ],
+  },
+  {
+    name: "Nutrition",
+    sub: "Imperatives 7–9",
+    icon: Apple,
+    color: "#10b981",
+    why: "Up to ~90% of serotonin is made in the gut. Rebuilding the microbiome restores calm, steady mood.",
+    items: [
+      { label: "Hydrate (8+ cups)", note: "Dehydration reads as fatigue, headache, and irritability — all of which the virus is happy to blame on sobriety." },
+      { label: "Protein + whole foods", note: "Steady fuel instead of sugar spikes. Amino acids are the raw material for the neurotransmitters you're rebuilding." },
+      { label: "Omega-3 / fermented (gut)", note: "Feed the gut that feeds your mood. Fermented food and omega-3s are the cheapest mood stabilizers available." },
+    ],
+  },
+  {
+    name: "Breath",
+    sub: "Imperatives 10–12",
+    icon: Wind,
+    color: "#06b6d4",
+    why: "Handing over what you cannot control shifts you out of fight-or-flight, lowering the cortisol that drives the loop.",
+    items: [
+      { label: "NSDR / breathwork session", note: "Non-sleep deep rest pays back part of the sleep debt and downshifts the nervous system on demand." },
+      { label: "5-min meditation", note: "The Mirror pillar in practice — five minutes of stillness that keeps you connected instead of self-driven." },
+      { label: "Box-breathe a craving down", note: "Four counts in, hold, out, hold. A craving is a wave; controlled breath is how you stay standing while it passes." },
+    ],
+  },
+];
 
-function FlowArrow() {
-  return (
-    <div className="flex flex-col items-center gap-1 py-10">
-      <div className="w-px h-12 bg-gradient-to-b from-stone-700 to-transparent" />
-      <ArrowDown size={24} className="text-stone-600 mt-2" />
-    </div>
-  );
-}
+const THREAT_LEVELS = [
+  { range: "12 of 12", label: "MINIMAL", color: "#34d399", note: "Firewall at full strength. The AIV has nothing to feed on today." },
+  { range: "10–11", label: "LOW", color: "#2dd4bf", note: "Defenses solid — close out the last couple." },
+  { range: "7–9", label: "GUARDED", color: "#fbbf24", note: "Holding, but there are gaps in the wall." },
+  { range: "4–6", label: "ELEVATED", color: "#fb923c", note: "Exposure rising. Knock out a few more." },
+  { range: "0–3", label: "CRITICAL", color: "#f87171", note: "Firewall down — this is exactly where the virus thrives." },
+];
 
-export default function SanctuaryProtocolPage() {
+export default function Bio12ProtocolPage() {
   return (
-    <div className="min-h-screen bg-stone-900 text-stone-300 font-sans selection:bg-teal-500/30 selection:text-teal-200 pb-24">
+    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
       <SiteHeader />
-      
-      {/* ─── HEADER ─── */}
-      <motion.header
-        initial="hidden"
-        animate="visible"
-        variants={stagger}
-        className="pt-24 pb-16 px-6 text-center relative"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-20%,rgba(20,184,166,0.05),transparent)] pointer-events-none" />
-        
-        <div className="max-w-3xl mx-auto flex flex-col items-center relative z-10">
-          <motion.div variants={fadeUp} className="mb-6">
-            <span className="inline-flex items-center gap-2 bg-stone-800/80 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-semibold text-teal-400 shadow-sm border border-stone-700/50">
-              <Sparkles size={14} className="text-teal-500" />
-              Honesty is the foundation of healing
-            </span>
-          </motion.div>
-          
-          <motion.h1
-            variants={fadeUp}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-stone-100 tracking-tight mb-6 leading-tight"
-          >
-            Your Recovery, <span className="text-teal-400">Understood.</span>
-          </motion.h1>
-          
-          <motion.p
-            variants={fadeUp}
-            className="text-lg md:text-xl text-stone-400 font-medium max-w-2xl mx-auto leading-relaxed"
-          >
-            Stop guessing why you feel off. Turn your raw, daily struggles into a clear, supportive path forward.
-          </motion.p>
-        </div>
-      </motion.header>
 
-      <main className="max-w-4xl mx-auto px-6 py-8 relative z-10">
-        
-        {/* ─── SECTION 1: THE CHECK-IN ─── */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="w-full flex flex-col items-center"
-        >
-          <motion.div variants={fadeUp} className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-stone-100 mb-3 tracking-tight">
-              Step 1: Dump Your Reality (No Filter)
+      <main className="flex-grow w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-20 relative z-10">
+        {/* Header */}
+        <section className="flex flex-col items-start gap-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">
+            <ShieldCheck size={14} /> The Daily Firewall
+          </span>
+          <h1 className="text-5xl sm:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-white">
+            The BIO 12 <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#06b6d4]">Protocol</span>
+          </h1>
+          <p className="text-lg md:text-xl text-neutral-300 max-w-3xl leading-relaxed font-medium">
+            The 12 biological imperatives that protect your baseline — four pillars, three actions each, checked off
+            every single day. Before the mind can hold a spiritual idea, the nervous system has to stop screaming.
+            This is how you quiet it.
+          </p>
+          <p className="text-sm text-neutral-400 max-w-2xl leading-relaxed">
+            The BIO 12 is the biology leg of the{" "}
+            <Link href="/framework" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4">
+              framework
+            </Link>{" "}
+            and the daily engine of the{" "}
+            <Link href="/90rr" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4">
+              90 R&amp;R journal
+            </Link>
+            .
+          </p>
+        </section>
+
+        {/* The 12, by pillar */}
+        <section className="flex flex-col gap-8">
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">The 12 Imperatives</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+              Four Pillars. Three Actions Each.
             </h2>
-            <p className="text-stone-400 max-w-lg mx-auto leading-relaxed">
-              Don&apos;t try to sound perfect. Just tell the app exactly how you feel physically and mentally today.
-            </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={fadeUp}
-            className="w-full max-w-xl bg-stone-800/60 backdrop-blur-sm rounded-[2rem] p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50"
-          >
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full bg-stone-700/80 flex items-center justify-center border border-stone-600/50">
-                  <MessageSquareHeart size={20} className="text-stone-400" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-stone-200 text-sm">Morning Check-In</h3>
-                  <p className="text-xs text-stone-500">Today at 5:00 AM</p>
-                </div>
-              </div>
-
-              {/* Voice Memo Interface */}
-              <div className="self-end bg-stone-700/80 text-stone-200 p-4 rounded-2xl rounded-tr-sm w-full max-w-[90%] md:max-w-[85%] shadow-sm border border-stone-600/30 flex flex-col gap-3">
-                
-                {/* Audio Waveform Player */}
-                <div className="flex items-center gap-3 bg-stone-800/80 p-3 rounded-xl border border-stone-600/30">
-                  <button className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-stone-900 shadow-[0_0_15px_rgba(20,184,166,0.3)] hover:scale-105 transition-transform flex-shrink-0">
-                    <Play size={18} fill="currentColor" className="ml-1" />
-                  </button>
-                  <div className="flex-1 h-8 flex items-center gap-1.5 opacity-80 px-2 overflow-hidden">
-                    {[10, 20, 15, 30, 25, 40, 20, 10, 15, 35, 20, 10, 5, 25].map((h, i) => (
-                      <div 
-                        key={i} 
-                        className="w-1.5 bg-teal-400 rounded-full animate-pulse" 
-                        style={{ height: `${h}px`, animationDelay: `${i * 0.1}s` }} 
-                      />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {PILLARS.map((p, pi) => {
+              const Icon = p.icon;
+              return (
+                <div key={p.name} className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] overflow-hidden flex flex-col">
+                  <div className="px-6 py-5 flex items-center justify-between" style={{ backgroundColor: `${p.color}1a`, borderBottom: `1px solid ${p.color}40` }}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center text-black" style={{ backgroundColor: p.color }}>
+                        <Icon size={20} />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-black uppercase tracking-tight text-lg leading-none">{p.name}</h3>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.sub}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6 flex flex-col gap-4">
+                    <p className="text-sm text-neutral-400 leading-relaxed italic border-l-2 pl-4" style={{ borderColor: p.color }}>
+                      {p.why}
+                    </p>
+                    {p.items.map((item, i) => (
+                      <div key={item.label} className="flex gap-4">
+                        <span
+                          className="w-7 h-7 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5 text-black"
+                          style={{ backgroundColor: p.color }}
+                        >
+                          {pi * 3 + i + 1}
+                        </span>
+                        <div>
+                          <p className="text-white font-bold text-sm">{item.label}</p>
+                          <p className="text-neutral-400 text-sm leading-relaxed">{item.note}</p>
+                        </div>
+                      </div>
                     ))}
                   </div>
-                  <div className="text-xs font-mono text-stone-400 tracking-widest font-bold">00:45</div>
                 </div>
-
-                <p className="leading-relaxed text-[15px] italic text-stone-300">
-                  &ldquo;Day 16. I woke up feeling like I got hit by a truck. My lower back hurts, I&apos;m irritated at everyone, and I just want to numb out right now. Going to try to make the 6:30 AM meeting.&rdquo;
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.section>
-
-        <FlowArrow />
-
-        {/* ─── SECTION 2: THE COMPASSIONATE MIRROR ─── */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="w-full flex flex-col items-center"
-        >
-          <motion.div variants={fadeUp} className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-stone-100 mb-3 tracking-tight">
-              Step 2: Understand Your Body &amp; Mind
-            </h2>
-            <p className="text-stone-400 max-w-xl mx-auto leading-relaxed">
-              The app decodes your symptoms using biology and recovery steps to tell you exactly why you feel this way—and what will help right now.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            className="w-full max-w-2xl bg-stone-800/80 backdrop-blur-md rounded-[2rem] p-1 shadow-[0_8px_30px_rgb(0,0,0,0.3)] border border-stone-700/50 overflow-hidden"
-          >
-            {/* Dashboard Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-stone-700/50 bg-stone-900/50">
-              <div className="flex items-center gap-2">
-                <Activity size={16} className="text-teal-400" />
-                <span className="text-xs font-bold text-stone-300 uppercase tracking-widest">Telemetry Analysis</span>
-              </div>
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-600"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-600"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-600"></div>
-              </div>
-            </div>
-
-            {/* Dashboard Content */}
-            <div className="p-6 sm:p-8 flex flex-col gap-6 bg-gradient-to-b from-stone-800/20 to-transparent">
-              
-              {/* The Why */}
-              <div className="flex flex-col sm:flex-row items-start gap-4 p-5 rounded-2xl bg-indigo-900/10 border border-indigo-500/10 transition-transform hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                  <Brain size={24} className="text-indigo-400" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex justify-between items-center mb-1">
-                    <h4 className="text-sm font-bold text-indigo-300">The &ldquo;Why&rdquo;</h4>
-                    <span className="text-[10px] font-mono text-indigo-400/50 uppercase hidden sm:block">GABA Rebound Detected</span>
-                  </div>
-                  <p className="text-indigo-200/70 text-sm leading-relaxed">
-                    You aren&apos;t going backwards! Your nervous system is just exhausted and healing. Your muscles are tense from stress. This is normal.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Gentle Alert */}
-                <div className="flex flex-col gap-4 p-5 rounded-2xl bg-rose-900/10 border border-rose-500/10 transition-transform hover:-translate-y-1 duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0">
-                      <AlertCircle size={20} className="text-rose-400" />
-                    </div>
-                    <h4 className="text-sm font-bold text-rose-300">Gentle Alert</h4>
-                  </div>
-                  <p className="text-rose-200/70 text-sm leading-relaxed">
-                    Your brain is tired and craving an escape. Recognize this trigger before it grows.
-                  </p>
-                </div>
-
-                {/* Relief Plan */}
-                <div className="flex flex-col gap-4 p-5 rounded-2xl bg-teal-900/10 border border-teal-500/10 transition-transform hover:-translate-y-1 duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0">
-                      <HeartHandshake size={20} className="text-teal-400" />
-                    </div>
-                    <h4 className="text-sm font-bold text-teal-300">Relief Plan</h4>
-                  </div>
-                  <p className="text-teal-200/70 text-sm leading-relaxed font-medium">
-                    Don&apos;t push through. Hydrate, use a heat pad, and hit the 6:30 meeting.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </motion.section>
-
-        <FlowArrow />
-
-        {/* ─── SECTION 3: REAL WORLD CONNECTION ─── */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="w-full flex flex-col items-center"
-        >
-          <motion.div variants={fadeUp} className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-stone-100 mb-3 tracking-tight">
-              Step 3: Rebuild Your Life
-            </h2>
-            <p className="text-stone-400 max-w-xl mx-auto leading-relaxed">
-              Your private check-ins safely translate into real-world strength and connection.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            <motion.div variants={fadeUp} className="bg-stone-800/60 backdrop-blur-sm rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50 flex flex-col gap-5 hover:border-stone-600/50 transition-colors group">
-              <div className="w-full h-40 rounded-2xl bg-stone-700/50 border border-stone-600/30 flex items-center justify-center overflow-hidden relative">
-                <Image src="/network_grid.png" alt="The Fellowship \u2014 a room of people who understand" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex items-end p-4">
-                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/20 backdrop-blur-md">
-                    <Users size={16} className="text-blue-400" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-stone-200 mb-2 group-hover:text-blue-400 transition-colors">The Fellowship</h3>
-                <p className="text-[15px] text-stone-400 leading-relaxed">
-                  You take the app&apos;s advice, hit the meeting, and meet someone who feels exactly the same way. You aren&apos;t alone.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="bg-stone-800/60 backdrop-blur-sm rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50 flex flex-col gap-5 hover:border-stone-600/50 transition-colors group">
-              <div className="w-full h-40 rounded-2xl bg-stone-700/50 border border-stone-600/30 flex items-center justify-center overflow-hidden relative">
-                <Image src="/objective_mirror.png" alt="Getting honest with your sponsor" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex items-end p-4">
-                  <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/20 backdrop-blur-md">
-                    <Phone size={16} className="text-purple-400" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-stone-200 mb-2 group-hover:text-purple-400 transition-colors">True Honesty</h3>
-                <p className="text-[15px] text-stone-400 leading-relaxed">
-                  The app helps you organize your thoughts before calling your sponsor, so you don&apos;t hide your struggles.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="bg-stone-800/60 backdrop-blur-sm rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-stone-700/50 flex flex-col gap-5 hover:border-stone-600/50 transition-colors group">
-              <div className="w-full h-40 rounded-2xl bg-stone-700/50 border border-stone-600/30 flex items-center justify-center overflow-hidden relative">
-                <Image src="/recovery_hero_hope.png" alt="Rebuilding trust at home" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex items-end p-4">
-                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/20 backdrop-blur-md">
-                    <Home size={16} className="text-emerald-400" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-stone-200 mb-2 group-hover:text-emerald-400 transition-colors">Rebuilding Trust</h3>
-                <p className="text-[15px] text-stone-400 leading-relaxed">
-                  Weeks of logged natural sleep and steady routines quietly prove to your family that you are doing the real work.
-                </p>
-              </div>
-            </motion.div>
+              );
+            })}
           </div>
-        </motion.section>
+        </section>
 
-        {/* ─── FOOTER: OUR CORE BELIEFS ─── */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          variants={stagger}
-          className="w-full mt-24 pt-16 border-t border-stone-800"
-        >
-          <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex flex-col gap-2">
-              <h4 className="text-stone-200 font-bold text-base">1. Honesty Over Hiding</h4>
-              <p className="text-sm text-stone-500 leading-relaxed">
-                If you feel it, write it down. If you hide it, it grows.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h4 className="text-stone-200 font-bold text-base">2. Biology Matters</h4>
-              <p className="text-sm text-stone-500 leading-relaxed">
-                You can&apos;t just &apos;think&apos; your way out of a tired body. Eat, sleep, and heal the physical engine.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h4 className="text-stone-200 font-bold text-base">3. Connection is the Cure</h4>
-              <p className="text-sm text-stone-500 leading-relaxed">
-                Isolation leads back to the start. We use this app to connect to the rooms, not to hide in our phones.
-              </p>
-            </div>
-          </motion.div>
-        </motion.section>
+        {/* Threat levels */}
+        <section className="flex flex-col gap-8">
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">Scoring</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+              Your Threat Level
+            </h2>
+            <p className="text-neutral-300 leading-relaxed max-w-3xl mt-2">
+              Count how many of the 12 you completed today. The score isn&apos;t a grade — it&apos;s a weather report
+              on how exposed you are to the virus right now. Ten or better keeps the streak alive.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
+            {THREAT_LEVELS.map((t) => (
+              <div key={t.label} className="flex items-center gap-4 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 flex-wrap sm:flex-nowrap">
+                {t.label === "MINIMAL" || t.label === "LOW" ? (
+                  <ShieldCheck size={22} style={{ color: t.color }} className="shrink-0" />
+                ) : (
+                  <ShieldAlert size={22} style={{ color: t.color }} className="shrink-0" />
+                )}
+                <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest w-16 shrink-0">{t.range}</span>
+                <span className="font-black uppercase tracking-tight w-28 shrink-0" style={{ color: t.color }}>{t.label}</span>
+                <span className="text-sm text-neutral-400 leading-relaxed">{t.note}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] p-8 md:p-12 flex flex-col items-center text-center gap-5">
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest bg-[#f59e0b]/10 px-3 py-1 rounded-full border border-[#f59e0b]/30">
+            <Flame size={14} /> Streak rule: 10 of 12 keeps the flame
+          </span>
+          <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
+            Track the 12, every day
+          </h2>
+          <p className="text-neutral-300 max-w-2xl leading-relaxed">
+            The printable journal carries the BIO 12 on paper; the member dashboard tracks it with a live threat level
+            and streak. Same 12 checks either way — pick your weapon.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 pt-2">
+            <Link
+              href="/90rr"
+              className="py-4 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center gap-2"
+            >
+              Get the free journal <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/dashboard"
+              className="py-4 px-8 rounded-2xl border border-white/15 text-white text-sm font-bold tracking-widest uppercase hover:border-[#10b981]/50 hover:text-[#10b981] transition-all"
+            >
+              Open the dashboard tracker
+            </Link>
+          </div>
+        </section>
       </main>
+
       <SiteFooter />
     </div>
   );
