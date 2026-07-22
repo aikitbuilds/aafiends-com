@@ -16,8 +16,21 @@ export const metadata: Metadata = {
     description: "She's funny. She's gorgeous. She's trying to kill you. The animated series about the wild drama of sobriety. Episode 1 now premiering.",
     url: "https://aafiends.com/aivy",
     images: ["/aivy/ep01-thumb.jpg"],
-    type: "website",
+    type: "video.other",
   },
+};
+
+const YOUTUBE_ID = "oyjOI0iAlto";
+const videoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Aivy — Episode 1: The Fancy Rat Poison",
+  description:
+    "Meet Aivy, addiction personified as the world's worst wife. She tries to sell MT rat poison, then rebrands it as top-shelf vodka — a comedy that's secretly a neuroscience class.",
+  thumbnailUrl: ["https://aafiends.com/aivy/ep01-thumb.jpg"],
+  uploadDate: "2026-07-22",
+  contentUrl: `https://www.youtube.com/watch?v=${YOUTUBE_ID}`,
+  embedUrl: `https://www.youtube.com/embed/${YOUTUBE_ID}`,
 };
 
 const EPISODES = [
@@ -65,6 +78,7 @@ const EPISODES = [
 export default function AivyPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />
       <SiteHeader />
 
       {/* ─── STAR BILLING HERO ─── */}
@@ -104,16 +118,15 @@ export default function AivyPage() {
             The Fancy Rat Poison
           </h2>
         </div>
-        <div className="relative rounded-[2rem] overflow-hidden border border-purple-500/30 shadow-[0_0_80px_rgba(168,85,247,0.28)] bg-black">
-          <video
-            controls
-            preload="metadata"
-            poster="/aivy/ep01-thumb.jpg"
-            className="w-full h-auto aspect-video bg-black"
-          >
-            <source src="/aivy/ep01.mp4" type="video/mp4" />
-            Your browser doesn&apos;t support embedded video. <a href="/aivy/ep01.mp4" className="underline">Download the episode</a>.
-          </video>
+        <div className="relative rounded-[2rem] overflow-hidden border border-purple-500/30 shadow-[0_0_80px_rgba(168,85,247,0.28)] bg-black aspect-video">
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/oyjOI0iAlto"
+            title="Aivy — Episode 1: The Fancy Rat Poison"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
         <p className="mt-4 text-center text-sm text-neutral-400 leading-relaxed max-w-2xl mx-auto">
           MT&apos;s brain is fried after a brutal week. Aivy has a solution under the sink — and when the skull label
