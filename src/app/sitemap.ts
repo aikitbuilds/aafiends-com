@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/data`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/framework`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/aivy`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/ai4aa`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${base}/90-r-and-r`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/90rr`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },

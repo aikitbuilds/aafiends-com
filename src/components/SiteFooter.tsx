@@ -55,6 +55,7 @@ export default function SiteFooter() {
               <Link href="/protocol" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">BIO 12 Protocol</Link>
               <Link href="/framework" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Framework</Link>
             </div>
+            <Link href="/aivy" className="text-sm font-bold hover:text-purple-400 transition-colors uppercase">Ivy — The Series</Link>
             <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Science</Link>
             <Link href="/data" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Data</Link>
             <Link href="/book1" className="text-sm font-bold hover:text-[#e8a33d] transition-colors uppercase">Book One (Beta)</Link>
