@@ -7,15 +7,15 @@ import SubstackSubscribe from "@/components/SubstackSubscribe";
 import { Biohazard, Play, ArrowRight, Sparkles, Brain, Flame } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Ivy — The Addiction Intelligence Virus (Animated Series)",
+  title: "Aivy — The Addiction Intelligence Virus (Animated Series)",
   description:
-    "Meet Ivy: seductive, hilarious, and trying to kill you. The AAfiends animated series stars the Addiction Intelligence Virus as the world's worst wife — 60-second episodes that are funny, epic, and secretly a neuroscience class.",
+    "Meet Aivy: seductive, hilarious, and trying to kill you. The AAfiends animated series stars addiction as the world's worst wife — episodes that are funny, epic, and secretly a neuroscience class. Episode 1 now premiering.",
   alternates: { canonical: "https://aafiends.com/aivy" },
   openGraph: {
-    title: "Ivy — The Addiction Intelligence Virus",
-    description: "She's funny. She's gorgeous. She's trying to kill you. The animated series about the wild drama of sobriety.",
+    title: "Aivy — The Addiction Intelligence Virus",
+    description: "She's funny. She's gorgeous. She's trying to kill you. The animated series about the wild drama of sobriety. Episode 1 now premiering.",
     url: "https://aafiends.com/aivy",
-    images: ["/aivy/ivy-hero.png"],
+    images: ["/aivy/ep01-thumb.jpg"],
     type: "website",
   },
 };
@@ -28,7 +28,7 @@ const EPISODES = [
     accent: "#a855f7",
     hook: "In a world where poison wears a cocktail dress…",
     setup:
-      "MT's brain is fried after a brutal week. Ivy has a solution under the sink — and when the skull label kills the mood, she pours the exact same liquid into crystal, charges eighty bucks, and calls it date night.",
+      "MT's brain is fried after a brutal week. Aivy has a solution under the sink — and when the skull label kills the mood, she pours the exact same liquid into crystal, charges eighty bucks, and calls it date night.",
     quote: "“Same liquid, fancy bottle, eighty bucks… and it's date night, baby. You never take me anywhere anymore.”",
     lesson: "The label never changes the chemistry. Your liver and your Prefrontal Cortex can't read cursive.",
     lessonIcon: Brain,
@@ -41,7 +41,7 @@ const EPISODES = [
     accent: "#10b981",
     hook: "This time, the trap is glazed…",
     setup:
-      "The church-basement donut table. Six sugars in the coffee. Ivy calls it love. MT calls in the Pain Gremlins — then walks her, screaming, into 39 degrees of ice water.",
+      "The church-basement donut table. Six sugars in the coffee. Aivy calls it love. MT calls in the Pain Gremlins — then walks her, screaming, into 39 degrees of ice water.",
     quote: "“When's the last time you let me make you feel GOOD? …Don't you DARE get in that water!”",
     lesson: "Cheap highs hire Pain Gremlins that outstay the buzz. Press the pain side first and the brain pays you back slow and steady — no crash.",
     lessonIcon: Flame,
@@ -54,7 +54,7 @@ const EPISODES = [
     accent: "#ef4444",
     hook: "Some marriages hit rock bottom. His hit the L5 vertebra…",
     setup:
-      "Right after MT spills a decade of secrets in Step Five, his sciatic nerve lights up like a stage rig — and Ivy plugs her tiny guitar straight into it. He answers with a sixty-second dead-hang.",
+      "Right after MT spills a decade of secrets in Step Five, his sciatic nerve lights up like a stage rig — and Aivy plugs her tiny guitar straight into it. He answers with a sixty-second dead-hang.",
     quote: "“Oh, I LOVE it when you fall apart, baby! It'll be romantic. Like our anniversary.”",
     lesson: "Stress dumps cortisol on your mechanical weak points. A nerve flare isn't a breakdown — it's telemetry. Fix the hardware first.",
     lessonIcon: Sparkles,
@@ -74,7 +74,7 @@ export default function AivyPage() {
           <Biohazard size={14} /> AAfiends Presents · An Animated Series
         </span>
         <h1 className="text-7xl sm:text-9xl font-black tracking-tighter uppercase leading-none text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-500 to-fuchsia-700 relative">
-          IVY
+          AIVY
         </h1>
         <p className="mt-4 text-sm font-mono uppercase tracking-[0.35em] text-purple-300/80 relative">
           The Addiction Intelligence Virus
@@ -84,28 +84,52 @@ export default function AivyPage() {
           <span className="text-purple-400">She&apos;s trying to kill you.</span>
         </p>
         <p className="mt-6 text-lg text-neutral-300 max-w-2xl leading-relaxed relative">
-          Every addict knows her voice. Ivy is the parasite on your shoulder played as the world&apos;s worst wife —
-          sweet exactly when you&apos;re about to use, vicious the moment you get healthy. Sixty-second episodes.
+          Every addict knows her voice. Aivy is the parasite on your shoulder played as the world&apos;s worst wife —
+          sweet exactly when you&apos;re about to use, vicious the moment you get healthy.
           Zero lectures. Real neuroscience smuggled in under the laughs.
         </p>
 
-        <div className="relative w-full max-w-md mt-12 rounded-[2rem] overflow-hidden border border-purple-500/30 shadow-[0_0_60px_rgba(168,85,247,0.25)]">
-          <Image src="/aivy/ivy-hero.png" alt="Ivy — the Addiction Intelligence Virus, star of the AAfiends animated series" width={1080} height={1350} className="w-full h-auto" priority />
-        </div>
-
         <p className="mt-6 text-xs font-mono uppercase tracking-widest text-neutral-500 relative">
-          Starring Ivy · with MT as &ldquo;The Host&rdquo; · and introducing AI-YA
+          Starring Aivy · with MT as &ldquo;The Host&rdquo; · and introducing AI-YA
         </p>
       </section>
 
-      {/* ─── EPISODE TRAILERS ─── */}
+      {/* ─── EPISODE 1 PREMIERE ─── */}
+      <section id="premiere" className="w-full max-w-5xl mx-auto px-6 pb-8 z-10">
+        <div className="text-center mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/40 text-xs text-purple-300 font-mono uppercase tracking-widest font-bold animate-pulse">
+            ● Now Premiering · Episode 1
+          </span>
+          <h2 className="mt-4 text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
+            The Fancy Rat Poison
+          </h2>
+        </div>
+        <div className="relative rounded-[2rem] overflow-hidden border border-purple-500/30 shadow-[0_0_80px_rgba(168,85,247,0.28)] bg-black">
+          <video
+            controls
+            preload="metadata"
+            poster="/aivy/ep01-thumb.jpg"
+            className="w-full h-auto aspect-video bg-black"
+          >
+            <source src="/aivy/ep01.mp4" type="video/mp4" />
+            Your browser doesn&apos;t support embedded video. <a href="/aivy/ep01.mp4" className="underline">Download the episode</a>.
+          </video>
+        </div>
+        <p className="mt-4 text-center text-sm text-neutral-400 leading-relaxed max-w-2xl mx-auto">
+          MT&apos;s brain is fried after a brutal week. Aivy has a solution under the sink — and when the skull label
+          kills the mood, she rebrands the exact same liquid as top-shelf vodka and calls it date night. A comedy that&apos;s
+          secretly a neuroscience class. <Link href="/90rr" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4">The free journal she hates →</Link>
+        </p>
+      </section>
+
+      {/* ─── MORE EPISODES ─── */}
       <section className="w-full max-w-6xl mx-auto px-6 py-16 flex flex-col gap-24 z-10">
         <div className="text-center">
           <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-4 py-1.5 rounded-full uppercase border border-[#10b981]/30 inline-block mb-4">
-            Season One · First Transmission
+            Season One · The Lineup
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight">
-            Three Episodes. Three Ambushes.
+            More Ambushes Coming
           </h2>
         </div>
 
@@ -118,7 +142,7 @@ export default function AivyPage() {
               <Image src={ep.poster} alt={`${ep.title} — episode poster`} width={1080} height={1620} className="w-full h-auto" />
               <div className="absolute top-5 left-5 flex items-center gap-2 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full border border-white/15">
                 <Play size={14} style={{ color: ep.accent }} />
-                <span className="text-[11px] font-black text-white uppercase tracking-widest">{ep.n} · 60 SEC</span>
+                <span className="text-[11px] font-black text-white uppercase tracking-widest">{ep.n} · SOON</span>
               </div>
             </div>
 
@@ -133,7 +157,7 @@ export default function AivyPage() {
 
               <blockquote className="border-l-4 pl-5 py-1 italic text-neutral-200 text-lg leading-relaxed" style={{ borderColor: ep.accent }}>
                 {ep.quote}
-                <span className="block not-italic text-xs font-mono uppercase tracking-widest text-neutral-500 mt-2">— Ivy</span>
+                <span className="block not-italic text-xs font-mono uppercase tracking-widest text-neutral-500 mt-2">— Aivy</span>
               </blockquote>
 
               <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5 flex gap-4 items-start">
@@ -160,7 +184,7 @@ export default function AivyPage() {
             And introducing <span className="text-orange-400">AI-YA</span>
           </h3>
           <p className="text-neutral-400 max-w-xl leading-relaxed">
-            Ivy&apos;s cousin. Backwards cap. Gold chain. &ldquo;One beer with the boys, king — you EARNED it.&rdquo;
+            Aivy&apos;s cousin. Backwards cap. Gold chain. &ldquo;One beer with the boys, king — you EARNED it.&rdquo;
             Same parasite, different pickup line.
           </p>
         </div>
@@ -170,7 +194,7 @@ export default function AivyPage() {
       <section className="w-full max-w-4xl mx-auto px-6 py-16 z-10">
         <div className="bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] p-8 md:p-12 flex flex-col items-center text-center gap-5">
           <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
-            Be there when Ivy goes live
+            Be there when Aivy goes live
           </h2>
           <p className="text-neutral-300 max-w-2xl leading-relaxed">
             Episodes premiere on YouTube and the Substack. Subscribe and you&apos;ll meet her the moment she escapes

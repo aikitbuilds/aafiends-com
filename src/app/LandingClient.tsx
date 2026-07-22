@@ -11,7 +11,7 @@ import SiteFooter from "@/components/SiteFooter";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import SubstackSubscribe from "@/components/SubstackSubscribe";
 import {
-  Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network, BookOpen
+  Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network, BookOpen, Play
 } from "lucide-react";
 
 export default function LandingClient({ substackLatest }: { substackLatest: React.ReactNode }) {
@@ -148,6 +148,37 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
 
         </div>
       </motion.section>
+
+      {/* FEATURED: MEET AIVY — the animated series premiere */}
+      <section className="w-full max-w-7xl mx-auto px-6 py-16 relative z-20 border-t border-white/5">
+        <Link href="/aivy" className="group block w-full rounded-[2rem] overflow-hidden border border-purple-500/30 bg-[#0a0714] hover:border-purple-500/60 transition-all shadow-[0_0_50px_rgba(168,85,247,0.15)]">
+          <div className="flex flex-col md:flex-row items-stretch">
+            <div className="md:w-1/2 relative aspect-video md:aspect-auto overflow-hidden">
+              <Image src="/aivy/ep01-thumb.jpg" alt="Meet Aivy — Episode 1 of the AAfiends animated series" width={1280} height={720} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="w-16 h-16 rounded-full bg-purple-500/90 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.6)] group-hover:scale-110 transition-transform">
+                  <Play size={28} className="text-white ml-1" fill="white" />
+                </span>
+              </div>
+            </div>
+            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-4">
+              <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-purple-300 uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/30 animate-pulse">
+                ● New Series · Now Premiering
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
+                Meet <span className="text-purple-400">Aivy</span>
+              </h2>
+              <p className="text-neutral-300 leading-relaxed">
+                She&apos;s funny. She&apos;s gorgeous. She&apos;s trying to kill you. Our new animated series turns addiction
+                into the world&apos;s worst wife — a comedy that&apos;s secretly a neuroscience class. Episode 1 is live.
+              </p>
+              <span className="inline-flex items-center gap-2 w-fit py-3 px-6 rounded-full bg-purple-500 group-hover:bg-purple-400 text-white text-sm font-black tracking-widest uppercase transition-colors">
+                <Play size={16} fill="white" /> Watch Episode 1
+              </span>
+            </div>
+          </div>
+        </Link>
+      </section>
 
       {/* NEW SECTION 3: THE THREAT (INTRODUCING THE AIV) */}
       <motion.section
