@@ -14,7 +14,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
-import { Zap, HeartHandshake, Sun, Flame, Wine, Snowflake, Shield, ShoppingCart } from "lucide-react";
+import { Zap, HeartHandshake, Sun, Flame, Wine, Snowflake, Shield, ShoppingCart, Brain } from "lucide-react";
 
 const C = {
   bg: "#050505",
@@ -37,6 +37,7 @@ const HERO_ICON_MAP: Record<string, LucideIcon> = {
   "shopping-cart": ShoppingCart,
   shoppingcart: ShoppingCart,
   cart: ShoppingCart,
+  brain: Brain,
 };
 
 /* ------------------------------------------------------------------ */
@@ -352,3 +353,309 @@ export const DOSE_FIGURES: Record<string, React.FC> = {
   cutaway: PlungeCutaway,
   matrix: FoodMatrix,
 };
+
+/* ------------------------------------------------------------------ */
+/* INFOGRAPHIC A — "The Stack" (biology-first structure)              */
+/* ------------------------------------------------------------------ */
+export function DoseStack() {
+  return (
+    <div className="flex flex-col gap-4 w-full">
+      <div className="rounded-3xl border border-white/10 bg-[#08080a] p-6 md:p-8 flex flex-col gap-6 relative overflow-hidden">
+        {/* Subtle top glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#10b981]/10 blur-3xl pointer-events-none" />
+
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
+          <div>
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#10b981]">Order of Operations</span>
+            <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">The Stack — Biology First</h3>
+          </div>
+          <p className="font-mono text-xs text-neutral-400 max-w-xs sm:text-right">
+            <span className="text-[#00f0ff] font-bold">Inclusive:</span> Higher Power as you understand it. <br />
+            <span className="text-[#10b981] font-bold">Structured:</span> one number, every day.
+          </p>
+        </div>
+
+        <svg viewBox="0 0 540 320" className="w-full h-auto" role="img" aria-label="The Stack: vertical layers showing biology at base, community in middle, stillness upper, capped by daily VSE score.">
+          <defs>
+            <linearGradient id="gradTop" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.05" />
+            </linearGradient>
+            <linearGradient id="gradMirror" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#00f0ff" stopOpacity="0.05" />
+            </linearGradient>
+            <linearGradient id="gradNetwork" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#a855f7" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#a855f7" stopOpacity="0.05" />
+            </linearGradient>
+            <linearGradient id="gradEngine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#10b981" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#10b981" stopOpacity="0.08" />
+            </linearGradient>
+          </defs>
+
+          {/* Connectors / Side Bracket */}
+          <line x1="30" y1="35" x2="30" y2="285" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeDasharray="3 3" />
+          <polygon points="30,25 25,37 35,37" fill="#f59e0b" />
+
+          {/* Level 4 (Top): Daily Score */}
+          <g transform="translate(50, 15)">
+            <rect x="0" y="0" width="460" height="52" rx="14" fill="url(#gradTop)" stroke="#f59e0b" strokeWidth="1.5" />
+            <text x="20" y="24" fontSize="10" fontFamily="monospace" fontWeight="800" fill="#f59e0b" letterSpacing="2">CAPSTONE</text>
+            <text x="20" y="40" fontSize="15" fontWeight="900" fill="#ffffff">THE DAILY SCORE · Vanguard Score (VSE) / 10</text>
+            <text x="440" y="32" fontSize="10" fontFamily="monospace" fill="#9ca3af" textAnchor="end">MEASURED EVERY DAY</text>
+          </g>
+
+          {/* Level 3: The Mirror */}
+          <g transform="translate(50, 80)">
+            <rect x="0" y="0" width="460" height="56" rx="14" fill="url(#gradMirror)" stroke="#00f0ff" strokeWidth="1.5" />
+            <text x="20" y="24" fontSize="10" fontFamily="monospace" fontWeight="800" fill="#00f0ff" letterSpacing="2">③ THE MIRROR · MIND & SPIRIT</text>
+            <text x="20" y="42" fontSize="14" fontWeight="800" fill="#ffffff">Stillness + Honest Daily Read + Surrender</text>
+            <text x="440" y="33" fontSize="10" fontFamily="monospace" fill="#00f0ff" textAnchor="end">Steps 4-11 · Serotonin</text>
+          </g>
+
+          {/* Level 2: The Network */}
+          <g transform="translate(50, 150)">
+            <rect x="0" y="0" width="460" height="56" rx="14" fill="url(#gradNetwork)" stroke="#a855f7" strokeWidth="1.5" />
+            <text x="20" y="24" fontSize="10" fontFamily="monospace" fontWeight="800" fill="#a855f7" letterSpacing="2">② THE NETWORK · COMMUNITY</text>
+            <text x="20" y="42" fontSize="14" fontWeight="800" fill="#ffffff">Rooms + Sponsor + Calling Another Alcoholic + Service</text>
+            <text x="440" y="33" fontSize="10" fontFamily="monospace" fill="#a855f7" textAnchor="end">Step 12 · Oxytocin</text>
+          </g>
+
+          {/* Level 1 (Base): The Engine */}
+          <g transform="translate(50, 220)">
+            <rect x="0" y="0" width="460" height="70" rx="14" fill="url(#gradEngine)" stroke="#10b981" strokeWidth="2" />
+            <text x="20" y="26" fontSize="10" fontFamily="monospace" fontWeight="800" fill="#10b981" letterSpacing="2">① THE VESSEL · HARDWARE & BIOLOGY</text>
+            <text x="20" y="46" fontSize="15" fontWeight="900" fill="#ffffff">Body + D.O.S.E. Chemistry (Sleep, Light, Movement, Fuel)</text>
+            <text x="440" y="36" fontSize="10" fontFamily="monospace" fill="#10b981" textAnchor="end">Dopamine & Endorphins</text>
+            <rect x="20" y="52" width="220" height="14" rx="4" fill="#10b981" />
+            <text x="130" y="62" fontSize="9" fontFamily="monospace" fontWeight="900" fill="#050505" textAnchor="middle">START HERE — STABILIZE THE HARDWARE</text>
+          </g>
+        </svg>
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-300 bg-white/5 border border-white/10 rounded-2xl p-4">
+          <p className="leading-relaxed">
+            <strong className="text-white">Why this order?</strong> Before spiritual concepts can hold in a panicked mind, sleep, gut serotonin, and dopamine baseline must stabilize. The vessel comes first.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* INFOGRAPHIC B — "D.O.S.E., and how you earn it"                    */
+/* ------------------------------------------------------------------ */
+export function DoseMap() {
+  return (
+    <div className="flex flex-col gap-4 w-full">
+      <div className="rounded-3xl border border-white/10 bg-[#08080a] p-6 md:p-8 flex flex-col gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
+          <div>
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#f59e0b]">Biological Map</span>
+            <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">D.O.S.E. — Earned vs. Flooded</h3>
+          </div>
+          <p className="font-mono text-xs text-neutral-400">
+            Sourced neuroscience: receptor repair &amp; natural synthesis
+          </p>
+        </div>
+
+        {/* Comparison banner: Substance vs Recovery */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-red-400 uppercase tracking-widest">Substance Hijack</span>
+              <span className="text-[10px] font-mono text-red-400 bg-red-500/20 px-2 py-0.5 rounded">FLOOD &amp; CRASH</span>
+            </div>
+            <p className="text-xs text-neutral-300 leading-relaxed">
+              Single unnatural hit floods all 4 chemicals at once → brain down-regulates D2/D3 receptors to survive → severe baseline deficit (gray fog &amp; intense craving).
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[#10b981]/30 bg-[#10b981]/10 p-4 flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-[#10b981] uppercase tracking-widest">Natural Recovery</span>
+              <span className="text-[10px] font-mono text-[#10b981] bg-[#10b981]/20 px-2 py-0.5 rounded">4 SEPARATE INPUTS</span>
+            </div>
+            <p className="text-xs text-neutral-300 leading-relaxed">
+              Four targeted daily habits rebuild receptors naturally without crash → steady baseline mood, resilience, and genuine pleasure restored over 90+ days.
+            </p>
+          </div>
+        </div>
+
+        {/* 4 Nodes Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
+          {/* D: Dopamine */}
+          <div className="rounded-2xl border border-[#10b981]/40 bg-[#10b981]/5 p-5 flex flex-col gap-3 justify-between">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-3xl font-black text-[#10b981]">D</span>
+                <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#10b981] bg-[#10b981]/15 px-2 py-1 rounded-md">PILLAR 1 · ENGINE</span>
+              </div>
+              <h4 className="text-base font-black text-white uppercase tracking-tight">Dopamine</h4>
+              <p className="text-xs text-neutral-400">Drive, motivation &amp; anticipation</p>
+            </div>
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
+              <p className="text-xs text-neutral-200"><strong className="text-[#10b981]">Earn it:</strong> Cold plunge (+250%), morning sunlight, brisk walking, task completion.</p>
+              <span className="text-[10px] font-mono text-neutral-400 bg-black/40 p-2 rounded-lg border border-white/5">
+                ⚡ D2/D3 receptors repair &amp; upregulate over ~14 months of sobriety.
+              </span>
+            </div>
+          </div>
+
+          {/* O: Oxytocin */}
+          <div className="rounded-2xl border border-[#a855f7]/40 bg-[#a855f7]/5 p-5 flex flex-col gap-3 justify-between">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-3xl font-black text-[#a855f7]">O</span>
+                <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#a855f7] bg-[#a855f7]/15 px-2 py-1 rounded-md">PILLAR 2 · NETWORK</span>
+              </div>
+              <h4 className="text-base font-black text-white uppercase tracking-tight">Oxytocin</h4>
+              <p className="text-xs text-neutral-400">Bonding, trust &amp; safety</p>
+            </div>
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
+              <p className="text-xs text-neutral-200"><strong className="text-[#a855f7]">Earn it:</strong> Sitting in AA rooms, calling your sponsor, peer outreach, 12th step service.</p>
+              <span className="text-[10px] font-mono text-neutral-400 bg-black/40 p-2 rounded-lg border border-white/5">
+                🤝 Direct biological buffer against cortisol &amp; craving isolation.
+              </span>
+            </div>
+          </div>
+
+          {/* S: Serotonin */}
+          <div className="rounded-2xl border border-[#00f0ff]/40 bg-[#00f0ff]/5 p-5 flex flex-col gap-3 justify-between">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-3xl font-black text-[#00f0ff]">S</span>
+                <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#00f0ff] bg-[#00f0ff]/15 px-2 py-1 rounded-md">PILLAR 3 · MIRROR</span>
+              </div>
+              <h4 className="text-base font-black text-white uppercase tracking-tight">Serotonin</h4>
+              <p className="text-xs text-neutral-400">Emotional calm &amp; baseline mood</p>
+            </div>
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
+              <p className="text-xs text-neutral-200"><strong className="text-[#00f0ff]">Earn it:</strong> Fermented foods (kefir/kimchi), fiber, tryptophan, stillness/meditation.</p>
+              <span className="text-[10px] font-mono text-neutral-400 bg-black/40 p-2 rounded-lg border border-white/5">
+                🌿 ~90% of body serotonin is produced in the gut microbiome.
+              </span>
+            </div>
+          </div>
+
+          {/* E: Endorphins */}
+          <div className="rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/5 p-5 flex flex-col gap-3 justify-between">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-3xl font-black text-[#f59e0b]">E</span>
+                <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#f59e0b] bg-[#f59e0b]/15 px-2 py-1 rounded-md">ENGINE / RESILIENCE</span>
+              </div>
+              <h4 className="text-base font-black text-white uppercase tracking-tight">Endorphins</h4>
+              <p className="text-xs text-neutral-400">Pain masking &amp; natural high</p>
+            </div>
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
+              <p className="text-xs text-neutral-200"><strong className="text-[#f59e0b]">Earn it:</strong> Intense cardio/lifting, heat/sauna, spicy capsaicin, deep laughter.</p>
+              <span className="text-[10px] font-mono text-neutral-400 bg-black/40 p-2 rounded-lg border border-white/5">
+                🔥 Internal opioid system activated safely through physical challenge.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* INFOGRAPHIC C — Craving Wave & Spike vs Slope                      */
+/* ------------------------------------------------------------------ */
+export function CravingWaveAndSpike() {
+  return (
+    <div className="grid md:grid-cols-2 gap-6 w-full">
+      {/* Visual 1: The Craving Wave */}
+      <div className="rounded-3xl border border-white/10 bg-[#08080a] p-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-1">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#00f0ff]">Journal Visual 1</span>
+          <h4 className="text-lg font-black uppercase text-white tracking-tight">The Craving Wave</h4>
+          <p className="text-xs text-neutral-400">A craving is a neurochemical wave — ride it, don&apos;t fight it.</p>
+        </div>
+
+        <svg viewBox="0 0 400 190" className="w-full h-auto" role="img" aria-label="Craving wave bell curve showing Trigger -> Peak (20-30 min) -> Resolution">
+          {/* Grid lines */}
+          <line x1="30" y1="160" x2="380" y2="160" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+          <line x1="30" y1="20" x2="30" y2="160" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+
+          {/* Wave Path */}
+          <path
+            d="M 30,160 C 90,160 140,30 200,30 C 260,30 310,160 380,160"
+            fill="none"
+            stroke="#00f0ff"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+
+          {/* Peak point */}
+          <circle cx="200" cy="30" r="5" fill="#00f0ff" />
+          <line x1="200" y1="35" x2="200" y2="160" stroke="#00f0ff" strokeDasharray="3 3" opacity="0.5" />
+
+          {/* Labels */}
+          <text x="35" y="145" fill="#9ca3af" fontSize="10" fontFamily="monospace">1. TRIGGER</text>
+          <text x="200" y="20" fill="#00f0ff" fontSize="11" fontFamily="monospace" fontWeight="bold" textAnchor="middle">2. PEAK (~15-20 MIN)</text>
+          <text x="375" y="145" fill="#10b981" fontSize="10" fontFamily="monospace" textAnchor="end">3. GONE</text>
+
+          {/* 90-sec adrenaline note */}
+          <rect x="70" y="80" width="120" height="34" rx="6" fill="#050505" stroke="#f59e0b" strokeWidth="1" />
+          <text x="130" y="94" fill="#f59e0b" fontSize="9" fontFamily="monospace" fontWeight="bold" textAnchor="middle">90-SEC SURGE</text>
+          <text x="130" y="107" fill="#d1d5db" fontSize="8" textAnchor="middle">Physical adrenaline spike</text>
+        </svg>
+
+        <p className="text-xs text-neutral-300 leading-relaxed bg-white/5 border border-white/10 rounded-2xl p-3">
+          <strong className="text-[#00f0ff]">Key takeaway:</strong> A craving peaks and passes within <strong className="text-white">20–30 minutes</strong> if you do not feed it. The intense physiological adrenaline surge lasts only <strong className="text-white">~90 seconds</strong>.
+        </p>
+      </div>
+
+      {/* Visual 2: Spike vs. Slope */}
+      <div className="rounded-3xl border border-white/10 bg-[#08080a] p-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-1">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#10b981]">Journal Visual 2</span>
+          <h4 className="text-lg font-black uppercase text-white tracking-tight">Spike vs. Slope</h4>
+          <p className="text-xs text-neutral-400">Chemical trajectory of artificial hit vs earned habit.</p>
+        </div>
+
+        <svg viewBox="0 0 400 190" className="w-full h-auto" role="img" aria-label="Spike vs Slope comparison: Red spike crashing below baseline vs Green sustained slope holding above baseline">
+          {/* Baseline */}
+          <line x1="30" y1="120" x2="380" y2="120" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
+          <text x="35" y="113" fill="#9ca3af" fontSize="9" fontFamily="monospace">BASELINE</text>
+
+          {/* Red line: Drink / hit spike and crash */}
+          <path
+            d="M 30,120 L 70,120 L 95,20 L 125,165 L 200,165 L 380,165"
+            fill="none"
+            stroke="#ef4444"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          <text x="100" y="18" fill="#ef4444" fontSize="9" fontFamily="monospace" fontWeight="bold">SPIKE &amp; CRASH</text>
+
+          {/* Green line: Cold / Walk / Yoga steady rise */}
+          <path
+            d="M 30,120 Q 110,120 160,75 T 380,85"
+            fill="none"
+            stroke="#10b981"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          <text x="240" y="65" fill="#10b981" fontSize="9" fontFamily="monospace" fontWeight="bold">SUSTAINED EARNED SLOPE</text>
+
+          {/* Legend dots */}
+          <circle cx="30" cy="175" r="4" fill="#ef4444" />
+          <text x="40" y="178" fill="#9ca3af" fontSize="9" fontFamily="monospace">Substance: +1000% → crash below baseline</text>
+
+          <circle cx="230" cy="175" r="4" fill="#10b981" />
+          <text x="240" y="178" fill="#9ca3af" fontSize="9" fontFamily="monospace">Walk / Cold: ~+250% for hours</text>
+        </svg>
+
+        <p className="text-xs text-neutral-300 leading-relaxed bg-white/5 border border-white/10 rounded-2xl p-3">
+          <strong className="text-[#10b981]">Key takeaway:</strong> Artificial hits produce a massive spike followed by a drop <strong className="text-red-400">below baseline</strong>. Earned habits (cold, movement, yoga) build a smooth slope that holds for hours without a crash.
+        </p>
+      </div>
+    </div>
+  );
+}
+
