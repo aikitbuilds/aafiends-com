@@ -456,7 +456,216 @@ Build the plunge this weekend if you can. But you can start the free menu in the
   ],
 };
 
-export const DOSE_ARTICLES: BlogPost[] = [doseFuel, doseReset];
+/* ================================================================== */
+/*  ARTICLE 3 — THE MIRROR: VIPASSANA (stillness & the craving gap)     */
+/* ================================================================== */
+export const doseMirror: BlogPost = {
+  slug: "meditation",
+  title: "The Mirror: Vipassana — Learning to Sit With the Craving Instead of Obeying It",
+  excerpt:
+    "The craving isn't the problem. Believing you have to act on it is. Vipassana is the free, ten-minutes-a-day practice that puts a gap between the trigger and the drink — and it's the one leg of recovery you can start tonight, in a chair, for nothing.",
+  author: "MT · AAfiends",
+  date: "Jul 25, 2026",
+  readTime: "11 min read",
+  pillar: "mirror",
+  icon: "sun",
+  sources: [
+    "Bowen et al., Vipassana meditation and substance use in an incarcerated population, Psychology of Addictive Behaviors (2006)",
+    "Bowen et al., Relative Efficacy of Mindfulness-Based Relapse Prevention (MBRP), JAMA Psychiatry (2014)",
+    "G. Alan Marlatt — urge surfing / Mindfulness-Based Relapse Prevention",
+    "Anna Lembke, Dopamine Nation (2021) — the pleasure-pain balance",
+    "James Clear, Atomic Habits (2018) — cue → craving → response → reward",
+    "S.N. Goenka / Vipassana tradition — Anapana + body scan",
+  ],
+  content: "The third leg of recovery is the quiet one.",
+  sections: [
+    {
+      type: "markdown",
+      content: `
+For years I thought the quiet was the enemy. The reason I drank wasn't really the party — it was the ten minutes alone in the kitchen before it, when my own head got loud. Silence felt like a room where every bad thing I'd ever done was waiting to talk. So I never sat in it. I drank *over* it.
+
+That's the part almost no one tells you when you get sober: the drink was never the disease. It was the **cure** I'd found for a mind I couldn't be alone with. Take the drink away and the loud room is still there. This page is about the tool that finally let me walk into that room and sit down — for free, in a chair, ten minutes at a time. It's called **Vipassana**, and it's the practice under the third pillar of the 90 R&R: **The Mirror.**
+      `,
+    },
+    {
+      type: "markdown",
+      content: `
+## What Vipassana actually is (no incense required)
+
+The word means "to see things as they really are." Strip away the retreats and the robes and it's almost aggressively simple. You sit still, and you watch what's already happening — your breath going in and out, and the raw physical sensations moving through your body — **without doing anything about them.** You don't chase the good ones. You don't run from the bad ones. You just notice, and let them pass.
+
+That's it. Two moves:
+
+**Anapana** — you rest your attention on the natural breath. Not controlling it, just feeling it come and go at the nostrils. When the mind wanders (it will, constantly), you notice, and come back. The coming-back *is* the rep.
+
+**The body scan** — you move your attention slowly through the body, top of the head to the toes, noticing whatever's there: warmth, tightness, itch, a dull ache, nothing at all. The one instruction is **equanimity** — you meet a pleasant sensation and an unpleasant one with the exact same calm attention. You stop bargaining with your own body.
+
+Sounds like nothing. It's the whole game. Because a craving *is* a sensation — a physical event with a wave shape — and learning to watch a sensation without obeying it is the exact skill that keeps you sober.
+      `,
+    },
+    {
+      type: "markdown",
+      content: `
+## Why this works on alcoholism specifically — the dopamine part
+
+Here's the short version, no 2 a.m. lecture. Your brain has a "wanting" system that runs on **dopamine.** It's ancient and dumb and it only knows one job: when a cue predicts a reward, it fires a pulse of *wanting* to make you go get it. Alcohol hijacked that system — it flooded it so hard and so often that your brain turned the dial down to protect itself. Now, sober, the dial is still down (that's the flat gray feeling), but the *wanting* circuit is still wired to your old cues: 5 p.m., the drive home, an argument, a certain song, payday.
+
+So a trigger hits and the dopamine system fires **"go get it"** before the thinking part of your brain — the prefrontal cortex, your brakes — even wakes up. That gap, where the craving arrives fully formed and *feels like a command*, is where relapse lives. Willpower loses here because willpower shows up late, already exhausted, trying to win an argument the craving started three seconds ago.
+
+Vipassana doesn't delete the craving. **It trains the brakes.** Every time you sit and watch a sensation rise and fall without acting, you're doing a rep in the exact circuit — noticing an impulse, *not obeying it* — that a trigger demands in real life. You're building a gap between the cue and the response. And a gap is all sobriety ever needs.
+      `,
+    },
+    { type: "figure", id: "seesaw" },
+    {
+      type: "markdown",
+      content: `
+That seesaw is Dr. Anna Lembke's picture of it (*Dopamine Nation*): every hit of easy pleasure tips the board, and the brain slams an equal weight down on the **pain** side to level it. Drink enough and you live on the pain side sober — that's craving. You can't buy your way back to level; a spike just tips it harder. But you *can* let the board settle on its own by learning to sit through the discomfort instead of medicating it. Sitting still is how the seesaw finds level again.
+      `,
+    },
+    {
+      type: "markdown",
+      content: `
+## Cravings and triggers are waves — this is "urge surfing"
+
+The psychologist Alan Marlatt gave this its best name: **urge surfing.** A craving is not a straight line that climbs forever until you drink. It's a **wave.** It rises, it peaks, and — if you don't feed it by staring at the bottle or arguing with yourself — **it crests and falls on its own.** Left alone, most urges peak and pass within about **20–30 minutes.**
+
+The trap is that in the moment a craving feels permanent, like it will only get worse until you cave. Vipassana teaches your nervous system the truth in its own language: *this sensation is temporary, and I can watch it go by without drowning.* You stop fighting the wave (which makes it bigger) and stop obeying it (which makes it win). You sit on your board and let it roll under you. Twenty minutes later it's gone and you're still sober — and your brain just filed away one enormous piece of evidence: **I can have a craving and not drink.** Do that enough times and the craving loses its authority.
+      `,
+    },
+    {
+      type: "pullquote",
+      text: "The craving was never the enemy. The lie inside it was — that it would last forever and only a drink could end it. Sit still for twenty minutes and you watch that lie die on its own.",
+      author: "MT",
+    },
+    {
+      type: "statgrid",
+      title: "The Evidence — This Isn't Woo",
+      stats: [
+        { value: "20–30 min", label: "How long an urge lasts", sublabel: "If you don't feed it, it peaks and passes (Marlatt, urge surfing)" },
+        { value: "12 mo", label: "MBRP's edge shows up long-term", sublabel: "Fewer days of use & less heavy drinking vs. standard relapse prevention (Bowen, JAMA Psychiatry 2014)" },
+        { value: "Post-jail", label: "Vipassana cut relapse", sublabel: "Reduced alcohol, cannabis & cocaine use after release vs. usual care (Bowen 2006)" },
+      ],
+    },
+    {
+      type: "markdown",
+      content: `
+The prison study is the one that convinced me. Researchers taught a 10-day Vipassana course to incarcerated people and tracked them after release. Compared to standard treatment, the meditators drank less, used less, and had fewer alcohol-related problems — and the effect ran *through* one specific change: they **stopped avoiding their own thoughts.** That's the whole mechanism in a sentence. The people who got better were the ones who learned to stop running from what was in their head. Which is exactly what I'd been drinking to avoid.
+      `,
+    },
+    {
+      type: "markdown",
+      content: `
+## How to actually do it — two sessions, start tonight
+
+You don't need a retreat, an app subscription, or a "clear mind." Your mind will not be clear. That is not the goal. The goal is to *notice* it wandered and come back — that's the entire exercise, and every wander-and-return is a rep for your brakes. A "bad" session where you got distracted 200 times and came back 200 times is 200 reps. There is no failing this.
+
+Sit in a chair, feet flat, back straight but not stiff, hands in your lap. Eyes closed or soft-focused down. That's the whole setup.
+      `,
+    },
+    {
+      type: "workflow",
+      title: "The 15-Minute Session — the daily minimum",
+      steps: [
+        { title: "0:00–2:00 · Settle", desc: "Sit. Take three slow breaths to arrive. Tell yourself the only rule: for the next 15 minutes I am not fixing anything, just watching. Set a timer so you're not clock-watching." },
+        { title: "2:00–8:00 · Anapana (the breath)", desc: "Rest attention on the natural breath at the nostrils — cool in, warm out. Don't control it. When you notice you've drifted into thinking, that noticing is the win. Gently return to the breath. Repeat forever. This calms and sharpens the attention you'll use next." },
+        { title: "8:00–14:00 · Body scan", desc: "Move attention slowly from the top of your head down to your toes. Notice each area — tingling, warmth, tightness, or nothing. Meet every sensation, pleasant or not, with the same calm. If a craving or a hard feeling shows up, treat it as just another sensation: locate it in the body, watch it, don't obey it." },
+        { title: "14:00–15:00 · Close", desc: "Take one deliberate breath. Notice you sat with your own mind for 15 minutes and survived it. Log it in the journal (the Mirror pillar). That check-mark is the rep that counts twice." },
+      ],
+    },
+    {
+      type: "workflow",
+      title: "The 30-Minute Session — the deeper reset",
+      steps: [
+        { title: "0:00–3:00 · Settle", desc: "Same arrival, a little longer. Three slow breaths, set the intention to simply observe, start the timer. Give the body a minute to stop fidgeting — that's normal, let it." },
+        { title: "3:00–13:00 · Anapana (extended breath)", desc: "Ten minutes on the breath. As it steadies, narrow the focus — feel the breath on a smaller and smaller patch of skin below the nostrils. This sharpens concentration enough to feel subtle sensations in the scan. Wander, notice, return — hundreds of times. All reps." },
+        { title: "13:00–26:00 · Full body scan", desc: "Thirteen unhurried minutes, head to toe and, if you have time, back up again. Equanimity is the whole practice: the itch you want to scratch and the ache you want gone get the same calm attention as the pleasant warmth. This is where you practice the exact move a craving demands — feel it fully, do nothing." },
+        { title: "26:00–30:00 · Rest & metta", desc: "Drop the technique. Sit in the open quiet for a couple of minutes. Optionally, send one honest good wish to yourself and one to someone you resent — that's the oxytocin/Network leg reaching into the Mirror. Then close, and log it." },
+      ],
+    },
+    {
+      type: "callout",
+      tone: "info",
+      title: "Free tools — no reason not to start tonight",
+      body:
+        "You don't need a paid app. Declutter The Mind is genuinely free — 500+ guided meditations including Vipassana and body scan, no ads, no subscription, no upsell (declutterthemind.com, or the iOS/Android app). Their YouTube channel — 'straightforward Buddhist meditation for everyone, including devout atheists' — has full guided 15- and 30-minute sessions you can play right now. Search 'Declutter The Mind body scan' or 'guided Vipassana' on YouTube. Prefer no voice at all? Set a timer and follow the steps above. That's the original method.",
+    },
+    {
+      type: "markdown",
+      content: `
+## Making it a habit that actually sticks — the Atomic Habits build
+
+Knowing how to meditate is easy. Doing it on day 34, when you're tired and the flat feeling is back and it feels pointless, is the actual problem. This is where James Clear's *Atomic Habits* earns its place as the backbone of the whole 90 R&R. His habit loop is the same loop the addiction ran on — **cue → craving → response → reward** — and here you're finally pointing it at something that heals you. Four moves build it:
+      `,
+    },
+    {
+      type: "comparison",
+      title: "Willpower vs. The System",
+      leftTitle: "Why willpower fails",
+      leftPoints: [
+        "You wait until you 'feel like' meditating — you never will at first",
+        "No fixed time or place, so every day is a fresh decision to make",
+        "You aim for 30 perfect minutes, miss once, feel like a failure, quit",
+        "Nothing marks the win, so the brain never logs the reward",
+        "The craving arrives and you meet it with raw self-control — and lose",
+      ],
+      rightTitle: "Why the system wins",
+      rightPoints: [
+        "Habit-stack it onto something you already do (make it obvious)",
+        "Same chair, same time every day, so the decision is already made",
+        "Two-minute rule: on hard days, just sit and breathe once — never zero",
+        "Tick the Mirror box in the journal — the streak is the reward (make it satisfying)",
+        "The craving arrives and you already have a trained gap to drop it into",
+      ],
+    },
+    {
+      type: "workflow",
+      title: "The 4 Laws — how to wire the meditation habit",
+      steps: [
+        { title: "1. Make it obvious — habit stack", desc: "Bolt it onto an anchor you already never skip. 'After I pour my morning coffee, I sit for 15 minutes.' Same trigger, every day. The 90 R&R is built around a 5 a.m. stillness slot for exactly this reason — it stacks on waking up, before the day can vote against it." },
+        { title: "2. Make it attractive — pair it", desc: "Do it in the same spot with the same warm drink, the same blanket, the same view. Let the ritual become something a small part of you looks forward to, not a chore you dread. Reframe it: this isn't discipline, it's the ten minutes the day can't touch." },
+        { title: "3. Make it easy — the two-minute rule", desc: "The habit is 'sit down,' not 'meditate perfectly.' On a good day you do the full 15 or 30. On a wrecked day you sit and take one conscious breath and that counts. Showing up on the bad days is the entire skill — it keeps the identity ('I'm someone who sits') alive." },
+        { title: "4. Make it satisfying — track it & never miss twice", desc: "Mark the Mirror pillar in the journal every single day. The unbroken chain becomes its own reward — you won't want to break it. And the one unbreakable rule: never miss twice. One skipped day is a slip; two is the start of the old pattern. Missed yesterday? Non-negotiable today." },
+      ],
+    },
+    {
+      type: "pullquote",
+      text: "You do not rise to the level of your willpower. You fall to the level of your systems. Sobriety is a system — and stillness is the part of it you can start with nothing but a chair.",
+      author: "after James Clear",
+    },
+    {
+      type: "markdown",
+      content: `
+## The identity underneath it
+
+Clear's deepest point is that habits are really votes for who you are. Every time you sit — even the two-minute version on the worst day — you cast one vote for *I am someone who can be alone with my own mind.* That's the identity alcohol stole. It told you you needed it to face yourself. Every session quietly proves the opposite.
+
+That's why the Mirror is a pillar and not a nice-to-have. The Engine rebuilds the body. The Network breaks the isolation. But the Mirror is where you finally get to sit in the loud room, watch it go quiet on its own, and learn the one thing the drink swore you'd never survive: **being still.**
+      `,
+    },
+    {
+      type: "callout",
+      tone: "warn",
+      title: "Read this first",
+      body: NOT_MEDICAL,
+    },
+    {
+      type: "markdown",
+      content: `
+---
+
+Start tonight. Not a retreat, not a perfect setup — a chair, a timer, fifteen minutes. Watch the breath, scan the body, and when a craving or a hard thought shows up, don't fight it and don't obey it. Just watch it be a wave. It will crest, and it will fall, and you'll still be sitting there, sober, having proved it to yourself one more time.
+
+Then tick the box. Tomorrow, do it again. That's the whole practice, and it's the whole recovery.
+
+*— MT*
+
+*Personal experience and cited science, not medical advice. Technique adapted from the Vipassana (Goenka) tradition; the relapse science is Bowen et al. and Marlatt's Mindfulness-Based Relapse Prevention; the habit framing is James Clear's* Atomic Habits *and the dopamine framing is Dr. Anna Lembke's* Dopamine Nation.
+      `,
+    },
+  ],
+};
+
+export const DOSE_ARTICLES: BlogPost[] = [doseFuel, doseReset, doseMirror];
 
 export function getDoseArticle(slug: string): BlogPost | undefined {
   return DOSE_ARTICLES.find((a) => a.slug === slug);

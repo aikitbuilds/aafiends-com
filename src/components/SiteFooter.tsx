@@ -43,48 +43,70 @@ export default function SiteFooter() {
           </p>
         </div>
 
-        {/* Column 2: Navigation — 90 Days R&R is the parent program; the Journal
-            (and 12&12 / G.A.D.) live under it, so there's a single R&R entry. */}
+        {/* Column 2: The Program + The Science — mirrors the header's four
+            buckets so the site has one consistent structure, and lists the
+            biology pages ahead of the framework pages throughout. */}
         <div className="flex flex-col gap-4">
-          <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Explore</h4>
-          <nav className="flex flex-col gap-3">
-            <Link href="/90-r-and-r" className="text-sm font-black text-white hover:text-[#10b981] transition-colors uppercase">90 Days R&amp;R</Link>
-            <div className="flex flex-col gap-2.5 pl-4 border-l border-white/10">
-              <Link href="/90rr" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Printable Journal</Link>
-              <Link href="/prep90" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Prep Kit</Link>
-              <Link href="/protocol" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">BIO 12 Protocol</Link>
-              <Link href="/framework" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Framework</Link>
-            </div>
-            <Link href="/aivy" className="text-sm font-bold hover:text-purple-400 transition-colors uppercase">Ivy — The Series</Link>
-            <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Science</Link>
+          <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">The Program</h4>
+          <nav className="flex flex-col gap-2.5">
+            <Link href="/90rr" className="text-sm font-black text-white hover:text-[#10b981] transition-colors uppercase">Free Printable Journal</Link>
+            <Link href="/protocol" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">BIO 12 Protocol</Link>
+            <Link href="/prep90" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Prep Kit</Link>
+            <Link href="/framework" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The 12 Steps</Link>
+            <Link href="/90-r-and-r" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Fellowship Cohort</Link>
+          </nav>
+
+          <h4 className="text-white font-black uppercase tracking-widest text-sm mt-5 mb-2">The Science</h4>
+          <nav className="flex flex-col gap-2.5">
+            <Link href="/the-science" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">D.O.S.E. &amp; the Biology</Link>
+            <Link href="/blog" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Research Posts</Link>
             <Link href="/data" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">The Data</Link>
             <Link href="/book1" className="text-sm font-bold hover:text-[#e8a33d] transition-colors uppercase">Book One (Beta)</Link>
+          </nav>
+
+          <h4 className="text-white font-black uppercase tracking-widest text-sm mt-5 mb-2">More</h4>
+          <nav className="flex flex-col gap-2.5">
+            <Link href="/aivy" className="text-sm font-bold hover:text-purple-400 transition-colors uppercase">Aivy — The Series</Link>
             <Link href="/ai4aa" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">AI4AA Course</Link>
             <Link href="/contact" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Contact</Link>
           </nav>
         </div>
 
-        {/* Column 3: The Fiends Grid (ecosystem cross-links) */}
+        {/* Column 3: The Fiends Grid. Standardized across all three sites —
+            same three cards, same one-line job description, same order:
+            diagnosis (AIVirus) → treatment (AAfiends) → movement (RaceFiends). */}
         <div className="flex flex-col gap-4">
           <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">The Fiends Grid</h4>
-          <nav className="flex flex-col gap-3">
-            <a href="https://racefiends.com" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> RaceFiends.com
+          <nav className="flex flex-col gap-4">
+            <a href="https://aivirus.org" target="_blank" rel="noopener noreferrer" className="group flex flex-col gap-1">
+              <span className="text-sm font-black text-white group-hover:text-red-400 transition-colors uppercase flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> AIVirus.org
+              </span>
+              <span className="text-[11px] text-neutral-500 leading-snug pl-3.5">The diagnosis. Understand the threat.</span>
             </a>
-            <a href="https://aivirus.org" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> AIVirus.org
-            </a>
-            <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-red-400 transition-colors uppercase flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span> The 10 Vectors
+            <div className="flex flex-col gap-1">
+              <span className="text-sm font-black text-[#10b981] uppercase flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0"></span> AAfiends.com
+              </span>
+              <span className="text-[11px] text-neutral-500 leading-snug pl-3.5">The treatment. You are here.</span>
+            </div>
+            <a href="https://racefiends.com" target="_blank" rel="noopener noreferrer" className="group flex flex-col gap-1">
+              <span className="text-sm font-black text-white group-hover:text-orange-400 transition-colors uppercase flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0"></span> RaceFiends.com
+              </span>
+              <span className="text-[11px] text-neutral-500 leading-snug pl-3.5">The movement. Carry the standard.</span>
             </a>
           </nav>
-          <p className="text-[10px] text-neutral-600 leading-relaxed mt-1">One recovery ecosystem — the pavement and the diagnosis.</p>
+          <a href="https://aivirus.org/data" target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold text-neutral-500 hover:text-white transition-colors uppercase tracking-widest mt-1">
+            Addiction statistics → all 10 vectors
+          </a>
         </div>
 
         {/* Column 4: Legal/Disclaimer + Crisis */}
         <div className="flex flex-col gap-4">
             <h4 className="text-white font-black uppercase tracking-widest text-sm mb-2">Disclaimer &amp; Support</h4>
             <nav className="flex flex-col gap-2.5">
+              <Link href="/glossary" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Glossary</Link>
               <Link href="/faq" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">FAQ</Link>
               <Link href="/privacy" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Privacy &amp; Your Data</Link>
               <Link href="/terms" className="text-sm font-bold hover:text-[#10b981] transition-colors uppercase">Terms &amp; Disclaimer</Link>

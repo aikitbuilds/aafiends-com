@@ -6,25 +6,28 @@ import SubstackSubscribe from "./SubstackSubscribe";
 // three sites stop operating as silos. RaceFiends.com and AIVirus.org get the
 // matching version of this component — keep the three in sync if the roster
 // changes.
+// Standardized 2026-07-25: same three cards, same one-line job, same order on
+// all three sites — diagnosis → treatment → movement, which is the order a
+// person actually moves through them.
 const PROPERTIES = [
   {
+    name: "AIVirus.org",
+    tagline: "The diagnosis. Understand the threat.",
+    href: "https://aivirus.org",
+    dot: "bg-red-500 animate-pulse",
+  },
+  {
     name: "AAfiends.com",
-    tagline: "The daily dashboard. Data Over Denial.",
+    tagline: "The treatment. Run the daily program.",
     href: "/",
     dot: "bg-[#10b981]",
     current: true,
   },
   {
     name: "RaceFiends.com",
-    tagline: "The pavement. Carry the standard.",
+    tagline: "The movement. Carry the standard.",
     href: "https://racefiends.com",
-    dot: "bg-red-500",
-  },
-  {
-    name: "AIVirus.org",
-    tagline: "The threat. Run the diagnostic.",
-    href: "https://aivirus.org",
-    dot: "bg-red-500 animate-pulse",
+    dot: "bg-orange-500",
   },
 ];
 

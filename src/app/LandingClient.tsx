@@ -10,8 +10,9 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import SubstackSubscribe from "@/components/SubstackSubscribe";
+import { DoseMap, DoseStack, CravingWaveAndSpike } from "@/components/DoseFigures";
 import {
-  Users, HeartPulse, Brain, Zap, Biohazard, Shield, ExternalLink, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network, BookOpen, Play
+  Users, HeartPulse, Brain, Biohazard, Shield, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network, BookOpen, Play
 } from "lucide-react";
 
 export default function LandingClient({ substackLatest }: { substackLatest: React.ReactNode }) {
@@ -149,36 +150,119 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         </div>
       </motion.section>
 
-      {/* FEATURED: MEET AIVY — the animated series premiere */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-16 relative z-20 border-t border-white/5">
-        <Link href="/aivy" className="group block w-full rounded-[2rem] overflow-hidden border border-purple-500/30 bg-[#0a0714] hover:border-purple-500/60 transition-all shadow-[0_0_50px_rgba(168,85,247,0.15)]">
-          <div className="flex flex-col md:flex-row items-stretch">
-            <div className="md:w-1/2 relative aspect-video md:aspect-auto overflow-hidden">
-              <Image src="/aivy/ep01-thumb.jpg" alt="Meet Aivy — Episode 1 of the AAfiends animated series" width={1280} height={720} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="w-16 h-16 rounded-full bg-purple-500/90 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.6)] group-hover:scale-110 transition-transform">
-                  <Play size={28} className="text-white ml-1" fill="white" />
+      {/* ================================================================
+          BIOLOGY FIRST. The whole thesis of the ecosystem is "stabilize the
+          hardware, then run the software" — so the biology sections sit
+          directly under the hero, ahead of the AA framework, the series, and
+          every program card. Previously the first thing under the hero was a
+          series promo, which buried the actual argument.
+          ================================================================ */}
+
+      {/* SECTION 2: THE FOUR CHEMICALS (D.O.S.E.) */}
+      <motion.section
+        id="biology"
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-10 relative z-20 border-t border-white/5"
+      >
+        <motion.div variants={fadeIn} className="flex flex-col gap-5 max-w-3xl">
+          <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest bg-[#10b981]/10 px-4 py-1.5 rounded-full border border-[#10b981]/30">
+            <Activity size={14} /> Start here · The biology
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight leading-none">
+            Your body is the <span className="text-[#10b981]">hardware.</span>
+          </h2>
+          <p className="text-neutral-300 text-lg leading-relaxed">
+            Almost everything that feels good runs on four brain chemicals. The substance faked all four at once through
+            a single door — so your brain turned the volume down to compensate. That deficit is the grey fog and the
+            craving. Recovery is teaching the body to make its own again, in small clean doses you earn.
+          </p>
+        </motion.div>
+
+        <motion.div variants={fadeIn}>
+          <DoseMap />
+        </motion.div>
+
+        <motion.div variants={fadeIn} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { l: "D", n: "Dopamine", r: "Drive · motivation", e: "Cold water · morning light · a brisk walk · finishing hard things", c: "#10b981" },
+            { l: "O", n: "Oxytocin", r: "Bonding · safety", e: "Meetings · a call to your sponsor · service to another person", c: "#a855f7" },
+            { l: "S", n: "Serotonin", r: "Baseline mood · calm", e: "Sleep · daylight · fibre and fermented food (mostly made in the gut)", c: "#00f0ff" },
+            { l: "E", n: "Endorphins", r: "Pain relief · natural high", e: "Hard physical effort · heat and sauna · deep laughter", c: "#f59e0b" },
+          ].map((x) => (
+            <div key={x.n} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 flex flex-col gap-3 hover:border-white/25 transition-colors">
+              <div className="flex items-center gap-3">
+                <span
+                  className="w-11 h-11 rounded-xl flex items-center justify-center font-black text-xl shrink-0"
+                  style={{ backgroundColor: `${x.c}1a`, border: `1px solid ${x.c}55`, color: x.c }}
+                >
+                  {x.l}
                 </span>
+                <div>
+                  <div className="text-white font-black uppercase tracking-tight leading-none">{x.n}</div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mt-1.5">{x.r}</div>
+                </div>
               </div>
-            </div>
-            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-4">
-              <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-purple-300 uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/30 animate-pulse">
-                ● New Series · Now Premiering
-              </span>
-              <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
-                Meet <span className="text-purple-400">Aivy</span>
-              </h2>
-              <p className="text-neutral-300 leading-relaxed">
-                She&apos;s funny. She&apos;s gorgeous. She&apos;s trying to kill you. Our new animated series turns addiction
-                into the world&apos;s worst wife — a comedy that&apos;s secretly a neuroscience class. Episode 1 is live.
+              <p className="text-neutral-400 text-xs leading-relaxed border-l-2 pl-3 mt-1" style={{ borderColor: `${x.c}66` }}>
+                <span className="text-neutral-300 font-bold">Earn it:</span> {x.e}
               </p>
-              <span className="inline-flex items-center gap-2 w-fit py-3 px-6 rounded-full bg-purple-500 group-hover:bg-purple-400 text-white text-sm font-black tracking-widest uppercase transition-colors">
-                <Play size={16} fill="white" /> Watch Episode 1
-              </span>
             </div>
-          </div>
-        </Link>
-      </section>
+          ))}
+        </motion.div>
+
+        <motion.div variants={fadeIn} className="flex flex-wrap gap-3">
+          <Link href="/the-science" className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-black font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+            <Brain size={16} /> The science, in plain English
+          </Link>
+          <Link href="/protocol" className="inline-flex items-center gap-2 border border-white/15 hover:border-[#10b981]/50 hover:text-[#10b981] text-white font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+            <Shield size={16} /> The BIO 12 firewall
+          </Link>
+        </motion.div>
+      </motion.section>
+
+      {/* SECTION 2.5: THE STACK — the order-of-operations argument, made visual */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-8 relative z-20 border-t border-white/5"
+      >
+        <motion.div variants={fadeIn} className="flex flex-col gap-4 max-w-3xl">
+          <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest bg-[#f59e0b]/10 px-4 py-1.5 rounded-full border border-[#f59e0b]/30">
+            Order of operations
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
+            Biology first. <span className="text-neutral-500">Then the framework.</span>
+          </h2>
+          <p className="text-neutral-400 text-base leading-relaxed">
+            This is not a rejection of the 12 Steps — it is what makes them hold. A panicked, exhausted, dehydrated
+            nervous system cannot carry a spiritual idea. Stabilize the vessel, then do the deeper work.
+          </p>
+        </motion.div>
+        <motion.div variants={fadeIn}>
+          <DoseStack />
+        </motion.div>
+      </motion.section>
+
+      {/* SECTION 2.75: THE CRAVING WAVE — the most useful science on the site */}
+      <motion.section
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+        className="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-8 relative z-20 border-t border-white/5"
+      >
+        <motion.div variants={fadeIn} className="flex flex-col gap-4 max-w-3xl">
+          <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-[#00f0ff] uppercase tracking-widest bg-[#00f0ff]/10 px-4 py-1.5 rounded-full border border-[#00f0ff]/30">
+            <HeartPulse size={14} /> Ride it, don&apos;t fight it
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
+            A craving is a <span className="text-[#00f0ff]">wave</span>, not a wall.
+          </h2>
+          <p className="text-neutral-400 text-base leading-relaxed">
+            The physical adrenaline surge lasts about ninety seconds. The craving itself peaks and passes within twenty
+            to thirty minutes if you do not feed it. Knowing it has a ceiling and an ending is what turns an emergency
+            into weather.
+          </p>
+        </motion.div>
+        <motion.div variants={fadeIn}>
+          <CravingWaveAndSpike />
+        </motion.div>
+      </motion.section>
 
       {/* NEW SECTION 3: THE THREAT (INTRODUCING THE AIV) */}
       <motion.section
@@ -273,11 +357,15 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-16 relative z-20 border-t border-white/5"
       >
         <div className="text-center mb-4">
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/30 mb-5">
+            Layer two · The framework
+          </span>
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none mb-4">
-            Alcohol Intelligence Virus Defenses
+            With the body back online, <br className="hidden md:block" />the Steps do the deeper work.
           </h2>
-          <p className="text-neutral-400 text-lg md:text-xl max-w-3xl mx-auto font-mono">
-            Protocols established to maintain baseline and quarantine threats.
+          <p className="text-neutral-400 text-lg max-w-3xl mx-auto leading-relaxed">
+            Biology stabilizes the vessel. It does not clear a resentment, repair a relationship, or dismantle an ego.
+            That is what the framework and the fellowship are for — three defenses that run on top of a steady baseline.
           </p>
         </div>
 
@@ -381,6 +469,38 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
         </div>
       </motion.section>
 
+      {/* MEET AIVY — the animated series. Moved below the biology + framework +
+          flagship-program sections: it's brand reach, not the entry path. */}
+      <section className="w-full max-w-7xl mx-auto px-6 py-12 relative z-20 border-t border-white/5">
+        <Link href="/aivy" className="group block w-full rounded-[2rem] overflow-hidden border border-purple-500/30 bg-[#0a0714] hover:border-purple-500/60 transition-all shadow-[0_0_50px_rgba(168,85,247,0.15)]">
+          <div className="flex flex-col md:flex-row items-stretch">
+            <div className="md:w-1/2 relative aspect-video md:aspect-auto overflow-hidden">
+              <Image src="/aivy/ep01-thumb.jpg" alt="Meet Aivy — Episode 1 of the AAfiends animated series" width={1280} height={720} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="w-16 h-16 rounded-full bg-purple-500/90 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.6)] group-hover:scale-110 transition-transform">
+                  <Play size={28} className="text-white ml-1" fill="white" />
+                </span>
+              </div>
+            </div>
+            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-4">
+              <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-purple-300 uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/30 animate-pulse">
+                ● New Series · Now Premiering
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
+                Meet <span className="text-purple-400">Aivy</span>
+              </h2>
+              <p className="text-neutral-300 leading-relaxed">
+                She&apos;s funny. She&apos;s gorgeous. She&apos;s trying to kill you. Our new animated series turns addiction
+                into the world&apos;s worst wife — a comedy that&apos;s secretly a neuroscience class. Episode 1 is live.
+              </p>
+              <span className="inline-flex items-center gap-2 w-fit py-3 px-6 rounded-full bg-purple-500 group-hover:bg-purple-400 text-white text-sm font-black tracking-widest uppercase transition-colors">
+                <Play size={16} fill="white" /> Watch Episode 1
+              </span>
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* BOOK ONE — coming soon featured card */}
       <motion.section
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
@@ -478,6 +598,9 @@ export default function LandingClient({ substackLatest }: { substackLatest: Reac
             </Link>
             <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-600/10 hover:bg-red-600/20 text-red-400 border border-red-500/40 font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
               See the 10 vectors <ArrowRight size={16} />
+            </a>
+            <a href="https://aivirus.org/data" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-white/15 hover:border-white/35 text-white font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
+              The statistics <ArrowRight size={16} />
             </a>
           </div>
         </div>

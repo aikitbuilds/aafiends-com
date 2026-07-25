@@ -72,13 +72,39 @@ export const EPISODES: Episode[] = [
     description: "The addiction stops pretending to be one thing. MT meets Aivy's “sisters” — Ivy (the drink), Coco (the party powder), and Pixie (the all-night escape) — and clocks the con: same girl, three costumes, same script to the same cheap folding chair. He doesn't have to beat all of them forever — he just can't go home with any of them today.",
     hashtags: ["sobriety", "recovery", "addiction", "sobercurious", "AA", "dopamine", "DataOverDenial"],
   },
+  {
+    number: 5,
+    title: "The Usual Suspect",
+    slug: "the-usual-suspect",
+    status: "coming-soon",
+    releaseDate: "2026-07-27",
+    youtubeId: "nOrjhDvqU7M",
+    thumbnail: "/thumbnails/ep05.png",
+    tagline: "The Apocalypse Had an Open Bar the Whole Time",
+    hook: "The one that took everything poured the drinks.",
+    description: "A World War Z–style outbreak parody. A field investigator hunts patient zero of a plague turning ordinary people into hollow-eyed shamblers, and rounds up every obvious monster — cocaine, gambling, the screens. Cleared, all of them. The real culprit was the toast at every wedding, the round on every tab: legal, beloved, hiding in plain sight. The zombies aren't villains — they're ordinary people the disease got.",
+    hashtags: ["sobriety", "recovery", "AA", "alcoholawareness", "sobercurious", "dopamine", "DataOverDenial"],
+  },
+  {
+    number: 6,
+    title: "Cheers",
+    slug: "cheers",
+    status: "coming-soon",
+    releaseDate: "2026-07-28",
+    youtubeId: "PMT8WcMKe10",
+    thumbnail: "/thumbnails/ep06.png",
+    tagline: "Where Everybody Knows Your Name",
+    hook: "The one bar where nobody's drinking.",
+    description: "A Cheers-meets-Night-of-the-Living-Dead parody. Outside, the street crawls with the “infected” — active addiction, brains burned down to the dopamine spike-and-crash. Inside, the AA meeting is the warmest bar in the city: Gary works the coffee like the taps, the room roars your name, and getting seen releases real oxytocin — a buffer against the next drink. MT walks through the horde into the one room his addiction can't follow him into.",
+    hashtags: ["sobriety", "recovery", "AA", "fellowship", "oxytocin", "sobercurious", "DataOverDenial"],
+  },
 ];
 
-// Next slate (Slate A — recovery arc + rooms). Titles set; dates TBD.
+// Next slate. Titles set; dates TBD.
 export const UPCOMING: UpcomingEpisode[] = [
-  { number: 5, title: "Welcome to the Rooms", tagline: "You Can't Do This Alone — That's the Point" },
-  { number: 6, title: "Successful Sam",       tagline: "Handling It Isn't the Same as Free" },
-  { number: 7, title: "The 20-Minute Standoff", tagline: "Outlast the Wave" },
+  { number: 7, title: "Fellowship Fiends",     tagline: "Same Fiends. Cleaner Drug." },
+  { number: 8, title: "Successful Sam",        tagline: "Handling It Isn't the Same as Free" },
+  { number: 9, title: "The 20-Minute Standoff", tagline: "Outlast the Wave" },
 ];
 
 /**

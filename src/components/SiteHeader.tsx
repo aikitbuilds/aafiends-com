@@ -13,34 +13,44 @@ import { Menu, X, ChevronDown } from "lucide-react";
 type NavChild = { href: string; label: string; external?: boolean };
 type NavItem = { label: string; href?: string; children?: NavChild[] };
 
+// Four buckets that mirror the actual journey — Start (get the journal),
+// Program (what you run daily), Science (why it works), More (everything else).
+// Ordered biology-first: the Science bucket leads with D.O.S.E., and the
+// Program bucket leads with the protocol rather than the cohort, so a newcomer
+// meets the free thing before the paid thing.
 const NAV: NavItem[] = [
+  { label: "Start", href: "/90rr" },
   {
-    label: "90 R&R",
+    label: "The Program",
     children: [
-      { href: "/90-r-and-r", label: "Program Overview" },
-      { href: "/90rr", label: "Printable Journal" },
       { href: "/protocol", label: "BIO 12 Protocol" },
-      { href: "/framework", label: "The Framework" },
+      { href: "/90rr", label: "Printable Journal" },
+      { href: "/prep90", label: "Prep Kit" },
+      { href: "/framework", label: "The 12 Steps" },
+      { href: "/90-r-and-r", label: "The Fellowship Cohort" },
     ],
   },
   {
     label: "The Science",
     children: [
-      { href: "/blog#the-dopamine-trap", label: "The Dopamine Trap ★" },
-      { href: "/blog", label: "Research" },
+      { href: "/the-science", label: "D.O.S.E. & the Biology ★" },
+      { href: "/blog", label: "Research Posts" },
       { href: "/data", label: "The Data" },
       { href: "/book1", label: "Book One (Beta)" },
     ],
   },
   {
-    label: "Follow",
+    label: "More",
     children: [
+      { href: "/aivy", label: "Aivy — The Series" },
+      { href: "/watch", label: "Watch" },
+      { href: "/ai4aa", label: "AI4AA Course" },
       { href: "https://aafiends.substack.com", label: "Newsletter", external: true },
       { href: "https://www.youtube.com/@aafiends", label: "YouTube", external: true },
+      { href: "/faq", label: "FAQ" },
+      { href: "/contact", label: "Contact" },
     ],
   },
-  { label: "Watch", href: "/watch" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const childClass =
