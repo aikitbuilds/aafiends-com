@@ -39,6 +39,7 @@ const NAV: NavItem[] = [
       { href: "https://www.youtube.com/@aafiends", label: "YouTube", external: true },
     ],
   },
+  { label: "Watch", href: "/watch" },
   { label: "Contact", href: "/contact" },
 ];
 

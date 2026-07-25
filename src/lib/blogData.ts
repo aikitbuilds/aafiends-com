@@ -44,7 +44,26 @@ export type BlogSection =
   | { type: "workflow"; title: string; steps: { title: string; desc: string }[] }
   | { type: "statgrid"; title?: string; stats: { value: string; label: string; sublabel?: string }[] }
   | { type: "timeline"; title: string; phases: { range: string; label: string; desc: string }[] }
-  | { type: "barchart"; title: string; unit?: string; bars: { label: string; value: number; sublabel?: string }[] };
+  | { type: "barchart"; title: string; unit?: string; bars: { label: string; value: number; sublabel?: string }[] }
+  // ---- added 2026-07-24 for the /90rr DOSE field guides ----
+  // A code-rendered custom infographic (see components/DoseFigures.tsx). `id`
+  // maps to DOSE_FIGURES; nothing renders if the id is unknown.
+  | { type: "figure"; id: "seesaw" | "curve" | "cutaway" | "matrix" }
+  // A real photograph (Unsplash hotlink) that self-hides if it fails to load.
+  | { type: "image"; src: string; alt: string; caption?: string; credit?: string; accent?: string }
+  // A colored callout — info / warn (safety) / success.
+  | { type: "callout"; tone: "info" | "warn" | "success"; title: string; body: string }
+  // A structured shopping list: grouped items, each optionally linked.
+  | {
+      type: "shoppinglist";
+      title: string;
+      note?: string;
+      groups: {
+        name: string;
+        accent?: "green" | "amber" | "cyan" | "purple" | "red";
+        items: { name: string; detail?: string; tag?: string; url?: string }[];
+      }[];
+    };
 
 export interface BlogPost {
   slug: string;

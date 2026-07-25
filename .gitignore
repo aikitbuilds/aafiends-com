@@ -43,3 +43,8 @@ next-env.d.ts
 # firebase deploy cache (contains env copies + build output)
 .firebase/
 firebase-debug.log
+
+# scratch files from the Cowork sandbox (undeletable on synced mount — safe to remove)
+tsconfig.dose.json
+__wtest.txt
+dose-build.log

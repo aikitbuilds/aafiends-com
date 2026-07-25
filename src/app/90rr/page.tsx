@@ -307,6 +307,29 @@ export default function NinetyRRPage() {
           </div>
         </section>
 
+        {/* DOSE Field Guides — added 2026-07-24 */}
+        <section className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] uppercase">DOSE Field Guides</span>
+            <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Earn Your Four Chemicals</h2>
+            <p className="text-sm text-neutral-400 max-w-2xl">Two field guides on rebuilding <strong className="text-white">D.O.S.E.</strong> — Dopamine, Oxytocin, Serotonin, Endorphins — naturally, with real food and earned habits. Each ends with a print-and-go shopping list.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { href: "/90rr/fuel", tag: "The Engine · Food & Drink", title: "The DOSE Kitchen", desc: "The grocery list that rebuilds all four chemicals from the raw materials up — and what to leave on the shelf.", accent: "#10b981" },
+              { href: "/90rr/reset", tag: "The Reset · Activities", title: "Regulate Dopamine, No Substance", desc: "Walking, cold, sunlight and the rooms — plus a full build: a 40°F cold plunge from a chest freezer for ~$600.", accent: "#00f0ff" },
+              { href: "/90rr/shopping-list", tag: "Print & Go", title: "The Shopping Lists", desc: "Both runs in one place: the DOSE grocery list and the cold-plunge parts list. Screenshot and go.", accent: "#f59e0b" },
+            ].map((g) => (
+              <Link key={g.href} href={g.href} className="group bg-[#09090b] border border-white/10 rounded-3xl p-6 flex flex-col gap-3 transition-all hover:border-white/25" style={{ boxShadow: "none" }}>
+                <p className="text-[11px] font-bold uppercase tracking-widest" style={{ color: g.accent }}>{g.tag}</p>
+                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-tight group-hover:text-[#10b981] transition-colors">{g.title}</h3>
+                <p className="text-sm text-neutral-400 leading-relaxed flex-1">{g.desc}</p>
+                <span className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: g.accent }}>Read the guide →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Download */}
         <section className="bg-[#09090b] border border-white/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#10b981]" />

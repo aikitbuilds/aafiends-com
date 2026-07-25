@@ -2,8 +2,23 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, XCircle, ArrowRight } from "lucide-react";
-import { BlogPost, BlogSection } from "@/lib/blogData";
+import { CheckCircle2, XCircle, ArrowRight, Info, AlertTriangle, ExternalLink } from "lucide-react";
+import { BlogPost } from "@/lib/blogData";
+import { DOSE_FIGURES, SmartImage } from "@/components/DoseFigures";
+
+const CALLOUT_STYLES = {
+  info: { color: "#00f0ff", Icon: Info },
+  warn: { color: "#ef4444", Icon: AlertTriangle },
+  success: { color: "#10b981", Icon: CheckCircle2 },
+} as const;
+
+const LIST_ACCENT: Record<string, string> = {
+  green: "#10b981",
+  amber: "#f59e0b",
+  cyan: "#00f0ff",
+  purple: "#a855f7",
+  red: "#ef4444",
+};
 
 /**
  * AAFiends blog section renderer. Adapted 2026-07-04 from RaceFiends'
@@ -22,25 +37,75 @@ interface BlogContentProps {
   post: BlogPost;
 }
 
+// Inline parser: handles **bold**, *italic*, and [text](url) links.
+function renderInline(text: string, keyBase: string) {
+  const tokens = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g).filter(Boolean);
+  return tokens.map((tok, j) => {
+    if (tok.startsWith("**") && tok.endsWith("**")) {
+      return <strong key={`${keyBase}-${j}`} className="font-bold text-white">{tok.slice(2, -2)}</strong>;
+    }
+    if (tok.startsWith("*") && tok.endsWith("*") && tok.length > 2) {
+      return <em key={`${keyBase}-${j}`} className="italic text-neutral-200">{tok.slice(1, -1)}</em>;
+    }
+    const link = tok.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) {
+      const external = /^https?:\/\//.test(link[2]);
+      return (
+        <a
+          key={`${keyBase}-${j}`}
+          href={link[2]}
+          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          className="font-bold text-[#10b981] underline decoration-[#10b981]/30 underline-offset-4 hover:text-emerald-300"
+        >
+          {link[1]}
+        </a>
+      );
+    }
+    return <React.Fragment key={`${keyBase}-${j}`}>{tok}</React.Fragment>;
+  });
+}
+
 function renderMarkdownLite(content: string) {
   const blocks = content.trim().split(/\n\s*\n/);
   return blocks.map((block, i) => {
     const trimmed = block.trim();
     if (trimmed === "---") {
-      return <hr key={i} className="border-white/10 my-2" />;
+      return <hr key={i} className="my-2 border-white/10" />;
     }
-    const parts = trimmed.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+    // Headings
+    if (trimmed.startsWith("### ")) {
+      return (
+        <h3 key={i} className="mt-2 flex items-center gap-2 text-lg font-black uppercase tracking-tight text-white">
+          <span className="h-6 w-1.5 rounded-full bg-[#10b981]" />
+          {renderInline(trimmed.slice(4), `h3-${i}`)}
+        </h3>
+      );
+    }
+    if (trimmed.startsWith("## ")) {
+      return (
+        <h2 key={i} className="mt-6 text-2xl font-black uppercase tracking-tight text-white sm:text-3xl">
+          {renderInline(trimmed.slice(3), `h2-${i}`)}
+        </h2>
+      );
+    }
+    // Unordered list — every line starts with "- "
+    const lines = trimmed.split("\n").map((l) => l.trim());
+    if (lines.length > 0 && lines.every((l) => l.startsWith("- "))) {
+      return (
+        <ul key={i} className="flex flex-col gap-2 pl-1">
+          {lines.map((l, k) => (
+            <li key={k} className="flex items-start gap-2.5 text-sm font-light leading-relaxed text-neutral-300 sm:text-base">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#10b981]/70" />
+              <span>{renderInline(l.slice(2), `li-${i}-${k}`)}</span>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    // Paragraph
     return (
-      <p key={i} className="text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
-        {parts.map((part, j) =>
-          part.startsWith("**") && part.endsWith("**") ? (
-            <strong key={j} className="text-white font-bold">
-              {part.slice(2, -2)}
-            </strong>
-          ) : (
-            <React.Fragment key={j}>{part}</React.Fragment>
-          )
-        )}
+      <p key={i} className="text-sm font-light leading-relaxed text-neutral-300 sm:text-base">
+        {renderInline(trimmed, `p-${i}`)}
       </p>
     );
   });
@@ -69,6 +134,25 @@ export default function BlogContent({ post }: BlogContentProps) {
             return <Timeline key={idx} title={section.title} phases={section.phases} />;
           case "barchart":
             return <BarChart key={idx} title={section.title} unit={section.unit} bars={section.bars} />;
+          case "figure": {
+            const Fig = DOSE_FIGURES[section.id];
+            return Fig ? <Fig key={idx} /> : null;
+          }
+          case "image":
+            return (
+              <SmartImage
+                key={idx}
+                src={section.src}
+                alt={section.alt}
+                caption={section.caption}
+                credit={section.credit}
+                accent={section.accent}
+              />
+            );
+          case "callout":
+            return <Callout key={idx} tone={section.tone} title={section.title} body={section.body} />;
+          case "shoppinglist":
+            return <ShoppingList key={idx} title={section.title} note={section.note} groups={section.groups} />;
           default:
             return null;
         }
@@ -79,6 +163,99 @@ export default function BlogContent({ post }: BlogContentProps) {
           Sources: {post.sources.join(" • ")}
         </div>
       )}
+    </div>
+  );
+}
+
+function Callout({ tone, title, body }: { tone: "info" | "warn" | "success"; title: string; body: string }) {
+  const { color, Icon } = CALLOUT_STYLES[tone];
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex gap-4 rounded-2xl border p-5"
+      style={{ borderColor: `${color}33`, background: `${color}0d` }}
+    >
+      <div
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+        style={{ background: `${color}1a`, color }}
+      >
+        <Icon size={18} />
+      </div>
+      <div className="flex flex-col gap-1">
+        <h4 className="text-sm font-black uppercase tracking-wide text-white">{title}</h4>
+        <p className="text-xs leading-relaxed text-neutral-300 sm:text-[13px]">{body}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+function ShoppingList({
+  title,
+  note,
+  groups,
+}: {
+  title: string;
+  note?: string;
+  groups: {
+    name: string;
+    accent?: "green" | "amber" | "cyan" | "purple" | "red";
+    items: { name: string; detail?: string; tag?: string; url?: string }[];
+  }[];
+}) {
+  return (
+    <div className="flex flex-col gap-5">
+      <h3 className="flex items-center gap-2 text-lg font-black uppercase tracking-tight text-white">
+        <span className="h-6 w-1.5 rounded-full bg-[#10b981]" />
+        {title}
+      </h3>
+      {note && <p className="-mt-2 text-xs leading-relaxed text-neutral-400">{note}</p>}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {groups.map((g, gi) => {
+          const accent = LIST_ACCENT[g.accent || "green"];
+          return (
+            <div key={gi} className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-[#0a0a0a] p-5">
+              <div className="flex items-center gap-2 border-b border-white/5 pb-2">
+                <span className="h-2.5 w-2.5 rounded-full" style={{ background: accent }} />
+                <h4 className="text-xs font-black uppercase tracking-widest text-white">{g.name}</h4>
+              </div>
+              <ul className="flex flex-col gap-2.5">
+                {g.items.map((it, ii) => (
+                  <li key={ii} className="flex items-start gap-2.5 text-xs leading-snug">
+                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: `${accent}99` }} />
+                    <span className="flex-1">
+                      {it.url ? (
+                        <a
+                          href={it.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 font-bold text-white underline decoration-white/25 underline-offset-4 hover:text-[#10b981]"
+                        >
+                          {it.name}
+                          <ExternalLink size={11} className="opacity-60" />
+                        </a>
+                      ) : (
+                        <span className="font-bold text-white">{it.name}</span>
+                      )}
+                      {it.detail && <span className="text-neutral-400"> — {it.detail}</span>}
+                      {it.tag && (
+                        <span
+                          className="ml-1.5 rounded px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider"
+                          style={{ background: `${accent}1a`, color: accent }}
+                        >
+                          {it.tag}
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
