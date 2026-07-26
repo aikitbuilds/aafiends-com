@@ -37,6 +37,7 @@ const NAV: NavItem[] = [
       { href: "/blog", label: "Research Posts" },
       { href: "/data", label: "The Data" },
       { href: "/book1", label: "Book One (Beta)" },
+      { href: "/book2", label: "Book Two (Draft)" },
     ],
   },
   {

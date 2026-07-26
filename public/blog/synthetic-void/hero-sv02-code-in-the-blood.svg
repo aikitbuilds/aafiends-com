@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="gA" cx="24%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB" cx="84%" cy="84%" r="58%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect width="1200" height="630" fill="url(#scan)"/>
+  <rect width="1200" height="630" fill="url(#gA)"/>
+  <rect width="1200" height="630" fill="url(#gB)"/>
+
+  <text x="64" y="84" font-family="Courier New, monospace" font-size="21" font-weight="700"
+        letter-spacing="7" fill="#00f0ff">THE SYNTHETIC VOID</text>
+  <text x="64" y="116" font-family="Courier New, monospace" font-size="15" font-weight="700"
+        letter-spacing="5" fill="#7c8a88">EPISODE 02 &#183; BOOK 2, CHAPTER 2</text>
+  <text x="64" y="166" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+        letter-spacing="4" fill="#10b981">THE CODE IN THE BLOOD</text>
+
+  <text x="64" y="312" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">THREE</text>
+  <text x="64" y="366" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">ACCENTS.</text>
+  <text x="64" y="420" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#00f0ff">ONE CODE.</text>
+
+  <g transform="translate(740,268)">
+    <rect x="0"   y="0" width="62" height="200" rx="30" fill="none" stroke="#1f2937" stroke-width="2"/>
+    <rect x="110" y="0" width="62" height="200" rx="30" fill="none" stroke="#1f2937" stroke-width="2"/>
+    <rect x="220" y="0" width="62" height="200" rx="30" fill="none" stroke="#1f2937" stroke-width="2"/>
+    <rect x="8"   y="92" width="46" height="100" rx="23" fill="#10b981" fill-opacity="0.32"/>
+    <rect x="118" y="112" width="46" height="80" rx="23" fill="#10b981" fill-opacity="0.32"/>
+    <rect x="228" y="70" width="46" height="122" rx="23" fill="#10b981" fill-opacity="0.32"/>
+    <path d="M -14 144 L 22 144 L 34 112 L 48 176 L 62 144 L 132 144 L 144 112 L 158 176 L 172 144 L 242 144 L 254 112 L 268 176 L 282 144 L 306 144"
+          fill="none" stroke="#00f0ff" stroke-width="2.5"/>
+    <text x="141" y="244" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+          letter-spacing="5" fill="#5b6360" text-anchor="middle">ONE SOURCE FILE</text>
+  </g>
+
+  <rect x="64" y="512" width="52" height="3" fill="#00f0ff"/>
+  <text x="64" y="556" font-family="Courier New, monospace" font-size="14" letter-spacing="4"
+        fill="#5b6360">AAFIENDS.COM &#183; DATA OVER DENIAL</text>
+</svg>

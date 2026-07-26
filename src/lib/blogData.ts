@@ -474,9 +474,41 @@ That's the actual reasoning behind letting you choose talk, type, or write by ha
   },
 ];
 
-import { dopamineTrapPosts } from "@/lib/dopamineTrapPosts";
+import { dopamineTrapPosts, DOPAMINE_TRAP_CATEGORY } from "@/lib/dopamineTrapPosts";
+import { syntheticVoidPosts, SYNTHETIC_VOID_CATEGORY } from "@/lib/syntheticVoidPosts";
 
-export const blogPosts: BlogPost[] = [...ORIGINAL_POSTS, ...dopamineTrapPosts];
+export interface BlogSeries {
+  id: string;            // anchor id, e.g. "the-synthetic-void"
+  category: string;      // must match BlogPost.category exactly
+  title: string;
+  tagline: string;
+  banner: string;        // path under /public
+  accent: string;        // hex, used for the kicker + part numbers
+}
+
+export const BLOG_SERIES: BlogSeries[] = [
+  {
+    id: "the-synthetic-void",
+    category: SYNTHETIC_VOID_CATEGORY,
+    title: "The Synthetic Void",
+    tagline: "We built a machine that grants every wish — and it is quietly deleting our capacity to endure. Five parts. The draft of Book 2.",
+    banner: "/blog/synthetic-void/series-banner.svg",
+    accent: "#00f0ff",
+  },
+  {
+    id: "the-dopamine-trap",
+    category: DOPAMINE_TRAP_CATEGORY,
+    title: "The Dopamine Trap",
+    tagline: "The science of why you can't stop — and how to. Six parts, one see-saw.",
+    banner: "/blog/dopamine/series-banner.svg",
+    accent: "#10b981",
+  },
+];
+
+export const blogPosts: BlogPost[] = [...ORIGINAL_POSTS, ...dopamineTrapPosts, ...syntheticVoidPosts];
+
+export const seriesPosts = (s: BlogSeries) =>
+  blogPosts.filter((p) => p.category === s.category);
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);

@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PostVisual from "@/components/PostVisual";
-import { blogPosts, PILLAR_STYLES } from "@/lib/blogData";
+import { blogPosts, BLOG_SERIES, seriesPosts, PILLAR_STYLES } from "@/lib/blogData";
 
 /**
  * AAFiends science blog index — added 2026-07-04 (Michael: "create 5-8
@@ -25,6 +25,8 @@ export default function BlogIndex() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  const seriesCategories = new Set(BLOG_SERIES.map((s) => s.category));
 
   return (
     <div className="min-h-screen bg-[#050505] text-neutral-100 font-sans">
@@ -48,43 +50,48 @@ export default function BlogIndex() {
           </p>
         </motion.div>
 
-        {/* Featured Series Band */}
-        {blogPosts.some(p => p.featured) && (
-          <div id="the-dopamine-trap" className="flex flex-col gap-6 bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-6 md:p-10 mb-8">
-            <div className="flex flex-col gap-4">
-              <span className="text-[10px] font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full uppercase self-start">
-                Featured Series
-              </span>
-              
-              <div className="w-full h-32 md:h-48 rounded-2xl overflow-hidden bg-[#050505] border border-white/5 relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/blog/dopamine/series-banner.svg" alt="The Dopamine Trap" className="w-full h-full object-cover" />
-              </div>
-
-              <div className="flex flex-col gap-2 mt-2">
-                <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Dopamine Trap</h2>
-                <p className="text-neutral-400 font-light text-base leading-relaxed">
-                  The science of why you can't stop — and how to. Six parts, one see-saw.
-                </p>
-              </div>
-            </div>
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4"
+        {/* Featured Series Bands */}
+        {BLOG_SERIES.map((s) => {
+          const posts = seriesPosts(s);
+          if (posts.length === 0) return null;
+          return (
+            <div
+              key={s.id}
+              id={s.id}
+              className="flex flex-col gap-6 bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-6 md:p-10 mb-8"
             >
-              {blogPosts
-                .filter((post) => post.featured)
-                .map((post, index) => {
-                  const style = PILLAR_STYLES[post.pillar];
+              <div className="flex flex-col gap-4">
+                <span
+                  className="text-[10px] font-mono font-bold tracking-widest px-3 py-1 rounded-full uppercase self-start"
+                  style={{ color: s.accent, backgroundColor: `${s.accent}1a` }}
+                >
+                  Featured Series
+                </span>
+
+                <div className="w-full h-32 md:h-48 rounded-2xl overflow-hidden bg-[#050505] border border-white/5 relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={s.banner} alt={s.title} className="w-full h-full object-cover" />
+                </div>
+
+                <div className="flex flex-col gap-2 mt-2">
+                  <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">{s.title}</h2>
+                  <p className="text-neutral-400 font-light text-base leading-relaxed">{s.tagline}</p>
+                </div>
+              </div>
+
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4"
+              >
+                {posts.map((post, index) => {
                   return (
                     <motion.div
                       key={post.slug}
                       variants={fadeIn}
                       whileHover={{ y: -5 }}
-                      className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-[#10b981]/30 bg-[#050505]"
+                      className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-white/20 bg-[#050505]"
                     >
                       <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                         <div className="w-full h-40 relative">
@@ -92,7 +99,7 @@ export default function BlogIndex() {
                         </div>
                         <div className="p-6 flex flex-col flex-1 gap-3">
                           <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-widest">
-                            <span className="text-[#10b981]">Part 0{index + 1}</span>
+                            <span style={{ color: s.accent }}>Part 0{index + 1}</span>
                             <span className="text-neutral-500">{post.readTime}</span>
                           </div>
                           <h2 className="text-lg font-black text-white leading-tight group-hover:text-[#10b981] transition-colors">
@@ -101,7 +108,7 @@ export default function BlogIndex() {
                           <p className="text-xs text-neutral-400 font-light leading-relaxed flex-1">{post.excerpt}</p>
                           <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-4">
                             <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">{post.date}</span>
-                            <span className="text-[#10b981] group-hover:translate-x-1 transition-transform">
+                            <span className="group-hover:translate-x-1 transition-transform" style={{ color: s.accent }}>
                               <ChevronRight size={16} />
                             </span>
                           </div>
@@ -110,9 +117,10 @@ export default function BlogIndex() {
                     </motion.div>
                   );
                 })}
-            </motion.div>
-          </div>
-        )}
+              </motion.div>
+            </div>
+          );
+        })}
 
         {/* Rest of the posts */}
         <div className="flex flex-col gap-6">
@@ -124,7 +132,7 @@ export default function BlogIndex() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
             {blogPosts
-              .filter((post) => !post.featured)
+              .filter((post) => !post.category || !seriesCategories.has(post.category))
               .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
               .map((post) => {
                 const style = PILLAR_STYLES[post.pillar];

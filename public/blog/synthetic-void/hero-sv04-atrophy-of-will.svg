@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="gA" cx="24%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB" cx="84%" cy="84%" r="58%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect width="1200" height="630" fill="url(#scan)"/>
+  <rect width="1200" height="630" fill="url(#gA)"/>
+  <rect width="1200" height="630" fill="url(#gB)"/>
+
+  <text x="64" y="84" font-family="Courier New, monospace" font-size="21" font-weight="700"
+        letter-spacing="7" fill="#00f0ff">THE SYNTHETIC VOID</text>
+  <text x="64" y="116" font-family="Courier New, monospace" font-size="15" font-weight="700"
+        letter-spacing="5" fill="#7c8a88">EPISODE 04 &#183; BOOK 2, CHAPTER 4</text>
+  <text x="64" y="166" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+        letter-spacing="4" fill="#10b981">THE ATROPHY OF WILL</text>
+
+  <text x="64" y="312" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">THE MUSCLE</text>
+  <text x="64" y="366" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">THAT MAKES</text>
+  <text x="64" y="420" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#00f0ff">YOU TRY.</text>
+
+  <g transform="translate(884,344)">
+    <path d="M -150 28 C -160 -56, -94 -112, -18 -114 C 56 -116, 132 -74, 148 -8
+             C 162 44, 122 102, 42 114 C -28 126, -104 106, -138 70 Z"
+          fill="none" stroke="#1f2937" stroke-width="2.5"/>
+    <path d="M -94 -36 C -56 -66, -8 -56, 18 -28" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+    <path d="M -74 18 C -28 -6, 28 4, 66 32" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+    <circle cx="-22" cy="-36" r="38" fill="#ef4444" fill-opacity="0.16"/>
+    <circle cx="-22" cy="-36" r="38" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="3 7"/>
+    <text x="-22" y="-31" font-family="Arial, sans-serif" font-size="17" font-weight="800"
+          fill="#ef4444" text-anchor="middle">aMCC</text>
+    <text x="0" y="166" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+          letter-spacing="5" fill="#5b6360" text-anchor="middle">USE IT OR LOSE IT</text>
+  </g>
+
+  <rect x="64" y="512" width="52" height="3" fill="#00f0ff"/>
+  <text x="64" y="556" font-family="Courier New, monospace" font-size="14" letter-spacing="4"
+        fill="#5b6360">AAFIENDS.COM &#183; DATA OVER DENIAL</text>
+</svg>

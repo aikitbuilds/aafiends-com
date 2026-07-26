@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="gA" cx="24%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB" cx="84%" cy="84%" r="58%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect width="1200" height="630" fill="url(#scan)"/>
+  <rect width="1200" height="630" fill="url(#gA)"/>
+  <rect width="1200" height="630" fill="url(#gB)"/>
+
+  <text x="64" y="84" font-family="Courier New, monospace" font-size="21" font-weight="700"
+        letter-spacing="7" fill="#00f0ff">THE SYNTHETIC VOID</text>
+  <text x="64" y="116" font-family="Courier New, monospace" font-size="15" font-weight="700"
+        letter-spacing="5" fill="#7c8a88">EPISODE 05 &#183; BOOK 2, CHAPTER 5</text>
+  <text x="64" y="166" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+        letter-spacing="4" fill="#10b981">THE ANTI-GRAVITY PROTOCOL</text>
+
+  <text x="64" y="312" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">THE WAY</text>
+  <text x="64" y="366" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff">OUT IS</text>
+  <text x="64" y="420" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#00f0ff">UPHILL.</text>
+  <g transform="translate(660,258)">
+    <line x1="0" y1="0" x2="440" y2="0" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="28" x2="440" y2="28" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="56" x2="440" y2="56" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="84" x2="440" y2="84" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="112" x2="440" y2="112" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="140" x2="440" y2="140" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="168" x2="440" y2="168" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="196" x2="440" y2="196" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="224" x2="440" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="40" y1="0" x2="40" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="80" y1="0" x2="80" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="120" y1="0" x2="120" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="160" y1="0" x2="160" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="240" y1="0" x2="240" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="280" y1="0" x2="280" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="320" y1="0" x2="320" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="360" y1="0" x2="360" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <line x1="440" y1="0" x2="440" y2="224" stroke="#131a1c" stroke-width="1"/>
+    <path d="M 20 220 C 130 216, 240 176, 320 88 L 400 8"
+          fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 400 8 l -34 12 l 12 -34 Z" fill="#10b981"/>
+    <circle cx="20" cy="220" r="7" fill="#00f0ff"/>
+    <text x="220" y="270" font-family="Arial, sans-serif" font-size="15" font-weight="700"
+          letter-spacing="5" fill="#5b6360" text-anchor="middle">FRICTION, ON PURPOSE</text>
+  </g>
+
+  <rect x="64" y="512" width="52" height="3" fill="#00f0ff"/>
+  <text x="64" y="556" font-family="Courier New, monospace" font-size="14" letter-spacing="4"
+        fill="#5b6360">AAFIENDS.COM &#183; DATA OVER DENIAL</text>
+</svg>
