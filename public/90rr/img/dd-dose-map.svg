@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <style>
+      .mono{font-family:'Courier New',ui-monospace,monospace}
+      .dim{fill:#a3a3a3}
+      .txt{fill:#e5e5e5}
+      .wht{fill:#ffffff}
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="#050505"/>
+
+  <!-- header bar -->
+  <rect x="0" y="0" width="1200" height="46" fill="#09090b"/>
+  <line x1="0" y1="46" x2="1200" y2="46" stroke="#27272a" stroke-width="1"/>
+  <text class="mono dim" x="28" y="30" font-size="13" letter-spacing="1.5">DAILY DOSE // BIO-GRANTING LEDGER</text>
+  <circle cx="1058" cy="25" r="4" fill="#10b981"/>
+  <text class="mono" x="1070" y="30" font-size="13" fill="#10b981" letter-spacing="1">24 HOURS</text>
+
+  <!-- title -->
+  <text class="mono" x="28" y="96" font-size="12" fill="#ef4444" letter-spacing="3">FEED THE FOUR CHEMICALS</text>
+  <text class="wht" x="28" y="136" font-size="34" font-weight="700">What Each Input Actually Rebuilds</text>
+  <text class="dim mono" x="28" y="166" font-size="14">Supplements don't create the DOSE. They restock the shelf the chemistry is built from.</text>
+  <line x1="28" y1="192" x2="1172" y2="192" stroke="#27272a" stroke-width="1"/>
+
+  <!-- ===== D ===== -->
+  <g>
+    <rect x="28" y="216" width="272" height="470" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="28" y="216" width="272" height="3" fill="#f59e0b"/>
+    <circle cx="66" cy="266" r="22" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="66" y="275" font-size="24" font-weight="700" fill="#f59e0b" text-anchor="middle">D</text>
+    <text x="102" y="262" font-size="19" font-weight="700" class="wht">DOPAMINE</text>
+    <text x="102" y="282" font-size="12" class="mono dim">the drive to start</text>
+
+    <text x="52" y="322" font-size="12.5" class="txt">The chemical of pursuit — not</text>
+    <text x="52" y="341" font-size="12.5" class="txt">pleasure. The AIV strip-mines it</text>
+    <text x="52" y="360" font-size="12.5" class="txt">first, which is why nothing feels</text>
+    <text x="52" y="379" font-size="12.5" class="txt">worth doing on Day 3.</text>
+
+    <text x="52" y="418" font-size="10.5" class="mono" fill="#f59e0b" letter-spacing="1.5">RESTOCK WITH</text>
+    <line x1="52" y1="428" x2="276" y2="428" stroke="#27272a"/>
+    <path d="M 52.0 443.0 L 60.0 447.5 L 52.0 452.0 Z" fill="#a3a3a3"/><text x="68.0" y="452.0" font-size="13" class="txt">L-Tyrosine</text>
+    <text x="70" y="470" font-size="11" class="mono dim">direct precursor</text>
+    <path d="M 52.0 487.0 L 60.0 491.5 L 52.0 496.0 Z" fill="#a3a3a3"/><text x="68.0" y="496.0" font-size="13" class="txt">Creatine Monohydrate</text>
+    <text x="70" y="514" font-size="11" class="mono dim">brain ATP buffer</text>
+    <path d="M 52.0 531.0 L 60.0 535.5 L 52.0 540.0 Z" fill="#a3a3a3"/><text x="68.0" y="540.0" font-size="13" class="txt">B6 / B9 / B12</text>
+    <text x="70" y="558" font-size="11" class="mono dim">conversion cofactors</text>
+    <path d="M 52.0 575.0 L 60.0 579.5 L 52.0 584.0 Z" fill="#a3a3a3"/><text x="68.0" y="584.0" font-size="13" class="txt">Pumpkin Seeds (zinc)</text>
+    <text x="70" y="602" font-size="11" class="mono dim">receptor gatekeeping</text>
+
+    <rect x="52" y="622" width="224" height="46" rx="3" fill="#1c1400" stroke="#78350f"/>
+    <text x="64" y="642" font-size="10" class="mono" fill="#f59e0b" letter-spacing="1">STAT</text>
+    <text x="64" y="659" font-size="11.5" class="txt">Brain creatine rises 3–10%</text>
+  </g>
+
+  <!-- ===== O ===== -->
+  <g>
+    <rect x="316" y="216" width="272" height="470" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="316" y="216" width="272" height="3" fill="#10b981"/>
+    <circle cx="354" cy="266" r="22" fill="none" stroke="#10b981" stroke-width="2"/>
+    <text x="354" y="275" font-size="24" font-weight="700" fill="#10b981" text-anchor="middle">O</text>
+    <text x="390" y="262" font-size="19" font-weight="700" class="wht">OXYTOCIN</text>
+    <text x="390" y="282" font-size="12" class="mono dim">the trust signal</text>
+
+    <text x="340" y="322" font-size="12.5" class="txt">Earned in rooms, not bottles.</text>
+    <text x="340" y="341" font-size="12.5" class="txt">No pill makes it. But a wrecked</text>
+    <text x="340" y="360" font-size="12.5" class="txt">gut and no sleep will block the</text>
+    <text x="340" y="379" font-size="12.5" class="txt">signal from ever landing.</text>
+
+    <text x="340" y="418" font-size="10.5" class="mono" fill="#10b981" letter-spacing="1.5">CLEAR THE PATH</text>
+    <line x1="340" y1="428" x2="564" y2="428" stroke="#27272a"/>
+    <path d="M 340.0 443.0 L 348.0 447.5 L 340.0 452.0 Z" fill="#a3a3a3"/><text x="356.0" y="452.0" font-size="13" class="txt">Kefir / Live Yogurt</text>
+    <text x="358" y="470" font-size="11" class="mono dim">lowers gut inflammation</text>
+    <path d="M 340.0 487.0 L 348.0 491.5 L 340.0 496.0 Z" fill="#a3a3a3"/><text x="356.0" y="496.0" font-size="13" class="txt">Bone Broth / Collagen</text>
+    <text x="358" y="514" font-size="11" class="mono dim">glycine, gut lining</text>
+    <path d="M 340.0 531.0 L 348.0 535.5 L 340.0 540.0 Z" fill="#a3a3a3"/><text x="356.0" y="540.0" font-size="13" class="txt">Magnesium Glycinate</text>
+    <text x="358" y="558" font-size="11" class="mono dim">sleep = social bandwidth</text>
+    <path d="M 340.0 575.0 L 348.0 579.5 L 340.0 584.0 Z" fill="#a3a3a3"/><text x="356.0" y="584.0" font-size="13" class="txt">Showing up anyway</text>
+    <text x="358" y="602" font-size="11" class="mono dim">the only real source</text>
+
+    <rect x="340" y="622" width="224" height="46" rx="3" fill="#04140c" stroke="#065f46"/>
+    <text x="352" y="642" font-size="10" class="mono" fill="#10b981" letter-spacing="1">STAT</text>
+    <text x="352" y="659" font-size="11.5" class="txt">Zero supplements required</text>
+  </g>
+
+  <!-- ===== S ===== -->
+  <g>
+    <rect x="604" y="216" width="272" height="470" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="604" y="216" width="272" height="3" fill="#00f0ff"/>
+    <circle cx="642" cy="266" r="22" fill="none" stroke="#00f0ff" stroke-width="2"/>
+    <text x="642" y="275" font-size="24" font-weight="700" fill="#00f0ff" text-anchor="middle">S</text>
+    <text x="678" y="262" font-size="19" font-weight="700" class="wht">SEROTONIN</text>
+    <text x="678" y="282" font-size="12" class="mono dim">the floor you stand on</text>
+
+    <text x="628" y="322" font-size="12.5" class="txt">Mood stability, not mood highs.</text>
+    <text x="628" y="341" font-size="12.5" class="txt">MDMA and long-run alcohol</text>
+    <text x="628" y="360" font-size="12.5" class="txt">flatten it — which is the 4am</text>
+    <text x="628" y="379" font-size="12.5" class="txt">dread with no event attached.</text>
+
+    <text x="628" y="418" font-size="10.5" class="mono" fill="#00f0ff" letter-spacing="1.5">RESTOCK WITH</text>
+    <line x1="628" y1="428" x2="852" y2="428" stroke="#27272a"/>
+    <path d="M 628.0 443.0 L 636.0 447.5 L 628.0 452.0 Z" fill="#a3a3a3"/><text x="644.0" y="452.0" font-size="13" class="txt">Oats + Chia</text>
+    <text x="646" y="470" font-size="11" class="mono dim">tryptophan shuttle</text>
+    <path d="M 628.0 487.0 L 636.0 491.5 L 628.0 496.0 Z" fill="#a3a3a3"/><text x="644.0" y="496.0" font-size="13" class="txt">Kefir / Fermented Food</text>
+    <text x="646" y="514" font-size="11" class="mono dim">microbiome repair</text>
+    <path d="M 628.0 531.0 L 636.0 535.5 L 628.0 540.0 Z" fill="#a3a3a3"/><text x="644.0" y="540.0" font-size="13" class="txt">Sardines (EPA/DHA)</text>
+    <text x="646" y="558" font-size="11" class="mono dim">receptor membrane</text>
+    <path d="M 628.0 575.0 L 636.0 579.5 L 628.0 584.0 Z" fill="#a3a3a3"/><text x="644.0" y="584.0" font-size="13" class="txt">5-HTP — see warning</text>
+    <text x="646" y="602" font-size="11" class="mono" fill="#ef4444">NOT with an SSRI</text>
+
+    <rect x="628" y="622" width="224" height="46" rx="3" fill="#04141a" stroke="#155e75"/>
+    <text x="640" y="642" font-size="10" class="mono" fill="#00f0ff" letter-spacing="1">STAT</text>
+    <text x="640" y="659" font-size="11.5" class="txt">~90% is made in the gut</text>
+  </g>
+
+  <!-- ===== E ===== -->
+  <g>
+    <rect x="892" y="216" width="272" height="470" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="892" y="216" width="272" height="3" fill="#ef4444"/>
+    <circle cx="930" cy="266" r="22" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="930" y="275" font-size="24" font-weight="700" fill="#ef4444" text-anchor="middle">E</text>
+    <text x="966" y="262" font-size="19" font-weight="700" class="wht">ENDORPHINS</text>
+    <text x="966" y="282" font-size="12" class="mono dim">earned under load</text>
+
+    <text x="916" y="322" font-size="12.5" class="txt">The one chemical you cannot</text>
+    <text x="916" y="341" font-size="12.5" class="txt">buy. You pay for it in effort.</text>
+    <text x="916" y="360" font-size="12.5" class="txt">Supplements only make sure</text>
+    <text x="916" y="379" font-size="12.5" class="txt">the body survives the invoice.</text>
+
+    <text x="916" y="418" font-size="10.5" class="mono" fill="#ef4444" letter-spacing="1.5">SUPPORT WITH</text>
+    <line x1="916" y1="428" x2="1140" y2="428" stroke="#27272a"/>
+    <path d="M 916.0 443.0 L 924.0 447.5 L 916.0 452.0 Z" fill="#a3a3a3"/><text x="932.0" y="452.0" font-size="13" class="txt">Sea Salt + Electrolytes</text>
+    <text x="934" y="470" font-size="11" class="mono dim">nerve conduction</text>
+    <path d="M 916.0 487.0 L 924.0 491.5 L 916.0 496.0 Z" fill="#a3a3a3"/><text x="932.0" y="496.0" font-size="13" class="txt">Creatine</text>
+    <text x="934" y="514" font-size="11" class="mono dim">ATP for the effort</text>
+    <path d="M 916.0 531.0 L 924.0 535.5 L 916.0 540.0 Z" fill="#a3a3a3"/><text x="932.0" y="540.0" font-size="13" class="txt">Ginger + Lemon</text>
+    <text x="934" y="558" font-size="11" class="mono dim">inflammation control</text>
+    <path d="M 916.0 575.0 L 924.0 579.5 L 916.0 584.0 Z" fill="#a3a3a3"/><text x="932.0" y="584.0" font-size="13" class="txt">Collagen / Bone Broth</text>
+    <text x="934" y="602" font-size="11" class="mono dim">tendon + joint repair</text>
+
+    <rect x="916" y="622" width="224" height="46" rx="3" fill="#1a0a0a" stroke="#7f1d1d"/>
+    <text x="928" y="642" font-size="10" class="mono" fill="#ef4444" letter-spacing="1">STAT</text>
+    <text x="928" y="659" font-size="11.5" class="txt">Movement outperforms all</text>
+  </g>
+
+  <!-- footer -->
+  <line x1="28" y1="718" x2="1172" y2="718" stroke="#27272a"/>
+  <text x="28" y="748" font-size="14" class="txt">Nothing here is a substitute for the work, the rooms, or your doctor.</text>
+  <text x="28" y="772" font-size="14" class="dim">These are raw materials. You still have to build the day.</text>
+  <text class="mono" x="1172" y="772" font-size="12" fill="#f59e0b" text-anchor="end">aafiends.com/90rr</text>
+</svg>

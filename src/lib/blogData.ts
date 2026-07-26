@@ -48,11 +48,11 @@ export type BlogSection =
   // ---- added 2026-07-24 for the /90rr DOSE field guides ----
   // A code-rendered custom infographic (see components/DoseFigures.tsx). `id`
   // maps to DOSE_FIGURES; nothing renders if the id is unknown.
-  | { type: "figure"; id: "seesaw" | "curve" | "cutaway" | "matrix" }
+  | { type: "figure"; id: "seesaw" | "curve" | "cutaway" | "matrix" | "dd-24hr-loop" | "dd-dose-map" | "dd-evidence-tiers" | "dd-cost-ledger" | (string & {}) }
   // A real photograph (Unsplash hotlink) that self-hides if it fails to load.
   | { type: "image"; src: string; alt: string; caption?: string; credit?: string; accent?: string }
-  // A colored callout — info / warn (safety) / success.
-  | { type: "callout"; tone: "info" | "warn" | "success"; title: string; body: string }
+  // A colored callout — info / warn (safety) / success / danger.
+  | { type: "callout"; tone: "info" | "warn" | "success" | "danger"; title: string; body: string }
   // A structured shopping list: grouped items, each optionally linked.
   | {
       type: "shoppinglist";

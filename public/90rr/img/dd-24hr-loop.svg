@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <style>
+      .mono{font-family:'Courier New',ui-monospace,monospace}
+      .dim{fill:#a3a3a3}
+      .txt{fill:#e5e5e5}
+      .wht{fill:#ffffff}
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="#050505"/>
+
+  <rect x="0" y="0" width="1200" height="46" fill="#09090b"/>
+  <line x1="0" y1="46" x2="1200" y2="46" stroke="#27272a"/>
+  <text class="mono dim" x="28" y="30" font-size="13" letter-spacing="1">DAILY DOSE // THE 24-HOUR LOOP</text>
+  <circle cx="1104" cy="25" r="4" fill="#10b981"/>
+  <text class="mono" x="1116" y="30" font-size="13" fill="#10b981">DAY 1</text>
+
+  <text class="mono" x="28" y="96" font-size="12" fill="#ef4444" letter-spacing="2">ONE DAY AT A TIME, LITERALLY</text>
+  <text class="wht" x="28" y="136" font-size="34" font-weight="700">Three Checkpoints. Then You Reset.</text>
+  <text class="dim mono" x="28" y="166" font-size="13.5">The protocol has no week-two. There is only today's loop, run again tomorrow.</text>
+  <line x1="28" y1="192" x2="1172" y2="192" stroke="#27272a"/>
+
+  <!-- ===== the ring : center (320,470) r=188 ===== -->
+  <g>
+    <circle cx="320" cy="470" r="188" fill="none" stroke="#18181b" stroke-width="26"/>
+
+    <!-- MORNING  02deg -> 118deg  (amber) -->
+    <path d="M 326.56 282.11 A 188 188 0 0 1 485.99 558.26" fill="none" stroke="#f59e0b" stroke-width="26"/>
+    <!-- MIDDAY   122deg -> 238deg (blue) -->
+    <path d="M 479.43 569.62 A 188 188 0 0 1 160.57 569.62" fill="none" stroke="#00f0ff" stroke-width="26"/>
+    <!-- EVENING  242deg -> 358deg (green) -->
+    <path d="M 154.01 558.26 A 188 188 0 0 1 313.44 282.11" fill="none" stroke="#10b981" stroke-width="26"/>
+
+    <!-- hub -->
+    <circle cx="320" cy="470" r="148" fill="#050505"/>
+    <text x="320" y="424" font-size="13" class="mono dim" text-anchor="middle" letter-spacing="2">TODAY ONLY</text>
+    <text x="320" y="492" font-size="66" font-weight="700" class="wht" text-anchor="middle">24</text>
+    <text x="320" y="522" font-size="14" class="mono" fill="#f59e0b" text-anchor="middle" letter-spacing="1">HOURS</text>
+    <text x="320" y="556" font-size="12.5" class="dim" text-anchor="middle">no streak to protect</text>
+
+    <!-- arc labels -->
+    <text x="320" y="262" font-size="12" class="mono" fill="#f59e0b" text-anchor="middle">05:00 · IGNITION</text>
+    <text x="536" y="480" font-size="12" class="mono" fill="#00f0ff" text-anchor="start">15:00</text>
+    <text x="536" y="498" font-size="12" class="mono" fill="#00f0ff" text-anchor="start">SYNC</text>
+    <text x="104" y="480" font-size="12" class="mono" fill="#10b981" text-anchor="end">21:00</text>
+    <text x="104" y="498" font-size="12" class="mono" fill="#10b981" text-anchor="end">CHECKOUT</text>
+
+    <text x="320" y="700" font-size="12" class="mono dim" text-anchor="middle">resets at midnight — no carryover, no streak</text>
+  </g>
+
+  <!-- ===== checkpoint cards ===== -->
+  <g>
+    <rect x="612" y="222" width="560" height="152" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="612" y="222" width="4" height="152" fill="#f59e0b"/>
+    <text x="640" y="256" font-size="11" class="mono" fill="#f59e0b" letter-spacing="1">CHECKPOINT 01 · 0500–0600</text>
+    <text x="1148" y="256" font-size="11" class="mono dim" text-anchor="end">FEEDS D + E</text>
+    <text x="640" y="288" font-size="21" font-weight="700" class="wht">Morning Ignition</text>
+    <text x="640" y="318" font-size="13.5" class="txt">24 oz water + ACV + lemon + ginger + sea salt. Stir in creatine</text>
+    <text x="640" y="340" font-size="13.5" class="txt">and lion's mane. L-tyrosine and B-complex before food.</text>
+    <text x="640" y="362" font-size="12" class="mono dim">Hydration first. The stack second. Decisions last.</text>
+  </g>
+
+  <g>
+    <rect x="612" y="390" width="560" height="152" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="612" y="390" width="4" height="152" fill="#00f0ff"/>
+    <text x="640" y="424" font-size="11" class="mono" fill="#00f0ff" letter-spacing="1">CHECKPOINT 02 · THE 3PM DIP</text>
+    <text x="1148" y="424" font-size="11" class="mono dim" text-anchor="end">FEEDS S + O</text>
+    <text x="640" y="456" font-size="21" font-weight="700" class="wht">Gut–Brain Sync</text>
+    <text x="640" y="486" font-size="13.5" class="txt">Kefir or plain yogurt. Oats and chia. A warm mug of bone broth</text>
+    <text x="640" y="508" font-size="13.5" class="txt">instead of the override you were about to reach for.</text>
+    <text x="640" y="530" font-size="12" class="mono dim">This is the hour most relapses get planned.</text>
+  </g>
+
+  <g>
+    <rect x="612" y="558" width="560" height="152" rx="5" fill="#09090b" stroke="#27272a"/>
+    <rect x="612" y="558" width="4" height="152" fill="#10b981"/>
+    <text x="640" y="592" font-size="11" class="mono" fill="#10b981" letter-spacing="1">CHECKPOINT 03 · LIGHTS-OUT −60</text>
+    <text x="1148" y="592" font-size="11" class="mono dim" text-anchor="end">FEEDS S + O</text>
+    <text x="640" y="624" font-size="21" font-weight="700" class="wht">Evening Checkout</text>
+    <text x="640" y="654" font-size="13.5" class="txt">Magnesium glycinate, 30–60 min before bed. Sleep is when</text>
+    <text x="640" y="676" font-size="13.5" class="txt">receptors upregulate on their own.</text>
+    <text x="640" y="698" font-size="12" class="mono dim">The only free repair window you get.</text>
+  </g>
+
+  <line x1="28" y1="742" x2="1172" y2="742" stroke="#27272a"/>
+  <text x="28" y="776" font-size="15" class="txt" font-style="italic">"Miss a checkpoint and you haven't broken anything. The loop restarts at 05:00."</text>
+  <text class="mono" x="1172" y="776" font-size="12" fill="#f59e0b" text-anchor="end">aafiends.com/90rr</text>
+</svg>

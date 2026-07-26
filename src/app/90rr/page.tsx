@@ -422,15 +422,64 @@ export default function NinetyRRPage() {
           </div>
         </section>
 
-        {/* 9. DOSE FIELD GUIDES */}
+        {/* 9. FEATURED — THE DAILY DOSE */}
+        <section className="relative overflow-hidden rounded-[2.5rem] border border-[#10b981]/25 bg-[#09090b] p-8 md:p-12 flex flex-col gap-8 scroll-mt-28">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#10b981]/10 blur-3xl" />
+
+          <div className="flex flex-col gap-3">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#f59e0b] uppercase">Featured · Resupply</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Daily Dose</h2>
+            <p className="text-sm md:text-base text-neutral-300 max-w-2xl leading-relaxed">
+              Supplements and superfoods that rebuild <strong className="text-white">D.O.S.E.</strong> — what I take,
+              when I take it, what the evidence actually says, and what it costs a day. Called the <strong className="text-white">Daily Dose</strong> because
+              dopamine doesn&apos;t bank overnight any more than sobriety does. Twenty-four hours is the unit for both.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { stat: "$0.55", label: "a day for the Core Five", accent: "#10b981" },
+              { stat: "3", label: "checkpoints, not a schedule", accent: "#00f0ff" },
+              { stat: "24h", label: "the only unit that counts", accent: "#f59e0b" },
+            ].map((s) => (
+              <div key={s.label} className="rounded-2xl border border-white/10 bg-[#050505] p-5">
+                <p className="text-3xl font-black" style={{ color: s.accent }}>{s.stat}</p>
+                <p className="mt-1 text-xs text-neutral-400 leading-relaxed">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="overflow-x-auto -mx-2 px-2">
+            <Image src="/90rr/img/dd-dose-map.svg" alt="Which supplements and superfoods restock each of the four chemicals"
+                   width={1200} height={820} className="min-w-[720px] w-full h-auto rounded-2xl border border-white/10" />
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link href="/90rr/daily-dose"
+                  className="rounded-full bg-[#10b981] px-6 py-3 text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-emerald-400">
+              Read the full ledger →
+            </Link>
+            <Link href="/90rr/shopping-list"
+                  className="rounded-full border border-white/20 px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-white/40">
+              Print the shopping list
+            </Link>
+          </div>
+
+          <p className="text-[11px] text-neutral-500 leading-relaxed">
+            Not medical advice. Supplements interact with medications — talk to your doctor first, especially about 5-HTP if you take an antidepressant.
+          </p>
+        </section>
+
+        {/* 10. DOSE FIELD GUIDES */}
         <section className="flex flex-col gap-6 scroll-mt-28">
           <div className="flex flex-col gap-2">
             <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] uppercase">DOSE Field Guides</span>
             <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Earn Your Four Chemicals</h2>
             <p className="text-sm text-neutral-400 max-w-2xl">Field guides on rebuilding <strong className="text-white">D.O.S.E.</strong> naturally, with real food and earned habits. Ends with print-and-go lists.</p>
           </div>
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
+              { href: "/90rr/daily-dose", tag: "The Engine · Resupply", title: "Daily Dose", desc: "Supplements & superfoods that rebuild D.O.S.E., graded by real evidence.", accent: "#10b981" },
               { href: "/90rr/fuel", tag: "The Engine · Food", title: "DOSE Kitchen", desc: "Grocery list that rebuilds all 4 chemicals from raw materials up.", accent: "#10b981" },
               { href: "/90rr/reset", tag: "The Reset · Cold", title: "Regulate Dopamine", desc: "Cold immersion & walking — plus a $600 cold plunge build.", accent: "#00f0ff" },
               { href: "/90rr/meditation", tag: "The Mirror · Stillness", title: "Vipassana Guide", desc: "Sit with cravings: 15 & 30 min guides built on Atomic Habits.", accent: "#00f0ff" },
@@ -446,7 +495,7 @@ export default function NinetyRRPage() {
           </div>
         </section>
 
-        {/* 10. DOWNLOAD THE JOURNAL */}
+        {/* 11. DOWNLOAD THE JOURNAL */}
         <section className="bg-[#09090b] border border-white/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden scroll-mt-28">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#00f0ff]" />
           <div className="flex flex-col gap-4 text-center items-center">

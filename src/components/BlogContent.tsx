@@ -8,7 +8,8 @@ import { DOSE_FIGURES, SmartImage } from "@/components/DoseFigures";
 
 const CALLOUT_STYLES = {
   info: { color: "#00f0ff", Icon: Info },
-  warn: { color: "#ef4444", Icon: AlertTriangle },
+  warn: { color: "#f59e0b", Icon: AlertTriangle },
+  danger: { color: "#ef4444", Icon: AlertTriangle },
   success: { color: "#10b981", Icon: CheckCircle2 },
 } as const;
 
@@ -167,7 +168,7 @@ export default function BlogContent({ post }: BlogContentProps) {
   );
 }
 
-function Callout({ tone, title, body }: { tone: "info" | "warn" | "success"; title: string; body: string }) {
+function Callout({ tone, title, body }: { tone: "info" | "warn" | "success" | "danger"; title: string; body: string }) {
   const { color, Icon } = CALLOUT_STYLES[tone];
   return (
     <motion.div

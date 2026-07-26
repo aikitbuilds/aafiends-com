@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="1200" height="820" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <style>
+      .mono{font-family:'Courier New',ui-monospace,monospace}
+      .dim{fill:#a3a3a3}
+      .txt{fill:#e5e5e5}
+      .wht{fill:#ffffff}
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="#050505"/>
+
+  <rect x="0" y="0" width="1200" height="46" fill="#09090b"/>
+  <line x1="0" y1="46" x2="1200" y2="46" stroke="#27272a"/>
+  <text class="mono dim" x="28" y="30" font-size="13" letter-spacing="1.5">DAILY DOSE // EVIDENCE AUDIT</text>
+  <circle cx="1010" cy="25" r="4" fill="#10b981"/>
+  <text class="mono" x="1022" y="30" font-size="13" fill="#10b981">DATA OVER DENIAL</text>
+
+  <text class="mono" x="28" y="96" font-size="12" fill="#ef4444" letter-spacing="2">WE GRADE OUR OWN HOMEWORK IN PUBLIC</text>
+  <text class="wht" x="28" y="136" font-size="34" font-weight="700">How Good Is the Evidence, Actually?</text>
+  <text class="dim mono" x="28" y="166" font-size="14">If we hid the weak stuff, we'd be running the same con the bottle ran. So here it is, graded.</text>
+  <line x1="28" y1="192" x2="1172" y2="192" stroke="#27272a"/>
+
+  <!-- ===== SOLID ===== -->
+  <g>
+    <rect x="28" y="218" width="368" height="410" rx="5" fill="#09090b" stroke="#065f46"/>
+    <rect x="28" y="218" width="368" height="3" fill="#10b981"/>
+    <text x="52" y="256" font-size="17" font-weight="700" fill="#10b981">SOLID</text>
+    <text x="52" y="278" font-size="11.5" class="mono dim">human RCTs / textbook physiology</text>
+    <line x1="52" y1="292" x2="372" y2="292" stroke="#27272a"/>
+
+    <text x="52" y="322" font-size="14" class="wht">Omega-3 (EPA/DHA)</text>
+    <text x="52" y="341" font-size="11.5" class="mono dim">26 trials, n=2160, SMD −0.28 on</text>
+    <text x="52" y="357" font-size="11.5" class="mono dim">depression. Best ≤1g/d, EPA≥60%.</text>
+
+    <text x="52" y="390" font-size="14" class="wht">Creatine Monohydrate</text>
+    <text x="52" y="409" font-size="11.5" class="mono dim">Brain creatine +3–10%. Memory and</text>
+    <text x="52" y="425" font-size="11.5" class="mono dim">processing speed improve; executive</text>
+    <text x="52" y="441" font-size="11.5" class="mono dim">function does not. 5 g/d.</text>
+
+    <text x="52" y="474" font-size="14" class="wht">Electrolytes / Sodium</text>
+    <text x="52" y="493" font-size="11.5" class="mono dim">Nerve conduction is not a wellness</text>
+    <text x="52" y="509" font-size="11.5" class="mono dim">claim. It's how cells work.</text>
+
+    <text x="52" y="542" font-size="14" class="wht">B6 / B9 / B12 cofactors</text>
+    <text x="52" y="561" font-size="11.5" class="mono dim">Required for the conversion. Fixes a</text>
+    <text x="52" y="577" font-size="11.5" class="mono dim">deficit — won't add on top of full.</text>
+
+    <text x="52" y="600" font-size="14" class="wht">Sleep itself</text>
+    <text x="52" y="619" font-size="11.5" class="mono dim">The highest-yield intervention here,</text>
+    <text x="52" y="635" font-size="11.5" class="mono dim">and it is free.</text>
+  </g>
+
+  <!-- ===== EMERGING ===== -->
+  <g>
+    <rect x="416" y="218" width="368" height="410" rx="5" fill="#09090b" stroke="#78350f"/>
+    <rect x="416" y="218" width="368" height="3" fill="#f59e0b"/>
+    <text x="440" y="256" font-size="17" font-weight="700" fill="#f59e0b">EMERGING</text>
+    <text x="440" y="278" font-size="11.5" class="mono dim">plausible, small or mixed trials</text>
+    <line x1="440" y1="292" x2="760" y2="292" stroke="#27272a"/>
+
+    <text x="440" y="322" font-size="14" class="wht">L-Tyrosine</text>
+    <text x="440" y="341" font-size="11.5" class="mono dim">Works under acute stress and sleep</text>
+    <text x="440" y="357" font-size="11.5" class="mono dim">loss. Not a general mood lifter.</text>
+
+    <text x="440" y="390" font-size="14" class="wht">Magnesium Glycinate</text>
+    <text x="440" y="409" font-size="11.5" class="mono dim">Good for cramps and wind-down.</text>
+    <text x="440" y="425" font-size="11.5" class="mono dim">Sleep data is modest, not dramatic.</text>
+
+    <text x="440" y="458" font-size="14" class="wht">Kefir / Fermented Foods</text>
+    <text x="440" y="477" font-size="11.5" class="mono dim">Microbiome shifts are real. The mood</text>
+    <text x="440" y="493" font-size="11.5" class="mono dim">link is promising, not proven.</text>
+
+    <text x="440" y="526" font-size="14" class="wht">Collagen / Bone Broth</text>
+    <text x="440" y="545" font-size="11.5" class="mono dim">Decent tendon and joint signal under</text>
+    <text x="440" y="561" font-size="11.5" class="mono dim">load. Gut-lining claims are softer.</text>
+
+    <text x="440" y="594" font-size="14" class="wht">Apple Cider Vinegar</text>
+    <text x="440" y="613" font-size="11.5" class="mono dim">Small real glycemic effect. Small.</text>
+  </g>
+
+  <!-- ===== THIN ===== -->
+  <g>
+    <rect x="804" y="218" width="368" height="410" rx="5" fill="#09090b" stroke="#7f1d1d"/>
+    <rect x="804" y="218" width="368" height="3" fill="#ef4444"/>
+    <text x="828" y="256" font-size="17" font-weight="700" fill="#ef4444">THIN</text>
+    <text x="828" y="278" font-size="11.5" class="mono dim">mostly lab dishes and rodents</text>
+    <line x1="828" y1="292" x2="1148" y2="292" stroke="#27272a"/>
+
+    <text x="828" y="322" font-size="14" class="wht">Lion's Mane</text>
+    <text x="828" y="341" font-size="11.5" class="mono dim">The NGF story is in-vitro and rodent.</text>
+    <text x="828" y="357" font-size="11.5" class="mono dim">A 2025 human RCT found no effect on</text>
+    <text x="828" y="373" font-size="11.5" class="mono dim">global cognition or mood. I still take</text>
+    <text x="828" y="389" font-size="11.5" class="mono dim">it. I just won't sell it to you.</text>
+
+    <text x="828" y="422" font-size="14" class="wht">“Detox” claims, all of them</text>
+    <text x="828" y="441" font-size="11.5" class="mono dim">Your liver and kidneys do that. No</text>
+    <text x="828" y="457" font-size="11.5" class="mono dim">tonic accelerates it.</text>
+
+    <text x="828" y="490" font-size="14" class="wht">Gut serotonin → mood</text>
+    <text x="828" y="509" font-size="11.5" class="mono dim">~90% of serotonin IS made in the gut.</text>
+    <text x="828" y="525" font-size="11.5" class="mono dim">But it does not cross the blood-brain</text>
+    <text x="828" y="541" font-size="11.5" class="mono dim">barrier. The gut matters via</text>
+    <text x="828" y="557" font-size="11.5" class="mono dim">inflammation and the vagus nerve —</text>
+    <text x="828" y="573" font-size="11.5" class="mono dim">not by shipping serotonin upstairs.</text>
+    <text x="828" y="602" font-size="11.5" class="mono" fill="#ef4444">Most wellness copy gets this wrong.</text>
+  </g>
+
+  <!-- warning band -->
+  <rect x="28" y="654" width="1144" height="88" rx="4" fill="#1a0a0a" stroke="#7f1d1d"/>
+  <rect x="28" y="654" width="4" height="88" fill="#ef4444"/>
+  <text x="56" y="684" font-size="13" font-weight="700" fill="#ef4444">THE ONE THAT CAN ACTUALLY HURT YOU — 5-HTP</text>
+  <text x="56" y="708" font-size="13" class="txt">Do not combine 5-HTP with an SSRI, SNRI, MAOI, tramadol, or triptans. It is a direct serotonin precursor with no</text>
+  <text x="56" y="729" font-size="13" class="txt">feedback brake, and the stack can trigger serotonin syndrome. A lot of us in the rooms are on an antidepressant. Ask first.</text>
+
+  <text x="28" y="782" font-size="13" class="dim">Evidence grades reflect published human trials as of July 2026. Not medical advice. Talk to your doctor — especially about interactions.</text>
+  <text class="mono" x="1172" y="782" font-size="12" fill="#f59e0b" text-anchor="end">aafiends.com/90rr</text>
+</svg>

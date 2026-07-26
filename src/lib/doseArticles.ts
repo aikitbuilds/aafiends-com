@@ -665,7 +665,270 @@ Then tick the box. Tomorrow, do it again. That's the whole practice, and it's th
   ],
 };
 
-export const DOSE_ARTICLES: BlogPost[] = [doseFuel, doseReset, doseMirror];
+/* ================================================================== */
+/*  ARTICLE 4 — THE DAILY DOSE (supplements & superfood ledger)        */
+/* ================================================================== */
+export const dailyDose: BlogPost = {
+  slug: "daily-dose",
+  title: "The Daily Dose — Supplements & Superfoods That Rebuild D.O.S.E.",
+  excerpt:
+    "What I actually take to rebuild dopamine, oxytocin, serotonin and endorphins after a 30-year run — the full ledger, what each item does, when I take it, what the evidence really says, and what it costs per day.",
+  author: "MT · AAfiends",
+  date: "Jul 26, 2026",
+  readTime: "11 min read",
+  pillar: "engine",
+  icon: "brain",
+  sources: [
+    "creatine + memory: academic.oup.com/nutritionreviews/article/81/4/416/6671817",
+    "creatine cognition meta-analysis: ncbi.nlm.nih.gov/pmc/articles/PMC11275561",
+    "omega-3 depression meta-analysis: nature.com/articles/s41398-019-0515-5",
+    "2025 lion's mane RCT: pmc.ncbi.nlm.nih.gov/articles/PMC12018234",
+    "5-HTP interactions: mskcc.org/cancer-care/integrative-medicine/herbs/5-htp-01",
+  ],
+  content: "What I take to rebuild the Daily Dose",
+  sections: [
+    {
+      type: "markdown",
+      content: `
+I drank and used for thirty years while building companies, winning an Entrepreneur-of-the-Year award, and getting written up in the paper. Seven Ironmans. 100-mile ultras. Marathons. A ten-day silent Vipassana where nobody spoke and I couldn't outrun anything. I did all of it carrying a four-thousand-pound invisible weight, and I did all of it on hardware I was actively strip-mining.
+
+Here's what nobody tells you about getting sober as an endurance athlete: the day you stop, your body doesn't thank you. It sends the invoice. Thirty years of borrowed dopamine comes due at once, and you find out that the engine you were so proud of has been running on a credit line the whole time.
+
+This page is the resupply list. It is not a stack, it is not a hack, and none of it will get you sober. It is the raw material I put back into a depleted motherboard so that the real work — the rooms, the steps, the sponsor, the 24 hours — has something to run on.
+      `,
+    },
+    {
+      type: "markdown",
+      content: `
+### Why "Daily Dose"
+
+We used to write it D.O.S.E. — Dopamine, Oxytocin, Serotonin, Endorphins. That's still the biology. But the name we use now is the **Daily Dose**, DD for short, and the change is the whole point.
+
+In the rooms they hand you a unit of measurement on day one: **twenty-four hours.** Not a year. Not ninety days. Today. It turns out your neurochemistry uses the same unit. Dopamine you earned on Tuesday does nothing for you on Wednesday. Sleep doesn't bank. Serotonin isn't a savings account. Every one of these four chemicals is a *daily* production run, and if you skip the inputs, the shelves are empty by afternoon.
+
+That's why there's no streak counter on this page. **One day at a time isn't a slogan we borrowed. It's a description of how the machine actually works.**
+      `,
+    },
+    { type: "figure", id: "dd-24hr-loop" },
+    {
+      type: "markdown",
+      content: `
+### The Three Checkpoints
+
+To keep decision fatigue out of it, everything below is anchored to three fixed moments. You are not deciding what to take. You are showing up at a checkpoint.
+
+**1 — Morning Ignition (0500–0600).** 24 oz of water, apple cider vinegar, fresh lemon, fresh ginger, a pinch of Himalayan salt. Stir in creatine and lion's mane. L-tyrosine and B-complex before food. Hydration first, stack second, decisions last.
+
+**2 — Gut–Brain Sync (the 3pm dip).** Kefir or plain whole-milk yogurt. Oats with chia. A warm mug of bone broth instead of the override you were about to reach for. A handful of pumpkin seeds. This is the hour most relapses get planned, and it is almost always a blood-sugar problem wearing an emotional costume.
+
+**3 — Evening Checkout (lights-out minus 60).** Magnesium glycinate. That's it. Sleep is when receptors upregulate on their own — the only repair window you get for free, and the one I spent three decades stealing from.
+      `,
+    },
+    {
+      type: "image",
+      src: "/90rr/img/dd-morning-tonic.png",
+      alt: "The morning tonic: water, lemon, ginger, salt, before anything else.",
+      caption: "The morning tonic: water, lemon, ginger, salt, before anything else.",
+    },
+    {
+      type: "markdown",
+      content: `
+### Which Input Feeds Which Chemical
+      `,
+    },
+    { type: "figure", id: "dd-dose-map" },
+    {
+      type: "markdown",
+      content: `
+Read that chart with one thing in mind: **supplements do not create the Daily Dose.** They restock the shelf the chemistry gets built from. You still have to go earn it. Note that the oxytocin column has almost nothing you can buy — that one comes from the rooms, the phone call, the service commitment. No powder substitutes for another human being.
+      `,
+    },
+    {
+      type: "shoppinglist",
+      title: "The Core Stack — $0.55/day",
+      note: "The five foundational items. Everything after this is optional.",
+      groups: [
+        {
+          name: "The Core Five",
+          accent: "green",
+          items: [
+            {
+              name: "Creatine Monohydrate — 5 g",
+              detail: "Crosses the blood-brain barrier and buffers cellular ATP. In early recovery the prefrontal cortex is running a massive energy deficit; this is the difference between brain fog and being able to finish a thought. It is also the single most-studied supplement in sport, and it's cheap.",
+              tag: "Morning, in water",
+            },
+            {
+              name: "L-Tyrosine — 500–1000 mg",
+              detail: "The direct amino-acid precursor your brain converts into dopamine and norepinephrine. Works best exactly when you need it most: under acute stress and on bad sleep.",
+              tag: "Morning, empty stomach",
+            },
+            {
+              name: "B-Complex (B6, B9, B12)",
+              detail: "Your body physically cannot convert tyrosine into dopamine, or tryptophan into serotonin, without these acting as enzymatic cofactors. A depleted system fails at the conversion step even when the raw material is there.",
+              tag: "Morning, with food",
+            },
+            {
+              name: "Magnesium Glycinate — 200–400 mg",
+              detail: "Alcohol and stimulants wreck GABA signaling — that's the 3am wake-up, the restless legs, the piriformis that won't let go. Glycinate relaxes smooth muscle and supports slow-wave sleep without the gut effects of cheaper forms.",
+              tag: "30–60 min before bed",
+            },
+            {
+              name: "Himalayan Salt + Electrolytes",
+              detail: "Not a wellness claim. Nerve impulses are an electrical event and they need sodium, potassium and magnesium to fire. Chronic use plus heavy sweating strips all three.",
+              tag: "Morning, in the tonic",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "shoppinglist",
+      title: "Superfoods & Extended Support",
+      note: "Targeted support for blood sugar, gut repair, and joint integrity.",
+      groups: [
+        {
+          name: "Superfoods & Targeted Compounds",
+          accent: "cyan",
+          items: [
+            {
+              name: "Apple Cider Vinegar — 1–2 tbsp",
+              detail: "Blunts the blood-sugar spike. Spiking and crashing glucose produces something almost indistinguishable from early withdrawal — the shakes, the dread, the sudden certainty that you need something. That's the H in H.A.L.T. wearing a disguise.",
+              tag: "First thing, in water",
+            },
+            {
+              name: "Fresh Ginger + Lemon",
+              detail: "Ginger is a genuine anti-inflammatory; lemon makes the tonic something you'll actually drink at 5am for ninety days. Do not underestimate the second one.",
+              tag: "Morning tonic",
+            },
+            {
+              name: "Lion's Mane Powder",
+              detail: "Hericenones and erinacines promote nerve growth factor — in petri dishes and rodents. See the evidence chart before you spend money on this one. I take it. I won't oversell it.",
+              tag: "Morning, in coffee or tea",
+            },
+            {
+              name: "Kefir / Plain Whole-Milk Yogurt",
+              detail: "Live cultures. Thirty years of alcohol is thirty years of low-grade gut damage, and gut inflammation shows up upstairs as mood.",
+              tag: "Morning or midday",
+            },
+            {
+              name: "Rolled Oats + Chia",
+              detail: "Tryptophan can't get across the blood-brain barrier on its own — it loses the transporter competition to other amino acids. A modest complex-carb load triggers just enough insulin to clear the competition and let it through. This is the actual mechanism behind 'comfort food,' and it's the one place carbs earn their reputation.",
+              tag: "Breakfast",
+            },
+            {
+              name: "Sardines / Mackerel",
+              detail: "EPA and DHA build the cell membranes your dopamine and serotonin receptors sit in. Stiff membranes mean poor binding. A tin costs a dollar-thirty.",
+              tag: "Lunch or dinner",
+            },
+            {
+              name: "Pumpkin Seeds",
+              detail: "Zinc and magnesium in food form — receptor gatekeeping and the jittery-nervous-system fix.",
+              tag: "Afternoon handful",
+            },
+            {
+              name: "Bone Broth / Collagen",
+              detail: "Glycine, proline, glutamine. When you're putting ultra mileage on repaired hardware, tendons and ligaments are the failure point long before the engine is.",
+              tag: "Midday, warm",
+            },
+            {
+              name: "5-HTP ⚠️",
+              detail: "Serotonin precursor. Read the warning below before you touch it. Do not combine 5-HTP with an SSRI, SNRI, MAOI, tramadol, or triptans. It can trigger serotonin syndrome — consult your doctor first.",
+              tag: "Evening — doctor cleared only",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "markdown",
+      content: `
+### Honest Evidence Grading
+      `,
+    },
+    { type: "figure", id: "dd-evidence-tiers" },
+    {
+      type: "markdown",
+      content: `
+**Data Over Denial has to cut both ways or it's just a slogan.** So here's what's real:
+
+- **Creatine** is solid. Brain creatine rises 3–10% on supplementation; meta-analyses show real gains in memory and processing speed, and no gain in executive function. That's a useful, unglamorous result.
+- **Omega-3s** are solid. Across 26 trials and 2,160 people, a small but consistent effect on depressive symptoms — best around 1 g/day of EPA-dominant, not more.
+- **Lion's mane is thin.** The NGF mechanism is in-vitro and rodent. A 2025 randomized human trial found no effect on global cognition or mood. I still take it, because it's cheap and the downside is nil. But if someone sells it to you as neurogenesis in a jar, they're selling.
+- **The gut-serotonin line that everyone repeats is half wrong.** Yes, ~90% of your body's serotonin is made in the gut. No, it does not cross the blood-brain barrier. Gut health affects mood through inflammation and the vagus nerve, not by shipping serotonin upstairs. Almost every wellness article gets this backwards.
+      `,
+    },
+    {
+      type: "callout",
+      tone: "danger",
+      title: "⚠️ 5-HTP can actually hurt you.",
+      body: "Do not combine 5-HTP with an SSRI, SNRI, MAOI, tramadol, or triptans. It's a direct serotonin precursor with no feedback brake, and the combination can trigger serotonin syndrome — which runs from agitation and tremor to seizure. A great many of us in the rooms are on an antidepressant. If that's you, this one is a conversation with your doctor, not a purchase.",
+    },
+    {
+      type: "markdown",
+      content: `
+### What It Costs
+      `,
+    },
+    { type: "figure", id: "dd-cost-ledger" },
+    {
+      type: "markdown",
+      content: `
+I want to be careful here, because "just buy supplements" is a garbage answer for someone who is genuinely broke. So: **the Core Five is fifty-five cents a day.** Sixteen-fifty for a month. Forty-nine-fifty for the whole ninety.
+
+And I'll say the uncomfortable part, because somebody has to. When I was drinking, I was never broke on a Friday night. The money was always there. It was never a budget problem — it was a priority problem wearing a budget costume. Same wallet. Different ledger.
+
+If even that is out of reach right now: the free tier is **sleep, sunlight, walking, water, and a meeting.** Those outperform every item on this page, and they cost nothing. Start there. Nobody gets to use the price of creatine as a reason not to get better.
+      `,
+    },
+    {
+      type: "markdown",
+      content: `
+### How I Use This to Race
+      `,
+    },
+    {
+      type: "image",
+      src: "/90rr/img/dd-hero-stack.png",
+      alt: "The Daily Dose field kit, laid out for inspection.",
+      caption: "The Daily Dose field kit, laid out for inspection.",
+    },
+    {
+      type: "markdown",
+      content: `
+The reason any of this matters to me personally: I still race.
+
+Seven Ironmans and a stack of 100-mile ultras happened while I was drinking — which people hear as a flex and which I hear as the diagnosis. I could suffer for twenty hours straight and still couldn't sit still with myself for twenty minutes. That's not discipline, that's a symptom. Endurance sport was the last respectable place to run a compulsion.
+
+Sober, the racing changed shape. The engine is the same engine, but it's finally being maintained instead of mined. What the protocol above actually buys me is boring and specific: creatine and electrolytes so the mitochondria have something to work with; collagen and omega-3s so the sciatic and piriformis flare-ups that used to end my build weeks stay manageable; magnesium so I sleep, because a training block without sleep is just scheduled injury; and tyrosine and B-vitamins so the prefrontal cortex has raw material on the mornings when the only thing standing between me and a relapse is my ability to make one decent decision.
+
+The ultra and the 24 hours are the same skill. You do not run 100 miles. You run the next aid station, and then you do it again, and that is the entire technique. Recovery is an ultra where the aid stations are 24 hours apart and the DNF is fatal.
+
+The Daily Dose is what I carry between them.
+      `,
+    },
+    {
+      type: "callout",
+      tone: "warn",
+      title: "This is not medical advice.",
+      body: "I'm a guy in recovery who reads studies, not a doctor. Supplements interact with medications — genuinely, sometimes dangerously. Talk to your physician before you start anything here, especially if you're on an antidepressant, a blood thinner, or anything for blood pressure. And nothing on this page substitutes for the rooms, a sponsor, or professional treatment.",
+    },
+    {
+      type: "markdown",
+      content: `
+---
+
+**Sources & Clinical Citations:**
+- [Creatine and Memory Meta-Analysis (Nutrition Reviews)](https://academic.oup.com/nutritionreviews/article/81/4/416/6671817)
+- [Creatine Cognition Meta-Analysis (PMC)](https://ncbi.nlm.nih.gov/pmc/articles/PMC11275561)
+- [Omega-3 Depression Meta-Analysis (Translational Psychiatry / Nature)](https://nature.com/articles/s41398-019-0515-5)
+- [2025 Lion's Mane Randomized Controlled Trial (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC12018234)
+- [5-HTP Herb-Drug Interactions (MSKCC)](https://mskcc.org/cancer-care/integrative-medicine/herbs/5-htp-01)
+      `,
+    },
+  ],
+};
+
+export const DOSE_ARTICLES: BlogPost[] = [doseFuel, doseReset, doseMirror, dailyDose];
 
 export function getDoseArticle(slug: string): BlogPost | undefined {
   return DOSE_ARTICLES.find((a) => a.slug === slug);

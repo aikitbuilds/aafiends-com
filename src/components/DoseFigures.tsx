@@ -12,6 +12,7 @@
  */
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import { Zap, HeartHandshake, Sun, Flame, Wine, Snowflake, Shield, ShoppingCart, Brain } from "lucide-react";
@@ -347,11 +348,83 @@ function FigureTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
+export function DdDoseMapFigure() {
+  return (
+    <div className="overflow-x-auto -mx-4 px-4 my-6">
+      <div className="min-w-[720px]">
+        <Image
+          src="/90rr/img/dd-dose-map.svg"
+          alt="Which inputs rebuild each of the four chemicals"
+          width={1200}
+          height={820}
+          className="w-full h-auto rounded-2xl border border-white/10"
+        />
+      </div>
+    </div>
+  );
+}
+
+export function Dd24HrLoopFigure() {
+  return (
+    <div className="overflow-x-auto -mx-4 px-4 my-6">
+      <div className="min-w-[720px]">
+        <Image
+          src="/90rr/img/dd-24hr-loop.svg"
+          alt="The 24-hour loop: three daily checkpoints"
+          width={1200}
+          height={820}
+          className="w-full h-auto rounded-2xl border border-white/10"
+        />
+      </div>
+    </div>
+  );
+}
+
+export function DdEvidenceTiersFigure() {
+  return (
+    <div className="overflow-x-auto -mx-4 px-4 my-6">
+      <div className="min-w-[720px]">
+        <Image
+          src="/90rr/img/dd-evidence-tiers.svg"
+          alt="Honest evidence grading for supplements and superfoods"
+          width={1200}
+          height={820}
+          className="w-full h-auto rounded-2xl border border-white/10"
+        />
+      </div>
+    </div>
+  );
+}
+
+export function DdCostLedgerFigure() {
+  return (
+    <div className="overflow-x-auto -mx-4 px-4 my-6">
+      <div className="min-w-[720px]">
+        <Image
+          src="/90rr/img/dd-cost-ledger.svg"
+          alt="Cost per day of rebuilding vs. cost per day of wrecking"
+          width={1200}
+          height={820}
+          className="w-full h-auto rounded-2xl border border-white/10"
+        />
+      </div>
+    </div>
+  );
+}
+
 export const DOSE_FIGURES: Record<string, React.FC> = {
   seesaw: DoseSeesaw,
   curve: DopamineCurve,
   cutaway: PlungeCutaway,
   matrix: FoodMatrix,
+  "dd-dose-map": DdDoseMapFigure,
+  "dd-24hr-loop": Dd24HrLoopFigure,
+  "dd-evidence-tiers": DdEvidenceTiersFigure,
+  "dd-cost-ledger": DdCostLedgerFigure,
+  "/90rr/img/dd-dose-map.svg": DdDoseMapFigure,
+  "/90rr/img/dd-24hr-loop.svg": Dd24HrLoopFigure,
+  "/90rr/img/dd-evidence-tiers.svg": DdEvidenceTiersFigure,
+  "/90rr/img/dd-cost-ledger.svg": DdCostLedgerFigure,
 };
 
 /* ------------------------------------------------------------------ */
