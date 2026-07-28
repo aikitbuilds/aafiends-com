@@ -52,7 +52,20 @@ export default function Prep90Page() {
         </div>
       </nav>
 
-      <main className="flex-1 max-w-5xl w-full mx-auto px-6 py-14 md:py-20 flex flex-col gap-20 relative z-20">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-6 py-10 md:py-16 flex flex-col gap-16 relative z-20">
+        {/* Crash Course Back-Reference Banner */}
+        <div className="w-full bg-[#09090b] border border-[#10b981]/30 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+          <span className="text-neutral-300 font-medium">
+            Sent here from the crash course? This is the extended list.
+          </span>
+          <Link
+            href="/90rr#crash-course"
+            className="text-[#10b981] font-bold hover:underline flex items-center gap-1.5"
+          >
+            ← Watch the 90 R&amp;R Crash Course on /90rr
+          </Link>
+        </div>
+
         <section className="flex flex-col items-start gap-5">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">Before Day 1</span>
           <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">Preps &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#f59e0b]">Tools</span></h1>

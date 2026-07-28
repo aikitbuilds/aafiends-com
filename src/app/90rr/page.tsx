@@ -2,13 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import CrashCourseSection from "@/components/CrashCourseSection";
+import CrisisSupport from "@/components/CrisisSupport";
 import { DoseStack, DoseMap, CravingWaveAndSpike, SmartImage } from "@/components/DoseFigures";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "90 R&R Journal — Detailed Guide (Beta 1) | AAfiends",
+  title: "The 90 R&R Crash Course — Seven Days, One Sitting | AAfiends",
   description:
-    "The detailed online companion to the 90 Days R&R (Recovery & Restructure) journal — biology first (D.O.S.E.), then the AA 12-Step framework, three pillars, and the new Vipassana + Yoga practice pages.",
+    "Eighty minutes, seven days, one printed journal. It covers what the disease actually is, the four chemicals you rebuild, and then walks day by day from Day Zero to Day Seven. Watch it once with the booklet in front of you and you can start the same day.",
   alternates: { canonical: "https://aafiends.com/90rr" },
 };
 
@@ -495,6 +497,9 @@ export default function NinetyRRPage() {
           </div>
         </section>
 
+        {/* 10. THE CRASH COURSE VIDEO & BOOKLET PAIRING */}
+        <CrashCourseSection starterPdf={STARTER_PDF} starterBookletPdf={STARTER_BOOKLET} />
+
         {/* 11. DOWNLOAD THE JOURNAL */}
         <section className="bg-[#09090b] border border-white/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden scroll-mt-28">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#00f0ff]" />
@@ -621,6 +626,14 @@ export default function NinetyRRPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* 13. CRISIS SUPPORT & SAFETY DISCLAIMER */}
+        <section className="flex flex-col gap-4">
+          <CrisisSupport />
+          <p className="text-xs text-neutral-500 font-mono text-center leading-relaxed">
+            Not medical advice · Peer support and personal experience only · Not affiliated with Alcoholics Anonymous World Services, Inc.
+          </p>
         </section>
       </main>
 
