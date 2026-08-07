@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Newsreader, Public_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -107,6 +108,10 @@ export default function RootLayout({
             <PWARegister />
           </AuthProvider>
         </VocabularyProvider>
+        {/* Pulse AI Agency house badge — last thing before </body>, per the
+            Pulseaa site standards. Dark variant is the default, which is what
+            this site wants, so no window.PULSE_BADGE config is needed. */}
+        <Script src="https://pulseaa.com/badge.js" strategy="lazyOnload" />
       </body>
     </html>
   );
