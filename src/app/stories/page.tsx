@@ -6,9 +6,21 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import StoryDisclaimer from "@/components/StoryDisclaimer";
+import CrisisSupport from "@/components/CrisisSupport";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, getDocs, query, where, serverTimestamp } from "firebase/firestore";
-import { Heart, User, Sparkles, Mic, Lock, X, Send, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
+import { Lock, X, Send, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
+import { PHOTOS } from "@/lib/photos";
+import {
+  Wrap,
+  Section,
+  SectionHead,
+  PageHero,
+  PhotoRow,
+  StackList,
+  PullQuote,
+} from "@/components/design";
 
 // A story's paragraphs can be pre-authored JSX (the seed stories below, which
 // use <br/> for their poem line breaks) OR plain strings pulled from Firestore
@@ -67,11 +79,6 @@ function renderParagraph(p: ReactNode | string, i: number) {
 }
 
 export default function StoriesPage() {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
   const [communityStories, setCommunityStories] = useState<Story[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState("");
@@ -151,220 +158,238 @@ export default function StoriesPage() {
   const stories: Story[] = [...seedStories, ...communityStories];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <main className="flex-grow flex flex-col items-center py-20 px-6 relative z-10">
-        <div className="max-w-5xl w-full">
+      <PageHero
+        photo={PHOTOS.carTalk}
+        height="short"
+        title={
+          <>
+            Stories of <em>strength.</em>
+          </>
+        }
+        lede="In our meetings, we learn that telling our story is the best medicine we have. When you share what you’ve been through, you aren’t just getting it off your chest — you’re showing the next person in line that they aren’t alone."
+      />
 
-          {/* Hero Section */}
-          <motion.div initial="hidden" animate="visible" variants={fadeIn} className="flex flex-col items-center text-center mb-16 border-b border-white/5 pb-16">
-             <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center border border-teal-500/20 text-teal-400 mb-6 shadow-[0_0_30px_rgba(20,184,166,0.1)]">
-                <Heart size={32} />
-             </div>
-             <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-4">
-               Stories of Strength
-             </h1>
-             <span className="text-lg font-medium text-teal-400 block mb-6">
-               Sharing our truth keeps us sober.
-             </span>
-             <p className="max-w-3xl text-neutral-300 text-lg leading-relaxed font-light">
-               In our meetings, we learn that telling our story is the best medicine we have. When you share what you’ve been through, you aren’t just getting it off your chest—you’re showing the next person in line that they aren't alone. Your experience is what builds our collective strength.
-             </p>
-          </motion.div>
+      {/* ── The stories ──────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead lede={<p>Your experience is what builds our collective strength.</p>}>
+            In their <em>own words.</em>
+          </SectionHead>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
-
-            {/* Left Column: The Stories */}
-            <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.2 }} className="lg:col-span-7 flex flex-col gap-6">
-
-              <div className="flex flex-col gap-12">
-                {stories.map((story) => (
-                  <div key={story.id} className="w-full bg-[#0a0a0a] border border-white/5 p-8 md:p-10 rounded-3xl shadow-xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>
-
-                    <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
-                      <div className="w-12 h-12 rounded-full bg-neutral-800 overflow-hidden border border-white/10 flex-shrink-0 flex items-center justify-center">
-                        {story.image ? (
-                          <Image src={story.image} alt={story.name} width={800} height={600} className="w-full h-full object-cover" />
-                        ) : (
-                          <span className="text-teal-400 font-black text-lg">{story.name.charAt(0).toUpperCase()}</span>
-                        )}
-                      </div>
-                      <div>
-                        <h2 className="text-xl font-bold text-white tracking-wide">
-                          {story.name}
-                        </h2>
-                        {story.joinDate && (
-                          <span className="text-neutral-500 text-sm">
-                            AA Member since {story.joinDate}
-                          </span>
-                        )}
-                      </div>
+          <div className="mt-10 border-t border-[#1d231d] sm:mt-14">
+            {stories.map((story) => (
+              <article key={story.id} className="border-b border-[#1d231d] py-10">
+                <div className="flex items-center gap-4">
+                  {story.image ? (
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-[#141814]">
+                      <Image
+                        src={story.image}
+                        alt={`Photograph shared alongside ${story.name}’s story`}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
                     </div>
-
-                    <div className="text-neutral-300 text-lg leading-loose space-y-6 font-serif italic font-light">
-                      {story.paragraphs.map((p, i) => renderParagraph(p, i))}
+                  ) : (
+                    <div className="font-display flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#1d231d] bg-[#141814] text-[1.1rem] text-[#4cc07a]">
+                      {story.name.charAt(0).toUpperCase()}
                     </div>
+                  )}
+                  <div>
+                    <h3 className="font-display text-[1.35rem] leading-tight text-[#f2efe6]">
+                      {story.name}
+                    </h3>
+                    {story.joinDate && (
+                      <p className="font-measure text-[12.5px] text-[#7d7a70]">
+                        AA member since {story.joinDate}
+                      </p>
+                    )}
                   </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right Column: Visual and Submission Flow */}
-            <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.3 }} className="lg:col-span-5 flex flex-col gap-8">
-
-              <div className="relative rounded-[2rem] overflow-hidden border border-teal-500/10 shadow-[0_20px_50px_rgba(20,184,166,0.05)] bg-[#09090b] aspect-[4/3] group">
-                <Image src="/mt_story.png" alt="Finding peace at sunrise" width={800} height={600} className="w-full h-full object-cover opacity-80 transform group-hover:scale-105 transition-transform duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent pointer-events-none"></div>
-              </div>
-
-              <div className="bg-[#0a0a0a] p-8 rounded-[2rem] border border-white/5 shadow-xl flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center mb-6 border border-teal-500/20">
-                  <Sparkles size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">
-                  Share Your Story
-                </h3>
-                <p className="text-neutral-400 text-sm leading-relaxed mb-8">
-                  Your journey matters. Whether you want to write it down or just speak your truth, we're here to listen.
-                </p>
 
-                <button
-                  onClick={() => { setShowForm(true); setSubmitted(false); setError(null); }}
-                  className="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold tracking-wide py-4 px-6 rounded-2xl transition-all duration-300 shadow-[0_0_20px_rgba(13,148,136,0.2)] hover:shadow-[0_0_30px_rgba(13,148,136,0.4)]"
-                >
-                  Share Your Story
-                </button>
-              </div>
-
-            </motion.div>
+                <div className="font-display-italic mt-6 max-w-[58ch] space-y-5 text-[1.05rem] leading-[1.8] text-[#b8b4a6]">
+                  {story.paragraphs.map((p, i) => renderParagraph(p, i))}
+                </div>
+              </article>
+            ))}
           </div>
 
-          {/* Submission Flow Section */}
-          <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.4 }} className="border-t border-white/5 pt-16">
-            <h3 className="text-center text-2xl font-bold text-white tracking-tight mb-12">How it works</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-14">
+            <PullQuote cite="— what we learn in the rooms">
+              Sharing our truth keeps us sober.
+            </PullQuote>
+          </div>
+        </Wrap>
+      </Section>
 
-              <div className="bg-[#0a0a0a] p-6 rounded-2xl border border-white/5 hover:border-teal-500/20 transition-colors flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-teal-500/5 text-teal-400 flex items-center justify-center mb-4 border border-teal-500/10">
-                  <User size={20} />
-                </div>
-                <h4 className="text-white font-medium text-base mb-2">Sign In</h4>
-                <p className="text-neutral-500 text-sm leading-relaxed">Log in to your account. It's safe and private.</p>
-              </div>
-
-              <div className="bg-[#0a0a0a] p-6 rounded-2xl border border-white/5 hover:border-teal-500/20 transition-colors flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-teal-500/5 text-teal-400 flex items-center justify-center mb-4 border border-teal-500/10">
-                  <Sparkles size={20} />
-                </div>
-                <h4 className="text-white font-medium text-base mb-2">Get Started</h4>
-                <p className="text-neutral-500 text-sm leading-relaxed">We guide you through a quick, 3-step setup to help you establish your baseline.</p>
-              </div>
-
-              <div className="bg-[#0a0a0a] p-6 rounded-2xl border border-white/5 hover:border-teal-500/20 transition-colors flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-teal-500/5 text-teal-400 flex items-center justify-center mb-4 border border-teal-500/10">
-                  <Mic size={20} />
-                </div>
-                <h4 className="text-white font-medium text-base mb-2">Record or Write</h4>
-                <p className="text-neutral-500 text-sm leading-relaxed">Don't want to type? Hit the microphone and speak your truth. We’ll take care of the rest.</p>
-              </div>
-
-              <div className="bg-[#0a0a0a] p-6 rounded-2xl border border-white/5 hover:border-teal-500/20 transition-colors flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-teal-500/5 text-teal-400 flex items-center justify-center mb-4 border border-teal-500/10">
-                  <Lock size={20} />
-                </div>
-                <h4 className="text-white font-medium text-base mb-2">Your Privacy Matters</h4>
-                <p className="text-neutral-500 text-sm leading-relaxed">Your story is yours alone. We remove your name and any personal details, keeping your identity strictly protected.</p>
-              </div>
-
+      {/* ── Share yours ──────────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead>
+            Your journey <em>matters.</em>
+          </SectionHead>
+          <PhotoRow photo={PHOTOS.nightCall} flip>
+            <p className="max-w-[50ch] text-[#b8b4a6]">
+              Whether you want to write it down or just speak your truth, we&apos;re here to listen.
+              Submissions are read before anything is published, and nothing appears with your full
+              name on it.
+            </p>
+            <div className="mt-8">
+              <button
+                onClick={() => {
+                  setShowForm(true);
+                  setSubmitted(false);
+                  setError(null);
+                }}
+                className="inline-block rounded-[10px] bg-[#4cc07a] px-6 py-[15px] text-base font-semibold text-[#08130c] transition-[background-color,transform] duration-200 hover:bg-[#5fd08c] active:scale-[0.98]"
+              >
+                Share your story
+              </button>
             </div>
-          </motion.div>
+          </PhotoRow>
+        </Wrap>
+      </Section>
 
-        </div>
-      </main>
+      {/* ── How it works ─────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead>
+            How it <em>works.</em>
+          </SectionHead>
+          <StackList
+            items={[
+              {
+                n: "01",
+                title: "Sign in",
+                body: "Log in to your account. It’s safe and private.",
+              },
+              {
+                n: "02",
+                title: "Get started",
+                body: "We guide you through a quick, 3-step setup to help you establish your baseline.",
+              },
+              {
+                n: "03",
+                title: "Record or write",
+                body: "Don’t want to type? Hit the microphone and speak your truth. We’ll take care of the rest.",
+              },
+              {
+                n: "04",
+                title: "Your privacy matters",
+                body: "Your story is yours alone. We remove your name and any personal details, keeping your identity strictly protected.",
+              },
+            ]}
+          />
+
+          <div className="mt-14 flex flex-col gap-6">
+            <StoryDisclaimer />
+            <CrisisSupport />
+          </div>
+        </Wrap>
+      </Section>
 
       {/* Share Your Story modal */}
       {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={closeForm}>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          onClick={closeForm}
+        >
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            initial={{ opacity: 0, scale: 0.98, y: 8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
-            className="w-full max-w-lg bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl p-8 relative"
+            transition={{ duration: 0.2 }}
+            className="relative w-full max-w-lg rounded-[14px] border border-[#1d231d] bg-[#141814] p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeForm}
-              className="absolute top-5 right-5 text-neutral-500 hover:text-white transition-colors"
+              className="absolute right-5 top-5 text-[#7d7a70] transition-colors hover:text-[#f2efe6]"
               aria-label="Close"
             >
               <X size={20} />
             </button>
 
             {submitted ? (
-              <div className="flex flex-col items-center text-center py-8">
-                <div className="w-14 h-14 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center mb-5 border border-teal-500/20">
-                  <CheckCircle2 size={28} />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">Thank you for sharing</h3>
-                <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
-                  Your story has been received and will be reviewed before it appears here. Sharing your truth keeps us all sober.
+              <div className="flex flex-col items-center py-8 text-center">
+                <CheckCircle2 size={28} className="mb-5 text-[#4cc07a]" aria-hidden="true" />
+                <h3 className="font-display text-[1.5rem] leading-tight text-[#f2efe6]">
+                  Thank you for sharing
+                </h3>
+                <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-[#b8b4a6]">
+                  Your story has been received and will be reviewed before it appears here. Sharing
+                  your truth keeps us all sober.
                 </p>
                 <button
                   onClick={closeForm}
-                  className="mt-8 bg-teal-600 hover:bg-teal-500 text-white font-bold tracking-wide py-3 px-8 rounded-2xl transition-colors"
+                  className="mt-8 rounded-[10px] bg-[#4cc07a] px-8 py-3 text-base font-semibold text-[#08130c] transition-colors hover:bg-[#5fd08c]"
                 >
                   Done
                 </button>
               </div>
             ) : (
               <>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center border border-teal-500/20">
-                    <Sparkles size={20} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white tracking-tight">Share Your Story</h3>
-                </div>
+                <h3 className="font-display text-[1.5rem] leading-tight text-[#f2efe6]">
+                  Share your story
+                </h3>
 
-                <label className="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Name or initial</label>
+                <label
+                  htmlFor="story-name"
+                  className="mt-6 block text-[13.5px] text-[#b8b4a6]"
+                >
+                  Name or initial
+                </label>
                 <input
+                  id="story-name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. MT, or just M."
                   maxLength={60}
-                  className="w-full bg-neutral-900/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 mb-5"
+                  className="mt-2 w-full rounded-[10px] border border-[#1d231d] bg-[#0d0f0d] px-4 py-3 text-[15px] text-[#f2efe6] placeholder-[#7d7a70] transition-colors focus:border-[#4cc07a] focus:outline-none"
                 />
 
-                <label className="block text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">Your story</label>
+                <label
+                  htmlFor="story-text"
+                  className="mt-5 block text-[13.5px] text-[#b8b4a6]"
+                >
+                  Your story
+                </label>
                 <textarea
+                  id="story-text"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Write as much or as little as you like. Leave a blank line between paragraphs."
-                  className="w-full bg-neutral-900/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 resize-none h-40"
+                  className="mt-2 h-40 w-full resize-none rounded-[10px] border border-[#1d231d] bg-[#0d0f0d] px-4 py-3 text-[15px] text-[#f2efe6] placeholder-[#7d7a70] transition-colors focus:border-[#4cc07a] focus:outline-none"
                 />
 
-                <p className="text-neutral-600 text-xs mt-3 leading-relaxed flex items-start gap-2">
-                  <Lock size={12} className="shrink-0 mt-0.5" />
-                  Submissions are reviewed before publishing. Nothing appears publicly until approved.
+                <p className="mt-3 flex items-start gap-2 text-[13px] leading-relaxed text-[#7d7a70]">
+                  <Lock size={13} className="mt-0.5 shrink-0" aria-hidden="true" />
+                  Submissions are reviewed before publishing. Nothing appears publicly until
+                  approved.
                 </p>
 
                 {error && (
-                  <div className="flex items-center gap-2 text-xs text-red-400 bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3 mt-4">
-                    <AlertTriangle size={14} className="shrink-0" /> {error}
+                  <div className="mt-4 flex items-center gap-2 rounded-[10px] border border-[#c2603f]/40 bg-[#c2603f]/[0.07] px-4 py-3 text-[13.5px] text-[#f2efe6]">
+                    <AlertTriangle size={14} className="shrink-0" aria-hidden="true" /> {error}
                   </div>
                 )}
 
                 <button
                   onClick={handleSubmit}
                   disabled={submitting}
-                  className="w-full mt-6 bg-teal-600 hover:bg-teal-500 disabled:opacity-50 text-white font-bold tracking-wide py-4 px-6 rounded-2xl transition-all duration-300 shadow-[0_0_20px_rgba(13,148,136,0.2)] hover:shadow-[0_0_30px_rgba(13,148,136,0.4)] flex items-center justify-center gap-2"
+                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-[10px] bg-[#4cc07a] px-6 py-4 text-base font-semibold text-[#08130c] transition-[background-color,transform] duration-200 hover:bg-[#5fd08c] active:scale-[0.98] disabled:opacity-50"
                 >
                   {submitting ? (
-                    <><Loader2 size={16} className="animate-spin" /> Submitting...</>
+                    <>
+                      <Loader2 size={16} className="animate-spin" aria-hidden="true" /> Submitting…
+                    </>
                   ) : (
-                    <><Send size={16} /> Submit for Review</>
+                    <>
+                      <Send size={16} aria-hidden="true" /> Submit for review
+                    </>
                   )}
                 </button>
               </>

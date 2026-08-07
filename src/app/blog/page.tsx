@@ -1,183 +1,146 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PostVisual from "@/components/PostVisual";
-import { blogPosts, BLOG_SERIES, seriesPosts, PILLAR_STYLES } from "@/lib/blogData";
+import { blogPosts, BLOG_SERIES, seriesPosts, PILLAR_STYLES, type BlogPost } from "@/lib/blogData";
+import { Wrap, Section, SectionHead } from "@/components/design";
 
 /**
- * AAFiends science blog index — added 2026-07-04 (Michael: "create 5-8
- * science based blogs about aafiends.com... more details will be on the
- * substack based on these teaser blogs"). Modeled on racefiends.web.app/blog's
- * card-grid layout, re-themed to AAFiends' emerald/black system and using
- * SiteHeader/SiteFooter (the RaceFiends blog has its own bespoke header —
- * this one stays consistent with the rest of aafiends.com instead).
+ * The blog index — rebuilt August 2026 on the "Dawn Ledger" world (DESIGN.md).
+ *
+ * It used to be three grids of identically sized cards, each one a thumbnail,
+ * a pill, a title and a chevron. Eighteen of those in a column is a wall, not
+ * a table of contents. This is a contents page instead: one photograph per
+ * series, then a rule between every entry, the title in the display serif and
+ * the measurement — part, date, read time — in mono underneath it.
+ *
+ * Every href, every series grouping and every post's own words are unchanged.
+ * Nothing on this page is hidden behind a scroll observer, so a fast scroll
+ * can't land on empty black.
  */
-export default function BlogIndex() {
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-  };
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
 
-  const seriesCategories = new Set(BLOG_SERIES.map((s) => s.category));
+/**
+ * Puts the amber italic on the last word of a heading without editing the
+ * copy — series titles come from data and must stay exactly as written.
+ */
+function emphasizeTail(title: string) {
+  const words = title.trim().split(" ");
+  if (words.length < 2) return <em>{title}</em>;
+  const tail = words.pop();
+  return (
+    <>
+      {words.join(" ")} <em>{tail}</em>
+    </>
+  );
+}
+
+function PostRow({ post, part }: { post: BlogPost; part?: number }) {
+  const meta = [
+    part ? `Part ${String(part).padStart(2, "0")}` : PILLAR_STYLES[post.pillar].label,
+    post.date,
+    post.readTime,
+  ];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 font-sans">
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group grid items-baseline gap-x-8 gap-y-2 border-b border-[#1d231d] px-1 py-7 no-underline transition-colors hover:bg-[#141814] sm:grid-cols-[1fr_auto]"
+    >
+      <div>
+        <h3 className="font-display text-[clamp(1.3rem,2.3vw,1.7rem)] leading-[1.15] text-[#f2efe6] transition-colors group-hover:text-[#4cc07a]">
+          {post.title}
+        </h3>
+        <p className="mt-2.5 max-w-[62ch] text-[15.5px] leading-relaxed text-[#b8b4a6]">
+          {post.excerpt}
+        </p>
+        <p className="font-measure mt-3.5 text-[13px] text-[#7d7a70]">{meta.join(" · ")}</p>
+      </div>
+      <span
+        className="hidden shrink-0 text-[#4cc07a] transition-transform group-hover:translate-x-1 sm:block"
+        aria-hidden
+      >
+        <ChevronRight size={18} />
+      </span>
+    </Link>
+  );
+}
+
+export default function BlogIndex() {
+  const seriesCategories = new Set(BLOG_SERIES.map((s) => s.category));
+
+  const standalone = blogPosts
+    .filter((post) => !post.category || !seriesCategories.has(post.category))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  return (
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 flex flex-col gap-14">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center flex flex-col gap-4 max-w-2xl mx-auto"
-        >
-          <span className="text-[10px] font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full uppercase self-center">
-            The Science
-          </span>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">
-            Data Over <span className="text-[#10b981]">Denial</span>
-          </h1>
-          <p className="text-neutral-400 font-light text-base leading-relaxed">
-            Short, real, cited breakdowns of the biology behind recovery — the actual numbers behind the Engine, Mirror, and Network pillars, not just the philosophy.
-          </p>
-        </motion.div>
+      <main>
+        {/* ── Masthead ──────────────────────────────────────── */}
+        <Section tight>
+          <Wrap>
+            <h1 className="font-display max-w-[15ch] text-[clamp(2.5rem,6.5vw,4.5rem)] leading-[1.04] tracking-[-0.025em] text-[#f2efe6] [&_em]:font-display-italic [&_em]:text-[#e0a45c]">
+              Data over <em>denial.</em>
+            </h1>
+            <p className="mt-6 max-w-[58ch] text-[clamp(1.05rem,1.5vw,1.2rem)] leading-[1.6] text-[#b8b4a6]">
+              Short, real, cited breakdowns of the biology behind recovery — the actual numbers
+              behind the Engine, Mirror, and Network pillars, not just the philosophy.
+            </p>
+          </Wrap>
+        </Section>
 
-        {/* Featured Series Bands */}
-        {BLOG_SERIES.map((s) => {
+        {/* ── The series ────────────────────────────────────── */}
+        {BLOG_SERIES.map((s, i) => {
           const posts = seriesPosts(s);
           if (posts.length === 0) return null;
           return (
-            <div
-              key={s.id}
-              id={s.id}
-              className="flex flex-col gap-6 bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-6 md:p-10 mb-8"
-            >
-              <div className="flex flex-col gap-4">
-                <span
-                  className="text-[10px] font-mono font-bold tracking-widest px-3 py-1 rounded-full uppercase self-start"
-                  style={{ color: s.accent, backgroundColor: `${s.accent}1a` }}
-                >
-                  Featured Series
-                </span>
-
-                <div className="w-full h-32 md:h-48 rounded-2xl overflow-hidden bg-[#050505] border border-white/5 relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.banner} alt={s.title} className="w-full h-full object-cover" />
+            <Section key={s.id} id={s.id} band={i % 2 === 0} tight>
+              <Wrap>
+                <PostVisual post={posts[0]} className="mb-12 max-w-[980px]" />
+                <SectionHead lede={<p>{s.tagline}</p>}>{emphasizeTail(s.title)}</SectionHead>
+                <div className="mt-10 border-t border-[#1d231d] sm:mt-12">
+                  {posts.map((post, idx) => (
+                    <PostRow key={post.slug} post={post} part={idx + 1} />
+                  ))}
                 </div>
-
-                <div className="flex flex-col gap-2 mt-2">
-                  <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">{s.title}</h2>
-                  <p className="text-neutral-400 font-light text-base leading-relaxed">{s.tagline}</p>
-                </div>
-              </div>
-
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={staggerContainer}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4"
-              >
-                {posts.map((post, index) => {
-                  return (
-                    <motion.div
-                      key={post.slug}
-                      variants={fadeIn}
-                      whileHover={{ y: -5 }}
-                      className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-white/20 bg-[#050505]"
-                    >
-                      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                        <div className="w-full h-40 relative">
-                          <PostVisual icon={post.icon} pillar={post.pillar} variant="card" image={post.heroImage} />
-                        </div>
-                        <div className="p-6 flex flex-col flex-1 gap-3">
-                          <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-widest">
-                            <span style={{ color: s.accent }}>Part 0{index + 1}</span>
-                            <span className="text-neutral-500">{post.readTime}</span>
-                          </div>
-                          <h2 className="text-lg font-black text-white leading-tight group-hover:text-[#10b981] transition-colors">
-                            {post.title}
-                          </h2>
-                          <p className="text-xs text-neutral-400 font-light leading-relaxed flex-1">{post.excerpt}</p>
-                          <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-4">
-                            <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">{post.date}</span>
-                            <span className="group-hover:translate-x-1 transition-transform" style={{ color: s.accent }}>
-                              <ChevronRight size={16} />
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            </div>
+              </Wrap>
+            </Section>
           );
         })}
 
-        {/* Rest of the posts */}
-        <div className="flex flex-col gap-6">
-          <h3 className="text-sm font-black uppercase tracking-[0.2em] text-neutral-500 w-full text-left">All Research</h3>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-          >
-            {blogPosts
-              .filter((post) => !post.category || !seriesCategories.has(post.category))
-              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-              .map((post) => {
-                const style = PILLAR_STYLES[post.pillar];
-                return (
-                  <motion.div
-                    key={post.slug}
-                    variants={fadeIn}
-                    whileHover={{ y: -5 }}
-                    className="rounded-3xl overflow-hidden flex flex-col group transition-all duration-300 border border-white/10 hover:border-white/20 bg-[#0a0a0a]"
-                  >
-                    <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                      <div className="w-full h-40 relative">
-                        <PostVisual icon={post.icon} pillar={post.pillar} variant="card" image={post.heroImage} />
-                      </div>
-                      <div className="p-6 flex flex-col flex-1 gap-3">
-                        <div className="flex justify-between items-center text-[9px] font-bold uppercase tracking-widest">
-                          <span className={`${style.text} flex items-center gap-1.5`}>
-                            <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`}></span>
-                            {style.label}
-                          </span>
-                          <span className="text-neutral-500">{post.readTime}</span>
-                        </div>
-                        <h2 className="text-lg font-black text-white leading-tight group-hover:text-[#10b981] transition-colors">
-                          {post.title}
-                        </h2>
-                        <p className="text-xs text-neutral-400 font-light leading-relaxed flex-1">{post.excerpt}</p>
-                        <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-4">
-                          <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">{post.date}</span>
-                          <span className="text-[#10b981] group-hover:translate-x-1 transition-transform">
-                            <ChevronRight size={16} />
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                );
-              })}
-          </motion.div>
-        </div>
+        {/* ── Everything else ───────────────────────────────── */}
+        {standalone.length > 0 && (
+          <Section tight>
+            <Wrap>
+              <SectionHead
+                lede={
+                  <p>
+                    One question per piece, answered with the research that is actually there —
+                    sleep, cold, cravings, wearables, and what the first ninety days really do.
+                  </p>
+                }
+              >
+                The rest of the <em>research.</em>
+              </SectionHead>
+              <div className="mt-10 border-t border-[#1d231d] sm:mt-12">
+                {standalone.map((post) => (
+                  <PostRow key={post.slug} post={post} />
+                ))}
+              </div>
+            </Wrap>
+          </Section>
+        )}
 
-        <div className="text-center border-t border-white/5 pt-10">
-          <p className="text-xs text-neutral-500 font-mono uppercase tracking-widest">
-            Deeper dives on each of these run on The Deficit, our long-form Substack — link coming soon.
-          </p>
-        </div>
+        <Section tight>
+          <Wrap>
+            <p className="max-w-[58ch] border-t border-[#1d231d] pt-8 text-[#b8b4a6]">
+              Deeper dives on each of these run on The Deficit, our long-form Substack — link coming
+              soon.
+            </p>
+          </Wrap>
+        </Section>
       </main>
 
       <SiteFooter />

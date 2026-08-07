@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { ArrowRight, BookMarked } from "lucide-react";
+import {
+  Wrap,
+  Section,
+  SectionHead,
+  EditorialList,
+  CtaRow,
+  ButtonPrimary,
+} from "@/components/design";
 
 export const metadata: Metadata = {
   title: "The Language of the Grid — AAfiends Glossary",
@@ -19,11 +26,14 @@ type Term = {
   href?: string;
 };
 
-type Group = { name: string; blurb: string; terms: Term[] };
+/** `lead` + `em` reassemble `name` — the heading carries one amber italic phrase. */
+type Group = { name: string; lead: string; em: string; blurb: string; terms: Term[] };
 
 const GROUPS: Group[] = [
   {
     name: "The biology",
+    lead: "The",
+    em: "biology.",
     blurb: "Start here. Everything else in the system sits on top of these four words.",
     terms: [
       {
@@ -53,6 +63,8 @@ const GROUPS: Group[] = [
   },
   {
     name: "The framework",
+    lead: "The",
+    em: "framework.",
     blurb: "The AA layer that runs on top of a stabilized body — the part that handles resentment, ego and wreckage.",
     terms: [
       {
@@ -82,6 +94,8 @@ const GROUPS: Group[] = [
   },
   {
     name: "The threat",
+    lead: "The",
+    em: "threat.",
     blurb: "The diagnostic language. Lives primarily on AIVirus.org.",
     terms: [
       {
@@ -108,6 +122,8 @@ const GROUPS: Group[] = [
   },
   {
     name: "The dashboard",
+    lead: "The",
+    em: "dashboard.",
     blurb: "What the words on the app screens mean.",
     terms: [
       {
@@ -144,6 +160,8 @@ const GROUPS: Group[] = [
   },
   {
     name: "The ecosystem",
+    lead: "The",
+    em: "ecosystem.",
     blurb: "Three sites, three jobs.",
     terms: [
       {
@@ -167,64 +185,83 @@ const GROUPS: Group[] = [
 
 export default function GlossaryPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <section className="w-full max-w-5xl mx-auto px-6 pt-20 pb-12">
-        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest bg-[#10b981]/10 px-4 py-1.5 rounded-full border border-[#10b981]/30 mb-7">
-          <BookMarked size={14} /> Plain-English decoder
-        </span>
-        <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tight leading-none mb-7">
-          The language <br /><span className="text-[#10b981]">of the grid.</span>
-        </h1>
-        <p className="max-w-3xl text-lg text-neutral-300 leading-relaxed">
-          This system has its own vocabulary — useful once you&apos;re in it, a wall when you&apos;re not. Every term
-          we use, defined in one line. If a word on any of the three sites doesn&apos;t make sense, it&apos;s here.
-        </p>
-      </section>
+      <Section tight>
+        <Wrap>
+          <h1 className="font-display max-w-[15ch] text-[clamp(2.4rem,5.5vw,4rem)] leading-[1.05] tracking-[-0.025em] text-[#f2efe6] [&_em]:font-display-italic [&_em]:text-[#e0a45c]">
+            The language <em>of the grid.</em>
+          </h1>
+          <p className="mt-5 max-w-[68ch] text-[1.05rem] leading-relaxed text-[#b8b4a6]">
+            This system has its own vocabulary — useful once you&apos;re in it, a wall when
+            you&apos;re not. Every term we use, defined in one line. If a word on any of the three
+            sites doesn&apos;t make sense, it&apos;s here.
+          </p>
+        </Wrap>
+      </Section>
 
-      {GROUPS.map((g) => (
-        <section key={g.name} className="w-full max-w-5xl mx-auto px-6 py-10 border-t border-white/5">
-          <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-2">{g.name}</h2>
-          <p className="text-neutral-500 text-sm leading-relaxed mb-8 max-w-2xl">{g.blurb}</p>
+      {GROUPS.map((g, i) => (
+        <Section key={g.name} band={i % 2 === 0} tight>
+          <Wrap>
+            <SectionHead lede={<p>{g.blurb}</p>}>
+              {g.lead} <em>{g.em}</em>
+            </SectionHead>
 
-          <dl className="flex flex-col gap-4">
-            {g.terms.map((t) => (
-              <div key={t.term} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors">
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-3">
-                  <dt className="text-white font-black uppercase tracking-tight text-lg shrink-0">{t.term}</dt>
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#10b981]">{t.short}</span>
-                </div>
-                <dd className="text-neutral-400 text-sm leading-relaxed">
-                  {t.body}
-                  {t.href && (
-                    <Link
-                      href={t.href}
-                      className="inline-flex items-center gap-1.5 ml-2 text-[#10b981] hover:underline font-bold whitespace-nowrap"
-                    >
-                      More <ArrowRight size={12} />
-                    </Link>
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+            <EditorialList>
+              <dl>
+                {g.terms.map((t) => (
+                  <div
+                    key={t.term}
+                    className="grid gap-2 border-b border-[#1d231d] px-1 py-6 sm:grid-cols-[15rem_1fr] sm:gap-10"
+                  >
+                    <div>
+                      <dt className="font-display text-[1.3rem] leading-tight text-[#f2efe6]">
+                        {t.term}
+                      </dt>
+                      <p className="font-measure mt-1.5 text-[12.5px] leading-relaxed text-[#7d7a70]">
+                        {t.short}
+                      </p>
+                    </div>
+                    <dd className="max-w-[70ch] text-[15.5px] leading-relaxed text-[#b8b4a6]">
+                      {t.body}
+                      {t.href && (
+                        <>
+                          {" "}
+                          <Link
+                            href={t.href}
+                            className="whitespace-nowrap text-[#f2efe6] underline decoration-[#2a322a] underline-offset-4 transition-colors hover:decoration-[#4cc07a]"
+                          >
+                            More &rarr;
+                          </Link>
+                        </>
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </EditorialList>
+          </Wrap>
+        </Section>
       ))}
 
-      <section className="w-full max-w-5xl mx-auto px-6 py-16 border-t border-white/5">
-        <div className="w-full bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] p-10 flex flex-col items-start gap-5">
-          <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
-            Now skip the vocabulary <br /><span className="text-[#10b981]">and just start.</span>
-          </h2>
-          <p className="text-neutral-300 leading-relaxed max-w-2xl">
-            You do not need any of these words to begin. The journal is free, printable, and needs no signup.
-          </p>
-          <Link href="/90rr" className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-black font-black uppercase tracking-widest text-sm py-4 px-8 rounded-xl transition-colors">
-            Get the free 90-day journal <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
+      <Section tight>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                You do not need any of these words to begin. The journal is free, printable, and
+                needs no signup.
+              </p>
+            }
+          >
+            Now skip the vocabulary <em>and just start.</em>
+          </SectionHead>
+          <CtaRow>
+            <ButtonPrimary href="/90rr">Get the free 90-day journal</ButtonPrimary>
+          </CtaRow>
+        </Wrap>
+      </Section>
 
       <SiteFooter />
     </div>

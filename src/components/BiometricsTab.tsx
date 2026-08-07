@@ -45,35 +45,35 @@ export default function BiometricsTab() {
       {/* Stat cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Sleep */}
-        <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5">
+        <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5">
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center gap-2 text-emerald-400">
               <Moon size={18} />
-              <span className="font-bold uppercase text-xs tracking-wider">Sleep</span>
+              <span className="font-bold text-xs tracking-wider">Sleep</span>
             </div>
-            <span className="text-[10px] font-mono text-neutral-600 uppercase tracking-widest">Last Night · Sample</span>
+            <span className="text-[10px] font-mono text-[#7d7a70]">Last Night · Sample</span>
           </div>
           <div className="flex items-end gap-2 mb-3">
-            <span className="text-3xl font-black text-white">7h 12m</span>
+            <span className="text-3xl font-semibold text-[#f2efe6]">7h 12m</span>
             <span className="text-emerald-400 font-bold text-sm mb-1">Score 84</span>
           </div>
-          <div className="w-full bg-neutral-900 h-2 rounded-full overflow-hidden">
+          <div className="w-full bg-[#141814] h-2 rounded-full overflow-hidden">
             <div className="bg-emerald-500 h-full" style={{ width: "84%" }}></div>
           </div>
         </div>
 
         {/* Resting HR */}
-        <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5">
+        <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5">
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center gap-2 text-emerald-400">
               <HeartPulse size={18} />
-              <span className="font-bold uppercase text-xs tracking-wider">Resting HR</span>
+              <span className="font-bold text-xs tracking-wider">Resting HR</span>
             </div>
-            <span className="text-[10px] font-mono text-neutral-600 uppercase tracking-widest">7-Day Avg · Sample</span>
+            <span className="text-[10px] font-mono text-[#7d7a70]">7-Day Avg · Sample</span>
           </div>
           <div className="flex items-end gap-2 mb-3">
-            <span className="text-3xl font-black text-white">58</span>
-            <span className="text-neutral-400 font-bold text-sm mb-1">bpm</span>
+            <span className="text-3xl font-semibold text-[#f2efe6]">58</span>
+            <span className="text-[#b8b4a6] font-bold text-sm mb-1">bpm</span>
           </div>
           <div className="flex gap-1 h-8 items-end">
             {[62, 60, 59, 61, 58, 57, 58].map((bpm, i) => (
@@ -83,34 +83,34 @@ export default function BiometricsTab() {
         </div>
 
         {/* Stress */}
-        <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5">
+        <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5">
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center gap-2 text-emerald-400">
               <BrainCircuit size={18} />
-              <span className="font-bold uppercase text-xs tracking-wider">Stress</span>
+              <span className="font-bold text-xs tracking-wider">Stress</span>
             </div>
-            <span className="text-[10px] font-mono text-neutral-600 uppercase tracking-widest">Current · Sample</span>
+            <span className="text-[10px] font-mono text-[#7d7a70]">Current · Sample</span>
           </div>
           <div className="flex items-end gap-2 mb-3">
-            <span className="text-3xl font-black text-emerald-400">22</span>
-            <span className="text-neutral-400 font-bold text-sm mb-1">/ 100</span>
+            <span className="text-3xl font-semibold text-emerald-400">22</span>
+            <span className="text-[#b8b4a6] font-bold text-sm mb-1">/ 100</span>
           </div>
-          <div className="w-full bg-neutral-900 h-2 rounded-full overflow-hidden">
+          <div className="w-full bg-[#141814] h-2 rounded-full overflow-hidden">
             <div className="bg-emerald-500 h-full" style={{ width: "22%" }}></div>
           </div>
         </div>
       </div>
 
       {/* 7-day chart */}
-      <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5 sm:p-6">
+      <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5 sm:p-6">
         <div className="flex justify-between items-start mb-5">
           <div>
-            <h4 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+            <h4 className="text-[#f2efe6] font-bold text-sm flex items-center gap-2">
               <Watch size={16} className="text-emerald-400" /> 7-Day Telemetry Overlay
             </h4>
-            <p className="text-neutral-500 text-[11px] font-mono mt-1">Sleep · Resting HR · Stress</p>
+            <p className="text-[#7d7a70] text-[11px] font-mono mt-1">Sleep · Resting HR · Stress</p>
           </div>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400/70 border border-emerald-500/20 rounded-full px-2.5 py-1">
+          <span className="text-[10px] font-mono text-emerald-400/70 border border-emerald-500/20 rounded-full px-2.5 py-1">
             Sample Data
           </span>
         </div>
@@ -120,16 +120,16 @@ export default function BiometricsTab() {
             <LineChart data={sampleGarminData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
               <XAxis dataKey="day" stroke="#ffffff40" fontSize={11} tickLine={false} axisLine={false} />
-              <YAxis yAxisId="left" stroke="#10b981" fontSize={11} tickLine={false} axisLine={false} domain={[0, 100]} />
+              <YAxis yAxisId="left" stroke="#4cc07a" fontSize={11} tickLine={false} axisLine={false} domain={[0, 100]} />
               <YAxis yAxisId="right" orientation="right" stroke="#3b82f6" fontSize={11} tickLine={false} axisLine={false} domain={[0, 12]} />
               <Tooltip
-                contentStyle={{ backgroundColor: "#0a0a0a", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "12px" }}
+                contentStyle={{ backgroundColor: "#141814", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "12px" }}
                 itemStyle={{ fontWeight: "bold" }}
                 labelStyle={{ color: "#888", marginBottom: "4px", fontSize: "12px", textTransform: "uppercase" }}
               />
-              <Line yAxisId="left" type="monotone" dataKey="stress" stroke="#ef4444" strokeWidth={2.5} dot={{ r: 3, fill: "#0a0a0a", stroke: "#ef4444", strokeWidth: 2 }} name="Stress" />
-              <Line yAxisId="left" type="monotone" dataKey="hr" stroke="#10b981" strokeWidth={2.5} dot={{ r: 3, fill: "#0a0a0a", stroke: "#10b981", strokeWidth: 2 }} name="Resting HR (bpm)" />
-              <Line yAxisId="right" type="monotone" dataKey="sleep" stroke="#3b82f6" strokeWidth={2.5} dot={{ r: 3, fill: "#0a0a0a", stroke: "#3b82f6", strokeWidth: 2 }} name="Sleep (hrs)" />
+              <Line yAxisId="left" type="monotone" dataKey="stress" stroke="#c2603f" strokeWidth={2.5} dot={{ r: 3, fill: "#141814", stroke: "#c2603f", strokeWidth: 2 }} name="Stress" />
+              <Line yAxisId="left" type="monotone" dataKey="hr" stroke="#4cc07a" strokeWidth={2.5} dot={{ r: 3, fill: "#141814", stroke: "#4cc07a", strokeWidth: 2 }} name="Resting HR (bpm)" />
+              <Line yAxisId="right" type="monotone" dataKey="sleep" stroke="#3b82f6" strokeWidth={2.5} dot={{ r: 3, fill: "#141814", stroke: "#3b82f6", strokeWidth: 2 }} name="Sleep (hrs)" />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -138,11 +138,11 @@ export default function BiometricsTab() {
       {/* Link to the full standalone data page */}
       <Link
         href="/data"
-        className="group flex items-center justify-between bg-[#0a0a0a] border border-white/10 rounded-2xl p-5 hover:border-emerald-500/30 transition-colors"
+        className="group flex items-center justify-between bg-[#141814] border border-[#1d231d] rounded-2xl p-5 hover:border-emerald-500/30 transition-colors"
       >
         <div>
-          <h4 className="text-sm font-black text-white uppercase tracking-widest">Open the full telemetry view</h4>
-          <p className="text-xs text-neutral-400 mt-0.5">The complete Data Over Denial breakdown — protocols, Garmin sync, and the daily inventory.</p>
+          <h4 className="text-sm font-semibold text-[#f2efe6]">Open the full telemetry view</h4>
+          <p className="text-xs text-[#b8b4a6] mt-0.5">The complete Data Over Denial breakdown — protocols, Garmin sync, and the daily inventory.</p>
         </div>
         <ArrowUpRight className="text-emerald-400 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" size={20} />
       </Link>

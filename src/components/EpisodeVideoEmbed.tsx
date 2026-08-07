@@ -44,7 +44,7 @@ export default function EpisodeVideoEmbed({
         onClick={() => setIsPlaying(true)}
         className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center"
       >
-        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#10b981]/90 text-black flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.5)] group-hover:scale-110 group-hover:bg-[#10b981] transition-all duration-300">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#4cc07a]/90 text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-[#4cc07a] transition-all duration-300">
           <Play size={32} className="fill-black translate-x-0.5" />
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function EpisodeVideoEmbed({
         target="_blank"
         rel="noopener noreferrer"
         onClick={(e) => e.stopPropagation()}
-        className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 hover:bg-black text-white text-[10px] font-mono font-bold px-2.5 py-1 rounded-md border border-white/20 flex items-center gap-1 backdrop-blur-sm"
+        className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 hover:bg-black text-[#f2efe6] text-[10px] font-mono font-bold px-2.5 py-1 rounded-md border border-[#2a322a] flex items-center gap-1 backdrop-blur-sm"
         title="Open directly on YouTube"
       >
         <span>YouTube</span>

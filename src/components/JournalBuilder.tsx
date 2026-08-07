@@ -66,38 +66,38 @@ export default function JournalBuilder() {
 
       {/* controls */}
       <div className="no-print grid lg:grid-cols-[1fr_1.1fr] gap-6">
-        <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 flex flex-col gap-4">
+        <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5 flex flex-col gap-4">
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex rounded-xl overflow-hidden border border-white/10">
+            <div className="flex rounded-xl overflow-hidden border border-[#1d231d]">
               {(["half", "full"] as const).map((f) => (
-                <button key={f} onClick={() => setFormat(f)} className={`px-4 py-2 text-xs font-black uppercase tracking-widest ${format === f ? "bg-[#10b981] text-black" : "bg-transparent text-neutral-400"}`}>
+                <button key={f} onClick={() => setFormat(f)} className={`px-4 py-2 text-xs font-semibold ${format === f ? "bg-[#4cc07a] text-black" : "bg-transparent text-[#b8b4a6]"}`}>
                   {f === "half" ? "Half-page 5.5×8.5" : "Full-page 8.5×11"}
                 </button>
               ))}
             </div>
-            <label className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-neutral-400">
+            <label className="flex items-center gap-2 text-xs font-semibold text-[#b8b4a6]">
               Days
               <input type="number" min={1} max={31} value={days} onChange={(e) => setDays(Math.max(1, Math.min(31, +e.target.value || 1)))}
-                className="w-16 bg-[#050505] border border-white/10 rounded-lg px-2 py-1.5 text-white" />
+                className="w-16 bg-[#0d0f0d] border border-[#1d231d] rounded-lg px-2 py-1.5 text-[#f2efe6]" />
             </label>
-            <button onClick={reset} className="ml-auto inline-flex items-center gap-1.5 text-xs font-bold text-neutral-500 hover:text-white uppercase tracking-widest"><RotateCcw size={13} /> Reset</button>
+            <button onClick={reset} className="ml-auto inline-flex items-center gap-1.5 text-xs font-bold text-[#7d7a70] hover:text-[#f2efe6]"><RotateCcw size={13} /> Reset</button>
           </div>
 
           <div className="flex flex-col gap-3 max-h-[420px] overflow-y-auto pr-1">
             {SECTIONS.map((sec) => (
               <div key={sec}>
-                <div className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: SECTION_COLOR[sec] }}>{sec}</div>
+                <div className="text-[10px] font-semibold mb-1.5" style={{ color: SECTION_COLOR[sec] }}>{sec}</div>
                 <div className="flex flex-col gap-1">
                   {rows.filter((r) => r.section === sec).map((r) => (
                     <div key={r.id} className="flex items-center gap-2 group">
                       <button onClick={() => toggle(r.id)} className="flex items-center gap-2 flex-1 text-left">
                         <span className="w-4 h-4 rounded border flex items-center justify-center shrink-0" style={{ borderColor: r.enabled ? SECTION_COLOR[sec] : "#3f3f46", background: r.enabled ? SECTION_COLOR[sec] : "transparent" }}>
-                          {r.enabled && <span className="text-black text-[10px] font-black">✓</span>}
+                          {r.enabled && <span className="text-black text-[10px] font-semibold">✓</span>}
                         </span>
-                        <span className={`text-sm ${r.enabled ? "text-neutral-200" : "text-neutral-600 line-through"}`}>{r.label}</span>
-                        <span className="text-[9px] font-mono text-neutral-600 uppercase">{r.type}</span>
+                        <span className={`text-sm ${r.enabled ? "text-[#f2efe6]" : "text-[#7d7a70] line-through"}`}>{r.label}</span>
+                        <span className="text-[9px] font-mono text-[#7d7a70]">{r.type}</span>
                       </button>
-                      <button onClick={() => remove(r.id)} className="opacity-0 group-hover:opacity-100 text-neutral-600 hover:text-red-400"><Trash2 size={13} /></button>
+                      <button onClick={() => remove(r.id)} className="opacity-0 group-hover:opacity-100 text-[#7d7a70] hover:text-red-400"><Trash2 size={13} /></button>
                     </div>
                   ))}
                 </div>
@@ -105,29 +105,29 @@ export default function JournalBuilder() {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 border-t border-white/10 pt-3">
+          <div className="flex flex-wrap items-center gap-2 border-t border-[#1d231d] pt-3">
             <input value={newLabel} onChange={(e) => setNewLabel(e.target.value)} placeholder="Add your own row…"
-              className="flex-1 min-w-[140px] bg-[#050505] border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-neutral-600" />
-            <select value={newSection} onChange={(e) => setNewSection(e.target.value as Section)} className="bg-[#050505] border border-white/10 rounded-lg px-2 py-2 text-xs text-white">
+              className="flex-1 min-w-[140px] bg-[#0d0f0d] border border-[#1d231d] rounded-lg px-3 py-2 text-sm text-[#f2efe6] placeholder-neutral-600" />
+            <select value={newSection} onChange={(e) => setNewSection(e.target.value as Section)} className="bg-[#0d0f0d] border border-[#1d231d] rounded-lg px-2 py-2 text-xs text-[#f2efe6]">
               {SECTIONS.map((s) => <option key={s} value={s}>{s}</option>)}
             </select>
-            <select value={newType} onChange={(e) => setNewType(e.target.value as RowType)} className="bg-[#050505] border border-white/10 rounded-lg px-2 py-2 text-xs text-white">
+            <select value={newType} onChange={(e) => setNewType(e.target.value as RowType)} className="bg-[#0d0f0d] border border-[#1d231d] rounded-lg px-2 py-2 text-xs text-[#f2efe6]">
               <option value="check">Checkbox</option><option value="scale10">Scale 1–10</option><option value="scale0">Scale 0–10</option><option value="field">Field</option><option value="note">Note lines</option>
             </select>
-            <button onClick={add} className="inline-flex items-center gap-1 bg-[#10b981] text-black text-xs font-black uppercase tracking-widest px-3 py-2 rounded-lg"><Plus size={13} /> Add</button>
+            <button onClick={add} className="inline-flex items-center gap-1 bg-[#4cc07a] text-black text-xs font-semibold px-3 py-2 rounded-lg"><Plus size={13} /> Add</button>
           </div>
 
-          <button onClick={() => window.print()} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-200 text-black text-sm font-black uppercase tracking-widest px-6 py-3.5 rounded-xl">
+          <button onClick={() => window.print()} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-200 text-black text-sm font-semibold px-6 py-3.5 rounded-xl">
             <Printer size={16} /> Print / Save as PDF
           </button>
-          <p className="text-[11px] text-neutral-600 leading-relaxed">
+          <p className="text-[11px] text-[#7d7a70] leading-relaxed">
             Half-page prints two per sheet-worth of size — fold &amp; staple into a mini-book. In the print dialog choose “Save as PDF,” or print on 32&nbsp;lb paper. Your layout is saved on this device.
           </p>
         </div>
 
         {/* live preview (first day) */}
-        <div className="bg-[#050505] border border-white/10 rounded-2xl p-4 overflow-auto max-h-[560px]">
-          <div className="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2">Live preview · Day 1</div>
+        <div className="bg-[#0d0f0d] border border-[#1d231d] rounded-2xl p-4 overflow-auto max-h-[560px]">
+          <div className="text-[10px] font-semibold text-[#7d7a70] mb-2">Live preview · Day 1</div>
           <Sheet day={1} rows={rows} format={format} />
         </div>
       </div>
@@ -147,15 +147,15 @@ function Sheet({ day, rows, format }: { day: number; rows: Row[]; format: "full"
   return (
     <div className="jb-preview bg-white text-[#1c2b33] rounded-lg mx-auto p-6" style={{ width: format === "half" ? "5.5in" : "8.5in", minHeight: format === "half" ? "8.5in" : "11in", fontFamily: "Helvetica, Arial, sans-serif" }}>
       <div className="flex items-baseline justify-between border-b-2 pb-1 mb-3" style={{ borderColor: "#12805c" }}>
-        <div className="text-2xl font-black">DAY {day}</div>
-        <div className="text-[10px] tracking-widest text-neutral-500">DATE __________ · SOBER · DAY ____</div>
+        <div className="text-2xl font-semibold">DAY {day}</div>
+        <div className="text-[10px] text-[#7d7a70]">DATE __________ · SOBER · DAY ____</div>
       </div>
       {SECTIONS.map((sec) => {
         const items = on.filter((r) => r.section === sec);
         if (!items.length) return null;
         return (
           <div key={sec} className="mb-3">
-            <div className="text-white text-[11px] font-black uppercase tracking-wide rounded px-2 py-1 mb-1.5" style={{ background: SECTION_COLOR[sec] }}>
+            <div className="text-[#f2efe6] text-[11px] font-semibold tracking-wide rounded px-2 py-1 mb-1.5" style={{ background: SECTION_COLOR[sec] }}>
               {sec === "Tonight" ? "Tonight · Reflect" : `The ${sec}`}
             </div>
             <div className="flex flex-col gap-1">
@@ -164,7 +164,7 @@ function Sheet({ day, rows, format }: { day: number; rows: Row[]; format: "full"
           </div>
         );
       })}
-      <div className="text-[7px] text-neutral-400 mt-2 border-t pt-1">Not affiliated with A.A.W.S. · Peer support, not medical advice · In crisis: 988 · aafiends.com/90rr</div>
+      <div className="text-[7px] text-[#b8b4a6] mt-2 border-t pt-1">Not affiliated with A.A.W.S. · Peer support, not medical advice · In crisis: 988 · aafiends.com/90rr</div>
     </div>
   );
 }
@@ -178,7 +178,7 @@ function RowView({ r }: { r: Row }) {
     <div className="flex items-center gap-1.5 text-[11px]">
       <span className="font-bold whitespace-nowrap">{r.label}</span>
       <span className="flex gap-1">{Array.from({ length: max - start + 1 }).map((_, i) => (
-        <span key={i} className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-neutral-400 text-[7px] text-neutral-500">{start + i}</span>
+        <span key={i} className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-neutral-400 text-[7px] text-[#7d7a70]">{start + i}</span>
       ))}</span>
     </div>
   );

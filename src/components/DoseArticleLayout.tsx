@@ -4,24 +4,32 @@ import type { LucideIcon } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import BlogContent from "@/components/BlogContent";
-import { DoseHero } from "@/components/DoseFigures";
+import PostVisual from "@/components/PostVisual";
 import type { BlogPost } from "@/lib/blogData";
+import { Wrap, SubHead, CalloutBand, ButtonPrimary, ButtonGhost, CtaRow } from "@/components/design";
 
 /**
- * Shared layout for the /90rr DOSE field guides — added 2026-07-24.
- * Reuses the proven BlogContent section renderer, but with a code-rendered
- * DoseHero banner instead of the blog's PostVisual, and its own CTA that
- * points back into the 90 R&R journal + shopping list rather than /dashboard.
+ * Shared layout for the /90rr DOSE field guides.
+ *
+ * Rebuilt August 2026 to inherit the same editorial masthead as /blog/[slug]:
+ * title in the display serif, standfirst, one mono measurement line, then a
+ * documentary lead photograph and the body in <Prose>. The old DoseHero
+ * banner — a radial-gradient panel with a dot grid, an icon tile and a
+ * letter-spaced pill above the H1 — is exactly the shape DESIGN.md retires,
+ * so the guides now read like the rest of the site instead of like a console.
+ *
+ * `kicker` survives as the guide's series line and now sits *under* the
+ * title with the rest of the measurement, where it is information rather than
+ * an eyebrow. `accent`, `iconName` and `Icon` stay in the signature so the
+ * four /90rr pages keep type-checking; the world's colour comes from the
+ * shared tokens now, not from a per-page hex.
  */
 export default function DoseArticleLayout({
   post,
-  accent,
   kicker,
-  iconName,
-  Icon,
 }: {
   post: BlogPost;
-  accent: string;
+  accent?: string;
   kicker: string;
   iconName?: string;
   Icon?: LucideIcon;
@@ -38,51 +46,67 @@ export default function DoseArticleLayout({
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] font-sans text-neutral-100">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <SiteHeader />
 
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
-        <Link
-          href="/90rr"
-          className="mb-6 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-[#10b981] transition-colors hover:text-emerald-300"
-        >
-          <ChevronLeft size={14} /> Back to 90 R&amp;R
-        </Link>
-
-        <DoseHero kicker={kicker} title={post.title} sub={post.excerpt} accent={accent} iconName={iconName} Icon={Icon} />
-
-        <div className="mb-10 mt-5 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-widest text-neutral-500">
-          <span>{post.author}</span>
-          <span className="h-1 w-1 rounded-full bg-neutral-600" />
-          <span>{post.date}</span>
-          <span className="h-1 w-1 rounded-full bg-neutral-600" />
-          <span>{post.readTime}</span>
-        </div>
-
-        <BlogContent post={post} />
-
-        {/* CTA */}
-        <div className="mt-16 rounded-3xl border border-[#10b981]/20 bg-[#10b981]/[0.04] p-8 text-center sm:p-10">
-          <h3 className="mb-2 text-xl font-black text-white">Track it daily. That is where it sticks.</h3>
-          <p className="mx-auto mb-6 max-w-sm text-sm font-light text-neutral-400">
-            The 90 R&amp;R journal turns everything in this guide into a ten-second daily check across the three pillars.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+      <main className="pb-24 pt-10 sm:pt-16">
+        <Wrap>
+          <div className="mx-auto max-w-[68ch]">
             <Link
               href="/90rr"
-              className="inline-block rounded-full bg-[#10b981] px-8 py-3 text-sm font-black uppercase tracking-widest text-black transition-all hover:bg-emerald-400"
+              className="inline-flex items-center gap-1.5 text-[15px] text-[#b8b4a6] no-underline transition-colors hover:text-[#f2efe6]"
             >
-              Get the Journal
+              <ChevronLeft size={16} aria-hidden /> Back to 90 R&amp;R
             </Link>
-            <Link
-              href="/90rr/shopping-list"
-              className="inline-block rounded-full border border-white/15 px-8 py-3 text-sm font-black uppercase tracking-widest text-white transition-all hover:bg-white/5"
-            >
-              Shopping Lists
-            </Link>
+
+            <h1 className="font-display mt-7 text-[clamp(2.25rem,5.4vw,3.75rem)] leading-[1.06] tracking-[-0.025em] text-[#f2efe6]">
+              {post.title}
+            </h1>
+
+            <p className="mt-6 max-w-[58ch] text-[clamp(1.05rem,1.5vw,1.2rem)] leading-[1.6] text-[#b8b4a6]">
+              {post.excerpt}
+            </p>
+
+            <div className="font-measure mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-t border-[#1d231d] pt-5 text-[13px] text-[#7d7a70]">
+              <span className="text-[#4cc07a]">{post.date}</span>
+              <span aria-hidden>·</span>
+              <span>{post.readTime}</span>
+              <span aria-hidden>·</span>
+              <span>{post.author}</span>
+              <span aria-hidden>·</span>
+              <span>{kicker}</span>
+            </div>
           </div>
-        </div>
+        </Wrap>
+
+        <Wrap className="mt-10 sm:mt-12">
+          <PostVisual post={post} priority className="mx-auto max-w-[980px]" />
+        </Wrap>
+
+        <Wrap className="mt-12 sm:mt-16">
+          <div className="mx-auto max-w-[68ch]">
+            <BlogContent post={post} />
+          </div>
+        </Wrap>
+
+        <Wrap className="mt-20">
+          <div className="mx-auto max-w-[68ch]">
+            <CalloutBand>
+              <SubHead>
+                Track it daily. <em>That is where it sticks.</em>
+              </SubHead>
+              <p className="mt-3 max-w-[52ch] text-[#b8b4a6]">
+                The 90 R&amp;R journal turns everything in this guide into a ten-second daily check
+                across the three pillars.
+              </p>
+              <CtaRow>
+                <ButtonPrimary href="/90rr">Get the journal</ButtonPrimary>
+                <ButtonGhost href="/90rr/shopping-list">See the shopping lists</ButtonGhost>
+              </CtaRow>
+            </CalloutBand>
+          </div>
+        </Wrap>
       </main>
 
       <SiteFooter />

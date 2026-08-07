@@ -47,12 +47,12 @@ export default function GarminSimulator() {
       <button
         onClick={handleSimulate}
         disabled={loading}
-        className="text-[10px] bg-neutral-900 border border-neutral-700 text-neutral-500 hover:text-emerald-400 px-2 py-1 rounded transition-colors"
+        className="text-[10px] bg-[#141814] border border-neutral-700 text-[#7d7a70] hover:text-emerald-400 px-2 py-1 rounded transition-colors"
       >
         {loading ? "[SIMULATING...]" : "[DEV: INJECT GARMIN]"}
       </button>
       {result && (
-        <div className="absolute bottom-full mb-2 left-0 w-48 p-2 bg-neutral-900 border border-neutral-700 text-[10px] text-emerald-400 rounded">
+        <div className="absolute bottom-full mb-2 left-0 w-48 p-2 bg-[#141814] border border-neutral-700 text-[10px] text-emerald-400 rounded">
           {result}
         </div>
       )}

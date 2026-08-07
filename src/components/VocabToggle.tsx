@@ -22,11 +22,11 @@ export default function VocabToggle({ className = "" }: { className?: string }) 
           ? "Tactical vocabulary on — switch back to standard recovery language"
           : "Switch to Tactical (Fiends Grid) vocabulary"
       }
-      className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[10px] font-black uppercase tracking-widest transition-colors ${
-        tactical
-          ? "border-[#10b981]/40 bg-[#10b981]/10 text-[#10b981]"
-          : "border-white/10 bg-white/5 text-neutral-400 hover:text-white"
-      } ${className}`}
+      className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[10px] font-semibold transition-colors ${
+ tactical
+ ? "border-[#4cc07a]/40 bg-[#4cc07a]/10 text-[#4cc07a]"
+ : "border-[#1d231d] bg-[#141814] text-[#b8b4a6] hover:text-[#f2efe6]"
+ } ${className}`}
     >
       <motion.span
         key={mode}

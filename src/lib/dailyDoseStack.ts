@@ -392,7 +392,7 @@ Will I get back to the 100-mile start line? I'd like to. I'm not going to announ
       src: "/90rr/img/dd-ledger.png",
       alt: "Overhead flat lay of the Daily Dose morning stack — glass of salted water, creatine, eggs, sardines, kefir, turmeric",
       caption: "The morning ignition · water, salt, ACV, creatine — before anything else gets a vote",
-      accent: "#10b981",
+      accent: "#4cc07a",
     },
     {
       type: "pullquote",

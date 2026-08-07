@@ -34,7 +34,7 @@ export const PILLAR_STYLES: Record<PillarAccent, { label: string; text: string; 
   engine: { label: "Engine", text: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", dot: "bg-red-500", glow: "rgba(239,68,68,0.35)" },
   mirror: { label: "Mirror", text: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", dot: "bg-blue-500", glow: "rgba(59,130,246,0.35)" },
   network: { label: "Network", text: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/20", dot: "bg-purple-500", glow: "rgba(168,85,247,0.35)" },
-  cross: { label: "Ecosystem", text: "text-[#10b981]", bg: "bg-[#10b981]/10", border: "border-[#10b981]/20", dot: "bg-[#10b981]", glow: "rgba(16,185,129,0.35)" },
+  cross: { label: "Ecosystem", text: "text-[#4cc07a]", bg: "bg-[#4cc07a]/10", border: "border-[#4cc07a]/20", dot: "bg-[#4cc07a]", glow: "rgba(16,185,129,0.35)" },
 };
 
 export type BlogSection =
@@ -493,7 +493,7 @@ export const BLOG_SERIES: BlogSeries[] = [
     title: "The Synthetic Void",
     tagline: "We built a machine that grants every wish — and it is quietly deleting our capacity to endure. Five parts. The draft of Book 2.",
     banner: "/blog/synthetic-void/series-banner.svg",
-    accent: "#00f0ff",
+    accent: "#7fb3a3",
   },
   {
     id: "the-dopamine-trap",
@@ -501,7 +501,7 @@ export const BLOG_SERIES: BlogSeries[] = [
     title: "The Dopamine Trap",
     tagline: "The science of why you can't stop — and how to. Six parts, one see-saw.",
     banner: "/blog/dopamine/series-banner.svg",
-    accent: "#10b981",
+    accent: "#4cc07a",
   },
 ];
 

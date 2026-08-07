@@ -51,39 +51,39 @@ export default function JourneyTab({ daysSober }: { daysSober: number }) {
           days sober + meetings logged, but that wasn't explained anywhere,
           so it read as unlabeled sci-fi jargon (2026-07-03 user feedback). */}
       <div className="flex flex-col gap-1 -mb-2">
-        <h4 className="text-xs font-black text-neutral-500 uppercase tracking-widest">Your 12-Step Progress</h4>
-        <p className="text-xs text-neutral-500 leading-relaxed max-w-xl">
+        <h4 className="text-xs font-semibold text-[#7d7a70]">Your 12-Step Progress</h4>
+        <p className="text-xs text-[#7d7a70] leading-relaxed max-w-xl">
           This tracks which of the 12 Steps you're on. It moves forward automatically as your days sober and logged meetings add up - no need to do anything else here.
         </p>
       </div>
 
       {/* Current Step Banner */}
-      <div className="relative bg-[#0a0a0f] border border-[#00f0ff]/30 rounded-[2rem] p-8 md:p-12 overflow-hidden shadow-[0_0_50px_rgba(0,240,255,0.05)]">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#00f0ff]/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="relative bg-[#0a0a0f] border border-[#7fb3a3]/30 rounded-[2rem] p-8 md:p-12 overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#7fb3a3]/5 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div className="flex flex-col md:flex-row gap-8 items-center justify-between relative z-10">
           <div className="flex flex-col gap-4 max-w-2xl">
             <div className="flex items-center gap-3">
-              <span className="bg-[#00f0ff]/10 text-[#00f0ff] px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase border border-[#00f0ff]/20">
+              <span className="bg-[#7fb3a3]/10 text-[#7fb3a3] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#7fb3a3]/20">
                 Current Step
               </span>
-              <span className="text-neutral-500 text-xs font-bold font-mono tracking-widest uppercase">
+              <span className="text-[#7d7a70] text-xs font-bold font-mono">
                 Step {currentStep.step} of 12
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
-              Step {currentStep.step}: <span className="text-[#00f0ff]">{currentStep.title}</span>
+            <h2 className="text-4xl md:text-5xl font-semibold text-[#f2efe6] tracking-tighter">
+              Step {currentStep.step}: <span className="text-[#7fb3a3]">{currentStep.title}</span>
             </h2>
 
-            <blockquote className="text-neutral-400 italic border-l-4 border-[#00f0ff]/50 pl-4 py-2 mt-2">
+            <blockquote className="text-[#b8b4a6] italic border-l border-[#2a322a] pl-5 py-2 mt-2">
               "{currentStep.quote}"
             </blockquote>
           </div>
 
-          <div className="w-32 h-32 rounded-full border-4 border-[#00f0ff]/20 flex items-center justify-center flex-shrink-0 relative">
-            <div className="absolute inset-0 rounded-full border-4 border-[#00f0ff] animate-[spin_10s_linear_infinite] border-t-transparent border-r-transparent"></div>
-            <span className="text-4xl font-black text-white">{currentStep.step}</span>
+          <div className="w-32 h-32 rounded-full border-4 border-[#7fb3a3]/20 flex items-center justify-center flex-shrink-0 relative">
+            <div className="absolute inset-0 rounded-full border-4 border-[#7fb3a3] animate-[spin_10s_linear_infinite] border-t-transparent border-r-transparent"></div>
+            <span className="text-4xl font-semibold text-[#f2efe6]">{currentStep.step}</span>
           </div>
         </div>
       </div>
@@ -93,58 +93,58 @@ export default function JourneyTab({ daysSober }: { daysSober: number }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Days Progress */}
-          <div className="bg-neutral-900/50 border border-white/5 rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+          <div className="bg-[#141814]/50 border border-[#1d231d] rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
             <div className="flex justify-between items-end">
               <div className="flex flex-col">
-                <span className="text-[10px] text-neutral-500 font-black uppercase tracking-widest">Days Sober</span>
-                <span className="text-lg font-bold text-white flex items-center gap-2">
-                  <Zap size={16} className="text-[#10b981]" /> {daysSober} / {nextStep.days} Days
+                <span className="text-[10px] text-[#7d7a70] font-semibold">Days Sober</span>
+                <span className="text-lg font-bold text-[#f2efe6] flex items-center gap-2">
+                  <Zap size={16} className="text-[#4cc07a]" /> {daysSober} / {nextStep.days} Days
                 </span>
               </div>
-              {daysSober >= nextStep.days && <Shield size={20} className="text-[#10b981]" />}
+              {daysSober >= nextStep.days && <Shield size={20} className="text-[#4cc07a]" />}
             </div>
-            <div className="w-full h-2 bg-neutral-950 rounded-full overflow-hidden">
-              <div className="h-full bg-[#10b981] transition-all duration-1000" style={{ width: `${daysProgress}%` }}></div>
+            <div className="w-full h-2 bg-[#0d0f0d] rounded-full overflow-hidden">
+              <div className="h-full bg-[#4cc07a] transition-all duration-1000" style={{ width: `${daysProgress}%` }}></div>
             </div>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-widest font-mono">
+            <p className="text-[10px] text-[#7d7a70] font-mono">
               {nextStep.days - daysSober > 0 ? `${nextStep.days - daysSober} more days to reach Step ${nextStep.step}` : "Reached."}
             </p>
           </div>
 
           {/* Meetings Progress */}
-          <div className="bg-neutral-900/50 border border-white/5 rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+          <div className="bg-[#141814]/50 border border-[#1d231d] rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
             <div className="flex justify-between items-end">
               <div className="flex flex-col">
-                <span className="text-[10px] text-neutral-500 font-black uppercase tracking-widest">Meetings Attended</span>
-                <span className="text-lg font-bold text-white flex items-center gap-2">
+                <span className="text-[10px] text-[#7d7a70] font-semibold">Meetings Attended</span>
+                <span className="text-lg font-bold text-[#f2efe6] flex items-center gap-2">
                   <Target size={16} className="text-[#ff6b00]" /> {meetings} / {nextStep.meetings} Meetings
                 </span>
               </div>
               {meetings >= nextStep.meetings && <Shield size={20} className="text-[#ff6b00]" />}
             </div>
-            <div className="w-full h-2 bg-neutral-950 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-[#0d0f0d] rounded-full overflow-hidden">
               <div className="h-full bg-[#ff6b00] transition-all duration-1000" style={{ width: `${meetingsProgress}%` }}></div>
             </div>
-            <p className="text-[10px] text-neutral-500 uppercase tracking-widest font-mono">
+            <p className="text-[10px] text-[#7d7a70] font-mono">
               {nextStep.meetings - meetings > 0 ? `${nextStep.meetings - meetings} more meetings to reach Step ${nextStep.step} - use "Log Fellowship" above` : "Reached."}
             </p>
           </div>
 
         </div>
       ) : (
-        <div className="bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] p-6 rounded-2xl flex items-center justify-center gap-3">
+        <div className="bg-[#4cc07a]/10 border border-[#4cc07a]/30 text-[#4cc07a] p-6 rounded-2xl flex items-center justify-center gap-3">
           <Shield size={24} />
-          <span className="text-sm font-black uppercase tracking-widest">You've reached Step 12 - the highest step tracked here.</span>
+          <span className="text-sm font-semibold">You've reached Step 12 - the highest step tracked here.</span>
         </div>
       )}
 
       {/* Next Step Preview */}
       {nextStep && (
-        <div className="flex items-center gap-4 bg-neutral-950 border border-white/5 p-4 rounded-xl opacity-50 grayscale">
-          <Lock size={20} className="text-neutral-500" />
+        <div className="flex items-center gap-4 bg-[#0d0f0d] border border-[#1d231d] p-4 rounded-xl opacity-50 grayscale">
+          <Lock size={20} className="text-[#7d7a70]" />
           <div className="flex flex-col">
-            <span className="text-[10px] text-neutral-500 font-black uppercase tracking-widest">Next Step</span>
-            <span className="text-sm font-bold text-white">Step {nextStep.step}: {nextStep.title}</span>
+            <span className="text-[10px] text-[#7d7a70] font-semibold">Next Step</span>
+            <span className="text-sm font-bold text-[#f2efe6]">Step {nextStep.step}: {nextStep.title}</span>
           </div>
           <ChevronRight size={20} className="text-neutral-700 ml-auto" />
         </div>

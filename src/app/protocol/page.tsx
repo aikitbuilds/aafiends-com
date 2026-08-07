@@ -1,10 +1,23 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { PHOTOS } from "@/lib/photos";
+import type { Photo } from "@/lib/photos";
 import {
-  Footprints, Moon, Apple, Wind, ShieldCheck, ShieldAlert, ArrowRight, Flame,
-  type LucideIcon,
-} from "lucide-react";
+  Wrap,
+  Section,
+  SectionHead,
+  SubHead,
+  PageHero,
+  PhotoRow,
+  StackList,
+  CalloutBand,
+  Prose,
+  ButtonPrimary,
+  ButtonGhost,
+  CtaRow,
+} from "@/components/design";
+import { ShieldCheck, ShieldAlert, Flame } from "lucide-react";
 
 // The BIO 12 — the four-pillar daily protocol (Movement / Sleep / Nutrition /
 // Breath), 3 imperatives each = 12 daily "firewall" checks. This public page is
@@ -14,8 +27,7 @@ import {
 type PillarDef = {
   name: string;
   sub: string;
-  icon: LucideIcon;
-  color: string;
+  photo: Photo;
   why: string;
   items: { label: string; note: string }[];
 };
@@ -24,8 +36,7 @@ const PILLARS: PillarDef[] = [
   {
     name: "Movement",
     sub: "Imperatives 1–3",
-    icon: Footprints,
-    color: "#f97316",
+    photo: PHOTOS.gymLift,
     why: "A clean dopamine and adrenaline lift you earned — teaching the brain to feel good without a substance.",
     items: [
       { label: "Get outside / walk (20+ min)", note: "Outdoor light plus movement sets the body clock and gives the brain a clean dopamine bump it didn't have to steal." },
@@ -36,8 +47,7 @@ const PILLARS: PillarDef[] = [
   {
     name: "Sleep",
     sub: "Imperatives 4–6",
-    icon: Moon,
-    color: "#3b82f6",
+    photo: PHOTOS.kitchenJournal,
     why: "Deep sleep clears metabolic waste and rebuilds GABA — less craving, less anxiety, less fog.",
     items: [
       { label: "7+ hours last night", note: "Duration matters. A short night downregulates the same dopamine receptors the addiction did." },
@@ -48,8 +58,7 @@ const PILLARS: PillarDef[] = [
   {
     name: "Nutrition",
     sub: "Imperatives 7–9",
-    icon: Apple,
-    color: "#10b981",
+    photo: PHOTOS.kitchenFuel,
     why: "Up to ~90% of serotonin is made in the gut. Rebuilding the microbiome restores calm, steady mood.",
     items: [
       { label: "Hydrate (8+ cups)", note: "Dehydration reads as fatigue, headache, and irritability — all of which the virus is happy to blame on sobriety." },
@@ -60,8 +69,7 @@ const PILLARS: PillarDef[] = [
   {
     name: "Breath",
     sub: "Imperatives 10–12",
-    icon: Wind,
-    color: "#06b6d4",
+    photo: PHOTOS.sauna,
     why: "Handing over what you cannot control shifts you out of fight-or-flight, lowering the cortisol that drives the loop.",
     items: [
       { label: "NSDR / breathwork session", note: "Non-sleep deep rest pays back part of the sleep debt and downshifts the nervous system on demand." },
@@ -71,152 +79,143 @@ const PILLARS: PillarDef[] = [
   },
 ];
 
+// Palette-true tones: green holds, amber warns, rust is the crisis end.
 const THREAT_LEVELS = [
-  { range: "12 of 12", label: "MINIMAL", color: "#34d399", note: "Firewall at full strength. The AIV has nothing to feed on today." },
-  { range: "10–11", label: "LOW", color: "#2dd4bf", note: "Defenses solid — close out the last couple." },
-  { range: "7–9", label: "GUARDED", color: "#fbbf24", note: "Holding, but there are gaps in the wall." },
-  { range: "4–6", label: "ELEVATED", color: "#fb923c", note: "Exposure rising. Knock out a few more." },
-  { range: "0–3", label: "CRITICAL", color: "#f87171", note: "Firewall down — this is exactly where the virus thrives." },
+  { range: "12 of 12", label: "Minimal", color: "#4cc07a", safe: true, note: "Firewall at full strength. The AIV has nothing to feed on today." },
+  { range: "10–11", label: "Low", color: "#4cc07a", safe: true, note: "Defenses solid — close out the last couple." },
+  { range: "7–9", label: "Guarded", color: "#e0a45c", safe: false, note: "Holding, but there are gaps in the wall." },
+  { range: "4–6", label: "Elevated", color: "#e0a45c", safe: false, note: "Exposure rising. Knock out a few more." },
+  { range: "0–3", label: "Critical", color: "#c2603f", safe: false, note: "Firewall down — this is exactly where the virus thrives." },
 ];
+
+const pad = (n: number) => String(n).padStart(2, "0");
 
 export default function Bio12ProtocolPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <main className="flex-grow w-full max-w-5xl mx-auto px-6 py-20 flex flex-col gap-20 relative z-10">
-        {/* Header */}
-        <section className="flex flex-col items-start gap-6">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">
-            <ShieldCheck size={14} /> The Daily Firewall
-          </span>
-          <h1 className="text-5xl sm:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-            The BIO 12 <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#06b6d4]">Protocol</span>
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-300 max-w-3xl leading-relaxed font-medium">
-            The 12 biological imperatives that protect your baseline — four pillars, three actions each, checked off
-            every single day. Before the mind can hold a spiritual idea, the nervous system has to stop screaming.
-            This is how you quiet it.
-          </p>
-          <p className="text-sm text-neutral-400 max-w-2xl leading-relaxed">
-            The BIO 12 is the biology leg of the{" "}
-            <Link href="/framework" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4">
-              framework
-            </Link>{" "}
-            and the daily engine of the{" "}
-            <Link href="/90rr" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4">
-              90 R&amp;R journal
-            </Link>
-            .
-          </p>
-        </section>
+      <main className="flex-1">
+        <PageHero
+          photo={PHOTOS.windowStillness}
+          height="short"
+          title={
+            <>
+              The BIO 12 <em>protocol.</em>
+            </>
+          }
+          lede="The 12 biological imperatives that protect your baseline — four pillars, three actions each, checked off every single day. Before the mind can hold a spiritual idea, the nervous system has to stop screaming. This is how you quiet it."
+        />
 
-        {/* The 12, by pillar */}
-        <section className="flex flex-col gap-8">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">The 12 Imperatives</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
-              Four Pillars. Three Actions Each.
-            </h2>
-          </div>
+        <Section tight>
+          <Wrap>
+            <Prose>
+              <p>
+                The BIO 12 is the biology leg of the <Link href="/framework">framework</Link> and the
+                daily engine of the <Link href="/90rr">90 R&amp;R journal</Link>.
+              </p>
+            </Prose>
+          </Wrap>
+        </Section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {PILLARS.map((p, pi) => {
-              const Icon = p.icon;
-              return (
-                <div key={p.name} className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] overflow-hidden flex flex-col">
-                  <div className="px-6 py-5 flex items-center justify-between" style={{ backgroundColor: `${p.color}1a`, borderBottom: `1px solid ${p.color}40` }}>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl flex items-center justify-center text-black" style={{ backgroundColor: p.color }}>
-                        <Icon size={20} />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-black uppercase tracking-tight text-lg leading-none">{p.name}</h3>
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.sub}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6 flex flex-col gap-4">
-                    <p className="text-sm text-neutral-400 leading-relaxed italic border-l-2 pl-4" style={{ borderColor: p.color }}>
-                      {p.why}
-                    </p>
-                    {p.items.map((item, i) => (
-                      <div key={item.label} className="flex gap-4">
-                        <span
-                          className="w-7 h-7 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5 text-black"
-                          style={{ backgroundColor: p.color }}
-                        >
-                          {pi * 3 + i + 1}
-                        </span>
-                        <div>
-                          <p className="text-white font-bold text-sm">{item.label}</p>
-                          <p className="text-neutral-400 text-sm leading-relaxed">{item.note}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        {/* ── The 12, by pillar ────────────────────────────────── */}
+        <Section band>
+          <Wrap>
+            <SectionHead
+              lede={<p>The 12 imperatives, in the order you run them.</p>}
+            >
+              Four pillars. <em>Three actions each.</em>
+            </SectionHead>
 
-        {/* Threat levels */}
-        <section className="flex flex-col gap-8">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">Scoring</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
-              Your Threat Level
-            </h2>
-            <p className="text-neutral-300 leading-relaxed max-w-3xl mt-2">
-              Count how many of the 12 you completed today. The score isn&apos;t a grade — it&apos;s a weather report
-              on how exposed you are to the virus right now. Ten or better keeps the streak alive.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3">
-            {THREAT_LEVELS.map((t) => (
-              <div key={t.label} className="flex items-center gap-4 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 flex-wrap sm:flex-nowrap">
-                {t.label === "MINIMAL" || t.label === "LOW" ? (
-                  <ShieldCheck size={22} style={{ color: t.color }} className="shrink-0" />
-                ) : (
-                  <ShieldAlert size={22} style={{ color: t.color }} className="shrink-0" />
-                )}
-                <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest w-16 shrink-0">{t.range}</span>
-                <span className="font-black uppercase tracking-tight w-28 shrink-0" style={{ color: t.color }}>{t.label}</span>
-                <span className="text-sm text-neutral-400 leading-relaxed">{t.note}</span>
+            {PILLARS.map((p, pi) => (
+              <div key={p.name}>
+                <PhotoRow photo={p.photo} flip={pi % 2 === 1}>
+                  <SubHead>{p.name}</SubHead>
+                  <p className="font-measure mt-2 text-[13px] text-[#7d7a70]">{p.sub}</p>
+                  <p className="mt-4 max-w-[50ch] text-[#b8b4a6]">{p.why}</p>
+                </PhotoRow>
+                <StackList
+                  items={p.items.map((item, i) => ({
+                    n: pad(pi * 3 + i + 1),
+                    title: item.label,
+                    body: item.note,
+                  }))}
+                />
               </div>
             ))}
-          </div>
-        </section>
+          </Wrap>
+        </Section>
 
-        {/* CTA */}
-        <section className="bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] p-8 md:p-12 flex flex-col items-center text-center gap-5">
-          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest bg-[#f59e0b]/10 px-3 py-1 rounded-full border border-[#f59e0b]/30">
-            <Flame size={14} /> Streak rule: 10 of 12 keeps the flame
-          </span>
-          <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
-            Track the 12, every day
-          </h2>
-          <p className="text-neutral-300 max-w-2xl leading-relaxed">
-            The printable journal carries the BIO 12 on paper; the member dashboard tracks it with a live threat level
-            and streak. Same 12 checks either way — pick your weapon.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <Link
-              href="/90rr"
-              className="py-4 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center gap-2"
+        {/* ── Threat levels ────────────────────────────────────── */}
+        <Section>
+          <Wrap>
+            <SectionHead
+              lede={
+                <p>
+                  Count how many of the 12 you completed today. The score isn&rsquo;t a grade —
+                  it&rsquo;s a weather report on how exposed you are to the virus right now. Ten or
+                  better keeps the streak alive.
+                </p>
+              }
             >
-              Get the free journal <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/dashboard"
-              className="py-4 px-8 rounded-2xl border border-white/15 text-white text-sm font-bold tracking-widest uppercase hover:border-[#10b981]/50 hover:text-[#10b981] transition-all"
+              Your <em>threat level.</em>
+            </SectionHead>
+
+            <div className="mt-10 border-t border-[#1d231d] sm:mt-14">
+              {THREAT_LEVELS.map((t) => {
+                const Icon = t.safe ? ShieldCheck : ShieldAlert;
+                return (
+                  <div
+                    key={t.label}
+                    className="grid grid-cols-[1.25rem_1fr] items-baseline gap-x-4 border-b border-[#1d231d] px-1 py-6 sm:grid-cols-[1.25rem_6rem_1fr] sm:gap-x-6"
+                  >
+                    <Icon size={17} style={{ color: t.color }} className="shrink-0 translate-y-[3px]" />
+                    <span className="font-measure text-sm" style={{ color: t.color }}>
+                      {t.range}
+                    </span>
+                    <div className="col-span-2 mt-2 sm:col-span-1 sm:mt-0">
+                      <h3
+                        className="font-display text-[1.3rem] leading-tight"
+                        style={{ color: t.color }}
+                      >
+                        {t.label}
+                      </h3>
+                      <p className="mt-1 max-w-[56ch] text-[15.5px] text-[#b8b4a6]">{t.note}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </Wrap>
+        </Section>
+
+        {/* ── CTA ──────────────────────────────────────────────── */}
+        <Section band>
+          <Wrap>
+            <SectionHead
+              lede={
+                <p>
+                  The printable journal carries the BIO 12 on paper; the member dashboard tracks it
+                  with a live threat level and streak. Same 12 checks either way — pick your weapon.
+                </p>
+              }
             >
-              Open the dashboard tracker
-            </Link>
-          </div>
-        </section>
+              Track the 12, <em>every day.</em>
+            </SectionHead>
+
+            <CalloutBand className="mt-9 max-w-[62ch]">
+              <p className="font-measure flex items-center gap-2.5 text-[13.5px] text-[#e0a45c]">
+                <Flame size={15} className="shrink-0" />
+                Streak rule: 10 of 12 keeps the flame
+              </p>
+            </CalloutBand>
+
+            <CtaRow>
+              <ButtonPrimary href="/90rr">Get the free journal</ButtonPrimary>
+              <ButtonGhost href="/dashboard">Open the dashboard tracker</ButtonGhost>
+            </CtaRow>
+          </Wrap>
+        </Section>
       </main>
 
       <SiteFooter />

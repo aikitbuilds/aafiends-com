@@ -115,20 +115,20 @@ function blobToBase64(blob: Blob): Promise<string> {
 // meaning instead of a bare number). Kept as a literal array (not
 // template-built) so Tailwind's static scanner picks up every class.
 const SCALE_COLORS = [
-  { text: "text-emerald-400", bg: "bg-emerald-500/25", border: "border-emerald-400", glow: "shadow-[0_0_16px_rgba(16,185,129,0.5)]", faintBg: "bg-emerald-500/10", faintBorder: "border-emerald-500/40" },
-  { text: "text-teal-400", bg: "bg-teal-500/25", border: "border-teal-400", glow: "shadow-[0_0_16px_rgba(20,184,166,0.5)]", faintBg: "bg-teal-500/10", faintBorder: "border-teal-500/40" },
-  { text: "text-amber-400", bg: "bg-amber-500/25", border: "border-amber-400", glow: "shadow-[0_0_16px_rgba(245,158,11,0.5)]", faintBg: "bg-amber-500/10", faintBorder: "border-amber-500/40" },
-  { text: "text-orange-400", bg: "bg-orange-500/25", border: "border-orange-400", glow: "shadow-[0_0_16px_rgba(249,115,22,0.5)]", faintBg: "bg-orange-500/10", faintBorder: "border-orange-500/40" },
-  { text: "text-red-400", bg: "bg-red-500/25", border: "border-red-400", glow: "shadow-[0_0_16px_rgba(239,68,68,0.5)]", faintBg: "bg-red-500/10", faintBorder: "border-red-500/40" },
+  { text: "text-emerald-400", bg: "bg-emerald-500/25", border: "border-emerald-400", glow: "", faintBg: "bg-emerald-500/10", faintBorder: "border-emerald-500/40" },
+  { text: "text-teal-400", bg: "bg-teal-500/25", border: "border-teal-400", glow: "", faintBg: "bg-teal-500/10", faintBorder: "border-teal-500/40" },
+  { text: "text-amber-400", bg: "bg-amber-500/25", border: "border-amber-400", glow: "", faintBg: "bg-amber-500/10", faintBorder: "border-amber-500/40" },
+  { text: "text-orange-400", bg: "bg-orange-500/25", border: "border-orange-400", glow: "", faintBg: "bg-orange-500/10", faintBorder: "border-orange-500/40" },
+  { text: "text-red-400", bg: "bg-red-500/25", border: "border-red-400", glow: "", faintBg: "bg-red-500/10", faintBorder: "border-red-500/40" },
 ];
 
 // Literal per-item accent colors for "Today's Actions" - was flat red for
 // every row regardless of which action it was.
 const ACTION_COLORS = [
-  { text: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500", check: "bg-blue-500", glow: "shadow-[0_0_18px_rgba(59,130,246,0.4)]", faintBg: "bg-blue-500/5", faintBorder: "border-blue-500/40" },
-  { text: "text-violet-400", bg: "bg-violet-500/20", border: "border-violet-500", check: "bg-violet-500", glow: "shadow-[0_0_18px_rgba(139,92,246,0.4)]", faintBg: "bg-violet-500/5", faintBorder: "border-violet-500/40" },
-  { text: "text-emerald-400", bg: "bg-emerald-500/20", border: "border-emerald-500", check: "bg-emerald-500", glow: "shadow-[0_0_18px_rgba(16,185,129,0.4)]", faintBg: "bg-emerald-500/5", faintBorder: "border-emerald-500/40" },
-  { text: "text-teal-400", bg: "bg-teal-500/20", border: "border-teal-500", check: "bg-teal-500", glow: "shadow-[0_0_18px_rgba(20,184,166,0.4)]", faintBg: "bg-teal-500/5", faintBorder: "border-teal-500/40" },
+  { text: "text-blue-400", bg: "bg-blue-500/20", border: "border-blue-500", check: "bg-blue-500", glow: "", faintBg: "bg-blue-500/5", faintBorder: "border-blue-500/40" },
+  { text: "text-violet-400", bg: "bg-violet-500/20", border: "border-violet-500", check: "bg-violet-500", glow: "", faintBg: "bg-violet-500/5", faintBorder: "border-violet-500/40" },
+  { text: "text-emerald-400", bg: "bg-emerald-500/20", border: "border-emerald-500", check: "bg-emerald-500", glow: "", faintBg: "bg-emerald-500/5", faintBorder: "border-emerald-500/40" },
+  { text: "text-teal-400", bg: "bg-teal-500/20", border: "border-teal-500", check: "bg-teal-500", glow: "", faintBg: "bg-teal-500/5", faintBorder: "border-teal-500/40" },
 ];
 
 // Rotation for "What Helped Today" chips - was flat red for every chip.
@@ -330,33 +330,33 @@ export default function TelemetryLog() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="glass-panel p-6 md:p-8 rounded-3xl border border-emerald-500/30 flex flex-col gap-6 shadow-[0_0_30px_rgba(16,185,129,0.1)] h-full min-h-[400px]"
+        className="glass-panel p-6 md:p-8 rounded-[14px] border border-emerald-500/30 flex flex-col gap-6 h-full min-h-[400px]"
       >
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0 shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+          <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 shrink-0">
             <CheckCircle2 size={24} />
           </div>
           <div>
-            <h3 className="text-lg font-black uppercase tracking-widest text-white">Check-In Complete.</h3>
-            <p className="text-xs text-neutral-400 font-light">Your check-in has been saved.</p>
+            <h3 className="text-lg font-semibold text-[#f2efe6]">Check-In Complete.</h3>
+            <p className="text-xs text-[#b8b4a6] font-light">Your check-in has been saved.</p>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest flex items-center gap-1.5">
+          <span className="text-[10px] font-semibold text-indigo-400 flex items-center gap-1.5">
             <Sparkles size={12} /> What's Really Going On
           </span>
-          <p className="text-sm text-neutral-200 leading-relaxed">{mirrorResult.theWhy}</p>
+          <p className="text-sm text-[#f2efe6] leading-relaxed">{mirrorResult.theWhy}</p>
         </div>
 
         {mirrorResult.gentleAlerts?.length > 0 && (
           <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest flex items-center gap-1.5">
+            <span className="text-[10px] font-semibold text-amber-400 flex items-center gap-1.5">
               <AlertTriangle size={12} /> Things to Watch
             </span>
             <ul className="flex flex-col gap-1.5">
               {mirrorResult.gentleAlerts.map((alert, i) => (
-                <li key={i} className="text-xs text-neutral-300 flex items-start gap-2">
+                <li key={i} className="text-xs text-[#b8b4a6] flex items-start gap-2">
                   <span className="text-amber-500 mt-0.5">-</span> {alert}
                 </li>
               ))}
@@ -366,12 +366,12 @@ export default function TelemetryLog() {
 
         {mirrorResult.reliefPlan?.length > 0 && (
           <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center gap-1.5">
+            <span className="text-[10px] font-semibold text-emerald-400 flex items-center gap-1.5">
               <ListChecks size={12} /> What To Do Next
             </span>
             <ol className="flex flex-col gap-1.5">
               {mirrorResult.reliefPlan.map((step, i) => (
-                <li key={i} className="text-xs text-neutral-300 flex items-start gap-2">
+                <li key={i} className="text-xs text-[#b8b4a6] flex items-start gap-2">
                   <span className="text-emerald-500 font-bold">{i + 1}.</span> {step}
                 </li>
               ))}
@@ -386,7 +386,7 @@ export default function TelemetryLog() {
             setRecStatus("idle");
             setTranscript("");
           }}
-          className="mt-auto px-6 py-2 text-xs font-bold uppercase tracking-widest text-neutral-500 hover:text-white transition-colors self-center"
+          className="mt-auto px-6 py-2 text-xs font-bold text-[#7d7a70] hover:text-[#f2efe6] transition-colors self-center"
         >
           Log Another Check-In
         </button>
@@ -396,29 +396,29 @@ export default function TelemetryLog() {
 
   return (
     <div className="w-full h-full flex flex-col gap-6">
-      <div className="flex items-center justify-between border-b border-white/10 pb-4">
-        <h3 className="text-lg font-black uppercase text-white tracking-widest flex items-center gap-2">
+      <div className="flex items-center justify-between border-b border-[#1d231d] pb-4">
+        <h3 className="text-lg font-semibold text-[#f2efe6] flex items-center gap-2">
           <Activity className="text-red-500" size={20} /> {t("telemetry")}
         </h3>
       </div>
 
       {/* Type vs. Record toggle */}
-      <div className="flex gap-1.5 p-1 bg-neutral-900/60 rounded-xl border border-white/5 self-start">
+      <div className="flex gap-1.5 p-1 bg-[#141814]/60 rounded-xl border border-[#1d231d] self-start">
         <button
           type="button"
           onClick={() => setInputMode("type")}
-          className={`px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-colors ${
-            inputMode === "type" ? "bg-red-500/20 text-red-400" : "text-neutral-500 hover:text-neutral-300"
-          }`}
+          className={`px-4 py-2 rounded-lg text-[10px] font-semibold transition-colors ${
+ inputMode === "type" ? "bg-red-500/20 text-red-400" : "text-[#7d7a70] hover:text-[#b8b4a6]"
+ }`}
         >
           Type It
         </button>
         <button
           type="button"
           onClick={() => setInputMode("record")}
-          className={`px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-colors flex items-center gap-1.5 ${
-            inputMode === "record" ? "bg-red-500/20 text-red-400" : "text-neutral-500 hover:text-neutral-300"
-          }`}
+          className={`px-4 py-2 rounded-lg text-[10px] font-semibold transition-colors flex items-center gap-1.5 ${
+ inputMode === "record" ? "bg-red-500/20 text-red-400" : "text-[#7d7a70] hover:text-[#b8b4a6]"
+ }`}
         >
           <Mic size={12} /> Record It
         </button>
@@ -432,7 +432,7 @@ export default function TelemetryLog() {
               actually meant). Now 5 tappable, color-coded options per
               question, each with its own short description. */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-black text-neutral-500 uppercase tracking-widest">How You're Feeling Today (1-5)</h4>
+            <h4 className="text-xs font-semibold text-[#7d7a70]">How You're Feeling Today (1-5)</h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <ScaleField
@@ -497,7 +497,7 @@ export default function TelemetryLog() {
           {/* Section 2: Today's Actions - each row now has its own accent
               color (was flat red for all four) */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-black text-neutral-500 uppercase tracking-widest">Today's Actions</h4>
+            <h4 className="text-xs font-semibold text-[#7d7a70]">Today's Actions</h4>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <ToggleField label={`Hit a Meeting (${t("grid")})`} checked={anchors.hitMeeting} onClick={() => handleToggle("hitMeeting")} color={ACTION_COLORS[0]} />
@@ -510,7 +510,7 @@ export default function TelemetryLog() {
           {/* Section 3: What Helped Today - each chip now cycles through a
               color rotation (was flat red for every chip) */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-sm font-black text-neutral-400 uppercase tracking-widest">What Helped Today</h4>
+            <h4 className="text-sm font-semibold text-[#b8b4a6]">What Helped Today</h4>
 
             <div className="flex flex-wrap gap-2 mb-1">
               {["Called a Fellow", "Prayed / Meditated", "Hit a Meeting", "Read Literature", "Physical Exercise"].map((opt, idx) => {
@@ -521,7 +521,7 @@ export default function TelemetryLog() {
                     key={opt}
                     type="button"
                     onClick={() => setOverride(opt)}
-                    className={`px-3.5 py-2 rounded-lg text-[11px] font-black uppercase tracking-widest transition-all border ${c.text} ${
+                    className={`px-3.5 py-2 rounded-lg text-[11px] font-semibold  transition-all border ${c.text} ${
                       selected
                         ? `${c.bg} ${c.border} scale-105`
                         : `${c.bg} border-transparent opacity-80 hover:opacity-100`
@@ -537,7 +537,7 @@ export default function TelemetryLog() {
               value={override}
               onChange={(e) => setOverride(e.target.value)}
               placeholder="Write your own notes... (optional — a fast tap above still counts as a check-in)"
-              className="w-full bg-neutral-900/50 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 resize-none h-20"
+              className="w-full bg-[#141814]/50 border border-[#1d231d] rounded-xl p-4 text-sm text-[#f2efe6] placeholder-neutral-600 focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 resize-none h-20"
             />
           </div>
 
@@ -550,7 +550,7 @@ export default function TelemetryLog() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] disabled:opacity-50"
+            className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-[#f2efe6] text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {submitting ? "Getting Your Reflection..." : "Submit Check-In"} <ChevronRight size={16} />
           </button>
@@ -558,16 +558,16 @@ export default function TelemetryLog() {
       ) : (
         <div className="flex flex-col gap-6">
           {recStatus === "idle" && (
-            <div className="flex flex-col items-center gap-4 py-10 bg-neutral-900/40 rounded-2xl border border-white/5">
+            <div className="flex flex-col items-center gap-4 py-10 bg-[#141814]/40 rounded-2xl border border-[#1d231d]">
               <button
                 type="button"
                 onClick={startRecording}
-                className="w-20 h-20 rounded-full bg-red-600 hover:bg-red-500 flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.4)] transition-colors"
+                className="w-20 h-20 rounded-full bg-red-600 hover:bg-red-500 flex items-center justify-center transition-colors"
               >
-                <Mic size={28} className="text-white" />
+                <Mic size={28} className="text-[#f2efe6]" />
               </button>
-              <p className="text-xs text-neutral-400 uppercase tracking-widest font-bold">Tap to start recording</p>
-              <p className="text-[10px] text-neutral-600 max-w-xs text-center leading-relaxed">
+              <p className="text-xs text-[#b8b4a6] font-bold">Tap to start recording</p>
+              <p className="text-[10px] text-[#7d7a70] max-w-xs text-center leading-relaxed">
                 Talk through how today actually went. Up to 3 minutes — you'll get to read and edit the transcript before anything is analyzed.
               </p>
             </div>
@@ -578,29 +578,29 @@ export default function TelemetryLog() {
               <button
                 type="button"
                 onClick={stopRecording}
-                className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.6)] animate-pulse"
+                className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center"
               >
-                <Square size={22} className="text-white" fill="white" />
+                <Square size={22} className="text-[#f2efe6]" fill="white" />
               </button>
-              <p className="text-sm font-black text-red-400 font-mono">{formatSeconds(recSeconds)}</p>
-              <p className="text-[10px] text-neutral-500 uppercase tracking-widest">Recording... tap to stop</p>
+              <p className="text-sm font-semibold text-red-400 font-mono">{formatSeconds(recSeconds)}</p>
+              <p className="text-[10px] text-[#7d7a70]">Recording... tap to stop</p>
             </div>
           )}
 
           {recStatus === "transcribing" && (
             <div className="flex flex-col items-center gap-3 py-14">
-              <p className="text-xs font-mono uppercase tracking-widest text-neutral-500 animate-pulse">Transcribing your check-in...</p>
+              <p className="text-xs font-mono text-[#7d7a70]">Transcribing your check-in...</p>
             </div>
           )}
 
           {recStatus === "review" && (
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
-                <h4 className="text-xs font-black text-neutral-500 uppercase tracking-widest">Review Your Transcript</h4>
+                <h4 className="text-xs font-semibold text-[#7d7a70]">Review Your Transcript</h4>
                 <button
                   type="button"
                   onClick={() => { setRecStatus("idle"); setTranscript(""); }}
-                  className="text-[10px] font-bold uppercase tracking-widest text-neutral-500 hover:text-white transition-colors"
+                  className="text-[10px] font-bold text-[#7d7a70] hover:text-[#f2efe6] transition-colors"
                 >
                   Record Again
                 </button>
@@ -609,7 +609,7 @@ export default function TelemetryLog() {
                 value={transcript}
                 onChange={(e) => setTranscript(e.target.value)}
                 placeholder="Your transcript will appear here — fix anything misheard before submitting."
-                className="w-full bg-neutral-900/50 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 resize-none h-40"
+                className="w-full bg-[#141814]/50 border border-[#1d231d] rounded-xl p-4 text-sm text-[#f2efe6] placeholder-neutral-600 focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 resize-none h-40"
               />
             </div>
           )}
@@ -631,7 +631,7 @@ export default function TelemetryLog() {
               type="button"
               onClick={submitVoiceCheckIn}
               disabled={submitting || !transcript.trim()}
-              className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] disabled:opacity-50"
+              className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-[#f2efe6] text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {submitting ? "Getting Your Reflection..." : "Submit Check-In"} <ChevronRight size={16} />
             </button>
@@ -657,8 +657,8 @@ function ScaleField({ label, name, value, onChange, icon, levels }: {
   levels: { value: number; label: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-3 bg-neutral-900/40 p-4 rounded-2xl border border-white/5">
-      <span className="text-sm font-bold text-white flex items-center gap-2">{icon} {label}</span>
+    <div className="flex flex-col gap-3 bg-[#141814]/40 p-4 rounded-2xl border border-[#1d231d]">
+      <span className="text-sm font-bold text-[#f2efe6] flex items-center gap-2">{icon} {label}</span>
       <div className="grid grid-cols-5 gap-1.5">
         {levels.map((level, idx) => {
           const c = SCALE_COLORS[idx] || SCALE_COLORS[SCALE_COLORS.length - 1];
@@ -672,8 +672,8 @@ function ScaleField({ label, name, value, onChange, icon, levels }: {
                 selected ? `${c.bg} ${c.border} ${c.glow} scale-[1.04]` : `${c.faintBg} ${c.faintBorder}`
               }`}
             >
-              <span className={`text-xl font-black ${c.text}`}>{level.value}</span>
-              <span className={`text-[10px] font-bold uppercase leading-tight text-center ${c.text} ${selected ? "" : "opacity-70"}`}>
+              <span className={`text-xl font-semibold ${c.text}`}>{level.value}</span>
+              <span className={`text-[10px] font-bold leading-tight text-center ${c.text} ${selected ? "" : "opacity-70"}`}>
                 {level.label}
               </span>
             </button>
@@ -700,11 +700,11 @@ function ToggleField({ label, checked, onClick, color }: {
           : `${color.faintBg} ${color.faintBorder}`
       }`}
     >
-      <span className={`text-sm font-bold transition-colors ${checked ? "text-white" : color.text}`}>
+      <span className={`text-sm font-bold transition-colors ${checked ? "text-[#f2efe6]" : color.text}`}>
         {label}
       </span>
       <div className={`w-5 h-5 rounded flex items-center justify-center transition-colors ${
-        checked ? `${color.check} text-white` : `border ${color.border}`
+        checked ? `${color.check} text-[#f2efe6]` : `border ${color.border}`
       }`}>
         {checked && <Check size={12} strokeWidth={4} />}
       </div>

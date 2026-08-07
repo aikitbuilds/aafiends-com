@@ -50,19 +50,19 @@ export default function DashboardPreview() {
   const { login } = useAuth();
 
   return (
-    <div className="w-full bg-[#0a0a0a] border border-[#10b981]/20 rounded-[2rem] p-6 md:p-10 shadow-[0_0_60px_rgba(16,185,129,0.08)] relative overflow-hidden">
+    <div className="w-full bg-[#141814] border border-[#4cc07a]/20 rounded-[2rem] p-6 md:p-10 relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
       <div className="relative z-10 flex flex-col gap-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full uppercase border border-[#10b981]/30 w-fit flex items-center gap-2">
+            <span className="text-xs font-mono font-bold text-[#4cc07a] bg-[#4cc07a]/10 px-3 py-1 rounded-full border border-[#4cc07a]/30 w-fit flex items-center gap-2">
               <Activity size={14} /> Sample Data — Your Dashboard, Populated
             </span>
-            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mt-4">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#f2efe6] tracking-tight mt-4">
               This Is What You&apos;ll See Every Day
             </h3>
-            <p className="text-neutral-400 text-sm md:text-base mt-2 max-w-xl">
+            <p className="text-[#b8b4a6] text-sm md:text-base mt-2 max-w-xl">
               Log ten seconds of telemetry. The Mirror reflects it back. The Ledger proves the pattern over time — this is real chart output from the live app, loaded here with sample numbers so you can see it before signing up.
             </p>
           </div>
@@ -70,8 +70,8 @@ export default function DashboardPreview() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Ledger chart preview */}
-          <div className="lg:col-span-3 bg-[#050505] border border-white/10 rounded-2xl p-4 md:p-6">
-            <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest mb-2">
+          <div className="lg:col-span-3 bg-[#0d0f0d] border border-[#1d231d] rounded-2xl p-4 md:p-6">
+            <p className="text-[10px] font-mono text-[#7d7a70] mb-2">
               The Ledger — Hardware vs Software Correlation
             </p>
             <div className="w-full h-[260px]">
@@ -79,17 +79,17 @@ export default function DashboardPreview() {
                 <LineChart data={SAMPLE_LEDGER} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" vertical={false} />
                   <XAxis dataKey="date" stroke="#4b5563" fontSize={10} tickLine={false} axisLine={false} />
-                  <YAxis yAxisId="left" stroke="#10b981" fontSize={10} tickLine={false} axisLine={false} domain={[0, "dataMax + 20"]} />
-                  <YAxis yAxisId="right" orientation="right" stroke="#ef4444" fontSize={10} tickLine={false} axisLine={false} domain={[0, 10]} />
+                  <YAxis yAxisId="left" stroke="#4cc07a" fontSize={10} tickLine={false} axisLine={false} domain={[0, "dataMax + 20"]} />
+                  <YAxis yAxisId="right" orientation="right" stroke="#c2603f" fontSize={10} tickLine={false} axisLine={false} domain={[0, 10]} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: "#09090b", borderColor: "#27272a", borderRadius: "8px" }}
+                    contentStyle={{ backgroundColor: "#141814", borderColor: "#1d231d", borderRadius: "8px" }}
                     itemStyle={{ fontSize: "12px", fontWeight: "bold" }}
                     labelStyle={{ color: "#a1a1aa", fontSize: "10px", marginBottom: "4px" }}
                   />
                   <Legend iconType="circle" wrapperStyle={{ fontSize: "10px", paddingTop: "14px" }} />
-                  <Line yAxisId="left" type="monotone" dataKey="hrv" name="HRV (ms)" stroke="#10b981" strokeWidth={2} dot={false} />
-                  <Line yAxisId="left" type="monotone" dataKey="sleepHours" name="Sleep (hrs)" stroke="#34d399" strokeWidth={2} strokeDasharray="5 5" dot={false} />
-                  <Line yAxisId="right" type="monotone" dataKey="sciaticaPainLevel" name="Pain (1-10)" stroke="#ef4444" strokeWidth={2} dot={false} />
+                  <Line yAxisId="left" type="monotone" dataKey="hrv" name="HRV (ms)" stroke="#4cc07a" strokeWidth={2} dot={false} />
+                  <Line yAxisId="left" type="monotone" dataKey="sleepHours" name="Sleep (hrs)" stroke="#5fd08c" strokeWidth={2} strokeDasharray="5 5" dot={false} />
+                  <Line yAxisId="right" type="monotone" dataKey="sciaticaPainLevel" name="Pain (1-10)" stroke="#c2603f" strokeWidth={2} dot={false} />
                   <Line yAxisId="right" type="monotone" dataKey="cravingIntensity" name="Cravings (1-10)" stroke="#f87171" strokeWidth={2} strokeDasharray="5 5" dot={false} />
                 </LineChart>
               </ResponsiveContainer>
@@ -97,40 +97,40 @@ export default function DashboardPreview() {
           </div>
 
           {/* Mirror reflection preview */}
-          <div className="lg:col-span-2 bg-[#050505] border border-white/10 rounded-2xl p-4 md:p-6 flex flex-col gap-4">
-            <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">The Compassionate Mirror</p>
+          <div className="lg:col-span-2 bg-[#0d0f0d] border border-[#1d231d] rounded-2xl p-4 md:p-6 flex flex-col gap-4">
+            <p className="text-[10px] font-mono text-[#7d7a70]">The Compassionate Mirror</p>
 
-            <div className="flex items-center gap-2 text-[#10b981]">
+            <div className="flex items-center gap-2 text-[#4cc07a]">
               <CheckCircle2 size={16} />
-              <span className="text-xs font-black uppercase tracking-widest text-white">Baseline Held.</span>
+              <span className="text-xs font-semibold text-[#f2efe6]">Baseline Held.</span>
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest flex items-center gap-1.5">
+              <span className="text-[10px] font-semibold text-blue-400 flex items-center gap-1.5">
                 <Sparkles size={11} /> The Why
               </span>
-              <p className="text-xs text-neutral-300 leading-relaxed">{SAMPLE_MIRROR.theWhy}</p>
+              <p className="text-xs text-[#b8b4a6] leading-relaxed">{SAMPLE_MIRROR.theWhy}</p>
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest flex items-center gap-1.5">
+              <span className="text-[10px] font-semibold text-amber-400 flex items-center gap-1.5">
                 <AlertTriangle size={11} /> Gentle Alerts
               </span>
               {SAMPLE_MIRROR.gentleAlerts.map((a, i) => (
-                <p key={i} className="text-xs text-neutral-300 leading-relaxed flex gap-2">
+                <p key={i} className="text-xs text-[#b8b4a6] leading-relaxed flex gap-2">
                   <span className="text-amber-500">-</span> {a}
                 </p>
               ))}
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <span className="text-[10px] font-black text-[#10b981] uppercase tracking-widest flex items-center gap-1.5">
+              <span className="text-[10px] font-semibold text-[#4cc07a] flex items-center gap-1.5">
                 <ListChecks size={11} /> Relief Plan
               </span>
               <ol className="flex flex-col gap-1">
                 {SAMPLE_MIRROR.reliefPlan.map((s, i) => (
-                  <li key={i} className="text-xs text-neutral-300 leading-relaxed flex gap-2">
-                    <span className="text-[#10b981] font-bold">{i + 1}.</span> {s}
+                  <li key={i} className="text-xs text-[#b8b4a6] leading-relaxed flex gap-2">
+                    <span className="text-[#4cc07a] font-bold">{i + 1}.</span> {s}
                   </li>
                 ))}
               </ol>
@@ -138,13 +138,13 @@ export default function DashboardPreview() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-white/5">
-          <p className="text-xs text-neutral-500 font-mono uppercase tracking-widest">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-[#1d231d]">
+          <p className="text-xs text-[#7d7a70] font-mono">
             Currently in closed beta — a few trusted testers at a time.
           </p>
           <button
             onClick={login}
-            className="py-3 px-8 rounded-full bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105 flex items-center justify-center gap-2 shrink-0"
+            className="py-3 px-8 rounded-full bg-[#4cc07a] hover:bg-[#2c7a4d] text-black text-sm font-semibold transition-all duration-300 hover: flex items-center justify-center gap-2 shrink-0"
           >
             [ Start Your Rebuild ] <ArrowRight size={16} />
           </button>

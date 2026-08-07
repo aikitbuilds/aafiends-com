@@ -7,30 +7,34 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { 
-  Activity, 
-  ShieldAlert, 
-  Terminal, 
-  Clock, 
-  Settings, 
-  Droplets, 
-  Moon, 
-  Dumbbell, 
-  CheckCircle2, 
+import {
+  Moon,
+  Droplets,
+  Dumbbell,
+  CheckCircle2,
   AlertTriangle,
-  Watch,
   HeartPulse,
-  BrainCircuit
+  BrainCircuit,
 } from "lucide-react";
-import { 
-  LineChart, 
-  Line, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer 
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
 } from "recharts";
+import { PHOTOS } from "@/lib/photos";
+import {
+  Wrap,
+  Section,
+  SectionHead,
+  SubHead,
+  PhotoRow,
+  StackList,
+  CalloutBand,
+} from "@/components/design";
 
 // Simulated 7-day Garmin telemetry dataset
 const garminData = [
@@ -42,6 +46,15 @@ const garminData = [
   { day: "Day -1", sleep: 7.5, hr: 58, stress: 25 },
   { day: "Today",  sleep: 7.2, hr: 58, stress: 22 },
 ];
+
+// Chart palette — DESIGN.md tokens only.
+const SERIES = {
+  sleep: "#4cc07a",
+  hr: "#7fb3a3",
+  stress: "#e0a45c",
+};
+
+const HR_WEEK = [62, 60, 59, 61, 58, 57, 58];
 
 export default function DataPage() {
   const [sleep, setSleep] = useState<number>(7);
@@ -64,319 +77,291 @@ export default function DataPage() {
     }
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden selection:bg-emerald-500/30">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
-      
-      <main className="flex-grow flex flex-col items-center py-20 px-6 relative z-10">
-        <div className="max-w-6xl w-full flex flex-col gap-16">
-          
-          {/* COMPONENT 1: Hero & The Reality Check (Poem) */}
-          <section className="relative rounded-[3rem] overflow-hidden border border-white/10 mb-16 shadow-2xl">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-              <Image src="/blog_gamification.png" alt="System Gamification" width={800} height={600} className="w-full h-full object-cover" />
-            </div>
 
-            {/* Content Overlay */}
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-16 h-full items-start">
-              
-              {/* Left Box (Data Over Denial) - Pushed Down */}
-              <motion.div initial="hidden" animate="visible" variants={fadeIn} className="lg:col-span-5 lg:col-start-1 mt-12 lg:mt-56 bg-[#020202]/50 border border-white/10 p-8 md:p-10 rounded-[2rem] backdrop-blur-md self-end">
-                <div className="flex items-center gap-3 mb-4 text-emerald-500 text-xs font-mono font-bold tracking-widest uppercase">
-                  <Activity size={16} /> System Telemetry Online
-                </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-                  Data Over <br/> <span className="text-emerald-500">Denial.</span>
-                </h1>
-                <p className="text-neutral-300 text-lg leading-relaxed max-w-md font-medium">
-                  The A.I.V. thrives in the fog of exhaustion. We use raw telemetry to clear the fog. Your dashboard proves the healing is working.
+      <main className="flex-grow">
+        {/* ── The read ─────────────────────────────────────── */}
+        <Section tight>
+          <Wrap>
+            <SectionHead
+              lede={
+                <p>
+                  The A.I.V. &mdash; the Addiction Intelligence Virus &mdash; thrives in the fog of
+                  exhaustion. Raw telemetry clears the fog. Your dashboard is where the healing
+                  stops being a feeling and starts being a number.
                 </p>
-              </motion.div>
+              }
+            >
+              Data over <em>denial.</em>
+            </SectionHead>
 
-              {/* Right Box (Reality Check) - Pushed Right */}
-              <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ delay: 0.2 }} className="lg:col-span-5 lg:col-start-8">
-                <div className="bg-[#0a0a0a]/40 border border-emerald-500/30 p-8 md:p-10 rounded-[2rem] shadow-[0_0_30px_rgba(16,185,129,0.1)] relative overflow-hidden backdrop-blur-md">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
-                  <h3 className="text-emerald-500 font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-2">
-                    <Terminal size={16} /> Reality Check Log
-                  </h3>
-                  <div className="italic text-neutral-200 text-lg leading-loose font-serif">
-                    <p className="mb-4">
-                      I thought my memory was sharp, my willpower was grand,<br/>
-                      But A.I.V. just took my brain and buried it in sand.<br/>
-                      'You're doing great!' the virus lied, 'You don't need any rest!'<br/>
-                      Then suddenly my heart was pounding hard inside my chest.
-                    </p>
-                    <p>
-                      So now I drop the old excuse, I look at what is real,<br/>
-                      I track my water and my sleep to monitor the heal.<br/>
-                      It’s Data Over Denial now—a flashlight in the deep,<br/>
-                      To catch the little gremlins where they slowly start to creep.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </section>
-
-          {/* COMPONENT 2: The "Why, Where, When, How" (Grid Layout) */}
-          <section>
-            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-2xl font-black text-white uppercase tracking-tight mb-8">
-              Operational Protocols
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="relative bg-gradient-to-b from-[#0e0e12] to-[#050505] p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-500 group overflow-hidden shadow-xl hover:shadow-[0_0_40px_rgba(16,185,129,0.08)]">
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-                
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-                  <ShieldAlert size={24} />
-                </div>
-                <h4 className="text-white font-black uppercase text-lg mb-3 tracking-wide relative z-10 group-hover:text-emerald-400 transition-colors">Why it's needed</h4>
-                <p className="text-neutral-400 text-sm leading-relaxed relative z-10 group-hover:text-neutral-300 transition-colors">
-                  Addiction thrives in blind spots. The AIV uses your exhaustion as a craving. Tracking basics removes the blind spots so you know exactly when your firewall is down.
+            <PhotoRow photo={PHOTOS.kitchenJournal}>
+              <SubHead>The reality check log</SubHead>
+              <div className="font-display-italic mt-5 max-w-[52ch] space-y-4 text-[1.05rem] leading-[1.8] text-[#b8b4a6]">
+                <p>
+                  I thought my memory was sharp, my willpower was grand,<br />
+                  But A.I.V. just took my brain and buried it in sand.<br />
+                  &lsquo;You&rsquo;re doing great!&rsquo; the virus lied, &lsquo;You don&rsquo;t
+                  need any rest!&rsquo;<br />
+                  Then suddenly my heart was pounding hard inside my chest.
                 </p>
-              </motion.div>
-
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} transition={{ delay: 0.1 }} className="relative bg-gradient-to-b from-[#0e0e12] to-[#050505] p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-500 group overflow-hidden shadow-xl hover:shadow-[0_0_40px_rgba(16,185,129,0.08)]">
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-                
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-                  <Activity size={24} />
-                </div>
-                <h4 className="text-white font-black uppercase text-lg mb-3 tracking-wide relative z-10 group-hover:text-emerald-400 transition-colors">Where it lives</h4>
-                <p className="text-neutral-400 text-sm leading-relaxed relative z-10 group-hover:text-neutral-300 transition-colors">
-                  Your Daily Dashboard. This is your central Step 10 terminal for tracking all recovery telemetry and analyzing system stability.
-                </p>
-              </motion.div>
-
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} transition={{ delay: 0.2 }} className="relative bg-gradient-to-b from-[#0e0e12] to-[#050505] p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-500 group overflow-hidden shadow-xl hover:shadow-[0_0_40px_rgba(16,185,129,0.08)]">
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-                
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-                  <Clock size={24} />
-                </div>
-                <h4 className="text-white font-black uppercase text-lg mb-3 tracking-wide relative z-10 group-hover:text-emerald-400 transition-colors">When to use it</h4>
-                <p className="text-neutral-400 text-sm leading-relaxed relative z-10 group-hover:text-neutral-300 transition-colors">
-                  Twice a day. Once in the morning to calibrate the baseline, once in the evening (Step 10) to clear the system cache and reset for tomorrow.
-                </p>
-              </motion.div>
-
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} transition={{ delay: 0.3 }} className="relative bg-gradient-to-b from-[#0e0e12] to-[#050505] p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-500 group overflow-hidden shadow-xl hover:shadow-[0_0_40px_rgba(16,185,129,0.08)]">
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-                
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-                  <Settings size={24} />
-                </div>
-                <h4 className="text-white font-black uppercase text-lg mb-3 tracking-wide relative z-10 group-hover:text-emerald-400 transition-colors">How it works</h4>
-                <p className="text-neutral-400 text-sm leading-relaxed relative z-10 group-hover:text-neutral-300 transition-colors">
-                  Log the Big Three inputs: Fuel (water/food), Recharge (sleep), and Friction (exercise/movement). Undeniable facts, not opinions.
-                </p>
-              </motion.div>
-
-            </div>
-          </section>
-
-          {/* COMPONENT 2.5: Garmin Sync Integration (Real Data & UI) */}
-          <section className="mb-12">
-            <div className="flex items-center gap-3 mb-8 border-b border-white/5 pb-4">
-              <Watch className="text-emerald-500" size={32} />
-              <div>
-                <h2 className="text-2xl font-black text-white uppercase tracking-tight">
-                  Garmin Biometric Sync
-                </h2>
-                <p className="text-neutral-400 font-mono text-xs tracking-widest uppercase mt-1">
-                  Sample Telemetry &mdash; Illustrative Figures
+                <p>
+                  So now I drop the old excuse, I look at what is real,<br />
+                  I track my water and my sleep to monitor the heal.<br />
+                  It&rsquo;s Data Over Denial now&mdash;a flashlight in the deep,<br />
+                  To catch the little gremlins where they slowly start to creep.
                 </p>
               </div>
+            </PhotoRow>
+          </Wrap>
+        </Section>
+
+        {/* ── The protocol ─────────────────────────────────── */}
+        <Section band>
+          <Wrap>
+            <SectionHead
+              lede={<p>Why you track, where it lives, when you open it, and what goes in.</p>}
+            >
+              The operational <em>protocol.</em>
+            </SectionHead>
+            <StackList
+              items={[
+                {
+                  n: "01",
+                  title: "Why it’s needed",
+                  body: "Addiction thrives in blind spots. The AIV uses your exhaustion as a craving. Tracking basics removes the blind spots so you know exactly when your firewall is down.",
+                },
+                {
+                  n: "02",
+                  title: "Where it lives",
+                  body: "Your Daily Dashboard. This is your central Step 10 terminal for tracking all recovery telemetry and analyzing system stability.",
+                  maps: "step 10",
+                },
+                {
+                  n: "03",
+                  title: "When to use it",
+                  body: "Twice a day. Once in the morning to calibrate the baseline, once in the evening (Step 10) to clear the system cache and reset for tomorrow.",
+                  maps: "2× daily",
+                },
+                {
+                  n: "04",
+                  title: "How it works",
+                  body: "Log the Big Three inputs: Fuel (water/food), Recharge (sleep), and Friction (exercise/movement). Undeniable facts, not opinions.",
+                  maps: "fuel · recharge · friction",
+                },
+              ]}
+            />
+          </Wrap>
+        </Section>
+
+        {/* ── Garmin sync ──────────────────────────────────── */}
+        <Section>
+          <Wrap>
+            <SectionHead lede={<p>Sample telemetry &mdash; illustrative figures.</p>}>
+              Garmin biometric <em>sync.</em>
+            </SectionHead>
+
+            <CalloutBand className="mt-8 max-w-[70ch]">
+              <p className="flex items-start gap-3 text-[15px] leading-relaxed text-[#b8b4a6]">
+                <AlertTriangle size={16} className="mt-1 shrink-0 text-[#e0a45c]" aria-hidden="true" />
+                <span>
+                  The figures below are{" "}
+                  <b className="font-semibold text-[#f2efe6]">sample values shown for illustration</b>
+                  . Live Garmin data appears here once your device is connected &mdash; nothing on
+                  this panel is a real-time reading yet.
+                </span>
+              </p>
+            </CalloutBand>
+
+            <div className="mt-10 grid gap-8 md:grid-cols-2">
+              <figure className="overflow-hidden rounded-[14px] border border-[#1d231d]">
+                <div className="relative aspect-[4/3] bg-[#0d0f0d]">
+                  <Image
+                    src="/garmin1.jpg"
+                    alt="A Garmin Connect dashboard screenshot showing the day’s activity, heart rate and body battery summary"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 45vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="font-measure border-t border-[#1d231d] bg-[#141814] px-5 py-3 text-[12.5px] text-[#7d7a70]">
+                  Source: Garmin Connect · screenshot
+                </figcaption>
+              </figure>
+
+              <figure className="overflow-hidden rounded-[14px] border border-[#1d231d]">
+                <div className="relative aspect-[4/3] bg-[#0d0f0d]">
+                  <Image
+                    src="/garminsleep.webp"
+                    alt="A Garmin sleep screen screenshot showing a night broken into deep, light and REM stages"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 45vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="font-measure border-t border-[#1d231d] bg-[#141814] px-5 py-3 text-[12.5px] text-[#7d7a70]">
+                  Source: Garmin Sleep · screenshot
+                </figcaption>
+              </figure>
             </div>
 
-            <div className="mb-8 flex items-start gap-2 text-xs text-amber-400/80 bg-amber-500/5 border border-amber-500/20 rounded-xl px-4 py-3">
-              <AlertTriangle size={14} className="shrink-0 mt-0.5" />
-              <span className="leading-relaxed">
-                The figures below are <strong>sample values shown for illustration</strong>. Live Garmin data appears here once your device is connected &mdash; nothing on this panel is a real-time reading yet.
-              </span>
-            </div>
-
-            <div className="flex flex-col gap-8">
-              
-              {/* Real Screenshots Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-[#0a0a0a] p-4 rounded-3xl border border-white/5 shadow-lg relative overflow-hidden group hover:border-emerald-500/30 transition-all">
-                   <div className="flex items-center justify-between mb-4 px-2">
-                     <span className="text-emerald-500 font-bold uppercase text-xs tracking-widest flex items-center gap-2">
-                       <Activity size={14} /> Source: Garmin Connect
-                     </span>
-                     <span className="text-neutral-500 text-xs font-mono">Screenshot</span>
-                   </div>
-                   <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/3] bg-black">
-                     <Image src="/garmin1.jpg" alt="Garmin Connect Dashboard" width={800} height={600} className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
-                   </div>
-                </div>
-                
-                <div className="bg-[#0a0a0a] p-4 rounded-3xl border border-white/5 shadow-lg relative overflow-hidden group hover:border-blue-500/30 transition-all">
-                   <div className="flex items-center justify-between mb-4 px-2">
-                     <span className="text-blue-500 font-bold uppercase text-xs tracking-widest flex items-center gap-2">
-                       <Moon size={14} /> Source: Garmin Sleep
-                     </span>
-                     <span className="text-neutral-500 text-xs font-mono">Screenshot</span>
-                   </div>
-                   <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/3] bg-black">
-                     <Image src="/garminsleep.webp" alt="Garmin Sleep Data" width={800} height={600} className="w-full h-full object-contain opacity-90 group-hover:scale-105 transition-transform duration-700" />
-                   </div>
-                </div>
-              </div>
-
-              {/* Data Extraction UI Row (The one created previously) */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                {/* Sleep Data */}
-                <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-all">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-center gap-2 text-emerald-500">
-                      <Moon size={20} />
-                      <span className="font-bold uppercase text-sm tracking-wider">Sleep</span>
-                    </div>
-                    <span className="text-xs font-mono text-neutral-500">Last Night &middot; Sample</span>
-                  </div>
-                  <div className="flex items-end gap-2 mb-2">
-                    <span className="text-4xl font-black text-white">7h 12m</span>
-                    <span className="text-emerald-500 font-bold mb-1">Score: 84</span>
-                  </div>
-                  <div className="w-full bg-neutral-900 h-2 rounded-full overflow-hidden mt-4">
-                    <div className="bg-emerald-500 h-full w-[84%]"></div>
-                  </div>
-                  <p className="text-neutral-500 text-xs mt-3 leading-relaxed">
-                    Denial says you're fine. The watch says you're operating on a severe deficit. Sleep is the primary firewall against the A.I.V.
+            {/* Three sample readings, as a ledger rather than a card grid */}
+            <div className="mt-12 border-t border-[#1d231d]">
+              <div className="grid gap-x-10 gap-y-4 border-b border-[#1d231d] px-1 py-7 sm:grid-cols-[13rem_1fr]">
+                <div>
+                  <p className="flex items-center gap-2 text-[15.5px] text-[#f2efe6]">
+                    <Moon size={16} className="text-[#4cc07a]" aria-hidden="true" /> Sleep
+                  </p>
+                  <p className="font-measure mt-1 text-[12.5px] text-[#7d7a70]">
+                    Last night · sample
                   </p>
                 </div>
+                <div>
+                  <p className="font-measure text-[1.75rem] leading-none text-[#4cc07a]">
+                    7h 12m{" "}
+                    <span className="text-[0.85rem] text-[#b8b4a6]">score 84 / 100</span>
+                  </p>
+                  <div className="mt-4 h-[3px] w-full max-w-md overflow-hidden rounded-full bg-[#1d231d]">
+                    <div className="h-full bg-[#4cc07a]" style={{ width: "84%" }} />
+                  </div>
+                  <p className="mt-4 max-w-[60ch] text-[14.5px] leading-relaxed text-[#b8b4a6]">
+                    Denial says you&rsquo;re fine. The watch says you&rsquo;re operating on a severe
+                    deficit. Sleep is the primary firewall against the A.I.V.
+                  </p>
+                </div>
+              </div>
 
-                {/* Heart Rate Data */}
-                <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-all">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-center gap-2 text-emerald-500">
-                      <HeartPulse size={20} />
-                      <span className="font-bold uppercase text-sm tracking-wider">Resting HR</span>
-                    </div>
-                    <span className="text-xs font-mono text-neutral-500">7-Day Avg &middot; Sample</span>
-                  </div>
-                  <div className="flex items-end gap-2 mb-2">
-                    <span className="text-4xl font-black text-white">58</span>
-                    <span className="text-neutral-400 font-bold mb-1 text-sm">bpm</span>
-                  </div>
-                  <div className="flex gap-1 mt-4 h-8 items-end">
-                    {[62, 60, 59, 61, 58, 57, 58].map((bpm, i) => (
-                      <div key={i} className="flex-1 bg-emerald-500/20 rounded-t-sm" style={{ height: `${(bpm/70)*100}%` }}></div>
+              <div className="grid gap-x-10 gap-y-4 border-b border-[#1d231d] px-1 py-7 sm:grid-cols-[13rem_1fr]">
+                <div>
+                  <p className="flex items-center gap-2 text-[15.5px] text-[#f2efe6]">
+                    <HeartPulse size={16} className="text-[#7fb3a3]" aria-hidden="true" /> Resting
+                    heart rate
+                  </p>
+                  <p className="font-measure mt-1 text-[12.5px] text-[#7d7a70]">
+                    7-day average · sample
+                  </p>
+                </div>
+                <div>
+                  <p className="font-measure text-[1.75rem] leading-none text-[#7fb3a3]">
+                    58 <span className="text-[0.85rem] text-[#b8b4a6]">bpm</span>
+                  </p>
+                  <div className="mt-4 flex h-8 max-w-md items-end gap-1.5">
+                    {HR_WEEK.map((bpm, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 bg-[#7fb3a3]/35"
+                        style={{ height: `${(bpm / 70) * 100}%` }}
+                        title={`${bpm} bpm`}
+                      />
                     ))}
                   </div>
-                  <p className="text-neutral-500 text-xs mt-3 leading-relaxed">
-                    Elevated resting heart rate is an early warning system. It detects the physical stress of craving before the conscious mind does.
+                  <p className="mt-4 max-w-[60ch] text-[14.5px] leading-relaxed text-[#b8b4a6]">
+                    Elevated resting heart rate is an early warning system. It detects the physical
+                    stress of craving before the conscious mind does.
                   </p>
                 </div>
+              </div>
 
-                {/* Stress Data */}
-                <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-all">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-center gap-2 text-emerald-500">
-                      <BrainCircuit size={20} />
-                      <span className="font-bold uppercase text-sm tracking-wider">Stress</span>
-                    </div>
-                    <span className="text-xs font-mono text-neutral-500">Current &middot; Sample</span>
+              <div className="grid gap-x-10 gap-y-4 border-b border-[#1d231d] px-1 py-7 sm:grid-cols-[13rem_1fr]">
+                <div>
+                  <p className="flex items-center gap-2 text-[15.5px] text-[#f2efe6]">
+                    <BrainCircuit size={16} className="text-[#e0a45c]" aria-hidden="true" /> Stress
+                  </p>
+                  <p className="font-measure mt-1 text-[12.5px] text-[#7d7a70]">Current · sample</p>
+                </div>
+                <div>
+                  <p className="font-measure text-[1.75rem] leading-none text-[#e0a45c]">
+                    22 <span className="text-[0.85rem] text-[#b8b4a6]">/ 100</span>
+                  </p>
+                  <div className="mt-4 h-[3px] w-full max-w-md overflow-hidden rounded-full bg-[#1d231d]">
+                    <div className="h-full bg-[#e0a45c]" style={{ width: "22%" }} />
                   </div>
-                  <div className="flex items-end gap-2 mb-2">
-                    <span className="text-4xl font-black text-emerald-500">22</span>
-                    <span className="text-neutral-400 font-bold mb-1 text-sm">/ 100</span>
-                  </div>
-                  <div className="w-full bg-neutral-900 h-2 rounded-full overflow-hidden mt-4">
-                    <div className="bg-emerald-500 h-full w-[22%]"></div>
-                  </div>
-                  <p className="text-neutral-500 text-xs mt-3 leading-relaxed">
-                    High stress depletes willpower. By syncing HRV, you monitor the exact moment your mental defenses are compromised.
+                  <p className="mt-4 max-w-[60ch] text-[14.5px] leading-relaxed text-[#b8b4a6]">
+                    High stress depletes willpower. By syncing HRV, you monitor the exact moment
+                    your mental defenses are compromised.
                   </p>
                 </div>
-
               </div>
             </div>
-          </section>
+          </Wrap>
+        </Section>
 
-          {/* COMPONENT 3: Interactive Dashboard (The Functional Core) */}
-          <section className="bg-[#09090b] border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative">
-            <div className="absolute top-0 right-0 p-6">
-               <span className="flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                </span>
-            </div>
-            
-            <div className="mb-10">
-              <h2 className="text-3xl font-black text-white uppercase tracking-tight flex items-center gap-3">
-                <Activity className="text-emerald-500" /> The Daily Inventory
-              </h2>
-              <p className="text-neutral-400 mt-2 font-mono text-sm uppercase tracking-widest">Input Daily Telemetry to Calibrate DOSE Baseline</p>
-            </div>
+        {/* ── The daily inventory ──────────────────────────── */}
+        <Section band>
+          <Wrap>
+            <SectionHead
+              lede={<p>Input daily telemetry to calibrate your D.O.S.E. baseline. Ten seconds.</p>}
+            >
+              The daily <em>inventory.</em>
+            </SectionHead>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
-              {/* Daily Input Widget */}
-              <div className="flex flex-col gap-8 bg-[#020202] border border-white/5 rounded-3xl p-8">
-                
-                {/* Sleep Slider */}
+            <div className="mt-10 grid gap-10 sm:mt-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+              {/* Daily input widget */}
+              <div className="rounded-[14px] border border-[#1d231d] bg-[#0d0f0d] p-7">
                 <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <label className="text-white font-bold uppercase tracking-wide flex items-center gap-2">
-                      <Moon size={18} className="text-emerald-500" /> Recharge (Sleep)
+                  <div className="mb-4 flex items-center justify-between">
+                    <label htmlFor="sleep-hours" className="flex items-center gap-2 text-[15.5px] text-[#f2efe6]">
+                      <Moon size={17} className="text-[#4cc07a]" aria-hidden="true" /> Recharge
+                      (sleep)
                     </label>
-                    <span className="text-emerald-500 font-mono font-bold text-lg">{sleep} hrs</span>
+                    <span className="font-measure text-[1.05rem] text-[#4cc07a]">{sleep} hrs</span>
                   </div>
-                  <input 
-                    type="range" 
-                    min="0" max="12" step="1" 
-                    value={sleep} 
+                  <input
+                    id="sleep-hours"
+                    type="range"
+                    min="0"
+                    max="12"
+                    step="1"
+                    value={sleep}
                     onChange={(e) => setSleep(Number(e.target.value))}
-                    className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                    className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-[#1d231d] accent-[#4cc07a]"
                   />
                 </div>
 
-                {/* Hydration Toggle */}
-                <div>
-                  <div className="flex justify-between items-center">
-                    <label className="text-white font-bold uppercase tracking-wide flex items-center gap-2">
-                      <Droplets size={18} className="text-emerald-500" /> Fuel (Hydration)
-                    </label>
-                    <button 
+                <div className="mt-8">
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-2 text-[15.5px] text-[#f2efe6]">
+                      <Droplets size={17} className="text-[#4cc07a]" aria-hidden="true" /> Fuel
+                      (hydration)
+                    </span>
+                    <button
                       onClick={() => setHydration(!hydration)}
-                      className={`w-14 h-8 rounded-full flex items-center p-1 transition-colors duration-300 ${hydration ? 'bg-emerald-500' : 'bg-neutral-800'}`}
+                      role="switch"
+                      aria-checked={hydration}
+                      aria-label="Hydration logged today"
+                      className={`flex h-8 w-14 items-center rounded-full p-1 transition-colors duration-200 ${
+                        hydration ? "bg-[#4cc07a]" : "bg-[#1d231d]"
+                      }`}
                     >
-                      <div className={`bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${hydration ? 'translate-x-6' : 'translate-x-0'}`}></div>
+                      <span
+                        className={`h-6 w-6 rounded-full bg-[#f2efe6] transition-transform duration-200 ${
+                          hydration ? "translate-x-6" : "translate-x-0"
+                        }`}
+                      />
                     </button>
                   </div>
-                  <p className="text-neutral-500 text-xs mt-2 font-mono">Target: 8+ cups logged today.</p>
+                  <p className="font-measure mt-2 text-[12.5px] text-[#7d7a70]">
+                    Target: 8+ cups logged today.
+                  </p>
                 </div>
 
-                {/* Daily Movement */}
-                <div>
-                  <label className="text-white font-bold uppercase tracking-wide flex items-center gap-2 mb-4">
-                    <Dumbbell size={18} className="text-emerald-500" /> Friction (Movement)
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {['Walk', 'Lift', 'Cold Plunge'].map((type) => (
+                <div className="mt-8">
+                  <span className="mb-4 flex items-center gap-2 text-[15.5px] text-[#f2efe6]">
+                    <Dumbbell size={17} className="text-[#4cc07a]" aria-hidden="true" /> Friction
+                    (movement)
+                  </span>
+                  <div className="mt-3 grid grid-cols-3 gap-2.5">
+                    {["Walk", "Lift", "Cold Plunge"].map((type) => (
                       <button
                         key={type}
                         onClick={() => setMovement(type)}
-                        className={`py-3 rounded-xl font-bold uppercase text-xs tracking-wider transition-all duration-300 border ${
-                          movement === type 
-                          ? 'bg-emerald-500/20 text-emerald-500 border-emerald-500/50' 
-                          : 'bg-neutral-900 text-neutral-400 border-white/5 hover:border-white/20'
+                        aria-pressed={movement === type}
+                        className={`rounded-[10px] border px-3 py-3 text-[13.5px] font-semibold transition-colors duration-200 active:scale-[0.98] ${
+                          movement === type
+                            ? "border-[#4cc07a] bg-[#4cc07a]/10 text-[#4cc07a]"
+                            : "border-[#1d231d] bg-[#141814] text-[#b8b4a6] hover:border-[#2a322a]"
                         }`}
                       >
                         {type}
@@ -385,92 +370,137 @@ export default function DataPage() {
                   </div>
                 </div>
 
-                {/* Submit Action */}
-                <div className="pt-4 mt-auto border-t border-white/10">
-                  <button 
+                <div className="mt-8 border-t border-[#1d231d] pt-6">
+                  <button
                     onClick={handleLogTelemetry}
-                    className="w-full bg-white hover:bg-neutral-200 text-black font-black uppercase tracking-widest py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full rounded-[10px] bg-[#4cc07a] px-6 py-4 text-base font-semibold text-[#08130c] transition-[background-color,transform] duration-200 hover:bg-[#5fd08c] active:scale-[0.98]"
                   >
-                    Sync Telemetry to Grid
+                    Sync telemetry to the Grid
                   </button>
-                  
-                  {/* Status Feedback */}
-                  <div className="h-8 mt-4 flex items-center justify-center">
+
+                  <div className="mt-4 flex h-8 items-center justify-center">
                     {statusLogged ? (
-                      <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center gap-2 text-emerald-500 font-bold uppercase tracking-widest text-sm">
-                        <CheckCircle2 size={16} /> Firewall Holding. Baseline Updated.
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="font-measure flex items-center gap-2 text-[13px] text-[#4cc07a]"
+                      >
+                        <CheckCircle2 size={15} aria-hidden="true" /> Firewall holding. Baseline
+                        updated.
                       </motion.div>
                     ) : (
-                      <div className="flex items-center gap-2 text-amber-500/50 font-bold uppercase tracking-widest text-xs">
-                        <AlertTriangle size={14} /> Pending Synchronization
-                      </div>
+                      <p className="font-measure flex items-center gap-2 text-[13px] text-[#7d7a70]">
+                        <AlertTriangle size={14} aria-hidden="true" /> Pending synchronization
+                      </p>
                     )}
                   </div>
                 </div>
-
               </div>
 
-              {/* Data Visualization Chart */}
-              <div className="flex flex-col gap-6 bg-[#020202] border border-white/5 rounded-3xl p-8 lg:col-span-2">
-                <div className="flex justify-between items-end mb-4">
+              {/* Telemetry chart */}
+              <div className="rounded-[14px] border border-[#1d231d] bg-[#141814] p-6 sm:p-7">
+                <div className="flex flex-wrap items-end justify-between gap-4">
                   <div>
-                    <h3 className="text-white font-bold uppercase tracking-widest mb-1">Garmin Telemetry Overlay</h3>
-                    <p className="text-neutral-500 text-xs font-mono">7-Day Biometric Trending (Sleep, HR, Stress)</p>
+                    <h3 className="font-display text-[1.25rem] leading-tight text-[#f2efe6]">
+                      Garmin telemetry overlay
+                    </h3>
+                    <p className="font-measure mt-1 text-[12.5px] text-[#7d7a70]">
+                      7-day biometric trending — sleep, HR, stress
+                    </p>
                   </div>
                   <div className="text-right">
-                    <span className="text-3xl font-black text-emerald-500">Sample Data</span>
-                    <p className="text-emerald-500/70 text-xs font-mono uppercase tracking-widest">Illustrative</p>
+                    <p className="font-measure text-[1.05rem] text-[#e0a45c]">Sample data</p>
+                    <p className="font-measure text-[12px] text-[#7d7a70]">Illustrative</p>
                   </div>
                 </div>
 
-                <div className="flex-grow w-full h-[350px] -ml-4">
+                <div className="font-measure mt-6 h-[340px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={garminData} margin={{ top: 20, right: 10, left: 0, bottom: 0 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
-                      <XAxis dataKey="day" stroke="#ffffff40" fontSize={12} tickLine={false} axisLine={false} />
-                      <YAxis yAxisId="left" stroke="#10b981" fontSize={12} tickLine={false} axisLine={false} domain={[0, 100]} />
-                      <YAxis yAxisId="right" orientation="right" stroke="#3b82f6" fontSize={12} tickLine={false} axisLine={false} domain={[0, 12]} />
-                      <Tooltip 
-                        contentStyle={{ backgroundColor: '#0a0a0a', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '12px' }}
-                        itemStyle={{ fontWeight: 'bold' }}
-                        labelStyle={{ color: '#888', marginBottom: '4px', fontSize: '12px', textTransform: 'uppercase' }}
+                    <LineChart data={garminData} margin={{ top: 12, right: 8, left: -12, bottom: 0 }}>
+                      <CartesianGrid strokeDasharray="2 4" stroke="#1d231d" vertical={false} />
+                      <XAxis
+                        dataKey="day"
+                        stroke="#2a322a"
+                        tick={{ fill: "#7d7a70", fontSize: 12 }}
+                        tickLine={false}
+                        axisLine={false}
                       />
-                      <Line 
+                      <YAxis
                         yAxisId="left"
-                        type="monotone" 
-                        dataKey="stress" 
-                        stroke="#ef4444" 
-                        strokeWidth={3} 
-                        dot={{ r: 4, fill: '#0a0a0a', stroke: '#ef4444', strokeWidth: 2 }}
-                        name="Stress Level"
+                        stroke="#2a322a"
+                        tick={{ fill: "#7d7a70", fontSize: 12 }}
+                        tickLine={false}
+                        axisLine={false}
+                        domain={[0, 100]}
                       />
-                      <Line 
+                      <YAxis
+                        yAxisId="right"
+                        orientation="right"
+                        stroke="#2a322a"
+                        tick={{ fill: "#7d7a70", fontSize: 12 }}
+                        tickLine={false}
+                        axisLine={false}
+                        domain={[0, 12]}
+                      />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: "#141814",
+                          border: "1px solid #1d231d",
+                          borderRadius: "10px",
+                          color: "#f2efe6",
+                        }}
+                        itemStyle={{ fontSize: "13px" }}
+                        labelStyle={{ color: "#7d7a70", marginBottom: "4px", fontSize: "12px" }}
+                      />
+                      <Line
                         yAxisId="left"
-                        type="monotone" 
-                        dataKey="hr" 
-                        stroke="#10b981" 
-                        strokeWidth={3}
-                        dot={{ r: 4, fill: '#0a0a0a', stroke: '#10b981', strokeWidth: 2 }}
+                        type="monotone"
+                        dataKey="stress"
+                        stroke={SERIES.stress}
+                        strokeWidth={2}
+                        dot={{ r: 3, fill: "#141814", stroke: SERIES.stress, strokeWidth: 2 }}
+                        name="Stress level"
+                      />
+                      <Line
+                        yAxisId="left"
+                        type="monotone"
+                        dataKey="hr"
+                        stroke={SERIES.hr}
+                        strokeWidth={2}
+                        dot={{ r: 3, fill: "#141814", stroke: SERIES.hr, strokeWidth: 2 }}
                         name="Resting HR (bpm)"
                       />
-                      <Line 
+                      <Line
                         yAxisId="right"
-                        type="monotone" 
-                        dataKey="sleep" 
-                        stroke="#3b82f6" 
-                        strokeWidth={3}
-                        dot={{ r: 4, fill: '#0a0a0a', stroke: '#3b82f6', strokeWidth: 2 }}
+                        type="monotone"
+                        dataKey="sleep"
+                        stroke={SERIES.sleep}
+                        strokeWidth={2}
+                        dot={{ r: 3, fill: "#141814", stroke: SERIES.sleep, strokeWidth: 2 }}
                         name="Sleep (hrs)"
                       />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
+
+                <div className="font-measure mt-5 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#1d231d] pt-4 text-[12.5px] text-[#b8b4a6]">
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-px w-5" style={{ backgroundColor: SERIES.sleep }} /> Sleep
+                    (hrs)
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-px w-5" style={{ backgroundColor: SERIES.hr }} /> Resting HR
+                    (bpm)
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-px w-5" style={{ backgroundColor: SERIES.stress }} /> Stress
+                    level
+                  </span>
+                </div>
               </div>
-
             </div>
-          </section>
-
-        </div>
+          </Wrap>
+        </Section>
       </main>
 
       <SiteFooter />
