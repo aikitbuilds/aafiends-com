@@ -98,7 +98,7 @@ Rebuilding it is not a diet. It's **restoring the microbiome** with fermented fo
       src: "/90rr/img/dose-fuel-food.png",
       alt: "Overhead of whole foods, fermented jars, and fresh produce on a dark surface",
       caption: "Whole food, fermented food, fiber — microbiome repair is serotonin repair",
-      accent: "#00f0ff",
+      accent: "#7fb3a3",
     },
     {
       type: "comparison",
@@ -293,7 +293,7 @@ You don't need a marathon. **Days 1–14: walk 20 minutes a day. Do not push.** 
       src: "/90rr/img/dose-reset-walk.png",
       alt: "A person walking alone along a path at sunrise, seen from behind",
       caption: "Days 1–14: twenty minutes, outside, every day. The pavement is the protocol.",
-      accent: "#10b981",
+      accent: "#4cc07a",
     },
     {
       type: "markdown",
@@ -372,7 +372,7 @@ You can pay $5,000 for a plunge tub. Or you can build one that holds a perfect 4
       src: "/90rr/img/dose-reset-cold.png",
       alt: "Cold blue water with ice, close up",
       caption: "40°F, on a timer, for hours a day — the most powerful natural dopamine anchor you can own",
-      accent: "#00f0ff",
+      accent: "#7fb3a3",
     },
     {
       type: "shoppinglist",

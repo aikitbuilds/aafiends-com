@@ -1,52 +1,74 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, XCircle, ArrowRight, Info, AlertTriangle, ExternalLink } from "lucide-react";
+import { CheckCircle2, XCircle, Info, AlertTriangle, ExternalLink } from "lucide-react";
 import { BlogPost } from "@/lib/blogData";
 import { DOSE_FIGURES, SmartImage } from "@/components/DoseFigures";
+import { PullQuote, StackList, SubHead, Prose } from "@/components/design";
 
-const CALLOUT_STYLES = {
-  info: { color: "#00f0ff", Icon: Info },
-  warn: { color: "#f59e0b", Icon: AlertTriangle },
-  danger: { color: "#ef4444", Icon: AlertTriangle },
-  success: { color: "#10b981", Icon: CheckCircle2 },
+/**
+ * AAFiends blog section renderer.
+ *
+ * Rebuilt August 2026 onto the "Dawn Ledger" reading surface (DESIGN.md).
+ * The section vocabulary is unchanged — every post's data still renders the
+ * same blocks, with the same numbers — but the typography now comes from
+ * `.prose-dawn` in globals.css instead of being hand-rolled per element:
+ * serif for the argument, mono for the measurement, sans for the body.
+ *
+ * Every markdown block carries its own <Prose>, so the reading surface
+ * travels with the component. Any page that renders <BlogContent> gets the
+ * right measure and the right typography without having to remember to wrap
+ * it, and the data blocks stay outside prose where their own layout rules
+ * belong — no specificity fight between the two.
+ *
+ * Three things went out with the redesign:
+ *  - the framer-motion entrance wrappers. Every block is visible at rest; a
+ *    fast scroll used to leave blank space where a chart should be.
+ *  - the little coloured bar stuck to the left of every heading, and the
+ *    4px accent stripe on the pull quote (DESIGN.md → Refuse).
+ *  - the 9–10px chrome type. Nothing functional sits below 13px now.
+ *
+ * No react-markdown dependency — blogData.ts's markdown blocks only ever use
+ * plain paragraphs, **bold** inline emphasis, headings, simple lists and an
+ * occasional `---`, so the small parser below covers it.
+ */
+
+const CALLOUT_TONES = {
+  info: { color: "#7fb3a3", Icon: Info },
+  warn: { color: "#e0a45c", Icon: AlertTriangle },
+  danger: { color: "#c2603f", Icon: AlertTriangle },
+  success: { color: "#4cc07a", Icon: CheckCircle2 },
 } as const;
 
 const LIST_ACCENT: Record<string, string> = {
-  green: "#10b981",
-  amber: "#f59e0b",
-  cyan: "#00f0ff",
-  purple: "#a855f7",
-  red: "#ef4444",
+  green: "#4cc07a",
+  amber: "#e0a45c",
+  cyan: "#7fb3a3",
+  purple: "#a88fc4",
+  red: "#c2603f",
 };
 
 /**
- * AAFiends blog section renderer. Adapted 2026-07-04 from RaceFiends'
- * BlogContent.tsx pattern (same idea: post content is data, split into
- * typed sections, each rendered by its own small component) but re-themed
- * emerald/black and built around real data infographics (statgrid,
- * timeline, barchart) instead of RaceFiends' ledger-specific calculator.
- *
- * No react-markdown dependency — blogData.ts's markdown blocks only ever
- * use plain paragraphs, **bold** inline emphasis, and an occasional `---`
- * divider, so a tiny hand-rolled parser (see renderMarkdownLite below)
- * covers it without adding a new package.
+ * Data blocks are allowed to break the 68ch measure on wide screens — that
+ * contrast between a narrow column of argument and a wider figure is what
+ * makes a page read like a magazine rather than a form.
  */
+const BREAKOUT = "lg:-mx-14";
 
 interface BlogContentProps {
   post: BlogPost;
 }
 
-// Inline parser: handles **bold**, *italic*, and [text](url) links.
+// Inline parser: handles **bold**, *italic*, and [text](url) links. The
+// elements are deliberately unclassed — .prose-dawn styles strong, em and a.
 function renderInline(text: string, keyBase: string) {
   const tokens = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g).filter(Boolean);
   return tokens.map((tok, j) => {
     if (tok.startsWith("**") && tok.endsWith("**")) {
-      return <strong key={`${keyBase}-${j}`} className="font-bold text-white">{tok.slice(2, -2)}</strong>;
+      return <strong key={`${keyBase}-${j}`}>{tok.slice(2, -2)}</strong>;
     }
     if (tok.startsWith("*") && tok.endsWith("*") && tok.length > 2) {
-      return <em key={`${keyBase}-${j}`} className="italic text-neutral-200">{tok.slice(1, -1)}</em>;
+      return <em key={`${keyBase}-${j}`}>{tok.slice(1, -1)}</em>;
     }
     const link = tok.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) {
@@ -56,7 +78,6 @@ function renderInline(text: string, keyBase: string) {
           key={`${keyBase}-${j}`}
           href={link[2]}
           {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-          className="font-bold text-[#10b981] underline decoration-[#10b981]/30 underline-offset-4 hover:text-emerald-300"
         >
           {link[1]}
         </a>
@@ -71,64 +92,49 @@ function renderMarkdownLite(content: string) {
   return blocks.map((block, i) => {
     const trimmed = block.trim();
     if (trimmed === "---") {
-      return <hr key={i} className="my-2 border-white/10" />;
+      return <hr key={i} />;
     }
-    // Headings
     if (trimmed.startsWith("### ")) {
-      return (
-        <h3 key={i} className="mt-2 flex items-center gap-2 text-lg font-black uppercase tracking-tight text-white">
-          <span className="h-6 w-1.5 rounded-full bg-[#10b981]" />
-          {renderInline(trimmed.slice(4), `h3-${i}`)}
-        </h3>
-      );
+      return <h3 key={i}>{renderInline(trimmed.slice(4), `h3-${i}`)}</h3>;
     }
     if (trimmed.startsWith("## ")) {
-      return (
-        <h2 key={i} className="mt-6 text-2xl font-black uppercase tracking-tight text-white sm:text-3xl">
-          {renderInline(trimmed.slice(3), `h2-${i}`)}
-        </h2>
-      );
+      return <h2 key={i}>{renderInline(trimmed.slice(3), `h2-${i}`)}</h2>;
     }
-    // Unordered list — every line starts with "- "
+    // Unordered list — every line starts with "- ". The green markers come
+    // from .prose-dawn li::marker, so there are no hand-placed bullet spans.
     const lines = trimmed.split("\n").map((l) => l.trim());
     if (lines.length > 0 && lines.every((l) => l.startsWith("- "))) {
       return (
-        <ul key={i} className="flex flex-col gap-2 pl-1">
+        <ul key={i}>
           {lines.map((l, k) => (
-            <li key={k} className="flex items-start gap-2.5 text-sm font-light leading-relaxed text-neutral-300 sm:text-base">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#10b981]/70" />
-              <span>{renderInline(l.slice(2), `li-${i}-${k}`)}</span>
-            </li>
+            <li key={k}>{renderInline(l.slice(2), `li-${i}-${k}`)}</li>
           ))}
         </ul>
       );
     }
-    // Paragraph
-    return (
-      <p key={i} className="text-sm font-light leading-relaxed text-neutral-300 sm:text-base">
-        {renderInline(trimmed, `p-${i}`)}
-      </p>
-    );
+    return <p key={i}>{renderInline(trimmed, `p-${i}`)}</p>;
   });
 }
 
 export default function BlogContent({ post }: BlogContentProps) {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-9">
       {post.sections.map((section, idx) => {
         switch (section.type) {
           case "markdown":
+            return <Prose key={idx}>{renderMarkdownLite(section.content)}</Prose>;
+          case "pullquote":
             return (
-              <div key={idx} className="flex flex-col gap-4">
-                {renderMarkdownLite(section.content)}
+              <div key={idx} className="py-4">
+                <PullQuote cite={section.author ? `— ${section.author}` : undefined}>
+                  {section.text}
+                </PullQuote>
               </div>
             );
-          case "pullquote":
-            return <PullQuote key={idx} text={section.text} author={section.author} />;
           case "comparison":
-            return <ComparisonInfographic key={idx} {...section} />;
+            return <Comparison key={idx} {...section} />;
           case "workflow":
-            return <WorkflowChart key={idx} title={section.title} steps={section.steps} />;
+            return <Workflow key={idx} title={section.title} steps={section.steps} />;
           case "statgrid":
             return <StatGrid key={idx} title={section.title} stats={section.stats} />;
           case "timeline":
@@ -137,18 +143,23 @@ export default function BlogContent({ post }: BlogContentProps) {
             return <BarChart key={idx} title={section.title} unit={section.unit} bars={section.bars} />;
           case "figure": {
             const Fig = DOSE_FIGURES[section.id];
-            return Fig ? <Fig key={idx} /> : null;
+            return Fig ? (
+              <div key={idx} className={BREAKOUT}>
+                <Fig />
+              </div>
+            ) : null;
           }
           case "image":
             return (
-              <SmartImage
-                key={idx}
-                src={section.src}
-                alt={section.alt}
-                caption={section.caption}
-                credit={section.credit}
-                accent={section.accent}
-              />
+              <div key={idx} className={BREAKOUT}>
+                <SmartImage
+                  src={section.src}
+                  alt={section.alt}
+                  caption={section.caption}
+                  credit={section.credit}
+                  accent={section.accent}
+                />
+              </div>
             );
           case "callout":
             return <Callout key={idx} tone={section.tone} title={section.title} body={section.body} />;
@@ -160,39 +171,47 @@ export default function BlogContent({ post }: BlogContentProps) {
       })}
 
       {post.sources.length > 0 && (
-        <div className="text-[10px] font-mono text-neutral-600 uppercase tracking-widest border-t border-white/5 pt-6">
-          Sources: {post.sources.join(" • ")}
+        <div className="font-measure border-t border-[#1d231d] pt-6 text-[13px] leading-relaxed text-[#7d7a70]">
+          Sources: {post.sources.join(" · ")}
         </div>
       )}
     </div>
   );
 }
 
-function Callout({ tone, title, body }: { tone: "info" | "warn" | "success" | "danger"; title: string; body: string }) {
-  const { color, Icon } = CALLOUT_STYLES[tone];
+/** A block title. Serif, no coloured tab beside it. */
+function BlockHead({ children }: { children: React.ReactNode }) {
+  return <SubHead className="mb-5">{children}</SubHead>;
+}
+
+function Callout({
+  tone,
+  title,
+  body,
+}: {
+  tone: "info" | "warn" | "success" | "danger";
+  title: string;
+  body: string;
+}) {
+  const { color, Icon } = CALLOUT_TONES[tone];
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="flex gap-4 rounded-2xl border p-5"
-      style={{ borderColor: `${color}33`, background: `${color}0d` }}
+    <div
+      className="flex gap-4 rounded-[14px] border px-5 py-5"
+      style={{ borderColor: `${color}40`, background: `${color}0d` }}
     >
-      <div
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
-        style={{ background: `${color}1a`, color }}
-      >
-        <Icon size={18} />
+      <Icon size={20} className="mt-0.5 shrink-0" style={{ color }} aria-hidden />
+      <div>
+        <h4 className="font-display text-[1.1rem] leading-tight text-[#f2efe6]">{title}</h4>
+        <p className="mt-1.5 text-[15px] leading-relaxed text-[#b8b4a6]">{body}</p>
       </div>
-      <div className="flex flex-col gap-1">
-        <h4 className="text-sm font-black uppercase tracking-wide text-white">{title}</h4>
-        <p className="text-xs leading-relaxed text-neutral-300 sm:text-[13px]">{body}</p>
-      </div>
-    </motion.div>
+    </div>
   );
 }
 
+/**
+ * Grouped items with a rule between them, not a grid of boxes inside a box —
+ * the old version nested a rounded card per group inside the article card.
+ */
 function ShoppingList({
   title,
   note,
@@ -207,49 +226,45 @@ function ShoppingList({
   }[];
 }) {
   return (
-    <div className="flex flex-col gap-5">
-      <h3 className="flex items-center gap-2 text-lg font-black uppercase tracking-tight text-white">
-        <span className="h-6 w-1.5 rounded-full bg-[#10b981]" />
-        {title}
-      </h3>
-      {note && <p className="-mt-2 text-xs leading-relaxed text-neutral-400">{note}</p>}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div className={BREAKOUT}>
+      <BlockHead>{title}</BlockHead>
+      {note && <p className="-mt-2 mb-6 max-w-[62ch] text-[15px] text-[#b8b4a6]">{note}</p>}
+      <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
         {groups.map((g, gi) => {
           const accent = LIST_ACCENT[g.accent || "green"];
           return (
-            <div key={gi} className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-[#0a0a0a] p-5">
-              <div className="flex items-center gap-2 border-b border-white/5 pb-2">
-                <span className="h-2.5 w-2.5 rounded-full" style={{ background: accent }} />
-                <h4 className="text-xs font-black uppercase tracking-widest text-white">{g.name}</h4>
-              </div>
-              <ul className="flex flex-col gap-2.5">
+            <div key={gi}>
+              <h4
+                className="font-measure border-b border-[#1d231d] pb-2 text-[13px]"
+                style={{ color: accent }}
+              >
+                {g.name}
+              </h4>
+              <ul className="mt-1 list-none pl-0">
                 {g.items.map((it, ii) => (
-                  <li key={ii} className="flex items-start gap-2.5 text-xs leading-snug">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: `${accent}99` }} />
-                    <span className="flex-1">
-                      {it.url ? (
-                        <a
-                          href={it.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 font-bold text-white underline decoration-white/25 underline-offset-4 hover:text-[#10b981]"
-                        >
-                          {it.name}
-                          <ExternalLink size={11} className="opacity-60" />
-                        </a>
-                      ) : (
-                        <span className="font-bold text-white">{it.name}</span>
-                      )}
-                      {it.detail && <span className="text-neutral-400"> — {it.detail}</span>}
-                      {it.tag && (
-                        <span
-                          className="ml-1.5 rounded px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider"
-                          style={{ background: `${accent}1a`, color: accent }}
-                        >
-                          {it.tag}
-                        </span>
-                      )}
-                    </span>
+                  <li
+                    key={ii}
+                    className="border-b border-[#1d231d] py-3 text-[15px] leading-relaxed text-[#b8b4a6]"
+                  >
+                    {it.url ? (
+                      <a
+                        href={it.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-semibold text-[#f2efe6] underline decoration-[#2a322a] underline-offset-4 transition-colors hover:decoration-[#4cc07a]"
+                      >
+                        {it.name}
+                        <ExternalLink size={13} className="opacity-60" aria-hidden />
+                      </a>
+                    ) : (
+                      <span className="font-semibold text-[#f2efe6]">{it.name}</span>
+                    )}
+                    {it.detail && <span> — {it.detail}</span>}
+                    {it.tag && (
+                      <span className="font-measure ml-2 text-[12.5px]" style={{ color: accent }}>
+                        {it.tag}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -261,31 +276,8 @@ function ShoppingList({
   );
 }
 
-function PullQuote({ text, author }: { text: string; author?: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6 }}
-      className="border-l-4 border-[#10b981] rounded-2xl p-6 md:p-8 bg-[#10b981]/[0.04] relative overflow-hidden"
-    >
-      <div className="absolute top-2 left-4 text-7xl font-black text-[#10b981]/10 font-serif leading-none select-none pointer-events-none">
-        &ldquo;
-      </div>
-      <blockquote className="text-lg md:text-xl font-light text-white leading-relaxed relative z-10 italic">
-        {text}
-      </blockquote>
-      {author && (
-        <div className="mt-4 text-xs font-bold uppercase tracking-widest text-[#10b981]/80 font-mono">
-          &mdash; {author}
-        </div>
-      )}
-    </motion.div>
-  );
-}
-
-function ComparisonInfographic({
+/** Two sides of an argument. One border each, no stripe, no tinted panels. */
+function Comparison({
   title,
   leftTitle,
   leftPoints,
@@ -298,197 +290,164 @@ function ComparisonInfographic({
   rightTitle: string;
   rightPoints: string[];
 }) {
+  const columns = [
+    { heading: leftTitle, points: leftPoints, Icon: XCircle, color: "#c2603f" },
+    { heading: rightTitle, points: rightPoints, Icon: CheckCircle2, color: "#4cc07a" },
+  ];
   return (
-    <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-black uppercase tracking-tight text-white flex items-center gap-2">
-        <span className="w-1.5 h-6 bg-[#10b981] rounded-full"></span>
-        {title}
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="border border-red-500/10 rounded-2xl p-5 bg-red-950/5 flex flex-col gap-4"
-        >
-          <div className="flex items-center gap-3 border-b border-white/5 pb-3">
-            <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500">
-              <XCircle size={16} />
+    <div className={BREAKOUT}>
+      <BlockHead>{title}</BlockHead>
+      <div className="grid gap-6 md:grid-cols-2">
+        {columns.map((col) => (
+          <div key={col.heading} className="rounded-[14px] border border-[#1d231d] px-6 py-6">
+            <div className="flex items-center gap-2.5 border-b border-[#1d231d] pb-3">
+              <col.Icon size={18} style={{ color: col.color }} aria-hidden />
+              <h4 className="font-display text-[1.15rem] leading-tight text-[#f2efe6]">
+                {col.heading}
+              </h4>
             </div>
-            <h4 className="font-black text-base text-white uppercase tracking-tight">{leftTitle}</h4>
+            <ul className="mt-4 list-none space-y-3 pl-0 text-[15px] leading-relaxed text-[#b8b4a6]">
+              {col.points.map((point, idx) => (
+                <li key={idx} className="flex gap-3">
+                  <span
+                    className="font-measure shrink-0 text-[13px] text-[#7d7a70]"
+                    aria-hidden
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="flex flex-col gap-3">
-            {leftPoints.map((point, idx) => (
-              <li key={idx} className="flex gap-2.5 items-start text-xs font-light text-neutral-400 leading-normal">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500/60 mt-1.5 shrink-0" />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="border border-[#10b981]/10 rounded-2xl p-5 bg-[#10b981]/[0.03] flex flex-col gap-4"
-        >
-          <div className="flex items-center gap-3 border-b border-white/5 pb-3">
-            <div className="w-8 h-8 rounded-lg bg-[#10b981]/10 flex items-center justify-center text-[#10b981]">
-              <CheckCircle2 size={16} />
-            </div>
-            <h4 className="font-black text-base text-white uppercase tracking-tight">{rightTitle}</h4>
-          </div>
-          <ul className="flex flex-col gap-3">
-            {rightPoints.map((point, idx) => (
-              <li key={idx} className="flex gap-2.5 items-start text-xs font-light text-neutral-300 leading-normal">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] mt-1.5 shrink-0" />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
-
-function WorkflowChart({ title, steps }: { title: string; steps: { title: string; desc: string }[] }) {
-  return (
-    <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-black uppercase tracking-tight text-white flex items-center gap-2">
-        <span className="w-1.5 h-6 bg-[#10b981] rounded-full"></span>
-        {title}
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {steps.map((step, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: idx * 0.1 }}
-            className="border border-white/5 rounded-2xl p-5 flex flex-col gap-3 relative bg-white/[0.02] hover:border-[#10b981]/20 transition-all group"
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#10b981] uppercase font-mono bg-[#10b981]/10 px-2 py-0.5 rounded">
-                Step {idx + 1}
-              </span>
-              {idx < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 translate-x-1.5 z-20">
-                  <ArrowRight size={14} className="text-neutral-600 group-hover:text-[#10b981]/50 transition-colors" />
-                </div>
-              )}
-            </div>
-            <h4 className="font-bold text-sm uppercase tracking-wider text-white mt-1">{step.title}</h4>
-            <p className="text-xs font-light text-neutral-400 leading-relaxed flex-1">{step.desc}</p>
-          </motion.div>
         ))}
       </div>
     </div>
   );
 }
 
-// Big-number stat callouts — the primary "infographic" workhorse for these
-// posts. Deliberately simple (no external chart library) so every number
-// is guaranteed to render exactly as written in blogData.ts.
-function StatGrid({ title, stats }: { title?: string; stats: { value: string; label: string; sublabel?: string }[] }) {
+/** An ordered sequence where the order carries information. Rules, not cards. */
+function Workflow({ title, steps }: { title: string; steps: { title: string; desc: string }[] }) {
   return (
-    <div className="flex flex-col gap-5">
-      {title && (
-        <h3 className="text-lg font-black uppercase tracking-tight text-white flex items-center gap-2">
-          <span className="w-1.5 h-6 bg-[#10b981] rounded-full"></span>
-          {title}
-        </h3>
-      )}
-      <div className={`grid grid-cols-1 ${stats.length >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"} gap-4`}>
+    <div className={BREAKOUT}>
+      <BlockHead>{title}</BlockHead>
+      <StackList
+        className="mt-0 sm:mt-0"
+        items={steps.map((step, idx) => ({
+          n: String(idx + 1).padStart(2, "0"),
+          title: step.title,
+          body: step.desc,
+        }))}
+      />
+    </div>
+  );
+}
+
+/**
+ * The measured facts. Mono, because these are measurements — the number sits
+ * over a rule rather than inside a tinted box.
+ */
+function StatGrid({
+  title,
+  stats,
+}: {
+  title?: string;
+  stats: { value: string; label: string; sublabel?: string }[];
+}) {
+  return (
+    <div className={BREAKOUT}>
+      {title && <BlockHead>{title}</BlockHead>}
+      <div className={`grid gap-8 ${stats.length >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
         {stats.map((stat, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: idx * 0.08 }}
-            className="border border-[#10b981]/15 rounded-2xl p-5 bg-[#10b981]/[0.03] flex flex-col gap-1.5 text-center items-center"
-          >
-            <span className="text-3xl sm:text-4xl font-black text-[#10b981] tracking-tight">{stat.value}</span>
-            <span className="text-xs font-bold text-white uppercase tracking-wide">{stat.label}</span>
-            {stat.sublabel && <span className="text-[10px] text-neutral-500 leading-relaxed">{stat.sublabel}</span>}
-          </motion.div>
+          <div key={idx} className="border-t border-[#1d231d] pt-4">
+            <span className="font-measure block text-[1.65rem] leading-none tracking-[-0.01em] text-[#4cc07a]">
+              {stat.value}
+            </span>
+            <span className="mt-2.5 block text-[15px] font-semibold text-[#f2efe6]">
+              {stat.label}
+            </span>
+            {stat.sublabel && (
+              <span className="mt-1.5 block text-[14px] leading-relaxed text-[#7d7a70]">
+                {stat.sublabel}
+              </span>
+            )}
+          </div>
         ))}
       </div>
     </div>
   );
 }
 
-// Horizontal step timeline for phased recovery windows (e.g. the 90-day
-// reset). Purely code/CSS — no image asset.
-function Timeline({ title, phases }: { title: string; phases: { range: string; label: string; desc: string }[] }) {
+/** Phased windows. The range is a real measurement, so it is mono. */
+function Timeline({
+  title,
+  phases,
+}: {
+  title: string;
+  phases: { range: string; label: string; desc: string }[];
+}) {
   return (
-    <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-black uppercase tracking-tight text-white flex items-center gap-2">
-        <span className="w-1.5 h-6 bg-[#10b981] rounded-full"></span>
-        {title}
-      </h3>
-      <div className="flex flex-col gap-0">
+    <div className={BREAKOUT}>
+      <BlockHead>{title}</BlockHead>
+      <div className="border-t border-[#1d231d]">
         {phases.map((phase, idx) => (
-          <motion.div
+          <div
             key={idx}
-            initial={{ opacity: 0, x: -15 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: idx * 0.08 }}
-            className="flex gap-4 items-start"
+            className="grid gap-x-6 gap-y-1 border-b border-[#1d231d] py-5 sm:grid-cols-[9.5rem_1fr]"
           >
-            <div className="flex flex-col items-center shrink-0 pt-1">
-              <span className="w-3 h-3 rounded-full bg-[#10b981] shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-              {idx < phases.length - 1 && <span className="w-px flex-1 min-h-[2.5rem] bg-[#10b981]/20 my-1" />}
+            <span className="font-measure text-[13px] leading-6 text-[#4cc07a]">{phase.range}</span>
+            <div>
+              <h4 className="font-display text-[1.15rem] leading-tight text-[#f2efe6]">
+                {phase.label}
+              </h4>
+              <p className="mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-[#b8b4a6]">
+                {phase.desc}
+              </p>
             </div>
-            <div className="flex flex-col gap-1 pb-6">
-              <span className="text-[10px] font-mono font-bold text-[#10b981] uppercase tracking-widest">{phase.range}</span>
-              <h4 className="font-black text-white text-sm uppercase tracking-wide">{phase.label}</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed font-light">{phase.desc}</p>
-            </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
   );
 }
 
-// Horizontal bar comparison for percentage-style stats. Bars are scaled
-// relative to the largest value in the set so wildly different magnitudes
-// (e.g. 530% vs 32%) still render legibly side by side.
-function BarChart({ title, unit, bars }: { title: string; unit?: string; bars: { label: string; value: number; sublabel?: string }[] }) {
+/**
+ * Horizontal bar comparison. Bars are scaled against the largest value in the
+ * set so wildly different magnitudes (530% vs 32%) still read side by side.
+ * They are drawn at full length at rest — no reveal-on-scroll.
+ */
+function BarChart({
+  title,
+  unit,
+  bars,
+}: {
+  title: string;
+  unit?: string;
+  bars: { label: string; value: number; sublabel?: string }[];
+}) {
   const max = Math.max(...bars.map((b) => b.value), 1);
   return (
-    <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-black uppercase tracking-tight text-white flex items-center gap-2">
-        <span className="w-1.5 h-6 bg-[#10b981] rounded-full"></span>
-        {title}
-      </h3>
-      <div className="flex flex-col gap-4">
+    <div className={BREAKOUT}>
+      <BlockHead>{title}</BlockHead>
+      <div className="flex flex-col gap-5">
         {bars.map((bar, idx) => (
-          <div key={idx} className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-baseline gap-3 text-xs">
-              <span className="font-bold text-neutral-300">{bar.label}</span>
-              <span className="font-mono font-black text-[#10b981] shrink-0">
+          <div key={idx}>
+            <div className="flex items-baseline justify-between gap-4">
+              <span className="text-[15px] font-semibold text-[#f2efe6]">{bar.label}</span>
+              <span className="font-measure shrink-0 text-[14px] text-[#4cc07a]">
                 +{bar.value}
                 {unit || "%"}
               </span>
             </div>
-            <div className="w-full h-2.5 bg-white/5 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${(bar.value / max) * 100}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className="h-full bg-gradient-to-r from-[#10b981]/60 to-[#10b981] rounded-full"
+            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-[#1d231d]">
+              <div
+                className="h-full rounded-full bg-[#4cc07a]"
+                style={{ width: `${(bar.value / max) * 100}%` }}
               />
             </div>
-            {bar.sublabel && <span className="text-[10px] text-neutral-500">{bar.sublabel}</span>}
+            {bar.sublabel && (
+              <span className="mt-1.5 block text-[14px] text-[#7d7a70]">{bar.sublabel}</span>
+            )}
           </div>
         ))}
       </div>

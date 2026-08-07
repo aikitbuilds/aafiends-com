@@ -9,9 +9,9 @@ export default function BuildStamp() {
   return (
     <span
       title="Last code change deployed"
-      className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/10 bg-[#0a0a0a] text-[9px] font-mono font-bold text-neutral-500 uppercase tracking-widest shrink-0"
+      className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#1d231d] bg-[#141814] text-[9px] font-mono font-bold text-[#7d7a70] shrink-0"
     >
-      <Clock size={10} className="text-[#10b981]" />
+      <Clock size={10} className="text-[#4cc07a]" />
       {BUILD_TIME}
     </span>
   );

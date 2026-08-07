@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Lock } from "lucide-react";
+import { Wrap, Section, SectionHead, Prose } from "@/components/design";
 
 export const metadata: Metadata = {
   title: "Privacy & Your Data — Plain Language",
@@ -11,15 +12,29 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://aafiends.com/privacy" },
 };
 
-const SECTIONS: { title: string; body: string[] }[] = [
+/**
+ * `title` carries the heading with one amber italic phrase; `body` is the
+ * policy text and is reproduced verbatim — restyle it, never rewrite it.
+ */
+const SECTIONS: { id: string; title: ReactNode; body: string[] }[] = [
   {
-    title: "The short version",
+    id: "short-version",
+    title: (
+      <>
+        The <em>short version.</em>
+      </>
+    ),
     body: [
       "Your recovery data belongs to you. Check-ins, cravings, sleep, and anything you tell the Mirror are stored in a private vault tied to your account that only you can access through the app. We do not sell your data, we do not share it with advertisers, and you can use most of the site — the journal, the protocol, the science — without an account at all.",
     ],
   },
   {
-    title: "What we collect, and when",
+    id: "what-we-collect",
+    title: (
+      <>
+        What we collect, <em>and when.</em>
+      </>
+    ),
     body: [
       "Nothing, if you just read. The public pages — journal downloads, the framework, the blog, the book — require no account and no personal information.",
       "Your account basics, if you sign in. Login runs through Google via Firebase Authentication; we receive your email address and display name. Use a pseudonym display name if you prefer — we honor Traditions 11 and 12.",
@@ -28,7 +43,12 @@ const SECTIONS: { title: string; body: string[] }[] = [
     ],
   },
   {
-    title: "Who can see it",
+    id: "who-can-see-it",
+    title: (
+      <>
+        Who <em>can see it.</em>
+      </>
+    ),
     body: [
       "You. Vault data is readable only by your authenticated account, enforced by database security rules.",
       "The AI, when you ask it. When you use the Mirror (the AI check-in), the text or audio you submit is processed by an AI model (Google Gemini) to generate the reflection. That processing happens per-request; the Mirror exists to serve you, not to profile you.",
@@ -36,13 +56,23 @@ const SECTIONS: { title: string; body: string[] }[] = [
     ],
   },
   {
-    title: "Deleting your data",
+    id: "deleting-your-data",
+    title: (
+      <>
+        <em>Deleting</em> your data.
+      </>
+    ),
     body: [
       "Email aafiends@gmail.com from your account email and ask. We'll delete your account and vault contents. This is a small operation run by people in recovery — deletion is handled by a human, promptly.",
     ],
   },
   {
-    title: "Honesty about what this is",
+    id: "honesty",
+    title: (
+      <>
+        <em>Honesty</em> about what this is.
+      </>
+    ),
     body: [
       "AA Fiends is a small, member-built beta — not a hospital system. We use Google Firebase's standard security (authentication, per-user security rules, encryption in transit) rather than custom infrastructure, and we label sample data as sample data. If the way we handle data ever changes materially, this page changes first.",
       "This page is a plain-language summary, not a legal contract. Questions or concerns: aafiends@gmail.com — a human reads it.",
@@ -52,53 +82,54 @@ const SECTIONS: { title: string; body: string[] }[] = [
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <main className="flex-grow w-full max-w-4xl mx-auto px-6 py-20 flex flex-col gap-12 relative z-10">
-        <div className="flex items-center gap-4 border-b border-white/10 pb-6">
-          <div className="w-16 h-16 rounded-2xl bg-[#10b981]/10 flex items-center justify-center border border-[#10b981]/30 text-[#10b981]">
-            <Lock size={32} />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest block mb-1">
-              Data Over Denial — Including Ours
-            </span>
-            <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
-              Privacy &amp; Your Data
-            </h1>
-          </div>
-        </div>
+      <Section tight>
+        <Wrap>
+          <h1 className="font-display max-w-[15ch] text-[clamp(2.4rem,5.5vw,4rem)] leading-[1.05] tracking-[-0.025em] text-[#f2efe6] [&_em]:font-display-italic [&_em]:text-[#e0a45c]">
+            Privacy &amp; <em>your data.</em>
+          </h1>
+          <p className="mt-5 max-w-[68ch] text-[1.05rem] leading-relaxed text-[#b8b4a6]">
+            A recovery app asks for the most private data there is. Here is exactly what happens to
+            yours — in plain language, because that&apos;s the whole brand.
+          </p>
+        </Wrap>
+      </Section>
 
-        <p className="text-lg text-neutral-300 leading-relaxed">
-          A recovery app asks for the most private data there is. Here is exactly what happens to yours — in plain
-          language, because that&apos;s the whole brand.
-        </p>
-
-        <div className="flex flex-col gap-8">
-          {SECTIONS.map((s) => (
-            <section key={s.title} className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 flex flex-col gap-4">
-              <h2 className="text-xl font-black text-white uppercase tracking-tight">{s.title}</h2>
+      {SECTIONS.map((s, i) => (
+        <Section key={s.id} id={s.id} band={i % 2 === 0} tight>
+          <Wrap>
+            <SectionHead>{s.title}</SectionHead>
+            <Prose className="mt-8">
               {s.body.map((p) => (
-                <p key={p.slice(0, 40)} className="text-neutral-400 leading-relaxed">
-                  {p}
-                </p>
+                <p key={p.slice(0, 40)}>{p}</p>
               ))}
-            </section>
-          ))}
-        </div>
+            </Prose>
+          </Wrap>
+        </Section>
+      ))}
 
-        <p className="text-sm text-neutral-500 leading-relaxed">
-          See also:{" "}
-          <Link href="/terms" className="text-[#10b981] hover:text-emerald-300 underline underline-offset-4">
-            terms &amp; medical disclaimer
-          </Link>{" "}
-          ·{" "}
-          <Link href="/faq" className="text-[#10b981] hover:text-emerald-300 underline underline-offset-4">
-            FAQ
-          </Link>
-        </p>
-      </main>
+      <Section tight>
+        <Wrap>
+          <p className="text-[15px] text-[#7d7a70]">
+            See also:{" "}
+            <Link
+              href="/terms"
+              className="text-[#b8b4a6] underline decoration-[#1d231d] underline-offset-4 transition-colors hover:text-[#f2efe6] hover:decoration-[#4cc07a]"
+            >
+              terms &amp; medical disclaimer
+            </Link>{" "}
+            ·{" "}
+            <Link
+              href="/faq"
+              className="text-[#b8b4a6] underline decoration-[#1d231d] underline-offset-4 transition-colors hover:text-[#f2efe6] hover:decoration-[#4cc07a]"
+            >
+              FAQ
+            </Link>
+          </p>
+        </Wrap>
+      </Section>
 
       <SiteFooter />
     </div>

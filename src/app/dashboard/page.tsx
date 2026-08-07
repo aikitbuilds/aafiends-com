@@ -85,7 +85,7 @@ export default function DashboardPage() {
   }, [user, profile, loading, router]);
 
   if (loading || !user || (!profile && user)) {
-    return <div className="min-h-screen bg-[#050505] flex items-center justify-center text-[#10b981] uppercase tracking-widest font-black text-sm animate-pulse">Loading your dashboard...</div>;
+    return <div className="min-h-screen bg-[#0d0f0d] flex items-center justify-center text-[#4cc07a] font-semibold text-sm">Loading your dashboard...</div>;
   }
 
   const fadeIn = {
@@ -95,17 +95,17 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-300 font-sans selection:bg-[#10b981]/30 selection:text-emerald-200">
+    <div className="min-h-screen bg-[#0d0f0d] text-[#b8b4a6] font-sans selection:bg-[#4cc07a]/30 selection:text-emerald-200">
 
-      <header className="border-b border-white/5 bg-[#050505]/90 backdrop-blur-md sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+      <header className="border-b border-[#1d231d] bg-[#0d0f0d]/90 backdrop-blur-md sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-4">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#10b981]/10 border border-[#10b981]/30 flex items-center justify-center shrink-0">
-              <Activity className="text-[#10b981] w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#4cc07a]/10 border border-[#4cc07a]/30 flex items-center justify-center shrink-0">
+              <Activity className="text-[#4cc07a] w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div className="flex flex-col overflow-hidden">
-              <h1 className="text-lg sm:text-xl font-black uppercase tracking-tight text-white truncate">My Dashboard</h1>
-              <p className="text-[9px] sm:text-[10px] font-mono text-neutral-500 font-bold uppercase tracking-widest truncate">
+              <h1 className="text-lg sm:text-xl font-semibold tracking-tight text-[#f2efe6] truncate">My Dashboard</h1>
+              <p className="text-[9px] sm:text-[10px] font-mono text-[#7d7a70] font-bold truncate">
                 Data Over Denial
               </p>
             </div>
@@ -116,41 +116,41 @@ export default function DashboardPage() {
             {/* VOCABULARY TOGGLE */}
             <button
               onClick={toggleMode}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-[#0a0a0a] hover:bg-neutral-900 transition-colors text-[10px] font-black uppercase tracking-widest text-neutral-400"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1d231d] bg-[#141814] hover:bg-[#141814] transition-colors text-[10px] font-semibold text-[#b8b4a6]"
               title="Toggle Vocabulary Mode"
             >
               {mode === "tactical" ? (
                 <><Shield size={14} className="text-red-400" /> Tactical</>
               ) : (
-                <><BookOpen size={14} className="text-[#10b981]" /> Standard</>
+                <><BookOpen size={14} className="text-[#4cc07a]" /> Standard</>
               )}
             </button>
 
             <button
               onClick={() => router.push("/profile")}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 hover:bg-neutral-900 transition-colors"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#141814] border border-[#1d231d] hover:bg-[#141814] transition-colors"
               title="Operator Profile"
             >
-              <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-              <span className="text-[10px] font-mono font-bold text-neutral-400 uppercase tracking-widest">{user?.email}</span>
+              <span className="w-2 h-2 rounded-full bg-[#4cc07a]"></span>
+              <span className="text-[10px] font-mono font-bold text-[#b8b4a6]">{user?.email}</span>
             </button>
             <button
               onClick={() => router.push("/profile")}
-              className="p-2.5 rounded-full bg-[#0a0a0a] border border-white/10 hover:bg-neutral-900 transition-colors text-neutral-400 hover:text-white sm:hidden"
+              className="p-2.5 rounded-full bg-[#141814] border border-[#1d231d] hover:bg-[#141814] transition-colors text-[#b8b4a6] hover:text-[#f2efe6] sm:hidden"
               title="Operator Profile"
             >
               <UserCircle2 size={16} />
             </button>
             <button
               onClick={logout}
-              className="p-2.5 rounded-full bg-[#0a0a0a] border border-white/10 hover:bg-neutral-900 transition-colors text-neutral-400 hover:text-white"
+              className="p-2.5 rounded-full bg-[#141814] border border-[#1d231d] hover:bg-[#141814] transition-colors text-[#b8b4a6] hover:text-[#f2efe6]"
               title="Log Out"
             >
               <LogOut size={16} />
             </button>
             <Link
               href="/ai4aa/dashboard"
-              className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#00f0ff]/40 bg-[#00f0ff]/10 hover:bg-[#00f0ff]/20 text-[#00f0ff] text-xs font-black tracking-widest uppercase transition-colors"
+              className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#7fb3a3]/40 bg-[#7fb3a3]/10 hover:bg-[#7fb3a3]/20 text-[#7fb3a3] text-xs font-semibold transition-colors"
               title="Open the AI4AA course"
             >
               <GraduationCap size={14} /> AI4AA Course
@@ -158,11 +158,11 @@ export default function DashboardPage() {
             <button
               onClick={handleMeetingCheckIn}
               disabled={checkingIn}
-              className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full border text-xs font-black tracking-widest uppercase transition-colors disabled:opacity-50 ${
-                justLogged
-                  ? "border-[#10b981] bg-[#10b981] text-black"
-                  : "border-[#10b981]/50 bg-[#10b981]/10 hover:bg-[#10b981]/20 text-[#10b981]"
-              }`}
+              className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full border text-xs font-semibold transition-colors disabled:opacity-50 ${
+ justLogged
+ ? "border-[#4cc07a] bg-[#4cc07a] text-black"
+ : "border-[#4cc07a]/50 bg-[#4cc07a]/10 hover:bg-[#4cc07a]/20 text-[#4cc07a]"
+ }`}
             >
               {justLogged ? <><CheckCircle2 size={14} /> LOGGED +1</> : <><Plus size={14} /> {checkingIn ? "LOGGING..." : "LOG FELLOWSHIP"}</>}
             </button>
@@ -173,7 +173,7 @@ export default function DashboardPage() {
       <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 flex flex-col gap-6 sm:gap-8">
 
         {/* TAB NAV */}
-        <div className="flex gap-1 sm:gap-2 border-b border-white/10 overflow-x-auto no-scrollbar">
+        <div className="flex gap-1 sm:gap-2 border-b border-[#1d231d] overflow-x-auto no-scrollbar">
           {TABS.map((tab) => {
             const styles = TAB_STYLES[tab.id];
             const isActive = activeTab === tab.id;
@@ -181,9 +181,9 @@ export default function DashboardPage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 sm:px-5 py-3 text-xs font-black uppercase tracking-widest whitespace-nowrap border-b-2 transition-colors ${
-                  isActive ? styles.active : "border-transparent text-neutral-500 hover:text-neutral-300"
-                }`}
+                className={`flex items-center gap-2 px-4 sm:px-5 py-3 text-xs font-semibold whitespace-nowrap border-b-2 transition-colors ${
+ isActive ? styles.active : "border-transparent text-[#7d7a70] hover:text-[#b8b4a6]"
+ }`}
               >
                 <tab.icon size={14} /> {tab.label}
               </button>
@@ -205,8 +205,8 @@ export default function DashboardPage() {
               <>
                 {/* Welcome */}
                 <div className="flex flex-col gap-2">
-                  <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Welcome back.</h2>
-                  <p className="text-sm text-neutral-400 max-w-xl leading-relaxed">
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-[#f2efe6] tracking-tight">Welcome back.</h2>
+                  <p className="text-sm text-[#b8b4a6] max-w-xl leading-relaxed">
                     Recovery here runs on three pillars: the human{" "}
                     <span className="text-purple-400 font-bold">Network</span> that holds you, the physical{" "}
                     <span className="text-red-400 font-bold">Engine</span> that carries you, and the{" "}
@@ -230,8 +230,8 @@ export default function DashboardPage() {
                       <BookOpen className="text-emerald-400" size={18} />
                     </div>
                     <div>
-                      <h4 className="text-sm font-black text-white uppercase tracking-widest">Log Today's Check-In</h4>
-                      <p className="text-xs text-neutral-400">Open your Daily Ledger — Side A / Side B, scored for your trend.</p>
+                      <h4 className="text-sm font-semibold text-[#f2efe6]">Log Today's Check-In</h4>
+                      <p className="text-xs text-[#b8b4a6]">Open your Daily Ledger — Side A / Side B, scored for your trend.</p>
                     </div>
                   </div>
                   <ChevronRight className="text-emerald-400 shrink-0" size={18} />
@@ -240,18 +240,18 @@ export default function DashboardPage() {
                 {/* AI4AA course access — switch over to the course materials */}
                 <Link
                   href="/ai4aa/dashboard"
-                  className="w-full flex items-center justify-between gap-4 bg-gradient-to-r from-[#00f0ff]/10 to-[#3b82f6]/5 border border-[#00f0ff]/30 rounded-2xl p-5 hover:from-[#00f0ff]/15 transition-colors text-left group"
+                  className="w-full flex items-center justify-between gap-4 bg-gradient-to-r from-[#7fb3a3]/10 to-[#3b82f6]/5 border border-[#7fb3a3]/30 rounded-2xl p-5 hover:from-[#7fb3a3]/15 transition-colors text-left group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center shrink-0">
-                      <GraduationCap className="text-[#00f0ff]" size={18} />
+                    <div className="w-10 h-10 rounded-xl bg-[#7fb3a3]/10 border border-[#7fb3a3]/20 flex items-center justify-center shrink-0">
+                      <GraduationCap className="text-[#7fb3a3]" size={18} />
                     </div>
                     <div>
-                      <h4 className="text-sm font-black text-white uppercase tracking-widest">AI4AA Course</h4>
-                      <p className="text-xs text-neutral-400">Your 6-week AI crash course — lessons, homework, and prep. Switch over anytime.</p>
+                      <h4 className="text-sm font-semibold text-[#f2efe6]">AI4AA Course</h4>
+                      <p className="text-xs text-[#b8b4a6]">Your 6-week AI crash course — lessons, homework, and prep. Switch over anytime.</p>
                     </div>
                   </div>
-                  <ChevronRight className="text-[#00f0ff] shrink-0 group-hover:translate-x-0.5 transition-transform" size={18} />
+                  <ChevronRight className="text-[#7fb3a3] shrink-0 group-hover:translate-x-0.5 transition-transform" size={18} />
                 </Link>
 
                 {/* Vanguard vulnerability profile */}
@@ -335,27 +335,27 @@ export default function DashboardPage() {
                 accent={TAB_STYLES.network}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 flex flex-col gap-2">
-                    <div className="flex justify-between items-center text-[10px] font-black text-purple-400 uppercase tracking-widest">
+                  <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-6 flex flex-col gap-2">
+                    <div className="flex justify-between items-center text-[10px] font-semibold text-purple-400">
                       <span>Days Sober</span>
                       <Zap size={14} />
                     </div>
-                    <div className="text-5xl font-black text-white">{daysSober}</div>
+                    <div className="text-5xl font-semibold text-[#f2efe6]">{daysSober}</div>
                   </div>
 
-                  <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 flex flex-col gap-2">
-                    <div className="flex justify-between items-center text-[10px] font-black text-blue-400 uppercase tracking-widest">
+                  <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-6 flex flex-col gap-2">
+                    <div className="flex justify-between items-center text-[10px] font-semibold text-blue-400">
                       <span>Fellowship Meetings</span>
                       <Target size={14} />
                     </div>
-                    <div className="text-5xl font-black text-white">{profile?.meetingsCount || 0}</div>
-                    <p className="text-[10px] text-neutral-500 leading-relaxed">
+                    <div className="text-5xl font-semibold text-[#f2efe6]">{profile?.meetingsCount || 0}</div>
+                    <p className="text-[10px] text-[#7d7a70] leading-relaxed">
                       Total AA meetings you've logged. Tap "Log Fellowship" in the top bar each time you attend one.
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-[#050505] rounded-2xl overflow-hidden border border-white/10">
+                <div className="bg-[#0d0f0d] rounded-2xl overflow-hidden border border-[#1d231d]">
                   <JourneyTab daysSober={daysSober} />
                 </div>
               </PillarPanel>
@@ -386,13 +386,13 @@ export default function DashboardPage() {
 
 function StatChip({ icon: Icon, label, value, accent }: { icon: any; label: string; value: React.ReactNode; accent: string }) {
   return (
-    <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 sm:p-5 flex items-center gap-3">
+    <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-4 sm:p-5 flex items-center gap-3">
       <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${accent}`}>
         <Icon size={18} />
       </div>
       <div className="flex flex-col min-w-0">
-        <span className="text-[10px] text-neutral-500 font-black uppercase tracking-widest">{label}</span>
-        <span className="text-lg sm:text-xl font-black text-white truncate">{value}</span>
+        <span className="text-[10px] text-[#7d7a70] font-semibold">{label}</span>
+        <span className="text-lg sm:text-xl font-semibold text-[#f2efe6] truncate">{value}</span>
       </div>
     </div>
   );
@@ -405,19 +405,19 @@ function PillarCard({ icon: Icon, name, subtitle, description, accent, onClick }
   return (
     <button
       onClick={onClick}
-      className="text-left flex flex-col gap-3 p-5 sm:p-6 rounded-2xl bg-[#0a0a0a] border border-white/10 hover:bg-white/[0.03] hover:border-white/20 transition-colors"
+      className="text-left flex flex-col gap-3 p-5 sm:p-6 rounded-2xl bg-[#141814] border border-[#1d231d] hover:bg-white/[0.03] hover:border-[#2a322a] transition-colors"
     >
       <div className="flex items-center gap-2.5">
         <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap}`}>
           <Icon size={16} />
         </div>
         <div>
-          <h3 className={`text-sm font-black uppercase tracking-widest ${accent.text}`}>{name}</h3>
-          <p className="text-[10px] text-neutral-500 font-bold uppercase tracking-wide">{subtitle}</p>
+          <h3 className={`text-sm font-semibold ${accent.text}`}>{name}</h3>
+          <p className="text-[10px] text-[#7d7a70] font-bold tracking-wide">{subtitle}</p>
         </div>
       </div>
-      <p className="text-xs text-neutral-400 leading-relaxed flex-1">{description}</p>
-      <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${accent.text}`}>
+      <p className="text-xs text-[#b8b4a6] leading-relaxed flex-1">{description}</p>
+      <span className={`text-[10px] font-semibold flex items-center gap-1 ${accent.text}`}>
         Open <ChevronRight size={12} />
       </span>
     </button>
@@ -429,19 +429,19 @@ function PillarPanel({ icon: Icon, name, subtitle, description, accent, children
   accent: { active: string; iconWrap: string; text: string }; children: React.ReactNode;
 }) {
   return (
-    <div className="bg-[#0a0a0a]/60 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 md:p-10 shadow-xl flex flex-col gap-6">
+    <div className="bg-[#141814]/60 backdrop-blur-md border border-[#1d231d] rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 md:p-10 shadow-xl flex flex-col gap-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
         <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${accent.iconWrap}`}>
           <Icon size={20} />
         </div>
         <div>
-          <h3 className="text-lg sm:text-xl font-bold text-white">
-            {name} <span className="text-neutral-500 font-medium">— {subtitle}</span>
+          <h3 className="text-lg sm:text-xl font-bold text-[#f2efe6]">
+            {name} <span className="text-[#7d7a70] font-medium">— {subtitle}</span>
           </h3>
-          <p className="text-xs sm:text-sm text-neutral-400">{description}</p>
+          <p className="text-xs sm:text-sm text-[#b8b4a6]">{description}</p>
         </div>
       </div>
-      <div className="bg-[#050505] rounded-2xl overflow-hidden border border-white/10">
+      <div className="bg-[#0d0f0d] rounded-2xl overflow-hidden border border-[#1d231d]">
         {children}
       </div>
     </div>
@@ -473,16 +473,16 @@ function VanguardCard({ vanguard }: { vanguard: VanguardProfileResult }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className={`bg-[#0a0a0a] border ${style.border} ${style.glow} rounded-2xl p-5 sm:p-6 flex flex-col gap-4`}>
+    <div className={`bg-[#141814] border ${style.border} ${style.glow} rounded-2xl p-5 sm:p-6 flex flex-col gap-4`}>
       <div className="flex items-start justify-between gap-3 flex-wrap">
         <div className="flex gap-4 items-center">
           <div className={`text-4xl sm:text-5xl shrink-0 w-16 h-16 rounded-2xl ${style.bg} border ${style.border} flex items-center justify-center`}>
             {info.emoji}
           </div>
           <div className="flex flex-col gap-0.5">
-            <span className={`text-[10px] font-black uppercase tracking-widest ${style.text}`}>Your Vulnerability Profile</span>
-            <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
-              {info.label} <span className="text-neutral-500 font-medium text-sm sm:text-base">— {info.archetype}</span>
+            <span className={`text-[10px] font-semibold ${style.text}`}>Your Vulnerability Profile</span>
+            <h3 className="text-xl sm:text-2xl font-semibold text-[#f2efe6] leading-tight">
+              {info.label} <span className="text-[#7d7a70] font-medium text-sm sm:text-base">— {info.archetype}</span>
             </h3>
           </div>
         </div>
@@ -492,11 +492,11 @@ function VanguardCard({ vanguard }: { vanguard: VanguardProfileResult }) {
         </span>
       </div>
 
-      <p className="text-sm text-neutral-300 leading-relaxed">{info.vulnerability}</p>
+      <p className="text-sm text-[#b8b4a6] leading-relaxed">{info.vulnerability}</p>
 
       <button
         onClick={() => setExpanded((v) => !v)}
-        className={`flex items-center gap-1.5 text-xs font-black uppercase tracking-widest ${style.text} self-start`}
+        className={`flex items-center gap-1.5 text-xs font-semibold ${style.text} self-start`}
       >
         {expanded ? "Show Less" : "Read More"}
         <ChevronDown size={14} className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -512,12 +512,12 @@ function VanguardCard({ vanguard }: { vanguard: VanguardProfileResult }) {
             className="overflow-hidden flex flex-col gap-4"
           >
             <div className="flex flex-col gap-2">
-              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-neutral-400">
+              <span className="flex items-center gap-1.5 text-[10px] font-semibold text-[#b8b4a6]">
                 <Sparkles size={12} className={style.text} /> Strengths
               </span>
               <ul className="flex flex-col gap-1.5">
                 {info.strengths.map((s) => (
-                  <li key={s} className="text-xs text-neutral-300 leading-relaxed flex gap-2">
+                  <li key={s} className="text-xs text-[#b8b4a6] leading-relaxed flex gap-2">
                     <span className={`${style.text} shrink-0`}>•</span> {s}
                   </li>
                 ))}
@@ -525,20 +525,20 @@ function VanguardCard({ vanguard }: { vanguard: VanguardProfileResult }) {
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-neutral-400">
+              <span className="flex items-center gap-1.5 text-[10px] font-semibold text-[#b8b4a6]">
                 <Radar size={12} className={style.text} /> Common Triggers
               </span>
-              <p className="text-xs text-neutral-300 leading-relaxed">{info.commonTriggers}</p>
+              <p className="text-xs text-[#b8b4a6] leading-relaxed">{info.commonTriggers}</p>
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-neutral-400">
+              <span className="flex items-center gap-1.5 text-[10px] font-semibold text-[#b8b4a6]">
                 <AlertTriangle size={12} className={style.text} /> Warning Signs to Watch
               </span>
-              <p className="text-xs text-neutral-300 leading-relaxed">{info.warningSigns}</p>
+              <p className="text-xs text-[#b8b4a6] leading-relaxed">{info.warningSigns}</p>
             </div>
 
-            <p className="text-[10px] text-neutral-600 font-mono leading-relaxed pt-1 border-t border-white/5">
+            <p className="text-[10px] text-[#7d7a70] font-mono leading-relaxed pt-1 border-t border-[#1d231d]">
               Estimate based on how the diagnostic is designed, not measured from real user data yet — the beta is still small. This will switch to a live number as more people complete the diagnostic.
             </p>
           </motion.div>

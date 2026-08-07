@@ -196,7 +196,7 @@ export default function ProfilePage() {
 
   if (loading || !user || (!profile && user)) {
     return (
-      <div className="min-h-screen bg-stone-900 flex items-center justify-center text-teal-500 uppercase tracking-widest font-black text-sm animate-pulse">
+      <div className="min-h-screen bg-[#0d0f0d] flex items-center justify-center text-[#4cc07a] font-semibold text-sm">
         Initializing Sanctuary...
       </div>
     );
@@ -210,12 +210,12 @@ export default function ProfilePage() {
   const vanguardProfile = computeVanguardProfile(profile?.diagnosticData);
 
   return (
-    <div className="min-h-screen bg-stone-900 text-stone-300 font-sans selection:bg-teal-500/30 selection:text-teal-200">
-      <header className="border-b border-stone-800 bg-stone-900/80 backdrop-blur-md sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
+    <div className="min-h-screen bg-[#0d0f0d] text-[#b8b4a6] font-sans selection:bg-[#4cc07a]/30 selection:text-[#f2efe6]">
+      <header className="border-b border-[#1d231d] bg-[#0d0f0d]/80 backdrop-blur-md sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
           <button
             onClick={() => router.push("/dashboard")}
-            className="flex items-center gap-2 text-stone-400 hover:text-stone-200 transition-colors text-xs font-black uppercase tracking-widest"
+            className="flex items-center gap-2 text-[#b8b4a6] hover:text-[#f2efe6] transition-colors text-xs font-semibold"
           >
             <ArrowLeft size={16} /> Back to Protocol
           </button>
@@ -223,7 +223,7 @@ export default function ProfilePage() {
             <BuildStamp />
             <button
               onClick={logout}
-              className="p-2.5 rounded-full bg-stone-800 border border-stone-700 hover:bg-stone-700 transition-colors text-stone-400 hover:text-stone-200"
+              className="p-2.5 rounded-full bg-[#141814] border border-[#2a322a] hover:bg-stone-700 transition-colors text-[#b8b4a6] hover:text-[#f2efe6]"
               title="Log Out"
             >
               <LogOut size={16} />
@@ -235,47 +235,47 @@ export default function ProfilePage() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex flex-col gap-8 sm:gap-10">
         {/* PAGE HEADER */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
-            <UserCircle2 className="text-teal-400 w-7 h-7" />
+          <div className="w-14 h-14 rounded-2xl bg-[#4cc07a]/10 border border-[#4cc07a]/20 flex items-center justify-center">
+            <UserCircle2 className="text-[#4cc07a] w-7 h-7" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-stone-100 tracking-tight">Operator Profile</h1>
-          <p className="text-sm text-stone-400">{user?.email}</p>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-[#f2efe6] tracking-tight">Operator Profile</h1>
+          <p className="text-sm text-[#b8b4a6]">{user?.email}</p>
         </div>
 
         {/* QUICK STATS */}
         <div className="grid grid-cols-2 gap-4 sm:gap-6">
-          <div className="bg-stone-800/40 border border-stone-700/50 rounded-2xl p-5 flex flex-col gap-1">
-            <div className="flex justify-between items-center text-[10px] font-black text-teal-400 uppercase tracking-widest">
+          <div className="bg-[#141814]/40 border border-[#2a322a]/50 rounded-2xl p-5 flex flex-col gap-1">
+            <div className="flex justify-between items-center text-[10px] font-semibold text-[#4cc07a]">
               <span>Days Sober</span>
               <Zap size={14} />
             </div>
-            <div className="text-4xl font-black text-stone-100">{daysSober}</div>
+            <div className="text-4xl font-semibold text-[#f2efe6]">{daysSober}</div>
           </div>
-          <div className="bg-stone-800/40 border border-stone-700/50 rounded-2xl p-5 flex flex-col gap-1">
-            <div className="flex justify-between items-center text-[10px] font-black text-blue-400 uppercase tracking-widest">
+          <div className="bg-[#141814]/40 border border-[#2a322a]/50 rounded-2xl p-5 flex flex-col gap-1">
+            <div className="flex justify-between items-center text-[10px] font-semibold text-blue-400">
               <span>Fellowship Meetings</span>
               <Target size={14} />
             </div>
-            <div className="text-4xl font-black text-stone-100">{profile?.meetingsCount || 0}</div>
+            <div className="text-4xl font-semibold text-[#f2efe6]">{profile?.meetingsCount || 0}</div>
           </div>
         </div>
 
         {/* EDITABLE IDENTITY */}
-        <section className="bg-stone-800/40 backdrop-blur-md border border-stone-700/50 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 shadow-xl flex flex-col gap-6">
-          <h2 className="text-lg font-bold text-stone-100">Baseline Details</h2>
+        <section className="bg-[#141814]/40 backdrop-blur-md border border-[#2a322a]/50 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 shadow-xl flex flex-col gap-6">
+          <h2 className="text-lg font-bold text-[#f2efe6]">Baseline Details</h2>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs font-black text-stone-500 uppercase tracking-widest">Sobriety Date</label>
+            <label className="text-xs font-semibold text-[#7d7a70]">Sobriety Date</label>
             <input
               type="date"
               value={sobrietyDate}
               onChange={(e) => setSobrietyDate(e.target.value)}
-              className="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-stone-100 focus:outline-none focus:border-teal-500/50 [color-scheme:dark]"
+              className="w-full bg-[#0d0f0d] border border-[#2a322a] rounded-xl px-4 py-3 text-[#f2efe6] focus:outline-none focus:border-[#4cc07a]/50 [color-scheme:dark]"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs font-black text-stone-500 uppercase tracking-widest">
+            <label className="text-xs font-semibold text-[#7d7a70]">
               {t("vanguard")} Name / Emergency Contact
             </label>
             <input
@@ -283,7 +283,7 @@ export default function ProfilePage() {
               value={sponsorName}
               onChange={(e) => setSponsorName(e.target.value)}
               placeholder="Who are you accountable to?"
-              className="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-teal-500/50"
+              className="w-full bg-[#0d0f0d] border border-[#2a322a] rounded-xl px-4 py-3 text-[#f2efe6] placeholder-stone-600 focus:outline-none focus:border-[#4cc07a]/50"
             />
           </div>
 
@@ -291,7 +291,7 @@ export default function ProfilePage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-2 px-6 py-3 bg-teal-500 hover:bg-teal-400 text-stone-900 font-black uppercase tracking-widest text-xs rounded-xl transition-colors disabled:opacity-50"
+              className="flex items-center gap-2 px-6 py-3 bg-[#4cc07a] hover:bg-[#5fd08c] text-[#08130c] font-semibold text-xs rounded-xl transition-colors disabled:opacity-50"
             >
               {saved ? <CheckCircle2 size={16} /> : <Save size={16} />}
               {saving ? "Saving..." : saved ? "Saved" : "Save Changes"}
@@ -302,40 +302,40 @@ export default function ProfilePage() {
 
         {/* VULNERABILITY PROFILE (Vanguard Scoring Engine, first slice) */}
         {vanguardProfile && (
-          <section className="bg-stone-800/40 backdrop-blur-md border border-stone-700/50 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 shadow-xl flex flex-col gap-6">
+          <section className="bg-[#141814]/40 backdrop-blur-md border border-[#2a322a]/50 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 shadow-xl flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0">
                 <Compass className="text-rose-400 w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-stone-100">Vulnerability Profile</h2>
-                <p className="text-xs text-stone-400">Scored from your diagnostic — where the AIV is most likely to find an open port.</p>
+                <h2 className="text-lg font-bold text-[#f2efe6]">Vulnerability Profile</h2>
+                <p className="text-xs text-[#b8b4a6]">Scored from your diagnostic — where the AIV is most likely to find an open port.</p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-stone-900 border border-stone-700 rounded-xl p-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-[#0d0f0d] border border-[#2a322a] rounded-xl p-5">
               <div className="text-5xl leading-none">{MASCOT_INFO[vanguardProfile.dominant].emoji}</div>
               <div className="flex flex-col gap-1">
-                <span className="text-lg font-black text-stone-100">
-                  {MASCOT_INFO[vanguardProfile.dominant].label} <span className="text-stone-500 font-bold">— {MASCOT_INFO[vanguardProfile.dominant].archetype}</span>
+                <span className="text-lg font-semibold text-[#f2efe6]">
+                  {MASCOT_INFO[vanguardProfile.dominant].label} <span className="text-[#7d7a70] font-bold">— {MASCOT_INFO[vanguardProfile.dominant].archetype}</span>
                 </span>
-                <span className="text-sm text-stone-400">{MASCOT_INFO[vanguardProfile.dominant].vulnerability}</span>
-                <span className="text-xs font-mono text-teal-400 mt-1">{MASCOT_INFO[vanguardProfile.dominant].dashboardSolution}</span>
+                <span className="text-sm text-[#b8b4a6]">{MASCOT_INFO[vanguardProfile.dominant].vulnerability}</span>
+                <span className="text-xs font-mono text-[#4cc07a] mt-1">{MASCOT_INFO[vanguardProfile.dominant].dashboardSolution}</span>
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] font-black text-stone-500 uppercase tracking-widest">Full Breakdown ({vanguardProfile.answeredCount} of 12 answered)</span>
+              <span className="text-[10px] font-semibold text-[#7d7a70]">Full Breakdown ({vanguardProfile.answeredCount} of 12 answered)</span>
               <div className="grid grid-cols-5 gap-2">
                 {(Object.keys(MASCOT_INFO) as (keyof typeof MASCOT_INFO)[]).map((key) => (
                   <div
                     key={key}
                     className={`flex flex-col items-center gap-1 p-3 rounded-xl border ${
-                      key === vanguardProfile.dominant ? "border-teal-500/50 bg-teal-500/10" : "border-stone-700 bg-stone-900"
-                    }`}
+ key === vanguardProfile.dominant ? "border-[#4cc07a]/50 bg-[#4cc07a]/10" : "border-[#2a322a] bg-[#0d0f0d]"
+ }`}
                   >
                     <span className="text-xl">{MASCOT_INFO[key].emoji}</span>
-                    <span className="text-lg font-black text-stone-100">{vanguardProfile.counts[key]}</span>
+                    <span className="text-lg font-semibold text-[#f2efe6]">{vanguardProfile.counts[key]}</span>
                   </div>
                 ))}
               </div>
@@ -344,15 +344,15 @@ export default function ProfilePage() {
         )}
 
         {/* DIAGNOSTIC ANSWERS */}
-        <section className="bg-stone-800/40 backdrop-blur-md border border-stone-700/50 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 shadow-xl flex flex-col gap-6">
+        <section className="bg-[#141814]/40 backdrop-blur-md border border-[#2a322a]/50 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 shadow-xl flex flex-col gap-6">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0">
                 <ClipboardList className="text-indigo-400 w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-stone-100">Your Diagnostic</h2>
-                <p className="text-xs text-stone-400">Answers from your baseline calibration.</p>
+                <h2 className="text-lg font-bold text-[#f2efe6]">Your Diagnostic</h2>
+                <p className="text-xs text-[#b8b4a6]">Answers from your baseline calibration.</p>
               </div>
             </div>
             {/* Retake entry point - reuses the onboarding wizard in edit
@@ -361,14 +361,14 @@ export default function ProfilePage() {
                 change their answers from the profile page. */}
             <button
               onClick={() => router.push("/onboarding?edit=true")}
-              className="flex items-center gap-2 px-4 py-2.5 bg-stone-900 border border-stone-700 hover:border-teal-500/50 hover:text-teal-400 text-stone-300 font-black uppercase tracking-widest text-xs rounded-xl transition-colors"
+              className="flex items-center gap-2 px-4 py-2.5 bg-[#0d0f0d] border border-[#2a322a] hover:border-[#4cc07a]/50 hover:text-[#4cc07a] text-[#b8b4a6] font-semibold text-xs rounded-xl transition-colors"
             >
               <RotateCcw size={14} /> Update My Answers
             </button>
           </div>
 
           {answeredQuestions.length === 0 ? (
-            <p className="text-sm text-stone-500 font-mono">No diagnostic answers on file yet.</p>
+            <p className="text-sm text-[#7d7a70] font-mono">No diagnostic answers on file yet.</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {answeredQuestions.map((qid) => {
@@ -376,9 +376,9 @@ export default function ProfilePage() {
                 const answerId = profile?.diagnosticData?.[qid] ?? "";
                 const answerLabel = question.options[answerId] || answerId;
                 return (
-                  <div key={qid} className="bg-stone-900 border border-stone-700 rounded-xl p-4 flex flex-col gap-1">
-                    <span className="text-[10px] font-black text-stone-500 uppercase tracking-widest">{question.title}</span>
-                    <span className="text-sm text-stone-200 font-bold">{answerLabel}</span>
+                  <div key={qid} className="bg-[#0d0f0d] border border-[#2a322a] rounded-xl p-4 flex flex-col gap-1">
+                    <span className="text-[10px] font-semibold text-[#7d7a70]">{question.title}</span>
+                    <span className="text-sm text-[#f2efe6] font-bold">{answerLabel}</span>
                   </div>
                 );
               })}
@@ -389,7 +389,7 @@ export default function ProfilePage() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center text-[10px] font-mono text-stone-600 uppercase tracking-widest pb-8"
+          className="text-center text-[10px] font-mono text-stone-600 pb-8"
         >
           Data Over Denial // Sanctuary
         </motion.p>

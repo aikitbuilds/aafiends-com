@@ -174,26 +174,26 @@ export default function Bio12Tab() {
               <ThreatIcon size={24} />
             </div>
             <div>
-              <div className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Threat Level Today</div>
-              <div className={`text-2xl font-black uppercase tracking-tight ${threat.color}`}>{threat.label}</div>
+              <div className="text-[10px] font-semibold text-[#b8b4a6]">Threat Level Today</div>
+              <div className={`text-2xl font-semibold tracking-tight ${threat.color}`}>{threat.label}</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <div className="text-right">
-              <div className="text-[10px] font-black uppercase tracking-widest text-neutral-500">Protocol</div>
-              <div className="text-xl font-black text-white">{doneCount}<span className="text-neutral-600 text-sm">/{TOTAL}</span></div>
+              <div className="text-[10px] font-semibold text-[#7d7a70]">Protocol</div>
+              <div className="text-xl font-semibold text-[#f2efe6]">{doneCount}<span className="text-[#7d7a70] text-sm">/{TOTAL}</span></div>
             </div>
             <div className="flex items-center gap-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 px-3 py-1.5">
               <Flame size={14} className="text-orange-400" />
-              <span className="text-sm font-black text-orange-400">{streak}</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">day{streak === 1 ? "" : "s"}</span>
+              <span className="text-sm font-semibold text-orange-400">{streak}</span>
+              <span className="text-[10px] font-bold text-[#7d7a70]">day{streak === 1 ? "" : "s"}</span>
             </div>
           </div>
         </div>
-        <div className="h-2.5 rounded-full bg-neutral-900 overflow-hidden">
+        <div className="h-2.5 rounded-full bg-[#141814] overflow-hidden">
           <div className={`h-full rounded-full bg-gradient-to-r ${threat.bar} transition-all duration-500`} style={{ width: `${(doneCount / TOTAL) * 100}%` }} />
         </div>
-        <p className="text-xs text-neutral-400 leading-relaxed">{threat.note}</p>
+        <p className="text-xs text-[#b8b4a6] leading-relaxed">{threat.note}</p>
       </div>
 
       {/* 4 pillars */}
@@ -202,13 +202,13 @@ export default function Bio12Tab() {
           const Icon = p.icon;
           const pillarDone = p.items.filter((i) => checked[`${p.key}_${i.id}`]).length;
           return (
-            <div key={p.key} className={`bg-[#0a0a0a] border ${p.accent.border} rounded-2xl overflow-hidden`}>
+            <div key={p.key} className={`bg-[#141814] border ${p.accent.border} rounded-2xl overflow-hidden`}>
               <div className={`bg-gradient-to-r ${p.accent.grad} px-4 py-3 flex items-center justify-between`}>
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-black/25 text-white flex items-center justify-center"><Icon size={16} /></div>
-                  <span className="text-white font-black uppercase tracking-tight text-sm">{p.name}</span>
+                  <div className="w-8 h-8 rounded-lg bg-black/25 text-[#f2efe6] flex items-center justify-center"><Icon size={16} /></div>
+                  <span className="text-[#f2efe6] font-semibold tracking-tight text-sm">{p.name}</span>
                 </div>
-                <span className="text-white/90 text-xs font-black">{pillarDone}/{p.items.length}</span>
+                <span className="text-[#f2efe6]/90 text-xs font-semibold">{pillarDone}/{p.items.length}</span>
               </div>
               <div className="p-3 flex flex-col gap-2">
                 {p.items.map((i) => {
@@ -219,10 +219,10 @@ export default function Bio12Tab() {
                       key={id}
                       onClick={() => toggle(id)}
                       disabled={loading}
-                      className={`text-left flex items-center gap-3 rounded-xl border p-3 transition-colors ${on ? `${p.accent.border} ${p.accent.bg}` : "border-white/10 bg-[#050505] hover:border-white/20"}`}
+                      className={`text-left flex items-center gap-3 rounded-xl border p-3 transition-colors ${on ? `${p.accent.border} ${p.accent.bg}` : "border-[#1d231d] bg-[#0d0f0d] hover:border-[#2a322a]"}`}
                     >
-                      {on ? <CheckCircle2 size={18} className={`${p.accent.text} shrink-0`} /> : <Circle size={18} className="text-neutral-600 shrink-0" />}
-                      <span className={`text-sm ${on ? "text-white font-bold" : "text-neutral-300"}`}>{i.label}</span>
+                      {on ? <CheckCircle2 size={18} className={`${p.accent.text} shrink-0`} /> : <Circle size={18} className="text-[#7d7a70] shrink-0" />}
+                      <span className={`text-sm ${on ? "text-[#f2efe6] font-bold" : "text-[#b8b4a6]"}`}>{i.label}</span>
                     </button>
                   );
                 })}
@@ -233,8 +233,8 @@ export default function Bio12Tab() {
       </div>
 
       {/* 7-day history strip */}
-      <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5">
-        <div className="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-4">Last 7 Days</div>
+      <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5">
+        <div className="text-[10px] font-semibold text-[#7d7a70] mb-4">Last 7 Days</div>
         <div className="flex items-end justify-between gap-2 h-24">
           {last7.map((d) => {
             const pct = (d.done / TOTAL) * 100;
@@ -245,7 +245,7 @@ export default function Bio12Tab() {
                 <div className="w-full flex-1 flex items-end">
                   <div className={`w-full rounded-md bg-gradient-to-t ${t.bar} transition-all`} style={{ height: `${Math.max(pct, 4)}%` }} title={`${d.done}/${TOTAL}`} />
                 </div>
-                <span className={`text-[9px] font-mono ${isToday ? "text-white font-bold" : "text-neutral-600"}`}>{d.date.slice(5)}</span>
+                <span className={`text-[9px] font-mono ${isToday ? "text-[#f2efe6] font-bold" : "text-[#7d7a70]"}`}>{d.date.slice(5)}</span>
               </div>
             );
           })}

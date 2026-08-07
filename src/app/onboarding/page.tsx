@@ -262,28 +262,28 @@ export default function OnboardingPage() {
   };
 
   if (loading || (profile && profile.setupComplete && !isEditMode)) {
-    return <div className="min-h-screen bg-[#050505] flex items-center justify-center text-neutral-500 font-mono text-xs uppercase tracking-widest animate-pulse">Initializing...</div>;
+    return <div className="min-h-screen bg-[#0d0f0d] flex items-center justify-center text-[#7d7a70] font-mono text-xs">Initializing...</div>;
   }
 
   // Phase 4: Success State
   if (success) {
     return (
-      <div className="min-h-screen bg-[#050505] text-white flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-[#0d0f0d] text-[#f2efe6] flex flex-col items-center justify-center p-6 text-center">
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", damping: 15 }}
           className="mb-8 relative"
         >
-          <div className="absolute inset-0 bg-[#10b981] blur-3xl opacity-20 rounded-full"></div>
-          <CheckCircle2 size={120} className="text-[#10b981] relative z-10" />
+          <div className="absolute inset-0 bg-[#4cc07a] blur-3xl opacity-20 rounded-full"></div>
+          <CheckCircle2 size={120} className="text-[#4cc07a] relative z-10" />
         </motion.div>
         
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4"
+          className="text-3xl md:text-5xl font-semibold tracking-tighter mb-4"
         >
           {isEditMode ? (
             <>Profile Updated.</>
@@ -291,7 +291,7 @@ export default function OnboardingPage() {
             <>
               Telemetry Logged.
               <br/>
-              <span className="text-[#00f0ff]">Welcome to the Vanguard Council.</span>
+              <span className="text-[#7fb3a3]">Welcome to the Vanguard Council.</span>
             </>
           )}
         </motion.h1>
@@ -301,7 +301,7 @@ export default function OnboardingPage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
           onClick={() => router.push(isEditMode ? "/profile" : "/dashboard")}
-          className="mt-12 px-10 py-5 w-full max-w-md bg-white hover:bg-neutral-200 text-black font-black uppercase tracking-widest text-sm rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all"
+          className="mt-12 px-10 py-5 w-full max-w-md bg-white hover:bg-neutral-200 text-black font-semibold text-sm rounded-xl transition-all"
         >
           {isEditMode ? "Back to Profile" : "Enter the Secure Workspace"}
         </motion.button>
@@ -312,10 +312,10 @@ export default function OnboardingPage() {
   // Phase 3.5: Calibrating Your Dashboard
   if (currentStep === QUESTIONS.length) {
     return (
-      <div className="min-h-screen bg-[#050505] text-white flex flex-col font-sans">
+      <div className="min-h-screen bg-[#0d0f0d] text-[#f2efe6] flex flex-col font-sans">
         {/* Banner */}
-        <div className="w-full bg-[#10b981]/10 border-b border-[#10b981]/20 py-3 px-6 text-center">
-          <p className="text-[10px] font-black uppercase tracking-widest text-[#10b981]">Phase 3.5: Final Calibration</p>
+        <div className="w-full bg-[#4cc07a]/10 border-b border-[#4cc07a]/20 py-3 px-6 text-center">
+          <p className="text-[10px] font-semibold text-[#4cc07a]">Phase 3.5: Final Calibration</p>
         </div>
         
         <div className="flex-1 flex flex-col items-center justify-center p-6">
@@ -325,37 +325,37 @@ export default function OnboardingPage() {
             className="w-full max-w-md"
           >
             <div className="mb-10 text-center">
-              <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Calibrating Your Dashboard</h2>
-              <p className="text-sm font-mono text-neutral-400 uppercase tracking-widest">Establish the final temporal baseline.</p>
+              <h2 className="text-3xl font-semibold tracking-tight mb-2">Calibrating Your Dashboard</h2>
+              <p className="text-sm font-mono text-[#b8b4a6]">Establish the final temporal baseline.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <label className="text-xs font-black text-neutral-500 uppercase tracking-widest">Confirm Sobriety Date <span className="text-[#10b981]">(Required)</span></label>
+                <label className="text-xs font-semibold text-[#7d7a70]">Confirm Sobriety Date <span className="text-[#4cc07a]">(Required)</span></label>
                 <input 
                   type="date"
                   required
                   value={sobrietyDate}
                   onChange={(e) => setSobrietyDate(e.target.value)}
-                  className="w-full bg-[#09090b] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#10b981]/50 text-lg [color-scheme:dark]"
+                  className="w-full bg-[#141814] border border-[#1d231d] rounded-xl px-4 py-4 text-[#f2efe6] focus:outline-none focus:border-[#4cc07a]/50 text-lg [color-scheme:dark]"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-xs font-black text-neutral-500 uppercase tracking-widest">Sponsor's Name / Emergency Contact <span className="text-neutral-600">(Optional)</span></label>
+                <label className="text-xs font-semibold text-[#7d7a70]">Sponsor's Name / Emergency Contact <span className="text-[#7d7a70]">(Optional)</span></label>
                 <input 
                   type="text"
                   value={sponsorName}
                   onChange={(e) => setSponsorName(e.target.value)}
                   placeholder="Who are you accountable to?"
-                  className="w-full bg-[#09090b] border border-white/10 rounded-xl px-4 py-4 text-white placeholder-neutral-700 focus:outline-none focus:border-[#00f0ff]/50"
+                  className="w-full bg-[#141814] border border-[#1d231d] rounded-xl px-4 py-4 text-[#f2efe6] placeholder-neutral-700 focus:outline-none focus:border-[#7fb3a3]/50"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-5 mt-6 bg-[#10b981] hover:bg-[#10b981]/80 text-black font-black uppercase tracking-widest text-sm rounded-xl transition-colors disabled:opacity-50 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                className="w-full py-5 mt-6 bg-[#4cc07a] hover:bg-[#4cc07a]/80 text-black font-semibold text-sm rounded-xl transition-colors disabled:opacity-50"
               >
                 {submitting ? "CALIBRATING..." : isEditMode ? "SAVE CHANGES" : "INITIALIZE DASHBOARD"}
               </button>
@@ -371,26 +371,26 @@ export default function OnboardingPage() {
   const currentQ = QUESTIONS[currentStep];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white flex flex-col font-sans overflow-hidden">
+    <div className="min-h-screen bg-[#0d0f0d] text-[#f2efe6] flex flex-col font-sans overflow-hidden">
       
       {/* Banner */}
-      <div className="w-full bg-[#00f0ff]/5 border-b border-[#00f0ff]/10 py-3 px-6 text-center z-20">
-        <p className="text-[10px] font-black uppercase tracking-widest text-[#00f0ff]">
+      <div className="w-full bg-[#7fb3a3]/5 border-b border-[#7fb3a3]/10 py-3 px-6 text-center z-20">
+        <p className="text-[10px] font-semibold text-[#7fb3a3]">
           {isEditMode ? "Updating Your Baseline. 12 Quick Questions." : "Establishing Baseline. 12 Quick Questions. ~2 Minutes to complete."}
         </p>
       </div>
 
       {/* Progress Tracker */}
-      <div className="w-full h-3 bg-neutral-900 relative z-20">
+      <div className="w-full h-3 bg-[#141814] relative z-20">
         <motion.div 
-          className="h-full bg-gradient-to-r from-[#ff6b00] to-[#00f0ff]"
+          className="h-full bg-gradient-to-r from-[#ff6b00] to-[#7fb3a3]"
           initial={{ width: 0 }}
           animate={{ width: `${progressPercentage}%` }}
           transition={{ duration: 0.3 }}
         />
       </div>
       <div className="text-center py-6 z-20">
-        <p className="text-sm font-mono text-neutral-400 font-black uppercase tracking-widest">
+        <p className="text-sm font-mono text-[#b8b4a6] font-semibold">
           Step {currentStep + 1} of 12
         </p>
       </div>
@@ -406,7 +406,7 @@ export default function OnboardingPage() {
             transition={{ duration: 0.2 }}
             className="w-full max-w-2xl flex flex-col items-center w-full"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-center mb-8 sm:mb-10 w-full leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-10 w-full leading-tight">
               {currentQ.title}
             </h2>
 
@@ -415,11 +415,11 @@ export default function OnboardingPage() {
                 const Icon = option.icon;
                 const isSelected = answers[currentQ.id] === option.id;
                 
-                const borderColors = ['border-[#00f0ff]/30', 'border-[#10b981]/30', 'border-[#ff6b00]/30', 'border-[#8b5cf6]/30'];
-                const textColors = ['text-[#00f0ff]', 'text-[#10b981]', 'text-[#ff6b00]', 'text-[#8b5cf6]'];
-                const hoverBgs = ['hover:bg-[#00f0ff]/10', 'hover:bg-[#10b981]/10', 'hover:bg-[#ff6b00]/10', 'hover:bg-[#8b5cf6]/10'];
-                const selectedBgs = ['bg-[#00f0ff]/20', 'bg-[#10b981]/20', 'bg-[#ff6b00]/20', 'bg-[#8b5cf6]/20'];
-                const selectedBorders = ['border-[#00f0ff]', 'border-[#10b981]', 'border-[#ff6b00]', 'border-[#8b5cf6]'];
+                const borderColors = ['border-[#7fb3a3]/30', 'border-[#4cc07a]/30', 'border-[#ff6b00]/30', 'border-[#8b5cf6]/30'];
+                const textColors = ['text-[#7fb3a3]', 'text-[#4cc07a]', 'text-[#ff6b00]', 'text-[#8b5cf6]'];
+                const hoverBgs = ['hover:bg-[#7fb3a3]/10', 'hover:bg-[#4cc07a]/10', 'hover:bg-[#ff6b00]/10', 'hover:bg-[#8b5cf6]/10'];
+                const selectedBgs = ['bg-[#7fb3a3]/20', 'bg-[#4cc07a]/20', 'bg-[#ff6b00]/20', 'bg-[#8b5cf6]/20'];
+                const selectedBorders = ['border-[#7fb3a3]', 'border-[#4cc07a]', 'border-[#ff6b00]', 'border-[#8b5cf6]'];
 
                 return (
                   <button
@@ -428,11 +428,11 @@ export default function OnboardingPage() {
                     className={`flex flex-col items-center justify-center text-center gap-3 sm:gap-4 p-5 sm:p-8 min-h-[140px] sm:min-h-[168px] rounded-2xl border transition-all shadow-xl hover:shadow-2xl ${
                       isSelected 
                         ? `${selectedBgs[idx]} ${selectedBorders[idx]} scale-95` 
-                        : `bg-[#09090b] ${borderColors[idx]} ${hoverBgs[idx]}`
+                        : `bg-[#141814] ${borderColors[idx]} ${hoverBgs[idx]}`
                     }`}
                   >
-                    <Icon size={36} className={`sm:w-11 sm:h-11 ${isSelected ? textColors[idx] : "text-neutral-400"}`} />
-                    <span className={`text-base sm:text-lg font-bold uppercase tracking-wider leading-tight ${isSelected ? textColors[idx] : 'text-neutral-200'}`}>
+                    <Icon size={36} className={`sm:w-11 sm:h-11 ${isSelected ? textColors[idx] : "text-[#b8b4a6]"}`} />
+                    <span className={`text-base sm:text-lg font-bold tracking-wider leading-tight ${isSelected ? textColors[idx] : 'text-[#f2efe6]'}`}>
                       {option.text}
                     </span>
                   </button>
@@ -448,7 +448,7 @@ export default function OnboardingPage() {
         <button
           onClick={handleSkip}
           disabled={submitting}
-          className="text-[10px] font-mono font-bold text-neutral-600 hover:text-white uppercase tracking-widest transition-colors border-b border-transparent hover:border-white pb-0.5 disabled:opacity-50"
+          className="text-[10px] font-mono font-bold text-[#7d7a70] hover:text-[#f2efe6] transition-colors border-b border-transparent hover:border-white pb-0.5 disabled:opacity-50"
         >
           {submitting
             ? "Saving..."

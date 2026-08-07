@@ -1,16 +1,14 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
 import {
-  ChevronDown, ShieldCheck, Lock, EyeOff, PhoneCall, ArrowRight, Check,
-  Flame, Rocket, RefreshCw, Crosshair, Home, Zap, Users,
-  CalendarCheck, Activity, Gauge, BookOpen, Sparkles, UserCheck, Radio, HeartPulse,
-  Clock, MapPin, Trees,
+  Flame,
+  Rocket,
+  RefreshCw,
+  ShieldCheck,
+  PhoneCall,
+  EyeOff,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -19,373 +17,373 @@ import {
 } from "@/data/rrFellowship";
 import ReserveFlow from "@/components/rr/ReserveFlow";
 import AlphaClassDay from "@/components/rr/AlphaClassDay";
+import { PHOTOS } from "@/lib/photos";
+import {
+  Wrap,
+  Section,
+  SectionHead,
+  SubHead,
+  PageHero,
+  PhotoRow,
+  Figure,
+  StackList,
+  ButtonPrimary,
+  ButtonGhost,
+  CtaRow,
+  CalloutBand,
+} from "@/components/design";
 
 const ICONS: Record<string, LucideIcon> = {
-  Flame, Rocket, RefreshCw, Crosshair, Home, Zap, Users, CalendarCheck,
-  Activity, Gauge, BookOpen, Sparkles, UserCheck, Radio, Lock, ShieldCheck,
-  PhoneCall, EyeOff, HeartPulse,
+  Flame, Rocket, RefreshCw, ShieldCheck, PhoneCall, EyeOff,
 };
 
+/** One documentary photograph per pillar, in the order the pillars are read. */
+const PILLAR_PHOTOS = [PHOTOS.gymLift, PHOTOS.carTalk, PHOTOS.kitchenJournal];
+
+/** The four hard facts about the program. Real values only. */
+const SPECS = [
+  { label: "Kickoff", value: RR_META.startLabel, note: "Exact date shared with your cohort" },
+  { label: "Format", value: RR_META.durationLabel, note: null },
+  { label: "Seats", value: `${RESERVATION.seatsTotal} only`, note: "Small, closed cohort" },
+  {
+    label: "Deposit",
+    value: `$${RESERVATION.suggestedDeposit} or pay what you can`,
+    note: "Tradition 7",
+  },
+];
+
 export default function RRFellowshipPage() {
-  const [openPhase, setOpenPhase] = useState<number | null>(0);
-  const togglePhase = (i: number) => setOpenPhase(openPhase === i ? null : i);
-
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.08),transparent_60%)] pointer-events-none z-0"></div>
-
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <main className="flex-1 max-w-6xl w-full mx-auto px-6 py-16 md:py-24 flex flex-col gap-28 relative z-20">
-        {/* Hero */}
-        <section className="grid md:grid-cols-2 gap-12 items-center min-h-[64vh] pt-8 relative">
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-start gap-6 text-left">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-              <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-              {RESERVATION.seatsTotal} Seats · {RR_META.startLabel} · ${RESERVATION.suggestedDeposit} deposit or pay-what-you-can
-            </span>
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-              90 Days to <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#f59e0b]">Rebuild.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-neutral-300 max-w-2xl leading-relaxed font-medium">
-              The <span className="text-[#10b981] font-bold">Recovery &amp; Restructure</span> Fellowship — a biology-first cohort for the first, hardest 90 days. One <span className="text-[#f59e0b] font-bold">1-day intensive bootcamp</span> to launch, then daily telemetry that proves your baseline is healing.
-            </p>
-            <p className="text-sm md:text-base text-neutral-500 max-w-xl font-mono uppercase tracking-widest">
-              {RR_META.tagline} · 12 seats · Starts together, finishes together.
-            </p>
-            <p className="text-sm text-neutral-400 max-w-xl leading-relaxed -mt-2">
-              Not ready for the cohort?{" "}
-              <Link href="/90rr" className="text-[#10b981] font-bold hover:text-emerald-300 underline underline-offset-4 transition-colors">
-                The printable 90 R&amp;R journal is free
-              </Link>{" "}
-              — same system, self-paced.
-            </p>
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Link href="#reserve">
-                <button className="py-4 px-10 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
-                  <Rocket size={20} /> Reserve Your Seat
-                </button>
-              </Link>
-              <Link href="#blueprint">
-                <button className="py-4 px-10 rounded-2xl border border-white/15 text-white text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:border-[#10b981]/50 hover:text-[#10b981] flex items-center justify-center gap-3">
-                  See the 90 Days
-                </button>
-              </Link>
-            </div>
-          </motion.div>
+      <PageHero
+        photo={PHOTOS.trailGroup}
+        title={
+          <>
+            90 days to <em>rebuild.</em>
+          </>
+        }
+        lede="The Recovery & Restructure Fellowship — a biology-first cohort for the first, hardest 90 days. One 1-day intensive bootcamp to launch, then daily telemetry that proves your baseline is healing."
+        meta={`${RESERVATION.seatsTotal} seats · ${RR_META.startLabel} · $${RESERVATION.suggestedDeposit} deposit or pay what you can`}
+      >
+        <CtaRow>
+          <ButtonPrimary href="#reserve">Reserve your seat</ButtonPrimary>
+          <ButtonGhost href="#blueprint">See the 90 days</ButtonGhost>
+        </CtaRow>
+        <p className="mt-6 max-w-[48ch] text-[15px] text-[#f2efe6]/90">
+          Not ready for the cohort?{" "}
+          <Link
+            href="/90rr"
+            className="underline decoration-[#4cc07a]/50 underline-offset-4 transition-colors hover:decoration-[#4cc07a]"
+          >
+            The printable 90 R&amp;R journal is free
+          </Link>{" "}
+          — same system, self-paced.
+        </p>
+      </PageHero>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8 }} className="relative w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(16,185,129,0.15)] group">
-            <Image src="/recovery_hero_hope.png" alt="90 Days Recovery & Restructure" fill className="object-cover object-[center_20%]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="text-white font-black text-2xl uppercase tracking-widest">Day 90: The Clearance</h3>
-              <div className="flex items-center gap-2 mt-2 text-sm font-bold text-[#10b981]">
-                <Activity size={16} /> Baseline Bulletproofed
+      {/* ── The two R's ──────────────────────────────────────── */}
+      <Section tight>
+        <Wrap>
+          <SectionHead lede={<p>{RR_META.promise}</p>}>
+            Recovery, <em>then restructure.</em>
+          </SectionHead>
+
+          <div className="mt-12 grid gap-10 border-t border-[#1d231d] pt-9 sm:mt-16 md:grid-cols-2 md:gap-16">
+            {RR_META.missions.map((m) => (
+              <div key={m.tag}>
+                <p className="font-measure text-[13px]" style={{ color: m.color }}>
+                  {m.tag}
+                </p>
+                <p className="mt-3 max-w-[52ch] text-[#b8b4a6]">{m.text}</p>
               </div>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* The two R's */}
-        <section className="grid md:grid-cols-2 gap-6 md:gap-8">
-          {RR_META.missions.map((c) => (
-            <div key={c.tag} className="rounded-3xl border border-white/10 bg-[#09090b] shadow-xl p-8">
-              <span className="font-mono font-bold mb-3 block text-sm uppercase tracking-widest" style={{ color: c.color }}>{c.tag}</span>
-              <p className="text-xl leading-relaxed text-neutral-300 font-medium">{c.text}</p>
-            </div>
-          ))}
-        </section>
-
-        {/* Who it's for */}
-        <section className="flex flex-col gap-10">
-          <div className="text-center flex flex-col gap-4">
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">Who It Is For</h2>
-            <p className="text-neutral-400 font-mono uppercase tracking-widest">Built for the trench — traditional or tactical.</p>
+            ))}
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+
+          <p className="font-measure mt-10 text-[13px] text-[#7d7a70]">
+            {RR_META.tagline} · {RESERVATION.seatsTotal} seats · Starts together, finishes together.
+          </p>
+        </Wrap>
+      </Section>
+
+      {/* ── Who it's for ─────────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+            <SectionHead lede={<p>Built for the trench — traditional or tactical.</p>}>
+              Who it is <em>for.</em>
+            </SectionHead>
+            <Figure photo={PHOTOS.porchSteps} />
+          </div>
+
+          <div className="mt-12 border-t border-[#1d231d] sm:mt-16">
             {WHO_ITS_FOR.map((w) => {
               const Icon = ICONS[w.icon];
               return (
-                <div key={w.title} className="bg-[#09090b] border border-white/10 rounded-[2rem] p-8 flex flex-col gap-4 shadow-xl hover:-translate-y-1 transition-all" style={{ boxShadow: `0 0 30px ${w.color}0d` }}>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: `${w.color}1a`, color: w.color }}>
-                    {Icon && <Icon size={26} />}
-                  </div>
+                <div
+                  key={w.title}
+                  className="grid gap-2 border-b border-[#1d231d] py-6 sm:grid-cols-[1fr_1.9fr] sm:gap-10"
+                >
                   <div>
-                    <h3 className="text-xl font-black text-white uppercase tracking-tight">{w.title}</h3>
-                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: w.color }}>{w.sub}</p>
+                    <h3 className="font-display flex items-center gap-2.5 text-[1.3rem] leading-tight text-[#f2efe6]">
+                      {Icon ? <Icon size={17} className="text-[#4cc07a]" aria-hidden="true" /> : null}
+                      {w.title}
+                    </h3>
+                    <p className="font-measure mt-1.5 text-[12.5px] text-[#7d7a70]">{w.sub}</p>
                   </div>
-                  <p className="text-sm text-neutral-400 leading-relaxed">{w.body}</p>
+                  <p className="max-w-[58ch] text-[15.5px] text-[#b8b4a6]">{w.body}</p>
                 </div>
               );
             })}
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* The 1-Day Bootcamp */}
-        <section className="relative">
-          <div className="w-full bg-gradient-to-br from-[#09090b] to-[#1a1206] border border-[#f59e0b]/30 rounded-[2.5rem] p-8 md:p-12 shadow-[0_0_40px_rgba(245,158,11,0.08)] flex flex-col gap-8">
-            <div className="flex flex-col gap-4 max-w-3xl">
-              <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-xs text-[#f59e0b] font-mono uppercase tracking-widest font-bold">
-                <Crosshair size={14} /> {BOOTCAMP.label}
-              </span>
-              <h2 className="text-3xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">{BOOTCAMP.title}</h2>
-              <p className="text-neutral-300 text-base md:text-lg leading-relaxed">{BOOTCAMP.intro}</p>
-            </div>
-            <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden border border-[#f59e0b]/20">
-              <Image src="/baptism_by_sweat.png" alt="The one-day bootcamp intensive" fill className="object-cover object-[center_35%]" sizes="(max-width: 768px) 100vw, 900px" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1206] via-transparent to-transparent" />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {BOOTCAMP.agenda.map((a, i) => {
-                const Icon = ICONS[a.icon];
-                return (
-                  <div key={a.title} className="flex gap-4 bg-[#050505]/60 border border-white/10 rounded-2xl p-6">
-                    <div className="w-11 h-11 shrink-0 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/30 flex items-center justify-center text-[#f59e0b]">
-                      {Icon && <Icon size={20} />}
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <h4 className="text-white font-black uppercase tracking-wide text-sm flex items-center gap-2">
-                        <span className="text-[#f59e0b]/50 font-mono">{String(i + 1).padStart(2, "0")}</span> {a.title}
-                      </h4>
-                      <p className="text-neutral-400 text-sm leading-relaxed">{a.body}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+      {/* ── The 1-day bootcamp ───────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead lede={<p>{BOOTCAMP.intro}</p>}>
+            The 1-day intensive <em>bootcamp.</em>
+          </SectionHead>
+          <p className="font-measure mt-5 text-[13px] text-[#e0a45c]">{BOOTCAMP.label}</p>
 
-        {/* Tentative Schedule — the 1-Day */}
-        <section className="flex flex-col gap-10">
-          <div className="text-center flex flex-col gap-4">
-            <span className="inline-flex items-center gap-2 mx-auto w-fit px-4 py-1.5 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-xs text-[#f59e0b] font-mono uppercase tracking-widest font-bold">
-              <Clock size={14} /> Tentative Schedule
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The Day, Hour by Hour</h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed">{SCHEDULE_NOTE}</p>
-          </div>
-          <div className="max-w-3xl mx-auto w-full flex flex-col">
-            {SCHEDULE.map((s, i) => (
-              <div key={s.time} className="flex gap-5 md:gap-6 group">
-                {/* time + rail */}
-                <div className="flex flex-col items-center">
-                  <span className="w-20 md:w-24 text-right pr-1 text-sm md:text-base font-black text-[#f59e0b] font-mono uppercase tracking-tight whitespace-nowrap pt-0.5">{s.time}</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="w-3 h-3 rounded-full bg-[#10b981] shrink-0 mt-1.5 shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
-                  {i < SCHEDULE.length - 1 && <span className="w-px flex-1 bg-white/10" />}
-                </div>
-                <div className={`flex flex-col gap-1 pb-8 ${i === SCHEDULE.length - 1 ? "" : ""}`}>
-                  <h3 className="text-white font-black uppercase tracking-tight text-base md:text-lg leading-tight">{s.title}</h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
+          <PhotoRow photo={PHOTOS.meetingCircle} flip>
+            <StackList
+              className="mt-0"
+              items={BOOTCAMP.agenda.map((a, i) => ({
+                n: String(i + 1).padStart(2, "0"),
+                title: a.title,
+                body: a.body,
+              }))}
+            />
+          </PhotoRow>
+        </Wrap>
+      </Section>
+
+      {/* ── The day, hour by hour ────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead lede={<p>{SCHEDULE_NOTE}</p>}>
+            The day, <em>hour by hour.</em>
+          </SectionHead>
+
+          <div className="mt-10 border-t border-[#1d231d] sm:mt-14">
+            {SCHEDULE.map((s) => (
+              <div
+                key={s.time}
+                className="grid grid-cols-[5rem_1fr] items-baseline gap-x-5 border-b border-[#1d231d] py-6 sm:grid-cols-[7rem_1fr] sm:gap-x-8"
+              >
+                <span className="font-measure text-[13.5px] text-[#4cc07a]">{s.time}</span>
+                <div>
+                  <h3 className="font-display text-[1.25rem] leading-tight text-[#f2efe6]">
+                    {s.title}
+                  </h3>
+                  <p className="mt-1.5 max-w-[58ch] text-[15.5px] text-[#b8b4a6]">{s.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* The Setting — outdoors in a park */}
-        <section className="flex flex-col gap-10">
-          <div className="text-center flex flex-col gap-4">
-            <span className="inline-flex items-center gap-2 mx-auto w-fit px-4 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">
-              <MapPin size={14} /> {VENUE.label}
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">{VENUE.title}</h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed">{VENUE.intro}</p>
-            <div className="flex flex-wrap justify-center gap-2 pt-1">
-              {VENUE.amenities.map((a) => (
-                <span key={a} className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
-                  <Trees size={13} className="text-[#10b981]" /> {a}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {VENUE.images.map((img, i) => (
+      {/* ── The setting ──────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead lede={<p>{VENUE.intro}</p>}>
+            One day, outdoors, <em>in the park.</em>
+          </SectionHead>
+          <p className="font-measure mt-5 text-[13px] text-[#7d7a70]">
+            {VENUE.amenities.join(" · ")}
+          </p>
+
+          <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-3">
+            {VENUE.images.map((img) => (
               <div
                 key={img.src}
-                className={`relative overflow-hidden rounded-2xl border border-white/10 ${i === 2 ? "row-span-2 aspect-[3/4] col-span-2 md:col-span-1" : "aspect-[4/3]"}`}
+                className="relative aspect-[4/3] overflow-hidden rounded-[14px] bg-[#141814]"
               >
-                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 768px) 50vw, 400px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent" />
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* The 90-Day Blueprint */}
-        <section id="blueprint" className="scroll-mt-24 flex flex-col gap-10">
-          <div className="text-center flex flex-col gap-4">
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The 90-Day Blueprint</h2>
-            <p className="text-neutral-400 font-mono uppercase tracking-widest">Three phases, mapped to your biochemistry.</p>
-          </div>
-          <div className="relative max-w-4xl mx-auto w-full aspect-[16/8] rounded-2xl overflow-hidden border border-white/10">
-            <Image src="/dopamine_receptors_infographic.png" alt="How the brain rebuilds its dopamine receptors over 90 days" fill className="object-cover" sizes="(max-width: 768px) 100vw, 900px" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-          </div>
-          <div className="max-w-4xl mx-auto w-full flex flex-col gap-4">
-            {PHASES.map((phase, index) => (
-              <div key={index} className="bg-[#09090b] border border-white/10 rounded-2xl overflow-hidden shadow-lg">
-                <button onClick={() => togglePhase(index)} className="w-full flex items-center justify-between p-6 md:p-7 bg-white/5 hover:bg-white/10 transition-colors text-left">
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tight">{phase.title}</h3>
-                    <span className="text-xs font-mono uppercase tracking-widest text-[#10b981]">{phase.window}</span>
+      {/* ── The 90-day blueprint ─────────────────────────────── */}
+      <Section id="blueprint" band className="scroll-mt-24">
+        <Wrap>
+          <SectionHead lede={<p>Three phases, mapped to your biochemistry.</p>}>
+            The 90-day <em>blueprint.</em>
+          </SectionHead>
+
+          <figure className="relative mt-12 aspect-[16/8] overflow-hidden rounded-[14px] bg-[#0d0f0d] sm:mt-16">
+            <Image
+              src="/dopamine_receptors_infographic.png"
+              alt="A chart of how the brain rebuilds its dopamine receptors across the 90 days, from the deficit of week one to a restored baseline"
+              fill
+              sizes="(max-width: 900px) 100vw, 900px"
+              className="object-cover"
+            />
+          </figure>
+
+          {PHASES.map((phase) => (
+            <div key={phase.title} className="mt-14 sm:mt-20">
+              <p className="font-measure text-[13px] text-[#4cc07a]">{phase.window}</p>
+              <SubHead className="mt-2">{phase.title}</SubHead>
+              <p className="mt-4 max-w-[62ch] text-[#b8b4a6]">{phase.goal}</p>
+
+              <div className="mt-8 border-t border-[#1d231d]">
+                {phase.items.map((item) => (
+                  <div
+                    key={item.title}
+                    className="grid gap-1.5 border-b border-[#1d231d] py-5 sm:grid-cols-[16rem_1fr] sm:gap-8"
+                  >
+                    <h4 className="font-display text-[1.1rem] leading-tight text-[#f2efe6]">
+                      {item.title}
+                    </h4>
+                    <p className="max-w-[58ch] text-[15.5px] text-[#b8b4a6]">{item.desc}</p>
                   </div>
-                  <ChevronDown className={`text-white transition-transform duration-300 flex-shrink-0 ml-4 ${openPhase === index ? "rotate-180" : ""}`} />
-                </button>
-                <AnimatePresence initial={false}>
-                  {openPhase === index && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                      <div className="p-6 md:p-7 pt-0 border-t border-white/5 flex flex-col gap-5 mt-6">
-                        <div className="bg-[#10b981]/10 border-l-4 border-[#10b981] p-4 rounded-r-lg">
-                          <p className="text-[#10b981] font-mono text-xs uppercase tracking-widest font-bold mb-1">Goal</p>
-                          <p className="text-neutral-200 font-medium">{phase.goal}</p>
-                        </div>
-                        <div className="flex flex-col gap-4">
-                          {phase.items.map((item, sIdx) => (
-                            <div key={sIdx} className="flex gap-3">
-                              <Check size={16} className="text-[#f59e0b] mt-1 shrink-0" />
-                              <div className="flex flex-col gap-0.5">
-                                <h4 className="text-white font-bold tracking-wide text-sm">{item.title}</h4>
-                                <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                ))}
+              </div>
+            </div>
+          ))}
+        </Wrap>
+      </Section>
+
+      {/* ── The three pillars ────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead lede={<p>The Engine. The Network. The Mirror.</p>}>
+            Three pillars, <em>run every day.</em>
+          </SectionHead>
+
+          {PILLARS.map((p, i) => (
+            <PhotoRow key={p.name} photo={PILLAR_PHOTOS[i]} flip={i % 2 === 1}>
+              <SubHead>{p.name}</SubHead>
+              <p className="font-measure mt-1.5 text-[13px] text-[#7d7a70]">{p.sub}</p>
+              <p className="mt-4 max-w-[52ch] text-[#b8b4a6]">{p.body}</p>
+            </PhotoRow>
+          ))}
+        </Wrap>
+      </Section>
+
+      {/* ── What you get ─────────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead lede={<p>The full kit — the day you sit down.</p>}>
+            What you get, <em>across 90 days.</em>
+          </SectionHead>
+
+          <figure className="relative mt-12 aspect-[16/10] overflow-hidden rounded-[14px] bg-white sm:mt-16">
+            <Image
+              src="/90rr/preview-daily.png"
+              alt="The printable 90 R&R journal page a member fills in each day — sleep, movement, meeting and score"
+              fill
+              sizes="(max-width: 768px) 100vw, 720px"
+              className="object-cover object-top"
+            />
+          </figure>
+
+          <div className="mt-12 border-t border-[#1d231d] sm:mt-16 md:grid md:grid-cols-2 md:gap-x-14">
+            {DELIVERABLES.map((d) => (
+              <div key={d.title} className="border-b border-[#1d231d] py-5">
+                <h3 className="font-display text-[1.2rem] leading-tight text-[#f2efe6]">
+                  {d.title}
+                </h3>
+                <p className="mt-1.5 max-w-[54ch] text-[15.5px] text-[#b8b4a6]">{d.body}</p>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* The Three Pillars */}
-        <section className="flex flex-col gap-10">
-          <div className="text-center flex flex-col gap-4">
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">Three Pillars</h2>
-            <p className="text-neutral-400 font-mono uppercase tracking-widest">The Engine. The Network. The Mirror.</p>
+          {/* Alpha 1 — the printable journal is the paper beta of this cohort. */}
+          <div className="mt-14 max-w-[62ch] sm:mt-20">
+            <SubHead>{ALPHA.title}</SubHead>
+            <p className="font-measure mt-2 text-[13px] text-[#4cc07a]">{ALPHA.label}</p>
+            <p className="mt-4 text-[#b8b4a6]">{ALPHA.body}</p>
+            <CtaRow>
+              <ButtonGhost href={ALPHA.href}>See the journal</ButtonGhost>
+            </CtaRow>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {PILLARS.map((p) => (
-              <div key={p.name} className="bg-[#09090b] border border-white/10 rounded-[2rem] overflow-hidden flex flex-col shadow-xl">
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <Image src={p.image} alt={p.name} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent"></div>
-                </div>
-                <div className="p-7 flex flex-col gap-3">
-                  <div>
-                    <h3 className="text-xl font-black text-white uppercase tracking-tight">{p.name}</h3>
-                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.sub}</p>
-                  </div>
-                  <p className="text-sm text-neutral-400 leading-relaxed">{p.body}</p>
-                </div>
+        </Wrap>
+      </Section>
+
+      {/* ── Program specs ────────────────────────────────────── */}
+      <Section tight>
+        <Wrap>
+          <div className="grid gap-x-10 gap-y-9 border-t border-[#1d231d] pt-10 sm:grid-cols-2 lg:grid-cols-4">
+            {SPECS.map((s) => (
+              <div key={s.label}>
+                <p className="font-measure text-[13px] text-[#7d7a70]">{s.label}</p>
+                <p className="font-display mt-2 text-[1.45rem] leading-tight text-[#f2efe6]">
+                  {s.value}
+                </p>
+                {s.note ? (
+                  <p className="font-measure mt-2 text-[12.5px] text-[#7d7a70]">{s.note}</p>
+                ) : null}
               </div>
             ))}
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* What you get */}
-        <section className="flex flex-col gap-10">
-          <div className="text-center flex flex-col gap-4">
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">What You Get · 90 Days</h2>
-            <p className="text-neutral-400 font-mono uppercase tracking-widest">The full kit — the day you sit down.</p>
-          </div>
-          <div className="relative max-w-3xl mx-auto w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <Image src="/90rr/preview-daily.png" alt="The printable 90 R&R journal page you fill in each day" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 720px" />
-          </div>
-
-          {/* Alpha 1 — the journal is the paper beta of this cohort */}
-          <div className="max-w-3xl mx-auto w-full bg-gradient-to-br from-[#09090b] to-[#0a1a12] border border-[#10b981]/30 rounded-[2rem] p-8 md:p-10 flex flex-col gap-5 shadow-[0_0_40px_rgba(16,185,129,0.06)]">
-            <span className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-xs text-[#10b981] font-mono uppercase tracking-widest font-bold">
-              <Sparkles size={14} /> {ALPHA.label}
-            </span>
-            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-none">{ALPHA.title}</h3>
-            <p className="text-neutral-300 leading-relaxed">{ALPHA.body}</p>
-            <Link href={ALPHA.href} className="w-fit py-3.5 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(16,185,129,0.35)]">
-              <BookOpen size={18} /> {ALPHA.cta} <ArrowRight size={18} />
-            </Link>
+      {/* ── The safety promise ───────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+            <SectionHead lede={<p>Recovery first. Always.</p>}>
+              The Vanguard <em>safety promise.</em>
+            </SectionHead>
+            <Figure photo={PHOTOS.nightCall} />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {DELIVERABLES.map((d) => {
-              const Icon = ICONS[d.icon];
-              return (
-                <div key={d.title} className="bg-[#09090b] border border-white/10 rounded-3xl p-6 flex flex-col gap-3 hover:border-[#10b981]/40 transition-colors">
-                  <div className="w-11 h-11 rounded-xl bg-[#10b981]/10 border border-[#10b981]/30 flex items-center justify-center text-[#10b981]">
-                    {Icon && <Icon size={20} />}
-                  </div>
-                  <h3 className="text-white font-black uppercase tracking-tight text-sm">{d.title}</h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed">{d.body}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Program specs band */}
-        <section>
-          <div className="w-full bg-gradient-to-br from-[#09090b] to-[#051024] border border-white/10 rounded-[2rem] p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 shadow-[0_0_40px_rgba(16,185,129,0.05)]">
-            <div className="flex flex-col gap-2 text-center md:text-left">
-              <p className="text-neutral-500 font-mono text-xs uppercase tracking-widest font-bold">Kickoff</p>
-              <p className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">{RR_META.startLabel}</p>
-              <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">Exact date shared with your cohort</p>
-            </div>
-            <div className="flex flex-col gap-2 text-center md:text-left">
-              <p className="text-neutral-500 font-mono text-xs uppercase tracking-widest font-bold">Format</p>
-              <p className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">1-Day Bootcamp<span className="text-neutral-400 text-sm block">+ 90-day cohort</span></p>
-            </div>
-            <div className="flex flex-col gap-2 text-center md:text-left">
-              <p className="text-neutral-500 font-mono text-xs uppercase tracking-widest font-bold">Seats</p>
-              <p className="text-xl md:text-2xl font-black text-[#f59e0b] uppercase tracking-tight">{RESERVATION.seatsTotal} Only</p>
-              <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">Small, closed cohort</p>
-            </div>
-            <div className="flex flex-col gap-2 text-center md:text-left">
-              <p className="text-neutral-500 font-mono text-xs uppercase tracking-widest font-bold">Deposit</p>
-              <p className="text-xl md:text-2xl font-black text-[#10b981] uppercase tracking-tight">${RESERVATION.suggestedDeposit}<span className="text-neutral-400 text-sm"> or PWYC</span></p>
-              <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">Tradition 7 · pay what you can</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Safety promise */}
-        <section className="flex flex-col gap-12">
-          <div className="text-center flex flex-col gap-4">
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none">The Vanguard Safety Promise</h2>
-            <p className="text-neutral-400 font-mono uppercase tracking-widest">Recovery first. Always.</p>
-          </div>
-          <div className="relative max-w-4xl mx-auto w-full aspect-[16/7] rounded-2xl overflow-hidden border border-white/10">
-            <Image src="/sponsor_alerts.png" alt="Your sponsor and the Vanguard stay in the loop" fill className="object-cover" sizes="(max-width: 768px) 100vw, 900px" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="mt-12 border-t border-[#1d231d] sm:mt-16">
             {SAFETY.map((s) => {
               const Icon = ICONS[s.icon];
               return (
-                <div key={s.title} className="bg-[#050505] p-8 rounded-[2rem] flex flex-col items-center text-center gap-6 transition-colors" style={{ border: `1px solid ${s.color}33` }}>
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: `${s.color}1a`, color: s.color }}>
-                    {Icon && <Icon className="w-8 h-8" />}
-                  </div>
-                  <h3 className="text-xl font-black uppercase text-white tracking-wide">{s.title}</h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed font-medium">{s.body}</p>
+                <div
+                  key={s.title}
+                  className="grid gap-2 border-b border-[#1d231d] py-6 sm:grid-cols-[1fr_1.9fr] sm:gap-10"
+                >
+                  <h3 className="font-display flex items-center gap-2.5 text-[1.3rem] leading-tight text-[#f2efe6]">
+                    {Icon ? <Icon size={17} className="text-[#4cc07a]" aria-hidden="true" /> : null}
+                    {s.title}
+                  </h3>
+                  <p className="max-w-[58ch] text-[15.5px] text-[#b8b4a6]">{s.body}</p>
                 </div>
               );
             })}
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* The Alpha Class day: schedule, park, see-the-journal */}
-        <AlphaClassDay />
+      {/* The Alpha Class day: schedule, park, see-the-journal */}
+      <Section>
+        <Wrap>
+          <AlphaClassDay />
+        </Wrap>
+      </Section>
 
-        {/* Reservation — Google sign-in + quick intake + deposit */}
-        <ReserveFlow />
-        <p className="max-w-3xl mx-auto w-full text-[11px] font-mono text-neutral-400 bg-neutral-900/50 p-4 rounded-xl border border-white/5 uppercase tracking-widest leading-relaxed text-center">
-          <span className="text-[#f59e0b] font-black">Note:</span> We honor Traditions 7, 11 &amp; 12. The Fellowship is self-supporting through our own contributions — use a pseudonym if you prefer. Your deposit reserves a seat and is applied to your cohort; it is not professional treatment.
-        </p>
-      </main>
+      {/* Reservation — Google sign-in + quick intake + deposit */}
+      <Section tight>
+        <Wrap>
+          <ReserveFlow />
+          <CalloutBand className="mx-auto mt-10 max-w-3xl">
+            <p className="text-[15px] leading-relaxed text-[#b8b4a6]">
+              <span className="font-semibold text-[#e0a45c]">Note:</span> We honor Traditions 7, 11
+              &amp; 12. The Fellowship is self-supporting through our own contributions — use a
+              pseudonym if you prefer. Your deposit reserves a seat and is applied to your cohort; it
+              is not professional treatment.
+            </p>
+          </CalloutBand>
+        </Wrap>
+      </Section>
 
       <SiteFooter />
     </div>

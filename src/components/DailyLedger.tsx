@@ -24,11 +24,11 @@ import {
 } from "lucide-react";
 
 /* ---- pillar palette (matches the PDF) ---- */
-const ENGINE = "#10b981";
-const NETWORK = "#a855f7";
-const MIRROR = "#22d3ee";
-const AMBER = "#f59e0b";
-const RED = "#ef4444";
+const ENGINE = "#4cc07a";
+const NETWORK = "#a88fc4";
+const MIRROR = "#7fb3a3";
+const AMBER = "#e0a45c";
+const RED = "#c2603f";
 
 /* ---- milestones (identical to the printed journal) ---- */
 const MILESTONES: Record<number, string> = {
@@ -84,8 +84,8 @@ function Banner({ icon: Icon, title, sub, color }: { icon: any; title: string; s
     <div className="flex items-center gap-3 rounded-xl px-4 py-2.5 mb-4" style={{ background: color }}>
       <Icon size={17} className="text-black/80 shrink-0" />
       <div className="leading-tight">
-        <div className="text-sm font-black uppercase tracking-wide text-black">{title}</div>
-        <div className="text-[10px] font-bold uppercase tracking-widest text-black/70">{sub}</div>
+        <div className="text-sm font-semibold tracking-wide text-black">{title}</div>
+        <div className="text-[10px] font-bold text-black/70">{sub}</div>
       </div>
     </div>
   );
@@ -99,7 +99,7 @@ function Toggle({ checked, onChange, label, color }: { checked: boolean; onChang
         style={{ borderColor: checked ? color : "#3f3f46", background: checked ? color : "transparent" }}>
         {checked && <Check size={13} className="text-black" strokeWidth={3.5} />}
       </span>
-      <span className={`text-sm ${checked ? "text-white" : "text-neutral-300"} group-hover:text-white transition-colors`}>{label}</span>
+      <span className={`text-sm ${checked ? "text-[#f2efe6]" : "text-[#b8b4a6]"} group-hover:text-[#f2efe6] transition-colors`}>{label}</span>
     </button>
   );
 }
@@ -108,7 +108,7 @@ function Scale({ label, value, onChange, min, max, color }: { label: string; val
   const nums = []; for (let i = min; i <= max; i++) nums.push(i);
   return (
     <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-sm font-bold text-neutral-200 w-28 shrink-0">{label}</span>
+      <span className="text-sm font-bold text-[#f2efe6] w-28 shrink-0">{label}</span>
       <div className="flex gap-1 flex-wrap">
         {nums.map((n) => {
           const on = value === n;
@@ -128,15 +128,15 @@ function Scale({ label, value, onChange, min, max, color }: { label: string; val
 function TextField({ label, value, onChange, placeholder, wide, type = "text" }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string; wide?: boolean; type?: string }) {
   return (
     <label className={`flex flex-col gap-1 ${wide ? "w-full" : ""}`}>
-      <span className="text-[10px] font-black uppercase tracking-widest text-neutral-500">{label}</span>
+      <span className="text-[10px] font-semibold text-[#7d7a70]">{label}</span>
       <input type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder}
-        className="bg-[#0a0a0a] border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-neutral-600 focus:border-white/30 focus:outline-none" />
+        className="bg-[#141814] border border-[#1d231d] rounded-lg px-3 py-2 text-sm text-[#f2efe6] placeholder:text-[#7d7a70] focus:border-white/30 focus:outline-none" />
     </label>
   );
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 md:p-6">{children}</div>;
+  return <div className="bg-[#141814] border border-[#1d231d] rounded-2xl p-5 md:p-6">{children}</div>;
 }
 
 export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
@@ -209,7 +209,7 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
   };
 
   if (loading) {
-    return <div className="h-64 flex items-center justify-center text-xs font-mono uppercase tracking-widest text-neutral-500 animate-pulse">Loading today’s ledger…</div>;
+    return <div className="h-64 flex items-center justify-center text-xs font-mono text-[#7d7a70]">Loading today’s ledger…</div>;
   }
 
   return (
@@ -218,14 +218,14 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <div className="flex items-baseline gap-2">
-            <h2 className="text-3xl font-black text-white tracking-tight">DAY {daysSober || "—"}</h2>
-            <span className="text-sm font-mono text-neutral-500">· {dateKey}</span>
+            <h2 className="text-3xl font-semibold text-[#f2efe6] tracking-tight">DAY {daysSober || "—"}</h2>
+            <span className="text-sm font-mono text-[#7d7a70]">· {dateKey}</span>
           </div>
-          <p className="text-xs font-mono uppercase tracking-widest text-emerald-400 mt-1">Side A · track as you go &nbsp;·&nbsp; Side B · reflect &amp; score</p>
+          <p className="text-xs font-mono text-emerald-400 mt-1">Side A · track as you go &nbsp;·&nbsp; Side B · reflect &amp; score</p>
         </div>
         <div className="text-right">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 px-3 py-1.5">
-            <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">Sober · Day {daysSober || 0}</span>
+            <span className="text-[10px] font-semibold text-emerald-400">Sober · Day {daysSober || 0}</span>
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
       {milestone && (
         <div className="flex items-start gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5">
           <Star size={15} className="text-amber-400 shrink-0 mt-0.5" />
-          <p className="text-sm text-amber-100/90"><span className="font-black text-amber-400 uppercase tracking-wide">Milestone · </span>{milestone}</p>
+          <p className="text-sm text-amber-100/90"><span className="font-semibold text-amber-400 tracking-wide">Milestone · </span>{milestone}</p>
         </div>
       )}
 
@@ -247,7 +247,7 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
           <TextField label="Wake-ups" type="number" value={L.wakeUps} onChange={(v) => set("wakeUps", v)} />
         </div>
         <div className="mb-4"><Scale label="Sleep quality" value={L.sleepQuality} onChange={(v) => set("sleepQuality", v)} min={1} max={10} color={ENGINE} /></div>
-        <p className="text-xs font-black uppercase tracking-widest text-neutral-400 mb-2 flex items-center gap-1.5"><Sun size={13} /> Morning ignition</p>
+        <p className="text-xs font-semibold text-[#b8b4a6] mb-2 flex items-center gap-1.5"><Sun size={13} /> Morning ignition</p>
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-0.5 mb-4">
           <Toggle checked={L.ignWater} onChange={(v) => set("ignWater", v)} label="Water first thing" color={ENGINE} />
           <Toggle checked={L.ignLight} onChange={(v) => set("ignLight", v)} label="Morning light / outside" color={ENGINE} />
@@ -255,7 +255,7 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
           <Toggle checked={L.ignCold} onChange={(v) => set("ignCold", v)} label="Cold or contrast (optional)" color={ENGINE} />
           <Toggle checked={L.ignStillness} onChange={(v) => set("ignStillness", v)} label="Stillness (breath / prayer)" color={ENGINE} />
         </div>
-        <p className="text-xs font-black uppercase tracking-widest text-neutral-400 mb-2">Fuel &amp; body</p>
+        <p className="text-xs font-semibold text-[#b8b4a6] mb-2">Fuel &amp; body</p>
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-0.5 mb-4">
           <Toggle checked={L.fuelMeals} onChange={(v) => set("fuelMeals", v)} label="Ate real meals" color={ENGINE} />
           <Toggle checked={L.fuelGut} onChange={(v) => set("fuelGut", v)} label="Gut-support food" color={ENGINE} />
@@ -293,7 +293,7 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
       {/* ============ SIDE B ============ */}
       <div className="flex items-center gap-3 mt-2">
         <Moon size={16} className="text-purple-400" />
-        <h3 className="text-xl font-black text-white">Tonight <span className="text-neutral-500 font-mono text-sm">· Side B — reflect &amp; score</span></h3>
+        <h3 className="text-xl font-semibold text-[#f2efe6]">Tonight <span className="text-[#7d7a70] font-mono text-sm">· Side B — reflect &amp; score</span></h3>
       </div>
 
       <Card>
@@ -313,7 +313,7 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
           <Scale label="Mood" value={L.mood} onChange={(v) => set("mood", v)} min={1} max={10} color={MIRROR} />
           <Scale label="Craving" value={L.craving} onChange={(v) => set("craving", v)} min={0} max={10} color={AMBER} />
         </div>
-        <p className="text-xs font-black uppercase tracking-widest text-neutral-400 mb-2">H.A.L.T. — am I…</p>
+        <p className="text-xs font-semibold text-[#b8b4a6] mb-2">H.A.L.T. — am I…</p>
         <div className="flex flex-wrap gap-x-8 gap-y-1">
           <Toggle checked={L.haltHungry} onChange={(v) => set("haltHungry", v)} label="Hungry" color={MIRROR} />
           <Toggle checked={L.haltAngry} onChange={(v) => set("haltAngry", v)} label="Angry" color={MIRROR} />
@@ -325,14 +325,14 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
       <Card>
         <Banner icon={PenLine} title="Reflect" sub="Land it on paper" color={ENGINE} />
         <label className="flex flex-col gap-1 mb-4">
-          <span className="text-sm font-bold text-neutral-200">What held the line today?</span>
+          <span className="text-sm font-bold text-[#f2efe6]">What held the line today?</span>
           <textarea value={L.heldLine} onChange={(e) => set("heldLine", e.target.value)} rows={2}
-            className="bg-[#0a0a0a] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none resize-none" />
+            className="bg-[#141814] border border-[#1d231d] rounded-lg px-3 py-2 text-sm text-[#f2efe6] focus:border-white/30 focus:outline-none resize-none" />
         </label>
         <label className="flex flex-col gap-1">
-          <span className="text-sm font-bold text-neutral-200">Grateful for…</span>
+          <span className="text-sm font-bold text-[#f2efe6]">Grateful for…</span>
           <textarea value={L.gratefulFor} onChange={(e) => set("gratefulFor", e.target.value)} rows={2}
-            className="bg-[#0a0a0a] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none resize-none" />
+            className="bg-[#141814] border border-[#1d231d] rounded-lg px-3 py-2 text-sm text-[#f2efe6] focus:border-white/30 focus:outline-none resize-none" />
         </label>
       </Card>
 
@@ -344,21 +344,21 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
             <div key={m.label} className="flex flex-col items-center text-center gap-1.5">
               <span className="w-11 h-11 rounded-full border-2 flex items-center justify-center"
                 style={{ borderColor: m.on ? ENGINE : "#3f3f46", background: m.on ? `${ENGINE}22` : "transparent" }}>
-                {m.on ? <Check size={18} style={{ color: ENGINE }} strokeWidth={3} /> : <span className="text-neutral-600 text-xs">2</span>}
+                {m.on ? <Check size={18} style={{ color: ENGINE }} strokeWidth={3} /> : <span className="text-[#7d7a70] text-xs">2</span>}
               </span>
-              <span className="text-[10px] font-bold text-neutral-300 leading-tight">{m.label}</span>
-              <span className="text-[9px] text-neutral-600">2 pts</span>
+              <span className="text-[10px] font-bold text-[#b8b4a6] leading-tight">{m.label}</span>
+              <span className="text-[9px] text-[#7d7a70]">2 pts</span>
             </div>
           ))}
         </div>
         {/* gauge */}
         <div className="flex items-center gap-4">
-          <div className="text-4xl font-black" style={{ color: bandColor }}>{vse.score}<span className="text-lg text-neutral-600">/10</span></div>
+          <div className="text-4xl font-semibold" style={{ color: bandColor }}>{vse.score}<span className="text-lg text-[#7d7a70]">/10</span></div>
           <div className="flex-1">
-            <div className="h-3 rounded-full bg-[#0a0a0a] overflow-hidden border border-white/10">
+            <div className="h-3 rounded-full bg-[#141814] overflow-hidden border border-[#1d231d]">
               <div className="h-full rounded-full transition-all" style={{ width: `${vse.score * 10}%`, background: bandColor }} />
             </div>
-            <div className="flex justify-between text-[9px] font-mono uppercase tracking-widest text-neutral-500 mt-1">
+            <div className="flex justify-between text-[9px] font-mono text-[#7d7a70] mt-1">
               <span>Redline &lt;5</span><span>Alert 5–6</span><span>Stable 7–8</span><span>Optimal 9–10</span>
             </div>
           </div>
@@ -369,11 +369,11 @@ export default function DailyLedger({ daysSober = 0 }: { daysSober?: number }) {
       {/* save */}
       <div className="flex items-center gap-4 pb-4">
         <button type="button" onClick={save} disabled={saving || !user}
-          className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-black text-sm font-black uppercase tracking-widest px-6 py-3 transition-colors">
+          className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-black text-sm font-semibold px-6 py-3 transition-colors">
           <Save size={16} /> {saving ? "Saving…" : "Save today’s ledger"}
         </button>
         {savedAt && <span className="text-xs font-mono text-emerald-400">Saved at {savedAt} · syncs to your trend chart</span>}
-        {!user && <span className="text-xs font-mono text-neutral-500">Sign in to save.</span>}
+        {!user && <span className="text-xs font-mono text-[#7d7a70]">Sign in to save.</span>}
       </div>
     </div>
   );

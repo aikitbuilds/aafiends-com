@@ -70,7 +70,7 @@ export default function LedgerTab() {
   if (loading) {
     return (
       <div className="w-full h-[400px] flex items-center justify-center">
-        <p className="text-xs font-mono uppercase tracking-widest text-neutral-500 animate-pulse">Loading your chart...</p>
+        <p className="text-xs font-mono text-[#7d7a70]">Loading your chart...</p>
       </div>
     );
   }
@@ -78,20 +78,20 @@ export default function LedgerTab() {
   if (data.length === 0) {
     return (
       <div className="w-full h-[400px] flex flex-col items-center justify-center p-6 text-center gap-2">
-        <Activity className="text-neutral-600 mb-2" size={32} />
-        <p className="text-sm font-bold uppercase tracking-widest text-neutral-400">No Check-Ins Yet</p>
-        <p className="text-xs text-neutral-600">Complete a check-in above and your chart will fill in.</p>
+        <Activity className="text-[#7d7a70] mb-2" size={32} />
+        <p className="text-sm font-bold text-[#b8b4a6]">No Check-Ins Yet</p>
+        <p className="text-xs text-[#7d7a70]">Complete a check-in above and your chart will fill in.</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full h-full flex flex-col p-6 gap-6 bg-[#050505]">
+    <div className="w-full h-full flex flex-col p-6 gap-6 bg-[#0d0f0d]">
       <div className="flex flex-col gap-1">
-        <h3 className="text-lg font-black uppercase text-white tracking-widest flex items-center gap-2">
+        <h3 className="text-lg font-semibold text-[#f2efe6] flex items-center gap-2">
           Your Trends
         </h3>
-        <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
+        <p className="text-xs font-mono text-[#7d7a70]">
           Body vs. Mind, Over Time
         </p>
       </div>
@@ -115,7 +115,7 @@ export default function LedgerTab() {
             {/* Left Y-Axis: Biological Hardware (Green/Positive) */}
             <YAxis 
               yAxisId="left" 
-              stroke="#10b981" 
+              stroke="#4cc07a" 
               fontSize={10}
               tickLine={false}
               axisLine={false}
@@ -128,7 +128,7 @@ export default function LedgerTab() {
             <YAxis 
               yAxisId="right" 
               orientation="right"
-              stroke="#ef4444"
+              stroke="#c2603f"
               fontSize={10}
               tickLine={false}
               axisLine={false}
@@ -136,7 +136,7 @@ export default function LedgerTab() {
             />
             
             <Tooltip 
-              contentStyle={{ backgroundColor: '#09090b', borderColor: '#27272a', borderRadius: '8px' }}
+              contentStyle={{ backgroundColor: '#141814', borderColor: '#1d231d', borderRadius: '8px' }}
               itemStyle={{ fontSize: '12px', fontWeight: 'bold' }}
               labelStyle={{ color: '#a1a1aa', fontSize: '10px', marginBottom: '4px' }}
             />
@@ -152,9 +152,9 @@ export default function LedgerTab() {
               type="monotone" 
               dataKey="hrv" 
               name="HRV (ms)" 
-              stroke="#10b981" 
+              stroke="#4cc07a" 
               strokeWidth={2}
-              dot={{ r: 3, fill: '#10b981', strokeWidth: 0 }}
+              dot={{ r: 3, fill: '#4cc07a', strokeWidth: 0 }}
               activeDot={{ r: 5 }}
             />
             <Line 
@@ -162,7 +162,7 @@ export default function LedgerTab() {
               type="monotone" 
               dataKey="sleepHours" 
               name="Sleep (hrs)" 
-              stroke="#34d399" 
+              stroke="#5fd08c" 
               strokeWidth={2}
               strokeDasharray="5 5"
               dot={false}
@@ -174,9 +174,9 @@ export default function LedgerTab() {
               type="monotone" 
               dataKey="sciaticaPainLevel" 
               name="Pain (1-5)" 
-              stroke="#ef4444" 
+              stroke="#c2603f" 
               strokeWidth={2}
-              dot={{ r: 3, fill: '#ef4444', strokeWidth: 0 }}
+              dot={{ r: 3, fill: '#c2603f', strokeWidth: 0 }}
             />
             <Line 
               yAxisId="right" 

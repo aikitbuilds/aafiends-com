@@ -51,12 +51,12 @@ export const RR_META = {
   missions: [
     {
       tag: "/* R1 · RECOVERY */",
-      color: "#10b981",
+      color: "#4cc07a",
       text: "Stabilize the hardware. Heal the CNS, reset the gut-brain axis, anchor your sleep, and pay for your dopamine up front with cold, movement, and light — so your nervous system stops screaming for the poison.",
     },
     {
       tag: "/* R2 · RESTRUCTURE */",
-      color: "#f59e0b",
+      color: "#e0a45c",
       text: "Rebuild the operating system. Set your Sanctuary, install daily telemetry, work the Steps as a structural audit, and restore the relationships and routines the virus tore down — a life the drink no longer fits inside.",
     },
   ],
@@ -69,21 +69,21 @@ export const WHO_ITS_FOR = [
     title: "The Trench",
     sub: "Days 0–90 sober",
     body: "You're in the deficit state — inflamed, foggy, running on willpower fumes. You don't need more theory; you need a structure simple enough to follow when your prefrontal cortex is offline.",
-    color: "#10b981",
+    color: "#4cc07a",
   },
   {
     icon: "Rocket",
     title: "The Founder / Burnout",
     sub: "Worth tied to output",
     body: "High-functioning and high-stress. You've tried to out-hustle the problem. This gives your ego a system to respect — HRV, baselines, protocols — instead of a slogan to roll your eyes at.",
-    color: "#f59e0b",
+    color: "#e0a45c",
   },
   {
     icon: "RefreshCw",
     title: "The Returner",
     sub: "Relapse-weary",
     body: "You've been sober before. You're done betting your life on discipline alone. R&R replaces the willpower gamble with objective telemetry, a cohort, and a 24-hour horizon you can actually hold.",
-    color: "#00f0ff",
+    color: "#7fb3a3",
   },
 ];
 
@@ -168,21 +168,21 @@ export const PILLARS = [
   {
     name: "The Engine",
     sub: "The Biological Vessel",
-    color: "#10b981",
+    color: "#4cc07a",
     image: "/pillar_physical_real.png",
     body: "Your body is hardware in the shop. Sleep architecture, the morning ignition stack, DOSE contrast therapy, and somatic pain protocols — restore homeostasis with evidence, not affirmations.",
   },
   {
     name: "The Network",
     sub: "The Fellowship / The Grid",
-    color: "#a855f7",
+    color: "#a88fc4",
     image: "/pillar_network_real.png",
     body: "You can't out-think a virus alone. Meetings, sponsor/Vanguard check-ins, and a cohort of twelve — with a Human Handoff lock that freezes the app and sends you to a real person when you isolate.",
   },
   {
     name: "The Mirror",
     sub: "Daily Telemetry & VSE",
-    color: "#00f0ff",
+    color: "#7fb3a3",
     image: "/pillar_mental_real.png",
     body: "An objective ledger that strips the addict ego out of self-evaluation. A daily digitized Step 10 scores your VSE out of 10 — so you're reading data, not your own denial.",
   },
@@ -245,19 +245,19 @@ export const ALPHA = {
 export const SAFETY = [
   {
     icon: "ShieldCheck",
-    color: "#10b981",
+    color: "#4cc07a",
     title: "Sobriety First",
     body: "Every protocol serves the day count. The tech exists to be turned off — we teach you how.",
   },
   {
     icon: "PhoneCall",
-    color: "#a855f7",
+    color: "#a88fc4",
     title: "Human Handoff Lock",
     body: "Log three days without a meeting or sponsor call and the app freezes: 'I have no heartbeat. Go call your Vanguard.'",
   },
   {
     icon: "EyeOff",
-    color: "#00f0ff",
+    color: "#7fb3a3",
     title: "Anonymity Guaranteed",
     body: "Use a pseudonym. Your telemetry lives in a private vault. Zero push notifications, zero public streaks.",
   },

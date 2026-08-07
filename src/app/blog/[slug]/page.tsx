@@ -7,6 +7,22 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PostVisual from "@/components/PostVisual";
 import BlogContent from "@/components/BlogContent";
+import SubstackSubscribe from "@/components/SubstackSubscribe";
+import { Wrap, SubHead, CalloutBand, ButtonPrimary, ButtonQuiet, CtaRow } from "@/components/design";
+
+/**
+ * The article template every post on /blog inherits — rebuilt August 2026 on
+ * the "Dawn Ledger" world (DESIGN.md). One change here lands on all 18 posts.
+ *
+ * The masthead is a magazine masthead and nothing else: the title in the
+ * display serif at a real size, a standfirst, then a single mono line of
+ * measurement — date, read time, byline, series. There is no eyebrow chip
+ * above the title, because the title is the first thing on the page.
+ *
+ * The lead photograph is wider than the column, the column is 68ch, and the
+ * body is in <Prose>, which is the surface tuned for reading a long argument
+ * on a phone at one in the morning.
+ */
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -34,6 +50,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+/** The measure. 68ch of Public Sans at 17px — inside the 65–75ch band. */
+const COLUMN = "mx-auto max-w-[68ch]";
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -42,7 +61,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
-  const style = PILLAR_STYLES[post.pillar];
+  const pillar = PILLAR_STYLES[post.pillar];
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -56,54 +75,90 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 font-sans">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <SiteHeader />
 
-      {/* Hero */}
-      <div className="w-full h-[32vh] md:h-[38vh] relative">
-        <PostVisual icon={post.icon} pillar={post.pillar} variant="hero" image={post.heroImage} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full p-6">
-          <div className="max-w-3xl mx-auto">
-            <Link href="/blog" className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-bold text-[#10b981] hover:text-emerald-300 mb-4 transition-colors">
-              <ChevronLeft size={14} /> Back to The Science
+      <main className="pb-24 pt-10 sm:pt-16">
+        {/* ── Masthead ──────────────────────────────────────── */}
+        <Wrap>
+          <div className={COLUMN}>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-[15px] text-[#b8b4a6] no-underline transition-colors hover:text-[#f2efe6]"
+            >
+              <ChevronLeft size={16} aria-hidden /> Back to the blog
             </Link>
-            <span className={`inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border ${style.border} ${style.bg} ${style.text} mb-3`}>
-              {style.label}
-            </span>
-            <h1 className="text-2xl md:text-4xl font-black tracking-tight text-white leading-tight mb-3">{post.title}</h1>
-            <div className="flex items-center gap-3 text-[10px] font-bold text-neutral-400 uppercase tracking-widest">
-              <span>{post.author}</span>
-              <span className="w-1 h-1 rounded-full bg-neutral-600"></span>
-              <span>{post.date}</span>
-              <span className="w-1 h-1 rounded-full bg-neutral-600"></span>
+
+            <h1 className="font-display mt-7 text-[clamp(2.25rem,5.4vw,3.75rem)] leading-[1.06] tracking-[-0.025em] text-[#f2efe6]">
+              {post.title}
+            </h1>
+
+            <p className="mt-6 max-w-[58ch] text-[clamp(1.05rem,1.5vw,1.2rem)] leading-[1.6] text-[#b8b4a6]">
+              {post.excerpt}
+            </p>
+
+            {/* The measurement line. Mono, below the title, never above it. */}
+            <div className="font-measure mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-t border-[#1d231d] pt-5 text-[13px] text-[#7d7a70]">
+              <span className="text-[#4cc07a]">{post.date}</span>
+              <span aria-hidden>·</span>
               <span>{post.readTime}</span>
+              <span aria-hidden>·</span>
+              <span>{post.author}</span>
+              <span aria-hidden>·</span>
+              <span>{post.category ?? pillar.label}</span>
             </div>
           </div>
-        </div>
-      </div>
+        </Wrap>
 
-      {/* Content */}
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <BlogContent post={post} />
+        {/* ── The lead photograph ───────────────────────────── */}
+        <Wrap className="mt-10 sm:mt-12">
+          <PostVisual post={post} priority className="mx-auto max-w-[980px]" />
+        </Wrap>
 
-        {/* CTA */}
-        <div className="mt-16 border border-[#10b981]/20 bg-[#10b981]/[0.04] p-8 sm:p-10 rounded-3xl text-center">
-          <h3 className="text-xl font-black text-white mb-2">See how this shows up in your own data.</h3>
-          <p className="text-sm text-neutral-400 max-w-sm mx-auto mb-6 font-light">
-            The Mirror pillar turns ideas like this into a daily check-in and a trend line, not just a read.
-          </p>
-          <Link
-            href="/dashboard"
-            className="inline-block py-3 px-8 rounded-full bg-[#10b981] hover:bg-emerald-400 text-black text-sm font-black tracking-widest uppercase transition-all"
-          >
-            Open My Dashboard
-          </Link>
-        </div>
+        {/* ── The body ──────────────────────────────────────────
+            BlogContent carries its own <Prose> per text block, so the
+            measure holds while charts and figures stay free to break it. */}
+        <Wrap className="mt-12 sm:mt-16">
+          <div className={COLUMN}>
+            <BlogContent post={post} />
+          </div>
+        </Wrap>
+
+        {/* ── End of article ────────────────────────────────── */}
+        <Wrap className="mt-20">
+          <div className={COLUMN}>
+            <CalloutBand>
+              <SubHead>
+                See how this shows up in <em>your own data.</em>
+              </SubHead>
+              <p className="mt-3 max-w-[52ch] text-[#b8b4a6]">
+                The Mirror pillar turns ideas like this into a daily check-in and a trend line, not
+                just a read.
+              </p>
+              <CtaRow>
+                <ButtonPrimary href="/dashboard">Open my dashboard</ButtonPrimary>
+                <ButtonQuiet href="/blog">Back to all the writing</ButtonQuiet>
+              </CtaRow>
+            </CalloutBand>
+
+            <div className="mt-14 border-t border-[#1d231d] pt-10">
+              <SubHead>
+                Get the next one in <em>your inbox.</em>
+              </SubHead>
+              <p className="mt-3 max-w-[52ch] text-[#b8b4a6]">
+                The Deficit is the long-form version of everything above — the full citation list,
+                the caveats, and the podcast. No spam.
+              </p>
+              <div className="mt-6 max-w-xl">
+                <SubstackSubscribe />
+              </div>
+            </div>
+          </div>
+        </Wrap>
       </main>
 
       <SiteFooter />

@@ -1,669 +1,593 @@
 "use client";
 
 import { useAuth } from "@/contexts/AuthContext";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import FeaturedGrid from "@/components/FeaturedGrid";
 import SubstackSubscribe from "@/components/SubstackSubscribe";
-import { DoseMap, DoseStack, CravingWaveAndSpike } from "@/components/DoseFigures";
+import { CravingWaveAndSpike } from "@/components/DoseFigures";
+import { PHOTOS } from "@/lib/photos";
 import {
-  Users, HeartPulse, Brain, Biohazard, Shield, ArrowRight, BrainCircuit, Activity, Lock, LineChart, Sparkles, Network, BookOpen, Play
-} from "lucide-react";
+  Wrap,
+  Section,
+  SectionHead,
+  SubHead,
+  PageHero,
+  PhotoRow,
+  Figure,
+  StackList,
+  EditorialRow,
+  EditorialList,
+  Stat,
+  ButtonPrimary,
+  ButtonGhost,
+  ButtonQuiet,
+  CtaRow,
+  PullQuote,
+} from "@/components/design";
+
+/** The four chemicals, each with the photograph of someone earning it. */
+const DOSE = [
+  {
+    photo: PHOTOS.coldLake,
+    letter: "D",
+    name: "Dopamine, the engine",
+    role: "Drive, motivation & anticipation",
+    earn: "a cold plunge, morning sunlight, a brisk walk, one hard task finished before noon.",
+    stat: "+250%",
+    statBody: "dopamine after cold exposure, held for hours without the crash",
+    flip: false,
+  },
+  {
+    photo: PHOTOS.meetingCircle,
+    letter: "O",
+    name: "Oxytocin, the network",
+    role: "Bonding, trust & safety",
+    earn: "sitting in the rooms, calling your sponsor, reaching out to another alcoholic, 12th-step service.",
+    stat: "Buffer",
+    statBody: "a direct biological counter to cortisol and craving isolation",
+    flip: true,
+  },
+  {
+    photo: PHOTOS.kitchenJournal,
+    letter: "S",
+    name: "Serotonin, the mirror",
+    role: "Baseline mood & emotional calm",
+    earn: "sleep, daylight, fibre and fermented food, ten minutes of stillness with the journal open.",
+    stat: "~90%",
+    statBody: "of the body's serotonin is made in the gut, not the head",
+    flip: false,
+  },
+  {
+    photo: PHOTOS.bridgeRunner,
+    letter: "E",
+    name: "Endorphins, the resilience",
+    role: "Pain relief & the natural high",
+    earn: "hard cardio or lifting, sauna heat, spicy food, laughing until it hurts.",
+    stat: "Opioid",
+    statBody: "your internal system, activated safely through physical challenge",
+    flip: true,
+  },
+];
 
 export default function LandingClient({ substackLatest }: { substackLatest: React.ReactNode }) {
   const { user, loading, login } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (!loading && user) {
-      router.push("/dashboard");
-    }
+    if (!loading && user) router.push("/dashboard");
   }, [user, loading, router]);
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
+  // The one authored motion moment on this page: the craving wave draws itself
+  // when it first enters view. Content is visible at rest either way — this
+  // adds to visibility, it never gates it.
+  const waveRef = useRef<HTMLDivElement>(null);
+  const [waveSeen, setWaveSeen] = useState(false);
+  useEffect(() => {
+    const el = waveRef.current;
+    if (!el || waveSeen) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setWaveSeen(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [waveSeen]);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
-      
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      {/* SECTION 1: HERO */}
-      <motion.section 
-        initial="hidden"
-        animate="visible"
-        variants={staggerContainer}
-        className="relative w-full min-h-[90vh] flex items-center justify-center px-6 md:px-12 py-24 z-20 overflow-hidden"
+      <PageHero
+        photo={PHOTOS.dawnRoad}
+        title={
+          <>
+            Data over denial. <em>Every morning.</em>
+          </>
+        }
+        lede="AAfiends is a 90-day, biology-first recovery system built by people in recovery. Track sleep, meetings, and cravings, and watch the numbers prove your baseline is healing."
+        meta="Free printable journal · no signup · 12 cohort seats"
       >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
-        </div>
+        <CtaRow>
+          <ButtonPrimary href="/90rr">Get the free 90-day journal</ButtonPrimary>
+          <ButtonGhost href="/90-r-and-r">Reserve a cohort seat</ButtonGhost>
+          <button
+            onClick={login}
+            className="text-[15px] text-[#b8b4a6] underline decoration-[#1d231d] underline-offset-4 transition-colors hover:text-[#f2efe6] hover:decoration-[#4cc07a]"
+          >
+            Already tracking? Sign in
+          </button>
+        </CtaRow>
+      </PageHero>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center gap-16 mt-10">
-          
-          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <motion.div variants={fadeIn} className="flex items-center gap-2 border border-[#10b981]/30 bg-[#10b981]/10 text-[#10b981] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-8 backdrop-blur-md">
-              <Lock size={14} /> Exclusive Beta &middot; Limited Spots
-            </motion.div>
-
-            <motion.h1 variants={fadeIn} className="text-5xl sm:text-6xl lg:text-[6rem] font-black tracking-tight text-white leading-[1.05] mb-6 drop-shadow-lg uppercase">
-              Data Over <br className="hidden lg:block" />
-              <span className="text-[#10b981]">Denial.</span>
-            </motion.h1>
-
-            <motion.p variants={fadeIn} className="text-lg sm:text-xl text-neutral-300 max-w-2xl leading-relaxed mb-6 font-medium">
-              AAfiends is a recovery dashboard and AI coach built by AA members — track sleep, meetings, and cravings to prove your baseline is healing.
-            </motion.p>
-
-            <motion.div variants={fadeIn} className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
-              <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 text-xs sm:text-sm font-bold text-neutral-300">
-                <LineChart size={14} className="text-[#10b981]" /> Daily Telemetry
-              </span>
-              <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 text-xs sm:text-sm font-bold text-neutral-300">
-                <Sparkles size={14} className="text-[#10b981]" /> AI Mirror
-              </span>
-              <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 text-xs sm:text-sm font-bold text-neutral-300">
-                <Network size={14} className="text-[#10b981]" /> Community Grid
-              </span>
-            </motion.div>
-
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-4">
-              <Link
-                href="/90rr"
-                className="py-4 px-8 rounded-full bg-[#10b981] hover:bg-[#059669] text-black text-base font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-105 flex items-center justify-center gap-2"
-              >
-                Get the Free 90-Day Journal <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/90-r-and-r"
-                className="py-4 px-8 rounded-full border border-white/15 text-white text-base font-bold uppercase tracking-widest transition-all duration-300 hover:border-[#10b981]/50 hover:text-[#10b981] flex items-center justify-center gap-2"
-              >
-                Join the August Fellowship
-              </Link>
-            </motion.div>
-
-            <motion.button
-              variants={fadeIn}
-              onClick={login}
-              className="mb-10 text-sm font-bold uppercase tracking-widest text-neutral-500 hover:text-[#10b981] transition-colors"
-            >
-              Already tracking? Sign in →
-            </motion.button>
-
-            {/* One path, four steps — the canonical Start Here strip */}
-            <motion.div variants={fadeIn} className="w-full max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {[
-                { n: "1", label: "Prep", sub: "Gear up", href: "/prep90" },
-                { n: "2", label: "Journal", sub: "Track 90 days", href: "/90rr" },
-                { n: "3", label: "BIO 12", sub: "Daily firewall", href: "/protocol" },
-                { n: "4", label: "Fellowship", sub: "12-seat cohort", href: "/90-r-and-r" },
-              ].map((s) => (
-                <Link
-                  key={s.n}
-                  href={s.href}
-                  className="flex flex-col gap-1 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 hover:border-[#10b981]/50 transition-colors group"
-                >
-                  <span className="w-7 h-7 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black text-xs flex items-center justify-center mb-1">
-                    {s.n}
-                  </span>
-                  <span className="text-white font-black uppercase tracking-tight text-sm group-hover:text-[#10b981] transition-colors">{s.label}</span>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">{s.sub}</span>
-                </Link>
-              ))}
-            </motion.div>
-          </div>
-
-          <div className="flex-1 relative flex justify-center lg:justify-end items-center w-full max-w-lg lg:max-w-none mt-10 lg:mt-0">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative w-full max-w-[500px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-[#10b981]/30 shadow-[0_20px_50px_rgba(16,185,129,0.2)] z-10 group bg-neutral-900"
-            >
-              <Image src="/main_hero_gauntlet.png" alt="Data Over Denial" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-white font-black text-2xl uppercase tracking-widest">Baseline Calibrated</h3>
-                <div className="flex items-center gap-2 mt-2 text-sm font-bold text-[#10b981]">
-                  <Activity size={16} /> System Active
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-        </div>
-      </motion.section>
-
-      {/* ================================================================
-          BIOLOGY FIRST. The whole thesis of the ecosystem is "stabilize the
-          hardware, then run the software" — so the biology sections sit
-          directly under the hero, ahead of the AA framework, the series, and
-          every program card. Previously the first thing under the hero was a
-          series promo, which buried the actual argument.
-          ================================================================ */}
-
-      {/* SECTION 2: THE FOUR CHEMICALS (D.O.S.E.) */}
-      <motion.section
-        id="biology"
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-10 relative z-20 border-t border-white/5"
-      >
-        <motion.div variants={fadeIn} className="flex flex-col gap-5 max-w-3xl">
-          <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest bg-[#10b981]/10 px-4 py-1.5 rounded-full border border-[#10b981]/30">
-            <Activity size={14} /> Start here · The biology
-          </span>
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight leading-none">
-            Your body is the <span className="text-[#10b981]">hardware.</span>
-          </h2>
-          <p className="text-neutral-300 text-lg leading-relaxed">
-            Almost everything that feels good runs on four brain chemicals. The substance faked all four at once through
-            a single door — so your brain turned the volume down to compensate. That deficit is the grey fog and the
-            craving. Recovery is teaching the body to make its own again, in small clean doses you earn.
-          </p>
-        </motion.div>
-
-        <motion.div variants={fadeIn}>
-          <DoseMap />
-        </motion.div>
-
-        <motion.div variants={fadeIn} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { l: "D", n: "Dopamine", r: "Drive · motivation", e: "Cold water · morning light · a brisk walk · finishing hard things", c: "#10b981" },
-            { l: "O", n: "Oxytocin", r: "Bonding · safety", e: "Meetings · a call to your sponsor · service to another person", c: "#a855f7" },
-            { l: "S", n: "Serotonin", r: "Baseline mood · calm", e: "Sleep · daylight · fibre and fermented food (mostly made in the gut)", c: "#00f0ff" },
-            { l: "E", n: "Endorphins", r: "Pain relief · natural high", e: "Hard physical effort · heat and sauna · deep laughter", c: "#f59e0b" },
-          ].map((x) => (
-            <div key={x.n} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 flex flex-col gap-3 hover:border-white/25 transition-colors">
-              <div className="flex items-center gap-3">
-                <span
-                  className="w-11 h-11 rounded-xl flex items-center justify-center font-black text-xl shrink-0"
-                  style={{ backgroundColor: `${x.c}1a`, border: `1px solid ${x.c}55`, color: x.c }}
-                >
-                  {x.l}
-                </span>
-                <div>
-                  <div className="text-white font-black uppercase tracking-tight leading-none">{x.n}</div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mt-1.5">{x.r}</div>
-                </div>
-              </div>
-              <p className="text-neutral-400 text-xs leading-relaxed border-l-2 pl-3 mt-1" style={{ borderColor: `${x.c}66` }}>
-                <span className="text-neutral-300 font-bold">Earn it:</span> {x.e}
+      {/* ── One path, four steps ─────────────────────────────────
+          The order carries information, so it earns its numbers. */}
+      <Section tight>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Four moves, in order. Everything else on this site is detail hanging off one of
+                them.
               </p>
-            </div>
+            }
+          >
+            Where to <em>start.</em>
+          </SectionHead>
+          <StackList
+            items={[
+              {
+                n: "01",
+                title: <Link href="/prep90" className="no-underline hover:text-[#4cc07a]">Prep</Link>,
+                body: "Clear the house, stock the kitchen, tell one person. The hour before day one.",
+                maps: "prep kit",
+              },
+              {
+                n: "02",
+                title: <Link href="/90rr" className="no-underline hover:text-[#4cc07a]">Journal</Link>,
+                body: "Print it or track it. Ninety days of ten-second entries, by hand or on the dashboard.",
+                maps: "free · no signup",
+              },
+              {
+                n: "03",
+                title: <Link href="/protocol" className="no-underline hover:text-[#4cc07a]">BIO 12</Link>,
+                body: "The daily protocol that rebuilds the baseline. Twelve inputs, run every day.",
+                maps: "daily firewall",
+              },
+              {
+                n: "04",
+                title: <Link href="/90-r-and-r" className="no-underline hover:text-[#4cc07a]">Fellowship</Link>,
+                body: "Twelve seats, one cohort, the first and hardest ninety days done alongside other people.",
+                maps: "12 seats · mid-aug 2026",
+              },
+            ]}
+          />
+        </Wrap>
+      </Section>
+
+      {/* ── The biology ──────────────────────────────────────── */}
+      <Section id="biology" band>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Almost everything that feels good runs on four brain chemicals. The substance faked
+                all four at once through a single door, so your brain turned the volume down to
+                compensate. That deficit is the grey fog and the craving.{" "}
+                <strong>Recovery is teaching the body to make its own again</strong>, in small clean
+                doses you earn.
+              </p>
+            }
+          >
+            Your body is the hardware. <em>Start there.</em>
+          </SectionHead>
+
+          {DOSE.map((d) => (
+            <PhotoRow key={d.letter} photo={d.photo} flip={d.flip}>
+              <SubHead>
+                <span className="text-[#4cc07a]">{d.letter}</span> · {d.name}
+              </SubHead>
+              <p className="mt-1.5 text-[15.5px] text-[#7d7a70]">{d.role}</p>
+              <p className="mt-4 max-w-[48ch] text-[#b8b4a6]">
+                <b className="font-semibold text-[#f2efe6]">Earn it:</b> {d.earn}
+              </p>
+              <Stat value={d.stat}>{d.statBody}</Stat>
+            </PhotoRow>
           ))}
-        </motion.div>
 
-        <motion.div variants={fadeIn} className="flex flex-wrap gap-3">
-          <Link href="/the-science" className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-black font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
-            <Brain size={16} /> The science, in plain English
-          </Link>
-          <Link href="/protocol" className="inline-flex items-center gap-2 border border-white/15 hover:border-[#10b981]/50 hover:text-[#10b981] text-white font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
-            <Shield size={16} /> The BIO 12 firewall
-          </Link>
-        </motion.div>
-      </motion.section>
+          <CtaRow className="mt-14">
+            <ButtonPrimary href="/the-science">The science, in plain English</ButtonPrimary>
+            <ButtonGhost href="/protocol">The BIO 12 firewall</ButtonGhost>
+          </CtaRow>
+        </Wrap>
+      </Section>
 
-      {/* SECTION 2.5: THE STACK — the order-of-operations argument, made visual */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-8 relative z-20 border-t border-white/5"
-      >
-        <motion.div variants={fadeIn} className="flex flex-col gap-4 max-w-3xl">
-          <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest bg-[#f59e0b]/10 px-4 py-1.5 rounded-full border border-[#f59e0b]/30">
-            Order of operations
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
-            Biology first. <span className="text-neutral-500">Then the framework.</span>
-          </h2>
-          <p className="text-neutral-400 text-base leading-relaxed">
-            This is not a rejection of the 12 Steps — it is what makes them hold. A panicked, exhausted, dehydrated
-            nervous system cannot carry a spiritual idea. Stabilize the vessel, then do the deeper work.
+      {/* ── Order of operations ──────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                This is not a rejection of the 12 Steps. It is what makes them hold. A panicked,
+                exhausted, dehydrated nervous system cannot carry a spiritual idea.{" "}
+                <strong>Stabilize the vessel, then do the deeper work.</strong>
+              </p>
+            }
+          >
+            Biology first. <em>Then</em> the framework.
+          </SectionHead>
+
+          <StackList
+            items={[
+              {
+                n: "01",
+                title: "The Vessel — hardware and biology",
+                body: "Body first: sleep, light, movement, fuel. The D.O.S.E. chemistry above, run daily.",
+                maps: "dopamine · endorphins",
+              },
+              {
+                n: "02",
+                title: "The Network — community",
+                body: "Rooms, sponsor, calling another alcoholic, service. You can't out-think this alone.",
+                maps: "step 12 · oxytocin",
+              },
+              {
+                n: "03",
+                title: "The Mirror — mind and spirit",
+                body: "Stillness, the honest daily read, surrender. The steps do the deeper work here.",
+                maps: "steps 4–11 · serotonin",
+              },
+              {
+                n: "04",
+                title: "The daily score",
+                body: "One number out of ten, every day. Measured, not felt. That is the capstone.",
+                maps: "VSE / 10 · daily",
+              },
+            ]}
+          />
+          <p className="mt-6 max-w-[58ch] text-[15.5px] text-[#b8b4a6]">
+            <b className="font-semibold text-[#f2efe6]">Why this order?</b> Before spiritual
+            concepts can hold in a panicked mind, sleep, gut serotonin, and dopamine baseline must
+            stabilize. Higher Power as you understand it; one number, every day.
           </p>
-        </motion.div>
-        <motion.div variants={fadeIn}>
-          <DoseStack />
-        </motion.div>
-      </motion.section>
+        </Wrap>
+      </Section>
 
-      {/* SECTION 2.75: THE CRAVING WAVE — the most useful science on the site */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-8 relative z-20 border-t border-white/5"
-      >
-        <motion.div variants={fadeIn} className="flex flex-col gap-4 max-w-3xl">
-          <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-[#00f0ff] uppercase tracking-widest bg-[#00f0ff]/10 px-4 py-1.5 rounded-full border border-[#00f0ff]/30">
-            <HeartPulse size={14} /> Ride it, don&apos;t fight it
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
-            A craving is a <span className="text-[#00f0ff]">wave</span>, not a wall.
-          </h2>
-          <p className="text-neutral-400 text-base leading-relaxed">
-            The physical adrenaline surge lasts about ninety seconds. The craving itself peaks and passes within twenty
-            to thirty minutes if you do not feed it. Knowing it has a ceiling and an ending is what turns an emergency
-            into weather.
-          </p>
-        </motion.div>
-        <motion.div variants={fadeIn}>
-          <CravingWaveAndSpike />
-        </motion.div>
-      </motion.section>
-
-      {/* NEW SECTION 3: THE THREAT (INTRODUCING THE AIV) */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        id="threat" className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-10 relative z-20 border-t border-white/5"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          <motion.div variants={fadeIn} className="relative rounded-[2rem] overflow-hidden border border-red-500/50 shadow-[0_0_50px_rgba(220,38,38,0.3)] bg-[#09090b] aspect-square lg:aspect-auto lg:h-[600px] group">
-            <Image src="/aiv_image1.png" alt="The AIV Symbiote" width={800} height={600} className="w-full h-full object-cover grayscale-[20%] sepia-[10%] hue-rotate-[-30deg] transform group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-red-900/20 mix-blend-multiply pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none"></div>
-            
-            <div className="absolute top-6 left-6 flex items-center gap-2 bg-red-600/90 backdrop-blur-sm px-4 py-2 rounded-full border border-red-400/30 shadow-[0_0_20px_rgba(220,38,38,0.5)] z-20">
-              <Biohazard size={16} className="text-white" />
-              <span className="text-xs font-black text-white uppercase tracking-widest">Active Threat</span>
-            </div>
-          </motion.div>
-
-          <motion.div variants={fadeIn} className="flex flex-col gap-8">
+      {/* ── The craving wave ─────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
             <div>
-              <span className="text-sm font-mono font-bold tracking-widest text-red-500 bg-red-500/10 px-4 py-1.5 rounded-full uppercase border border-red-500/30 shadow-[0_0_15px_rgba(220,38,38,0.2)] flex items-center gap-2 w-fit mb-6">
-                <Biohazard size={16} /> (Alcohol/Addiction Intelligence Virus)
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none mb-2">
-                THE SYMBIOTE <br/><span className="text-red-500">ON MY SHOULDER</span>
-              </h2>
-            </div>
-
-            <div className="w-full bg-neutral-900/40 border border-white/10 p-6 md:p-8 rounded-2xl font-mono text-sm sm:text-base text-neutral-300 leading-relaxed shadow-inner">
-              <p className="mb-4">"I thought I was the boss of me, the captain of the ship,<br/>
-              Who only needed one quick drink to let the tension slip.<br/>
-              But there's a heavy, dark companion riding on my back,<br/>
-              A sneaky, slimy symbiote preparing to attack.</p>
-
-              <p className="mb-4">It whispers, 'Hey, we've had a day... you've worked so hard, my guy!'<br/>
-              But it's just the A.I.V. again, constructing a new lie.<br/>
-              I hand the Admin Password to the monster in my head,<br/>
-              And wake up fully clothed with half a pizza in my bed.</p>
-
-              <p className="mb-4">What does this little gremlin eat to keep its battery charged?<br/>
-              It feasts upon my ego when it's getting too enlarged.<br/>
-              It gobbles up resentments, every grudge I won't let go,<br/>
-              And thrives on isolation when I'm hiding, sad and low.</p>
-
-              <p>So how do I defeat a bug that uses my own voice?<br/>
-              I plug into the Fellowship and make a better choice.<br/>
-              I hand the master keyboard to the Grand Architect Divine,<br/>
-              And track my daily habits just to hold the baseline fine."</p>
-            </div>
-            
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* SECTION 3.5: DASHBOARD PREVIEW */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        id="dashboard-preview" className="w-full max-w-7xl mx-auto px-6 py-24 relative z-20 border-t border-white/5"
-      >
-        <div className="text-center mb-10">
-          <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] bg-[#10b981]/10 px-4 py-1.5 rounded-full uppercase border border-[#10b981]/30 inline-block mb-4">
-            How It Works
-          </span>
-          <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
-            Three Steps. Every Day.
-          </h2>
-        </div>
-
-        {/* 3-STEP EXPLAINER (P1-3 fix) */}
-        <motion.div variants={fadeIn} className="max-w-4xl mx-auto mb-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4">
-            <span className="w-8 h-8 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black flex items-center justify-center shrink-0">1</span>
-            <p className="text-sm text-neutral-300"><span className="text-white font-bold">Log your telemetry.</span> 10 seconds, sliders and taps.</p>
-          </div>
-          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4">
-            <span className="w-8 h-8 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black flex items-center justify-center shrink-0">2</span>
-            <p className="text-sm text-neutral-300"><span className="text-white font-bold">The Mirror reflects it back.</span> AI reads what changed.</p>
-          </div>
-          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4">
-            <span className="w-8 h-8 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] font-black flex items-center justify-center shrink-0">3</span>
-            <p className="text-sm text-neutral-300"><span className="text-white font-bold">The Ledger proves the streak.</span> The pattern, over time.</p>
-          </div>
-        </motion.div>
-
-      </motion.section>
-
-      {/* SECTION 4: THE THREE FOUNDATIONS */}
-      <motion.section
-        id="foundations"
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col gap-16 relative z-20 border-t border-white/5"
-      >
-        <div className="text-center mb-4">
-          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/30 mb-5">
-            Layer two · The framework
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none mb-4">
-            With the body back online, <br className="hidden md:block" />the Steps do the deeper work.
-          </h2>
-          <p className="text-neutral-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            Biology stabilizes the vessel. It does not clear a resentment, repair a relationship, or dismantle an ego.
-            That is what the framework and the fellowship are for — three defenses that run on top of a steady baseline.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Pillar 1 */}
-          <motion.div variants={fadeIn}>
-            <Link href="/data" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-[#10b981]/50 transition-all shadow-xl group h-full cursor-pointer block">
-              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <div className="w-12 h-12 rounded-xl bg-[#10b981]/10 flex items-center justify-center border border-[#10b981]/30 text-[#10b981]">
-                  <Activity size={24} />
+              <SectionHead
+                lede={
+                  <p>
+                    The physical adrenaline surge lasts about ninety seconds. The craving itself
+                    peaks and passes within twenty to thirty minutes if you do not feed it. Knowing
+                    it has a ceiling and an ending is what turns an emergency into weather.
+                  </p>
+                }
+              >
+                A craving is a wave, <em>not a wall.</em>
+              </SectionHead>
+              <div className="mt-7 flex gap-10">
+                <div className="font-measure text-[13px] text-[#b8b4a6]">
+                  <strong className="mb-1 block text-[1.6rem] font-medium tracking-[-0.01em] text-[#4cc07a]">
+                    90 sec
+                  </strong>
+                  the adrenaline surge
                 </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-none">
-                  The Data <br/><span className="text-[#10b981] text-base font-mono mt-1 block">(The Dashboard)</span>
-                </h3>
-              </div>
-              <p className="text-neutral-400 text-base leading-relaxed">
-                Track physical telemetry—sleep, hydration, and triggers. Prove to yourself the engine is healing.
-              </p>
-            </Link>
-          </motion.div>
-
-          {/* Pillar 2 */}
-          <motion.div variants={fadeIn}>
-            <Link href="/framework#gad" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-all shadow-xl group h-full cursor-pointer block">
-              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400">
-                  <Shield size={24} />
+                <div className="font-measure text-[13px] text-[#b8b4a6]">
+                  <strong className="mb-1 block text-[1.6rem] font-medium tracking-[-0.01em] text-[#4cc07a]">
+                    20–30 min
+                  </strong>
+                  peak to gone, unfed
                 </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-none">
-                  G.A.D. <br/><span className="text-blue-400 text-base font-mono mt-1 block">(Grand Architect Divine)</span>
-                </h3>
-              </div>
-              <p className="text-neutral-400 text-base leading-relaxed">
-                Hand over the admin password. Use the 12 Steps to clear resentments and restore spiritual sanity.
-              </p>
-            </Link>
-          </motion.div>
-
-          {/* Pillar 3 */}
-          <motion.div variants={fadeIn}>
-            <Link href="/framework#traditions" className="flex flex-col gap-6 p-8 bg-[#0a0a0a] rounded-[2rem] border border-white/10 hover:border-purple-500/50 transition-all shadow-xl group h-full cursor-pointer block">
-              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/30 text-purple-400">
-                  <Users size={24} />
-                </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-tight leading-none">
-                  The Community <br/><span className="text-purple-400 text-base font-mono mt-1 block">(The Grid)</span>
-                </h3>
-              </div>
-              <p className="text-neutral-400 text-base leading-relaxed">
-                You can't out-think a virus alone. Hit meetings, call your sponsor, and stay connected.
-              </p>
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* 90 DAYS R&R FELLOWSHIP — featured program */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
-      >
-        <div className="w-full bg-[#0a140f] border border-[#10b981]/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row-reverse items-stretch shadow-[0_0_40px_rgba(16,185,129,0.15)] group relative">
-
-          <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <Image src="/recovery_hero_vibrant.png" alt="90 Days R&R Fellowship" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-[#0a140f]/30 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0a140f] hidden md:block"></div>
-          </div>
-
-          <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center relative z-10">
-            <div className="flex items-center gap-3 flex-wrap mb-4">
-              <span className="text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest bg-[#10b981]/10 px-3 py-1 rounded-full border border-[#10b981]/30">Flagship Program</span>
-              <span className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest bg-[#f59e0b]/10 px-3 py-1 rounded-full border border-[#f59e0b]/30">12 Seats · Mid-Aug 2026</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
-              90 Days <span className="text-[#10b981]">R&amp;R</span> <br className="hidden md:block" /><span className="text-neutral-400 text-2xl md:text-3xl">Recovery &amp; Restructure</span>
-            </h2>
-            <p className="text-neutral-300 text-base leading-relaxed mb-8">
-              A biology-first cohort for the first, hardest 90 days. Opens with a 1-day intensive bootcamp, then daily telemetry that proves your baseline is healing. Reserve a seat with a $20 deposit — or pay what you can. <span className="text-white font-bold">Or download the free printable journal — no signup needed.</span>
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/90rr" className="w-fit">
-                <button className="py-3 px-6 rounded-lg bg-white text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:bg-neutral-200 shadow-[0_0_15px_rgba(255,255,255,0.15)]">
-                  ↓ Free Printable Journal
-                </button>
-              </Link>
-              <Link href="/90-r-and-r" className="w-fit">
-                <button className="py-3 px-6 rounded-lg bg-[#10b981] text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-[#059669] shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-                  <HeartPulse size={18} />
-                  Explore the Fellowship
-                </button>
-              </Link>
-              <Link href="/90-r-and-r#reserve" className="w-fit">
-                <button className="py-3 px-6 rounded-lg bg-transparent text-[#10b981] border border-[#10b981]/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:bg-[#10b981]/10">
-                  Reserve a Seat <ArrowRight size={16} />
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* MEET AIVY — the animated series. Moved below the biology + framework +
-          flagship-program sections: it's brand reach, not the entry path. */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-12 relative z-20 border-t border-white/5">
-        <Link href="/aivy" className="group block w-full rounded-[2rem] overflow-hidden border border-purple-500/30 bg-[#0a0714] hover:border-purple-500/60 transition-all shadow-[0_0_50px_rgba(168,85,247,0.15)]">
-          <div className="flex flex-col md:flex-row items-stretch">
-            <div className="md:w-1/2 relative aspect-video md:aspect-auto overflow-hidden">
-              <Image src="/aivy/ep01-thumb.jpg" alt="Meet Aivy — Episode 1 of the AAfiends animated series" width={1280} height={720} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="w-16 h-16 rounded-full bg-purple-500/90 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.6)] group-hover:scale-110 transition-transform">
-                  <Play size={28} className="text-white ml-1" fill="white" />
-                </span>
               </div>
             </div>
-            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-4">
-              <span className="inline-flex items-center gap-2 w-fit text-xs font-mono font-bold text-purple-300 uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/30 animate-pulse">
-                ● New Series · Now Premiering
-              </span>
-              <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">
-                Meet <span className="text-purple-400">Aivy</span>
-              </h2>
-              <p className="text-neutral-300 leading-relaxed">
-                She&apos;s funny. She&apos;s gorgeous. She&apos;s trying to kill you. Our new animated series turns addiction
-                into the world&apos;s worst wife — a comedy that&apos;s secretly a neuroscience class. Episode 1 is live.
+            <div ref={waveRef} className={waveSeen ? "in-view" : undefined}>
+              <CravingWaveAndSpike />
+            </div>
+          </div>
+        </Wrap>
+      </Section>
+
+      {/* ── Three steps, every day ───────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead>
+            Three steps. <em>Every day.</em>
+          </SectionHead>
+          <div className="mt-12 grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+            <Figure photo={PHOTOS.writingHands} />
+            <StackList
+              className="mt-0"
+              items={[
+                {
+                  n: "01",
+                  title: "Log your telemetry",
+                  body: "Ten seconds of sliders and taps. Sleep, meetings, cravings, movement.",
+                },
+                {
+                  n: "02",
+                  title: "The Mirror reflects it back",
+                  body: "The AI coach reads what changed and says the thing you'd rather not.",
+                },
+                {
+                  n: "03",
+                  title: "The Ledger proves the streak",
+                  body: "The pattern, over time. Evidence your baseline is healing.",
+                },
+              ]}
+            />
+          </div>
+        </Wrap>
+      </Section>
+
+      {/* ── Layer two: the framework ─────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Biology stabilizes the vessel. It does not clear a resentment, repair a
+                relationship, or dismantle an ego. That is what the framework and the fellowship are
+                for — three defenses that run on top of a steady baseline.
               </p>
-              <span className="inline-flex items-center gap-2 w-fit py-3 px-6 rounded-full bg-purple-500 group-hover:bg-purple-400 text-white text-sm font-black tracking-widest uppercase transition-colors">
-                <Play size={16} fill="white" /> Watch Episode 1
-              </span>
+            }
+          >
+            With the body back online, <em>the Steps do the deeper work.</em>
+          </SectionHead>
+          <EditorialList>
+            <EditorialRow
+              href="/data"
+              title="The data"
+              body="Track physical telemetry — sleep, hydration, triggers. Prove to yourself the engine is healing."
+              go="The dashboard"
+            />
+            <EditorialRow
+              href="/framework#gad"
+              title="G.A.D."
+              body="Hand over the admin password. Use the 12 Steps to clear resentments and restore spiritual sanity."
+              go="Grand Architect Divine"
+            />
+            <EditorialRow
+              href="/framework#traditions"
+              title="The community"
+              body="You can't out-think a virus alone. Hit meetings, call your sponsor, and stay connected."
+              go="The grid"
+            />
+          </EditorialList>
+        </Wrap>
+      </Section>
+
+      {/* ── 90 Days R&R — the flagship ───────────────────────── */}
+      <Section id="program">
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+            <Figure photo={PHOTOS.trailGroup} ratio="5:4" />
+            <div>
+              <p className="font-measure mb-4 text-[13.5px] text-[#e0a45c]">
+                12 seats · opens mid-August 2026
+              </p>
+              <SectionHead>
+                90 Days R&amp;R — <em>recovery &amp; restructure</em>
+              </SectionHead>
+              <p className="mt-5 max-w-[52ch] text-[#b8b4a6]">
+                A biology-first cohort for the first, hardest 90 days. Opens with a one-day
+                intensive, then daily telemetry that proves your baseline is healing.{" "}
+                <b className="font-semibold text-[#f2efe6]">
+                  Reserve a seat with a $20 deposit, or pay what you can.
+                </b>
+              </p>
+              <p className="mt-4 max-w-[52ch] text-[#b8b4a6]">
+                Not ready for a cohort? The printable journal is free, no signup, right now.
+              </p>
+              <CtaRow>
+                <ButtonPrimary href="/90rr">Download the free journal</ButtonPrimary>
+                <ButtonGhost href="/90-r-and-r">Explore the fellowship</ButtonGhost>
+                <ButtonQuiet href="/90-r-and-r#reserve">Reserve a seat</ButtonQuiet>
+              </CtaRow>
             </div>
           </div>
-        </Link>
-      </section>
+        </Wrap>
+      </Section>
 
-      {/* BOOK ONE — coming soon featured card */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
-      >
-        <div className="w-full bg-[#150d0a] border border-[#e8543d]/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(232,84,61,0.15)] group relative">
-
-          <div className="md:w-[38%] relative h-80 md:h-auto overflow-hidden flex items-center justify-center bg-[#0a0a0a] p-6">
-            <Image src="/book1/book1-cover.png" alt="The AIV Recovery Field Manual — Book One: The Engine" width={520} height={780} className="w-full max-w-[280px] h-auto rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.6)] transform group-hover:scale-105 transition-transform duration-700" />
-          </div>
-
-          <div className="md:w-[62%] p-10 md:p-12 flex flex-col justify-center relative z-10">
-            <div className="flex items-center gap-3 flex-wrap mb-4">
-              <span className="text-xs font-mono font-bold text-[#e8543d] uppercase tracking-widest bg-[#e8543d]/10 px-3 py-1 rounded-full border border-[#e8543d]/30">Coming Soon</span>
-              <span className="text-xs font-mono font-bold text-[#e8a33d] uppercase tracking-widest bg-[#e8a33d]/10 px-3 py-1 rounded-full border border-[#e8a33d]/30">Beta Open Now</span>
+      {/* ── The symbiote — brand storytelling ────────────────── */}
+      <Section band>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+            <Figure photo={PHOTOS.carTalk} ratio="5:4" />
+            <div>
+              <SectionHead>
+                The symbiote <em>on my shoulder</em>
+              </SectionHead>
+              <p className="mt-4 max-w-[50ch] text-[15.5px] text-[#7d7a70]">
+                The Addiction Intelligence Virus, in the only form that ever really landed.
+              </p>
+              <div className="mt-7 max-w-[54ch] space-y-4 border-l border-[#2a322a] pl-6 font-display text-[1.05rem] italic leading-relaxed text-[#b8b4a6]">
+                <p>
+                  I thought I was the boss of me, the captain of the ship,
+                  <br />
+                  Who only needed one quick drink to let the tension slip.
+                  <br />
+                  But there&rsquo;s a heavy, dark companion riding on my back,
+                  <br />
+                  A sneaky, slimy symbiote preparing to attack.
+                </p>
+                <p>
+                  It whispers, &lsquo;Hey, we&rsquo;ve had a day&hellip; you&rsquo;ve worked so
+                  hard, my guy!&rsquo;
+                  <br />
+                  But it&rsquo;s just the A.I.V. again, constructing a new lie.
+                  <br />I hand the Admin Password to the monster in my head,
+                  <br />
+                  And wake up fully clothed with half a pizza in my bed.
+                </p>
+                <p>
+                  So how do I defeat a bug that uses my own voice?
+                  <br />I plug into the Fellowship and make a better choice.
+                  <br />I hand the master keyboard to the Grand Architect Divine,
+                  <br />
+                  And track my daily habits just to hold the baseline fine.
+                </p>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
-              The AIV Recovery <span className="text-[#e8543d]">Field Manual</span>
-            </h2>
-            <p className="text-neutral-400 text-sm font-mono uppercase tracking-widest mb-4">Book One: The Engine &middot; 12 Chapters &middot; by MT</p>
-            <p className="text-neutral-300 text-base leading-relaxed mb-8">
-              The book behind AAfiends — MT&apos;s own recovery, written down. Biology first: sleep, movement, nutrition, and breath, before you touch the mind or the meetings. Full beta is free to read right now, HTML or PDF, and every page is looking for your notes before the final edition ships.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/book1" className="w-fit">
-                <button className="py-3 px-6 rounded-lg bg-[#e8a33d] text-black text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-[#d99228] shadow-[0_0_15px_rgba(232,163,61,0.3)]">
-                  <BookOpen size={18} />
-                  Read the Beta
-                </button>
-              </Link>
-              <Link href="/book1" className="w-fit">
-                <button className="py-3 px-6 rounded-lg bg-transparent text-white border border-white/20 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 hover:border-[#e8543d]/60 hover:text-[#e8543d]">
-                  Download the PDF <ArrowRight size={16} />
-                </button>
-              </Link>
-            </div>
           </div>
-        </div>
-      </motion.section>
+        </Wrap>
+      </Section>
 
-      {/* AI4AA FEATURED COURSE — secondary program (vocational / purpose-building) */}
-      <motion.section
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
-        className="w-full flex flex-col py-12 relative z-20 max-w-7xl mx-auto px-6 border-t border-white/5"
-      >
-        <div className="w-full bg-[#051024] border border-blue-500/30 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-[0_0_40px_rgba(59,130,246,0.15)] group relative">
-
-          <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-            <Image src="/hopeful_hero_2.png" alt="AI4AA Course" width={800} height={600} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#051024] hidden md:block"></div>
-          </div>
-
-          <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center relative z-10">
-            <div className="flex items-center gap-3 justify-start mb-4">
-              <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/30">Community Program</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">
-              ai4aa Foundation Course: <br className="hidden md:block mt-2" /><span className="text-blue-400">Purpose Is Relapse Protection</span>
-            </h2>
-            <p className="text-neutral-300 text-base leading-relaxed mb-8">
-              Early recovery hands you back hours the addiction used to eat. This free 6-week AI crash course fills
-              them with a skill, a voice, and a reason to get up — vocational training for the rebuild. Zero technical
-              background required.
-            </p>
-            <Link href="/ai4aa" className="w-fit">
-              <button className="py-3 px-6 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/50 text-sm font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-3 hover:bg-blue-500 hover:text-white">
-                <BrainCircuit size={18} />
-                Access Course
-              </button>
+      {/* ── Aivy ─────────────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Link href="/aivy" className="group block overflow-hidden rounded-[14px]">
+              <div className="relative aspect-video bg-[#141814]">
+                <Image
+                  src="/aivy/ep01-thumb.jpg"
+                  alt="Aivy, the animated series — episode one"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </Link>
+            <div>
+              <p className="font-measure mb-4 text-[13.5px] text-[#e0a45c]">
+                New series · episode 1 is live
+              </p>
+              <SectionHead>
+                Meet <em>Aivy</em>
+              </SectionHead>
+              <p className="mt-5 max-w-[52ch] text-[#b8b4a6]">
+                She&rsquo;s funny. She&rsquo;s gorgeous. She&rsquo;s trying to kill you. Our
+                animated series turns addiction into the world&rsquo;s worst wife — a comedy
+                that&rsquo;s secretly a neuroscience class.
+              </p>
+              <CtaRow>
+                <ButtonPrimary href="/aivy">Watch episode 1</ButtonPrimary>
+                <ButtonQuiet href="/watch">All episodes</ButtonQuiet>
+              </CtaRow>
+            </div>
           </div>
-        </div>
-      </motion.section>
+        </Wrap>
+      </Section>
 
-      {/* BEYOND ALCOHOL — multi-addiction tie-in (Phase 3.4) */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-12 relative z-20 border-t border-white/5">
-        <div className="w-full bg-[#0a0a0a] border border-red-500/20 rounded-[2rem] p-8 md:p-12 flex flex-col gap-6 shadow-xl">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-red-400 uppercase tracking-widest bg-red-500/10 px-3 py-1 rounded-full border border-red-500/30">
-              <Biohazard size={14} /> Beyond Alcohol
-            </span>
+      {/* ── Book One ─────────────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+            <Figure photo={PHOTOS.readingTable} />
+            <div>
+              <p className="font-measure mb-4 text-[13.5px] text-[#e0a45c]">
+                Book One: The Engine · 12 chapters · beta open
+              </p>
+              <SectionHead>
+                The AIV Recovery <em>Field Manual</em>
+              </SectionHead>
+              <p className="mt-5 max-w-[52ch] text-[#b8b4a6]">
+                The book behind AAfiends — MT&rsquo;s own recovery, written down. Biology first:
+                sleep, movement, nutrition, and breath, before you touch the mind or the meetings.
+                The full beta is free to read right now, HTML or PDF, and every page is looking for
+                your notes before the final edition ships.
+              </p>
+              <CtaRow>
+                <ButtonPrimary href="/book1">Read the beta</ButtonPrimary>
+                <ButtonQuiet href="/book1">Download the PDF</ButtonQuiet>
+              </CtaRow>
+            </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
-            One virus. <span className="text-red-500">Many faces.</span>
-          </h2>
-          <p className="text-neutral-300 text-base md:text-lg leading-relaxed max-w-3xl">
-            AAfiends started in the rooms of AA — but the same Addiction Intelligence Virus runs on more than alcohol:
-            opioids, nicotine, cannabis, gambling, and more. The defense is the same for all of them: daily data, the
-            BIO 12 protocol, and the fellowship. Learn how the virus works, then starve it.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/protocol" className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-black font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
-              <Shield size={16} /> The BIO 12 firewall
-            </Link>
-            <a href="https://aivirus.org/the-virus" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-600/10 hover:bg-red-600/20 text-red-400 border border-red-500/40 font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
-              See the 10 vectors <ArrowRight size={16} />
-            </a>
-            <a href="https://aivirus.org/data" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-white/15 hover:border-white/35 text-white font-black uppercase tracking-widest text-sm py-3.5 px-7 rounded-xl transition-colors">
-              The statistics <ArrowRight size={16} />
-            </a>
+        </Wrap>
+      </Section>
+
+      {/* ── AI4AA ────────────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Figure photo={PHOTOS.lateLearning} className="lg:order-2" />
+            <div>
+              <SectionHead>
+                Purpose is <em>relapse protection.</em>
+              </SectionHead>
+              <p className="mt-5 max-w-[52ch] text-[#b8b4a6]">
+                Early recovery hands you back hours the addiction used to eat. This free six-week AI
+                crash course fills them with a skill, a voice, and a reason to get up — vocational
+                training for the rebuild. Zero technical background required.
+              </p>
+              <CtaRow>
+                <ButtonPrimary href="/ai4aa">Access the course</ButtonPrimary>
+              </CtaRow>
+            </div>
           </div>
-        </div>
-      </section>
+        </Wrap>
+      </Section>
 
-      {/* THE ORIGIN VERSE — brand storytelling, below the fold on purpose */}
-      <section className="w-full max-w-4xl mx-auto px-6 py-16 relative z-20 border-t border-white/5">
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-          <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Why We Track</h2>
-        </div>
-        <div className="w-full bg-[#0a1a14] border border-[#10b981]/20 rounded-2xl p-6 md:p-8 shadow-lg italic text-neutral-200 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.04)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-          <p className="mb-4 relative z-10">"I used to think my willpower was all I'd ever need,<br/>
-          A stubborn kind of ego that I always tried to feed.<br/>
-          I'd swear to everyone I loved, 'I'm only having one!'<br/>
-          Then wake up in a panic 'fore the rising of the sun.</p>
+      {/* ── Beyond alcohol ───────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                AAfiends started in the rooms of AA, but the same Addiction Intelligence Virus runs
+                on more than alcohol: opioids, nicotine, cannabis, gambling, and more. The defense is
+                the same for all of them — daily data, the BIO 12 protocol, and the fellowship.
+                Learn how the virus works, then starve it.
+              </p>
+            }
+          >
+            One virus. <em>Many faces.</em>
+          </SectionHead>
+          <CtaRow>
+            <ButtonPrimary href="/protocol">The BIO 12 firewall</ButtonPrimary>
+            <ButtonGhost href="https://aivirus.org/the-virus" external>
+              See the 10 vectors
+            </ButtonGhost>
+            <ButtonQuiet href="https://aivirus.org/data" external>
+              The statistics
+            </ButtonQuiet>
+          </CtaRow>
+        </Wrap>
+      </Section>
 
-          <p className="mb-4 relative z-10">So we're dumping the excuses, we are looking at what's real,<br/>
-          We are tracking daily habits, not just hiding how we feel.<br/>
-          It's Data Over Denial—shining light into the dark,<br/>
-          To heal the broken body and restore the inner spark.</p>
+      {/* ── Why we track ─────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <PullQuote cite="— Why We Track, from the AAfiends journal">
+            We&rsquo;re dumping the excuses, we are looking at what&rsquo;s real — tracking daily
+            habits, not just hiding how we feel.
+          </PullQuote>
+        </Wrap>
+      </Section>
 
-          <p className="relative z-10">We plug into the meetings like a charger to a phone,<br/>
-          Because nobody in the trenches ever makes it out alone.<br/>
-          The Twelve Steps are the manual to clear away the pride,<br/>
-          To sweep the old resentments and the heavy guilt aside."</p>
-        </div>
-      </section>
+      {/* ── Substack ─────────────────────────────────────────── */}
+      <Section band tight>
+        <Wrap>
+          <SectionHead>
+            Latest from the <em>Substack</em>
+          </SectionHead>
+          <div className="mt-10">{substackLatest}</div>
 
-      {/* SUBSTACK SECTION */}
-      <section className="w-full py-16 bg-[#050505] relative z-20 border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#a855f7] animate-pulse"></span>
-            <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
-              Latest from the AA Fiends Substack
-            </h2>
-          </div>
-          
-          {substackLatest}
-
-          <div className="mt-12 bg-[#09090b] border border-[#27272a] rounded-[2rem] p-8 md:p-10 relative overflow-hidden text-center">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#a855f7] to-transparent opacity-50" />
-            <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight mb-4">
-              Get it in your inbox
-            </h3>
-            <p className="text-sm text-neutral-400 mb-8 max-w-lg mx-auto">
-              We send out the podcast and newsletter every week. No spam, just biology-first recovery strategies you can use immediately.
+          <div className="mt-14 border-t border-[#1d231d] pt-10">
+            <SubHead>Get it in your inbox</SubHead>
+            <p className="mt-3 max-w-[52ch] text-[#b8b4a6]">
+              The podcast and newsletter every week. No spam, just biology-first recovery strategies
+              you can use immediately.
             </p>
-            <div className="max-w-xl mx-auto">
+            <div className="mt-6 max-w-xl">
               <SubstackSubscribe />
             </div>
           </div>
-        </div>
-      </section>
+        </Wrap>
+      </Section>
 
-      {/* ECOSYSTEM — featured showcase of all three sites */}
-      <FeaturedGrid />
-
-      {/* FOOTER */}
       <SiteFooter />
-
     </div>
   );
 }

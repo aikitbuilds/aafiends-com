@@ -2,12 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────────────────────
+   AAfiends — "Dawn Ledger" tokens. See DESIGN.md.
+   Warm near-black, never pure #000. Paper white, never pure #fff.
+   ───────────────────────────────────────────────────────────── */
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --accent: #dc2626;
-  --accent-muted: #991b1b;
+  --ink-0: #0d0f0d;
+  --ink-1: #141814;
+  --ink-2: #1d231d;
+  --ink-3: #2a322a;
+
+  --paper: #f2efe6;
+  --paper-dim: #b8b4a6;
+  --paper-faint: #7d7a70;
+
+  --green: #4cc07a;
+  --green-deep: #2c7a4d;
+  --amber: #e0a45c;
+  --rust: #c2603f;
+
+  /* Legacy aliases — kept so unmigrated views still render on-brand. */
+  --background: var(--ink-0);
+  --foreground: var(--paper);
+  --accent: var(--green);
+  --accent-muted: var(--green-deep);
+
   --radius: 0.625rem;
+  --radius-figure: 0.875rem;
+}
+
+body {
+  background-color: var(--ink-0);
+  color: var(--paper);
+  overflow-x: hidden;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* ── Browser surfaces ─────────────────────────────────────────
+   The parts we did not draw still carry the design. */
+::selection {
+  background: var(--green-deep);
+  color: var(--paper);
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink-0);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-2);
+  border-radius: 6px;
+  border: 3px solid var(--ink-0);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-3);
+}
+* {
+  scrollbar-color: var(--ink-2) var(--ink-0);
+  scrollbar-width: thin;
+}
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -18,43 +82,142 @@
   scrollbar-width: none;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  overflow-x: hidden;
-  background-image: 
-    radial-gradient(ellipse at top right, rgba(220,38,38,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(220,38,38,0.05) 0%, transparent 50%);
-  background-attachment: fixed;
+/* ── Type roles ───────────────────────────────────────────────
+   Three faces, three jobs. Display argues, mono measures. */
+.font-display {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.font-display-italic {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+/* Measurement only: real numbers, dates, streaks, units. Never a costume. */
+.font-measure {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
 }
 
-.glass-panel {
-  background: rgba(10, 10, 10, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+/* ── Reading surface ──────────────────────────────────────────
+   Long-form prose for /blog, /book1, /glossary, /faq. */
+.prose-dawn {
+  color: var(--paper-dim);
+  max-width: 68ch;
+}
+.prose-dawn > * + * {
+  margin-top: 1.25em;
+}
+.prose-dawn h2 {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+  text-wrap: balance;
+}
+.prose-dawn h3 {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--paper);
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+.prose-dawn p {
+  line-height: 1.75;
+}
+.prose-dawn strong,
+.prose-dawn b {
+  color: var(--paper);
+  font-weight: 600;
+}
+.prose-dawn em {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  color: var(--amber);
+  font-size: 1.05em;
+}
+.prose-dawn a {
+  color: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--ink-3);
+  transition: text-decoration-color 0.18s;
+}
+.prose-dawn a:hover {
+  text-decoration-color: var(--green);
+}
+.prose-dawn ul,
+.prose-dawn ol {
+  padding-left: 1.4em;
+}
+.prose-dawn li {
+  margin-top: 0.5em;
+}
+.prose-dawn li::marker {
+  color: var(--green);
+}
+.prose-dawn blockquote {
+  border-left: 1px solid var(--ink-3);
+  padding-left: 1.5em;
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-size: 1.15em;
+  color: var(--paper);
+}
+.prose-dawn code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+  color: var(--green);
+}
+.prose-dawn hr {
+  border: 0;
+  border-top: 1px solid var(--ink-2);
+  margin: 3em 0;
 }
 
-.glow-text {
-  text-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+/* ── The one authored motion moment ───────────────────────────
+   The craving wave draws itself. Everything else is state feedback. */
+@keyframes dawn-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.wave-path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+}
+.in-view .wave-path {
+  animation: dawn-draw 2.4s cubic-bezier(0.25, 0.8, 0.3, 1) forwards;
 }
 
-.glow-border {
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.15);
-}
-
-@keyframes slow-pan {
-  0% { transform: scale(1.05) translate(0px, 0px); }
-  50% { transform: scale(1.1) translate(-5px, -5px); }
-  100% { transform: scale(1.05) translate(0px, 0px); }
-}
-
-.animate-slow-pan {
-  animation: slow-pan 20s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .in-view .wave-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer base {
   * {
-    @apply border-white/10 outline-red-500/50;
+    @apply border-[#1d231d];
   }
 }

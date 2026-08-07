@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Daily recovery telemetry, the AI Mirror Engine, and the Ledger - your personal dashboard.",
     start_url: "/dashboard",
     display: "standalone",
-    background_color: "#050505",
-    theme_color: "#050505",
+    background_color: "#0d0f0d",
+    theme_color: "#0d0f0d",
     // logo.png is actually a 1024x1024 JPEG under a .png extension (confirmed via file inspection) -
     // declaring the real type/size here since browsers validate this against the actual bytes.
     // Works fine as an icon, but consider swapping in a proper square PNG icon later.

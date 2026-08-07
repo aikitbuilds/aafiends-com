@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 
 export default function AdminMessagesPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100">
-      <div className="border-b border-white/5 bg-[#051024]">
+    <div className="min-h-screen bg-[#0d0f0d] text-[#f2efe6]">
+      <div className="border-b border-[#1d231d] bg-[#141814]">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/dashboard" className="inline-flex items-center gap-2 text-sm font-bold text-neutral-300 hover:text-white uppercase tracking-widest">
+          <Link href="/dashboard" className="inline-flex items-center gap-2 text-sm font-bold text-[#b8b4a6] hover:text-[#f2efe6]">
             <ArrowLeft size={16} /> Dashboard
           </Link>
-          <div className="text-sm font-black tracking-tight text-white uppercase">Admin <span className="text-[#10b981]">Inbox</span></div>
+          <div className="text-sm font-semibold tracking-tight text-[#f2efe6]">Admin <span className="text-[#4cc07a]">Inbox</span></div>
         </div>
       </div>
       <main className="max-w-4xl mx-auto px-6 py-10 flex flex-col gap-6">
-        <h1 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white">Messages &amp; Feedback</h1>
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#f2efe6]">Messages &amp; Feedback</h1>
         <AdminMessages />
       </main>
     </div>

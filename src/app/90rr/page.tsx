@@ -1,10 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CrashCourseSection from "@/components/CrashCourseSection";
 import CrisisSupport from "@/components/CrisisSupport";
 import { DoseStack, DoseMap, CravingWaveAndSpike, SmartImage } from "@/components/DoseFigures";
+import { PHOTOS } from "@/lib/photos";
+import {
+  Wrap,
+  Section,
+  SectionHead,
+  SubHead,
+  PageHero,
+  PhotoRow,
+  Figure,
+  StackList,
+  EditorialList,
+  EditorialRow,
+  Stat,
+  ButtonGhost,
+  ButtonQuiet,
+  CtaRow,
+  PullQuote,
+} from "@/components/design";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,10 +55,9 @@ const PILLARS = [
     n: "1",
     name: "The Engine",
     sub: "Body · Hardware",
-    color: "#10b981",
     doseTag: "Directly rebuilds Dopamine & Endorphins through sleep, morning light, movement, and physical recovery.",
     qr: "engine",
-    img: "/pillar_physical_real.png",
+    photo: PHOTOS.bridgeRunner,
     qrLabel: "The BIO 12 protocol",
     qrUrl: "https://aivirus.org/bio12",
     body:
@@ -50,10 +68,9 @@ const PILLARS = [
     n: "2",
     name: "The Network",
     sub: "Community · Social",
-    color: "#a855f7",
     doseTag: "Triggers Oxytocin release — your biological buffer against isolation and craving loops.",
     qr: "network",
-    img: "/pillar_network_real.png",
+    photo: PHOTOS.meetingCircle,
     qrLabel: "The 12 & 12",
     qrUrl: "https://aafiends.com/framework#traditions",
     body:
@@ -64,10 +81,9 @@ const PILLARS = [
     n: "3",
     name: "The Mirror",
     sub: "Spirit · Mind",
-    color: "#00f0ff",
     doseTag: "Restores Serotonin and calms the nervous system through daily stillness and surrender.",
     qr: "mirror",
-    img: "/pillar_mental_real.png",
+    photo: PHOTOS.windowStillness,
     qrLabel: "G.A.D. — spiritual framing",
     qrUrl: "https://aafiends.com/framework#gad",
     body:
@@ -101,541 +117,753 @@ const SCIENCE = [
 ];
 
 const ECOSYSTEM = [
-  { name: "AAfiends", tag: "The Dashboard", url: "https://aafiends.com", qr: "how", color: "#10b981", desc: "Daily telemetry, the AI Mirror, the BIO 12 protocol, and the AI4AA course. Your recovery command center." },
-  { name: "RaceFiends", tag: "The Pavement", url: "https://racefiends.com", qr: "race", color: "#ef4444", desc: "Running accountability with honest stakes. Movement is Pillar 1 — rebuild the baseline on the trail." },
-  { name: "AIVirus", tag: "The Diagnosis", url: "https://aivirus.org", qr: "aiv", color: "#ef4444", desc: "Meet the Addiction Intelligence Virus across its vectors — and the BIO 12 firewall that starves it." },
+  { name: "AAfiends", tag: "The Dashboard", url: "https://aafiends.com", qr: "how", desc: "Daily telemetry, the AI Mirror, the BIO 12 protocol, and the AI4AA course. Your recovery command center." },
+  { name: "RaceFiends", tag: "The Pavement", url: "https://racefiends.com", qr: "race", desc: "Running accountability with honest stakes. Movement is Pillar 1 — rebuild the baseline on the trail." },
+  { name: "AIVirus", tag: "The Diagnosis", url: "https://aivirus.org", qr: "aiv", desc: "Meet the Addiction Intelligence Virus across its vectors — and the BIO 12 firewall that starves it." },
 ];
 
+const DOSE = [
+  { l: "D", name: "Dopamine", tag: "Reward · Drive", body: "Motivation and focus. Earned back with cold, daylight, movement, and finishing hard things.", earn: "Cold plunge · walk · sunlight" },
+  { l: "O", name: "Oxytocin", tag: "Bonding · Safety", body: "The bonding chemical — your biological buffer against the next craving. Isolation starves it.", earn: "Meetings · sponsor call · service" },
+  { l: "S", name: "Serotonin", tag: "Mood · Calm", body: "Your steady baseline mood — about 90% of it is made in the gut, not the head.", earn: "Gut-friendly food · sun · sleep" },
+  { l: "E", name: "Endorphins", tag: "Pain Relief", body: "Your built-in painkiller and natural high — paid for with physical effort, not a bottle.", earn: "Hard workout · heat · laughter" },
+];
+
+const EARNED = [
+  { title: "Feed the factory", desc: "Protein, fermented food and fiber hand the body raw materials for Serotonin.", href: "/90rr/fuel" },
+  { title: "Anchor the dopamine", desc: "Cold immersion raises baseline dopamine up to +250% — held for hours, no crash.", href: "/90rr/reset" },
+  { title: "Move it back online", desc: "A daily walk reinstalls the D2/D3 reward receptors burned out by the substance.", href: "/90rr/reset" },
+];
+
+const GUIDES = [
+  { href: "/90rr/daily-dose", tag: "The Engine · Resupply", title: "Daily Dose", desc: "Supplements & superfoods that rebuild D.O.S.E., graded by real evidence." },
+  { href: "/90rr/fuel", tag: "The Engine · Food", title: "DOSE Kitchen", desc: "Grocery list that rebuilds all 4 chemicals from raw materials up." },
+  { href: "/90rr/reset", tag: "The Reset · Cold", title: "Regulate Dopamine", desc: "Cold immersion & walking — plus a $600 cold plunge build." },
+  { href: "/90rr/meditation", tag: "The Mirror · Stillness", title: "Vipassana Guide", desc: "Sit with cravings: 15 & 30 min guides built on Atomic Habits." },
+  { href: "/90rr/shopping-list", tag: "Print & Go", title: "Shopping Lists", desc: "DOSE grocery list & cold plunge parts list in one place." },
+];
+
+const BETA_EDITIONS = [
+  { title: "7-Day Quick Start", sub: "Print & go · easy share", desc: "One week to test-drive the system.", full: STARTER_PDF, half: STARTER_BOOKLET },
+  { title: "30-Day · Month 1", sub: "Includes Vipassana + Yoga spread", desc: "A month of daily Action Logs with weekly review + practice pages.", full: MONTHLY_PDF, half: MONTHLY_BOOKLET },
+  { title: "Refill Pages", sub: "For a 3-ring binder", desc: "Daily pages + weekly review, no intro.", full: REFILL_PDF, half: REFILL_BOOKLET },
+];
+
+const ALPHA_EDITIONS = [
+  { title: "7-Day Quick Start", sub: "Alpha 1 · classic", full: ALPHA_STARTER, half: ALPHA_STARTER_BOOKLET },
+  { title: "30-Day · Month 1", sub: "Alpha 1 · classic", full: ALPHA_MONTHLY, half: ALPHA_MONTHLY_BOOKLET },
+  { title: "Refill Pages", sub: "Alpha 1 · classic", full: ALPHA_REFILL, half: ALPHA_REFILL_BOOKLET },
+];
+
+/* The design-system button shapes, as anchors, so each PDF keeps its `download`
+   attribute. Same classes as ButtonPrimary / ButtonGhost. */
+const BTN_BASE =
+  "inline-block rounded-[10px] px-6 py-[15px] text-base font-semibold no-underline transition-[background-color,border-color,transform] duration-200 active:scale-[0.98]";
+
+function DownloadPrimary({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} download className={`${BTN_BASE} bg-[#4cc07a] text-[#08130c] hover:bg-[#5fd08c]`}>
+      {children}
+    </a>
+  );
+}
+
+function DownloadGhost({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      download
+      className={`${BTN_BASE} border border-[#f2efe6]/35 text-[#f2efe6] hover:border-[#f2efe6]`}
+    >
+      {children}
+    </a>
+  );
+}
+
+const DL_LINK =
+  "font-measure text-[13px] text-[#4cc07a] underline decoration-[#1d231d] underline-offset-4 transition-colors hover:decoration-[#4cc07a]";
+
+/** The printed journal's QR codes — a scannable bridge from paper to page. */
 function QR({ img, label, url }: { img: string; label: string; url: string }) {
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-3 pr-5 hover:border-[#10b981]/50 transition-colors"
+      className="inline-flex items-center gap-3.5 rounded-[14px] border border-[#1d231d] p-3 pr-6 no-underline transition-colors hover:border-[#2a322a]"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <Image src={`/90rr/qr_${img}.png`} alt={`QR to ${label}`} width={64} height={64} className="w-16 h-16 rounded-lg bg-white p-1" />
-      <div className="flex flex-col">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Scan or tap · learn more</span>
-        <span className="text-sm font-bold text-white leading-tight">{label}</span>
-        <span className="text-xs text-[#10b981] font-mono">{url.replace("https://", "")}</span>
-      </div>
+      <Image
+        src={`/90rr/qr_${img}.png`}
+        alt={`QR code linking to ${label}`}
+        width={64}
+        height={64}
+        className="h-16 w-16 rounded-lg bg-white p-1"
+      />
+      <span className="flex flex-col">
+        <span className="font-measure text-[11px] text-[#7d7a70]">Scan or tap</span>
+        <span className="text-[15px] font-semibold leading-tight text-[#f2efe6]">{label}</span>
+        <span className="font-measure text-[12px] text-[#4cc07a]">
+          {url.replace("https://", "")}
+        </span>
+      </span>
     </a>
   );
 }
 
-const phaseColor: Record<string, string> = { Reset: "#10b981", Restructure: "#f59e0b", Recalibrate: "#00f0ff", "Every day": "#a855f7" };
+/** A ruled row. Rules, not cards. */
+function ListRow({ term, children }: { term: string; children: React.ReactNode }) {
+  return (
+    <div className="border-b border-[#1d231d] py-5">
+      <h3 className="font-display text-[1.2rem] leading-tight text-[#f2efe6]">{term}</h3>
+      <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[#b8b4a6]">{children}</p>
+    </div>
+  );
+}
 
 export default function NinetyRRPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.08),transparent_60%)] pointer-events-none z-0" />
-
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <SiteHeader />
 
-      <main className="flex-1 max-w-5xl w-full mx-auto px-6 py-14 md:py-20 flex flex-col gap-24 relative z-20">
-        {/* 1. HERO */}
-        <section className="flex flex-col items-start gap-6">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-xs text-[#f59e0b] font-mono uppercase tracking-widest font-bold">
-            <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse" /> Version {VERSION}
-          </span>
-          <h1 className="text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-            The 90 R&amp;R <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] via-[#00f0ff] to-[#f59e0b]">Journal</span>
-          </h1>
-          <p className="text-lg md:text-xl text-[#10b981] max-w-3xl font-mono uppercase tracking-wide font-bold">
-            &ldquo;Stabilize the hardware, then run the software. Biology first, framework second — one structured, inclusive system.&rdquo;
-          </p>
-          <p className="text-base md:text-lg text-neutral-300 max-w-3xl leading-relaxed font-normal">
-            The detailed online companion to the printable <strong className="text-white">Recovery &amp; Restructure</strong> workbook. Every chemical, every pillar, every step, and the science behind them.
-          </p>
+      <PageHero
+        photo={PHOTOS.writingHands}
+        title={
+          <>
+            The 90 R&amp;R <em>journal.</em>
+          </>
+        }
+        lede="The detailed online companion to the printable Recovery & Restructure workbook. Every chemical, every pillar, every step, and the science behind them."
+        meta={`Free · no signup · ${VERSION}`}
+      >
+        <CtaRow>
+          <DownloadPrimary href={MONTHLY_PDF}>Download Month 1 ({VERSION})</DownloadPrimary>
+          <DownloadGhost href={STARTER_PDF}>The 7-day starter</DownloadGhost>
+        </CtaRow>
+        <p className="font-measure mt-6 text-[12.5px] text-[#f2efe6]/70">
+          PDF · US Letter · print double-sided · {VERSION} — always the latest version on this page.
+        </p>
+        <p className="mt-4 max-w-[52ch] text-[15px] text-[#f2efe6]/90">
+          Want structure and accountability with it?{" "}
+          <Link
+            href="/90-r-and-r"
+            className="underline decoration-[#e0a45c]/60 underline-offset-4 transition-colors hover:decoration-[#e0a45c]"
+          >
+            The 12-seat R&amp;R Fellowship cohort
+          </Link>{" "}
+          works this same journal together — starts mid-August.
+        </p>
+      </PageHero>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href={MONTHLY_PDF} download className="py-4 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center gap-3">
-              ↓ Download Month 1 (Beta 1)
-            </a>
-            <a href={STARTER_PDF} download className="py-4 px-8 rounded-2xl border border-white/15 text-white text-sm font-bold tracking-widest uppercase hover:border-[#10b981]/50 hover:text-[#10b981] transition-all flex items-center gap-3">
-              ↓ 7-Day Starter
-            </a>
-          </div>
-          <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
-            PDF · US Letter · print double-sided · {VERSION} — always the latest version on this page.
-          </p>
-          <p className="text-sm text-neutral-400 max-w-2xl leading-relaxed">
-            Want structure and accountability with it?{" "}
-            <Link href="/90-r-and-r" className="text-[#f59e0b] font-bold hover:text-amber-300 underline underline-offset-4 transition-colors">
-              The 12-seat R&amp;R Fellowship cohort
-            </Link>{" "}
-            works this same journal together — starts mid-August.
-          </p>
-        </section>
+      {/* ── The manifesto, in one line ───────────────────────── */}
+      <Section tight>
+        <Wrap>
+          <PullQuote>
+            Stabilize the hardware, then run the software. Biology first, framework second — one
+            structured, inclusive system.
+          </PullQuote>
+        </Wrap>
+      </Section>
 
-        {/* 2. THE APPROACH — "Biology first, then the framework" */}
-        <section className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-[#10b981] uppercase tracking-[0.3em]">The Manifesto</span>
-            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
-              Biology First, Then the Framework
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-[#09090b] border border-white/10 rounded-3xl p-6 flex flex-col gap-3">
-              <div className="w-8 h-8 rounded-xl bg-[#10b981]/20 text-[#10b981] font-mono font-bold flex items-center justify-center">1</div>
-              <h3 className="text-lg font-black text-white uppercase tracking-tight">1. Body is Hardware</h3>
-              <p className="text-sm text-neutral-300 leading-relaxed">
-                Addiction ran the nervous system down. Before any spiritual idea can hold, biology has to stabilize: sleep, daylight, and D.O.S.E. chemistry restored in small, clean doses.
+      {/* ── The approach ─────────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Three moves, in that order. Everything else in the journal hangs off one of them.
               </p>
-            </div>
-            <div className="bg-[#09090b] border border-white/10 rounded-3xl p-6 flex flex-col gap-3">
-              <div className="w-8 h-8 rounded-xl bg-[#a855f7]/20 text-[#a855f7] font-mono font-bold flex items-center justify-center">2</div>
-              <h3 className="text-lg font-black text-white uppercase tracking-tight">2. Layer Framework</h3>
-              <p className="text-sm text-neutral-300 leading-relaxed">
-                On top of a stabilizing body, the AA 12-Step framework and the Network (rooms, sponsor, service) do the deeper structural work to clear wreckage and ego.
-              </p>
-            </div>
-            <div className="bg-[#09090b] border border-white/10 rounded-3xl p-6 flex flex-col gap-3">
-              <div className="w-8 h-8 rounded-xl bg-[#00f0ff]/20 text-[#00f0ff] font-mono font-bold flex items-center justify-center">3</div>
-              <h3 className="text-lg font-black text-white uppercase tracking-tight">3. Inclusive System</h3>
-              <p className="text-sm text-neutral-300 leading-relaxed">
-                A measured daily system (VSE score out of 10) with Higher Power &ldquo;as you understand it.&rdquo; Zero belief required to begin — structure anyone can lean on.
-              </p>
-            </div>
-          </div>
+            }
+          >
+            Biology first, <em>then the framework.</em>
+          </SectionHead>
 
-          {/* Infographic A: The Stack */}
-          <DoseStack />
-
-          <SmartImage
-            src="/90rr/img/approach-hero.jpg"
-            alt="Biology first — a steady body at the base of recovery"
-            caption="The vessel comes first · Stabilize the hardware before running the software"
-            accent="#10b981"
+          <StackList
+            items={[
+              {
+                n: "01",
+                title: "Body is hardware",
+                body: "Addiction ran the nervous system down. Before any spiritual idea can hold, biology has to stabilize: sleep, daylight, and D.O.S.E. chemistry restored in small, clean doses.",
+              },
+              {
+                n: "02",
+                title: "Layer the framework",
+                body: "On top of a stabilizing body, the AA 12-Step framework and the Network (rooms, sponsor, service) do the deeper structural work to clear wreckage and ego.",
+              },
+              {
+                n: "03",
+                title: "One inclusive system",
+                body: "A measured daily system (VSE score out of 10) with Higher Power “as you understand it.” Zero belief required to begin — structure anyone can lean on.",
+              },
+            ]}
           />
-        </section>
 
-        {/* 3. THE BIOLOGY — D.O.S.E. */}
-        <section className="flex flex-col gap-8 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-[#f59e0b] uppercase tracking-[0.3em]">The Biological Core</span>
-            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
-              D.O.S.E. — Your Four Chemicals
-            </h2>
-            <p className="text-neutral-300 max-w-3xl leading-relaxed">
-              Almost everything that feels good runs on four brain chemicals. The substance faked all four at once through one door — so your brain turned the volume down to compensate. Recovery is teaching the body to make its own again in small, clean doses you <strong className="text-white">earn</strong>.
-            </p>
+          <div className="mt-14">
+            <DoseStack />
           </div>
 
-          {/* Infographic B: D.O.S.E. Map */}
-          <DoseMap />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { l: "D", name: "Dopamine", tag: "Reward · Drive", color: "#10b981", body: "Motivation and focus. Earned back with cold, daylight, movement, and finishing hard things.", earn: "Cold plunge · walk · sunlight" },
-              { l: "O", name: "Oxytocin", tag: "Bonding · Safety", color: "#a855f7", body: "The bonding chemical — your biological buffer against the next craving. Isolation starves it.", earn: "Meetings · sponsor call · service" },
-              { l: "S", name: "Serotonin", tag: "Mood · Calm", color: "#00f0ff", body: "Your steady baseline mood — about 90% of it is made in the gut, not the head.", earn: "Gut-friendly food · sun · sleep" },
-              { l: "E", name: "Endorphins", tag: "Pain Relief", color: "#f59e0b", body: "Your built-in painkiller and natural high — paid for with physical effort, not a bottle.", earn: "Hard workout · heat · laughter" },
-            ].map((ch) => (
-              <div key={ch.l} className="bg-[#09090b] border border-white/10 rounded-3xl p-5 flex flex-col gap-3 justify-between">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-black font-black text-lg" style={{ background: ch.color }}>{ch.l}</div>
-                    <div>
-                      <h3 className="text-base font-black text-white uppercase tracking-tight leading-none">{ch.name}</h3>
-                      <p className="text-[10px] font-bold uppercase tracking-widest mt-1" style={{ color: ch.color }}>{ch.tag}</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-neutral-400 leading-relaxed">{ch.body}</p>
-                </div>
-                <p className="text-[11px] text-neutral-300 pt-2 border-t border-white/10"><span className="font-black uppercase tracking-widest" style={{ color: ch.color }}>Earn it:</span> {ch.earn}</p>
-              </div>
-            ))}
+          <div className="mt-10">
+            <SmartImage
+              src="/90rr/img/approach-hero.jpg"
+              alt="A man sitting on the edge of his bed in early morning light, steadying himself before the day starts"
+              caption="The vessel comes first · Stabilize the hardware before running the software"
+              accent="#4cc07a"
+            />
           </div>
+        </Wrap>
+      </Section>
 
-          {/* Visual strip — the earned dose in pictures */}
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { src: "/90rr/img/dose-fuel-food.png", title: "Feed the factory", desc: "Protein, fermented food and fiber hand the body raw materials for Serotonin.", href: "/90rr/fuel", accent: "#10b981" },
-              { src: "/90rr/img/dose-reset-cold.png", title: "Anchor the dopamine", desc: "Cold immersion raises baseline dopamine up to +250% — held for hours, no crash.", href: "/90rr/reset", accent: "#00f0ff" },
-              { src: "/90rr/img/dose-reset-walk.png", title: "Move it back online", desc: "A daily walk reinstalls the D2/D3 reward receptors burned out by the substance.", href: "/90rr/reset", accent: "#f59e0b" },
-            ].map((im) => (
-              <Link key={im.src} href={im.href} className="group relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3]">
-                <Image src={im.src} alt={im.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-col gap-1">
-                  <h4 className="text-sm font-black text-white uppercase tracking-tight" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}>{im.title}</h4>
-                  <p className="text-[12px] text-neutral-300 leading-snug">{im.desc}</p>
-                  <span className="text-[11px] font-bold uppercase tracking-widest mt-1" style={{ color: im.accent }}>Read the field guide →</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* 4. THE 3-PILLAR SYSTEM */}
-        <section className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">Execution System</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The 3-Pillar System</h2>
-            <p className="text-neutral-300 leading-relaxed max-w-3xl">
-              Three daily systems hold a single day of sobriety: <span className="text-[#10b981] font-bold">Surrender</span> +{" "}
-              <span className="text-[#f59e0b] font-bold">D.O.S.E.</span> + <span className="text-[#a855f7] font-bold">Community</span> = 1 day sober. Score all three as your daily VSE out of 10.
-            </p>
-          </div>
-          <div className="w-fit"><QR img="how" label="The AAfiends dashboard" url="https://aafiends.com" /></div>
-
-          <div className="flex flex-col gap-6">
-            {PILLARS.map((p) => (
-              <div key={p.name} className="bg-[#09090b] border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col gap-5">
-                <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-white/10">
-                  <Image src={p.img} alt={p.name + " — " + p.sub} fill className="object-cover" sizes="(max-width: 768px) 100vw, 720px" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent" />
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-black font-black text-lg" style={{ background: p.color }}>{p.n}</div>
-                  <div>
-                    <h3 className="text-2xl font-black text-white uppercase tracking-tight">{p.name}</h3>
-                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.sub}</p>
-                  </div>
-                </div>
-                <p className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-2 rounded-xl bg-white/5 border border-white/10" style={{ color: p.color }}>
-                  ⚡ Chemical Tie: {p.doseTag}
+      {/* ── The biology: D.O.S.E. ────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+            <SectionHead
+              lede={
+                <p>
+                  Almost everything that feels good runs on four brain chemicals. The substance faked
+                  all four at once through one door — so your brain turned the volume down to
+                  compensate. Recovery is teaching the body to make its own again in small, clean
+                  doses you <strong>earn</strong>.
                 </p>
-                <p className="text-neutral-300 leading-relaxed text-sm">{p.body}</p>
-                <div className="flex flex-wrap gap-2">
-                  {p.tracks.map((t) => (
-                    <span key={t} className="text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">{t}</span>
-                  ))}
-                </div>
-                <div className="w-fit"><QR img={p.qr} label={p.qrLabel} url={p.qrUrl} /></div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 5. NEW IN BETA 1 — THE PRACTICE SPREAD */}
-        <section className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-xs font-mono font-bold tracking-widest text-[#00f0ff] uppercase">New in Beta 1</span>
-            <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">The Practice Spread — Stillness &amp; Movement</h2>
-            <p className="text-sm text-neutral-300 max-w-2xl leading-relaxed">
-              Two facing pages built directly into the workbook: <strong className="text-white">Vipassana</strong> to sit with a craving instead of obeying it, and <strong className="text-white">Yoga &amp; Walking</strong> — moving meditation that earns slow-release dopamine.
-            </p>
+              }
+            >
+              D.O.S.E. — your <em>four chemicals.</em>
+            </SectionHead>
+            <Figure photo={PHOTOS.coldLake} />
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            <figure className="flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image src="/90rr/90rr-beta1-practice-vipassana.png" alt="Vipassana practice page" width={1275} height={1650} className="w-full h-auto" />
-              </div>
-              <figcaption className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">Vipassana &middot; sit with the craving</figcaption>
-            </figure>
-            <figure className="flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image src="/90rr/90rr-beta1-practice-yoga.png" alt="Yoga practice page" width={1275} height={1650} className="w-full h-auto" />
-              </div>
-              <figcaption className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">Yoga &amp; Walking &middot; meditation in motion</figcaption>
-            </figure>
+          <div className="mt-14">
+            <DoseMap />
           </div>
 
-          <SmartImage
-            src="/90rr/img/practice-stillness.jpg"
-            alt="Vipassana — sitting still with a craving"
-            caption="Vipassana in practice · Sitting still until the 20-minute craving wave recedes"
-            accent="#00f0ff"
+          <StackList
+            items={DOSE.map((ch) => ({
+              n: ch.l,
+              title: ch.name,
+              body: (
+                <>
+                  {ch.body}{" "}
+                  <span className="font-semibold text-[#f2efe6]">Earn it:</span> {ch.earn}
+                </>
+              ),
+              maps: ch.tag,
+            }))}
           />
-        </section>
 
-        {/* 6. THE 12 STEPS, IN PLAIN LANGUAGE */}
-        <section id="steps" className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">The Framework Layered On Top</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The 12 Steps, In Plain Language</h2>
-            <p className="text-neutral-300 max-w-3xl leading-relaxed text-sm md:text-base">
-              <strong className="text-[#10b981]">With the body coming back online, the Steps do the deeper work</strong> of restructuring character, repairing wreckage, and building daily spiritual discipline. Take &ldquo;God as we understood Him&rdquo; to mean a Higher Power <span className="text-[#00f0ff] font-bold">as you understand it</span>; no belief is required to begin.
-            </p>
+          <div className="mt-16">
+            <SubHead>Earn it, three ways</SubHead>
+            <EditorialList>
+              {EARNED.map((e) => (
+                <EditorialRow
+                  key={e.title}
+                  href={e.href}
+                  title={e.title}
+                  body={e.desc}
+                  go="Read the field guide"
+                />
+              ))}
+            </EditorialList>
+          </div>
+        </Wrap>
+      </Section>
+
+      {/* ── The 3-pillar system ──────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Three daily systems hold a single day of sobriety: <strong>Surrender</strong> +{" "}
+                <strong>D.O.S.E.</strong> + <strong>Community</strong> = 1 day sober. Score all three
+                as your daily VSE out of 10.
+              </p>
+            }
+          >
+            The three-pillar <em>system.</em>
+          </SectionHead>
+
+          <div className="mt-8">
+            <QR img="how" label="The AAfiends dashboard" url="https://aafiends.com" />
           </div>
 
-          <div className="flex flex-col gap-3">
-            {STEPS.map((s) => (
-              <div key={s.n} className="bg-[#09090b] border border-white/10 rounded-2xl p-5 flex gap-4">
-                <div className="w-10 h-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-black text-lg text-white">{s.n}</div>
-                <div className="flex flex-col gap-1.5">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ color: phaseColor[s.phase], border: `1px solid ${phaseColor[s.phase]}55` }}>{s.phase}</span>
-                  </div>
-                  <p className="text-neutral-100 font-medium leading-relaxed text-sm">{s.full}</p>
-                  <p className="text-xs text-neutral-400 leading-relaxed"><span className="text-[#f59e0b] font-bold">What it asks:</span> {s.why}</p>
-                </div>
+          {PILLARS.map((p, i) => (
+            <PhotoRow key={p.name} photo={p.photo} flip={i % 2 === 1}>
+              <SubHead>
+                <span className="font-measure text-[1.1rem] text-[#4cc07a]">{p.n}</span> · {p.name}
+              </SubHead>
+              <p className="font-measure mt-1.5 text-[13px] text-[#7d7a70]">{p.sub}</p>
+              <p className="mt-4 max-w-[52ch] text-[#b8b4a6]">{p.body}</p>
+              <p className="mt-4 max-w-[52ch] text-[15.5px] text-[#b8b4a6]">
+                <span className="font-semibold text-[#f2efe6]">Chemical tie:</span> {p.doseTag}
+              </p>
+              <ul className="mt-6 border-t border-[#1d231d] text-[15px] text-[#b8b4a6]">
+                {p.tracks.map((t) => (
+                  <li key={t} className="border-b border-[#1d231d] py-2.5">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-7">
+                <QR img={p.qr} label={p.qrLabel} url={p.qrUrl} />
               </div>
-            ))}
+            </PhotoRow>
+          ))}
+        </Wrap>
+      </Section>
+
+      {/* ── The practice spread ──────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Two facing pages built directly into the workbook: <strong>Vipassana</strong> to sit
+                with a craving instead of obeying it, and <strong>Yoga &amp; Walking</strong> —
+                moving meditation that earns slow-release dopamine.
+              </p>
+            }
+          >
+            The practice spread — <em>stillness and movement.</em>
+          </SectionHead>
+          <p className="font-measure mt-5 text-[13px] text-[#e0a45c]">New in {VERSION}</p>
+
+          <div className="mt-12 grid gap-8 sm:mt-16 sm:grid-cols-2">
+            <figure>
+              <div className="overflow-hidden rounded-[14px] border border-[#1d231d] bg-white">
+                <Image
+                  src="/90rr/90rr-beta1-practice-vipassana.png"
+                  alt="The Vipassana practice page from the printed journal, with prompts for sitting with a craving"
+                  width={1275}
+                  height={1650}
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="font-measure mt-3 text-[12.5px] text-[#7d7a70]">
+                Vipassana &middot; sit with the craving
+              </figcaption>
+            </figure>
+            <figure>
+              <div className="overflow-hidden rounded-[14px] border border-[#1d231d] bg-white">
+                <Image
+                  src="/90rr/90rr-beta1-practice-yoga.png"
+                  alt="The Yoga and Walking practice page from the printed journal, with space to log moving meditation"
+                  width={1275}
+                  height={1650}
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="font-measure mt-3 text-[12.5px] text-[#7d7a70]">
+                Yoga &amp; Walking &middot; meditation in motion
+              </figcaption>
+            </figure>
           </div>
 
-          <div className="w-fit"><QR img="steps" label="The 12 Steps & 12 Traditions" url="https://aafiends.com/framework" /></div>
-          <p className="text-[11px] text-neutral-600 font-mono leading-relaxed">
-            The Twelve Steps are adapted from Alcoholics Anonymous. AAfiends is not affiliated with or endorsed by A.A. World Services, Inc.
+          <div className="mt-12">
+            <SmartImage
+              src="/90rr/img/practice-stillness.jpg"
+              alt="A woman sitting cross-legged on a bare floor, eyes closed, waiting out a craving"
+              caption="Vipassana in practice · Sitting still until the 20-minute craving wave recedes"
+              accent="#7fb3a3"
+            />
+          </div>
+        </Wrap>
+      </Section>
+
+      {/* ── The 12 Steps ─────────────────────────────────────── */}
+      <Section id="steps" band className="scroll-mt-28">
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                <strong>With the body coming back online, the Steps do the deeper work</strong> of
+                restructuring character, repairing wreckage, and building daily spiritual discipline.
+                Take “God as we understood Him” to mean a Higher Power as you understand it; no
+                belief is required to begin.
+              </p>
+            }
+          >
+            The 12 Steps, <em>in plain language.</em>
+          </SectionHead>
+
+          <StackList
+            items={STEPS.map((s) => ({
+              n: String(s.n).padStart(2, "0"),
+              title: <span className="block max-w-[56ch]">{s.full}</span>,
+              body: (
+                <>
+                  <span className="font-semibold text-[#f2efe6]">What it asks:</span> {s.why}
+                </>
+              ),
+              maps: s.phase,
+            }))}
+          />
+
+          <div className="mt-10">
+            <QR
+              img="steps"
+              label="The 12 Steps & 12 Traditions"
+              url="https://aafiends.com/framework"
+            />
+          </div>
+
+          <p className="font-measure mt-8 max-w-[70ch] text-[12.5px] leading-relaxed text-[#7d7a70]">
+            The Twelve Steps are adapted from Alcoholics Anonymous. AAfiends is not affiliated with
+            or endorsed by A.A. World Services, Inc.
           </p>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* 7. THE SCIENCE, BRIEFLY */}
-        <section className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">Evidence &amp; Mechanism</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Science, Briefly</h2>
-            <p className="text-neutral-400 max-w-3xl leading-relaxed text-sm">
-              Nothing in the journal is a chore for its own sake. Each daily move repairs a specific part of the neurochemistry the substance broke down.
-            </p>
+      {/* ── The science ──────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Nothing in the journal is a chore for its own sake. Each daily move repairs a
+                specific part of the neurochemistry the substance broke down.
+              </p>
+            }
+          >
+            The science, <em>briefly.</em>
+          </SectionHead>
+
+          <div className="mt-12 sm:mt-16">
+            <CravingWaveAndSpike />
           </div>
 
-          {/* Infographic C: Craving Wave + Spike vs Slope */}
-          <CravingWaveAndSpike />
-
-          <div className="grid md:grid-cols-2 gap-4 mt-2">
+          <div className="mt-14 grid border-t border-[#1d231d] md:grid-cols-2 md:gap-x-14">
             {SCIENCE.map(([t, d]) => (
-              <div key={t} className="bg-[#09090b] border border-white/10 rounded-2xl p-5">
-                <h4 className="text-[#10b981] font-black uppercase tracking-wide text-sm mb-1">{t}</h4>
-                <p className="text-xs text-neutral-300 leading-relaxed">{d}</p>
-              </div>
+              <ListRow key={t} term={t}>
+                {d}
+              </ListRow>
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            <QR img="science" label="The research, in plain English" url="https://aafiends.com/blog" />
+          <div className="mt-10 flex flex-wrap gap-4">
+            <QR
+              img="science"
+              label="The research, in plain English"
+              url="https://aafiends.com/blog"
+            />
             <QR img="engine" label="The BIO 12 protocol" url="https://aivirus.org/bio12" />
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* 8. THE A.I.V. — KNOW THE ENEMY */}
-        <section className="bg-[#0a0a0a] border border-red-500/20 rounded-[2rem] p-8 md:p-10 flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 text-xs font-mono font-bold text-red-400 uppercase tracking-widest bg-red-500/10 px-3 py-1 rounded-full border border-red-500/30">Know the enemy</span>
-          <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none">The A.I.V. — one virus, many faces</h2>
-          <div className="grid md:grid-cols-[1.4fr_1fr] gap-6 md:gap-8 items-center">
-            <div className="flex flex-col gap-5">
-              <p className="text-neutral-300 leading-relaxed text-sm md:text-base">
-                We do not treat addiction as a moral failing. It behaves like a virus — the <span className="text-red-400 font-bold">Addiction Intelligence Virus</span> — an adaptive infection of the brain&apos;s reward system. Alcohol, opioids, nicotine, gambling, sugar: the surface differs, the mechanism is identical. It floods dopamine, forces the brain to down-regulate its own receptors, and leaves you in a baseline deficit. The three pillars are the firewall that starves it.
+      {/* ── Know the enemy ───────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
+            <div>
+              <SectionHead>
+                The A.I.V. — one virus, <em>many faces.</em>
+              </SectionHead>
+              <p className="mt-6 max-w-[62ch] text-[#b8b4a6]">
+                We do not treat addiction as a moral failing. It behaves like a virus — the{" "}
+                <strong className="font-semibold text-[#f2efe6]">
+                  Addiction Intelligence Virus
+                </strong>{" "}
+                — an adaptive infection of the brain&apos;s reward system. Alcohol, opioids,
+                nicotine, gambling, sugar: the surface differs, the mechanism is identical. It floods
+                dopamine, forces the brain to down-regulate its own receptors, and leaves you in a
+                baseline deficit. The three pillars are the firewall that starves it.
               </p>
-              <div className="w-fit"><QR img="aiv" label="Meet the virus — the vectors" url="https://aivirus.org/the-virus" /></div>
+              <div className="mt-8">
+                <QR img="aiv" label="Meet the virus — the vectors" url="https://aivirus.org/the-virus" />
+              </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden border border-red-500/20 aspect-square">
-              <Image src="/aiv_threat.png" alt="The Addiction Intelligence Virus" fill className="object-cover" sizes="(max-width: 768px) 100vw, 360px" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
-            </div>
+            <figure className="relative aspect-square overflow-hidden rounded-[14px] bg-[#0d0f0d]">
+              <Image
+                src="/aiv_threat.png"
+                alt="An illustration of the Addiction Intelligence Virus as a dark shape coiled around the brain's reward system"
+                fill
+                sizes="(max-width: 768px) 100vw, 360px"
+                className="object-cover"
+              />
+            </figure>
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* 9. FEATURED — THE DAILY DOSE */}
-        <section className="relative overflow-hidden rounded-[2.5rem] border border-[#10b981]/25 bg-[#09090b] p-8 md:p-12 flex flex-col gap-8 scroll-mt-28">
-          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#10b981]/10 blur-3xl" />
+      {/* ── The Daily Dose ───────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Supplements and superfoods that rebuild <strong>D.O.S.E.</strong> — what I take, when
+                I take it, what the evidence actually says, and what it costs a day. Called the{" "}
+                <strong>Daily Dose</strong> because dopamine doesn&apos;t bank overnight any more
+                than sobriety does. Twenty-four hours is the unit for both.
+              </p>
+            }
+          >
+            The <em>Daily Dose.</em>
+          </SectionHead>
 
-          <div className="flex flex-col gap-3">
-            <span className="text-xs font-mono font-bold tracking-widest text-[#f59e0b] uppercase">Featured · Resupply</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Daily Dose</h2>
-            <p className="text-sm md:text-base text-neutral-300 max-w-2xl leading-relaxed">
-              Supplements and superfoods that rebuild <strong className="text-white">D.O.S.E.</strong> — what I take,
-              when I take it, what the evidence actually says, and what it costs a day. Called the <strong className="text-white">Daily Dose</strong> because
-              dopamine doesn&apos;t bank overnight any more than sobriety does. Twenty-four hours is the unit for both.
-            </p>
+          <div className="mt-2 flex flex-wrap gap-x-12 gap-y-2">
+            <Stat value="$0.55">a day for the Core Five</Stat>
+            <Stat value="3">checkpoints, not a schedule</Stat>
+            <Stat value="24h">the only unit that counts</Stat>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { stat: "$0.55", label: "a day for the Core Five", accent: "#10b981" },
-              { stat: "3", label: "checkpoints, not a schedule", accent: "#00f0ff" },
-              { stat: "24h", label: "the only unit that counts", accent: "#f59e0b" },
-            ].map((s) => (
-              <div key={s.label} className="rounded-2xl border border-white/10 bg-[#050505] p-5">
-                <p className="text-3xl font-black" style={{ color: s.accent }}>{s.stat}</p>
-                <p className="mt-1 text-xs text-neutral-400 leading-relaxed">{s.label}</p>
+          <div className="-mx-2 mt-12 overflow-x-auto px-2 sm:mt-16">
+            <Image
+              src="/90rr/img/dd-dose-map.svg"
+              alt="Which supplements and superfoods restock each of the four chemicals"
+              width={1200}
+              height={820}
+              className="h-auto w-full min-w-[720px] rounded-[14px] border border-[#1d231d]"
+            />
+          </div>
+
+          <CtaRow>
+            <ButtonGhost href="/90rr/daily-dose">Read the full ledger</ButtonGhost>
+            <ButtonQuiet href="/90rr/shopping-list">Print the shopping list</ButtonQuiet>
+          </CtaRow>
+
+          <p className="mt-8 max-w-[70ch] text-[13px] leading-relaxed text-[#7d7a70]">
+            Not medical advice. Supplements interact with medications — talk to your doctor first,
+            especially about 5-HTP if you take an antidepressant.
+          </p>
+        </Wrap>
+      </Section>
+
+      {/* ── DOSE field guides ────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                Field guides on rebuilding <strong>D.O.S.E.</strong> naturally, with real food and
+                earned habits. Ends with print-and-go lists.
+              </p>
+            }
+          >
+            Earn your <em>four chemicals.</em>
+          </SectionHead>
+
+          <div className="mt-10 border-t border-[#1d231d] sm:mt-14">
+            {GUIDES.map((g) => (
+              <Link
+                key={g.href + g.title}
+                href={g.href}
+                className="grid items-center gap-2 border-b border-[#1d231d] px-1 py-6 no-underline transition-colors hover:bg-[#0d0f0d] sm:grid-cols-[1fr_2fr_auto] sm:gap-6"
+              >
+                <div>
+                  <h3 className="font-display text-[1.3rem] leading-tight text-[#f2efe6]">
+                    {g.title}
+                  </h3>
+                  <p className="font-measure mt-1 text-[12.5px] text-[#7d7a70]">{g.tag}</p>
+                </div>
+                <p className="max-w-[58ch] text-[15px] text-[#b8b4a6]">{g.desc}</p>
+                <span className="font-measure whitespace-nowrap text-[13px] text-[#4cc07a]">
+                  Read guide →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Wrap>
+      </Section>
+
+      {/* ── The crash course ─────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <CrashCourseSection starterPdf={STARTER_PDF} starterBookletPdf={STARTER_BOOKLET} />
+        </Wrap>
+      </Section>
+
+      {/* ── Download the journal ─────────────────────────────── */}
+      <Section band className="scroll-mt-28">
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                <strong>{VERSION}</strong> is the current workbook — single-page Action Log facing a
+                ruled Notes &amp; Insight page, plus the new Vipassana + Yoga practice spread. Pick
+                any length below; each comes full-size or as a fold-and-staple booklet.
+              </p>
+            }
+          >
+            Download the <em>journal.</em>
+          </SectionHead>
+          <p className="font-measure mt-5 text-[13px] text-[#e0a45c]">
+            Current · {VERSION} layout
+          </p>
+
+          <div className="mt-10 border-t border-[#1d231d] sm:mt-14">
+            {BETA_EDITIONS.map((o) => (
+              <div
+                key={o.title}
+                className="grid items-center gap-3 border-b border-[#1d231d] px-1 py-6 sm:grid-cols-[1.1fr_1.5fr_auto] sm:gap-8"
+              >
+                <div>
+                  <h3 className="font-display text-[1.3rem] leading-tight text-[#f2efe6]">
+                    {o.title}
+                  </h3>
+                  <p className="font-measure mt-1 text-[12.5px] text-[#7d7a70]">{o.sub}</p>
+                </div>
+                <p className="max-w-[46ch] text-[15px] text-[#b8b4a6]">{o.desc}</p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
+                  <a href={o.full} download className={DL_LINK}>
+                    Full size · 8.5×11
+                  </a>
+                  <a href={o.half} download className={DL_LINK}>
+                    Half size · booklet
+                  </a>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="overflow-x-auto -mx-2 px-2">
-            <Image src="/90rr/img/dd-dose-map.svg" alt="Which supplements and superfoods restock each of the four chemicals"
-                   width={1200} height={820} className="min-w-[720px] w-full h-auto rounded-2xl border border-white/10" />
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <Link href="/90rr/daily-dose"
-                  className="rounded-full bg-[#10b981] px-6 py-3 text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-emerald-400">
-              Read the full ledger →
-            </Link>
-            <Link href="/90rr/shopping-list"
-                  className="rounded-full border border-white/20 px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-white/40">
-              Print the shopping list
-            </Link>
-          </div>
-
-          <p className="text-[11px] text-neutral-500 leading-relaxed">
-            Not medical advice. Supplements interact with medications — talk to your doctor first, especially about 5-HTP if you take an antidepressant.
-          </p>
-        </section>
-
-        {/* 10. DOSE FIELD GUIDES */}
-        <section className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] uppercase">DOSE Field Guides</span>
-            <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Earn Your Four Chemicals</h2>
-            <p className="text-sm text-neutral-400 max-w-2xl">Field guides on rebuilding <strong className="text-white">D.O.S.E.</strong> naturally, with real food and earned habits. Ends with print-and-go lists.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              { href: "/90rr/daily-dose", tag: "The Engine · Resupply", title: "Daily Dose", desc: "Supplements & superfoods that rebuild D.O.S.E., graded by real evidence.", accent: "#10b981" },
-              { href: "/90rr/fuel", tag: "The Engine · Food", title: "DOSE Kitchen", desc: "Grocery list that rebuilds all 4 chemicals from raw materials up.", accent: "#10b981" },
-              { href: "/90rr/reset", tag: "The Reset · Cold", title: "Regulate Dopamine", desc: "Cold immersion & walking — plus a $600 cold plunge build.", accent: "#00f0ff" },
-              { href: "/90rr/meditation", tag: "The Mirror · Stillness", title: "Vipassana Guide", desc: "Sit with cravings: 15 & 30 min guides built on Atomic Habits.", accent: "#00f0ff" },
-              { href: "/90rr/shopping-list", tag: "Print & Go", title: "Shopping Lists", desc: "DOSE grocery list & cold plunge parts list in one place.", accent: "#f59e0b" },
-            ].map((g) => (
-              <Link key={g.href} href={g.href} className="group bg-[#09090b] border border-white/10 rounded-3xl p-5 flex flex-col gap-3 transition-all hover:border-white/25">
-                <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: g.accent }}>{g.tag}</p>
-                <h3 className="text-lg font-black text-white uppercase tracking-tight leading-tight group-hover:text-[#10b981] transition-colors">{g.title}</h3>
-                <p className="text-xs text-neutral-400 leading-relaxed flex-1">{g.desc}</p>
-                <span className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: g.accent }}>Read guide →</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* 10. THE CRASH COURSE VIDEO & BOOKLET PAIRING */}
-        <CrashCourseSection starterPdf={STARTER_PDF} starterBookletPdf={STARTER_BOOKLET} />
-
-        {/* 11. DOWNLOAD THE JOURNAL */}
-        <section className="bg-[#09090b] border border-white/10 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden scroll-mt-28">
-          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#00f0ff]" />
-          <div className="flex flex-col gap-4 text-center items-center">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white">Download the Journal</h2>
-            <p className="text-neutral-300 max-w-3xl leading-relaxed text-sm md:text-base">
-              <strong className="text-white">Beta 1</strong> is the current workbook — single-page Action Log facing a ruled Notes &amp; Insight page, plus the new <span className="text-[#00f0ff] font-bold">Vipassana + Yoga practice spread</span>. Pick any length below; each comes full-size or as a fold-and-staple booklet.
+          <div className="mt-10 max-w-[70ch]">
+            <SubHead>Two ways to print</SubHead>
+            <p className="mt-3 text-[15px] leading-relaxed text-[#b8b4a6]">
+              <strong className="font-semibold text-[#f2efe6]">Full size (8.5×11):</strong> print
+              double-sided, flip on the <strong className="font-semibold text-[#f2efe6]">long</strong>{" "}
+              edge so each Action Log lines up with its Notes page.
             </p>
+            <p className="mt-2.5 text-[15px] leading-relaxed text-[#b8b4a6]">
+              <strong className="font-semibold text-[#f2efe6]">Half size (booklet):</strong> print
+              double-sided, flip on the{" "}
+              <strong className="font-semibold text-[#f2efe6]">short</strong> edge, fold stack in
+              half and staple twice on spine — 5.5×8.5&quot; mini-book.
+            </p>
+          </div>
 
-            {/* Beta 1 — featured downloads */}
-            <span className="inline-flex items-center gap-2 mt-4 bg-[#f59e0b]/15 border border-[#f59e0b]/50 text-[#f59e0b] font-black text-[10.5px] tracking-widest rounded-full px-3.5 py-1.5 uppercase w-fit">
-              ★ Current · Beta 1 layout
-            </span>
-            <div className="w-full grid md:grid-cols-3 gap-4 text-left mt-1">
-              {[
-                { title: "7-Day Quick Start", sub: "Print & go · easy share", desc: "One week to test-drive the system.", full: STARTER_PDF, half: STARTER_BOOKLET, accent: "#10b981" },
-                { title: "30-Day · Month 1", sub: "Includes Vipassana + Yoga spread", desc: "A month of daily Action Logs with weekly review + practice pages.", full: MONTHLY_PDF, half: MONTHLY_BOOKLET, accent: "#f59e0b" },
-                { title: "Refill Pages", sub: "For a 3-ring binder", desc: "Daily pages + weekly review, no intro.", full: REFILL_PDF, half: REFILL_BOOKLET, accent: "#00f0ff" },
-              ].map((o) => (
-                <div key={o.title} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
+          {/* Alpha 1 — archived, still downloadable for anyone who prefers it. */}
+          <details className="group mt-12 border-t border-[#1d231d] pt-6">
+            <summary className="flex cursor-pointer list-none items-center gap-2 text-[15px] font-semibold text-[#b8b4a6] transition-colors hover:text-[#f2efe6]">
+              <ChevronRight
+                size={16}
+                className="text-[#e0a45c] transition-transform group-open:rotate-90"
+                aria-hidden="true"
+              />
+              Older version · Alpha 1 (classic two-page day)
+            </summary>
+            <p className="mt-3 max-w-[62ch] text-[15px] leading-relaxed text-[#7d7a70]">
+              The original layout — two-page day (morning left, evening right). Archived for anyone
+              who prefers it. No longer updated.
+            </p>
+            <div className="mt-6 border-t border-[#1d231d]">
+              {ALPHA_EDITIONS.map((o) => (
+                <div
+                  key={o.title}
+                  className="grid items-center gap-3 border-b border-[#1d231d] px-1 py-5 sm:grid-cols-[1fr_auto] sm:gap-8"
+                >
                   <div>
-                    <h3 className="text-lg font-black text-white uppercase tracking-tight leading-tight">{o.title}</h3>
-                    <p className="text-[11px] font-bold uppercase tracking-widest" style={{ color: o.accent }}>{o.sub}</p>
+                    <h4 className="font-display text-[1.15rem] leading-tight text-[#b8b4a6]">
+                      {o.title}
+                    </h4>
+                    <p className="font-measure mt-1 text-[12px] text-[#7d7a70]">{o.sub}</p>
                   </div>
-                  <p className="text-xs text-neutral-400 leading-relaxed flex-1">{o.desc}</p>
-                  <a href={o.full} download className="py-3 px-4 rounded-xl text-center text-black text-xs font-black tracking-widest uppercase transition-all hover:opacity-90" style={{ background: o.accent }}>
-                    ↓ Full size · 8.5×11
-                  </a>
-                  <a href={o.half} download className="py-2.5 px-4 rounded-xl border text-center text-xs font-black tracking-widest uppercase transition-all hover:bg-white/5" style={{ borderColor: `${o.accent}66`, color: o.accent }}>
-                    ↓ Half size · booklet
-                  </a>
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
+                    <a href={o.full} download className={DL_LINK}>
+                      Full size
+                    </a>
+                    <a href={o.half} download className={DL_LINK}>
+                      Booklet
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
+          </details>
 
-            <div className="w-full pt-5 mt-1 border-t border-white/10 flex flex-col gap-2 text-left">
-              <p className="text-xs font-mono uppercase tracking-widest text-[#f59e0b]">Two ways to print</p>
-              <p className="text-[12px] text-neutral-400 leading-relaxed">
-                <strong className="text-neutral-200">Full size (8.5×11):</strong> print double-sided, flip on the <strong>long</strong> edge so each Action Log lines up with its Notes page.
-              </p>
-              <p className="text-[12px] text-neutral-400 leading-relaxed">
-                <strong className="text-neutral-200">Half size (booklet):</strong> print double-sided, flip on the <strong>short</strong> edge, fold stack in half and staple twice on spine — 5.5×8.5&quot; mini-book.
-              </p>
-            </div>
+          <CtaRow className="mt-12">
+            <DownloadPrimary href={MONTHLY_PDF}>Download Month 1 ({VERSION})</DownloadPrimary>
+            <ButtonGhost href="/90rr/builder">Build your own custom journal</ButtonGhost>
+            <ButtonQuiet href="/90-r-and-r#reserve">Reserve a seat in the Fellowship</ButtonQuiet>
+          </CtaRow>
+        </Wrap>
+      </Section>
 
-            {/* Alpha 1 — archived */}
-            <details className="w-full text-left mt-2 group">
-              <summary className="cursor-pointer list-none flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-300 transition-colors py-2">
-                <span className="text-[#f59e0b] group-open:rotate-90 transition-transform inline-block">▸</span>
-                Older version · Alpha 1 (classic two-page day)
-              </summary>
-              <p className="text-[12px] text-neutral-500 leading-relaxed mt-1 mb-4 max-w-2xl">
-                The original layout — two-page day (morning left, evening right). Archived for anyone who prefers it. No longer updated.
+      {/* ── Peek inside ──────────────────────────────────────── */}
+      <Section>
+        <Wrap>
+          <SectionHead
+            lede={
+              <p>
+                {VERSION} puts the whole day on one <strong>Action Log</strong> — sleep, movement,
+                meeting, mood and score — facing a ruled <strong>Notes &amp; Insight</strong> page.
               </p>
-              <div className="w-full grid md:grid-cols-3 gap-4">
-                {[
-                  { title: "7-Day Quick Start", sub: "Alpha 1 · classic", full: ALPHA_STARTER, half: ALPHA_STARTER_BOOKLET },
-                  { title: "30-Day · Month 1", sub: "Alpha 1 · classic", full: ALPHA_MONTHLY, half: ALPHA_MONTHLY_BOOKLET },
-                  { title: "Refill Pages", sub: "Alpha 1 · classic", full: ALPHA_REFILL, half: ALPHA_REFILL_BOOKLET },
-                ].map((o) => (
-                  <div key={o.title} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-5 flex flex-col gap-2">
-                    <h3 className="text-base font-black text-neutral-300 uppercase tracking-tight leading-tight">{o.title}</h3>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-neutral-600">{o.sub}</p>
-                    <a href={o.full} download className="mt-1 py-2.5 px-4 rounded-xl border border-white/15 text-center text-neutral-300 text-[11px] font-black tracking-widest uppercase transition-all hover:bg-white/5">
-                      ↓ Full size
-                    </a>
-                    <a href={o.half} download className="py-2 px-4 rounded-xl border border-white/10 text-center text-neutral-500 text-[11px] font-black tracking-widest uppercase transition-all hover:bg-white/5">
-                      ↓ Booklet
-                    </a>
-                  </div>
-                ))}
+            }
+          >
+            What a day <em>looks like.</em>
+          </SectionHead>
+
+          <div className="mt-12 grid gap-8 sm:mt-16 sm:grid-cols-2">
+            <figure>
+              <div className="overflow-hidden rounded-[14px] border border-[#1d231d] bg-white">
+                <Image
+                  src="/90rr/90rr-beta1-day-actionlog.png"
+                  alt="The Action Log page from the printed journal — one day of sleep, movement, meeting, mood and score"
+                  width={1275}
+                  height={1650}
+                  className="h-auto w-full"
+                />
               </div>
-            </details>
-            <div className="flex flex-wrap gap-4 mt-2">
-              <Link href="/90rr/builder" className="text-sm font-bold text-[#10b981] hover:text-white transition-colors uppercase tracking-widest">
-                ✎ Build your own custom journal →
-              </Link>
-              <Link href="/90-r-and-r#reserve" className="text-sm font-bold text-[#f59e0b] hover:text-white transition-colors uppercase tracking-widest">
-                Reserve a seat in the Fellowship →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 11. PEEK INSIDE */}
-        <section className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-xs font-mono font-bold tracking-widest text-[#10b981] uppercase">Peek Inside</span>
-            <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">What a day looks like</h2>
-            <p className="text-sm text-neutral-400 max-w-2xl">Beta 1 puts the whole day on one <strong className="text-white">Action Log</strong> — sleep, movement, meeting, mood and score — facing a ruled <strong className="text-white">Notes &amp; Insight</strong> page.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            <figure className="flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image src="/90rr/90rr-beta1-day-actionlog.png" alt="Beta 1 Action Log page" width={1275} height={1650} className="w-full h-auto" />
-              </div>
-              <figcaption className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">Action Log &middot; the whole day, one page</figcaption>
+              <figcaption className="font-measure mt-3 text-[12.5px] text-[#7d7a70]">
+                Action Log &middot; the whole day, one page
+              </figcaption>
             </figure>
-            <figure className="flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image src="/90rr/90rr-beta1-day-notes.png" alt="Beta 1 Notes & Insight page" width={1275} height={1650} className="w-full h-auto" />
+            <figure>
+              <div className="overflow-hidden rounded-[14px] border border-[#1d231d] bg-white">
+                <Image
+                  src="/90rr/90rr-beta1-day-notes.png"
+                  alt="The ruled Notes and Insight page that faces each Action Log in the printed journal"
+                  width={1275}
+                  height={1650}
+                  className="h-auto w-full"
+                />
               </div>
-              <figcaption className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">Notes &amp; Insight &middot; facing page</figcaption>
+              <figcaption className="font-measure mt-3 text-[12.5px] text-[#7d7a70]">
+                Notes &amp; Insight &middot; facing page
+              </figcaption>
             </figure>
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* 12. THE WHOLE GRID */}
-        <section className="flex flex-col gap-6 scroll-mt-28">
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em]">One Ecosystem</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">The Whole Grid</h2>
-            <p className="text-neutral-400 max-w-3xl leading-relaxed">R&amp;R is one front in a larger fight. Same disease, attacked from three angles.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
+      {/* ── The whole grid ───────────────────────────────────── */}
+      <Section band>
+        <Wrap>
+          <SectionHead
+            lede={<p>R&amp;R is one front in a larger fight. Same disease, attacked from three angles.</p>}
+          >
+            The whole <em>grid.</em>
+          </SectionHead>
+
+          <EditorialList>
             {ECOSYSTEM.map((e) => (
-              <div key={e.name} className="bg-[#09090b] border border-white/10 rounded-3xl p-6 flex flex-col gap-4">
-                <div>
-                  <h3 className="text-xl font-black text-white uppercase tracking-tight">{e.name}</h3>
-                  <p className="text-xs font-bold uppercase tracking-widest" style={{ color: e.color }}>{e.tag}</p>
-                </div>
-                <p className="text-xs text-neutral-400 leading-relaxed flex-1">{e.desc}</p>
-                <QR img={e.qr} label={`Visit ${e.name}`} url={e.url} />
-              </div>
+              <EditorialRow
+                key={e.name}
+                href={e.url}
+                title={e.name}
+                body={e.desc}
+                go={e.tag}
+                external
+              />
+            ))}
+          </EditorialList>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            {ECOSYSTEM.map((e) => (
+              <QR key={e.qr} img={e.qr} label={`Visit ${e.name}`} url={e.url} />
             ))}
           </div>
-        </section>
+        </Wrap>
+      </Section>
 
-        {/* 13. CRISIS SUPPORT & SAFETY DISCLAIMER */}
-        <section className="flex flex-col gap-4">
+      {/* ── Crisis support & safety ──────────────────────────── */}
+      <Section tight>
+        <Wrap>
           <CrisisSupport />
-          <p className="text-xs text-neutral-500 font-mono text-center leading-relaxed">
-            Not medical advice · Peer support and personal experience only · Not affiliated with Alcoholics Anonymous World Services, Inc.
+          <p className="font-measure mt-6 max-w-[76ch] text-[12.5px] leading-relaxed text-[#7d7a70]">
+            Not medical advice · Peer support and personal experience only · Not affiliated with
+            Alcoholics Anonymous World Services, Inc.
           </p>
-        </section>
-      </main>
+        </Wrap>
+      </Section>
 
       <SiteFooter />
     </div>

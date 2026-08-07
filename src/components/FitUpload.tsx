@@ -88,14 +88,14 @@ export default function FitUpload() {
   }
 
   return (
-    <div className="bg-[#0a0a0a] border border-emerald-500/20 rounded-2xl p-5 flex flex-col gap-4">
+    <div className="bg-[#141814] border border-emerald-500/20 rounded-2xl p-5 flex flex-col gap-4">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
           <UploadCloud size={18} />
         </div>
         <div>
-          <h4 className="text-sm font-black text-white uppercase tracking-tight">Upload Wearable Data</h4>
-          <p className="text-[11px] text-neutral-500 leading-snug">Garmin, Apple Health, or Google Fit — parsed in your browser, saved to your private telemetry.</p>
+          <h4 className="text-sm font-semibold text-[#f2efe6] tracking-tight">Upload Wearable Data</h4>
+          <p className="text-[11px] text-[#7d7a70] leading-snug">Garmin, Apple Health, or Google Fit — parsed in your browser, saved to your private telemetry.</p>
         </div>
       </div>
 
@@ -104,11 +104,11 @@ export default function FitUpload() {
         <>
           <button
             onClick={() => inputRef.current?.click()}
-            className="w-full border border-dashed border-white/15 hover:border-emerald-500/40 rounded-xl py-8 flex flex-col items-center gap-2 text-neutral-400 hover:text-white transition-colors"
+            className="w-full border border-dashed border-[#2a322a] hover:border-emerald-500/40 rounded-xl py-8 flex flex-col items-center gap-2 text-[#b8b4a6] hover:text-[#f2efe6] transition-colors"
           >
             <FileUp size={22} className="text-emerald-400" />
             <span className="text-sm font-bold">Choose a file — .fit, .xml, or .csv</span>
-            <span className="text-[11px] text-neutral-600 text-center max-w-xs leading-relaxed">Garmin: export a .fit &nbsp;·&nbsp; Apple Health: Profile → Export All Health Data → export.xml &nbsp;·&nbsp; Google Fit: Takeout → Daily activity metrics .csv</span>
+            <span className="text-[11px] text-[#7d7a70] text-center max-w-xs leading-relaxed">Garmin: export a .fit &nbsp;·&nbsp; Apple Health: Profile → Export All Health Data → export.xml &nbsp;·&nbsp; Google Fit: Takeout → Daily activity metrics .csv</span>
           </button>
           <input ref={inputRef} type="file" accept=".fit,.FIT,.xml,.csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
           {error && (
@@ -120,7 +120,7 @@ export default function FitUpload() {
       )}
 
       {status === "parsing" && (
-        <div className="flex items-center gap-2 text-sm text-neutral-400 py-6 justify-center">
+        <div className="flex items-center gap-2 text-sm text-[#b8b4a6] py-6 justify-center">
           <Loader2 size={16} className="animate-spin text-emerald-400" /> Reading {fileName}…
         </div>
       )}
@@ -136,11 +136,11 @@ export default function FitUpload() {
 
           {savableDays.length > 0 ? (
             <>
-              <div className="text-[11px] text-neutral-500">Found <span className="text-white font-bold">{savableDays.length}</span> day{savableDays.length === 1 ? "" : "s"} of recovery data in <span className="text-neutral-300">{fileName}</span>:</div>
-              <div className="overflow-x-auto max-h-52 overflow-y-auto rounded-xl border border-white/5">
+              <div className="text-[11px] text-[#7d7a70]">Found <span className="text-[#f2efe6] font-bold">{savableDays.length}</span> day{savableDays.length === 1 ? "" : "s"} of recovery data in <span className="text-[#b8b4a6]">{fileName}</span>:</div>
+              <div className="overflow-x-auto max-h-52 overflow-y-auto rounded-xl border border-[#1d231d]">
                 <table className="w-full text-left text-xs">
-                  <thead className="sticky top-0 bg-[#0a0a0a]">
-                    <tr className="text-[10px] uppercase tracking-widest text-neutral-500">
+                  <thead className="sticky top-0 bg-[#141814]">
+                    <tr className="text-[10px] text-[#7d7a70]">
                       <th className="py-2 px-3 font-bold">Date</th>
                       <th className="py-2 px-3 font-bold"><Moon size={11} className="inline text-emerald-400" /> Sleep</th>
                       <th className="py-2 px-3 font-bold"><HeartPulse size={11} className="inline text-emerald-400" /> RHR</th>
@@ -149,34 +149,34 @@ export default function FitUpload() {
                   </thead>
                   <tbody>
                     {savableDays.map((d) => (
-                      <tr key={d.date} className="border-t border-white/5">
-                        <td className="py-2 px-3 text-neutral-300 font-mono">{d.date}</td>
-                        <td className="py-2 px-3 text-white">{d.sleepHours != null ? `${d.sleepHours}h` : "—"}</td>
-                        <td className="py-2 px-3 text-white">{d.rhr != null ? `${d.rhr} bpm` : "—"}</td>
-                        <td className="py-2 px-3 text-white">{d.hrv != null ? `${d.hrv} ms` : "—"}</td>
+                      <tr key={d.date} className="border-t border-[#1d231d]">
+                        <td className="py-2 px-3 text-[#b8b4a6] font-mono">{d.date}</td>
+                        <td className="py-2 px-3 text-[#f2efe6]">{d.sleepHours != null ? `${d.sleepHours}h` : "—"}</td>
+                        <td className="py-2 px-3 text-[#f2efe6]">{d.rhr != null ? `${d.rhr} bpm` : "—"}</td>
+                        <td className="py-2 px-3 text-[#f2efe6]">{d.hrv != null ? `${d.hrv} ms` : "—"}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <div className="flex gap-2">
-                <button onClick={save} className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black uppercase tracking-widest text-xs py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                <button onClick={save} className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-[#f2efe6] font-semibold text-xs py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
                   <CheckCircle2 size={14} /> Save {savableDays.length} day{savableDays.length === 1 ? "" : "s"} to my telemetry
                 </button>
-                <button onClick={reset} className="px-4 text-xs font-bold uppercase tracking-widest text-neutral-500 hover:text-white transition-colors">Cancel</button>
+                <button onClick={reset} className="px-4 text-xs font-bold text-[#7d7a70] hover:text-[#f2efe6] transition-colors">Cancel</button>
               </div>
             </>
           ) : (
             <div className="flex flex-col items-center gap-3 py-4">
-              <p className="text-sm text-neutral-400 text-center">No sleep / resting-HR / HRV data found in this file.</p>
-              <button onClick={reset} className="text-xs font-bold uppercase tracking-widest text-emerald-400 hover:underline">Try another file</button>
+              <p className="text-sm text-[#b8b4a6] text-center">No sleep / resting-HR / HRV data found in this file.</p>
+              <button onClick={reset} className="text-xs font-bold text-emerald-400 hover:underline">Try another file</button>
             </div>
           )}
         </div>
       )}
 
       {status === "saving" && (
-        <div className="flex items-center gap-2 text-sm text-neutral-400 py-6 justify-center">
+        <div className="flex items-center gap-2 text-sm text-[#b8b4a6] py-6 justify-center">
           <Loader2 size={16} className="animate-spin text-emerald-400" /> Saving to your telemetry…
         </div>
       )}
@@ -186,9 +186,9 @@ export default function FitUpload() {
           <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
             <CheckCircle2 size={24} />
           </div>
-          <p className="text-sm text-white font-bold text-center">Saved {savedCount} day{savedCount === 1 ? "" : "s"} to your telemetry.</p>
-          <p className="text-[11px] text-neutral-500 text-center">It now shows on your Mirror/Ledger chart. Refresh to see it plotted.</p>
-          <button onClick={reset} className="text-xs font-bold uppercase tracking-widest text-emerald-400 hover:underline">Upload another</button>
+          <p className="text-sm text-[#f2efe6] font-bold text-center">Saved {savedCount} day{savedCount === 1 ? "" : "s"} to your telemetry.</p>
+          <p className="text-[11px] text-[#7d7a70] text-center">It now shows on your Mirror/Ledger chart. Refresh to see it plotted.</p>
+          <button onClick={reset} className="text-xs font-bold text-emerald-400 hover:underline">Upload another</button>
         </div>
       )}
     </div>

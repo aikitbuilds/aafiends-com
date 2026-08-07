@@ -69,10 +69,10 @@ const QUESTIONS: Q[] = [
 ];
 
 const ACCENTS = [
-  { border: "border-[#00f0ff]/30", sel: "bg-[#00f0ff]/20 border-[#00f0ff]", text: "text-[#00f0ff]", hover: "hover:bg-[#00f0ff]/10" },
-  { border: "border-[#10b981]/30", sel: "bg-[#10b981]/20 border-[#10b981]", text: "text-[#10b981]", hover: "hover:bg-[#10b981]/10" },
-  { border: "border-[#f59e0b]/30", sel: "bg-[#f59e0b]/20 border-[#f59e0b]", text: "text-[#f59e0b]", hover: "hover:bg-[#f59e0b]/10" },
-  { border: "border-[#a855f7]/30", sel: "bg-[#a855f7]/20 border-[#a855f7]", text: "text-[#a855f7]", hover: "hover:bg-[#a855f7]/10" },
+  { border: "border-[#7fb3a3]/30", sel: "bg-[#7fb3a3]/20 border-[#7fb3a3]", text: "text-[#7fb3a3]", hover: "hover:bg-[#7fb3a3]/10" },
+  { border: "border-[#4cc07a]/30", sel: "bg-[#4cc07a]/20 border-[#4cc07a]", text: "text-[#4cc07a]", hover: "hover:bg-[#4cc07a]/10" },
+  { border: "border-[#e0a45c]/30", sel: "bg-[#e0a45c]/20 border-[#e0a45c]", text: "text-[#e0a45c]", hover: "hover:bg-[#e0a45c]/10" },
+  { border: "border-[#a88fc4]/30", sel: "bg-[#a88fc4]/20 border-[#a88fc4]", text: "text-[#a88fc4]", hover: "hover:bg-[#a88fc4]/10" },
 ];
 
 export default function ReserveFlow() {
@@ -148,21 +148,21 @@ export default function ReserveFlow() {
     <div className="mb-8 flex flex-col items-center gap-3">
       <div className="flex items-center gap-2 flex-wrap justify-center max-w-xs">
         {Array.from({ length: RESERVATION.seatsTotal }).map((_, i) => (
-          <span key={i} className={`w-4 h-4 rounded-full ${i < seatsOpen ? "bg-[#10b981] shadow-[0_0_8px_rgba(16,185,129,0.6)]" : "bg-white/10"}`} />
+          <span key={i} className={`w-4 h-4 rounded-full ${i < seatsOpen ? "bg-[#4cc07a]" : "bg-[#1d231d]"}`} />
         ))}
       </div>
-      <p className="text-xs font-mono uppercase tracking-widest text-neutral-400">
-        <span className="text-[#10b981] font-bold">{seatsOpen} of {RESERVATION.seatsTotal}</span> seats open · Mid-August 2026
+      <p className="text-xs font-mono text-[#b8b4a6]">
+        <span className="text-[#4cc07a] font-bold">{seatsOpen} of {RESERVATION.seatsTotal}</span> seats open · Mid-August 2026
       </p>
     </div>
   );
 
   const Shell = ({ children }: { children: React.ReactNode }) => (
     <section id="reserve" className="scroll-mt-24 max-w-3xl mx-auto w-full pb-12 relative z-10">
-      <div className="bg-[#09090b] border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10b981] via-[#f59e0b] to-[#10b981]" />
+      <div className="bg-[#141814] border border-[#1d231d] rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#4cc07a] via-[#e0a45c] to-[#4cc07a]" />
         <div className="mb-8 text-center flex flex-col gap-3">
-          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white">Reserve Your Seat</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[#f2efe6]">Reserve Your Seat</h2>
         </div>
         <SeatDots />
         {children}
@@ -171,21 +171,21 @@ export default function ReserveFlow() {
   );
 
   if (loading || checking) {
-    return <Shell><p className="text-center text-neutral-500 font-mono text-xs uppercase tracking-widest animate-pulse">Loading…</p></Shell>;
+    return <Shell><p className="text-center text-[#7d7a70] font-mono text-xs">Loading…</p></Shell>;
   }
 
   if (!user) {
     return (
       <Shell>
-        <p className="text-neutral-400 text-sm leading-relaxed max-w-lg mx-auto text-center mb-8">
-          Hold one of the {RESERVATION.seatsTotal} seats. Sign in first so we know who you are — then answer five quick taps to hold your seat. A deposit is <span className="text-white font-bold">optional</span> — pay now, later, or whatever you can. Use a pseudonym if you prefer; we honor anonymity.
+        <p className="text-[#b8b4a6] text-sm leading-relaxed max-w-lg mx-auto text-center mb-8">
+          Hold one of the {RESERVATION.seatsTotal} seats. Sign in first so we know who you are — then answer five quick taps to hold your seat. A deposit is <span className="text-[#f2efe6] font-bold">optional</span> — pay now, later, or whatever you can. Use a pseudonym if you prefer; we honor anonymity.
         </p>
         <div className="flex justify-center">
-          <button onClick={login} className="px-10 py-5 bg-white hover:bg-neutral-200 text-black font-black text-base uppercase tracking-widest rounded-2xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center gap-3">
+          <button onClick={login} className="px-10 py-5 bg-white hover:bg-neutral-200 text-black font-semibold text-base rounded-2xl transition-all flex items-center gap-3">
             <LogIn size={20} /> Sign in with Google
           </button>
         </div>
-        <p className="mt-6 text-center text-[11px] font-mono text-neutral-600 uppercase tracking-widest">Signing in just saves your seat &amp; answers to your private profile.</p>
+        <p className="mt-6 text-center text-[11px] font-mono text-[#7d7a70]">Signing in just saves your seat &amp; answers to your private profile.</p>
       </Shell>
     );
   }
@@ -194,31 +194,31 @@ export default function ReserveFlow() {
     return (
       <Shell>
         <div className="flex flex-col items-center text-center gap-5">
-          <CheckCircle2 size={64} className="text-[#10b981]" />
-          <h3 className="text-2xl font-black uppercase tracking-tight text-white">You&apos;re in. Seat held.</h3>
-          <p className="text-neutral-400 text-sm max-w-md leading-relaxed">
-            Your intake is saved and your seat is held — <span className="text-white font-bold">no payment needed to join</span>. A deposit is optional and just helps fund the cohort: <span className="text-white font-bold">${RESERVATION.suggestedDeposit}</span> suggested, or pay whatever you can, whenever you can. No one is turned away for lack of funds.
+          <CheckCircle2 size={64} className="text-[#4cc07a]" />
+          <h3 className="text-2xl font-semibold tracking-tight text-[#f2efe6]">You&apos;re in. Seat held.</h3>
+          <p className="text-[#b8b4a6] text-sm max-w-md leading-relaxed">
+            Your intake is saved and your seat is held — <span className="text-[#f2efe6] font-bold">no payment needed to join</span>. A deposit is optional and just helps fund the cohort: <span className="text-[#f2efe6] font-bold">${RESERVATION.suggestedDeposit}</span> suggested, or pay whatever you can, whenever you can. No one is turned away for lack of funds.
           </p>
           <div className="flex gap-3 justify-center flex-wrap my-2">
             {RESERVATION.quickAmounts.map((amt) => (
               <button key={amt} onClick={() => setAmount(amt)}
-                className={`px-6 py-3 rounded-xl font-black text-lg border transition-all ${amount === amt ? "bg-[#10b981] text-black border-[#10b981]" : "bg-white/5 text-white border-white/10 hover:border-[#10b981]/50"}`}>
+                className={`px-6 py-3 rounded-xl font-semibold text-lg border transition-all ${amount === amt ? "bg-[#4cc07a] text-black border-[#4cc07a]" : "bg-[#141814] text-[#f2efe6] border-[#1d231d] hover:border-[#4cc07a]/50"}`}>
                 ${amt}
               </button>
             ))}
           </div>
           <a href={buildDepositUrl(amount)} target="_blank" rel="noopener noreferrer"
-            className="px-12 py-5 bg-[#10b981] hover:bg-[#059669] text-black font-black text-lg uppercase tracking-widest rounded-2xl transition-all shadow-[0_0_30px_rgba(16,185,129,0.4)] flex items-center gap-3">
+            className="px-12 py-5 bg-[#4cc07a] hover:bg-[#2c7a4d] text-black font-semibold text-lg rounded-2xl transition-all flex items-center gap-3">
             <Rocket size={20} /> Deposit ${amount} via Venmo <span className="text-black/60 font-bold normal-case tracking-normal">(optional)</span>
           </a>
           {noteSaved === "later" ? (
-            <p className="text-sm text-[#10b981] font-bold">Got it — your seat&apos;s held. You can deposit anytime from this page.</p>
+            <p className="text-sm text-[#4cc07a] font-bold">Got it — your seat&apos;s held. You can deposit anytime from this page.</p>
           ) : (
-            <button onClick={markPayLater} className="text-xs font-mono text-neutral-400 hover:text-white underline underline-offset-4 uppercase tracking-widest">
+            <button onClick={markPayLater} className="text-xs font-mono text-[#b8b4a6] hover:text-[#f2efe6] underline underline-offset-4">
               I&apos;ll pay later →
             </button>
           )}
-          <p className="text-[11px] font-mono text-neutral-500 uppercase tracking-widest">We&apos;ll email your cohort details before the mid-August kickoff.</p>
+          <p className="text-[11px] font-mono text-[#7d7a70]">We&apos;ll email your cohort details before the mid-August kickoff.</p>
         </div>
       </Shell>
     );
@@ -227,23 +227,23 @@ export default function ReserveFlow() {
   if (step >= QUESTIONS.length) {
     return (
       <Shell>
-        <p className="text-center text-xs font-mono uppercase tracking-widest text-[#10b981] mb-6">Last step · who to reach</p>
+        <p className="text-center text-xs font-mono text-[#4cc07a] mb-6">Last step · who to reach</p>
         <div className="flex flex-col gap-4 max-w-md mx-auto">
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-black text-neutral-500 uppercase tracking-widest">First name or handle</label>
+            <label className="text-xs font-semibold text-[#7d7a70]">First name or handle</label>
             <input value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="What do we call you?"
-              className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-neutral-700 focus:outline-none focus:border-[#10b981]/50" />
+              className="w-full bg-[#0d0f0d] border border-[#1d231d] rounded-xl px-4 py-3.5 text-[#f2efe6] placeholder-neutral-700 focus:outline-none focus:border-[#4cc07a]/50" />
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-black text-neutral-500 uppercase tracking-widest flex items-center gap-1.5"><MapPin size={12} /> Your area (city / state)</label>
+            <label className="text-xs font-semibold text-[#7d7a70] flex items-center gap-1.5"><MapPin size={12} /> Your area (city / state)</label>
             <input value={area} onChange={(e) => setArea(e.target.value)} placeholder="e.g. Houston, TX"
-              className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-neutral-700 focus:outline-none focus:border-[#10b981]/50" />
+              className="w-full bg-[#0d0f0d] border border-[#1d231d] rounded-xl px-4 py-3.5 text-[#f2efe6] placeholder-neutral-700 focus:outline-none focus:border-[#4cc07a]/50" />
           </div>
           <button onClick={submit} disabled={saving}
-            className="mt-3 w-full py-5 bg-[#10b981] hover:bg-[#059669] text-black font-black uppercase tracking-widest text-sm rounded-2xl transition-all disabled:opacity-50 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+            className="mt-3 w-full py-5 bg-[#4cc07a] hover:bg-[#2c7a4d] text-black font-semibold text-sm rounded-2xl transition-all disabled:opacity-50">
             {saving ? "Saving…" : "Hold my seat →"}
           </button>
-          <button onClick={() => setStep(QUESTIONS.length - 1)} className="text-[11px] font-mono text-neutral-600 hover:text-white uppercase tracking-widest">← Back</button>
+          <button onClick={() => setStep(QUESTIONS.length - 1)} className="text-[11px] font-mono text-[#7d7a70] hover:text-[#f2efe6]">← Back</button>
         </div>
       </Shell>
     );
@@ -253,27 +253,27 @@ export default function ReserveFlow() {
   return (
     <Shell>
       <div className="mb-6">
-        <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-[#10b981] to-[#f59e0b] transition-all" style={{ width: `${(step / QUESTIONS.length) * 100}%` }} />
+        <div className="w-full h-2 bg-[#141814] rounded-full overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-[#4cc07a] to-[#e0a45c] transition-all" style={{ width: `${(step / QUESTIONS.length) * 100}%` }} />
         </div>
-        <p className="text-center text-[11px] font-mono uppercase tracking-widest text-neutral-500 mt-3">Question {step + 1} of {QUESTIONS.length}</p>
+        <p className="text-center text-[11px] font-mono text-[#7d7a70] mt-3">Question {step + 1} of {QUESTIONS.length}</p>
       </div>
-      <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white text-center mb-7 leading-tight">{q.title}</h3>
+      <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#f2efe6] text-center mb-7 leading-tight">{q.title}</h3>
       <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto">
         {q.options.map((o, i) => {
           const Icon = o.icon; const a = ACCENTS[i % 4]; const isSel = answers[q.id] === o.id;
           return (
             <button key={o.id} onClick={() => pickOption(q.id, o.id)}
-              className={`flex flex-col items-center justify-center text-center gap-3 p-5 sm:p-7 min-h-[130px] rounded-2xl border transition-all shadow-lg ${isSel ? `${a.sel} scale-95` : `bg-[#050505] ${a.border} ${a.hover}`}`}>
-              <Icon size={34} className={isSel ? a.text : "text-neutral-400"} />
-              <span className={`text-sm sm:text-base font-bold uppercase tracking-wider leading-tight ${isSel ? a.text : "text-neutral-200"}`}>{o.text}</span>
+              className={`flex flex-col items-center justify-center text-center gap-3 p-5 sm:p-7 min-h-[130px] rounded-2xl border transition-all shadow-lg ${isSel ? `${a.sel} scale-95` : `bg-[#0d0f0d] ${a.border} ${a.hover}`}`}>
+              <Icon size={34} className={isSel ? a.text : "text-[#b8b4a6]"} />
+              <span className={`text-sm sm:text-base font-bold tracking-wider leading-tight ${isSel ? a.text : "text-[#f2efe6]"}`}>{o.text}</span>
             </button>
           );
         })}
       </div>
       {step > 0 && (
         <div className="text-center mt-6">
-          <button onClick={() => setStep((s) => s - 1)} className="text-[11px] font-mono text-neutral-600 hover:text-white uppercase tracking-widest">← Back</button>
+          <button onClick={() => setStep((s) => s - 1)} className="text-[11px] font-mono text-[#7d7a70] hover:text-[#f2efe6]">← Back</button>
         </div>
       )}
     </Shell>

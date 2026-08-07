@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { HelpCircle } from "lucide-react";
+import CrisisSupport from "@/components/CrisisSupport";
+import {
+  Wrap,
+  Section,
+  SectionHead,
+  EditorialList,
+  CtaRow,
+  ButtonPrimary,
+} from "@/components/design";
 
 export const metadata: Metadata = {
   title: "FAQ — Cost, Privacy, AA Affiliation & How It Works",
@@ -62,58 +70,71 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 flex flex-col font-sans relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-[#0d0f0d] text-[#f2efe6]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <SiteHeader />
 
-      <main className="flex-grow w-full max-w-4xl mx-auto px-6 py-20 flex flex-col gap-12 relative z-10">
-        <div className="flex items-center gap-4 border-b border-white/10 pb-6">
-          <div className="w-16 h-16 rounded-2xl bg-[#10b981]/10 flex items-center justify-center border border-[#10b981]/30 text-[#10b981]">
-            <HelpCircle size={32} />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold text-[#10b981] uppercase tracking-widest block mb-1">
-              Straight Answers
-            </span>
-            <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
-              Questions, Answered
-            </h1>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-6">
-          {FAQS.map((f) => (
-            <div key={f.q} className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 flex flex-col gap-3 hover:border-[#10b981]/30 transition-colors">
-              <h2 className="text-xl font-black text-white tracking-tight">{f.q}</h2>
-              <p className="text-neutral-400 leading-relaxed">{f.a}</p>
-              {f.link && (
-                <Link
-                  href={f.link.href}
-                  className="w-fit text-sm font-black uppercase tracking-widest text-[#10b981] hover:text-emerald-300 transition-colors"
-                >
-                  {f.link.label} →
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 text-center flex flex-col gap-4">
-          <h2 className="text-xl font-black text-white uppercase tracking-tight">Something else on your mind?</h2>
-          <p className="text-neutral-400 leading-relaxed">
-            Ask directly — a human in recovery reads every message.
+      {/* Opener. Crisis resources sit inside it, above the fold, because
+          someone reading the FAQ at 2am may not be reading it calmly. */}
+      <Section tight>
+        <Wrap>
+          <h1 className="font-display max-w-[16ch] text-[clamp(2.4rem,5.5vw,4rem)] leading-[1.05] tracking-[-0.025em] text-[#f2efe6] [&_em]:font-display-italic [&_em]:text-[#e0a45c]">
+            Questions, <em>answered.</em>
+          </h1>
+          <p className="mt-5 max-w-[68ch] text-[1.05rem] leading-relaxed text-[#b8b4a6]">
+            What it costs, what happens to your data, whether this replaces AA or treatment, and how
+            anonymity works. If your question isn&rsquo;t here, ask &mdash; a human in recovery reads
+            every message.
           </p>
-          <Link
-            href="/contact"
-            className="mx-auto py-3 px-8 rounded-2xl bg-[#10b981] hover:bg-[#059669] text-black text-sm font-black tracking-widest uppercase transition-all w-fit"
-          >
-            Contact us
-          </Link>
-        </div>
-      </main>
+          <div className="mt-10 max-w-[74ch]">
+            <CrisisSupport />
+          </div>
+        </Wrap>
+      </Section>
+
+      <Section band>
+        <Wrap>
+          <SectionHead>
+            Straight answers, <em>in plain language.</em>
+          </SectionHead>
+
+          <EditorialList>
+            {FAQS.map((f) => (
+              <div
+                key={f.q}
+                className="grid gap-3 border-b border-[#1d231d] px-1 py-7 sm:grid-cols-[1fr_1.6fr] sm:gap-10"
+              >
+                <h3 className="font-display text-[1.3rem] leading-tight text-[#f2efe6]">{f.q}</h3>
+                <div>
+                  <p className="max-w-[70ch] text-[15.5px] leading-relaxed text-[#b8b4a6]">{f.a}</p>
+                  {f.link && (
+                    <Link
+                      href={f.link.href}
+                      className="font-measure mt-3.5 inline-block text-[13px] text-[#4cc07a] no-underline transition-colors hover:text-[#5fd08c]"
+                    >
+                      {f.link.label} &rarr;
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </EditorialList>
+        </Wrap>
+      </Section>
+
+      <Section tight>
+        <Wrap>
+          <SectionHead lede={<p>Ask directly — a human in recovery reads every message.</p>}>
+            Something else <em>on your mind?</em>
+          </SectionHead>
+          <CtaRow>
+            <ButtonPrimary href="/contact">Contact us</ButtonPrimary>
+          </CtaRow>
+        </Wrap>
+      </Section>
 
       <SiteFooter />
     </div>
